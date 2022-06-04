@@ -80,11 +80,11 @@ In **Challenge Mode**, **“Recovery”** will allow the user to obtain more poi
 Each NFT riding equipment has the ability of Performance, Maintenance, Control, Lucky. 
 
 ||| Name
-Sport Bike (base version) 
-||| Optimal heartbeat range (70-120 bpm, 1X10 bpm pl) ||| Frame A III
-1 - 8
-||| Column 3
-4 QUEST/ 1 END used
+Sport Bike (base version) ||| Frame A ||| Frame B |||
+||| Optimal heartbeat range (70-120 bpm, 1X10 bpm pl) 
+1 - 8 ||| 1 - 4 ||| 3 - 6 |||
+||| Base Return (daily rate)
+4 QUEST/ 1 END used ||| 2 QUEST/ 1 END used ||| 3 QUEST/ 1 END used |||
 |||
 
 
