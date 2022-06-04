@@ -1,7 +1,7 @@
 
 input: .
-output: .retype
-url: # Add your website address here
+output: .
+url: https://docs.actiq.xyz
 branding:
   title: Actiquest
   label: Docs
