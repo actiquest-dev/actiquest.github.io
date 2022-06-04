@@ -4,7 +4,7 @@ url: docs.actiq.xyz
 branding: .gitbook/static/flow-logo.svg
   title: Actiquest
   label: Whitepaper
-  logo: .gitbook/assets/favicon.ico
+  logo: 
   favicon: .gitbook/assets/favicon.ico
  integrations:
   plausible:
