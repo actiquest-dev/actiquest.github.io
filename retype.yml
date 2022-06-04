@@ -3,7 +3,13 @@ output: .
 url: docs.actiq.xyz
 branding:
   title: Actiquest
-  label: Whitepapers2
+  label: Whitepaper
+  logo: /static/flow-logo.svg
+  integrations:
+  plausible:
+    domain: postmanlabs.com
+    edit:
+  repo: https://github.com/postmanlabs/postman-flows
 links:
   - text: Getting Started
     link: https://retype.com/guides/getting-started/
