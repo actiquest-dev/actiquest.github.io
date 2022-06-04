@@ -13,10 +13,10 @@ branding:
       #background: "#ff0000"
       editor:
   enabled: true
-  favicon: .gitbook/assets/favicon.ico
- integrations:
-  plausible:
- domain: actiq.xyz
+  #favicon: .gitbook/assets/favicon.ico
+ #integrations:
+  #plausible:
+ #domain: actiq.xyz
  edit:
  repo: https://github.com/postmanlabs/postman-flows
 links:
