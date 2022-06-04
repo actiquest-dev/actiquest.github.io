@@ -4,11 +4,11 @@ url: docs.actiq.xyz
 branding:
   title: Actiquest
   label: Whitepaper
-  logo: /static/flow-logo.svg
-  favicon: .gitbook/assets/favicon.ico
- integrations:
-  plausible:
- domain: postmanlabs.com
+  #logo: /static/flow-logo.svg
+  #favicon: .gitbook/assets/favicon.ico
+ #integrations:
+  #plausible:
+ #domain: postmanlabs.com
  edit:
   repo: https://github.com/postmanlabs/postman-flows
 links:
