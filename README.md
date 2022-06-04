@@ -34,6 +34,7 @@ Actiquest tracks activity and completion of tasks using the data from a cell pho
 
 +++AI anticheat
 AI powered anti-cheat technology will be employed to ensure that only genuine fitness data is taken into account in the reward calculation process.
++++
 
 ### Vision & Mission
 
