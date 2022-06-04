@@ -1,6 +1,6 @@
 
 input: ./
-output: .main
+output: ./
 url: docs.actiq.xyz
 branding:
   title: Actiquest
