@@ -38,29 +38,27 @@ AI powered anti-cheat technology will be employed to ensure that only genuine fi
 
 ### Vision & Mission
 
-##Vision
+## Vision
 Innovate better health & lifestyle technology for billions of people by acquiring non-crypto users to the crypto metaverse, where people can connect through fitness and sport activities.
 
-##Mission
+## Mission
 We will build up an activity-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises such as Cycle, Run, Walk, Workout, Swim, Dance and more to come. We will bridge data from all professional sports applications into one place and give you rewards for tracking user activities. Strava, Zwift, Peloton, RGT and other platforms users can connect their profiles to the Actiquest platform and get $ACTI instant airdrop based on the last 3 month data of imported sport activities.
 
-##Timeline
+## Product Release
 Actiq app beta is set to launch in Q4 2022. Register for the waitlist to stay informed and register your interest.
 
-##Carbon Neutral
+## Carbon Neutral
 A portion of Actiquest profits will be fixed to purchase carbon neutral credits on the blockchain to fight climate change.
 
-
-###Founding Team
-
-Michael Aprossine - CEO 
-Phil Khomenok - COO 
-Mich Keer - AI/Python developer
-Sergey Koskov - Bizdev, Marketing
-Iskander Khakimov - FullStack, Front-End. Bike triatlon champion.
-Vit Znak - FullStack, Back-End
-Anton Zuev - Mobile app dev (Kotlin)
-+3 people (Blockchain dev’s/testing)
-+3 people (3D-motion designers)
+## Founding Team
+* Michael Aprossine - CEO 
+* Phil Khomenok - COO 
+* Mich Keer - AI/Python developer
+* Sergey Koskov - Bizdev, Marketing
+* Iskander Khakimov - FullStack, Front-End. Bike triatlon champion.
+* Vit Znak - FullStack, Back-End
+* Anton Zuev - Mobile app dev (Kotlin)
+* +3 people (Blockchain dev’s/testing)
+* +3 people (3D-motion designers)
 
 
