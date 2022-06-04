@@ -1,10 +1,10 @@
 input: .
 output: .
 url: docs.actiq.xyz
-branding: .gitbook/static/flow-logo.svg
+branding:
   title: Actiquest
   label: Whitepaper
-  logo: 
+  logo: /static/flow-logo.svg
   favicon: .gitbook/assets/favicon.ico
  integrations:
   plausible:
