@@ -36,12 +36,12 @@ Actiquest tracks activity and completion of tasks using the data from a cell pho
 AI powered anti-cheat technology will be employed to ensure that only genuine fitness data is taken into account in the reward calculation process.
 +++
 
-### Vision & Mission
+## Vision & Mission
 
-## Vision
+### Vision
 Innovate better health & lifestyle technology for billions of people by acquiring non-crypto users to the crypto metaverse, where people can connect through fitness and sport activities.
 
-## Mission
+### Mission
 We will build up an activity-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises such as Cycle, Run, Walk, Workout, Swim, Dance and more to come. We will bridge data from all professional sports applications into one place and give you rewards for tracking user activities. Strava, Zwift, Peloton, RGT and other platforms users can connect their profiles to the Actiquest platform and get $ACTI instant airdrop based on the last 3 month data of imported sport activities.
 
 ## Product Release
@@ -51,14 +51,31 @@ Actiq app beta is set to launch in Q4 2022. Register for the waitlist to stay in
 A portion of Actiquest profits will be fixed to purchase carbon neutral credits on the blockchain to fight climate change.
 
 ## Founding Team
-* Michael Aprossine - CEO 
-* Phil Khomenok - COO 
-* Mich Keer - AI/Python developer
-* Sergey Koskov - Bizdev, Marketing
-* Iskander Khakimov - FullStack, Front-End. Bike triatlon champion.
-* Vit Znak - FullStack, Back-End
-* Anton Zuev - Mobile app dev (Kotlin)
-* +3 people (Blockchain dev’s/testing)
-* +3 people (3D-motion designers)
+* **Michael Aprossine** - CEO 
+* **Phil Khomenok** - COO 
+* **Mich Keer** - AI/Python developer
+* **Sergey Koskov** - Bizdev, Marketing
+* **Iskander Khakimov** - FullStack, Front-End. Bike triatlon champion.
+* **Vit Znak** - FullStack, Back-End
+* **Anton Zuev** - Mobile app dev (Kotlin)
+* **+3 people** (Blockchain dev’s/testing)
+* **+3 people** (3D-motion designers)
+
+## Innovation & Quality
+Our team focuses first and foremost on innovation and quality. We value creative, unconventional thinking and bold ideas that can be harnessed into a product that is useful in day to day life. We take utmost care in the quality of service and products that we provide, making sure everything is thoroughly tested and processed through our design system, bringing you the best possible product and service we can offer.
+
+**Actiquest** focuses on long-term growth. Our goal is continuous innovation that will inspire people to take better care of their health in new and exciting ways. We will update our prizes, form partnerships with leading brands in the fitness and tech industry, and release products that stretch far beyond being simply another application. Our platform integrates it with the up and coming space in blockchain.
+
+Whether you are a user or investor with a long term goal, Actiquest is the platform for you.
+
+## Getting started with ACTIQ app
+
+!!!success Important
+1. Let’s take the first step with the app downloading
+2. Get the ACTIQ app to your device
+3. Fill in sign-up form to officially become our member
+4. When you download the app to your devices such as a phone, or laptop, you can create an account by using your email. Once it has been installed, an authentication code is sent to you shortly via your email.
+5. Create a brand-new Wallet account
+!!!
 
 
