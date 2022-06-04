@@ -1,15 +1,15 @@
 input: .
 output: .
 url: docs.actiq.xyz
-branding:
+branding: .gitbook/static/flow-logo.svg
   title: Actiquest
   label: Whitepaper
-  logo: /static/flow-logo.svg
-  integrations:
+  logo: .gitbook/assets/favicon.ico
+ integrations:
   plausible:
  domain: postmanlabs.com
  edit:
-  repo: https://github.com/postmanlabs/postman-flows
+  repo: https://github.com/AnIdiotsGuide/discordjs-bot-guide/edit/
 favicon: .gitbook/assets/favicon.ico
 links:
 - text: Github
