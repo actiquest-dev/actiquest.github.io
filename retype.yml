@@ -1,7 +1,7 @@
 
-input: .
-output: .
-url: https://docs.actiq.xyz
+input: ./
+output: .retype
+url: actiquest.github.io
 branding:
   title: Actiquest
   label: Docs
