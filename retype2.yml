@@ -17,8 +17,8 @@ branding:
  #integrations:
   #plausible:
  #domain: actiq.xyz
- edit:
- repo: https://github.com/postmanlabs/postman-flows
+ #edit:
+ #repo: https://github.com/postmanlabs/postman-flows
 links:
 - text: Home
   link: /README.md
