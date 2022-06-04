@@ -1,1 +1,12 @@
 
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: Actiquest
+  label: Docs
+links:
+  - text: Getting Started
+    link: https://retype.com/guides/getting-started/
+footer:
+  copyright: "&copy; Copyright . All rights reserved."
