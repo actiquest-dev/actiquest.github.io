@@ -6,7 +6,7 @@ order: 100
 ## Single Mode
 
 ### General description
-Users start the exact activity mode to collect tokens: Cycle, Run, Walk, Workout, Swim, Dance. Each type of activity uses a specific activity-to-earn algorithm to mint $ACTI based on a combination of heart rate, track length, steps and speed data. 
+Users start the exact activity mode to collect tokens: **Cycle, Run, Walk, Workout, Swim, Dance**. Each type of activity uses a specific activity-to-earn algorithm to mint **$ACTI** based on a combination of heart rate, track length, steps and speed data. 
 All users' activities are monitored by in-app AI to avoid cheats and fraud. To start your Move to Earn, and mint $ACTI you must purchase any NFT Specialty in mode shops and if you want to get a $QUEST, you’ll need endurance (END). Otherwise you should mint $ACTI more slowly using your sport exercises only.
 Every 1 END is equivalent to 5 minutes of your moving, and only once you have done your NFT specialty purchasing. 
 
@@ -79,15 +79,14 @@ In **Challenge Mode**, **“Recovery”** will allow the user to obtain more poi
 
 Each NFT riding equipment has the ability of Performance, Maintenance, Control, Lucky. 
 
-||| Name
-Sport Bike (base version) ||| Frame A ||| Frame B |||
-||| Optimal heartbeat range (70-120 bpm, 1X10 bpm pl) 
-1 - 8 ||| 1 - 4 ||| 3 - 6 |||
-||| Base Return (daily rate)
-4 QUEST/ 1 END used ||| 2 QUEST/ 1 END used ||| 3 QUEST/ 1 END used |||
-|||
-
-
+Name                     | Optimal heartbeat range (70-120 bpm, 1X10 bpm pl)  | Base Return (daily rate) 
+---                      | ---                                                | ---
+Sport Bike (base version)| 1 - 8                                              | 4 QUEST/ 1 END used  
+---                      | ---                                                | --- 
+Frame A                  | 1 - 4                                              | 2 QUEST/ 1 END used
+---                      | ---                                                | --- 
+Frame B                  | 3 - 6                                              | 3 QUEST/ 1 END used 
+  
 
 
 
