@@ -4,7 +4,15 @@ url: docs.actiq.xyz
 branding:
   title: Actiquest
   label: Whitepaper
-  #logo: /static/flow-logo.svg
+  #logo: /static/light-logo.svg
+  #logoDark /static/dark-logo.svg
+  #logoAlign: right
+  #colors:
+    #label:
+      #text: "#ffffff"
+      #background: "#ff0000"
+      editor:
+  enabled: true
   favicon: .gitbook/assets/favicon.ico
  integrations:
   plausible:
