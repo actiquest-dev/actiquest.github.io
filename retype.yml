@@ -11,8 +11,8 @@ branding:
     #label:
       #text: "#ffffff"
       #background: "#ff0000"
-      editor:
-  enabled: true
+      #editor:
+  #enabled: true
   #favicon: .gitbook/assets/favicon.ico
  #integrations:
   #plausible:
