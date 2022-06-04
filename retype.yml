@@ -7,11 +7,14 @@ branding:
   logo: /static/flow-logo.svg
   integrations:
   plausible:
-    domain: postmanlabs.com
-    edit:
+ domain: postmanlabs.com
+ edit:
   repo: https://github.com/postmanlabs/postman-flows
+favicon: .gitbook/assets/favicon.ico
 links:
-  - text: Getting Started
-    link: https://retype.com/guides/getting-started/
+- text: Github
+  link: https://github.com/AnIdiotsGuide/discordjs-bot-guide
+- text: Discord
+  link: https://discord.gg/vXVxsAjSMF
 footer:
-  copyright: "&copy; Copyright . All rights reserved."
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
