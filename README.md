@@ -81,7 +81,7 @@ We will build up an activity-to-earn platform which could be extended with Socia
 ---
 
 ## Product Release
-Actiq app beta is set to launch in Q2 2023. Register to take a part in AI by AI (Athletes incentivization by AI) program whitch is started in Q4 of 2023 to stay informed and register your interest. Follow the link and fill the form: https://actiq.xyz/earlybird.html#Step%201 
+Actiq app beta is set to launch in Q2 2023. Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q4 of 2023 to stay informed and register your interest. Follow the link and fill the form: https://actiq.xyz/earlybird.html#Step%201 
 
 ---
 
