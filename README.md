@@ -2,39 +2,67 @@
 icon: home
 label: Actiquest
 ---
-### Meet Actiq - M2E sports super app
+### Meet Actiq - gamified training app for athletes powered by AI Coaches
 [!embed](https://www.youtube.com/watch?v=US8sqMuAXac)
 
-Actiquest is an “Activity to Earn" super app based on combined heartbeat/activity/behavior monitoring using any fitness tracker device focused around cyclists' mixed activities: cycling, running, swimming. Actiquest creates challenges in cycling, running, swimming, sport walking, free workout and even dancing, where our users can compete in terms of speed, distance, have competitions as a group, or even create their own custom challenge. 
+Actiq is gamified training app for athletes who spend $160-300/month to group trainings or remote coaching and provides adaptable AI coaches on top of Actiq app superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback (compare it to weekly calls with human coaches) unlike the competition with remote fitness coaches aggregator like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco. Our gamified training app revolutionizes athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and constantly learning LLM for only $20/month.
 
 ---
 
 ## Fundamentals
 
-Actiquest provides you chances to work out on a daily basis either in single or world challenge mode. We also record your training results and convert your moving movement into valuable rewards.
+Actiq provides you chances to work out on a daily basis either in single or world challenge mode with AI coaches. We also record your training results and convert completed training blocks into valuable rewards.
 
-Connect to a larger global community and unlock new ways to be rewarded for an active lifestyle and sportive performance – it's that simple! 
+AI coaches are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AI Coaches can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AI Coaches are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
 
-Earn $ACTI (governance token) and $QUEST (in-game token) through your performance exercises, hold it or exchange coins for store purchases, physical products & NFTs, event tickets, organize real sport events and holder ranking to access features.
+In-App AI Coaches:
+- Are adjustable virtual characters;
+- Predicts and monitors athlete's performance;
+- Analyzes physical/mental state;
+- Provides motivated personalized feedback during training blocks
+- Constantly adjusts training plan to rise the goals;
+- Monitors endurance, tempo, threshold, V02Max and anaerobic parameters;
+- Manages monetary rewards after training completion.
 
-Actiquest promotes an active lifestyle for its users. You can either hold the tokens and NFTs earned to use in-app or cash out for profit. The more you practice, the more rewards you get; that is the motivation that pushes us forward to move our bodies so as to gain both beneficial health and passive income.
+Actiq collects more complex health data from users. Actiq provides much more adjustability to our ML models via quality feedback from athletes. Actiq develop new fast AI learning algo's. Using synergy of LLM and AI/ML tools, we create a comprehensive solution to help athletes prepare for endurance events. 
+
+Earn $ACTI token through your performance exercises, hold it or exchange coins for store purchases, physical products, digital collectibles, event tickets, organize real sport events and holder ranking to access features.
+
+Actiq promotes an active lifestyle for its users. You can either hold the tokens to use in-app or cash out for profit. The more you practice, the more rewards you get; that is the motivation that pushes us forward to move our bodies so as to gain beneficial health improvement and control.
 
 ---
 
-## Understanding Move-to-Earn (M2E)
-Move-to-earn is a relatively new phenomenon that includes a variety of products and services that reward users for being active. We're a platform that provides users with rewards for keeping fit, unlocking an additional income stream for participating in their usual exercise activities, or taking part in specific fitness-related challenges. It builds on the trend and success of play-to-earn, where users are rewarded, in cryptocurrency, for playing games.
+## Understanding AI Coaches
+AI coaches - artificial intelligence entities, that uses a combination of deep learning, decision intelligence, set of langchain agents on top of pre-trained LLM with NLP-based voice feedback to create highly adaptive training plans.
+
+AI will soon outperform Human Coaches and here is why:
+
+**Data Analysis**. Human Coach is lack in data analysis: One of AI's strong suits is the ability to analyze large sets of data in record time. Unlike human coaches, AI can assess, process, and produce insights from complex health data, augmenting the decision-making process.
+
+**Availability**. Human Coach is lack in 24x7 on demand availability: AI coaches are not restricted by time zones, schedules, or personal commitments. They are available 24/7, providing constant assistance and feedback when required. AI coaches are always on duty.
+
+**Consistency**. Human Coaches are poor in consistency. AI algorithms don't suffer from typical human bias or mood swings. It will also provide consistent processes based on coaching we train it on. This leads to consistency in coaching, maintaining an unchanging standard of coaching quality.
+
+**Long-term tracking**. Human Coach definitely looses to AI with athlete’s long-term tracking even using data-rich apps. Tracking progress over extended periods can be challenging for humans. AI, on the other hand, excels in this area, continuously monitoring and adjusting the learning path.
+
+**Scalability** is not strong side of Human Coaches. AI coaches can accommodate athletes simultaneously, something impossible for individual human coaches. Or at least the vast majority.
+
+**Seamless Learning Adaptation**. AI has the ability to personalize learning paths based on each athletes needs, adapting in real-time according to latest learnings from coaching and learning sessions. Our AI-learning program constantly improves AI coaches to be superior and adaptive.
+
+**Personal Neutrality**. Human Coaches are not attentive to athletes, even training groups are overcrowded: AI offers unbiased coaching, unaffected by personal biases or emotions that could cloud a human coach's judgment. AI coaches are created to motivate athletes to obtain better results.
+
+**Access & Affordability**. AI coaching tools are often more accessible and affordable than human coaches, allowing a broader range of athletes to benefit from professional coaching.
+
+**TCO**. Unfortunately, AI win Humans in economic value. It can be 10 times cheaper compared to Human Coaches. We create AI coaches that will cost about $20 per month and allows to build healthy habits and achieve better workouts performance to everyone.
 
 +++ Health centric
-**Actiquest** generally aims to incentivize fitness and sport, helping to reduce obesity and sedentariness, and giving users an opportunity to earn an income for improving their health. Indeed, researchers recently found that improvements in cardiorespiratory fitness lead to a significant reduction in all-cause and disease-specific mortality, with an individual’s maximum oxygen uptake (VO2max) being strongly correlated with their life expectancy.
+**Actiq** generally aims to incentivize fitness and sport, helping to reduce obesity and sedentariness, and giving users an opportunity to reinforce dopaminergic reward system by using tokenized incentives precisely controlled by AI for improving their perfomance. Indeed, researchers recently found that improvements in cardiorespiratory fitness lead to a significant reduction in all-cause and disease-specific mortality, with an individual’s maximum oxygen uptake (VO2max) being strongly correlated with their life expectancy. 
 
-+++ Move-2-Earn
-The term **move-to-earn** refers to the possibility of earning valuable rewards while doing activities like moving about, similar to P2E (play-to-earn), which has since been adopted by a variety of other apps that reward users for their activity. 
-
-+++ Rewards
-Actiquest generates **rewards** in the form of blockchain-based digital tokens. Users are rewarded in native utility tokens for completing fitness-related tasks — such as walking, running, or swimming.
++++ Gamified Rewards
+Actiq generates **rewards** in the form of blockchain-based digital tokens. Users are rewarded in native utility tokens for completing fitness-related training blocks — such as walking, running, or swimming.
 
 +++ Health data
-Actiquest tracks activity and completion of tasks using the data from a cell phone or fitness tracker. This is assessed to see if it qualifies for rewards. Earned tokens can then either be directly traded for goods and services within the application or sold/traded on an internal marketplace or external exchange for other cryptocurrencies.
+Actiq tracks activity and completion of training blocks using the any health ecosystem such as Strava, Garmin, Apple Health, Google Fit and Suunto. This is assessed to see by selected AI Coach (we create different coaching characters which are taking in a sense age, style or gender of athlete) if it qualifies for rewards. Earned tokens can then either be directly traded for goods and services within the application or sold/traded on an internal marketplace or external exchange for other cryptocurrencies.
 
 +++AI anticheat
 AI powered anti-cheat technology will be employed to ensure that only genuine fitness data is taken into account in the reward calculation process.
@@ -45,7 +73,7 @@ AI powered anti-cheat technology will be employed to ensure that only genuine fi
 ## Vision & Mission
 
 ### Vision
-Innovate better health & lifestyle technology for billions of people by acquiring non-crypto users to the crypto metaverse, where people can connect through fitness and sport activities.
+Innovate better health & lifestyle technology for billions of people by using latest AI developments. Cutting the cost of Human Coaches, changing the training path with 24x7 available personalized AI Coaches and gamified rewards. Democratizing the way to be athletic to everyone.
 
 ### Mission
 We will build up an activity-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises such as Cycle, Run, Walk, Workout, Swim, Dance and more to come. We will bridge data from all professional sports applications into one place and give you rewards for tracking user activities. Strava, Zwift, Peloton, RGT and other platforms users can connect their profiles to the Actiquest platform and get $ACTI instant airdrop based on the last 3 month data of imported sport activities.
