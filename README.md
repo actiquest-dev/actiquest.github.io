@@ -81,7 +81,7 @@ We will build up an activity-to-earn platform which could be extended with Socia
 ---
 
 ## Product Release
-Actiq app beta is set to launch in Q4 2022. Register for the waitlist to stay informed and register your interest.
+Actiq app beta is set to launch in Q2 2023. Register to take a part in AI by AI (Athletes incentivization by AI) program whitch is started in Q4 of 2023 to stay informed and register your interest. Follow the link and fill the form: https://actiq.xyz/earlybird.html#Step%201 
 
 ---
 
@@ -93,22 +93,21 @@ A portion of Actiquest profits will be fixed to purchase carbon neutral credits 
 ## Founding Team
 * **Michael Aprossine** - CEO 
 * **Phil Khomenok** - COO 
-* **Mich Keer** - AI/Python developer
-* **Sergey Koskov** - Bizdev, Marketing
-* **Iskander Khakimov** - FullStack, Front-End. Bike triatlon champion.
-* **Vit Znak** - FullStack, Back-End
-* **Anton Zuev** - Mobile app dev (Kotlin)
-* **+3 people** (Blockchain dev’s/testing)
-* **+3 people** (3D-motion designers)
+* **Mich Keer** - AI Teamlead
+* **Sergey Koskov** - Product Market Fit. Athlete.
+* **Iskander Khakimov** - FullStack, Front-End. Athlete.
+* **Vit Znak** - FullStack, Back-End. Athlete.
+* **Anton Zuev** - Mobile app dev (Kotlin, Swift)
+* **+3 people** (Data scientists/testing)
 
 ---
 
 ## Innovation & Quality
 Our team focuses first and foremost on innovation and quality. We value creative, unconventional thinking and bold ideas that can be harnessed into a product that is useful in day to day life. We take utmost care in the quality of service and products that we provide, making sure everything is thoroughly tested and processed through our design system, bringing you the best possible product and service we can offer.
 
-**Actiquest** focuses on long-term growth. Our goal is continuous innovation that will inspire people to take better care of their health in new and exciting ways. We will update our prizes, form partnerships with leading brands in the fitness and tech industry, and release products that stretch far beyond being simply another application. Our platform integrates it with the up and coming space in blockchain.
+**Actiq** focuses on long-term growth. Our goal is continuous innovation that will inspire people to take better care of their health in new and exciting ways. We will update our prizes, form partnerships with leading brands in the fitness and tech industry, and release products that stretch far beyond being simply another application. Our platform integrates it with the up and coming space in blockchain.
 
-Whether you are a user or investor with a long term goal, Actiquest is the platform for you.
+Whether you are a user or investor with a long term goal, Actiq is the platform for you.
 
 ---
 
@@ -118,21 +117,22 @@ Whether you are a user or investor with a long term goal, Actiquest is the platf
 2. Get the ACTIQ app to your device
 3. Fill in sign-up form to officially become our member
 4. When you download the app to your devices such as a phone, or laptop, you can create an account by using your email. Once it has been installed, an authentication code is sent to you shortly via your email.
-5. Create a brand-new Wallet account
+5. Create a brand-new in-app web3 wallet account
+6. Connect your Strava Account
+7. Connect your Garmin Account
 !!!
 
-* [Gameplay system](getting-started/gameplay.md)
-* [NFT chests](getting-started/nftchests.md)
-* [NFT items](getting-started/nftitems.md)
-* [Earning Mechanics](getting-started/earningmech.md)
-* [Social-Fi System](getting-started/socialfi.md)
+* [AI Coaches](getting-started/ai_coaches.md)
+* [AI Training](getting-started/ai_by_ai_program.md)
+* [Incentivization mechanics](getting-started/incentives.md)
+* [Health Data Integration](getting-started/integration.md)
+* [Partnerships](getting-started/partnerships.md)
 
 ---
 
 ### Tokenomics
-Two currencies will be used. An in-game uncapped $QUEST coin and an on-chain 500M fixed cap $ACTI.
+500M fixed cap $ACTI incentive token.
 * [$ACTI token](tokenomics/actitoken.md)
-* [$QUEST token](getting-started/questtoken.md)
 * [Roadmap](getting-started/roadmap.md)
 
 ---
