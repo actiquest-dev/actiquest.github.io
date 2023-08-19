@@ -5,7 +5,7 @@ label: Actiquest
 ### Meet Actiq - gamified training app for athletes powered by AI Coaches
 [!embed](https://www.youtube.com/watch?v=US8sqMuAXac)
 
-Actiq is gamified training app for athletes who spend $160-300/month to group trainings or remote coaching and provides adaptable AI coaches on top of Actiq app superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback (compare it to weekly calls with human coaches) unlike the competition with remote fitness coaches aggregator like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco. Our gamified training app revolutionizes athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and constantly learning LLM for only $20/month.
+We're Actiq (Actiquest Inc.) - gamified training app for athletes who spends $160-300/month to group trainings or remote coaching. Actiq provides adaptable AI coaches on top of Actiq app superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback (compare it to weekly calls with human coaches). Unlike the competition with remote fitness coaches aggregators like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco, our gamified training app revolutionizes athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and constantly learning LLM for only $20/month.
 
 ---
 
@@ -81,7 +81,14 @@ We will build up an activity-to-earn platform which could be extended with Socia
 ---
 
 ## Product Release
-Actiq app beta is set to launch in Q2 2023. Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q4 of 2023 to stay informed and register your interest. Follow the link and fill the form: https://actiq.xyz/earlybird.html#Step%201 
+Actiq app beta is set to launch in Q2 2023. Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q4 of 2023 to stay informed and register your interest.
+
+We plan to run AI managed DAO and unique incentivizing algorithm for athletes while athletes will train AI to get monetary incentives. 
+
+First phase: AI coaching engine training, starts in Q4 2023
+Second phase: live workouts with AI coach aka Running_Man, starts in Q1 2024.
+
+Follow the link and fill the form: https://actiq.xyz/earlybird.html#Step%201 
 
 ---
 
@@ -107,7 +114,7 @@ Our team focuses first and foremost on innovation and quality. We value creative
 
 **Actiq** focuses on long-term growth. Our goal is continuous innovation that will inspire people to take better care of their health in new and exciting ways. We will update our prizes, form partnerships with leading brands in the fitness and tech industry, and release products that stretch far beyond being simply another application. Our platform integrates it with the up and coming space in blockchain.
 
-Whether you are a user or investor with a long term goal, Actiq is the platform for you.
+Whether you are a athlete with a long term goal, Actiq is the platform for you.
 
 ---
 
@@ -120,6 +127,9 @@ Whether you are a user or investor with a long term goal, Actiq is the platform 
 5. Create a brand-new in-app web3 wallet account
 6. Connect your Strava Account
 7. Connect your Garmin Account
+8. Setup your profile and personalize your AI Coach.
+9. Get a training plan.
+10. Go live with gamified workouts
 !!!
 
 * [AI Coaches](getting-started/ai_coaches.md)
