@@ -63,19 +63,19 @@ AI will soon outperform Human Coaches and here is why:
 
 **Access & Affordability**. AI coaching tools are often more accessible and affordable than human coaches, allowing a broader range of athletes to benefit from professional coaching.
 
-**TCO**. Unfortunately, AI win Humans in economic value. It can be 10 times cheaper compared to Human Coaches. We create AI coaches that will cost about $20 per month and allows to build healthy habits and achieve better workouts performance to everyone.
+**TCO**. Unfortunately, AI win Humans in economic value. The average cost of one-hour training with tennis coach in US is about $100. AI coaches time is 100 times cheaper compared to Human Coaches. We create AI coaches in different sports that will cost about $20 per month in total and allows to build healthy habits and achieve better workouts performance to everyone.
 
 +++ Health centric
 **Actiq** generally aims to incentivize fitness and sport, helping to reduce obesity and sedentariness, and giving users an opportunity to reinforce dopaminergic reward system by using tokenized incentives precisely controlled by AI for improving their perfomance. Indeed, researchers recently found that improvements in cardiorespiratory fitness lead to a significant reduction in all-cause and disease-specific mortality, with an individual’s maximum oxygen uptake (VO2max) being strongly correlated with their life expectancy. 
 
-+++ Gamified Rewards
-Actiq generates **rewards** in the form of blockchain-based digital tokens. Users are rewarded in native utility tokens for completing fitness-related training blocks — such as walking, running, or swimming.
++++ Gamified Rewards as a part of AI by AI (Athlete incentives by AI) program
+Actiq generates **rewards** in the form of blockchain-based digital tokens ($ACTI). Users are rewarded by AI Sport Coach in native utility tokens for completing sport-related training blocks — across most playing and athletic sports (tennis, golf, boxing, padel, running, biking etc.).Exact reward table for each sport will be announced later. As part of the AI by AI program, before the product will be released, a unique incentivizing algorithm will be created while athletes will train AI to earn monetary incentives. That will affect a final part of customer development campaign which is starts in Q2 of 2023 within 200+ thriathletes to help us to validate product and market fit. Also we bridge data from all professional sports applications into one place and give you rewards for tracking user activities. Strava, Zwift, Peloton, RGT and other platforms users can connect their profiles to the Actiquest platform and get $ACTI initial airdrop based on the last 3 month data of imported sport activities.
 
 +++ Health data
-Actiq tracks activity and completion of training blocks using the any health ecosystem such as Strava, Garmin, Apple Health, Google Fit and Suunto. This is assessed to see by selected AI Coach (we create different coaching characters which are taking in a sense age, style or gender of athlete) if it qualifies for rewards. Earned tokens can then either be directly traded for goods and services within the application or sold/traded on an internal marketplace or external exchange for other cryptocurrencies.
+Actiq tracks activity and completion of training blocks using the any health ecosystem such as Strava, Garmin, Apple Health, Google Fit and Suunto. This is assessed to see by selected AI Coach (we create different coaching characters which are taking in a sense age, style or gender of athlete) if it qualifies for rewards.
 
 +++AI anticheat
-AI powered anti-cheat technology will be employed to ensure that only genuine fitness data is taken into account in the reward calculation process.
+AI powered anti-cheat technology will be employed to ensure that only genuine fitness data is taken into account in the reward calculation process. As our algorithms requires more complex communication with athlete, it will be hardly to imitate Humans in multimodal AI environment.
 +++
 
 ---
@@ -86,7 +86,7 @@ AI powered anti-cheat technology will be employed to ensure that only genuine fi
 Innovate better health & lifestyle technology for billions of people by using latest AI developments. Cutting the cost of Human Coaches, changing the training path with 24x7 available personalized AI Coaches and gamified rewards. Democratizing the way to be athletic to everyone.
 
 ### Mission
-We will build up an activity-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises such as Cycle, Run, Walk, Workout, Swim, Dance and more to come. We will bridge data from all professional sports applications into one place and give you rewards for tracking user activities. Strava, Zwift, Peloton, RGT and other platforms users can connect their profiles to the Actiquest platform and get $ACTI instant airdrop based on the last 3 month data of imported sport activities.
+We will build up an activity-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises such as Cycle, Run, Walk, Workout, Swim, Dance and more to come. 
 
 ---
 
