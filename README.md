@@ -18,7 +18,7 @@ Demand in sports is significantly growing. Human Sport Coaches are constantly ov
 
 Actiquest Lab is developing multimodal AI for autonomous and constantly learned AI sport coaches (human digital twins) based on a combination of deep learning, decision making, computer vision and generative AI enabled with natural language processing (NLP). The technology allows human coaches to digitize the training process and create AI-twin coaches using mobile app to train athletes remotely. Athletes can hear the AI coach's live recommendations, respond to him during training, make adjustments to the plan, receive rewards based on the results of completing training blocks, and much more. Supported sports: tennis, golf, power training, running, cycling, swimming, yoga, remedial gymnastics, etc. 
 
-The main concept of Actiquest AI multimodality is to use seamless data augmentation from CNN (convolutional neural networks) like Yolo with generative LLM (Large Language Models) like GPT to not to wait for a outperforming results in zero shot scene recognition by general vision enabled LLM's like Google Gemini. CNN's can performing object detection in real-time. CNNs are classifier-based systems that can process input images as structured arrays of data and recognize patterns between them. Using our approach of smart-auto-labeling of Computer Vision outputs we obtain 60fps human pose estimation, multiple objects recognition/tracking and ability to constantly learn LLM's for decision making in novel tasks. More about this you can read in our blog article here: https://blog.actiq.ai/actiq-ai-coaches-how-it-works/
+The main concept of Actiquest AI multimodality is to use seamless data augmentation from CNN (convolutional neural networks) like Yolo with generative LLM (Large Language Models) like GPT to not to wait for a outperforming results in zero shot scene recognition by general vision enabled LLM's like Google Gemini. CNN's can performing object detection in real-time. CNNs are classifier-based systems that can process input images as structured arrays of data and recognize patterns between them. Using our approach of smart-auto-labeling of Computer Vision outputs we obtain 60fps human pose estimation, multiple objects recognition/tracking and ability to constantly learn LLM's for decision making in novel tasks. More about this you can read in our [blog article](https://blog.actiq.ai/actiq-ai-coaches-how-it-works/)
 
 The Actiq main functionalities include comprehensive athlete omni-coaching path across several sports and tracking athletes during workouts, play sessions, and socialized competitions. All activities within the app are gamified and incentivized, creating a motivating and engaging training environment.
 
@@ -107,7 +107,7 @@ A portion of Actiquest profits will be fixed to purchase carbon neutral credits 
 ---
 
 ## Competitors table
-One-pager researh of [Actiquest competitors] (https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU "Competitors").
+One-pager researh of [Actiquest competitors](https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU "Competitors").
 
 
 ---
@@ -130,13 +130,13 @@ Our team focuses first and foremost on innovation and quality. We value creative
 **Actiq** focuses on long-term growth. Our goal is continuous innovation that will inspire people to take better care of their health in new and exciting ways. We will update our prizes, form partnerships with leading brands in the fitness and tech industry, and release products that stretch far beyond being simply another application. Our platform integrates it with the up and coming space in blockchain.
 
 Whether you are a athlete with a long term goal, Actiq is the platform for you.
-Please, subsribe to our blog: https://blog.actiq.ai
+Please, subsribe to our [{AI Journey} Blog]: (https://blog.actiq.ai "Blog").
 
 ---
 
 ### Getting started with ACTIQ app
 !!!success Important
-0. [Actiq app user flow, as app is in development](https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551 "Miro").
+0. [Explore Actiq app user flow, as app is still in development](https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551 "Miro").
 1. Let’s take the first step with the app downloading
 2. Get the ACTIQ app to your device
 3. Fill in sign-up form to officially become our member
@@ -158,21 +158,20 @@ Please, subsribe to our blog: https://blog.actiq.ai
 ---
 
 ### Tokenomics
-500M fixed cap $ACTI incentive token. Please get to know [Token schedule]: (https://docs.google.com/spreadsheets/d/1UaUlkrXyJwnd3dj_CXIZhbwY6bLoVs-rxpT-bG3SVVs "Token Schedule").
-TGE event scheduled in a middle of Q1 2024 (early February).
+500M fixed cap $ACTI incentive token. Please get to know [Token schedule](https://docs.google.com/spreadsheets/d/1UaUlkrXyJwnd3dj_CXIZhbwY6bLoVs-rxpT-bG3SVVs "Token Schedule").TGE event scheduled in a middle of Q1 2024 (early February).
 * [$ACTI token](tokenomics/actitoken.md)
 * [Roadmap](getting-started/roadmap.md)
 
 ---
 
 ### About
-Link to pitchdeck: https://actiq.xyz/docs/Actiqnew.pdf 
+[Pitchdeck Link](https://actiq.xyz/docs/Actiqnew.pdf "Pitchdeck")
 * [Privacy](about/privacy.md)
 * [Community](about/community.md)
 * [Contacts](about/contacts.md) 
 
 
-Do you have a general inquiry? Please feel free to contact us at hi@actiq.xyz.
+Do you have a general inquiry? Please feel free to contact us at <hi@actiq.xyz>.
 
 We :heart: feedback.
 
