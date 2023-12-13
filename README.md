@@ -21,9 +21,11 @@ Demand in sports is significantly growing. Human Sport Coaches are constantly ov
 
 Actiquest Lab is developing multimodal AI for autonomous and constantly learned AI sport coaches (human digital twins) based on a combination of deep learning, decision making, computer vision and generative AI enabled with natural language processing (NLP). The technology allows human coaches to digitize the training process and create AI-twin coaches using mobile app to train athletes remotely. Athletes can hear the AI coach's live recommendations, respond to him during training, make adjustments to the plan, receive rewards based on the results of completing training blocks, and much more. Supported sports: tennis, golf, power training, running, cycling, swimming, yoga, remedial gymnastics, etc. 
 
-The Actiq main functionalities include comprehensive athlete coaching across several sports and tracking athletes during workouts, play sessions, and socialized competitions. All activities within the app are gamified and incentivized, creating a motivating and engaging training environment.
+The main concept of Actiquest AI multimodality is to use seamless data augmentation from CNN (convolutional neural networks) like Yolo with generative LLM (Large Language Models) like GPT to not to wait for a outperforming results in zero shot scene recognition by general vision enabled LLM's like Google Gemini. CNN's can performing object detection in real-time. CNNs are classifier-based systems that can process input images as structured arrays of data and recognize patterns between them. Using our approach of smart-auto-labeling of Computer Vision outputs we obtain 60fps human pose estimation, multiple objects recognition/tracking and ability to constantly learn LLM's for decision making in novel tasks. More about this you can read in our blog article here: https://blog.actiq.ai/actiq-ai-coaches-how-it-works/
 
-Actiq collects more complex health data from users. Actiq provides much more adjustability to our ML models via quality feedback from athletes. Actiq develops new fast AI learning algorithms. We create a comprehensive solution to help athletes prepare for endurance events by combining LLM and AI/ML Computer Vision tools. 
+The Actiq main functionalities include comprehensive athlete omni-coaching path across several sports and tracking athletes during workouts, play sessions, and socialized competitions. All activities within the app are gamified and incentivized, creating a motivating and engaging training environment.
+
+Actiq app collects more complex health data from users. Actiq app provides much more adjustability to our ML models via quality feedback from athletes. We create a comprehensive solution to help athletes prepare for endurance events by combining LLM and AI/ML Computer Vision tools. 
 
 Actiq app also records your training results and convert completed training blocks into valuable rewards. You can earn $ACTI token through your performance exercises, hold it or exchange coins for store purchases, physical products, digital collectibles, event tickets, organize real sport events and holder ranking to access features. 
 
@@ -32,7 +34,7 @@ Actiq promotes an active lifestyle for its users. You can either hold the tokens
 ---
 
 ## Understanding AI Coaches
-AI coaches - artificial intelligence entities, that uses a combination of computer vision, decision intelligence, set of langchain agents on top of pre-trained LLM with NLP-based voice feedback to interact with athlete during workouts.
+AI coaches are artificial intelligence entities, that uses a combination of computer vision, decision intelligence, set of langchain agents on top of pre-trained LLM with NLP-based voice feedback to interact with athlete during workouts.
 
 AI coaches are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AI Coaches can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AI Coaches are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
 
