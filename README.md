@@ -4,10 +4,7 @@ label: Actiquest
 ---
 ### Meet Actiq - gamified training app for athletes powered by AI Coaches
 [!embed](https://www.youtube.com/watch?v=US8sqMuAXac)
-[!link](https://actiq.xyz)
 We're Actiq - gamified training app for athletes who spends $160-300/month to group trainings or remote coaching. Actiq provides adaptable AI coaches on top of Actiq app superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback (compare it to weekly calls with human coaches). 
-
-
 
 Unlike the competition with remote fitness coaches aggregators like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco, our gamified training app revolutionizes athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and constantly learning LLM for only $20/month.
 
@@ -140,6 +137,7 @@ Please, subsribe to our blog: https://blog.actiq.ai
 
 ### Getting started with ACTIQ app
 !!!success Important
+0. [Actiq app user flow, as app is in development](https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551 "Miro").
 1. Let’s take the first step with the app downloading
 2. Get the ACTIQ app to your device
 3. Fill in sign-up form to officially become our member
@@ -150,7 +148,6 @@ Please, subsribe to our blog: https://blog.actiq.ai
 8. Setup your profile and personalize your AI Coach.
 9. Get a training plan.
 10. Go live with gamified workouts
-11. [Actiq app user flow](https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551 "Miro").
 !!!
 
 * [AI Coaches](getting-started/ai_coaches.md)
@@ -162,7 +159,7 @@ Please, subsribe to our blog: https://blog.actiq.ai
 ---
 
 ### Tokenomics
-500M fixed cap $ACTI incentive token. Link to existing schedule is here: https://docs.google.com/spreadsheets/d/1UaUlkrXyJwnd3dj_CXIZhbwY6bLoVs-rxpT-bG3SVVs
+500M fixed cap $ACTI incentive token. Please get to know [Token schedule]: [Actiq app user flow, as app is in development](https://docs.google.com/spreadsheets/d/1UaUlkrXyJwnd3dj_CXIZhbwY6bLoVs-rxpT-bG3SVVs) "Token Schedule").
 TGE event scheduled in a middle of Q1 2024 (early February).
 * [$ACTI token](tokenomics/actitoken.md)
 * [Roadmap](getting-started/roadmap.md)
