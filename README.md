@@ -83,22 +83,22 @@ AI powered anti-cheat technology will be employed to ensure that only genuine fi
 ## Vision & Mission
 
 ### Vision
-Innovate better health & lifestyle technology for billions of people by using latest AI developments. Cutting the cost of Human Coaches, changing the training path with 24x7 available personalized AI Coaches and gamified rewards. Democratizing the way to be athletic to everyone.
+Innovate better health & lifestyle technology for billions of people by using latest AI developments. Cutting the cost of Human Coaches, changing the training path with 24x7 available personalized AI Coaches and gamified rewards. Democratizing the way to be athletic to everyone. 
 
 ### Mission
-We will build up an activity-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises such as Cycle, Run, Walk, Workout, Swim, Dance and more to come. 
+We create new approach for gamified training for all athletes in the world. We revolutionize athletic training with AI coaches and highly personalized multi-sport approach. We will build up an activity-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises in play and athletic sports. 
 
 ---
 
 ## Product Release
-Actiq app beta is set to launch in Q2 2023. Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q4 of 2023 to stay informed and register your interest.
+Actiq app beta is set to launch in Q1 2024. Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q4 of 2023 to stay informed and register your interest.
 
 We plan to run AI managed DAO and unique incentivizing algorithm for athletes while athletes will train AI to get monetary incentives. 
 
 First phase: AI coaching engine training, starts in Q4 2023
-Second phase: live workouts with AI coach aka Running_Man, starts in Q1 2024.
+Second phase: Live workouts with AI coaches in tennis and athletic sports (running), starts in Q1 2024.
 
-Follow the link and fill the form: https://actiq.xyz/earlybird.html#Step%201 
+Follow the link and fill the form: https://actiq.xyz/earlybird.html
 
 ---
 
@@ -107,14 +107,21 @@ A portion of Actiquest profits will be fixed to purchase carbon neutral credits 
 
 ---
 
+## Competitors table
+One-pager researh of Actiquest competitors.
+You can read it here: https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU/edit#gid=0 
+
+
+---
+
 ## Founding Team
-* **Michael Aprossine** - CEO 
-* **Phil Khomenok** - COO 
-* **Mich Keer** - AI Teamlead
+* **Michael Aprossine** - CEO. Thriathlon Fan. 
+* **Phil Khomenok** - COO
+* **Ankit Sahu** - CFO Experienced Tennis Player.
+* **Mich Keer** - CTO
 * **Sergey Koskov** - Product Market Fit. Athlete.
 * **Iskander Khakimov** - FullStack, Front-End. Athlete.
 * **Vit Znak** - FullStack, Back-End. Athlete.
-* **Anton Zuev** - Mobile app dev (Kotlin, Swift)
 * **+3 people** (Data scientists/testing)
 
 ---
@@ -125,6 +132,7 @@ Our team focuses first and foremost on innovation and quality. We value creative
 **Actiq** focuses on long-term growth. Our goal is continuous innovation that will inspire people to take better care of their health in new and exciting ways. We will update our prizes, form partnerships with leading brands in the fitness and tech industry, and release products that stretch far beyond being simply another application. Our platform integrates it with the up and coming space in blockchain.
 
 Whether you are a athlete with a long term goal, Actiq is the platform for you.
+Please, subsribe to our blog: https://blog.actiq.ai
 
 ---
 
@@ -140,6 +148,7 @@ Whether you are a athlete with a long term goal, Actiq is the platform for you.
 8. Setup your profile and personalize your AI Coach.
 9. Get a training plan.
 10. Go live with gamified workouts
+11. Actiq app user flow https://miro.com/jointheteam/
 !!!
 
 * [AI Coaches](getting-started/ai_coaches.md)
@@ -151,13 +160,15 @@ Whether you are a athlete with a long term goal, Actiq is the platform for you.
 ---
 
 ### Tokenomics
-500M fixed cap $ACTI incentive token.
+500M fixed cap $ACTI incentive token. Link to existing schedule is here: https://docs.google.com/spreadsheets/d/1UaUlkrXyJwnd3dj_CXIZhbwY6bLoVs-rxpT-bG3SVVs
+TGE event scheduled in a middle of Q1 2024 (early February).
 * [$ACTI token](tokenomics/actitoken.md)
 * [Roadmap](getting-started/roadmap.md)
 
 ---
 
 ### About
+Link to pitchdeck: https://actiq.xyz/docs/Actiqnew.pdf 
 * [Privacy](about/privacy.md)
 * [Community](about/community.md)
 * [Contacts](about/contacts.md) 
