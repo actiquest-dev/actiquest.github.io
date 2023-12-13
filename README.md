@@ -148,7 +148,7 @@ Please, subsribe to our blog: https://blog.actiq.ai
 8. Setup your profile and personalize your AI Coach.
 9. Get a training plan.
 10. Go live with gamified workouts
-11. Actiq app user flow https://miro.com/jointheteam/
+11. Actiq app user flow https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551
 !!!
 
 * [AI Coaches](getting-started/ai_coaches.md)
