@@ -107,8 +107,7 @@ A portion of Actiquest profits will be fixed to purchase carbon neutral credits 
 ---
 
 ## Competitors table
-One-pager researh of Actiquest competitors.
-You can read it here: https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU/edit#gid=0 
+One-pager researh of [Actiquest competitors] (https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU "Competitors")
 
 
 ---
@@ -159,7 +158,7 @@ Please, subsribe to our blog: https://blog.actiq.ai
 ---
 
 ### Tokenomics
-500M fixed cap $ACTI incentive token. Please get to know [Token schedule]: [Actiq app user flow, as app is in development](https://docs.google.com/spreadsheets/d/1UaUlkrXyJwnd3dj_CXIZhbwY6bLoVs-rxpT-bG3SVVs) "Token Schedule").
+500M fixed cap $ACTI incentive token. Please get to know [Token schedule]: (https://docs.google.com/spreadsheets/d/1UaUlkrXyJwnd3dj_CXIZhbwY6bLoVs-rxpT-bG3SVVs "Token Schedule").
 TGE event scheduled in a middle of Q1 2024 (early February).
 * [$ACTI token](tokenomics/actitoken.md)
 * [Roadmap](getting-started/roadmap.md)
