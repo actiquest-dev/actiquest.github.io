@@ -107,7 +107,7 @@ A portion of Actiquest profits will be fixed to purchase carbon neutral credits 
 ---
 
 ## Competitors table
-One-pager researh of [Actiquest competitors] (https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU "Competitors")
+One-pager researh of [Actiquest competitors] (https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU "Competitors").
 
 
 ---
