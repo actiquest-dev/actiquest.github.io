@@ -5,13 +5,34 @@ label: Actiquest
 ### Meet Actiq - gamified training app for athletes powered by AI Coaches
 [!embed](https://www.youtube.com/watch?v=US8sqMuAXac)
 
-We're Actiq (Actiquest Inc.) - gamified training app for athletes who spends $160-300/month to group trainings or remote coaching. Actiq provides adaptable AI coaches on top of Actiq app superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback (compare it to weekly calls with human coaches). Unlike the competition with remote fitness coaches aggregators like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco, our gamified training app revolutionizes athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and constantly learning LLM for only $20/month.
+We're Actiq - gamified training app for athletes who spends $160-300/month to group trainings or remote coaching. Actiq provides adaptable AI coaches on top of Actiq app superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback (compare it to weekly calls with human coaches). 
+
+
+
+Unlike the competition with remote fitness coaches aggregators like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco, our gamified training app revolutionizes athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and constantly learning LLM for only $20/month.
 
 ---
 
 ## Fundamentals
 
-Actiq provides you chances to work out on a daily basis either in single or world challenge mode with AI coaches. We also record your training results and convert completed training blocks into valuable rewards.
+In an era where the intersection of technology and sports is creating new frontiers, Actiquest Lab is set to launch a groundbreaking app that redefines athletic coaching.
+
+Demand in sports is significantly growing. Human Sport Coaches are constantly over demanding and limited by design. Actiquest AI technologies will disrupt sport coaching, unlock it for masses and democratizes access to it.
+
+Actiquest Lab is developing multimodal AI for autonomous and constantly learned AI sport coaches (human digital twins) based on a combination of deep learning, decision making, computer vision and generative AI enabled with natural language processing (NLP). The technology allows human coaches to digitize the training process and create AI-twin coaches using mobile app to train athletes remotely. Athletes can hear the AI coach's live recommendations, respond to him during training, make adjustments to the plan, receive rewards based on the results of completing training blocks, and much more. Supported sports: tennis, golf, power training, running, cycling, swimming, yoga, remedial gymnastics, etc. 
+
+The Actiq main functionalities include comprehensive athlete coaching across several sports and tracking athletes during workouts, play sessions, and socialized competitions. All activities within the app are gamified and incentivized, creating a motivating and engaging training environment.
+
+Actiq collects more complex health data from users. Actiq provides much more adjustability to our ML models via quality feedback from athletes. Actiq develops new fast AI learning algorithms. We create a comprehensive solution to help athletes prepare for endurance events by combining LLM and AI/ML Computer Vision tools. 
+
+Actiq app also records your training results and convert completed training blocks into valuable rewards. You can earn $ACTI token through your performance exercises, hold it or exchange coins for store purchases, physical products, digital collectibles, event tickets, organize real sport events and holder ranking to access features. 
+
+Actiq promotes an active lifestyle for its users. You can either hold the tokens to use in-app or cash out for profit. The more you practice, the more rewards you get; that is the motivation that pushes us forward to move our bodies so as to gain beneficial health improvement and control.
+
+---
+
+## Understanding AI Coaches
+AI coaches - artificial intelligence entities, that uses a combination of computer vision, decision intelligence, set of langchain agents on top of pre-trained LLM with NLP-based voice feedback to interact with athlete during workouts.
 
 AI coaches are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AI Coaches can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AI Coaches are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
 
@@ -23,17 +44,6 @@ In-App AI Coaches:
 - Constantly adjusts training plan to rise the goals;
 - Monitors endurance, tempo, threshold, V02Max and anaerobic parameters;
 - Manages monetary rewards after training completion.
-
-Actiq collects more complex health data from users. Actiq provides much more adjustability to our ML models via quality feedback from athletes. Actiq develop new fast AI learning algo's. Using synergy of LLM and AI/ML tools, we create a comprehensive solution to help athletes prepare for endurance events. 
-
-Earn $ACTI token through your performance exercises, hold it or exchange coins for store purchases, physical products, digital collectibles, event tickets, organize real sport events and holder ranking to access features.
-
-Actiq promotes an active lifestyle for its users. You can either hold the tokens to use in-app or cash out for profit. The more you practice, the more rewards you get; that is the motivation that pushes us forward to move our bodies so as to gain beneficial health improvement and control.
-
----
-
-## Understanding AI Coaches
-AI coaches - artificial intelligence entities, that uses a combination of deep learning, decision intelligence, set of langchain agents on top of pre-trained LLM with NLP-based voice feedback to create highly adaptive training plans.
 
 AI will soon outperform Human Coaches and here is why:
 
