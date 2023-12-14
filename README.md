@@ -130,7 +130,7 @@ Our team focuses first and foremost on innovation and quality. We value creative
 **Actiq** focuses on long-term growth. Our goal is continuous innovation that will inspire people to take better care of their health in new and exciting ways. We will update our prizes, form partnerships with leading brands in the fitness and tech industry, and release products that stretch far beyond being simply another application. Our platform integrates it with the up and coming space in blockchain.
 
 Whether you are a athlete with a long term goal, Actiq is the platform for you.
-Please, subsribe to our [{AI Journey} Blog]: (https://blog.actiq.ai "Blog").
+Please, subsribe to our [Actiquest {AI Journey} Blog](https://blog.actiq.ai "Blog").
 
 ---
 
