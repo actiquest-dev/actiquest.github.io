@@ -3,7 +3,7 @@ output: .retype
 url: docs.actiq.xyz
 branding:
   title: Actiquest
-  label: Whitepaper
+  label: Lightpaper
   #logo: /static/light-logo.svg
   #logoDark /static/dark-logo.svg
   #logoAlign: right
