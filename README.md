@@ -114,11 +114,11 @@ One-pager researh of [Actiquest competitors](https://docs.google.com/spreadsheet
 
 ## Founding Team
 * **Michael Aprossine** - CEO. Thriathlon Fan. 
-* **Phil Khomenok** - COO
-* **Ankit Sahu** - CFO Experienced Tennis Player.
+* **Phil Khomenok** - COO, Experienced Swimmer
+* **Ankit Sahu** - CFO, Experienced Tennis Player.
 * **Mich Keer** - CTO
 * **Sergey Koskov** - Product Market Fit. Athlete.
-* **Iskander Khakimov** - FullStack, Front-End. Athlete.
+* **Iskander Khakimov** - FullStack, Front-End. Triathlete.
 * **Vit Znak** - FullStack, Back-End. Athlete.
 * **+3 people** (Data scientists/testing)
 
