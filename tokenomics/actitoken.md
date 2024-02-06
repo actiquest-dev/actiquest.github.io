@@ -51,7 +51,7 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 
 **Token Metrics**
 
-- [Token Metrics](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Metrics")
+- [Token Metrics](https://docs.google.com/spreadsheets/d/1S8hAbWMAtGXQprKvNoLxoWh77zdW88e9N-9wLEliWiE/edit#gid=242255297 "Token Metrics")
 - [Loyalty Incentives](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Loyalty Incentives") 
 
 ### TGE Roadmap 
