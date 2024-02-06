@@ -51,9 +51,8 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 
 **Token Metrics**
 
-- [Token Metrics](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Metrics") 
-
-- [Loyalty Incentives](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Loyalty Incentives") 
+- Token Metrics [Token Metrics](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Metrics")
+- Loyalty Incentives [Loyalty Incentives](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Loyalty Incentives") 
 
 ###TGE roadmap
 **Private r.1: $0.01-$0.025, price depends on investment check amount (TBA)**
@@ -79,10 +78,10 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 - Exchanges: Sushi=>Gate=>Bybit
 
 **Token Distribution**
-[Token Distribution](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Token Distribution")
+- Token Distribution [Token Distribution](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Token Distribution")
 
 **Token Release Schedule**
-[Token Release Schedule](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Token Release Schedule")
+- Token Release Schedule [Token Release Schedule](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Token Release Schedule")
 
 
 
