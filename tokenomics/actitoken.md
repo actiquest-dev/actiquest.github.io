@@ -41,7 +41,7 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 
 **Token development roadmap**
 
-[TDR Link](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Development Roadmap") 
+- [TDR Link](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Development Roadmap") 
 
 **Revenue Streams**
 - B2B Sales (AI models for Sport Coaching). 25% of gross profit will be transferred to buyback the tokens;
@@ -51,9 +51,9 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 
 **Token Metrics**
 
-[Token Metrics](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Metrics") 
+- [Token Metrics](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Metrics") 
 
-[Loyalty Incentives](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Loyalty Incentives") 
+- [Loyalty Incentives](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Loyalty Incentives") 
 
 ###TGE roadmap
 **Private r.1: $0.01-$0.025, price depends on investment check amount (TBA)**
