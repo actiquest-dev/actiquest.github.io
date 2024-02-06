@@ -40,6 +40,7 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 - Project Valuation: $20M
 
 **Token development roadmap**
+
 [TDR Link](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Development Roadmap") 
 
 **Revenue Streams**
@@ -49,7 +50,9 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 - $ACTI Commissions (phygital goods marketplace).
 
 **Token Metrics**
+
 [Token Metrics](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Metrics") 
+
 [Loyalty Incentives](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Loyalty Incentives") 
 
 ###TGE roadmap
