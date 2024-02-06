@@ -158,14 +158,13 @@ Please, subscribe to our [Actiquest AI Journey Blog](https://blog.actiq.ai "Blog
 ---
 
 ### Tokenomics
-500M fixed cap $ACTI incentive token. Please get to know [Token schedule](https://docs.google.com/spreadsheets/d/1UaUlkrXyJwnd3dj_CXIZhbwY6bLoVs-rxpT-bG3SVVs "Token Schedule").TGE event scheduled in a middle of Q1 2024 (early February).
+500M fixed cap $ACTI incentive token.TGE event scheduled in a middle of Q1 2024 (early February).
 * [$ACTI token](tokenomics/actitoken.md)
-* [Roadmap](getting-started/roadmap.md)
 
 ---
 
 ### About
-[Pitchdeck Link](https://actiq.xyz/docs/Actiqnew.pdf "Pitchdeck")
+[Pitchdeck Link](https://actiq.xyz/docs/Actiqnew240124.pdf "Pitchdeck")
 * [Privacy](about/privacy.md)
 * [Community](about/community.md)
 * [Contacts](about/contacts.md) 
