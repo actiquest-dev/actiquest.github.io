@@ -20,12 +20,12 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 - Keeps athlete motivated to reach your goal with rewarded daily workouts;
 - Allows to fight off the registration bones of participation in "big" competitions by winning Actiq competitions and maintaining your position in the leaderboard. For example, participation in ironman costs $200. Holding a position in the Actiq leaderboard for several days allows an athlete to earn $500+!;
 
-###What is ACTI utility tokens? Why Actiq launches them?
+### What is ACTI utility tokens? Why Actiq launches them?
 
 Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as essential part of AI by AI (Athletes Incentives by Artificial Intelligence) program, where athletes can take a part in new AI models training, get rewards from AI managed sport coaching, workouts and competitions.
 
 **What is a utility of $ACTI tokens?**
-Athletes can use $ACTI in several ways:
+**Athletes can use $ACTI in several ways**
 - Redeem tokens for app subscription
 - Redeem for in-app purchases
 - Redeem for discount vouchers of Actiq Sport partners (Event providers, apparel brands, travel and many more).
