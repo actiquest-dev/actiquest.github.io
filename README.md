@@ -2,7 +2,7 @@
 icon: home
 label: Actiquest
 ---
-### Meet Actiq - gamified training app for athletes powered by AI Coaches
+### Meet Actiq - gamified training app for athletes powered by AI Sport Coaches
 [!embed](https://www.youtube.com/watch?v=US8sqMuAXac)
 We're Actiq - gamified training app for athletes who spends $160-300/month to group trainings or remote coaching. Actiq provides adaptable AI coaches on top of Actiq app superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback (compare it to weekly calls with human coaches). 
 
