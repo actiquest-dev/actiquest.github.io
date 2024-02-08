@@ -5,7 +5,7 @@ label: Contacts
 
 # Сontacts
 
-## Equity investment Vehicle
+## Equity Investment Vehicle
 
 **Actiquest Inc.**
 - HQ: 548 Market St., 53 453, San Francisco, California 94104-5401, United States
