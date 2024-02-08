@@ -140,13 +140,15 @@ Please, subscribe to our [Actiquest AI Journey Blog](https://blog.actiq.ai "Blog
 1. Let’s take the first step with the app downloading
 2. Get the ACTIQ app to your device
 3. Fill in sign-up form to officially become our member
-4. When you download the app to your devices such as a phone, or laptop, you can create an account by using your email. Once it has been installed, an authentication code is sent to you shortly via your email.
+4. When you download the app to your devices such as a phone, or laptop, you can create an account by using your email. Once it has been installed, an authentication code is sent to you shortly via your email
 5. Create a brand-new in-app web3 wallet account
 6. Connect your Strava Account
 7. Connect your Garmin Account
-8. Setup your profile and personalize your AI Coach.
-9. Get a training plan.
+8. Setup your profile and personalize your AI Coach
+9. Get a personalized training plan
 10. Go live with gamified workouts
+11. Get rewards from AI
+12. Claim your rewards at AI by AI web3 dashboard
 !!!
 
 * [AI Coaches](getting-started/ai_coaches.md)
@@ -165,7 +167,6 @@ Please, subscribe to our [Actiquest AI Journey Blog](https://blog.actiq.ai "Blog
 
 ### About
 [Pitchdeck Link](https://actiq.xyz/docs/Actiqnew240124.pdf "Pitchdeck")
-* [Privacy](about/privacy.md)
 * [Community](about/community.md)
 * [Contacts](about/contacts.md) 
 
