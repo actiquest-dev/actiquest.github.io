@@ -1,4 +1,4 @@
 ---
-icon: mail
+icon: location
 label: Contacts
 ---
