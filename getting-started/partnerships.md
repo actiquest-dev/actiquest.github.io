@@ -1,4 +1,4 @@
 ---
-icon: rocket
+icon: code-of-conduct
 label: Actiquest Partnerships
 ---
