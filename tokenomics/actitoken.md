@@ -69,7 +69,7 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 
 **Private r.1: $0.01-$0.025, price depends on investment check amount (TBA)**
 - Vesting terms: 10% at TGE, 6 months cliff,  then 10% every 3rd month + 10% bonus from liquidity allocation;
-- Private r.1 Date: 30.01.2024-02.02.2024
+- Private r.1 Date: 05.02.2024-12.02.2024
 - Private r.1 Raise: min $200,000 max $500,000
 - Participants: SAFT Investors & KOL’s
 
