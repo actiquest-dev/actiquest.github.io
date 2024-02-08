@@ -10,7 +10,7 @@ label: Community
 **Facebook**
 - https://facebook.com/actiquest
 
-**Telegram channelk**
+**Telegram channel**
 - https://t.me/actiqapp
 
 **LinkedIn**
