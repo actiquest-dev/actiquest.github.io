@@ -1,4 +1,4 @@
 ---
-icon: rocket
+icon: trophy
 label: AI Sport Coaches
 ---
