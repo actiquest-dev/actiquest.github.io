@@ -20,18 +20,31 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 - Keeps athlete motivated to reach your goal with rewarded daily workouts;
 - Allows to fight off the registration bones of participation in "big" competitions by winning Actiq competitions and maintaining your position in the leaderboard. For example, participation in ironman costs $200. Holding a position in the Actiq leaderboard for several days allows an athlete to earn $500+!;
 
-**$ACTI utility purposes**
-- Redeem the cost of Actiq app subscription and in-app purchases;
-- Reedem the cost of vouchers for phygital goods from sport brands and partners;
-- Vote in DAO (TBA);
-- Staking (TBA);
+###What is ACTI utility tokens? Why Actiq launches them?
 
+Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as essential part of AI by AI (Athletes Incentives by Artificial Intelligence) program, where athletes can take a part in new AI models training, get rewards from AI managed sport coaching, workouts and competitions.
+
+**What is a utility of $ACTI tokens?**
+Athletes can use $ACTI in several ways:
+- Redeem tokens for app subscription
+- Redeem for in-app purchases
+- Redeem for discount vouchers of Actiq Sport partners (Event providers, apparel brands, travel and many more).
+- Put $ACTI to staking program for profit
+- Vote with $ACTI stake in Actiq AI Sport DAO (TBA)
+  
 **Poncinomics-free**
 - Zero dependence app economy from new users flow;
 - Creates strong demand support for $ACTI as a utility, both on-chain and off-chain use cases;
 - Reduces negative factors' value (such as FUD, market manipulations, and abnormal price volatility);
 - Creates a phygital connection of brand-backed game assets with the physical sports economy ecosystem (sportswear brands, gyms, equipment producers, own private label, etc.);
 - Drives web3 adoption with a mass sport-addicted audience.
+
+**$ACTI tokenomics aspects to stop token inflation and price dump**
+- Fixed 500M HardCap. No new tokens will be issued anymore
+- 50% of $ACTI belongs to AI by AI program allocation. Tokens from this allocation are locked and releasing in small amounts using deflationary algorithm.
+- Each time athlete will redeem $ACTI for goods and services mentioned above, it will be burned by $ACTI smart contract function. So, total quantity of tokens in free circulation will be dumped by this function.
+- Not more 10% of $ACTI tokens may be in free circulation in a lifetime. 
+- Actiq will use up to 25% of its profits to buyback the $ACTI tokens to cover the pricing dumps.
 
 **$ACTI Basic Metrics**
 - Ticker: $ACTI
@@ -50,7 +63,6 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 - $ACTI Commissions (phygital goods marketplace).
 
 **Token Metrics**
-
 - [Token Metrics](https://docs.google.com/spreadsheets/d/1S8hAbWMAtGXQprKvNoLxoWh77zdW88e9N-9wLEliWiE/edit#gid=242255297 "Token Metrics")
 - [Loyalty Incentives](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Loyalty Incentives") 
 
