@@ -1,4 +1,4 @@
 ---
-icon: comment-discussion
+icon: mail
 label: Contacts
 ---
