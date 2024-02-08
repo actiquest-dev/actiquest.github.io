@@ -1,5 +1,6 @@
 ---
-order: 100
+icon: briefcase
+label: Tokenomics
 ---
 # Tokenomics
 
