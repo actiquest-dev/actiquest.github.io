@@ -9,9 +9,6 @@ Actiquest is developing technology for autonomous and constantly learned AI spor
 
 Athletes can hear the AI coach's live recommendations, respond to him during training, make adjustments to the plan, receive tokenized rewards based on the results of completing training blocks, and much more. Supported sports: tennis, golf, power training, running, cycling, swimming, yoga, remedial gymnastics, etc. 
 
-### Incentives
-In order to motivate and incentivize athletes to perform workouts regularly, Actiq create $ACTI utility token under AI by AI (Athletes incentivization by Artificial Intelligence) reward program.
-
 ### Actiq's training program is goal-based, not mechanical exercise routines
 - It helps not to sabotage training and stay in a good mood, because participating in Actiq gamified trainings and quests is fun;
 - Allows to focus only on the workouts you need to win competitions;
@@ -53,7 +50,7 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 
 **Token development roadmap**
 
-- [TDR Link](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Development Roadmap") 
+- [Token Development Roadmap Link](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Development Roadmap") 
 
 **Revenue Streams**
 - B2B Sales (AI models for Sport Coaching). 25% of gross profit will be transferred to buyback the tokens;
