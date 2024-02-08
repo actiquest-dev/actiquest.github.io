@@ -17,22 +17,21 @@ Athletes can hear the AI coach's live recommendations, respond to him during tra
 - Keeps athlete motivated to reach your goal with rewarded daily workouts;
 - Allows to fight off the registration bones of participation in "big" competitions by winning Actiq competitions and maintaining your position in the leaderboard. For example, participation in ironman costs $200. Holding a position in the Actiq leaderboard for several days allows an athlete to earn $500+!;
 
-### What is ACTI utility tokens? Why Actiq launches them?
+### What are ACTI utility tokens? Why has Actiq launched them?
 
 Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as essential part of AI by AI (Athletes Incentives by Artificial Intelligence) program, where athletes can take a part in new AI models training, get rewards from AI managed sport coaching, workouts and competitions.
 
 **Athletes can use $ACTI in several ways**
-- Redeem tokens for app subscription
-- Redeem for in-app purchases
-- Redeem for discount vouchers of Actiq Sport partners (Event providers, apparel brands, travel and many more).
+- Redeem $ACTI tokens for app subscription
+- Redeem $ACTI tokens for in-app purchases
+- Redeem $ACTI tokens for discount vouchers of Actiq Sport partners (endurance event providers, sport apparel brands, travel, telecom services and many more).
 - Put $ACTI to staking program for profit
 - Vote with $ACTI stake in Actiq AI Sport DAO (TBA)
   
 **Poncinomics-free**
 - Zero dependence app economy from new users flow;
 - Creates strong demand support for $ACTI as a utility, both on-chain and off-chain use cases;
-- Reduces negative factors' value (such as FUD, market manipulations, and abnormal price volatility);
-- Creates a phygital connection of brand-backed game assets with the physical sports economy ecosystem (sportswear brands, gyms, equipment producers, own private label, etc.);
+- Reduces negative factors value (such as FUD, market manipulations, and abnormal price volatility);
 - Drives web3 adoption with a mass sport-addicted audience.
 
 **$ACTI tokenomics aspects to stop token inflation and price dump**
