@@ -24,7 +24,6 @@ In order to motivate and incentivize athletes to perform workouts regularly, Act
 
 Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as essential part of AI by AI (Athletes Incentives by Artificial Intelligence) program, where athletes can take a part in new AI models training, get rewards from AI managed sport coaching, workouts and competitions.
 
-**What is a utility of $ACTI tokens?**
 **Athletes can use $ACTI in several ways**
 - Redeem tokens for app subscription
 - Redeem for in-app purchases
