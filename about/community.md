@@ -1,4 +1,4 @@
 ---
-icon: icon-accessibility
+icon: person
 label: Community
 ---
