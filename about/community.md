@@ -15,3 +15,7 @@ label: Community
 
 **LinkedIn**
 -  https://www.linkedin.com/company/actiquest
+
+
+**Blog**
+-  https://blog.actiq.ai
