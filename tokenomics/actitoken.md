@@ -87,6 +87,7 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 
 **Exchanges Listing: Price: $0.2**
 - Listing Date: 10.03.24
+- Initial Market Cap: 50% from collected funds at TGE
 - Exchanges: Sushi=>Gate=>Bybit
 
 **Token Distribution**
