@@ -34,4 +34,4 @@ links:
   icon: mark-github
 
 footer:
-  copyright: "&copy; Copyright {{ year }}.[Actiquest Inc.](https://actiq.xyz) All rights reserved."
+  copyright: "&copy; Copyright {{ year }}, [Actiquest Inc.](https://actiq.xyz) All rights reserved."
