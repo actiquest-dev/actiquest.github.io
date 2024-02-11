@@ -4,9 +4,9 @@ url: docs.actiq.xyz
 branding:
   title: Actiquest
   label: Litepaper
-  #logo: /static/light-logo.svg
-  #logoDark /static/dark-logo.svg
-  #logoAlign: right
+  logo: /static/light-logo.svg
+  logoDark /static/dark-logo.svg
+  logoAlign: right
   #colors:
     #label:
       #text: "#ffffff"
