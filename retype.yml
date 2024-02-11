@@ -13,7 +13,7 @@ branding:
       #background: "#ff0000"
       #editor:
   #enabled: true
-favicon: .gitbook/assets/favicon.ico
+favicon: /static/favicon.png
  #integrations:
   #plausible:
  #domain: actiq.xyz
