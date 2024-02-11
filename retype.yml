@@ -6,7 +6,7 @@ branding:
   label: Litepaper
   logo: /static/light-logo.svg
   logoDark /static/dark-logo.svg
-  logoAlign: right
+  logoAlign: left
   #colors:
     #label:
       #text: "#ffffff"
