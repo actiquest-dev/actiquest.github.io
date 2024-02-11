@@ -2,7 +2,7 @@ input: .
 output: .retype
 url: docs.actiq.xyz
 branding:
-  title: Actiquest
+  title: Actiq
   label: Litepaper
   logo: /static/light-logo.svg
   logoDark: /static/dark-logo.svg
