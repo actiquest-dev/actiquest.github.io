@@ -9,7 +9,7 @@ label: Contacts
 
 **Actiquest Inc.**
 - HQ: 548 Market St., 53 453, San Francisco, California 94104-5401, United States
-- Phone: +1 (302) 7215872
+- Phone: +1 (628) 502-7268
 - Email: hi@actiq.xyz
 
 
