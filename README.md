@@ -113,7 +113,7 @@ One-pager researh of [Actiquest competitors](https://docs.google.com/spreadsheet
 ---
 
 ## Founding Team
-* **Michael Aprossine** - CEO. Thriathlon Fan. 
+* [**Michael Aprossine**](https://linkedin.com) - CEO. Thriathlon Fan. 
 * **Phil Khomenok** - COO, Experienced Swimmer
 * **Ankit Sahu** - CFO, Experienced Tennis Player.
 * **Mich Keer** - CTO
