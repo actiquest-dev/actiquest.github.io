@@ -21,4 +21,4 @@ label: Community
 
 [!ref icon="../assets/images/Linkedin.svg" text="Linkedin"](https://www.linkedin.com/company/actiquest)
 
-[!ref icon="../assets/images/Medium.svg" text="Actiquest Blog"](https//blog.actiq.ai)
+[!ref icon="../assets/images/Medium.svg" text="Actiquest Blog"](https://blog.actiq.ai)
