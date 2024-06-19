@@ -5,27 +5,20 @@ label: Community
 # Social Media Links
 
 
-[!ref icon="../assets/images/Twitternew.svg" text="Twitter"](https://twitter.com/actiqapp "Twitter")
+[!ref icon="../assets/images/Twitternew.svg" text="Twitter"](https://twitter.com/actiqapp)
 
-<img style="float" align="left" width="5%" src="/assets/images/Discord.svg"> [**Discord**](https://discord.gg/TQDtydDPgH "**Discord**")
+[!ref icon="../assets/images/Discord.svg" text="Discord"](https://discord.gg/TQDtydDPgH)
 
-**ⓕ Facebook**
-- https://facebook.com/actiquest
+[!ref icon="../assets/images/Facebook.svg" text="Discord"](https://facebook.com/actiquest)
 
-**➣ Telegram channel**
-- https://t.me/actiqapp
+[!ref icon="../assets/images/Telegram.svg" text="Telegram Channel"](https://t.me/actiqapp)
 
-**➤ Telegram group**
-- https://t.me/actiq_en
+[!ref icon="../assets/images/Telegram.svg" text="Telegram Group"](https://t.me/actiq_en)
 
-**₿ Investors Lounge**
-- https://t.me/actiq_ir
+[!ref icon="../assets/images/Telegram.svg" text="Investors Lounge"](https://t.me/actiq_ir)
 
-**LinkedIn**
--  https://www.linkedin.com/company/actiquest
+[!ref icon="../assets/images/Telegram.svg" text="Actiq Wallet"](https://t.me/actiquest_bot/Actiqapp)
 
-**Blog**
--  https://blog.actiq.ai
+[!ref icon="../assets/images/Linkedin.svg" text="Linkedin"](https://www.linkedin.com/company/actiquest)
 
-**Actiq Wallet**
--  https://t.me/actiquest_bot/Actiqapp
+[!ref icon="../assets/images/Wordpress.svg" text="Actiquest Blog"](https//blog.actiq.ai)
