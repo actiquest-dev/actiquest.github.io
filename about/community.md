@@ -5,7 +5,7 @@ label: Community
 # Social Media Links
 
 
-[!ref Twitter icon=":rocket:"](https://twitter.com/actiqapp "**Twitter**")
+[!ref icon=":rocket:" **Twitter**](https://twitter.com/actiqapp "**Twitter**")
 
 <img style="float" align="left" width="5%" src="/assets/images/Discord.svg"> [**Discord**](https://discord.gg/TQDtydDPgH "**Discord**")
 
