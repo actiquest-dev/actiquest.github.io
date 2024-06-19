@@ -5,7 +5,7 @@ label: Community
 # Social Media Links
 
 
-* [**𝕏 Twitter**](https://twitter.com/actiqapp "**Twitter**")
+* ![Twitter](/assets/images/twitter.svg)[**Twitter**](https://twitter.com/actiqapp "**Twitter**")
 
 **👾 Discord**
 - https://discord.gg/TQDtydDPgH
