@@ -7,8 +7,7 @@ label: Community
 
 <img style="float: left;" src="/assets/images/twitternew.svg" width="50" height="50"> [**Twitter**](https://twitter.com/actiqapp "**Twitter**")
 
-**👾 Discord**
-- https://discord.gg/TQDtydDPgH
+<img style="float: left;" src="/assets/images/discord.svg" width="50" height="50"> [**Discord**](https://discord.gg/TQDtydDPgH "**Discord**")
 
 **ⓕ Facebook**
 - https://facebook.com/actiquest
