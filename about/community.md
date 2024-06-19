@@ -5,9 +5,9 @@ label: Community
 # Social Media Links
 
 
-<p align="left"><img style="float: left;" src="/assets/images/twitternew.svg" width="100%"></p> [**Twitter**](https://twitter.com/actiqapp "**Twitter**")
+<img align="left" width="50" height="50" src="/assets/images/twitternew.svg"> [**Twitter**](https://twitter.com/actiqapp "**Twitter**")
 
-<img style="float: left;" src="/assets/images/discord.svg" width="100%"> [**Discord**](https://discord.gg/TQDtydDPgH "**Discord**")
+<mg align="left" width="50" height="50" src="/assets/images/discord.svg"> [**Discord**](https://discord.gg/TQDtydDPgH "**Discord**")
 
 **ⓕ Facebook**
 - https://facebook.com/actiquest
