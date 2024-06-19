@@ -9,7 +9,7 @@ label: Community
 
 [!ref icon="../assets/images/Discord.svg" text="Discord"](https://discord.gg/TQDtydDPgH)
 
-[!ref icon="../assets/images/Facebook.svg" text="Discord"](https://facebook.com/actiquest)
+[!ref icon="../assets/images/Facebook.svg" text="Facebook"](https://facebook.com/actiquest)
 
 [!ref icon="../assets/images/Telegram.svg" text="Telegram Channel"](https://t.me/actiqapp)
 
@@ -21,4 +21,4 @@ label: Community
 
 [!ref icon="../assets/images/Linkedin.svg" text="Linkedin"](https://www.linkedin.com/company/actiquest)
 
-[!ref icon="../assets/images/Wordpress.svg" text="Actiquest Blog"](https//blog.actiq.ai)
+[!ref icon="../assets/images/Medium.svg" text="Actiquest Blog"](https//blog.actiq.ai)
