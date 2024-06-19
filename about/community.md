@@ -4,22 +4,22 @@ label: Community
 ---
 # Social Media Links
 
-**Twitter**
-- https://twitter.com/actiqapp
 
-**Discord**
+* [**𝕏 Twitter**](https://twitter.com/actiqapp "**Twitter**")
+
+**👾 Discord**
 - https://discord.gg/TQDtydDPgH
 
-**Facebook**
+**ⓕ Facebook**
 - https://facebook.com/actiquest
 
-**Telegram channel**
+**➣ Telegram channel**
 - https://t.me/actiqapp
 
-**Telegram group**
+**➤ Telegram group**
 - https://t.me/actiq_en
 
-**Investors Lounge**
+**₿ Investors Lounge**
 - https://t.me/actiq_ir
 
 **LinkedIn**
