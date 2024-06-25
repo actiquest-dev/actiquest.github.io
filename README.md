@@ -113,11 +113,11 @@ One-pager researh of [Actiquest competitors](https://docs.google.com/spreadsheet
 ---
 
 ## Founding Team
-* [**Michael Aprossine**](https://linkedin.com/in/miguel2020 "**Michael Aprossine**") - CEO. Thriathlon Fan. Serial Entrepreneur from early 2000;
+* [**Michael Aprossine**](https://linkedin.com/in/miguel2020 "Michael Aprossine") - CEO. Thriathlon Fan. Serial Entrepreneur from early 2000;
 20+ years in IT consulting and product development in IoT, SaaS, Mobility и Blockchain;Cofounder of Apla.network (Luxembourg) Cofounder of DrivePoint (sold to Hyundai Mobility in 2019).
-* [**Phil Khomenok**](https://linkedin.com/in/gsarskyes "**Phil Khomenok**") - COO, Experienced Swimmer.Builds online sales of cable products and rolled metal from scratch for $10M per year. In 2017, he was a co-founder of the Grown Capital investment fund with attracted capital of $5M. In 2020-2023, in the role of CBDO, he helped Advcash in developing new products and entering new geographies.
-* [**Ankit Sahu**](https://linkedin.com/in/ansahu "**Ankit Sahu**") - CFO, Experienced Tennis Player. 20+ years in wealth management across private banking and funds, including: Prosperity Group, Bank Of America, Merrill Lynch and UBS. 
-* [**Mich Keer**](https://www.linkedin.com/in/mikhail-kiriukhin-97389957/ "**Mich Keer**") - CTO, AI Applications Architect. Expert in language models and computer vision. Participant in joint projects with Lux Innovation, EIC and others.
+* [**Phil Khomenok**](https://linkedin.com/in/gsarskyes "Phil Khomenok") - COO, Experienced Swimmer.Builds online sales of cable products and rolled metal from scratch for $10M per year. In 2017, he was a co-founder of the Grown Capital investment fund with attracted capital of $5M. In 2020-2023, in the role of CBDO, he helped Advcash in developing new products and entering new geographies.
+* [**Ankit Sahu**](https://linkedin.com/in/ansahu "Ankit Sahu") - CFO, Experienced Tennis Player. 20+ years in wealth management across private banking and funds, including: Prosperity Group, Bank Of America, Merrill Lynch and UBS. 
+* [**Mich Keer**](https://www.linkedin.com/in/mikhail-kiriukhin-97389957/ "Mich Keer") - CTO, AI Applications Architect. Expert in language models and computer vision. Participant in joint projects with Lux Innovation, EIC and others.
 * **Sergey Koskov** - Product Manager. Athlete.
 * **Iskander Khakimov** - FullStack, Front-End. Triathlete.
 * **Vit Znak** - FullStack, Back-End. Athlete.
@@ -126,11 +126,11 @@ One-pager researh of [Actiquest competitors](https://docs.google.com/spreadsheet
 ---
 
 ## Advisors
-* [**Dr. Ty Vachon**](https://www.linkedin.com/in/tyvachon/ "**Dr. Ty Vachon**") - PhD, radiologist and expert in computer vision in sports medicine. Sport: triathlon. 
-* [**Dr. Alex Konviser**](https://www.linkedin.com/in/dr-alex-konviser/ "**Alex Konviser**") - Curator of sports programs in Switzerland and the European Union. Sports: biathlon (ex-champion).
-* [**Paul Pelosi Jr.**](https://www.linkedin.com/in/paulpelosi/ "**Paul Pelosi**") - independent advisor, Sports: running, swimming
-* [**Broderick Higby**](https://www.linkedin.com/in/broderickhigby/ "**Broderick Higby**") - Senior Engineer at Apple, Creator of Golf AI. Sport: Golf.
-* [**Aaron Eisman**](https://www.linkedin.com/in/aaroneisman503/ "**Aaron Eisman**") - founder of Eisman Digital Agency,  working previously for Turner Sports, Bleacher Report and the NFL. Passionate about growing accounts & increasing engagement on marketing in sports.
+* [**Dr. Ty Vachon**](https://www.linkedin.com/in/tyvachon/ "Dr. Ty Vachon") - PhD, radiologist and expert in computer vision in sports medicine. Sport: triathlon. 
+* [**Dr. Alex Konviser**](https://www.linkedin.com/in/dr-alex-konviser/ "Alex Konviser") - Curator of sports programs in Switzerland and the European Union. Sports: biathlon (ex-champion).
+* [**Paul Pelosi Jr.**](https://www.linkedin.com/in/paulpelosi/ "Paul Pelosi") - independent advisor, Sports: running, swimming
+* [**Broderick Higby**](https://www.linkedin.com/in/broderickhigby/ "Broderick Higby") - Senior Engineer at Apple, Creator of Golf AI. Sport: Golf.
+* [**Aaron Eisman**](https://www.linkedin.com/in/aaroneisman503/ "Aaron Eisman") - founder of Eisman Digital Agency,  working previously for Turner Sports, Bleacher Report and the NFL. Passionate about growing accounts & increasing engagement on marketing in sports.
 
 ---
 
