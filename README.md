@@ -125,6 +125,15 @@ One-pager researh of [Actiquest competitors](https://docs.google.com/spreadsheet
 
 ---
 
+## Advisors
+* [**Dr. Ty Vachon**](https://www.linkedin.com/in/tyvachon/ "**Dr. Ty Vachon**") - PhD, radiologist and expert in computer vision in sports medicine. Sport: triathlon. 
+* [**Dr. Alex Konviser**](https://www.linkedin.com/in/dr-alex-konviser/ "**Alex Konviser**") - Curator of sports programs in Switzerland and the European Union. Sports: biathlon (ex-champion).
+* [**Paul Pelosi Jr.**](https://www.linkedin.com/in/paulpelosi/ "**Paul Pelosi**") - independent advisor, Sports: running, swimming
+* [**Broderick Higby**](https://www.linkedin.com/in/broderickhigby/ "**Broderick Higby**") - Senior Engineer at Apple, Creator of Golf AI. Sport: Golf.
+* [**Aaron Eisman**](https://www.linkedin.com/in/aaroneisman503/ "**Aaron Eisman**") - founder of Eisman Digital Agency,  working previously for Turner Sports, Bleacher Report and the NFL. Passionate about growing accounts & increasing engagement on marketing in sports.
+
+---
+
 ## Innovation & Quality
 Our team focuses first and foremost on innovation and quality. We value creative, unconventional thinking and bold ideas that can be harnessed into a product that is useful in day to day life. We take utmost care in the quality of service and products that we provide, making sure everything is thoroughly tested and processed through our design system, bringing you the best possible product and service we can offer.
 
