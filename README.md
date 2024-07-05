@@ -176,7 +176,7 @@ Please, subscribe to our [Actiquest AI Journey Blog](https://blog.actiq.ai "Blog
 ---
 
 ### About
-[Pitchdeck Link](https://actiq.xyz/docs/Actiqnew240124.pdf "Pitchdeck")
+[Pitchdeck Link](https://actiq.ai/docs/actiq2024.pdf "Pitchdeck")
 * [Community](about/community.md)
 * [Contacts](about/contacts.md) 
 
