@@ -48,10 +48,6 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 - Token Supply: 500M
 - Project Valuation: $20M
 
-**Token development roadmap**
-
-- [Token Development Roadmap Link](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit?usp=sharing "Token Development Roadmap") 
-
 **Revenue Streams**
 - B2B Sales (AI models for Sport Coaching). 25% of gross profit will be transferred to buyback the tokens;
 - B2С Sales (Actiq App Subscription and in-app purchases). 25% of gross profit will be transferred to buyback the tokens; 
@@ -59,39 +55,36 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 - $ACTI Commissions (phygital goods marketplace).
 
 **Token Metrics**
-- [Token Metrics](https://docs.google.com/spreadsheets/d/1S8hAbWMAtGXQprKvNoLxoWh77zdW88e9N-9wLEliWiE/edit#gid=242255297 "Token Metrics")
-- [Loyalty Incentives](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Loyalty Incentives") 
+- [Tokenomics & Vesting](https://t.ly/at-yI "Tokenomics & Vesting")
 
 ### TGE Roadmap 
 
 **Private r.1: $0.01-$0.025, price depends on investment check amount (TBA)**
-- Vesting terms: 10% at TGE, 6 months cliff,  then 10% every 3rd month + 10% bonus from liquidity allocation;
-- Private r.1 Date: 05.02.2024-12.02.2024
-- Private r.1 Raise: min $200,000 max $500,000
+- Vesting terms: 20% unlock at TGE, 5 months cliff, then vesting 18 months with linear unlock
+- Private r.1 Date: 05.07.2024-15.07.2024
+- Private r.1 Raise: $250,000
 - Participants: SAFT Investors & KOL’s
 
 **Private r.2 Price: $0.05**
-- Vesting terms: 10% at TGE, 6 months cliff,  then 10% every 3rd month
-- Private r.2 Date: 13.02.2024
-- Private r.2 Raise: $250,000
-- Launchpads: Spores ($150,000), Kommunitas ($100,000)
+- Vesting terms: 10% at TGE, 6 months cliff, then vesting 18 months with linear unlock
+- Private r.2 Date: 15.07.2024
+- Private r.2 Raise: $500,000
+- Launchpads: Spores, Kommunitas, private groups
 
 **Public round: Price: $0.1**
 - Vesting terms: 10% at TGE, 6 months cliff,  then 10% every 3rd month
-- Public Price: Date:  26.02.2024
-- Public Price: Raise:  $900,000
-- Launchpads: ChainGPT ($300,000), DAOMaker ($600,000)
+- Public Price: Date:  20.07.2024
+- Public Price: Raise:  $1,000,000
+- Launchpads: DAOMaker ($600,000) + 5 other's
 
-**Exchanges Listing: Price: $0.2**
-- Listing Date: 10.03.24
+**Exchanges Listing: Price: $0.1**
+- Listing Date: 01.08.24
 - Initial Market Cap: 50% from collected funds at TGE
-- Exchanges: Sushi=>Gate=>Bybit
+- Exchanges: Mexc=>Gate=>Bybit
 
 **Token Distribution**
-- [Token Distribution](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Token Distribution")
+- [Tokenomics & Vesting](https://t.ly/at-yI "Tokenomics & Vesting")
 
-**Token Release Schedule**
-- [Token Release Schedule](https://docs.google.com/spreadsheets/d/1NXFqrQCVYKylyNwHHv0B6VHdFztgz_QxuhIcvVkSCn4/edit#gid=2082490343 "Token Release Schedule")
 
 
 
