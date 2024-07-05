@@ -170,7 +170,7 @@ Please, subscribe to our [Actiquest AI Journey Blog](https://blog.actiq.ai "Blog
 ---
 
 ### Tokenomics
-500M fixed cap $ACTI incentive token. TGE event scheduled in Q1 of 2024 (end of February).
+500M fixed cap $ACTI incentive token. TGE event scheduled in Q3 of 2024 (end of July 2024).
 * [$ACTI token](tokenomics/actitoken.md)
 
 ---
