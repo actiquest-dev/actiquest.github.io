@@ -35,16 +35,21 @@ AIGC's are artificial intelligence entities, that uses a combination of computer
 
 ACTIcat is a friendly, adaptable and engaging AI Sport Coach, especially for younger athletes and users. The playful AIGC character design can make the learning and training process feel more enjoyable, less intimidating and superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback.
 
-
 ![](https://actiq.ai/images/acticat.svg)
 
 Why cat? Human-like robots can sometimes fall into the "uncanny valley," where they appear almost human but have subtle differences that make them unsettling. A virtual cat character avoids this issue entirely by embracing a clearly non-human appearance that is universally appealing and non-threatening. Many people have a natural affinity towards animals, particularly cats. This can create a sense of companionship and motivation, making the coaching experience more pleasant.
+
+![](https://actiq.ai/images/acticat-boxing.svg)
 
 ACTIcat can be given a distinctive personality that can be tailored to suit various age groups, sports and training styles, making the AI more adaptable to different user needs.
 
 Athletes may develop an emotional connection with a cute and friendly AIGC, enhancing their commitment to the training program. This connection can lead to increased motivation and adherence to the coaching regimen.
 
+![](https://actiq.ai/images/acticat-tennis.svg)
+
 Unlike the competition with remote fitness coaches aggregators like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco, our gamified training app revolutionizes omni-sport athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and sport-domain pre-trained LLM.
+
+![](https://actiq.ai/images/acticat-golf.svg)
 
 AIGC are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AIGC's can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AIGC's are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
 
