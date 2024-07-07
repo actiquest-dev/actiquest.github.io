@@ -2,11 +2,9 @@
 icon: home
 label: Actiquest
 ---
-### Meet Actiq - gamified training app for athletes powered by AI Sport Coaches
+### Actiq - training app for athletes powered by AI Gamified Coaches
 [!embed](https://www.youtube.com/watch?v=US8sqMuAXac)
-We're Actiq - gamified training app for athletes who spends $160-300/month to group trainings or remote coaching. Actiq provides adaptable AI coaches on top of Actiq app superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback (compare it to weekly calls with human coaches). 
-
-Unlike the competition with remote fitness coaches aggregators like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco, our gamified training app revolutionizes athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and constantly learning LLM for only $20/month.
+We're Actiq - app for sport lovers allows to train various sports (tennis, paddle, cricket, baseball, etc.) with AI Gamified Coaches (AIGC). AIGC can see and hear you - how you train, interact with you, coach you (create personalised training plans, meal plans, set goals, and provide other related care) and reward you with monetary incentives ($ACTI) to motivate you with daily workouts and guide you to sport perfection!
 
 ---
 
@@ -16,11 +14,11 @@ In an era where the intersection of technology and sports is creating new fronti
 
 Demand in sports is significantly growing. Human Sport Coaches are constantly over demanding and limited by design. Actiquest AI technologies will disrupt sport coaching, unlock it for masses and democratizes access to it.
 
-Actiquest Lab is developing multimodal AI for autonomous and constantly learned AI sport coaches (human digital twins) based on a combination of deep learning, decision making, computer vision and generative AI enabled with natural language processing (NLP). The technology allows human coaches to digitize the training process and create AI-twin coaches using mobile app to train athletes remotely. Athletes can hear the AI coach's live recommendations, respond to him during training, make adjustments to the plan, receive rewards based on the results of completing training blocks, and much more. Supported sports: tennis, golf, power training, running, cycling, swimming, yoga, remedial gymnastics, etc. 
+Actiquest Lab is developing multimodal AI for autonomous and constantly learned AI sport coaches created on the edge of Computer Vision (CV) and Generative AI (LLM's) domains. Instead of Video LLM's approach of zero shot scene recognition and reasoning about what happened next on video input we're combine sport-domain-based real-time CV labeling and customized Distillation and Retrieval of Online Corrections (DROC) tools to respond effectively with corrections that generally represents the effective sport coaching process. Actiq AI architecture allows to enrich CV datasets without streaming video to central server just using smartphone computing power to collect metadata for labeling. Thus, data augmentation from CV CNN like Yolo with generative LLM works very fast. Auto-labeling of Computer Vision outputs yields 60fps human pose estimation, multiple object tracking and AI decision making at high speed. More about this you can read in our [blog article](https://blog.actiq.ai/actiq-ai-coaches-how-it-works "Blog")
 
-The main concept of Actiquest AI multimodality is to use seamless data augmentation from CNN like Yolo with generative LLM like GPT to not wait for outperforming results in zero shot scene recognition by general vision enabled LLM's like Google Gemini. Smart-autolabeling of Computer Vision outputs yields 60fps human pose estimation, multiple object tracking and AI decision making at high speed. More about this you can read in our [blog article](https://blog.actiq.ai/actiq-ai-coaches-how-it-works "Blog")
+The technology allows human coaches to digitize the training process and co-pilot the sport coaching using mobile app and train athletes remotely. Athletes can hear the AI coach's live recommendations, respond to him during training, make adjustments to the plan, receive rewards based on the results of completing training blocks, and much more. Supported sports: tennis, golf, power training, running, cycling, swimming, yoga, remedial gymnastics, etc. 
 
-The Actiq main functionalities include comprehensive athlete omni-coaching path across several sports and tracking athletes during workouts, play sessions, and socialized competitions. All activities within the app are gamified and incentivized, creating a motivating and engaging training environment.
+The Actiq main functionalities include comprehensive athlete coaching path across several sports and tracking activities during workouts, play sessions and socialized competitions. All activities within the app are gamified and incentivized, creating a motivating and engaging training environment.
 
 Actiq app collects more complex health data from users. Actiq app provides much more adjustability to our ML models via quality feedback from athletes. We create a comprehensive solution to help athletes prepare for endurance events by combining LLM and AI/ML Computer Vision tools. 
 
@@ -30,12 +28,27 @@ Actiq promotes an active lifestyle for its users. You can either hold the tokens
 
 ---
 
-## Understanding AI Coaches
-AI coaches are artificial intelligence entities, that uses a combination of computer vision, decision intelligence, set of langchain agents on top of pre-trained LLM with NLP-based voice feedback to interact with athlete during workouts.
+## Understanding AIGC's
+AIGC's are artificial intelligence entities, that uses a combination of computer vision, decision intelligence, set of langchain agents on top of pre-trained LLM with NLP-based voice feedback to interact with athlete during workouts.
 
-AI coaches are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AI Coaches can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AI Coaches are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
+**Meet ACTIcat, first AI-generated gamified sport coach in your pocket**
 
-In-App AI Coaches:
+ACTIcat is a friendly, adaptable and engaging AI Sport Coach, especially for younger athletes and users. The playful AIGC character design can make the learning and training process feel more enjoyable, less intimidating and superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback.
+
+
+![](https://actiq.ai/images/acticat.png)
+
+Why cat? Human-like robots can sometimes fall into the "uncanny valley," where they appear almost human but have subtle differences that make them unsettling. A virtual cat character avoids this issue entirely by embracing a clearly non-human appearance that is universally appealing and non-threatening. Many people have a natural affinity towards animals, particularly cats. This can create a sense of companionship and motivation, making the coaching experience more pleasant.
+
+ACTIcat can be given a distinctive personality that can be tailored to suit various age groups, sports and training styles, making the AI more adaptable to different user needs.
+
+Athletes may develop an emotional connection with a cute and friendly AIGC, enhancing their commitment to the training program. This connection can lead to increased motivation and adherence to the coaching regimen.
+
+Unlike the competition with remote fitness coaches aggregators like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco, our gamified training app revolutionizes omni-sport athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and sport-domain pre-trained LLM.
+
+AIGC are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AIGC's can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AIGC's are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
+
+AIGC's
 - Are adjustable virtual characters;
 - Predicts and monitors athlete's performance;
 - Analyzes physical/mental state;
@@ -44,7 +57,7 @@ In-App AI Coaches:
 - Monitors endurance, tempo, threshold, V02Max and anaerobic parameters;
 - Manages monetary rewards after training completion.
 
-AI will soon outperform Human Coaches and here is why:
+AIGC's will soon outperform Human Coaches and here is why:
 
 **Data Analysis**. Human Coach is lack in data analysis: One of AI's strong suits is the ability to analyze large sets of data in record time. Unlike human coaches, AI can assess, process, and produce insights from complex health data, augmenting the decision-making process.
 
@@ -68,7 +81,7 @@ AI will soon outperform Human Coaches and here is why:
 **Actiq** generally aims to incentivize fitness and sport, helping to reduce obesity and sedentariness, and giving users an opportunity to reinforce dopaminergic reward system by using tokenized incentives precisely controlled by AI for improving their perfomance. Indeed, researchers recently found that improvements in cardiorespiratory fitness lead to a significant reduction in all-cause and disease-specific mortality, with an individual’s maximum oxygen uptake (VO2max) being strongly correlated with their life expectancy. 
 
 +++ Gamified Rewards as a part of AI by AI (Athlete incentives by AI) program
-Actiq generates **rewards** in the form of blockchain-based digital tokens ($ACTI). Users are rewarded by AI Sport Coach in native utility tokens for completing sport-related training blocks — across most playing and athletic sports (tennis, golf, boxing, padel, running, biking etc.).Exact reward table for each sport will be announced later. As part of the AI by AI program, before the product will be released, a unique incentivizing algorithm will be created while athletes will train AI to earn monetary incentives. That will affect a final part of customer development campaign which is starts in Q2 of 2023 within 200+ thriathletes to help us to validate product and market fit. Also we bridge data from all professional sports applications into one place and give you rewards for tracking user activities. Strava, Zwift, Peloton, RGT and other platforms users can connect their profiles to the Actiquest platform and get $ACTI initial airdrop based on the last 3 month data of imported sport activities.
+Actiq generates **rewards** in the form of blockchain-based digital tokens ($ACTI). Users are rewarded by AI Sport Coach in native utility tokens for completing sport-related training blocks — across most playing and athletic sports (tennis, golf, boxing, padel, running, biking etc.). Exact reward table for each sport will be announced later. As part of the AI by AI program, before the product will be released, a unique incentivizing algorithm will be created while athletes will train AI to earn monetary incentives. That will affect a final part of customer development campaign which is starts in Q4 of 2023 within 200+ thriathletes to help us to validate product and market fit. Also we bridge data from all professional sports applications into one place and give you rewards for tracking user activities. Strava, Zwift, Peloton, RGT and other platforms users can connect their profiles to the Actiquest platform and get $ACTI initial airdrop based on the last 3 month data of imported sport activities.
 
 +++ Health data
 Actiq tracks activity and completion of training blocks using the any health ecosystem such as Strava, Garmin, Apple Health, Google Fit and Suunto. This is assessed to see by selected AI Coach (we create different coaching characters which are taking in a sense age, style or gender of athlete) if it qualifies for rewards.
@@ -85,7 +98,7 @@ AI powered anti-cheat technology will be employed to ensure that only genuine fi
 Innovate better health & lifestyle technology for billions of people by using latest AI developments. Cutting the cost of Human Coaches, changing the training path with 24x7 available personalized AI Coaches and gamified rewards. Democratizing the way to be athletic to everyone. 
 
 ### Mission
-We create new approach for gamified training for all athletes in the world. We revolutionize athletic training with AI coaches and highly personalized multi-sport approach. We will build up an activity-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises in play and athletic sports. 
+We create new approach for gamified training for all athletes in the world. We revolutionize athletic training with AI coaches and highly personalized multi-sport approach. We will build up an sport-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises in play and athletic sports. 
 
 ---
 
@@ -94,7 +107,7 @@ Actiq app beta is set to launch in Q4 2024. Register to take a part in AI by AI 
 
 We plan to run AI managed DAO and unique incentivizing algorithm for athletes while athletes will train AI to get monetary incentives. 
 
-First phase: AI coaching engine training, starts in Q4 2023
+First phase: AIGC engine development and training, starts in Q1 2024
 Second phase: Live workouts with AI coaches in tennis and athletic sports (running), starts in Q1 2025.
 
 Follow the link and fill the form: https://actiq.xyz/earlybird.html
@@ -114,7 +127,7 @@ One-pager researh of [Actiquest competitors](https://docs.google.com/spreadsheet
 
 ## Founding Team
 * [**Michael Aprossine**](https://linkedin.com/in/miguel2020 "Michael Aprossine") - CEO. Thriathlon Fan. Serial Entrepreneur from early 2000;
-20+ years in IT consulting and product development in IoT, SaaS, Mobility и Blockchain;Cofounder of Apla.network (Luxembourg) Cofounder of DrivePoint (sold to Hyundai Mobility in 2019).
+20+ years in IT consulting and product development in IoT, SaaS, Mobility и Blockchain; Cofounder of Apla.network (Luxembourg) Cofounder of DrivePoint (sold to Hyundai Mobility in 2019).
 * [**Phil Khomenok**](https://linkedin.com/in/gsarskyes "Phil Khomenok") - COO, Experienced Swimmer.Builds online sales of cable products and rolled metal from scratch for $10M per year. In 2017, he was a co-founder of the Grown Capital investment fund with attracted capital of $5M. In 2020-2023, in the role of CBDO, he helped Advcash in developing new products and entering new geographies.
 * [**Ankit Sahu**](https://linkedin.com/in/ansahu "Ankit Sahu") - CFO, Experienced Tennis Player. 20+ years in wealth management across private banking and funds, including: Prosperity Group, Bank Of America, Merrill Lynch and UBS. 
 * [**Mich Keer**](https://www.linkedin.com/in/mikhail-kiriukhin-97389957/ "Mich Keer") - CTO, AI Applications Architect. Expert in language models and computer vision. Participant in joint projects with Lux Innovation, EIC and others.
