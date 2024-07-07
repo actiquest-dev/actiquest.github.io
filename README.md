@@ -36,7 +36,7 @@ AIGC's are artificial intelligence entities, that uses a combination of computer
 ACTIcat is a friendly, adaptable and engaging AI Sport Coach, especially for younger athletes and users. The playful AIGC character design can make the learning and training process feel more enjoyable, less intimidating and superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback.
 
 
-![](https://actiq.ai/images/acticat.png)
+![](https://actiq.ai/images/acticat.svg)
 
 Why cat? Human-like robots can sometimes fall into the "uncanny valley," where they appear almost human but have subtle differences that make them unsettling. A virtual cat character avoids this issue entirely by embracing a clearly non-human appearance that is universally appealing and non-threatening. Many people have a natural affinity towards animals, particularly cats. This can create a sense of companionship and motivation, making the coaching experience more pleasant.
 
