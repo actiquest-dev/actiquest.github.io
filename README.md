@@ -51,7 +51,7 @@ Unlike the competition with remote fitness coaches aggregators like Fittr or ML-
 
 ![](https://actiq.ai/images/acticat-golf.svg)
 
-AIGC are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AIGC's can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AIGC's are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
+AIGC's are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AIGC's can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AIGC's are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
 
 AIGC's
 - Are adjustable virtual characters;
