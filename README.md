@@ -110,6 +110,8 @@ We create new approach for gamified training for all athletes in the world. We r
 ## Product Release
 Actiq app beta is set to launch in Q4 2024. Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q3 of 2024 to stay informed and register your interest.
 
+![](https://actiq.ai/images/actiqapp.svg)
+
 We plan to run AI managed DAO and unique incentivizing algorithm for athletes while athletes will train AI to get monetary incentives. 
 
 First phase: AIGC engine development and training, starts in Q1 2024
