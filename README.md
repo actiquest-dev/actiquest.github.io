@@ -108,8 +108,7 @@ We create new approach for gamified training for all athletes in the world. We r
 ---
 
 ## Product Release
-Actiq app beta is set to launch in Q4 2024. Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q3 of 2024 to stay informed and register your interest.
-
+Actiq Wallet (Telegram mini-app) was launched in Juny 2024. Mini-app short-term target is to organize and motivate Actiq app early adopters. Actiq app beta is set to launch in Q4 2024. 
 ![](https://actiq.ai/images/actiqapp.svg)
 
 We plan to run AI managed DAO and unique incentivizing algorithm for athletes while athletes will train AI to get monetary incentives. 
@@ -117,6 +116,7 @@ We plan to run AI managed DAO and unique incentivizing algorithm for athletes wh
 First phase: AIGC engine development and training, starts in Q1 2024
 Second phase: Live workouts with AI coaches in tennis and athletic sports (running), starts in Q1 2025.
 
+Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q3 of 2024 to stay informed and register your interest.
 Follow the link and fill the form: https://actiq.xyz/earlybird.html
 
 ---
