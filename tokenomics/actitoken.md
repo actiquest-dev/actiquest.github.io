@@ -61,24 +61,24 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 
 **Private r.1: $0.01-$0.025, price depends on investment check amount (TBA)**
 - Vesting terms: 20% unlock at TGE, 5 months cliff, then vesting 18 months with linear unlock
-- Private r.1 Date: 05.07.2024-15.07.2024
+- Private r.1 Date: 15.07.2024-05.08.2024
 - Private r.1 Raise: $250,000
 - Participants: SAFT Investors & KOL’s
 
 **Private r.2 Price: $0.05**
 - Vesting terms: 10% at TGE, 6 months cliff, then vesting 18 months with linear unlock
-- Private r.2 Date: 15.07.2024
+- Private r.2 Date: 10.08.2024
 - Private r.2 Raise: $500,000
 - Launchpads: Spores, Kommunitas, private groups
 
 **Public round: Price: $0.1**
 - Vesting terms: 10% at TGE, 6 months cliff,  then 10% every 3rd month
-- Public Price: Date:  20.07.2024
+- Public Price: Date:  20.08.2024
 - Public Price: Raise:  $1,000,000
 - Launchpads: DAOMaker ($600,000) + 5 other's
 
 **Exchanges Listing: Price: $0.1**
-- Listing Date: 01.08.24
+- Listing Date: 01.09.24
 - Initial Market Cap: 50% from collected funds at TGE
 - Exchanges: Mexc=>Gate=>Bybit
 
