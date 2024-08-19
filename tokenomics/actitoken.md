@@ -19,7 +19,7 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 - Redeem $ACTI tokens for app subscription
 - Redeem $ACTI tokens for in-app purchases
 - Redeem $ACTI tokens for discount vouchers of Actiq Sport partners (endurance event providers, sport apparel brands, travel, telecom services and many more).
-- Put $ACTI to staking program for profit
+- Put $ACTI to staking program for profit via third party providers.
 - Vote with $ACTI stake in Actiq AI Sport DAO (TBA)
   
 **Poncinomics-free**
@@ -33,7 +33,6 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 - 50% of $ACTI belongs to AI by AI program allocation. Tokens from this allocation are locked and releasing in small amounts using deflationary algorithm.
 - Each time athlete will redeem $ACTI for goods and services mentioned above, it will be burned by $ACTI smart contract function. So, total quantity of tokens in free circulation will be dumped by this function.
 - Not more 10% of $ACTI tokens may be in free circulation in a lifetime. 
-- Actiq will use up to 25% of its profits to buyback the $ACTI tokens to cover the pricing dumps.
 
 **$ACTI Basic Metrics**
 - Ticker: $ACTI
