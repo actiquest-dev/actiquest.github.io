@@ -6,6 +6,12 @@ label: Actiquest
 [!embed](https://www.youtube.com/watch?v=US8sqMuAXac)
 We're Actiq - app for sport lovers allows to train various sports (tennis, paddle, cricket, baseball, etc.) with AI Gamified Coaches (AIGC). AIGC can see and hear you - how you train, interact with you, coach you (create personalised training plans, meal plans, set goals, and provide other related care) and reward you with monetary incentives ($ACTI) to motivate you with daily workouts and guide you to sport perfection!
 
+To advertize upcoming product Actiquest team is lauched an Actiq Wallet, telegram mini-app, that allows to earn $ACTI by completing social and sport tasks and prepare Actiquest community for mobile app launch in Q1-2025.
+
+Actiq wallet allows to use Strava app (most popular workout tracker for Athletes) and any wearable fitness tracker connected to it to claim $ACTI tokens to your in Actiq Wallet balance. To do that you need to install Strava, connect wearables to it and claim $ACTI using Strava task card. 
+
+Link to [Actiq Wallet](https://ton.app/wallets/actiq-wallet?id=2045 "Actiq Wallet").
+
 ---
 
 ## Fundamentals
@@ -25,6 +31,14 @@ Actiq app collects more complex health data from users. Actiq app provides much 
 Actiq app also records your training results and convert completed training blocks into valuable rewards. You can earn $ACTI token through your performance exercises, hold it or exchange coins for store purchases, physical products, digital collectibles, event tickets, organize real sport events and holder ranking to access features. 
 
 Actiq promotes an active lifestyle for its users. You can either hold the tokens to use in-app or cash out for profit. The more you practice, the more rewards you get; that is the motivation that pushes us forward to move our bodies so as to gain beneficial health improvement and control.
+
+### Actiq's sport coaching is goal-based, not mechanical exercise routines
+- It helps not to sabotage training and stay in a good mood, because participating in Actiq gamified trainings and quests is fun;
+- Allows to focus only on the workouts you need to win competitions;
+- Helps not to get hung up on volumes by sequentially completing individual quests in Actiq;
+- Increases workout variability;
+- Keeps athlete motivated to reach your goal with rewarded daily workouts;
+- Allows to fight off the registration bones of participation in "big" competitions by winning Actiq competitions and maintaining your position in the leaderboard.
 
 ---
 
@@ -108,12 +122,12 @@ We create new approach for gamified training for all athletes in the world. We r
 ---
 
 ## Product Release
-Actiq Wallet (Telegram mini-app) was launched in Juny 2024. Mini-app short-term target is to organize and motivate Actiq app early adopters. Actiq app beta is set to launch in Q4 2024. 
+Actiq Wallet (Telegram mini-app) was launched in Juny 2024. Mini-app short-term target is to organize and motivate Actiq app early adopters. Actiq app beta is set to launch in Q1 2025. 
 ![](https://actiq.ai/images/actiqapp.svg)
 
-We plan to run AI managed DAO and unique incentivizing algorithm for athletes while athletes will train AI to get monetary incentives. 
+We plan to run AI managed DAO and unique incentivizing algorithm for athletes while athletes will train AI to get monetary incentives.
 
-First phase: AIGC engine development and training, starts in Q1 2024
+First phase: AIGC engine development and training, starts in Q3 2024
 Second phase: Live workouts with AI coaches in tennis and athletic sports (running), starts in Q1 2025.
 
 Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q3 of 2024 to stay informed and register your interest.
