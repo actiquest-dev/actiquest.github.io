@@ -6,17 +6,9 @@ label: Tokenomics
 
 ## Basics
 
-Actiquest is developing technology for autonomous and constantly learned AI sport coaches (human digital twins) based on the latest developments in AI: a combination of deep learning, decision making, computer vision and generative AI enabled with Natural Language Processing. The technology allows human coaches to digitize the training process and create AI-twin coaches using mobile app to train athletes remotely. 
+💫 ACTI Incentive Token (ACTI) is a digital currency designed to reward athletes for their performance and commitment. Developed by Actiquest Lab, the ACTI token integrates cutting-edge AI technology to create a personalized training experience. By leveraging AI Gamified Coaches (AIGC), the platform offers tailored training plans, goal setting, and real-time feedback, encouraging users to achieve their fitness goals. The ACTI token can be earned through performance and used for various in-app purchases, creating a comprehensive ecosystem that motivates and rewards active lifestyles.
 
-Athletes can hear the AI coach's live recommendations, respond to him during training, make adjustments to the plan, receive tokenized rewards based on the results of completing training blocks, and much more. Supported sports: tennis, golf, power training, running, cycling, swimming, yoga, remedial gymnastics, etc. 
-
-### Actiq's training program is goal-based, not mechanical exercise routines
-- It helps not to sabotage training and stay in a good mood, because participating in Actiq gamified trainings and quests is fun;
-- Allows to focus only on the workouts you need to win competitions;
-- Helps not to get hung up on volumes by sequentially completing individual quests in Actiq;
-- Increases workout variability;
-- Keeps athlete motivated to reach your goal with rewarded daily workouts;
-- Allows to fight off the registration bones of participation in "big" competitions by winning Actiq competitions and maintaining your position in the leaderboard. For example, participation in ironman costs $200. Holding a position in the Actiq leaderboard for several days allows an athlete to earn $500+!;
+💎Actiq Wallet is a telegram mini-app allows to earn $ACTI by completing social and sport tasks and prepare Actiquest community for mobile app launch in Q1-2025. Actiq is blockchain agnostic project. $ACTI tokens are launched on TON, ICP, BSC and SOL ecosystems.
 
 ### What are ACTI utility tokens? Why has Actiq launched them?
 
