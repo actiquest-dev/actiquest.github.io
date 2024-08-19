@@ -8,11 +8,12 @@ label: Tokenomics
 
 💫 ACTI Incentive Token (ACTI) is a digital currency designed to reward athletes for their performance and commitment. Developed by Actiquest Lab, the ACTI token integrates cutting-edge AI technology to create a personalized training experience. By leveraging AI Gamified Coaches (AIGC), the platform offers tailored training plans, goal setting, and real-time feedback, encouraging users to achieve their fitness goals. The ACTI token can be earned through performance and used for various in-app purchases, creating a comprehensive ecosystem that motivates and rewards active lifestyles.
 
-💎Actiq Wallet is a telegram mini-app allows to earn $ACTI by completing social and sport tasks and prepare Actiquest community for mobile app launch in Q1-2025. Actiq is blockchain agnostic project. $ACTI tokens are launched on TON, ICP, BSC and SOL ecosystems.
+💎Actiq Wallet is a telegram mini-app allows to earn $ACTI by completing social and sport tasks and prepare Actiquest community for mobile app launch in Q1-2025. 
 
 ### What are ACTI utility tokens? Why has Actiq launched them?
 
-Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as essential part of AI by AI (Athletes Incentives by Artificial Intelligence) program, where athletes can take a part in new AI models training, get rewards from AI managed sport coaching, workouts and competitions.
+Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as essential part of AI by AI (Athletes Incentives by Artificial Intelligence) program, where athletes can take a part in new AI models training, get rewards from AI managed sport coaching, workouts and competitions. Actiq is blockchain agnostic project. $ACTI tokens are launched on TON, ICP, BSC, BASE and SOL ecosystems and would be exchanged via secure bridges (TBA).
+
 
 **Athletes can use $ACTI in several ways**
 - Redeem $ACTI tokens for app subscription
@@ -36,8 +37,8 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 
 **$ACTI Basic Metrics**
 - Ticker: $ACTI
-- Blockchain Network: EVM Compatible/Blockchain Agnostic
-- Token Supply: 500M
+- Blockchain Network: EVM Compatible/Blockchain Agnostic. TON, ICP, BASE, BSC and SOL ecosystems.
+- Token Supply: Fixed, 500M (in total, over several ecosystems)
 - Project Valuation: $20M
 
 **Revenue Streams**
@@ -53,24 +54,24 @@ Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as
 
 **Private r.1: $0.01-$0.025, price depends on investment check amount (TBA)**
 - Vesting terms: 20% unlock at TGE, 5 months cliff, then vesting 18 months with linear unlock
-- Private r.1 Date: 15.07.2024-05.08.2024
+- Private r.1 Date: 15.07.2024-30.08.2024
 - Private r.1 Raise: $250,000
 - Participants: SAFT Investors & KOL’s
 
 **Private r.2 Price: $0.05**
 - Vesting terms: 10% at TGE, 6 months cliff, then vesting 18 months with linear unlock
-- Private r.2 Date: 10.08.2024
+- Private r.2 Date:30.08.2024
 - Private r.2 Raise: $500,000
 - Launchpads: Spores, Kommunitas, private groups
 
 **Public round: Price: $0.1**
 - Vesting terms: 10% at TGE, 6 months cliff,  then 10% every 3rd month
-- Public Price: Date:  20.08.2024
+- Public Price: Date:  10.09.2024
 - Public Price: Raise:  $1,000,000
 - Launchpads: DAOMaker ($600,000) + 5 other's
 
 **Exchanges Listing: Price: $0.1**
-- Listing Date: 01.09.24
+- Listing Date: 15.09.24
 - Initial Market Cap: 50% from collected funds at TGE
 - Exchanges: Mexc=>Gate=>Bybit
 
