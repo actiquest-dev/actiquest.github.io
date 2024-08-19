@@ -16,7 +16,13 @@ Link to [Actiq Wallet](https://ton.app/wallets/actiq-wallet?id=2045 "Actiq Walle
 
 ## Fundamentals
 
-In an era where the intersection of technology and sports is creating new frontiers, Actiquest Lab is set to launch a groundbreaking app that redefines athletic coaching.
+In an era where the intersection of technology and sports is creating new frontiers, Actiquest Lab is set to launch a groundbreaking app that redefines athletic coaching with power of AI and Web3 technologies.
+
+---
+
+## Pitch Deck
+
+Link to [Deck](https://docsend.com/view/zmkduudxr7hdfx6n "Actiq PitchDeck").
 
 ---
 
