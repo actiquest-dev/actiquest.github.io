@@ -154,7 +154,7 @@ Token metrics
 
 - Private (VC) round: $500K, min check $50K, price $0,05 (Cliff 5m, Vesting 18m, TGE unlock 15%)
 
-[**Link to SAFT**](https://docs.google.com/document/d/1DE6JaA7tzphjvPbdHjHOFraa63-rKg1QPaqLeLEyqgU/edit?tab=t.0) 
+[**Link to SAFT**](https://docs.google.com/document/d/1DE6JaA7tzphjvPbdHjHOFraa63-rKg1QPaqLeLEyqgU/edit?tab=t.0)
 
 
 
