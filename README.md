@@ -2,30 +2,66 @@
 icon: home
 label: Actiquest
 ---
-### Actiq - training app for athletes powered by AI Gamified Coaches
+### Actiq - training app for athletes powered by AI and web3 incentives
 [!embed](https://www.youtube.com/watch?v=US8sqMuAXac)
-We're Actiq - app for sport lovers allows to train various sports (tennis, paddle, cricket, baseball, etc.) with AI Gamified Coaches (AIGC). AIGC can see and hear you - how you train, interact with you, coach you (create personalised training plans, meal plans, set goals, and provide other related care) and reward you with monetary incentives ($ACTI) to motivate you with daily workouts and guide you to sport perfection!
+Actiq is a state-of-the-art application for all sports fans, which opens completely new perspectives in mastering various types of sports-tennis, padel, cricket, baseball, etc. The application is powered by the latest developments in Artificial Intelligence Gamified Coach (AIGC) technology and enhanced with web3 based _train2earn_ mechanics.
 
-In order to promote the upcoming product, Actiquest has launched an Actiq Wallet, a telegram mini-app, which allows users to earn $ACTI by completing social and sports tasks, as well as to prepare users for the launch of the Actiquest mobile application in Q1-2025.
+Actiq is able to see and hear the user in training. This means interactive communication with him and training on an individual basis. The app offers:
 
-Actiq Wallet allows to use Strava app (most popular workout tracker for Athletes) and any wearable fitness tracker connected to it to claim $ACTI tokens to your in Actiq Wallet balance. To do that you need to install Strava, connect wearables to it and claim $ACTI using Strava task cards. 
+- Individual training plans
+- Personal nutrition programs
+- Goal setting and tracking
+- Analysis of technology and progress
+
+One of the distinctive features of Actiq is its reward system. They get regular training for $ACTI cryptocurrency, and it serves as additional motivation for everyday training and achieving athletic perfection.
+
+Actiq is your highway to the peaks of sports perfection with the support of artificial intelligence and technologies of a novel motivation system.
+
+Actiq Wallet is a Telegram mini-app developed by Actiquest, and with this, the company wants to actively promote the coming product. Using it, one can gain $ACTI by accomplishing various social and sporting challenges. The intent is also to prepare them for the upcoming Actiq mobile app in 2025.
+
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcLrHzFsZSt3MnrIrsOXnMogq1g7ynkKmVZyIq2a1AAS0W1FeHNgYHxJkSmXVzYI6fkYd4Mrsp2FxoDtGpEpufs0ZSHq9zlv-eQJS_7FhX8ubXZDD_mDn2lMQZy3luyNjXjVwUdaeqi3ShOpbia68Uba4m-?key=joJq3iOE8ODwr8SAkn3nUw)
+
+With Actiq Wallet, you can earn $ACTI tokens from the [Strava app](https://strava.com/) - the most popular social network and training repository among athletes and fitness trackers. This is done by installing Strava, connecting wearable devices to it, and earning $ACTI through Strava task cards in Actiq Wallet. You can also download the mobile app and get a promotion code for free use of Actiq in the Actiq Wallet for the first 6 months.
+
+Average state at 01/10/2024:
+
+- Registered users: 60K
+
+- Whitelisted users: 26K
+
+- MAU 30K
+
+- DAU 10K
 
 Link to [Actiq Wallet](https://ton.app/wallets/actiq-wallet?id=2045 "Actiq Wallet").
 
 ---
 
-## Fundamentals
+## *****Introduction**
 
-In an era where the intersection of technology and sports is creating new frontiers, Actiquest Lab is set to launch a groundbreaking app that redefines athletic coaching with power of AI and Web3 technologies.
+_Yet, at the dawn of the era of robots, on October 11, 2024, Tesla arranged an incredible presentation called "We, Robot" and presented robotaxis there, along with Optimus robots. When Tesla finished its presentation, a stream showed a number of people communicating with robots on tables and in the crowd. However, the robots greeted with their arms, poured drinks, and danced; that is why some guests felt like they were controlled by real people remotely._
 
----
+Yet, not everybody can afford a $30,000+ robot. In most cases, a robot doesn't even need to have a physical body to be able to assist a person in his or her daily routine. It can live in your smartphone and a variety of AR wearable devices and bring no less benefits than Optimus.
 
-## Pitch Deck
+In an era where the intersection of AI technologies, Web3 and sports opens up new horizons,[ Actiquest Lab](https://actiq.ai/) created a revolutionary application that effectively digitizes sports coaching.
 
-Link to [Deck](https://docsend.com/view/zmkduudxr7hdfx6n "Actiq PitchDeck").
+***
 
----
+## **Problem Statement** 
 
+- The demand for sports training is huge and keeps growing. Sports coaches are expensive (in the US, 1 hour of tennis classes may start from $100) and are also limited by their human nature, to train everyone. Coaches are constantly looking for new ways of monetizing their abilities: releasing video lessons and training athletes remotely.
+
+- Increasing demand for personalized training and workouts. The consumers want unique training programs tailored to different personality traits, goals, and lifestyles. Traditional fitness apps offer general program modes that cannot address the individual needs of all users.
+
+- Increased demand for home workouts and sports conducted remotely. Such a trend has been accelerated by the COVID-19 pandemic, when many people continue to choose to exercise at home or outdoors, avoiding crowded gyms.
+
+- Growing interest is taken in sports-derived VR and AR technologies. Immersive training and sports skills training open new opportunities, though high equipment costs and lack of quality content restrain their adoption.
+
+- Low motivation of athletes to master new sports. A person is capable of mastering several sports in order for his body to be physically harmonious. In the digital age, this means he has to download several applications, start synchronizing data, find time to study, and much, much more. But a modern multimodal AI agent will be able to methodologically and organizationally solve this problem completely and even motivate such useful interests using web3 rewards.
+
+- Web3 users are too poorly engaged in a healthy lifestyle due to excessive time spent on the computer/smartphone and engagement in play2earn casual games. At the moment, the lack of projects connected with sports and an active way of life in the Web3 industry plays a significant role here. The first representatives of these projects are STEPN and Agon, which connect the advantages of Web3 technologies with engagement in physical activities.
+
+***
 ## Problems are solving
 - Demand in sports is significantly growing. Human Sport Coaches are constantly over demanding and limited by design
 - Low motivation of athletes to start exploring new sports
@@ -33,232 +69,484 @@ Link to [Deck](https://docsend.com/view/zmkduudxr7hdfx6n "Actiq PitchDeck").
 
 ---
 
-## Possible Solution
-- Multimodal AI for sports (CV + GenAI) that realizes autonomous AI Gamified Sport Coaches and 2earn Web3 incentives for athletes.
-- AI technologies plus Web3 gamification will disrupt sport coaching, unlock it for masses and democratize access to it.
+## **Possible solution**
 
----
+**An innovative solution to democratize sports coaching**
 
-## Technology behind Actiquest
-- Actiquest Lab is developing multimodal AI for autonomous and constantly learned AI sport coaches created on the edge of Computer Vision (CV) and Generative AI (LLM's) domains. Instead of Video LLM's approach of zero shot scene recognition and reasoning about what happened next on video input we're combine sport-domain-based real-time CV labeling and customized Distillation and Retrieval of Online Corrections (DROC) tools to respond effectively with corrections that generally represents the effective sport coaching process. Actiq AI architecture allows to enrich CV datasets without streaming video to central server just using smartphone computing power to collect metadata for labeling. Thus, data augmentation from CV CNN like Yolo with generative LLM works very fast. Auto-labeling of Computer Vision outputs yields 60fps human pose estimation, multiple object tracking and AI decision making at high speed. More about this you can read in our [blog article](https://blog.actiq.ai/actiq-ai-coaches-how-it-works "Blog")
-- The technology allows human coaches to digitize the training process and co-pilot the sport coaching using mobile app and train athletes remotely. Athletes can hear the AI coach's live recommendations, respond to him during training, make adjustments to the plan, receive rewards based on the results of completing training blocks, and much more. Supported sports: tennis, golf, power training, running, cycling, swimming, yoga, remedial gymnastics, etc. 
-- The Actiq main functionalities include comprehensive athlete coaching path across several sports and tracking activities during workouts, play sessions and socialized competitions. All activities within the app are gamified and incentivized, creating a motivating and engaging training environment.
-- Actiq app collects more complex health data from users. Actiq app provides much more adjustability to our ML models via quality feedback from athletes. We create a comprehensive solution to help athletes prepare for endurance events by combining LLM and AI/ML Computer Vision tools. 
-- Actiq app also records your training results and convert completed training blocks into valuable rewards. You can earn $ACTI token through your performance exercises, hold it or exchange coins for store purchases, physical products, digital collectibles, event tickets, organize real sport events and holder ranking to access features.
+This solution will combine cutting-edge AI technologies with the power of Web3 tech stack to introduce the groundbreaking sports training platform, powered by: 
 
----
+Multimodal artificial intelligence for sports:
 
-## Innovation Double Impact
+- Integration of Vision Transformer (ViT) technology to analyze visual information about the athlete's workouts. 
 
-On-chain AI-driven app extended with on-chain incentives economy. New users from the sports industry (both trainers and athletes) will come to crypto space. Competitors are web2 tracking apps without AI tools and rewards (Strava) or 2-earn apps like StepN, which have less impact on sports.
+- Optimize ViT to spend fewer resources for training and processing video data (inference).
 
----
+- Using Actiq Sport Knowledge LLM to create personalized training programs and recommendations.
 
-## Social Impact
+- Implementing D.R.O.C methodology (Distilling and Retrieving Generalizable Knowledge via Language Corrections), which allows Actiq Sport Knowledge LLM to make real-time judgments on the quality of exercise performance and correct the athlete's technique. D.R.O.C instantly detects errors or incorrect movements and gives the user feedback, helping them improve their technique without the need for repeated workout reviews or consultations with a trainer. That will work like a special RAG over Llama.
 
-Actiq is a core sport/health related project based on the latest AI developments, powered with web3. We're working with the largest sport, crypto, AI opinion leaders (from sports, AI and crypto) to deliver our ideas worldwide.
-Actiq promotes an active lifestyle for its users. You can either hold the tokens to use in-app or cash out for profit. The more you practice, the more rewards you get; that is the motivation that pushes us forward to move our bodies so as to gain beneficial health improvement and control. Actiq app records training results and converts completed training blocks into valuable rewards. Athletes can earn $ACTI token through your performance exercises, hold it or exchange coins for store purchases, physical products, digital collectibles, event tickets, organize real sport events and holder ranking to access features.
+Web3 tools for maximizing sport motivation:
 
----
+- Incentivization protocol based on $ACTI, a cross-chain cryptocurrency, specifically designed to reward sports achievements across mass adopted ecosystems like Solana, TON, BNB, SKALE, ICP chains.
 
-## AI sport coaching 
-- Is goal-based, not mechanical exercise routines
-- It helps not to sabotage training and stay in a good mood, because participating in Actiq gamified trainings and quests is fun;
-- Allows to focus only on the workouts you need to win competitions;
-- Helps not to get hung up on volumes by sequentially completing individual quests in Actiq;
-- Increases workout variability;
-- Keeps athlete motivated to reach your goal with rewarded daily workouts;
-- Allows to fight off the registration bones of participation in "big" competitions by winning Actiq competitions and maintaining your position in the leaderboard.
+- Decentralized apps for Actiq web3 ecosystem growth:  
 
----
+1. DAO for managing and decision-making on development of incentivization protocol, $ACTI circulation across several blockchain ecosystems and storage/commercial use of pre-trained models both ViT and Sport Knowledge LLM as a public good owned by the DAO community.
 
-## Understanding AIGC's
-AIGC's are artificial intelligence entities, that uses a combination of computer vision, decision intelligence, set of langchain agents on top of pre-trained LLM with NLP-based voice feedback to interact with athlete during workouts.
+2. Oracles to decentralize AI training data coming from centralized sources and secure AI model ownership by athletes.
 
-**Meet ACTIcat, first AI-generated gamified sport coach in your pocket**
-ACTIcat is a friendly, adaptable and engaging AI Sport Coach, especially for younger athletes and users. The playful AIGC character design can make the learning and training process feel more enjoyable, less intimidating and superior to Human Coaches in realtime data analysis, race day strategy, tailoring and adjusting training plans, and not kidding - personal neutrality, empathy and regular feedback.
+3. Cross-Chain Bridges for free $ACTI circulation between ecosystems, mentioned above. 
+
+Gamification of the sports experience:
+
+- Development of a system of levels, achievements and competitions between users.
+
+- Create virtual challenges and tournaments to increase engagement.
+
+Availability and scalability:
+
+- Providing 24/7 access to personalized training.
+
+- The ability to train anywhere, anytime, using only your smartphone and wearable peripherals (sensors, watches etc.).
+
+Continuous learning and adaptation:
+
+- Using DROC to continuously improve algorithms based on user data
+
+- Regular updates to the knowledge base of AI coaches, taking into account the latest research in the field of sports science.
+
+Social aspect:
+
+- Creating a community of users for sharing experiences and mutual motivation.
+
+- Integrate with existing social platforms to expand your reach.
+
+_The given solution will revolutionize the concept of sports training and make quality training accessible to all. A blend of AI technologies with the engines of Web3 democratizes access not only to professional training but also creates a new paradigm in the sports industry, where technology becomes one of the key factors for achieving physical excellence and a healthy lifestyle_.
+
+***
+
+**The technologies behind Actiquest**
+
+Our team has been developing in the field of computer vision for more than 7 years. Early next year, we are launching the release of Actiq, a sports super-app with multimodal AI under the hood. You can train in several sports disciplines using just one app for all sports: tennis, paddle, baseball, golf, track your games, compete, lead an active lifestyle, and even earn money in the application. Beginners who aren't sure what they want and what sports they like will find it helpful.
+
+We develop special AI technology for sports, combining GenAI with advanced Vision Transformers, machine learning that processes fitness data from various sources, recognizes health problems, and correctly assesses your capabilities, with generative AI reasoning to implement the emotional and motivational component, and to make sure the communication with you is in your native language.
+
+By investigating limitations of the Video LLM approach of recognizing frames of a scene and reasoning over what happened next, we are in a position to combine real-time multi-threaded vision transformers with our custom distillation and online correction (D.R.O.C) tools in the most effective way to respond to corrections. This is generally a very good process for undergoing athletic training.
+
+D.R.O.C stands for _Distilling and Retrieving Generalizable Knowledge_ _via Online Corrections_, which essentially enables AI to make real-time decisions regarding the quality of exercise performance and allows adjustments in technique to be made by the athlete. The D.R.O.C. technology instantly recognizes mistakes or wrong movements and gives users feedback that helps them enhance their technique without the need to review workouts or consult with a coach. As such, this not only makes training more efficient but also safer, reducing the chances of injury while accelerating results.
+
+High-accuracy Vision Transformers operating at 60 frames per second enable the analysis of user movements during training. The principle of operation of transformer models called ViT is fully integrated with language models. They divide an image into small areas and process them by attention mechanisms. That allows for the recognition of more complex movements and postures of athletes more effectively.
+
+Among computer vision systems, the ViT technologies are even more resource-efficient than convolutional neural networks:
+
+- This is beneficial for ViT since it can detect complex sequences of athlete movements; hence, it is helpful in real-time exercise technique improvements, enabling users to provide more correct feedback from an AI coach.
+
+* With ViT, we will be able to recognize even the tiniest details of images for better acknowledgment of fine motor skills and recording deviations from exercise technique. For instance, the slightest deviations in tennis or gymnastics have a negative effect on final results when it comes to competition.
+
+- ViT requires less resource consumption both for training and video processing at the inferencing stage. It would also no longer be necessary to upload a video to the server, and the entire process of interaction between the Athlete and the AI ​​happens in real time. Our AI, in turn, in such a way, can process videos directly on users' devices and provide a reduction in wait time after the completion of exercises before receiving recommendations.
+
+* Also, the user need not worry about sensitive personal data since the video stream is not being transmitted to anywhere; only the anonymized metadata will be transmitted to the Sport Knowledge LLM.
+
+**Double impact of innovation**
+
+Actiq is an AI-powered application with additional web3-based motivational incentive economics added to it. This has never happened before (Sport Knowledge AI that can incentivize athletes). New users in the sports industry are going to come into crypto space, both coaches and sport lovers.
+
+***
+
+**Competitors**
+
+- One Page Study of [Actiquest competitors](https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU).Competitors include Web2 tracking apps without AI and rewards tools (Strava) or apps like StepN, which have a lower impact on sports and wellness.
+
+- Examples: Stepn ([https://Stepn.com](https://stepn.com/) - now Stepn is a division of the Adidas loyalty program), Agon <https://apps.apple.com/us/app/agon-fitness-rewards/id1574023421>, Athletica (<https://athletica.ai/>), Fitbod (<https://fitbod.me/> ), Zing (<https://www.zing.coach/> ), Evolve (<https://www.evolveai.app/> ), Enduco ([https://enduco.app](https://enduco.app/) /)
+
+_The B2B2C sports innovation market is estimated to reach $200B by 2026. We believe that our product integrating AI and web3 will quickly occupy its niche in the Sport-Tech market. Our technologies will be integrated into Meta AR/VR entertainment infrastructure in the near future._
+
+***
+
+## **Social effect**
+
+Actiq is a project related to sports and health, based on the latest developments in the field of artificial intelligence and implemented on web3. We work with the biggest thought leaders in sports, crypto and artificial intelligence to deliver our ideas around the world. Actiq promotes an active lifestyle for its users. 
+
+You can either save your tokens for use in the application or sell them for everyday expenses (the former is always more profitable). The more you practice, the more rewards you get; it is the motivation that pushes us forward to achieve beneficial improvements and control over our health. The Actiq app analyzes your training results and converts completed training blocks into rewards. 
+
+Athletes can earn $ACTI tokens for their exercises, store them or redeem coins for in-store purchases, physical products, digital collectibles, event tickets, organize real sporting events, and earn holder rankings to access features.
+
+***
+
+## **Omni-sports coaching using artificial intelligence**
+
+**Unique benefits of training with Actiq (USP):**
+
+Focused training:
+
+- Coaching with Actiq is focused on developing particular skills and reaching your goals.
+
+- Unlike apps like Stepn, Actiq gives you more than just mechanical exercises of another type but a holistic approach to athletic development.
+
+AI-trainer support:
+
+- Gets rid of training sabotage and helps to keep a positive attitude.
+
+- Gives fun experience along with a positive attitude because of gamified training and quests.
+
+- You can fully focus on the process of training itself, which is so important for success in competitions.
+
+Variety and flexibility:
+
+- Helps get rid of the routine with its system of consecutive quests.
+
+- Gives high variability in training and allows an athlete to practice multiple sports disciplines.
+
+Motivational benefits:
+
+- Keeps the athlete in a motivated mood through training rewarded on a daily basis.
+
+- Financial reward for achievements with the $ACTI token system.
+
+Economical benefits:
+
+- You can offset some of the costs of competing at higher level competitions with prize money won through the Actiq Competitions.
+
+- Train with a coach at a lower cost
+
+Overall Physical Development:
+
+- Melds physical training, mental training, and technological innovation for maximum achievement.
+
+- Meets the athlete's individual needs and goals.
+
+- Engaging in different sports helps develop a wide range of motor skills, strength, agility, endurance, flexibility, and coordination.
+
+Thus, Actiq offers not a simple training application but an entire ecosystem of complex development of an athlete, combining innovative technologies, gamification, and economic stimuli in the name of the best results.
+
+***
+## **What is AIGC (not to be confused with AI Generated Content)**
+
+AIGCs represent sophisticated, interactive artificial intelligence athletes characters, specifically created for sports training. The function of virtual coaches is to aggregate several enabling technologies in order to propose an integrated and personalized approach towards sport activities: 
+
+ViT based computer vision:
+
+- Real-time analytics of the athlete's movements and technique
+
+- Recognizing correct exercise performance and identifying potential errors.
+
+Decision Intelligence:
+
+- A flexible system, where possible, adjusts the training plan according to current performance and progress.
+
+- Ensuring optimally intense exercises and types for the best training outcome.
+
+Reasoning agents:
+
+- Coaching feedback using a team of domain-specific language models pre-trained on sports and training techniques.
+
+- Contextually relevant guidance and instructions during training.
+
+Real time communication:
+
+- Human-like voice interaction: the athlete not only receives instructions but can give feedback during the training.
+
+- Speech recognition: Communicating with athletes in their native language.
+
+Sensor and device integration:
+
+- Aggregating data from wearable devices and sports equipment for more detailed analytics and performance.
+
+Gamification: 
+
+- Integrating game elements in the training process to enhance motivation and interaction
+
+Personalization: 
+
+- Considering the specific needs of the individual athletes, their distinctive characteristics, goals, and preferences in designing and refining the training programs.
+
+_AIGCs operate as an integrated system where all components work synergistically to provide athletes with a unique training experience that combines expert knowledge, technological innovation and personalized attention.These virtual trainers are capable of not only providing instructions, but also motivating, adjusting and adapting to the needs of each user, thereby creating a new standard in the field of sports training._
+
+**Meet** [**ACTIcat**](https://acticat.xyz/) ****— an intelligent interactive coach based on Actiquest Sport Knowledge LLM.
+
+**What does the ACTICat do?**![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXf4AV9gDdXHFDqBRqgy-EdayJLpCa7LNj0PdOlXT-vem-BogNJ4NFWEJkmGthmVUKbePfv9uwzVbXdryiO1Yd_U6BJRvHYNhchOZc1L67jwM9gKQyMYDD4V1dkyCP24-LzbXgd-vhkMrVKQmuVA-oaA0d8E?key=joJq3iOE8ODwr8SAkn3nUw)
+
+- Analyses the athlete's movement in real-time;
+
+- Develops your training plan and makes adjustments depending on the situation;
+
+- Provides personal recommendations for the correction of exercise technique.
+
+- Flexibly adjusts the volume and types of exercises depending on your health and mood;
+
+- Provides recommendations for nutrition and recovery, considering the peculiarities of your body;
+
+- Motivates with $ACTI tokens for accomplishing training goals and personal records upon completion of the workout;
+
+- Speaks with a voice similar to A. Banderas or A. Mironov, depending on the language;
+
+- Empathic & emotional communication with athletes;
+
+- Follow your mood;
+
+- He himself may be out of sorts-sometimes very rare, imitation of fatigue.
+
+- Conducts a system of quests and missions for more enjoyable training.
+
+- Joins physical training with mental practices for the all-around development of the athlete, i.e., able to switch to psychologist mode.
+
+- Consider long-term objectives, environment and weather, solar activity, your biorhythm, and the state of sleep on the previous day, and incorporate the short-term objectives when developing your training program. 
+
+- Analyzes health and physical condition data with a view to enhance your workout session for better performance and injury prevention.
+
+Rather than being coaches who give instructions, AIGC in Actiq become veritable companions in the sports journey of action undertaken by each user. Advanced technology, a personalized approach, a reward system, and friendly interface combine in an environment where training becomes entertaining and motivating. This is a new standard in sport preparation where technology serves to unlock the full potential of every single athlete and make the path to achievement effective and truly exciting.
+
+Opposed to humanoid robots from _Will Smith starring Sci-Fi thriller “I Robot”_, cat-like AIGC character design could make the whole process of learning and training more fun-less intimidating. Optimus robots, Cybercab robo-taxis, and Robovan buses were completely inspired by this film, which means that the marketing of robotic innovations is surprisingly predictable.
+
+Why a cat? Humanoid robots sometimes fall into an "uncanny valley" where they are almost human but with subtle differences that are disquieting. The virtual cat character avoids this problem in its entirety by taking on a very non-human form that is universally attractive and non-threatening. People have a natural affection for animals, cats especially. This helps, in some cases, to work out a sense of camaraderie and, therefore, motivation to make the workout experience more comfortable.
 
 ![](https://actiq.ai/images/acticat.svg)
 
-Why cat? Human-like robots can sometimes fall into the "uncanny valley," where they appear almost human but have subtle differences that make them unsettling. A virtual cat character avoids this issue entirely by embracing a clearly non-human appearance that is universally appealing and non-threatening. Many people have a natural affinity towards animals, particularly cats. This can create a sense of companionship and motivation, making the coaching experience more pleasant.
+It is possible to attribute a personality to ACTIcat, adapting it to different age ranges, sports, and forms of training in such a way that the AI will adapt to different users' needs.
+
+Thus, it might be that athletes get emotionally tied with the sweet and friendly AIGC; hence, commitment to the training program increases. Therefore, with this, it will keep them more motivated by sticking to your exercise schedule.
 
 ![](https://actiq.ai/images/acticat-boxing.svg)
 
-ACTIcat can be given a distinctive personality that can be tailored to suit various age groups, sports and training styles, making the AI more adaptable to different user needs.
-
-Athletes may develop an emotional connection with a cute and friendly AIGC, enhancing their commitment to the training program. This connection can lead to increased motivation and adherence to the coaching regimen.
+Unlike aggregators that offered remote classes with human fitness trainers, such as Fittr-which came during Covid times, or applications leveraging machine learning in endurance training apps like PKRS.AI and Enduco, Actiq's multimodal AI changes the game in sports training, taking on several at once.
 
 ![](https://actiq.ai/images/acticat-tennis.svg)
 
-Unlike the competition with remote fitness coaches aggregators like Fittr or ML-driven endurance training apps like PKRS.AI and Enduco, our gamified training app revolutionizes omni-sport athletic training with AI coaches, using deep learning, decision intelligence, tokenized incentives (also managed by AI) and sport-domain pre-trained LLM.
+AIGC always stays in touch with you. Using the Grade Adapted Pace model with a strong feature of speech recognition, the AIGCs develop extremely adaptable, personalized training plans for sports enthusiasts according to their particular goals, fitness level, and progress. This would better reflect the effort of the athlete and guide their training effectively through the use of game-based training blocks. AIGC continuously learns from the athletes through the processing of health data originating from a range of sources, such as Strava, Google Fit, Garmin Health, among others.
 
 ![](https://actiq.ai/images/acticat-golf.svg)
 
+**AIGC in 8 bullets (to avoid a long read):**
+
+- User-configurable virtual characters; 
+
+- Predicts and monitors training outcomes; 
+
+- Analyzes physical/mental state; 
+
+- Provides motivated, personalized feedback within training blocks.
+
+- Sees the trainee using 60fps ViT and estimates the quality visually .
+
+- Constantly readjusts the training plan by set goals; 
+
+- Tracks endurance, pace, threshold, V02Max, and anaerobic parameters; 
+
+- Manages monetary rewards upon completion of training blocks and quests.
+
+## *****Can AIGCs coach better than humans?**
+
+_AIGC will soon surpass human sport coaches, and here's why:_
+
+**Data Analysis:** Human trainers are unable to analyze large amounts of data as fast as AI would. Probably one of the main advantages of AI is high speed in processing and analyzing big volumes of complex data about the health status of athletes to make better decisions and improve the process of training.
+
+**Availability.** Unlike human trainers, who are restricted to their personal time and schedules, AIGCs don't need breaks or days off. At any moment, whichever the time zone or other restrictions, they are available, providing necessary support or feedback continuously. AI trainers are always in touch to help.
+
+**Subsequence.** The human factor is reflected in the stability of the training process: human coaches may be in different moods, have biases, or other subjective factors. AI overcomes these shortcomings by offering a consistent coaching approach based on rigorous algorithms. This means that the quality of your training will always be consistent.
+
+**Long-term tracking:** AI has surpassed the capabilities of human coaches in tracking athlete performance over time. It still proves hard for a human even with the use of modern applications in data management. AI is constantly analyzing and adapting the training procedure with long-term data that shifts the athlete better toward his goals.
+
+**Scalability**. AI coaches can work with as many athletes at one time as an individual wishes, which is impossible for human coaches working one-on-one or with groups. That is why AI has become an indistinguishable tool in mass coaching.
+
+**Flexibility**. AI can make the training programs personalized to the needs of each athlete. The immediacy with which AI adapts in real time, based on the changing new data inputs, is second to none. AI by AI Program in a part of decentralized AI model training will continuously enhance AIGC’s into state-of-the-art, adaptive, and effective in any environment.
+
+**Neutrality**. AICGs have no personal biases and psychological factors that can influence human trainers' decisions. That is to say, there is an objective approach towards training: every athlete is treated on an equal footing, being effectively motivated to achieve whatever they aim to.
+
+**Availability**. AI sport coaching is usually more accessible and cheaper as compared to classes with human coaches. This offers a chance of professional coaching to more beginner athletes.
+
+**Economic accessibility**. That is an economical benefit for AI as well. For example, an hour's training with a tennis coach costs on average US$100, while services of the AI coach are 100 times cheaper. A subscription for AI coaches in different sports will cost about $20 per month, which will allow everyone to develop healthy habits and achieve high results.
+
 AIGC's are always on duty. By implementing GAP (Grade Adjusted Pace) models and robust speech recognition, AIGC's can create highly adaptive, personal training plans for non-pro athletes, keeping their unique goals, fitness levels, and progress in mind. It gives a more accurate reflection of an athlete's efforts and guides their training effectively via gamified training blocks. AIGC's are constantly learning from athletes using realistic NLP engine and by processing athlete's health data coming from various sources such as Strava, Google Fit, Garmin Health, etc.
 
-AIGC's
-- Are adjustable virtual characters;
-- Predicts and monitors athlete's performance;
-- Analyzes physical/mental state;
-- Provides motivated personalized feedback during training blocks
-- Constantly adjusts training plan to rise the goals;
-- Monitors endurance, tempo, threshold, V02Max and anaerobic parameters;
-- Manages monetary rewards after training completion.
+## *****AIGC in a nutshell (backend side)**
 
-AIGC's will soon outperform Human Coaches and here is why:
+- Sports-related CV models running on mobile devices, CDN Distributed, open source, decentralized. Applied technologies: modified NAS Yolo Pose. Now migrating to "Sapiens" ViT);
 
-**Data Analysis**. Human Coach is lack in data analysis: One of AI's strong suits is the ability to analyze large sets of data in record time. Unlike human coaches, AI can assess, process, and produce insights from complex health data, augmenting the decision-making process.
+- Vision Transformers (ViT) allow us to analyze users' movements during training with high accuracy and a speed of 60fps. ViT models work on the principle of transformers and are fully integrated into language models. They divide the image into small areas (patches) and process them using attention mechanisms. This makes it possible to more effectively recognize complex movements and postures of athletes;
 
-**Availability**. Human Coach is lack in 24x7 on demand availability: AI coaches are not restricted by time zones, schedules, or personal commitments. They are available 24/7, providing constant assistance and feedback when required. AI coaches are always on duty.
+- ViT can more efficiently  process raw video on user devices than convolutional neural networks (CNNs) that are typically used in computer vision systems.
 
-**Consistency**. Human Coaches are poor in consistency. AI algorithms don't suffer from typical human bias or mood swings. It will also provide consistent processes based on coaching we train it on. This leads to consistency in coaching, maintaining an unchanging standard of coaching quality.
+- ViT can recognize complex sequences of athlete movements. This is especially useful for improving exercise technique in real time, offering users more accurate and personalized recommendations from an AI coach.
 
-**Long-term tracking**. Human Coach definitely looses to AI with athlete’s long-term tracking even using data-rich apps. Tracking progress over extended periods can be challenging for humans. AI, on the other hand, excels in this area, continuously monitoring and adjusting the learning path.
+- ViT can recognize the smallest details in images, allowing for better recognition of fine motor skills and recording deviations in exercise technique. For example, the slightest deviations in tennis or gymnastics can negatively affect the final results (in competitions).
 
-**Scalability** is not strong side of Human Coaches. AI coaches can accommodate athletes simultaneously, something impossible for individual human coaches. Or at least the vast majority.
+- ViT requires less resources for training and video processing (output). The video no longer needs to be uploaded to the server, and the entire process of interaction between the Athlete and the AI ​​occurs in real time. This way, our AI will be able to process videos directly on users' devices, reducing the wait time between completing exercises and receiving recommendations.
 
-**Seamless Learning Adaptation**. AI has the ability to personalize learning paths based on each athletes needs, adapting in real-time according to latest learnings from coaching and learning sessions. Our AI-learning program constantly improves AI coaches to be superior and adaptive.
+- Automatic labeling algorithm, ALA (centralized). ALA helps integrate CV model results into Sport Knowledge LLM for real-time reasoning and feedback to athletes during sports training. Stack: Voxel51. Will be deprecated soon as well.
 
-**Personal Neutrality**. Human Coaches are not attentive to athletes, even training groups are overcrowded: AI offers unbiased coaching, unaffected by personal biases or emotions that could cloud a human coach's judgment. AI coaches are created to motivate athletes to obtain better results.
+- Sports knowledge LLM (centralized) is a core of fine-tuned sports coaching agents that allows you to train people in any sport. Stack: Voxel GPT=>Llama
 
-**Access & Affordability**. AI coaching tools are often more accessible and affordable than human coaches, allowing a broader range of athletes to benefit from professional coaching.
+- Gamification agents (centralized). A platform for delivering AIGC and fine-tuning coaching models. Stack: Voxel51 tools.
 
-**TCO**. Unfortunately, AI win Humans in economic value. The average cost of one-hour training with tennis coach in US is about $100. AI coaches time is 100 times cheaper compared to Human Coaches. We create AI coaches in different sports that will cost about $20 per month in total and allows to build healthy habits and achieve better workouts performance to everyone.
+- Vector database (centralized). A fast in-memory vector database for LLM and AIGC students in Sports Knowledge. Stack: Epsilla
 
-+++ Health centric
-**Actiq** generally aims to incentivize fitness and sport, helping to reduce obesity and sedentariness, and giving users an opportunity to reinforce dopaminergic reward system by using tokenized incentives precisely controlled by AI for improving their perfomance. Indeed, researchers recently found that improvements in cardiorespiratory fitness lead to a significant reduction in all-cause and disease-specific mortality, with an individual’s maximum oxygen uptake (VO2max) being strongly correlated with their life expectancy. 
+- Reasoning agents (centralized). A special AI model that can recognize and understand the quality of sports training results and reward athletes with $ACTI. Stack: Voxel GPT, migrating to Llama.
 
-+++ Gamified Rewards as a part of AI by AI (Athlete incentives by AI) program
-Actiq generates **rewards** in the form of blockchain-based digital tokens ($ACTI). Users are rewarded by AI Sport Coach in native utility tokens for completing sport-related training blocks — across most playing and athletic sports (tennis, golf, boxing, padel, running, biking etc.). Exact reward table for each sport will be announced later. As part of the AI by AI program, before the product will be released, a unique incentivizing algorithm will be created while athletes will train AI to earn monetary incentives. That will affect a final part of customer development campaign which is starts in Q4 of 2023 within 200+ thriathletes to help us to validate product and market fit. Also we bridge data from all professional sports applications into one place and give you rewards for tracking user activities. Strava, Zwift, Peloton, RGT and other platforms users can connect their profiles to the Actiquest platform and get $ACTI initial airdrop based on the last 3 month data of imported sport activities.
+- Web3 user panel (decentralized). Allows to manage $ACTI, bridge tokens across the connected ecosystems, Stake tokens for profit, vote in DAO and many other functions.
 
-+++ Health data
-Actiq tracks activity and completion of training blocks using the any health ecosystem such as Strava, Garmin, Apple Health, Google Fit and Suunto. This is assessed to see by selected AI Coach (we create different coaching characters which are taking in a sense age, style or gender of athlete) if it qualifies for rewards.
+- Bridges (ICP⇔BSC, SOL, TON, SKALE);
 
-+++AI powered anticheat
-AI powered anti-cheat technology will be employed to ensure that only genuine fitness data is taken into account in the reward calculation process. As our algorithms requires more complex communication with athlete, it will be hardly to imitate Humans in multimodal AI environment.
-+++
+- Oracles (Decentralized Data Storage⇔Sport Knowledge LLM)
 
-## Actiq AIGC ecosystem
+- Actiq DAO (decentralized). The DAO based on ICP (Internet Computer Protocol) subnet allows the community to take control of the whole project development, incentivizing protocol and monetizing of AI models.
 
-- **CV sport related models**, running on mobile devices (distributed CDN, open-source, decentralized). Stack: modified Yolo Pose NAS (to be upgraded soon).
-- **CV sport models are developed by “Athletes incentivization by AI program”** that allows athletes to train CV AI models within several sports and earn $ACTI tokens. Stack: modified Yolo Pose NAS (to be upgraded soon).
-- **Auto-labeling algorithm, ALA** (centralized). ALA helps to embed CV model outputs to Sport Knowledge LLM for real-time reasoning and feedback to athletes during sport coaching sessions. Stack: Voxel51
-- **Sport Knowledge AI** (centralized). Sport Knowledge LLM is a core of fine-tuned sport coaching Agents, that allows to train humans across any sport. Stack: Voxel GPT
-- **AI Sport coaching gamified agents**, AIGC (centralized). Platform for AIGC delivery and fine-tuning of coaching model. Stack: Voxel GPT tools
-- **Vector database** (centralized). Fast in-memory vector database for Sport-Knowledge LLMs and AIGC’s. Stack: Epsilla
-- **Incentivization AI model** (decentralized).Specific AI model that can recognize and understand the quality of sport coaching results and rewards athletes with $ACTI.
-- **Web3 Dashboard + Bridge** (decentralized)
-- **Athletes/DAO Voting Dashboard + Bridge** to transfer $ACTI across several chains.
-- **Actiq DAO** (decentralized). ICP (Internet Computer Protocol) subnet DAO, allow community control over: 
+***
 
-## Actiq DAO
+## **Actiq DAO**
 
-ICP (Internet Computer Protocol) subnet DAO, allow community control over: 
-- Incentivization Algorithms;
-- AIGCs that are initiated by DAO;
-- Services binded to AIGC functioning.
+The DAO ICP (Internet Computer Protocol) subnet allows the community to control:
 
-### DAO functions in details
+- General Development Sport Knowledge LLM
 
-**Actiquest** is establishing Actiq DAO to govern and guide the development of the AI by AI incentivization platform as a public good owned by the community. DAO and its services will run on the Internet Computer Protocol powered by NNS-approved SNS canisters and SNS subnet. Actiquest seeks approval from the NNS to create and support this decentralized autonomous organization (DAO). To initiate the creation of Actiq DAO, Actiquest founding team will submit an NNS proposal specifying the parameters of the “decentralization sale” and initial token allocation. If the proposal were accepted, the NNS will trigger the decentralization sale of $ACTI tokens based on the proposal - to decentralize governance of the platform to token holders and raise funds for future development and growth. Participation in the swap will be open to anyone outside the prohibited countries list. Users can take part in the sale via the NNS launchpad, by depositing $ICP. Upon completion, participants will receive an amount of $ACTI tokens equal to the deposited amount of $ICP. Proceeds of the sale will be held in an ICP ledger account owned and governed by the newly formed DAO.
+- Reward algorithms for athletes;;
 
-**Control over DAO** After sale ends, the DAO will be in control of the Actiq Incentivization mechanisms, including its treasury of $ACTI and $ICP. Following the decentralization sales, the SNS will assume control of Actiq DAO, including its treasury of $ACTI and ICP tokens. This means, to make changes to the platform or access the treasury, a proposal must be approved by the DAO. Anyone can submit a proposal to the DAO, which can be voted on by $ACTI holders.
+- Services are tied to the functioning of AIGC.
 
-**DAO Governance**. Proposals to the DAO may take the form of:
-- **Motions** Motions serve as expressions of intent without mandating specific actionable outcomes upon approval. They can be utilized to suggest new functionalities, dictate development team priorities, and more
-- **Canister Upgrades.** An upgrade proposal for canisters includes the canister's ID and a WebAssembly (WASM) module. Upon approval, the Service Nervous System (SNS) will update the specified canister's code with the new WASM module, facilitating enhancements to the application's smart contracts.
-- **Configuration Changes.** Modifications to the ACTI SNS configuration are possible. Detailed information regarding the initial setup parameters can be accessed here [TBA].
-- **Token Transfers.** Proposals for enabling the movement of tokens into or out of the DAO's treasury are permissible. The treasury is capable of holding any token native to the IC ecosystem, such as $ICP, $ACTI etc
-- **Burning Tokens**. Proposals to burn $ACTI tokens can be submitted as a method to decrease the total circulating supply (as example phygital goods marketplace where sport-ecosystem participants can exchange it’s goods for $ACTI tokens, that will be burned with each exchange).
 
----
+### **DAO functions in detail:**
 
-## Vision & Mission
+**Preparation steps**
 
-### Vision
-Innovate better health & lifestyle technology for billions of people by using latest AI developments. Cutting the cost of Human Coaches, changing the training path with 24x7 available personalized AI Coaches and gamified rewards. Democratizing the way to be athletic to everyone. 
+Actiquest is establishing the Actiq DAO with the intention to operate and further develop an incentivisation platform powered by AI, owned by the public. The DAO and its services are destined to go live on the Internet Computer Protocol by using approved NNS SNS Containers and SNS subnet. Actiquest hereby requests approval by NNS for the creation and maintenance of this decentralized autonomous organization.
 
-### Mission
-We create new approach for gamified training for all athletes in the world. We revolutionize athletic training with AI coaches and highly personalized multi-sport approach. We will build up an sport-to-earn platform which could be extended with Social-Fi functions, which supports the connection between users and community through exercises in play and athletic sports. 
+**Launching DAO**
 
----
+The Actiquest team is going to submit an NNS Proposal for the launch of the Actiq DAO, mentioning the parameters of a "decentralized sale" and how tokens are initially distributed. Once this proposal is approved, the NNS will create a decentralized sale of the $ACTI Tokens, giving the control of the platform to the Token Holders and raising funds for its development and growth. The sale will be open to all except for citizens living in the restricted list of countries. The actual buying of tokens will be made through the NNS launchpad, where users will be able to deposit $ICP equivalent in value to the number of $ACTI tokens they want to purchase. At the close of the sale, all funds collected will be transferred into an account controlled by the new DAO.
 
-## Product Release
-Actiq Wallet (Telegram mini-app) was launched in Juny 2024. Mini-app short-term target is to organize and motivate Actiq app early adopters. Actiq app beta is set to launch in Q1 2025. 
+**Control over the DAO**
+
+After the sale, the DAO will own the Actiq platform with its treasury holding $ACTI and $ICP tokens. During decentralization, the power will transfer to SNS, which will also take control of the treasury and any further changes on the platform. No change can be promoted on the platform or even the access to the DAO funds before the proposal gets its approval. Anyone can make a proposal to the DAO, and it should subsequently be implemented, pending a vote by the $ACTI token holders.
+
+**Further DAO Management** 
+
+- Proposals are a way to state intent without necessarily having concrete practical outcomes associated with the acceptance of those proposals. They can be used to propose new features, determine priorities for the development team and much more.
+
+- Modernize canisters. The drive upgrade offering includes the drive ID and the WebAssembly Module - WASM. Once approved, SNS will update the code of the specified drive with the new WASM module that will enable enhancing the smart contracts of the application.
+
+- Configuration changes. Changes in ACTI SNS configuration are. A detailed description of the choices made for the initial setup is given here (TBA).
+
+- Token transfers: It is possible to propose that allows transferring tokens in or out of a DAO treasury. Treasury can store any token built into the IC ecosystem, including but not restricted to, $ICP, $ACTI etc.
+
+- Burning. Proposals for burning the $ACTI tokens may be submitted as a way of reducing the total supply-for example, a physical goods market where participants in the sports ecosystem can exchange their goods for $ACTI tokens, which shall be burnt upon every exchange.
+
+***
+
+
+## **Vision and Mission**
+
+**Vision**
+
+Power innovations that will improve the health and quality of life for billions of people around the globe using the latest AI. Ease human trainers' burden by making personalized AI sport coaches available 24/7, which will offer tailored training and in-game rewards. We want to democratize sport by making it accessible to all, regardless of their skill level.
+
+**Mission**
+
+We are designing a new approach to training for all athletes by mixing gamification and the power of AI. Further, sport coaching will be revolutionized by AI Coaches combined with personalized omni-sport approach. We will develop an app through which you can make money with sports, integrating Social-Fi aspects that connect sport lovers via gamified workout and sports activities.
+
+***
+
+## **Product release**
+
+Actiq Wallet (Telegram mini-app) was launched in June 2024. The short-term objective is the systemization and incentivization of Actiq’s early adopters. The beta launch of the Actiq application is planned for the first quarter of 2025.
+
+In October, the DAO will be officially launched along with an incentive algorithm for the athletes, while the AI is to be trained by them.
+
+First phase: developing and training AIGC/Sport Knowledge LLM in Q3 2024. Actiq DAO goes live, Q4 2024.
+
+Second phase: ViT model training in tennis, golf, yoga begins in the 1st quarter of 2025.
+
 ![](https://actiq.ai/images/actiqapp.svg)
 
-We plan to run AI managed DAO and unique incentivizing algorithm for athletes while athletes will train AI to get monetary incentives.
+Register interest in the AI ​​by AI program by following the link below and filling in the form:  <https://actiq.xyz/earlybird.html>
 
-First phase: AIGC engine development and training, starts in Q3 2024
-Actiq DAO will starts up to the end pf Q3 2024.
-Second phase: Live workouts with AI coaches in tennis and athletic sports (running), starts in Q1 2025.
-
-Register to take a part in AI by AI (Athletes incentivization by AI) program which is started in Q3 of 2024 to stay informed and register your interest.
-Follow the link and fill the form: https://actiq.xyz/earlybird.html
+***
 
 ---
 
-## Carbon Neutral
-A portion of Actiquest profits will be fixed to purchase carbon neutral credits on the blockchain to fight climate change.
+## **Founding Team**
+
+- [Michael Aprossine](https://linkedin.com/in/miguel2020) - CEO. Triathlon fan. Serial entrepreneur since early 2000; More than 20 years in IT consulting and product development in the field of IoT, SaaS, mobility and blockchain; Co-founder of Apla.network (Luxembourg). Co-founder of DrivePoint (sold to Hyundai Mobility in 2019).
+
+- [Phil Khomenok](https://linkedin.com/in/gsarskyes) - COO, Experienced swimmer. Builds online sales of cable products and rolled metal products from scratch for $10M per year. In 2017, he co-founded the Grown Capital investment fund with raised capital of $5 million. In 2020-2023, as a CBDO, he helped Advcash develop new products and enter new markets.
+
+- [Ankit Sahu](https://linkedin.com/in/ansahu) - CFO, experienced tennis player. Over 20 years in asset management in private banking and funds, including: Prosperity Group, Bank Of America, Merrill Lynch and UBS.
+
+- [Mike Keer](https://www.linkedin.com/in/mikhail-kiriukhin-97389957/) - CTO, AI architect. Expert in language models and computer vision. Participant in joint projects with Lux Innovation, EIC, etc.
+
+- Sergey Koskov – product manager. Athlete.
+
+- Iskander Khakimov - FullStack, Front-End. Triathlete.
+
+- Vit Znack — FullStack, Back-End. Sportsman.
+
+- +3 people (data specialists/testing)
+
+***
+
+**Advisors**
+
+- [Dr. Ty Vachon](https://www.linkedin.com/in/tyvachon/) - Phd in Medical Sciences, radiologist and expert in computer vision in sports medicine. Athlete, Triathlon.
+
+- [Dr. Alex Konviser](https://www.linkedin.com/in/dr-alex-konviser/) - Curator of sports programs in Switzerland and the European Union. Type of sport: biathlon (ex-champion).
+
+- [Paul Pelosi Jr.](https://www.linkedin.com/in/paulpelosi/) - American businessman and independent consultant. Paul's experience includes investing in growth companies, investment banking, sustainable real estate and corporate governance. Sports: running, swimming.
+
+- [Broderick Higbee](https://www.linkedin.com/in/broderickhigby/) — Senior engineer at Apple, creator of artificial intelligence for golf. Sports: Golf.
+
+- [Aaron Eisman](https://www.linkedin.com/in/aaroneisman503/) is the founder of Eisman Digital Agency and previously worked at Turner Sports, Bleacher Report and the NFL. Passionate about growing client numbers and increasing engagement in sports marketing. Consulting on relations with sports brands and celebrities.
+
+***
+
+## **Innovation and quality**
+
+Our team stands for innovation and quality. We value creativity, out-of-the-box thinking, and bold ideas which can be easily translated into useful products in everyday life. We pay special attention to the quality of service and products, testing them at every stage of development according to the design system. In such a way, we will be able to provide you with only the best solutions and services.
+
+Actiq focuses on long-term growth: continuous innovation to inspire people in new and exciting ways to take responsibility for their health. We are going to revise our reward system in partnership with leading fitness and technology brands, developing products that go far beyond an app. Our platform will embed emergent blockchain technologies, increase interoperability, and extend use cases.
+
+If you are an athlete with a long-term goal, Actiq is the platform for you. Please subscribe to our [Blog Actiquest AI Journey](https://blog.actiq.ai/).
+
+
+### *****Getting started with the Actiq app**
+
+1. [Actiq app user flow](https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551).
+
+2. Let's take the first step by downloading the app (soon).
+
+3. Fill out the registration form to become app member
+
+4. Create an account with your email when you download the app onto your phone and wearable device. Login, that you shall receive an authentication code in your inbox.
+
+5. Create invite code to set up the wallet in the web3 dashboard at the next steps.
+
+6. Connect your Strava account
+
+7. Connect your Garmin account
+
+8. Set up your profile and personalize your AI Coach
+
+9. Get a personal training plan
+
+10. Start using gamified training
+
+11. Complete the training block or finish the quest
+
+12. Be rewarded by AI Coach
+
+13. Check rewards at Web3 ​​dashboard
+
+14. TBContinued soon 
+
+***
+
+**Roadmap**
+
+At the same time, we develop the AI ​​and web3 infrastructure of our product. We moved from simple to complex-in June, we launched a Telegram mini-app to popularize our product and attracted 50K users. Due to Actiq Wallet, we will be able to afford the main product launch cost-effectively-with ACTICat Coach supporting a number of sports-and offer it to a paying audience of 100K users in Q1 of 2025. We are going to launch co-teaching this October for our sports models with the help of more than 1000 athletes who come from various sports and cooperation programs with sports coaches.
+
+***
 
 ---
 
-## Competitors table
-One-pager researh of [Actiquest competitors](https://docs.google.com/spreadsheets/d/14TZ8NhSEMeOkSv3s1Fq6R5uWBQ3mD9RsmVTiCXOnizU "Competitors").
-
----
-
-## Founding Team
-* [**Michael Aprossine**](https://linkedin.com/in/miguel2020 "Michael Aprossine") - CEO. Thriathlon Fan. Serial Entrepreneur from early 2000;
-20+ years in IT consulting and product development in IoT, SaaS, Mobility и Blockchain; Cofounder of Apla.network (Luxembourg) Cofounder of DrivePoint (sold to Hyundai Mobility in 2019).
-* [**Phil Khomenok**](https://linkedin.com/in/gsarskyes "Phil Khomenok") - COO, Experienced Swimmer.Builds online sales of cable products and rolled metal from scratch for $10M per year. In 2017, he was a co-founder of the Grown Capital investment fund with attracted capital of $5M. In 2020-2023, in the role of CBDO, he helped Advcash in developing new products and entering new geographies.
-* [**Ankit Sahu**](https://linkedin.com/in/ansahu "Ankit Sahu") - CFO, Experienced Tennis Player. 20+ years in wealth management across private banking and funds, including: Prosperity Group, Bank Of America, Merrill Lynch and UBS. 
-* [**Mich Keer**](https://www.linkedin.com/in/mikhail-kiriukhin-97389957/ "Mich Keer") - CTO, AI Applications Architect. Expert in language models and computer vision. Participant in joint projects with Lux Innovation, EIC and others.
-* **Sergey Koskov** - Product Manager. Athlete.
-* **Iskander Khakimov** - FullStack, Front-End. Triathlete.
-* **Vit Znak** - FullStack, Back-End. Athlete.
-* **+3 people** (Data scientists/testing)
-
----
-
-## Advisors
-* [**Dr. Ty Vachon**](https://www.linkedin.com/in/tyvachon/ "Dr. Ty Vachon") - PhD, radiologist and expert in computer vision in sports medicine. Sport: triathlon. 
-* [**Dr. Alex Konviser**](https://www.linkedin.com/in/dr-alex-konviser/ "Alex Konviser") - Curator of sports programs in Switzerland and the European Union. Sports: biathlon (ex-champion).
-* [**Paul Pelosi Jr.**](https://www.linkedin.com/in/paulpelosi/ "Paul Pelosi") - American businessman and independent advisor. Paul background includes emerging company investments, investment banking, sustainable real estate and corporate governance. Sports: running, swimming.
-* [**Broderick Higby**](https://www.linkedin.com/in/broderickhigby/ "Broderick Higby") - Senior Engineer at Apple, Creator of Golf AI. Sport: Golf.
-* [**Aaron Eisman**](https://www.linkedin.com/in/aaroneisman503/ "Aaron Eisman") - founder of Eisman Digital Agency, working previously for Turner Sports, Bleacher Report and the NFL. Passionate about growing accounts & increasing engagement on marketing in sports. Advising connection with Sport Brands and Celebrities.
-
----
-
-## Innovation & Quality
-Our team focuses first and foremost on innovation and quality. We value creative, unconventional thinking and bold ideas that can be harnessed into a product that is useful in day to day life. We take utmost care in the quality of service and products that we provide, making sure everything is thoroughly tested and processed through our design system, bringing you the best possible product and service we can offer.
-
-**Actiq** focuses on long-term growth. Our goal is continuous innovation that will inspire people to take better care of their health in new and exciting ways. We will update our prizes, form partnerships with leading brands in the fitness and tech industry, and release products that stretch far beyond being simply another application. Our platform integrates it with the up and coming space in blockchain.
-
-Whether you are a athlete with a long term goal, Actiq is the platform for you.
-Please, subscribe to our [Actiquest AI Journey Blog](https://blog.actiq.ai "Blog").
-
----
-
-### Getting started with ACTIQ app
-!!!success Important
-0. [Explore Actiq app user flow, as app is still in development](https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551 "Miro").
-1. Let’s take the first step with the app downloading
-2. Get the ACTIQ app to your device
-3. Fill in sign-up form to officially become our member
-4. When you download the app to your devices such as a phone, or laptop, you can create an account by using your email. Once it has been installed, an authentication code is sent to you shortly via your email
-5. Create a brand-new in-app web3 wallet account
-6. Connect your Strava Account
-7. Connect your Garmin Account
-8. Setup your profile and personalize your AI Coach
-9. Get a personalized training plan
-10. Go live with gamified workouts
-11. Get rewards from AI
-12. Claim your rewards at AI by AI web3 dashboard
-!!!
-
-* [AI Coaches](getting-started/ai_coaches.md)
-* [AI Training](getting-started/ai_by_ai_program.md)
+* [AI Gamified Coaches](getting-started/ai_coaches.md)
+* [AI Training Program](getting-started/ai_by_ai_program.md)
 * [Incentivization mechanics](getting-started/incentives.md)
 * [Health Data Integration](getting-started/integration.md)
 * [Partnerships](getting-started/partnerships.md)
