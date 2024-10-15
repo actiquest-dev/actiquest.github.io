@@ -5,77 +5,156 @@ label: Tokenomics
 # Tokenomics
 
 ## Basics
+**Tokenomics**
 
-💫 ACTI Incentive Token (ACTI) is a digital currency designed to reward athletes for their performance and commitment. Developed by Actiquest Lab, the ACTI token integrates cutting-edge AI technology to create a personalized training experience. By leveraging AI Gamified Coaches (AIGC), the platform offers tailored training plans, goal setting, and real-time feedback, encouraging users to achieve their fitness goals. The ACTI token can be earned through performance and used for various in-app purchases, creating a comprehensive ecosystem that motivates and rewards active lifestyles.
+💫 **ACTI Incentive Token, $ACTI** is a digital currency issued to reward the athletes in achieving feats through sports. Developed by Actiquest Lab, the token leverages state-of-the-art artificial intelligence technology in providing personalized learning across a wide array of sports disciplines. AIGC enables personalized training planning, goal setting, and real-time feedback, allowing the platform to motivate its users toward the attainment of fitness objectives. This is an economy where reward for active lifestyles is paid either as a workout progress or as an ACTI token to be utilized by making in-app purchases.
 
-💎Actiq Wallet is a telegram mini-app allows to earn $ACTI by completing social and sport tasks and prepare Actiquest community for mobile app launch in Q1-2025. 
-
-### What are ACTI utility tokens? Why has Actiq launched them?
-
-Actiq launches tokenized web3 incentives (as $ACTI ERC20 tokens) for athletes as essential part of AI by AI (Athletes Incentives by Artificial Intelligence) program, where athletes can take a part in new AI models training, get rewards from AI managed sport coaching, workouts and competitions. Actiq is blockchain agnostic project. $ACTI tokens are launched on TON, ICP, BSC, BASE and SOL ecosystems and would be exchanged via secure bridges (TBA).
+💎Actiq Wallet is a Telegram mini-app that allows you to earn ACTI by completing social and sports challenges, while also preparing the Actiquest community for the launch of a mobile app in the first quarter of 2025.
 
 
-**Athletes can use $ACTI in several ways**
-- Redeem $ACTI tokens for app subscription
-- Redeem $ACTI tokens for in-app purchases
-- Redeem $ACTI tokens for discount vouchers of Actiq Sport partners (endurance event providers, sport apparel brands, travel, telecom services and many more).
-- Put $ACTI to staking program for profit via third party providers.
-- Vote with $ACTI stake in Actiq AI Sport DAO (TBA)
-  
-**Poncinomics-free**
-- Zero dependence app economy from new users flow;
-- Creates strong demand support for $ACTI as a utility, both on-chain and off-chain use cases;
-- Reduces negative factors value (such as FUD, market manipulations, and abnormal price volatility);
-- Drives web3 adoption with a mass sport-addicted audience.
+### **What are $ACTI tokens for?** 
 
-**$ACTI tokenomics aspects to stop token inflation and price dump**
-- Fixed 500M HardCap. No new tokens will be issued anymore
-- 50% of $ACTI belongs to AI by AI program allocation. Tokens from this allocation are locked and releasing in small amounts using deflationary algorithm.
-- Each time athlete will redeem $ACTI for goods and services mentioned above, it will be burned by $ACTI smart contract function. So, total quantity of tokens in free circulation will be dumped by this function.
-- Not more 10% of $ACTI tokens may be in free circulation in a lifetime. 
+- Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes as part of the “AI-​by-AI” (AI Incentives for Athletes) program. The program includes the involvement of the athletes in training of advanced AI models and incentivizing them with $ACTI tokens. 
 
-**$ACTI Basic Metrics**
+- Actiq is a blockchain agnostic project, so $ACTI will flow within the TON, ICP, BSC, BASE, and SOL ecosystems. 
+
+- Cross-chain Token Swap: The safe bridges on ICP makes a secure and reliable integration of different networks with ACTI Incentive Ecosystem.
+
+Athletes can use $ACTI in several ways.
+
+- Exchange $ACTI tokens for a subscription to Actiq app
+
+- Exchange $ACTI tokens for in-app purchases
+
+- Exchange $ACTI tokens for discount vouchers from Actiq partners (endurance suppliers, sportswear brands, travel, telecommunications services and many others).
+
+- Invest $ACTI in staking for additional profit (through third party providers).
+
+- Vote in Actiq Sport DAO (to be announced)
+
+Sustainability of the project's tokenomics
+
+$ACTI tokenomics do not contain any hidden ponzi schemes and are completely unattached to the flow of new users, as it happened in StepN previously. We build $ACTI's demand using on-chain and off-chain methods that take into account the general interests of sports enthusiasts. It also reduces the influence of negative factors such as FUD, manipulation, and abnormal price volatility, since ACTI is not paired and traded with highly volatile assets. Web3 for a mass audience of sports fans is widely adopted. We keep growing and create news and achievements within our project.
+
+Aspects of $ACTI tokenomics aimed at preventing token inflation and reducing their value:
+
+- 500M $ACTI HardCap across all ecosystems. New tokens will no longer be issued.
+
+- 50% of all $ACTI are managed by AI as part of the AI ​​by AI incentive program. These tokens are long-vested for 120 months and are released gradually (0.5% of the total supply per month) using a deflationary algorithm that includes the use of fees.
+
+- Every time an athlete uses $ACTI to purchase goods and services, the tokens will be burned through the smart contract function, resulting in a reduction in the total number of tokens in circulation.
+
+- Throughout the token's life cycle, no more than 10% of the total $ACTI supply can be in free circulation, which maintains stability and prevents depreciation.
+
+Basic $ACTI metrics
+
 - Ticker: $ACTI
-- Blockchain Network: EVM Compatible/Blockchain Agnostic. TON, ICP, BASE, BSC and SOL ecosystems.
-- Token Supply: Fixed, 500M (in total, over several ecosystems)
-- Project Valuation: $20M
 
-**Revenue Streams**
-- B2B Sales (AI models for Sport Coaching). 25% of gross profit will be transferred to buyback the tokens;
-- B2С Sales (Actiq App Subscription and in-app purchases). 25% of gross profit will be transferred to buyback the tokens; 
-- Token Growth;
-- $ACTI Commissions (phygital goods marketplace).
+- Blockchain network: EVM compatible (mostly). Ecosystems TON, ICP, BASE, BSC and SOL.
 
-**Token Metrics**
-- [Tokenomics & Vesting](https://t.ly/at-yI "Tokenomics & Vesting")
+- Token emission: fixed, 500M 
 
-### TGE Roadmap 
+- FDV: $35M.
 
-**Private r.1: $0.01-$0.025, price depends on investment check amount (TBA)**
-- Vesting terms: 20% unlock at TGE, 5 months cliff, then vesting 18 months with linear unlock
-- Private r.1 Date: 15.07.2024-30.09.2024
-- Private r.1 Raise: $250,000
-- Participants: SAFT Investors & KOL’s
+- Initial market cap $750K
 
-**Private r.2 Price: $0.05**
-- Vesting terms: 10% at TGE, 6 months cliff, then vesting 18 months with linear unlock
-- Private r.2 Date:10.10.2024
-- Private r.2 Raise: $500,000
-- Launchpads: Spores, Kommunitas, private groups
+Income Streams
 
-**Public round: Price: $0.1**
-- Vesting terms: 10% at TGE, 6 months cliff,  then 10% every 3rd month
-- Public Price: Date:  20.10.2024
-- Public Price: Raise:  $1,000,000
-- Launchpads: DAOMaker ($600,000) + 5 other's
+- B2B sales (AI services for sport schools and professional sport teams, offchain). 
 
-**Exchanges Listing: Price: $0.1**
-- Listing Date: 30.10.24
-- Initial Market Cap: 50% from collected funds at TGE
-- Exchanges: Mexc=>Gate=>Bybit
+- B2C sales (Actiq App Subscription + In-app purchases, revenue share with DAO, on-chain). 
 
-**Token Distribution**
-- [Tokenomics & Vesting](https://t.ly/at-yI "Tokenomics & Vesting")
+- $ACTI commission (on-chain commissions on digital goods marketplace).
+
+$ACTI Allocation
+
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeDw-nyTxDrV_6BVoYbAm7EeDz1u2LNIFPUMPBGbRZd5Uq3dc-1wf1wJk-HWpDcd-cv40fCYm4pHNmk-8DK3TbfsuSzM798JEqFRCospSpPlH5JMyJOCR5TijGXohyRhFVZzL5S3aTTXaW299gU5Mu29Gdo?key=joJq3iOE8ODwr8SAkn3nUw)
+
+|                                    |   |   |                         |   |                          |   |                                           |                                   |                                    |   |   |                                |   |   |
+| ---------------------------------- | - | - | ----------------------- | - | ------------------------ | - | ----------------------------------------- | --------------------------------- | ---------------------------------- | - | - | ------------------------------ | - | - |
+| **Token Allocation**               |   |   | **Amount** **of Token** |   |  **% of _Total Supply_** |   | **Unlock % of _this Allocation at TGE_**  | **Cliff Period** **_(in month)_** | **Vesting Period****_(in month)_** |   |   | **TGE %** **of Total Supply**  |   |   |
+| **Private1 (SAFT Investors+KOLs)** |   |   | 15,000,000              |   | 3%                       |   | 20%                                       | 5                                 | 18                                 |   |   | 0.6%                           |   |   |
+| **Private2**                       |   |   | 10,000,000              |   | 2%                       |   | 20%                                       | 5                                 | 18                                 |   |   | 0.4%                           |   |   |
+| **Public sale**                    |   |   | 14,285,014              |   | 2,86%                    |   | 20%                                       | 5                                 | 18                                 |   |   | 0.57%                          |   |   |
+| **AI by AI tokenized incentives**  |   |   | 250,000,000             |   | 50%                      |   | 0%                                        | 12                                | 120                                |   |   | 0                              |   |   |
+| **Liquidity for Listing**          |   |   | 25,000,000              |   | 5%                       |   | 5%                                        | 0                                 | 20                                 |   |   | 0.25%                          |   |   |
+| **Partnerships**                   |   |   | 50,000,000              |   | 10%                      |   | 4%                                        | 5                                 | 24                                 |   |   | 0.4%                           |   |   |
+| **Advisors**                       |   |   | 15,000,000              |   | 3%                       |   | 4%                                        | 5                                 | 18                                 |   |   | 0.12%                          |   |   |
+| **Contributors**                   |   |   | 50,000,000              |   | 10%                      |   | 0%                                        | 18                                | 24                                 |   |   | 0%                             |   |   |
+| **Reserve for DAO**                |   |   |                         |   | 14,1%                    |   | 4%                                        | 5                                 | 24                                 |   |   | 0.6%                           |   |   |
+| **Total**                          |   |   | **500,000,000**         |   | **100%**                 |   |                                           |                                   |                                    |   |   | **_Unlock % TGE:_****_2,91%_** |   |   |
+
+***
+
+**TGE Roadmap**
+
+1. Private round (SAFT/KOL): $0.01-$0.025, price depends on the amount of the investment check
+
+- Terms: 20% unlock on TGE, 5 month cliff period, then 18 months vesting with linear monthly unlock of the balance.
+
+- Dates: \[01/08/2024 – 15/10/2024]
+
+- Raise: $300,000.
+
+- Participants: SAFT Investors and KOL's.
+
+2. Seed round (VC), $0.05.
+
+- Terms: 20% unlock on TGE, 5 month cliff period, then 18 months vesting with linear monthly unlock of the balance.
+
+- Date: Starts at \[15/10/2024]
+
+- Raise: $500,000.
+
+- Participants: Private investors, VC’s.
+
+3. Public round (IDO), $0.07
+
+- Terms: 20% unlock on TGE, 5 month cliff period, then 18 months vesting with linear monthly unlocking of the balance.
+
+- Date: Starts at \[20/11/2024]
+
+- Raise: $1,000,000
+
+- Launchpads:
+
+* DAO Maker = $300K
+
+* ICP NSS Launchpad = $300K
+
+* Paidnetwork = $100K
+
+* Spores = $50K
+
+* Kommunitas = $50K (reserved)
+
+* KingdomStarter = $50K
+
+* Poolz (option to replace smaller launchpads) = $250K
+
+4. Listing on exchanges: Price: $0.07.
+
+- Listing start date: \[03/12/24]
+
+- Initial market capitalization: $800K.
+
+- Exchanges: Lbank, Bitget, Mexc=>Gate=>HTX, Kucoin, Bybit
+
+Token metrics
+
+- [Tokenomics and Vesting](https://t.ly/at-yI) (version 1)
+
+- [Tokenomics](https://docs.google.com/spreadsheets/d/1Xljr5EQ7VFtZzO6qBSAzmi_qbq2Ed03iH_Z6xW_xQaQ/edit?gid=242255297#gid=242255297and%20Vesting%20\(version%202\)) and Vesting (version 2) 
+
+***
+
+**Available $ACTI allocations for sale**
+
+- KOL/SAFT round: $150K, min check $50K, price $0,025 (Cliff 5m, Vesting 18m, TGE unlock 20%)
+
+- Private (VC) round: $500K, min check $50K, price $0,05 (Cliff 5m, Vesting 18m, TGE unlock 15%)
+
+[**Link to SAFT**](https://docs.google.com/document/d/1DE6JaA7tzphjvPbdHjHOFraa63-rKg1QPaqLeLEyqgU/edit?tab=t.0) 
 
 
 
