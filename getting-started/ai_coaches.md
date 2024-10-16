@@ -37,7 +37,7 @@ label: AI Sport Coaches
 
 _AIGCs operate as an integrated system where all components work synergistically to provide athletes with a unique training experience that combines expert knowledge, technological innovation and personalized attention.These virtual trainers are capable of not only providing instructions, but also motivating, adjusting and adapting to the needs of each user, thereby creating a new standard in the field of sports training._  
 
-**Meet** [**ACTIcat**](https://acticat.xyz/) ****— an intelligent interactive coach based on Actiquest Sport Knowledge LLM.  
+**Meet** [**ACTIcat**](https://acticat.xyz/) — an intelligent interactive coach based on Actiquest Sport Knowledge LLM.  
 
 ![](https://actiq.ai/images/acticat.svg)
 
