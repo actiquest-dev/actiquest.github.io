@@ -65,23 +65,29 @@ Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes a
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeDw-nyTxDrV_6BVoYbAm7EeDz1u2LNIFPUMPBGbRZd5Uq3dc-1wf1wJk-HWpDcd-cv40fCYm4pHNmk-8DK3TbfsuSzM798JEqFRCospSpPlH5JMyJOCR5TijGXohyRhFVZzL5S3aTTXaW299gU5Mu29Gdo?key=joJq3iOE8ODwr8SAkn3nUw)
 
-|                                    |   |   |                         |   |                          |   |                                           |                                   |                                    |   |   |                                |   |   |
-| ---------------------------------- | - | - | ----------------------- | - | ------------------------ | - | ----------------------------------------- | --------------------------------- | ---------------------------------- | - | - | ------------------------------ | - | - |
-| **Token Allocation**               |   |   | **Amount** **of Token** |   |  **% of _Total Supply_** |   | **Unlock % of _this Allocation at TGE_**  | **Cliff Period** **_(in month)_** | **Vesting Period****_(in month)_** |   |   | **TGE %** **of Total Supply**  |   |   |
-| **Private1 (SAFT Investors+KOLs)** |   |   | 15,000,000              |   | 3%                       |   | 20%                                       | 5                                 | 18                                 |   |   | 0.6%                           |   |   |
-| **Private2**                       |   |   | 10,000,000              |   | 2%                       |   | 20%                                       | 5                                 | 18                                 |   |   | 0.4%                           |   |   |
-| **Public sale**                    |   |   | 14,285,014              |   | 2,86%                    |   | 20%                                       | 5                                 | 18                                 |   |   | 0.57%                          |   |   |
-| **AI by AI tokenized incentives**  |   |   | 250,000,000             |   | 50%                      |   | 0%                                        | 12                                | 120                                |   |   | 0                              |   |   |
-| **Liquidity for Listing**          |   |   | 25,000,000              |   | 5%                       |   | 5%                                        | 0                                 | 20                                 |   |   | 0.25%                          |   |   |
-| **Partnerships**                   |   |   | 50,000,000              |   | 10%                      |   | 4%                                        | 5                                 | 24                                 |   |   | 0.4%                           |   |   |
-| **Advisors**                       |   |   | 15,000,000              |   | 3%                       |   | 4%                                        | 5                                 | 18                                 |   |   | 0.12%                          |   |   |
-| **Contributors**                   |   |   | 50,000,000              |   | 10%                      |   | 0%                                        | 18                                | 24                                 |   |   | 0%                             |   |   |
-| **Reserve for DAO**                |   |   |                         |   | 14,1%                    |   | 4%                                        | 5                                 | 24                                 |   |   | 0.6%                           |   |   |
-| **Total**                          |   |   | **500,000,000**         |   | **100%**                 |   |                                           |                                   |                                    |   |   | **_Unlock % TGE:_****_2,91%_** |   |   |
+| Token Allocation |  |  | Amount 
+of Token |  |  % of Total Supply |  | Unlock % of this Allocation at TGE  | Cliff Period 
+(in month) | Vesting Period
+(in month)
+ |  |  | TGE % 
+of Total Supply |  |  |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Private1 (SAFT Investors+KOLs) |  |  | 15,000,000 |  | 3% |  | 20% | 5 | 18 |  |  | 0.6% |  |  |
+| Private2 |  |  | 10,000,000 |  | 2% |  | 20% | 5 | 18 |  |  | 0.4% |  |  |
+| Public sale |  |  | 14,285,014 |  | 2,86% |  | 20% | 5 | 18 |  |  | 0.57% |  |  |
+| AI by AI tokenized incentives |  |  | 250,000,000 |  | 50% |  | 0% | 12 | 120 |  |  | 0 |  |  |
+| Liquidity for Listing |  |  | 25,000,000 |  | 5% |  | 5% | 0 | 20 |  |  | 0.25% |  |  |
+| Partnerships |  |  | 50,000,000 |  | 10% |  | 4% | 5 | 24 |  |  | 0.4% |  |  |
+| Advisors |  |  | 15,000,000 |  | 3% |  | 4% | 5 | 18 |  |  | 0.12% |  |  |
+| Contributors |  |  | 50,000,000 |  | 10% |  | 0% | 18 | 24
+ |  |  | 0% |  |  |
+| Reserve for DAO |  |  |  |  | 14,1% |  | 4% | 5 | 24 |  |  | 0.6% |  |  |
+| Total |  |  | 500,000,000 |  | 100% |  |  |  |  |  |  | Unlock % TGE:
+2,91% |  |  |
 
 ***
 
-**TGE Roadmap**
+##TGE Roadmap
 
 1. Private round (SAFT/KOL): $0.01-$0.025, price depends on the amount of the investment check
 - Terms: 20% unlock on TGE, 5 month cliff period, then 18 months vesting with linear monthly unlock of the balance.
@@ -101,13 +107,12 @@ Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes a
 - Raise: **$1,000,000**
 - Participants: Launchpads
 
-4. Listing on exchanges: $0.07.
-
+4. Listing on exchanges: $0.07
 - Listing start date: \[03/12/24]
 - Initial market capitalization: **$800,000**
 - Exchanges: Lbank, Bitget, Mexc=>Gate=>HTX, Kucoin, Bybit
 
-**Token metrics:**
+##Token metrics:
 
 - [Tokenomics and Vesting](https://t.ly/at-yI) (version 1)
 - [Tokenomics and Vesting](https://docs.google.com/spreadsheets/d/1Xljr5EQ7VFtZzO6qBSAzmi_qbq2Ed03iH_Z6xW_xQaQ/) (version 2) 
