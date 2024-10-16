@@ -13,14 +13,14 @@ label: Tokenomics
 💎Actiq Wallet is a Telegram mini-app that allows you to earn ACTI by completing social and sports challenges, while also preparing the Actiquest community for the launch of a mobile app in the first quarter of 2025.
 
 
-## **What are $ACTI tokens for?** 
+## What are $ACTI tokens for? 
 
 Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes as part of the “AI-​by-AI” (AI Incentives for Athletes) program. The program includes the involvement of the athletes in training of advanced AI models and incentivizing them with $ACTI tokens. 
 
 - Actiq is a blockchain agnostic project, so $ACTI will flow within the TON, ICP, BSC, BASE, and SOL ecosystems. 
 - Cross-chain Token Swap: The safe bridges on ICP makes a secure and reliable integration of different networks with ACTI Incentive Ecosystem.
 
-**Athletes can use $ACTI in several ways**
+##Athletes can use $ACTI in several ways
 
 - Redeem $ACTI tokens for a subscription to Actiq app
 - Redeem $ACTI tokens for in-app purchases
@@ -28,7 +28,7 @@ Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes a
 - Put $ACTI in staking (through third party providers).
 - Vote in Actiq Sport DAO (to be announced)
 
-**Sustainability of the project's tokenomics**
+##Sustainability of the project's tokenomics
 
 > $ACTI tokenomics do not contain any hidden ponzi schemes and are
 > completely unattached to the flow of new users, as it happened in
@@ -40,14 +40,14 @@ Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes a
 > audience of sports fans is widely adopted. We keep growing and create
 > news and achievements within our project.
 
-**Aspects of $ACTI tokenomics aimed at preventing token inflation and reducing its value**
+##Aspects of $ACTI tokenomics aimed at preventing token inflation and reducing its value
 
 - 500M $ACTI HardCap across all ecosystems. New tokens will no longer be issued.
 - 50% of all $ACTI are managed by AI as part of the AI ​​by AI incentive program. These tokens are long-vested for 120 months and are released gradually (0.5% of the total supply per month) using a deflationary algorithm that includes the use of fees.
 - Every time an athlete uses $ACTI to purchase goods and services, the tokens will be burned through the smart contract function, resulting in a reduction in the total number of tokens in circulation.
 - Throughout the token's life cycle, no more than 10% of the total $ACTI supply can be in free circulation, which maintains stability and prevents depreciation.
 
-**Basic $ACTI metrics**
+##$ACTI metrics
 
 - Ticker: $ACTI
 - Blockchain network: EVM compatible (mostly). Ecosystems TON, ICP, BASE, BSC and SOL.
@@ -55,13 +55,13 @@ Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes a
 - FDV: $35M.
 - Initial market cap **$800K**
 
-**Income Streams**
+##Income Streams
 
 - B2B sales (AI services for sport schools and professional sport teams, offchain). 
 - B2C sales (Actiq App Subscription + In-app purchases, revenue share with DAO, on-chain). 
 - $ACTI commission (on-chain commissions on digital goods marketplace).
 
-**$ACTI Token Allocation**
+##$ACTI Token Allocation
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeDw-nyTxDrV_6BVoYbAm7EeDz1u2LNIFPUMPBGbRZd5Uq3dc-1wf1wJk-HWpDcd-cv40fCYm4pHNmk-8DK3TbfsuSzM798JEqFRCospSpPlH5JMyJOCR5TijGXohyRhFVZzL5S3aTTXaW299gU5Mu29Gdo?key=joJq3iOE8ODwr8SAkn3nUw)
 
@@ -114,7 +114,7 @@ Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes a
 
 ***
 
-**Available $ACTI allocations for sale**
+##Available $ACTI allocations for sale
 
 - KOL/SAFT round: $150K, min check $50K, price $0,025 (Cliff 5m, Vesting 18m, TGE unlock 20%)
 - Private (VC) round: $500K, min check $50K, price $0,05 (Cliff 5m, Vesting 18m, TGE unlock 15%)
