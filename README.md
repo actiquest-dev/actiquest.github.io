@@ -227,8 +227,8 @@ Register interest in the AI ​​by AI program by following the link below and 
 
 - [Mike Keer](https://www.linkedin.com/in/mikhail-kiriukhin-97389957/) - CTO, AI architect. Expert in language models and computer vision. Participant in joint projects with Lux Innovation, EIC, etc.
 
-- Sergey Koskov – product manager. Athlete.
-- Iskander Khakimov - FullStack, Front-End. Triathlete.
+- Sergey Koskov — product manager. Athlete.
+- Iskander Khakimov — FullStack, Front-End. Triathlete.
 - Vit Znack — FullStack, Back-End. Sportsman.
 - +3 people (data specialists/testing)
 
@@ -250,20 +250,20 @@ Register interest in the AI ​​by AI program by following the link below and 
 
 ## Getting started with the Actiq app
 
-[Actiq app user flow](https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551).
-2. Let's take the first step by downloading the app (soon).
-3. Fill out the registration form to become app member
-4. Create an account with your email when you download the app onto your phone and wearable device. Login, that you shall receive an authentication code in your inbox.
-5. Create invite code to set up the wallet in the web3 dashboard at the next steps.
-6. Connect your Strava account
-7. Connect your Garmin account
-8. Set up your profile and personalize your AI Coach
-9. Get a personal training plan
-10. Start using gamified training
-11. Complete the training block or finish the quest
-12. Be rewarded by AI Coach
-13. Check rewards at Web3 ​​dashboard
-14. TBContinued soon 
+- [ ] [Actiq app user flow](https://miro.com/welcomeonboard/bG1IeUNONjFWSm1zUW9yS1ZQcko4OVVCVFhZdUlmdGsySnpkZk5pSUxBdno4Z1JzTDlWU3drVEo0ZzFaamJ3VnwzMDc0NDU3MzQ1Nzk4NjM5MDAwfDI=?share_link_id=548186845551).
+- [ ] Let's take the first step by downloading the app (soon).
+- [ ] Fill out the registration form to become app member
+- [ ] Create an account with your email when you download the app onto your phone and wearable device. Login, that you shall receive an authentication code in your inbox.
+- [ ] Create invite code to set up the wallet in the web3 dashboard at the next steps.
+- [ ] Connect your Strava account
+- [ ] Connect your Garmin account
+- [ ] Set up your profile and personalize your AI Coach
+- [ ] Get a personal training plan
+- [ ] Start using gamified training
+- [ ] Complete the training block or finish the quest
+- [ ] Be rewarded by AI Coach
+- [ ] Check rewards at Web3 ​​dashboard
+TBContinued soon 
 
 ## Innovation and quality
 
