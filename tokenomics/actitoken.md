@@ -65,26 +65,19 @@ Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes a
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeDw-nyTxDrV_6BVoYbAm7EeDz1u2LNIFPUMPBGbRZd5Uq3dc-1wf1wJk-HWpDcd-cv40fCYm4pHNmk-8DK3TbfsuSzM798JEqFRCospSpPlH5JMyJOCR5TijGXohyRhFVZzL5S3aTTXaW299gU5Mu29Gdo?key=joJq3iOE8ODwr8SAkn3nUw)
 
-| Token Allocation |  |  | Amount 
-of Token |  |  % of Total Supply |  | Unlock % of this Allocation at TGE  | Cliff Period 
-(in month) | Vesting Period
-(in month)
- |  |  | TGE % 
-of Total Supply |  |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Private1 (SAFT Investors+KOLs) |  |  | 15,000,000 |  | 3% |  | 20% | 5 | 18 |  |  | 0.6% |  |  |
-| Private2 |  |  | 10,000,000 |  | 2% |  | 20% | 5 | 18 |  |  | 0.4% |  |  |
-| Public sale |  |  | 14,285,014 |  | 2,86% |  | 20% | 5 | 18 |  |  | 0.57% |  |  |
-| AI by AI tokenized incentives |  |  | 250,000,000 |  | 50% |  | 0% | 12 | 120 |  |  | 0 |  |  |
-| Liquidity for Listing |  |  | 25,000,000 |  | 5% |  | 5% | 0 | 20 |  |  | 0.25% |  |  |
-| Partnerships |  |  | 50,000,000 |  | 10% |  | 4% | 5 | 24 |  |  | 0.4% |  |  |
-| Advisors |  |  | 15,000,000 |  | 3% |  | 4% | 5 | 18 |  |  | 0.12% |  |  |
-| Contributors |  |  | 50,000,000 |  | 10% |  | 0% | 18 | 24
- |  |  | 0% |  |  |
-| Reserve for DAO |  |  |  |  | 14,1% |  | 4% | 5 | 24 |  |  | 0.6% |  |  |
-| Total |  |  | 500,000,000 |  | 100% |  |  |  |  |  |  | Unlock % TGE:
-2,91% |  |  |
-
+{.compact}
+Token Allocation | Amount of Token | % of Total Supply | Unlock % of this Allocation at TGE | Cliff Period (in month) | Vesting Period (in month) | TGE % of Total Supply
+---    | ---  | ---  | ---  | ---  | ---  | ---  |
+Private1 (SAFT Investors+KOLs) | 15,000,000 | 3% | 20%| 5| 18| 0.6%
+Private2 (VC) | 10,000,000| 2%| 20%| 5| 18| 0.4%
+Public sale | 14,285,014| 2,86%| 20%| 5| 18| 0.57%
+AI by AI tokenized incentives | 250,000,000| 50%| 0%| 12| 120| 0
+Liquidity for Listing | 25,000,000| 5%| 5%| 0| 20| 0.25%
+Partnerships | 50,000,000| 10%| 4%| 5| 24| 0.4%
+Advisors | 15,000,000| 3%| 4%| 5| 18| 0.12%
+Contributors | 50,000,000| 10%| 0%| 18| 24| 0%
+Reserve for DAO| 70,700,000| 14.1%| 4| 5| 24| 0.6%
+Total | 500,000,000| | | | | Unlock % TGE:2,91%
 
 ***
 
