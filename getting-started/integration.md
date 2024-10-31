@@ -1,5 +1,5 @@
 ---
 icon: gear
-label: API's and Integrations
+label: FAQ
 ---
 # TBA SOON
