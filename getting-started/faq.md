@@ -5,9 +5,8 @@ label: FAQ
 # FAQ
 
 ## This Q&A will help you understand what Actiq is in a nutshell
-===
+
 ### How does Actiq plan to foster community-driven AI training? What is the DAO’s role in model training, and how does Actiq ensure high-quality contributions?
-===
 
 > We are working to bring the AI revolution into sports. The Sports
 > Knowledge LLM will support all forms of sports that mankind has ever
