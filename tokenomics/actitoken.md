@@ -68,54 +68,53 @@ Actiq is launching tokenized Web3 incentives ($ACTI ERC20 tokens) for athletes a
 {.compact}
 Token Allocation | Amount of Token | % of Total Supply | Unlock % of this Allocation at TGE | Cliff Period (in month) | Vesting Period (in month) | TGE % of Total Supply
 ---    | ---  | ---  | ---  | ---  | ---  | ---  |
-Private1 (SAFT Investors+KOLs) | 15,000,000 | 3% | 20%| 5| 18| 0.6%
+Private1 (SAFT Investors+KOLs) | 15,000,000 | 3% | 20%| 5| 12| 0.6%
 Private2 (VC) | 10,000,000| 2%| 20%| 5| 18| 0.4%
-Public sale | 14,285,014| 2,86%| 20%| 5| 18| 0.57%
+Public sale | 14,285,014| 2,86%| 25%| 3| 12| 0.57%
 AI by AI tokenized incentives | 250,000,000| 50%| 0%| 12| 120| 0
 Liquidity for Listing | 25,000,000| 5%| 5%| 0| 20| 0.25%
-Partnerships | 50,000,000| 10%| 4%| 5| 24| 0.4%
+Partnerships | 50,000,000| 10%| 0%| 5| 24| 0.4%
 Advisors | 15,000,000| 3%| 4%| 5| 18| 0.12%
 Contributors | 50,000,000| 10%| 0%| 18| 24| 0%
-Reserve for DAO| 70,700,000| 14.1%| 4| 5| 24| 0.6%
+Reserve for DAO| 70,700,000| 14.1%| 0| 5| 24| 0.6%
 Total | 500,000,000| | | | | Unlock % TGE:2,91%
 
 ***
 
 ## TGE Roadmap
 
-1. Private round (SAFT/KOL): $0.01-$0.025, price depends on the amount of the investment check
-- Terms: 20% unlock on TGE, 5 month cliff period, then 18 months vesting with linear monthly unlock of the balance.
-- Dates: [01/08/2024 – 15/10/2024]
+1. Private round (SAFT/KOL): $0.04, price depends on the amount of the investment check
+- Terms: 20% unlock on TGE, 5 month cliff period, then 12 months vesting with linear monthly unlock of the balance.
+- Dates: [01/08/2024 – 10/11/2024]
 - Raise: **$300,000**
 - Participants: SAFT Investors and KOL's.
 
-2. Seed round (VC), $0.05.
+2. Seed round (VC), $0.05
 - Terms: 20% unlock on TGE, 5 month cliff period, then 18 months vesting with linear monthly unlock of the balance.
-- Date: Starts at \[15/10/2024]
+- Date: Starts at [01/10/2024]
 - Raise: **$500,000**
 - Participants: Private investors, VC’s.
 
 3. Public round (IDO), $0.07
-- Terms: 20% unlock on TGE, 5 month cliff period, then 18 months vesting with linear monthly unlocking of the balance.
+- Terms: 25% unlock on TGE, 3 month cliff period, then 12 months vesting with linear monthly unlocking of the balance.
 - Date: Starts at \[20/11/2024]
 - Raise: **$1,000,000**
 - Participants: Launchpads
 
 4. Listing on exchanges: $0.07
 - Listing start date: \[03/12/24]
-- Initial market capitalization: **$800,000**
-- Exchanges: Lbank, Bitget, Mexc=>Gate=>HTX, Kucoin, Bybit
+- Initial market capitalization: **$450,000**
+- Exchanges: Lbank, Bitget, Mexc=>Gate=>HTX
 
 ## Token metrics:
 
-- [Tokenomics and Vesting](https://t.ly/at-yI) (version 1)
-- [Tokenomics and Vesting](https://docs.google.com/spreadsheets/d/1Xljr5EQ7VFtZzO6qBSAzmi_qbq2Ed03iH_Z6xW_xQaQ/) (version 2) 
+- [Tokenomics and Vesting](https://t.ly/at-yI)
 
 ***
 
 ## Available $ACTI allocations for sale
 
-- KOL/SAFT round: $150K, min check $50K, price $0,025 (Cliff 5m, Vesting 18m, TGE unlock 20%)
-- Private (VC) round: $500K, min check $50K, price $0,05 (Cliff 5m, Vesting 18m, TGE unlock 15%)
+- KOL/SAFT round: $150K, min check $50K, price $0,04 (Cliff 5m, Vesting 12m, TGE unlock 20%)
+- Private (VC) round: $500K, min check $20K, price $0,05 (Cliff 5m, Vesting 18m, TGE unlock 15%)
 
 [**Link to SAFT**](https://docs.google.com/document/d/1DE6JaA7tzphjvPbdHjHOFraa63-rKg1QPaqLeLEyqgU/edit?tab=t.0)
