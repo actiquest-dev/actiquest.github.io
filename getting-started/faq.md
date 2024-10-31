@@ -4,7 +4,7 @@ label: FAQ
 ---
 # FAQ
 
-## Q&A that helps you to understand what is Actiq at a glance 
+## This Q&A will help you understand what Actiq is in a nutshell
 ===
 ### How does Actiq plan to foster community-driven AI training? What is the DAO’s role in model training, and how does Actiq ensure high-quality contributions?
 ===
