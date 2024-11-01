@@ -233,13 +233,15 @@ $ACTI Incentive token serves as a core element of Actiq's ecosystem, offering mu
 > unique approach gives it a competitive edge:*
 
 1. **Freeletics**  
+
 *What They’re Building:* Freeletics offers an AI-powered fitness app focused on high-intensity interval training (HIIT) and bodyweight exercises. They provide personalized workout plans, adaptive coaching, and video demonstrations. The app emphasizes building fitness with minimal equipment, making it accessible for users training at home or outdoors.  
 
 *How They’re Doing It:* Freeletics uses an AI algorithm to tailor workout programs based on user feedback, performance, and goals. They leverage a large community for social motivation, sharing progress, and participating in challenges, which helps boost engagement and retention.  
 
 *Actiq’s Competitive Edge:* Actiq focuses on multimodal AI with real-time feedback, particularly through wearable integrations and vision transformers for form correction. This real-time responsiveness and sport-specific coaching set Actiq apart, especially for athletes and users seeking precise movement analysis rather than just bodyweight HIIT routines.
 
-2. **WHOOP**  
+2. **WHOOP**
+
 *What They’re Building:* WHOOP combines a wearable device with a coaching platform that monitors sleep, recovery, and fitness strain. It’s especially popular among athletes who want a detailed understanding of their recovery and performance metrics, providing insights into optimizing workouts based on rest and strain levels. 
 
 *How They’re Doing It:* WHOOP gathers continuous biometric data from its wearable, such as heart rate variability (HRV) and sleep stages, to deliver personalized recommendations. The app uses these metrics to create a daily "strain" score and guides users on how much exertion they should aim for, based on their recovery status.  
@@ -247,6 +249,7 @@ $ACTI Incentive token serves as a core element of Actiq's ecosystem, offering mu
 *Actiq’s Competitive Edge:* While WHOOP is strong on recovery and strain insights, Actiq combines these biometric insights with actionable, real-time workout feedback and adaptive goal-setting. Actiq’s focus on multimodal training (combining wearables, visual AI, and community feedback) allows for a comprehensive training ecosystem, not just limited to recovery metrics.
 
 3. **Peloton**  
+
 *What They’re Building:* Peloton offers a connected fitness platform with live and on-demand workout classes, mainly focusing on cycling, running, and strength training. Their platform emphasizes interactive classes, gamification, and community engagement, with a strong social component through live leaderboards and in-class metrics.  
 
 *How They’re Doing It:* Peloton’s model combines a high-quality at-home fitness experience with gamified elements and social connectivity. They use live instructors, motivational tracking, and competitive leaderboards to drive user engagement, creating a social fitness experience.  
