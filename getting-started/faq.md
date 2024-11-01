@@ -76,6 +76,7 @@ Types of Data Collected:
 
 > *In the Actiq Wallet soft launch on Telegram, the user experience centers around engaging with a gamified,task-based
 > platform where users can earn $ACTI tokens by completing various activities.*
+
 1. **Telegram Integration.** Actiq Wallet is built within Telegram, making it accessible and easy to use on a familiar messaging app. Users interact with the wallet through chat commands and buttons, which guide them through earning, tracking, and redeeming rewards. Also it simplifying a user aquistion from targeted telegram communities.
 2. **Task-Based Earning.** Users earn $ACTI tokens by completing specific tasks assigned within the Telegram wallet interface. Tasks are designed to be simple and engaging, such as following social media accounts, sharing content, or participating in community discussions. Each task completed earns users a certain amount of $ACTI tokens, which they can view and track in their Actiq Wallet. Sport tasks like Strava airdrop - 30 $ACTI per 1km of run is just one of examples.
 3. **Gamified Interface.** The wallet experience is gamified, with a reward system that incentivizes users to complete more tasks. Some users report a straightforward experience where notifications prompt them to take part in new activities as they become available, keeping engagement levels high.
