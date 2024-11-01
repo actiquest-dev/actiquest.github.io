@@ -29,7 +29,7 @@ label: FAQ
 
 ***
 
-### How does Actiq plan to foster community-driven AI training? What is the DAO’s role in model training, and how does Actiq ensure high-quality contributions?
+### What makes Actiq's multimodal AI unique for sports training? Can you elaborate on how the AI integrates with wearables and uses vision transformers to track and coach in real-time?
 
 > We are working to bring the AI revolution into sports. The Sports
 > Knowledge LLM will support all forms of sports that mankind has ever
