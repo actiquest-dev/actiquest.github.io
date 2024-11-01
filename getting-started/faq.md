@@ -197,7 +197,7 @@ $ACTI Incentive token serves as a core element of Actiq's ecosystem, offering mu
 2. **Reward and Motivation System**  
 	- *Task Completion Rewards.* Actiq uses $ACTI tokens to reward users for completing various tasks, such as engaging with the community, participating in challenges, or achieving fitness milestones. This play-to-earn approach motivates users to stay active on the platform.  
 	- *Progress Milestones and Achievements.* As users hit milestones or achieve personal goals, they can earn $ACTI tokens, reinforcing their commitment to training and creating a sense of accomplishment.  
-3. DAO Governance  
+3. **DAO Governance**  
 	- *Voting on Platform Decisions.* $ACTI token holders can participate in governance by voting on important platform decisions, such as feature updates, new content, or the allocation of community funds. This allows users to have a voice in Actiq’s development and ensures the platform remains user-centered.  
 	- *DAO Membership and Influence.* Holding $ACTI tokens may grant users membership in Actiq’s decentralized autonomous organization (DAO), giving them influence over AI model adjustments, data governance, and new training programs.  
 4. **Marketplace and Ecosystem Integrations**  
