@@ -40,9 +40,7 @@ Key advantages include:
 
 > *The Actiquest AI collects a wide range of data to provide a very detailed analysis of the athletic performance, focusing on metrics
 > that enhance training feedback.*
-
-  
-  
+ 
 Types of Data Collected:  
   
 1. **Biometric Data.** These include heart rate, respiration rate, which are gathered through wearable sensors in order to monitor an athlete's physical exertion and recovery.  
@@ -69,20 +67,18 @@ Types of Data Collected:
 2. **Customized Training Goals.** Based on the initial assessment, Actiq creates goals that match the user’s abilities. For a beginner, the focus might be on building foundational strength and form, while an advanced athlete might receive more specialized goals like refining technique or increasing speed.
 3. **Adaptive Difficulty Scaling.** The AI monitors real-time metrics such as heart rate, power output, and fatigue indicators to adjust the intensity of exercises during workouts. For instance, if the AI detects the user struggling to maintain form, it can reduce the intensity of a particular drill, or if the user is handling exercises easily, it can increase difficulty to keep workouts challenging.  
 4. **Progress Tracking Metrics.** AI measures various metrics to gauge an athlete’s improvement over time:
-	- Performance Metrics: Speed, strength, agility, endurance, and specific skill indicators are tracked. If an athlete consistently hits target speeds or reps, the AI recognizes this as improvement.
-	- Form and Technique: Using vision transformers, the AI tracks movement quality, identifying improvements in form. If an athlete’s technique becomes smoother and more precise, this is logged as progress.
-	- Recovery and Fatigue Levels: Actiq also monitors how quickly athletes recover between exercises and their fatigue levels over the session. Faster recovery times indicate improved fitness.
+- *Performance Metrics:* Speed, strength, agility, endurance, and specific skill indicators are tracked. If an athlete consistently hits target speeds or reps, the AI recognizes this as improvement.
+- *Form and Technique:* Using vision transformers, the AI tracks movement quality, identifying improvements in form. If an athlete’s technique becomes smoother and more precise, this is logged as progress.
+- *Recovery and Fatigue Levels:* Actiq also monitors how quickly athletes recover between exercises and their fatigue levels over the session. Faster recovery times indicate improved fitness.
 5. **Weekly and Monthly Goal Adjustments.** Based on these metrics, Actiq adjusts training goals on a weekly or monthly basis. For example:
-	- Beginner to Intermediate Progression: If a beginner improves their endurance and basic strength, Actiq may introduce more complex exercises or increase the volume of work, pushing them into an intermediate training plan.
-	- Skill Refinement for Advanced Users: For advanced athletes, Actiq refines and intensifies drills targeting technique, speed, or endurance, continually evolving the program to avoid plateaus.
-
+	- *Beginner to Intermediate Progression:* If a beginner improves their endurance and basic strength, Actiq may introduce more complex exercises or increase the volume of work, pushing them into an intermediate training plan.
+	- *Skill Refinement for Advanced Users:* For advanced athletes, Actiq refines and intensifies drills targeting technique, speed, or endurance, continually evolving the program to avoid plateaus.
 6. **Feedback Loop and Goal Realignment.** Actiq incorporates a feedback loop to refine training plans as users progress. It recognizes when athletes consistently hit or exceed targets and realigns goals accordingly, ensuring they remain challenging and aligned with the athlete’s growth.
 7. **Goal Variability Based on User Preferences.** Actiq allows users to set specific goals, such as strength or agility improvements, and adapts the training plan to emphasize those areas. This flexibility ensures the AI aligns with the user’s personal fitness objectives while still providing comprehensive, balanced training.
 
 ### What’s the user experience with Actiq Wallet on Telegram like? How do users earn $ACTI and complete tasks within this soft launch, and are there rewards available already?
 
-In the Actiq Wallet soft launch on Telegram, the user experience centers around engaging with a gamified, task-based platform where users can earn $ACTI tokens by completing various activities.  
-  
+In the Actiq Wallet soft launch on Telegram, the user experience centers around engaging with a gamified, task-based platform where users can earn $ACTI tokens by completing various activities.
 1. **Telegram Integration.** Actiq Wallet is built within Telegram, making it accessible and easy to use on a familiar messaging app. Users interact with the wallet through chat commands and buttons, which guide them through earning, tracking, and redeeming rewards. Also it simplifying a user aquistion from targeted telegram communities.
 2. **Task-Based Earning.** Users earn $ACTI tokens by completing specific tasks assigned within the Telegram wallet interface. Tasks are designed to be simple and engaging, such as following social media accounts, sharing content, or participating in community discussions. Each task completed earns users a certain amount of $ACTI tokens, which they can view and track in their Actiq Wallet. Sport tasks like Strava airdrop - 30 $ACTI per 1km of run is just one of examples.
 3. **Gamified Interface.** The wallet experience is gamified, with a reward system that incentivizes users to complete more tasks. Some users report a straightforward experience where notifications prompt them to take part in new activities as they become available, keeping engagement levels high.
