@@ -54,7 +54,7 @@ Link to [Actiq Wallet](https://ton.app/wallets/actiq-wallet?id=2045 "Actiq Walle
 
 Power innovations that will improve the health and quality of life for billions of people around the globe using the latest AI. Ease human trainers' burden by making personalized AI sport coaches available 24/7, which will offer tailored training and in-game rewards. We want to democratize sport by making it accessible to all, regardless of their skill level.
 
-### Mission**
+### Mission
 
 We are designing a new approach to training for all athletes by mixing gamification and the power of AI. Further, sport coaching will be revolutionized by AI Coaches combined with personalized omni-sport approach. We will develop an app through which you can make money with sports, integrating Social-Fi aspects that connect sport lovers via gamified workout and sports activities.
 
