@@ -8,6 +8,27 @@ label: FAQ
 
 ***
 
+### Why Actiq?
+
+> Actiq disrupts sport coaching using combination AI and web3. We lowering high cost and expanding limited availability 
+> human sports coaches with AI. We meet needs for tailored immersive training programs. We're boosting a low motivation > to learn new sports. We solve web3 users' poor engagement in physical activities, excessive screen time and casual
+> gaming discourage healthy habits.
+
+***
+
+### What is Actiq?
+
+> Actiq is a state-of-the-art super app for all sports fans, which opens completely new perspectives in mastering
+> various types of sports (tennis, padel, cricket, baseball, etc). The application is powered by the latest
+> developments in Artificial Intelligence Gamified Coach (AIGC) technology and enhanced with web3 based train2earn
+> mechanics. This has never happened before (Sport Knowledge AI that can incentivize athletes). New users in the sports
+> industry are going to come into crypto space, both coaches and sport lovers. Competitors include Web2 tracking apps
+> without AI and rewards tools (Strava) or M2E apps like StepN, which have a lower impact on sports and wellness.
+> Secondary we're solving problem of decentralized ownership of AI models stored on blockchain and distributing the
+> value of AI inference via DAO which is important for expanding horizons of AI & Web3 synergy.
+
+***
+
 ### How does Actiq plan to foster community-driven AI training? What is the DAO’s role in model training, and how does Actiq ensure high-quality contributions?
 
 > We are working to bring the AI revolution into sports. The Sports
