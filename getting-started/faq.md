@@ -64,7 +64,6 @@ Types of Data Collected:
 
 > *Actiq AI is designed to adapt dynamically to an athlete’s fitness level, tailoring goals and training plans to their unique capabilities
 > and progress.*
-
   
 1. **Initial Assessment.** When a new user starts, Actiq AI conducts an initial assessment based on baseline metrics like endurance, strength, flexibility, and any sport-specific skills. This helps the AI understand the athlete's current fitness level, setting a foundation for personalized training.
 2. **Customized Training Goals.** Based on the initial assessment, Actiq creates goals that match the user’s abilities. For a beginner, the focus might be on building foundational strength and form, while an advanced athlete might receive more specialized goals like refining technique or increasing speed.
@@ -96,7 +95,8 @@ In the Actiq Wallet soft launch on Telegram, the user experience centers around 
 
 ### How does Actiq's play-to-earn model work with $ACTI? Are rewards proportional to the user's engagement, and how sustainable is this model long-term?
 
-The onboarding process for new users with Actiq’s gamified AI Coaches is designed to be interactive and personalized.  
+> *The onboarding process for new users with Actiq’s gamified AI Coaches is designed to be interactive and >
+> personalized.* 
 1. **Initial Fitness Assessment**  
 	- Baseline Evaluation: New users typically go through an assessment that gauges their current fitness level. This includes basic metrics like endurance, strength, flexibility, and any sport-specific skills relevant to the user’s interests. AI will analyze athlete's Strava acquired data.  
 	- Wearable and Sensor Integration: If the user has compatible wearables, Actiq will integrate this data to capture real-time metrics like heart rate and movement quality, adding precision to the assessment.  
@@ -106,13 +106,12 @@ The onboarding process for new users with Actiq’s gamified AI Coaches is desig
 	- Adaptive Progression: Goals are designed to evolve as users make progress, with the AI adjusting intensity and complexity to keep the user on a steady path toward improvement.  
 3. **Gamified Task Setup**  
 	- Daily and Weekly Tasks: Actiq provides users with daily and weekly tasks to gamify the training experience. Tasks may range from completing specific exercises to engaging in skill-building drills, with rewards for completing milestones.  
-	- Leveling and Rewards: Users earn points or $ACTI tokens for completing tasks and reaching goals, adding a motivational layer to the training process. As users progress, they unlock more challenging tasks, helping them advance through levels..
+	- Leveling and Rewards: Users earn points or $ACTI tokens for completing tasks and reaching goals, adding a motivational layer to the training process. As users progress, they unlock more challenging tasks, helping them advance through levels.
 
 ### What monetization models Actiq is exploring? Will Actiq include subscription tiers, in-app purchases, or external partnerships to create revenue beyond token incentives?
 
 > *Actiq is exploring several monetization models that go beyond token incentives to create a sustainable revenue stream and enhance the user
 > experience.*
-
   
 1. **Subscription Tiers**  
 	- Freemium Model: Actiq offer a free, basic tier with essential features to attract a broad user base, while advanced features are gated behind subscription tiers.  
@@ -128,8 +127,8 @@ The onboarding process for new users with Actiq’s gamified AI Coaches is desig
 
 ### How does Actiq plan to foster community-driven AI training? What is the DAO’s role in model training, and how does Actiq ensure high-quality contributions?
 
-
-Actiq’s approach to fostering community-driven AI training centers on using a decentralized autonomous organization (DAO) structure, where users and stakeholders collectively contribute to and oversee model improvements.  
+> *Actiq’s approach to fostering community-driven AI training centers on using a decentralized autonomous organization
+> (DAO) structure, where users and stakeholders collectively contribute to and oversee model improvements*.  
   
 1. **Role of the DAO in AI Model Training**  
 	- Data Curation and Model Refinement: The DAO enables Actiq’s community members to participate in the curation of training data and suggest model refinements.  
@@ -177,7 +176,7 @@ Actiq’s approach to fostering community-driven AI training centers on using a 
 ### List of investors (both VCs and angels)  
 
 1. Equity raise, pre-seed round:  
-	- BHP Ventures (no token warrant, hard commit) - $120K  
+	- BHP Investments (no token warrant, hard commit) - $120K  
 	- Heartcore (no token warrant, hard commit) - $150K  
 2. Token raise, SAFT/KOL round:  
 	- IBC Group - $100K (hard commit)  
@@ -194,7 +193,6 @@ Actiq’s approach to fostering community-driven AI training centers on using a 
 ### Community growth traciton so far
 
 ~50K in October =>150K in November (Twitter, Telegram).
-
 
 ### Markdown extensions
 
@@ -220,16 +218,16 @@ The $ACTI token serves as a core element of Actiq's ecosystem, offering multiple
 > *The $ACTI token serves as a core element of Actiq's ecosystem, offering multiple utilities designed to enhance user engagement,
 > motivate participation, and create a sustainable platform economy.*
 
-1. In-App Purchases and Premium Features  
+1. **In-App Purchases and Premium Features**  
 	- Unlock Advanced AI Coaching: Users can use $ACTI tokens to access enhanced AI coaching features, such as advanced movement analysis, detailed progress reports, or custom training programs. These premium features help athletes receive more personalized and in-depth feedback.  
 	- Exclusive Training Content: Some specialized training routines, technique-focused programs, or sport-specific drills may be accessible only with $ACTI tokens, allowing users to customize their fitness journey with unique resources.  
-2. Reward and Motivation System  
+2. **Reward and Motivation System**  
 	- Task Completion Rewards: Actiq uses $ACTI tokens to reward users for completing various tasks, such as engaging with the community, participating in challenges, or achieving fitness milestones. This play-to-earn approach motivates users to stay active on the platform.  
 	- Progress Milestones and Achievements: As users hit milestones or achieve personal goals, they can earn $ACTI tokens, reinforcing their commitment to training and creating a sense of accomplishment.  
-3. DAO Governance  
+3. **DAO Governance**  
 	- Voting on Platform Decisions: $ACTI token holders can participate in governance by voting on important platform decisions, such as feature updates, new content, or the allocation of community funds. This allows users to have a voice in Actiq’s development and ensures the platform remains user-centered.  
 	- DAO Membership and Influence: Holding $ACTI tokens may grant users membership in Actiq’s decentralized autonomous organization (DAO), giving them influence over AI model adjustments, data governance, and new training programs.  
-4. Marketplace and Ecosystem Integrations  
+4. **Marketplace and Ecosystem Integrations**  
 	- Purchases with Partners: Actiq may develop partnerships with fitness brands, wellness providers, or equipment manufacturers, allowing users to spend $ACTI tokens on products or services within an Actiq marketplace, offering real-world value.  
 	- Incentives for Data Contributions: Users who contribute valuable training data, like movement recordings or form corrections, might earn $ACTI tokens as a reward, fueling the AI's ongoing improvement and keeping the data ecosystem vibrant.  
 5. Token Staking  
@@ -241,7 +239,7 @@ The $ACTI token serves as a core element of Actiq's ecosystem, offering multiple
 > *Here’s an overview of Actiq’s top three competitors in the AI-driven fitness and wellness space, what they’re building, and how Actiq’s
 > unique approach gives it a competitive edge:*
 
-**1. Freeletics**  
+1. **Freeletics**  
 
 *What They’re Building:* Freeletics offers an AI-powered fitness app focused on high-intensity interval training (HIIT) and bodyweight exercises. They provide personalized workout plans, adaptive coaching, and video demonstrations. The app emphasizes building fitness with minimal equipment, making it accessible for users training at home or outdoors.  
 
@@ -274,7 +272,7 @@ Decentralized Community Input and DAO Governance: By integrating a DAO, Actiq em
 
 ### Are there any MM on boarded?
 
-Yes, Hummingbot + [Margin.io](http://margin.io/)
+Yes, [Hummingbot](https://hummingbot.org) + [Margin.io](http://margin.io/)
 
 
 ### What launchpad have you talked to and how is the token launch plan?
@@ -304,7 +302,7 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 
 ### What are the critical milestones for the next 12 months? Will there be new feature releases, partnerships, or geographic expansions?
 
-1. **Q4-2024**  
+1. **Q4,2024**  
 
 **Development**  
 - Preparing for Sport Knowledge LLM and Vision Transformer 1000x training program.  
@@ -321,10 +319,9 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 - Implement AI based Strava anti-cheat (allows to recognize data coming from Strava and prevent incentivize accounts where data is corrupted).  
 
 **Product**  
-
 - Custdev + celebrity coaches collaboration: (recruit 200 athletes to help us to train our AI engine during custdev campaign to validate product and market fit + 10 coaches as ambassadors).  
 - AI by AI program: create Sport Knowledge LLM training app for athletes and coaches to train AI and be incentivized with $ACTI (alpha version of Actiq app) – running when token will be listed.  
-- Run $ACTICAT – meme coin to promote first AIGC character (https://acticat.xyz ) + ACTI airdrop to $ACTICAT investors.  
+- Run $ACTICAT – meme coin to promote first AIGC character (https://acticat.xyz ) + ACTI airdrop to $ACTICAT investors. 
 - Create Beta app frond-end release  
 - Create web3 dashboard mockups  
 - New website (https://actiq.ai)  
@@ -336,7 +333,7 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 - PR campaign (Forbes, Bloomberg Crypto, Coin Telegraph, Sport Media, VentureBeat, KOLs);  
 - Announcing partnerships: SKALE + ICP  
   
-2. **Q1-2025**  
+2. **Q1,2025**  
 - Listing: Bybit, Gate, HTX + Tier2  
 - Target token price: $0.07=> $0.7 (x10 token growth in 1st quarter of 2025 by good newsfeed, new partnership, active token buyback and MM)
 
@@ -357,7 +354,7 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 - Traders incentivizing campaign.  
 - Launching compliant $ACTI token for US market with Coinbase  
   
-3. **Q2-4, 2025**  
+3. **Q2-Q4,2025**  
 - New sport models 
 - Milestone: 50K 1Y subscription based installs  
 - Reaching $50-80M company valuation  
@@ -366,7 +363,7 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 
 
 ### What's contract address of $ACTI Incentive Token
-[https://bscscan.com/token/0xB4b26E52621C2D63268ec4322748f510c47ec692]
+[$ACTI on BNB chain Smart Contract](https://bscscan.com/token/0xB4b26E52621C2D63268ec4322748f510c47ec692)
 
 ### What is the upside of the token? Why do people want to buy and hold $ACTI instead of buying low and selling high?
 
@@ -382,10 +379,10 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 
 ### Team details
 
-- Michael Aprossine - [https://linkedin.com/in/miguel2020](https://linkedin.com/in/miguel2020)  [https://x.com/miguel_actiq](https://x.com/miguel_actiq) . CEO. Thriathlon Fan. Serial Entrepreneur from early 2000; 20+ years in IT consulting and product development in IoT, SaaS, Mobility и Blockchain; Cofounder of Apla.network (Luxembourg) Cofounder of DrivePoint (sold to Hyundai Mobility in 2019).  
-- Phil Khomenok - [https://linkedin.com/in/gsarskyes](https://linkedin.com/in/gsarskyes) , COO, Experienced Swimmer.Builds online sales of cable products and rolled metal from scratch for $10M per year. In 2017, he was a co-founder of the Grown Capital investment fund with attracted capital of $5M. In 2020-2023, in the role of CBDO, he helped Advcash in developing new products and entering new geographies.  
-- Ankit Sahu - [https://linkedin.com/in/ansahu](https://linkedin.com/in/ansahu) , CFO, Experienced Tennis Player. 20+ years in wealth management across private banking and funds, including: Prosperity Group, Bank Of America, Merrill Lynch and UBS.  
-- Mich Keer - [https://www.linkedin.com/in/mikhail-kiriukhin-97389957](https://www.linkedin.com/in/mikhail-kiriukhin-97389957), CTO, AI Architect. Expert in language models and computer vision. Participant in joint projects with Lux Innovation, EIC and others.  
+- Michael Aprossine - [LinkedIn](https://linkedin.com/in/miguel2020),[X](https://x.com/miguel_actiq). CEO. Thriathlon Fan. Serial Entrepreneur from early 2000; 20+ years in IT consulting and product development in IoT, SaaS, Mobility и Blockchain; Cofounder of Apla.network (Luxembourg) Cofounder of DrivePoint (sold to Hyundai Mobility in 2019).  
+- Phil Khomenok - [LinkedIn](https://linkedin.com/in/gsarskyes) , COO, Experienced Swimmer.Builds online sales of cable products and rolled metal from scratch for $10M per year. In 2017, he was a co-founder of the Grown Capital investment fund with attracted capital of $5M. In 2020-2023, in the role of CBDO, he helped Advcash in developing new products and entering new geographies.  
+- Ankit Sahu - [LinkedIn](https://linkedin.com/in/ansahu) , CFO, Experienced Tennis Player. 20+ years in wealth management across private banking and funds, including: Prosperity Group, Bank Of America, Merrill Lynch and UBS.  
+- Mich Keer - [LinkedIn](https://www.linkedin.com/in/mikhail-kiriukhin-97389957), CTO, AI Architect. Expert in language models and computer vision. Participant in joint projects with Lux Innovation, EIC and others.  
 - Sergey Koskov - Product Manager. Athlete.  
 - Iskander Khakimov - FullStack, Front-End. Triathlete.  
 - Vit Znak - FullStack, Back-End. Athlete.  
@@ -400,9 +397,9 @@ The Telegram wallet will remain one of the channels for acquiring new users in t
 Actiq has step by step plans to expand the range of sports supported on its platform and introduce advanced coaching features. We start with a most popular sports in the markets (tennis and golf) and expands with one's which is most significant for specific markets we target, such us cricket for India.  
   
 **Expansion of Supported Sports:**  
-- Endurance Sports: Actiq plans to introduce more tailored features for endurance-based sports like running, cycling, and swimming. These features may include metrics for pace, cadence, heart rate zones, and recovery tracking to help athletes improve endurance and manage training loads effectively.  
-- Strength and Power Sports: For users in strength sports like weightlifting, CrossFit, and bodybuilding, Actiq aims to add specialized coaching on form, power output, and muscle engagement. Vision transformers will be leveraged to monitor and correct form in real-time, ensuring safe and effective strength training.  
-- Skill-Based Sports: Sports with high skill requirements, such as tennis, martial arts, and basketball, are also on Actiq’s radar. Features like real-time swing analysis for tennis, punch/kick tracking for martial arts, and shooting technique for basketball would provide sport-specific guidance to help athletes refine techniques.  
+- **Endurance Sports.** Actiq plans to introduce more tailored features for endurance-based sports like running, cycling, and swimming. These features may include metrics for pace, cadence, heart rate zones, and recovery tracking to help athletes improve endurance and manage training loads effectively.  
+- **Strength and Power Sports.** For users in strength sports like weightlifting, CrossFit, and bodybuilding, Actiq aims to add specialized coaching on form, power output, and muscle engagement. Vision transformers will be leveraged to monitor and correct form in real-time, ensuring safe and effective strength training.  
+- **Skill-Based Sports.** Sports with high skill requirements, such as tennis, martial arts, and basketball, are also on Actiq’s radar. Features like real-time swing analysis for tennis, punch/kick tracking for martial arts, and shooting technique for basketball would provide sport-specific guidance to help athletes refine techniques.  
   
 **Advanced Coaching Features in Development**  
 - Real-Time Form and Technique Correction: Actiq is working on refining its AI to provide even more granular, sport-specific feedback. For example, in tennis, the AI might analyze grip, swing arc, and foot placement. In weightlifting, it could monitor joint angles and movement speed to prevent injuries and optimize performance.  
