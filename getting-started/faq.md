@@ -89,7 +89,7 @@ Types of Data Collected:
 
 ### How does Actiq's play-to-earn model work with $ACTI? Are rewards proportional to the user's engagement, and how sustainable is this model long-term?
 
-> *The onboarding process for new users with Actiq’s gamified AI Coaches is designed to be interactive and >
+> *The onboarding process for new users with Actiq’s gamified AI Coaches is designed to be interactive and
 > personalized.* 
 1. **Initial Fitness Assessment**  
 	- *Baseline Evaluation.* New users typically go through an assessment that gauges their current fitness level. This includes basic metrics like endurance, strength, flexibility, and any sport-specific skills relevant to the user’s interests. AI will analyze athlete's Strava acquired data.  
