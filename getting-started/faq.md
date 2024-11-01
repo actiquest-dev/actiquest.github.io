@@ -22,7 +22,7 @@ Key advantages include:
   
 1. **Real-time multi-modal data convergence** of CV and wearables with human feedback for multi-angle data analysis by AI.  
 2. **Seamless wearables integration.** AI is stitched into all existing health data providers and works in the background.  
-3. Vision Transformers: Technology for the Computer Vision part that outperforms CNNs in body posture/movement patterns recognition at 60 fps and can run live on an athlete's smartphone in real time.  
+3. **Vision Transformers.** Technology for the Computer Vision part that outperforms CNNs in body posture/movement patterns recognition at 60 fps and can run live on an athlete's smartphone in real time.  
 4. **Intelligent Coaching and Feedback.** The multimodal approach employs AI for personal feedback with actionable insight during training sessions. For instance, if an athlete's form breaks down on a particular move, the vision transformer acts with data from wearables to detect just that, and it will suggest changes on the spot for the athlete to adjust and improve on the spot.  
 5. **Adaptability and Customization.** Actiquest Sport AI can support the adaptation of different sports and training needs by changing its parameters of tracking, hence becoming very versatile. It will be able to offer various levels of skills and intensities, therefore giving customized feedback that would be relevant in the performance of the user and in the achievement of his goals.
    
