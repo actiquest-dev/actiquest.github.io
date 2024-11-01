@@ -180,9 +180,9 @@ Types of Data Collected:
 
 ### [List of partners](https://docs.actiq.xyz/getting-started/partnerships/)
 
-**Sport Ambassadors:** Becker Tennis Academy, Liudmila Vauchok, Alex Konviser  
-**Media Partners:** IBC Group, Cointelegraph, C-level KOLs (Mario Nawfal, Scott Melker, Kim Dotcom, Bloomberg Crypto  
-**Tech Partners:** Nvidia, Meta, Google, Voxel, Hitachi, AWS, ICP, SKALE
+- **Sport Ambassadors:** Becker Tennis Academy, Liudmila Vauchok, Alex Konviser  
+- **Media Partners:** IBC Group, Cointelegraph, C-level KOLs (Mario Nawfal, Scott Melker, Kim Dotcom, Bloomberg Crypto  
+- **Tech Partners:** Nvidia, Meta, Google, Voxel, Hitachi, AWS, ICP, SKALE
 
 ### Community growth traciton so far
 
