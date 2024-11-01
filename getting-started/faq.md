@@ -190,24 +190,24 @@ In the Actiq Wallet soft launch on Telegram, the user experience centers around 
 
 ~50K in October =>150K in November (Twitter, Telegram).
 
-### Markdown extensions
+### What is the ultilities for the token?
 
-The $ACTI token serves as a core element of Actiq's ecosystem, offering multiple utilities designed to enhance user engagement, motivate participation, and create a sustainable platform economy.  
-1. In-App Purchases and Premium Features  
-	- Unlock Advanced AI Coaching: Users can use $ACTI tokens to access enhanced AI coaching features, such as advanced movement analysis, detailed progress reports, or custom training programs. These premium features help athletes receive more personalized and in-depth feedback.  
-	- Exclusive Training Content: Some specialized training routines, technique-focused programs, or sport-specific drills may be accessible only with $ACTI tokens, allowing users to customize their fitness journey with unique resources.  
-2. Reward and Motivation System  
-	- Task Completion Rewards: Actiq uses $ACTI tokens to reward users for completing various tasks, such as engaging with the community, participating in challenges, or achieving fitness milestones. This play-to-earn approach motivates users to stay active on the platform.  
-	- Progress Milestones and Achievements: As users hit milestones or achieve personal goals, they can earn $ACTI tokens, reinforcing their commitment to training and creating a sense of accomplishment.  
+$ACTI Incentive token serves as a core element of Actiq's ecosystem, offering multiple utilities designed to enhance user engagement, motivate participation, and create a sustainable platform economy.  
+1. **In-App Purchases and Premium Features**  
+	- *Unlock Advanced AI Coaching.* Users can use $ACTI tokens to access enhanced AI coaching features, such as advanced movement analysis, detailed progress reports, or custom training programs. These premium features help athletes receive more personalized and in-depth feedback.  
+	- *Exclusive Training Content.* Some specialized training routines, technique-focused programs, or sport-specific drills may be accessible only with $ACTI tokens, allowing users to customize their fitness journey with unique resources.  
+2. **Reward and Motivation System**  
+	- *Task Completion Rewards.* Actiq uses $ACTI tokens to reward users for completing various tasks, such as engaging with the community, participating in challenges, or achieving fitness milestones. This play-to-earn approach motivates users to stay active on the platform.  
+	- *Progress Milestones and Achievements.* As users hit milestones or achieve personal goals, they can earn $ACTI tokens, reinforcing their commitment to training and creating a sense of accomplishment.  
 3. DAO Governance  
-	- Voting on Platform Decisions: $ACTI token holders can participate in governance by voting on important platform decisions, such as feature updates, new content, or the allocation of community funds. This allows users to have a voice in Actiq’s development and ensures the platform remains user-centered.  
-	- DAO Membership and Influence: Holding $ACTI tokens may grant users membership in Actiq’s decentralized autonomous organization (DAO), giving them influence over AI model adjustments, data governance, and new training programs.  
-4. Marketplace and Ecosystem Integrations  
-	- Purchases with Partners: Actiq may develop partnerships with fitness brands, wellness providers, or equipment manufacturers, allowing users to spend $ACTI tokens on products or services within an Actiq marketplace, offering real-world value.  
-	- Incentives for Data Contributions: Users who contribute valuable training data, like movement recordings or form corrections, might earn $ACTI tokens as a reward, fueling the AI's ongoing improvement and keeping the data ecosystem vibrant.  
-5. Token Staking  
-	- Staking for Rewards: Users may have the option to stake their $ACTI tokens to earn additional rewards, which could include exclusive content, higher reward rates, or early access to new features.  
-	- Loyalty and Status Tiers: Staking or holding $ACTI tokens could unlock loyalty tiers that come with benefits like discounted in-app purchases, priority customer support, or invitations to beta-test new features.
+	- *Voting on Platform Decisions.* $ACTI token holders can participate in governance by voting on important platform decisions, such as feature updates, new content, or the allocation of community funds. This allows users to have a voice in Actiq’s development and ensures the platform remains user-centered.  
+	- *DAO Membership and Influence.* Holding $ACTI tokens may grant users membership in Actiq’s decentralized autonomous organization (DAO), giving them influence over AI model adjustments, data governance, and new training programs.  
+4. **Marketplace and Ecosystem Integrations**  
+	- *Purchases with Partners.* Actiq may develop partnerships with fitness brands, wellness providers, or equipment manufacturers, allowing users to spend $ACTI tokens on products or services within an Actiq marketplace, offering real-world value.  
+	- *Incentives for Data Contributions.* Users who contribute valuable training data, like movement recordings or form corrections, might earn $ACTI tokens as a reward, fueling the AI's ongoing improvement and keeping the data ecosystem vibrant.  
+5. **Token Staking**  
+	- *Staking for Rewards.* Users may have the option to stake their $ACTI tokens to earn additional rewards, which could include exclusive content, higher reward rates, or early access to new features.  
+	- *Loyalty and Status Tiers.* Staking or holding $ACTI tokens could unlock loyalty tiers that come with benefits like discounted in-app purchases, priority customer support, or invitations to beta-test new features.
 
 ### What is the ultilities for the $ACTI token
 
@@ -215,28 +215,26 @@ The $ACTI token serves as a core element of Actiq's ecosystem, offering multiple
 > motivate participation, and create a sustainable platform economy.*
 
 1. **In-App Purchases and Premium Features**  
-	- Unlock Advanced AI Coaching: Users can use $ACTI tokens to access enhanced AI coaching features, such as advanced movement analysis, detailed progress reports, or custom training programs. These premium features help athletes receive more personalized and in-depth feedback.  
-	- Exclusive Training Content: Some specialized training routines, technique-focused programs, or sport-specific drills may be accessible only with $ACTI tokens, allowing users to customize their fitness journey with unique resources.  
+	- *Unlock Advanced AI Coaching*. Users can use $ACTI tokens to access enhanced AI coaching features, such as advanced movement analysis, detailed progress reports, or custom training programs. These premium features help athletes receive more personalized and in-depth feedback.  
+	- *Exclusive Training Content.* Some specialized training routines, technique-focused programs, or sport-specific drills may be accessible only with $ACTI tokens, allowing users to customize their fitness journey with unique resources.  
 2. **Reward and Motivation System**  
-	- Task Completion Rewards: Actiq uses $ACTI tokens to reward users for completing various tasks, such as engaging with the community, participating in challenges, or achieving fitness milestones. This play-to-earn approach motivates users to stay active on the platform.  
-	- Progress Milestones and Achievements: As users hit milestones or achieve personal goals, they can earn $ACTI tokens, reinforcing their commitment to training and creating a sense of accomplishment.  
+	- *Task Completion Rewards.* Actiq uses $ACTI tokens to reward users for completing various tasks, such as engaging with the community, participating in challenges, or achieving fitness milestones. This play-to-earn approach motivates users to stay active on the platform.  
+	- *Progress Milestones and Achievements.* As users hit milestones or achieve personal goals, they can earn $ACTI tokens, reinforcing their commitment to training and creating a sense of accomplishment.  
 3. **DAO Governance**  
-	- Voting on Platform Decisions: $ACTI token holders can participate in governance by voting on important platform decisions, such as feature updates, new content, or the allocation of community funds. This allows users to have a voice in Actiq’s development and ensures the platform remains user-centered.  
-	- DAO Membership and Influence: Holding $ACTI tokens may grant users membership in Actiq’s decentralized autonomous organization (DAO), giving them influence over AI model adjustments, data governance, and new training programs.  
+	- *Voting on Platform Decisions.* $ACTI token holders can participate in governance by voting on important platform decisions, such as feature updates, new content, or the allocation of community funds. This allows users to have a voice in Actiq’s development and ensures the platform remains user-centered.  
+	- *DAO Membership and Influence.* Holding $ACTI tokens may grant users membership in Actiq’s decentralized autonomous organization (DAO), giving them influence over AI model adjustments, data governance, and new training programs.  
 4. **Marketplace and Ecosystem Integrations**  
-	- Purchases with Partners: Actiq may develop partnerships with fitness brands, wellness providers, or equipment manufacturers, allowing users to spend $ACTI tokens on products or services within an Actiq marketplace, offering real-world value.  
-	- Incentives for Data Contributions: Users who contribute valuable training data, like movement recordings or form corrections, might earn $ACTI tokens as a reward, fueling the AI's ongoing improvement and keeping the data ecosystem vibrant.  
+	- *Purchases with Partners.* Actiq may develop partnerships with fitness brands, wellness providers, or equipment manufacturers, allowing users to spend $ACTI tokens on products or services within an Actiq marketplace, offering real-world value.  
+	- *Incentives for Data Contributions.* Users who contribute valuable training data, like movement recordings or form corrections, might earn $ACTI tokens as a reward, fueling the AI's ongoing improvement and keeping the data ecosystem vibrant.  
 5. Token Staking  
-	- Staking for Rewards: Users may have the option to stake their $ACTI tokens to earn additional rewards, which could include exclusive content, higher reward rates, or early access to new features.  
-	- Loyalty and Status Tiers: Staking or holding $ACTI tokens could unlock loyalty tiers that come with benefits like discounted in-app purchases, priority customer support, or invitations to beta-test new features.
+	- *Staking for Rewards.* Users may have the option to stake their $ACTI tokens to earn additional rewards, which could include exclusive content, higher reward rates, or early access to new features.  
+	- *Loyalty and Status Tiers.* Staking or holding $ACTI tokens could unlock loyalty tiers that come with benefits like discounted in-app purchases, priority customer support, or invitations to beta-test new features.
 
 ### [Who are Actiq competitors (top 3)](https://docs.actiq.xyz/#competitors)  
-
 > *Here’s an overview of Actiq’s top three competitors in the AI-driven fitness and wellness space, what they’re building, and how Actiq’s
 > unique approach gives it a competitive edge:*
 
 1. **Freeletics**  
-
 *What They’re Building:* Freeletics offers an AI-powered fitness app focused on high-intensity interval training (HIIT) and bodyweight exercises. They provide personalized workout plans, adaptive coaching, and video demonstrations. The app emphasizes building fitness with minimal equipment, making it accessible for users training at home or outdoors.  
 
 *How They’re Doing It:* Freeletics uses an AI algorithm to tailor workout programs based on user feedback, performance, and goals. They leverage a large community for social motivation, sharing progress, and participating in challenges, which helps boost engagement and retention.  
@@ -244,7 +242,6 @@ The $ACTI token serves as a core element of Actiq's ecosystem, offering multiple
 *Actiq’s Competitive Edge:* Actiq focuses on multimodal AI with real-time feedback, particularly through wearable integrations and vision transformers for form correction. This real-time responsiveness and sport-specific coaching set Actiq apart, especially for athletes and users seeking precise movement analysis rather than just bodyweight HIIT routines.
 
 2. **WHOOP**  
-
 *What They’re Building:* WHOOP combines a wearable device with a coaching platform that monitors sleep, recovery, and fitness strain. It’s especially popular among athletes who want a detailed understanding of their recovery and performance metrics, providing insights into optimizing workouts based on rest and strain levels. 
 
 *How They’re Doing It:* WHOOP gathers continuous biometric data from its wearable, such as heart rate variability (HRV) and sleep stages, to deliver personalized recommendations. The app uses these metrics to create a daily "strain" score and guides users on how much exertion they should aim for, based on their recovery status.  
@@ -252,7 +249,6 @@ The $ACTI token serves as a core element of Actiq's ecosystem, offering multiple
 *Actiq’s Competitive Edge:* While WHOOP is strong on recovery and strain insights, Actiq combines these biometric insights with actionable, real-time workout feedback and adaptive goal-setting. Actiq’s focus on multimodal training (combining wearables, visual AI, and community feedback) allows for a comprehensive training ecosystem, not just limited to recovery metrics.
 
 3. **Peloton**  
-
 *What They’re Building:* Peloton offers a connected fitness platform with live and on-demand workout classes, mainly focusing on cycling, running, and strength training. Their platform emphasizes interactive classes, gamification, and community engagement, with a strong social component through live leaderboards and in-class metrics.  
 
 *How They’re Doing It:* Peloton’s model combines a high-quality at-home fitness experience with gamified elements and social connectivity. They use live instructors, motivational tracking, and competitive leaderboards to drive user engagement, creating a social fitness experience.  
@@ -267,26 +263,21 @@ Decentralized Community Input and DAO Governance: By integrating a DAO, Actiq em
 
 
 ### Are there any MM on boarded?
-
 Yes, [Hummingbot](https://hummingbot.org) + [Margin.io](http://margin.io/)
 
-
 ### What launchpad have you talked to and how is the token launch plan?
-
 Kommunitas, Spores, BSCS, KGD, Ordify, Bullperks, RedKite, Poolz, Decubate will raise $1M at IDO round. Listing starts in early December on MEXC and GATE.
 
 ### What CEX have you talked to and how is the listing plan?
-
 Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 
 ### Have the smart contract been audited? please share the reports if available
-
-[https://coinsult.net/projects/acti-incentive-token/]
+[$ACTI Smart Contract audit by Coinsult](https://coinsult.net/projects/acti-incentive-token/)
 
 ### What is the round you are raising now? how much is the valuation? how is the vesting terms? 
-
 - **KOL/SAFT round:** $150K, price $0.04 (Cliff 5m, Vesting 12m, TGE unlock 20%)  
 - **Private (VC) round:** $500K, price $0.05 (Cliff 5m, Vesting 18m, TGE unlock 15%)
+- **IDO (Public) round:** $1M, price $0.07 (Cliff 3m, Vesting 12m, TGE unlock 25%)
 
 ### Can you provide more details about previous round, including specific investor commitments and terms?
 
@@ -362,7 +353,6 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 [$ACTI on BNB chain Smart Contract](https://bscscan.com/token/0xB4b26E52621C2D63268ec4322748f510c47ec692)
 
 ### What is the upside of the token? Why do people want to buy and hold $ACTI instead of buying low and selling high?
-
 > *When we mentioned abstract "people" we need to differentiate who they are. There's no significant value to hold for crypto traders at
 > the market except early BTC holders at the monent. Nobody's hold any
 > altcoins in long-term. All values of $ACTI are primarily for Actiq app
@@ -374,7 +364,6 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 - Staking Rewards and Tiered Loyalty Benefits
 
 ### Team details
-
 - Michael Aprossine - [LinkedIn](https://linkedin.com/in/miguel2020),[X](https://x.com/miguel_actiq). CEO. Thriathlon Fan. Serial Entrepreneur from early 2000; 20+ years in IT consulting and product development in IoT, SaaS, Mobility и Blockchain; Cofounder of Apla.network (Luxembourg) Cofounder of DrivePoint (sold to Hyundai Mobility in 2019).  
 - Phil Khomenok - [LinkedIn](https://linkedin.com/in/gsarskyes) , COO, Experienced Swimmer.Builds online sales of cable products and rolled metal from scratch for $10M per year. In 2017, he was a co-founder of the Grown Capital investment fund with attracted capital of $5M. In 2020-2023, in the role of CBDO, he helped Advcash in developing new products and entering new geographies.  
 - Ankit Sahu - [LinkedIn](https://linkedin.com/in/ansahu) , CFO, Experienced Tennis Player. 20+ years in wealth management across private banking and funds, including: Prosperity Group, Bank Of America, Merrill Lynch and UBS.  
@@ -385,11 +374,9 @@ Gate, HTX, [Crypto.com](http://crypto.com/) + various T2 exchanges
 - +3 people (Data scientists/testing). 10 ppl in total
 
 ### How will Actiq ensure a smooth transition from Telegram Wallet to the full app experience? Are there specific timelines or user testing stages planned for this?
-
 The Telegram wallet will remain one of the channels for acquiring new users in the EMEA region. In the US, we will use a different approach. Wallet functionality will be extended with many web3 functions (similar to Web3 Dashboard) when the mobile app is released in Q1 2025. In order to sponsor the first bunch of app installations, we plan to run an early app onboarding campaign in Actiq Wallet.
 
 ### Are there plans to expand the range of sports or introduce advanced coaching features? If so, are there specific sports or features the team is targeting?
-
 Actiq has step by step plans to expand the range of sports supported on its platform and introduce advanced coaching features. We start with a most popular sports in the markets (tennis and golf) and expands with one's which is most significant for specific markets we target, such us cricket for India.  
   
 **Expansion of Supported Sports:**  
@@ -398,7 +385,7 @@ Actiq has step by step plans to expand the range of sports supported on its plat
 - **Skill-Based Sports.** Sports with high skill requirements, such as tennis, martial arts, and basketball, are also on Actiq’s radar. Features like real-time swing analysis for tennis, punch/kick tracking for martial arts, and shooting technique for basketball would provide sport-specific guidance to help athletes refine techniques.  
   
 **Advanced Coaching Features in Development**  
-- Real-Time Form and Technique Correction: Actiq is working on refining its AI to provide even more granular, sport-specific feedback. For example, in tennis, the AI might analyze grip, swing arc, and foot placement. In weightlifting, it could monitor joint angles and movement speed to prevent injuries and optimize performance.  
-- Biomechanics and Motion Analysis: Advanced motion analysis features are in development, which will break down complex movements into individual components, such as knee alignment, hip rotation, and shoulder stability. This level of detail helps athletes in sports like golf, gymnastics, or sprinting improve their form and efficiency.  
-- Dynamic Goal-Setting and Progression Tracking: Future updates will include adaptive goal-setting that adjusts based on the user’s recent performance and fatigue levels, providing personalized recommendations to avoid overtraining and encourage gradual progression.  
-- Enhanced Recovery Metrics: Actiq plans to incorporate more in-depth recovery tracking, including metrics such as heart rate variability (HRV), sleep analysis, and stress monitoring. These insights help athletes optimize training cycles and reduce injury risk, especially for sports with high physical demands.
+- **Real-Time Form and Technique Correction.** Actiq is working on refining its AI to provide even more granular, sport-specific feedback. For example, in tennis, the AI might analyze grip, swing arc, and foot placement. In weightlifting, it could monitor joint angles and movement speed to prevent injuries and optimize performance.  
+- **Biomechanics and Motion Analysis.** Advanced motion analysis features are in development, which will break down complex movements into individual components, such as knee alignment, hip rotation, and shoulder stability. This level of detail helps athletes in sports like golf, gymnastics, or sprinting improve their form and efficiency.  
+- **Dynamic Goal-Setting and Progression Tracking.** Future updates will include adaptive goal-setting that adjusts based on the user’s recent performance and fatigue levels, providing personalized recommendations to avoid overtraining and encourage gradual progression.  
+- **Enhanced Recovery Metrics.** Actiq plans to incorporate more in-depth recovery tracking, including metrics such as heart rate variability (HRV), sleep analysis, and stress monitoring. These insights help athletes optimize training cycles and reduce injury risk, especially for sports with high physical demands.
