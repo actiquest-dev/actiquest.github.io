@@ -256,7 +256,7 @@ $ACTI Incentive token serves as a core element of Actiq's ecosystem, offering mu
 4. **Marketplace and Ecosystem Integrations**  
 	- *Purchases with Partners.* Actiq may develop partnerships with fitness brands, wellness providers, or equipment manufacturers, allowing users to spend $ACTI tokens on products or services within an Actiq marketplace, offering real-world value.  
 	- *Incentives for Data Contributions.* Users who contribute valuable training data, like movement recordings or form corrections, might earn $ACTI tokens as a reward, fueling the AI's ongoing improvement and keeping the data ecosystem vibrant.  
-5. Token Staking  
+5. **Token Staking**  
 	- *Staking for Rewards.* Users may have the option to stake their $ACTI tokens to earn additional rewards, which could include exclusive content, higher reward rates, or early access to new features.  
 	- *Loyalty and Status Tiers.* Staking or holding $ACTI tokens could unlock loyalty tiers that come with benefits like discounted in-app purchases, priority customer support, or invitations to beta-test new features.
 
