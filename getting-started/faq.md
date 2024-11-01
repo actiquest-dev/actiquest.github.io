@@ -50,19 +50,15 @@ Types of Data Collected:
 5. **Personal Health Data.** If consented to, further health information-injury history, flexibility levels, and fatigue markers-can also be included in order to further tailor training routines.
 
 ### Can you explain the role of the vision transformers in Actiq’s AI? How do they enable real-time visual feedback for sports movements at 60-fps speed?
-
 > *Vision transformers enables real-time, high-precision full body
 > tracking and precise near to rel-time feedback of movements in sports.*
-
 1.  **Attention Mechanism.** Other than traditional CNNs that usually analyze fixed regions of an image, vision transformers make use of an attention mechanism that allows them to selectively focus their attention on crucial areas such as the position of limbs or equipment like a tennis racket without necessarily having to analyze the whole frame. This is important in sports because subtle movements may be indicative of technique or form.  
 2. **3D Body Pose Capture.** The transformer architectures of vision are trained for tracking full-body motion capture, detailed face mechanics, and even fingers to achieve highly accurate pose estimation in real time without any specific camera calibration.  
 3. **Frame-by-Frame Consistency:** The vision transformers ensure that AI tracks fast movements smoothly while processing every frame at 60 fps. Each frame is matched against its predecessors to trace changes in position or technique, hence allowing the AI to track an athlete's real-time motion without lag. This continuous tracking stands out as the key to providing fluid, uninterrupted feedback.
 
 ### How does the Actiq AI adapt to different fitness levels? Does it adjust goals and training plans based on the user’s progress, and how is this measured?
-
 > *Actiq AI is designed to adapt dynamically to an athlete’s fitness level, tailoring goals and training plans to their unique capabilities
-> and progress.*
-  
+> and progress.*  
 1. **Initial Assessment.** When a new user starts, Actiq AI conducts an initial assessment based on baseline metrics like endurance, strength, flexibility, and any sport-specific skills. This helps the AI understand the athlete's current fitness level, setting a foundation for personalized training.
 2. **Customized Training Goals.** Based on the initial assessment, Actiq creates goals that match the user’s abilities. For a beginner, the focus might be on building foundational strength and form, while an advanced athlete might receive more specialized goals like refining technique or increasing speed.
 3. **Adaptive Difficulty Scaling.** The AI monitors real-time metrics such as heart rate, power output, and fatigue indicators to adjust the intensity of exercises during workouts. For instance, if the AI detects the user struggling to maintain form, it can reduce the intensity of a particular drill, or if the user is handling exercises easily, it can increase difficulty to keep workouts challenging.  
@@ -78,7 +74,8 @@ Types of Data Collected:
 
 ### What’s the user experience with Actiq Wallet on Telegram like? How do users earn $ACTI and complete tasks within this soft launch, and are there rewards available already?
 
-In the Actiq Wallet soft launch on Telegram, the user experience centers around engaging with a gamified, task-based platform where users can earn $ACTI tokens by completing various activities.
+> *In the Actiq Wallet soft launch on Telegram, the user experience centers around engaging with a gamified,task-based
+> platform where users can earn $ACTI tokens by completing various activities.*
 1. **Telegram Integration.** Actiq Wallet is built within Telegram, making it accessible and easy to use on a familiar messaging app. Users interact with the wallet through chat commands and buttons, which guide them through earning, tracking, and redeeming rewards. Also it simplifying a user aquistion from targeted telegram communities.
 2. **Task-Based Earning.** Users earn $ACTI tokens by completing specific tasks assigned within the Telegram wallet interface. Tasks are designed to be simple and engaging, such as following social media accounts, sharing content, or participating in community discussions. Each task completed earns users a certain amount of $ACTI tokens, which they can view and track in their Actiq Wallet. Sport tasks like Strava airdrop - 30 $ACTI per 1km of run is just one of examples.
 3. **Gamified Interface.** The wallet experience is gamified, with a reward system that incentivizes users to complete more tasks. Some users report a straightforward experience where notifications prompt them to take part in new activities as they become available, keeping engagement levels high.
@@ -94,15 +91,15 @@ In the Actiq Wallet soft launch on Telegram, the user experience centers around 
 > *The onboarding process for new users with Actiq’s gamified AI Coaches is designed to be interactive and >
 > personalized.* 
 1. **Initial Fitness Assessment**  
-	- Baseline Evaluation: New users typically go through an assessment that gauges their current fitness level. This includes basic metrics like endurance, strength, flexibility, and any sport-specific skills relevant to the user’s interests. AI will analyze athlete's Strava acquired data.  
-	- Wearable and Sensor Integration: If the user has compatible wearables, Actiq will integrate this data to capture real-time metrics like heart rate and movement quality, adding precision to the assessment.  
-	- Personal Health Information: Users may also input information about previous injuries, personal goals, and health conditions, which Actiq uses to tailor the program further.  
+	- *Baseline Evaluation.* New users typically go through an assessment that gauges their current fitness level. This includes basic metrics like endurance, strength, flexibility, and any sport-specific skills relevant to the user’s interests. AI will analyze athlete's Strava acquired data.  
+	- *Wearable and Sensor Integration.* If the user has compatible wearables, Actiq will integrate this data to capture real-time metrics like heart rate and movement quality, adding precision to the assessment.  
+	- *Personal Health Information.* Users may also input information about previous injuries, personal goals, and health conditions, which Actiq uses to tailor the program further.  
 2. **Personalized Goal-Setting**  
-	- Goal Customization: Based on the initial assessment, the AI coaches work with the user to set realistic, motivating goals. These goals could focus on areas like improving endurance, mastering specific techniques, or achieving a fitness milestone.  
-	- Adaptive Progression: Goals are designed to evolve as users make progress, with the AI adjusting intensity and complexity to keep the user on a steady path toward improvement.  
+	- *Goal Customization.* Based on the initial assessment, the AI coaches work with the user to set realistic, motivating goals. These goals could focus on areas like improving endurance, mastering specific techniques, or achieving a fitness milestone.  
+	- *Adaptive Progression.* Goals are designed to evolve as users make progress, with the AI adjusting intensity and complexity to keep the user on a steady path toward improvement.  
 3. **Gamified Task Setup**  
-	- Daily and Weekly Tasks: Actiq provides users with daily and weekly tasks to gamify the training experience. Tasks may range from completing specific exercises to engaging in skill-building drills, with rewards for completing milestones.  
-	- Leveling and Rewards: Users earn points or $ACTI tokens for completing tasks and reaching goals, adding a motivational layer to the training process. As users progress, they unlock more challenging tasks, helping them advance through levels.
+	- *Daily and Weekly Tasks.* Actiq provides users with daily and weekly tasks to gamify the training experience. Tasks may range from completing specific exercises to engaging in skill-building drills, with rewards for completing milestones.  
+	- *Leveling and Rewards.* Users earn points or $ACTI tokens for completing tasks and reaching goals, adding a motivational layer to the training process. As users progress, they unlock more challenging tasks, helping them advance through levels.
 
 ### What monetization models Actiq is exploring? Will Actiq include subscription tiers, in-app purchases, or external partnerships to create revenue beyond token incentives?
 
@@ -110,13 +107,13 @@ In the Actiq Wallet soft launch on Telegram, the user experience centers around 
 > experience.*
   
 1. **Subscription Tiers**  
-	- Freemium Model: Actiq offer a free, basic tier with essential features to attract a broad user base, while advanced features are gated behind subscription tiers.  
-	- Premium Tiers: Paid subscription tiers could unlock enhanced AI coaching, advanced analytics, personalized training plans, and access to exclusive content or challenges. The higher tiers may offer added benefits, like deeper progress insights and access to live training sessions with coaches.  
+	- *Freemium Model.* Actiq offer a free, basic tier with essential features to attract a broad user base, while advanced features are gated behind subscription tiers.  
+	- *Premium Tiers.* Paid subscription tiers could unlock enhanced AI coaching, advanced analytics, personalized training plans, and access to exclusive content or challenges. The higher tiers may offer added benefits, like deeper progress insights and access to live training sessions with coaches.  
 2. **In-App Purchases (IAP)**  
-	- Training Enhancements: Users may have the option to purchase specialized programs from celebrity sport coaches in various sports like Maria Sharapova and Venus Williams (TBA).  
+	- *Training Enhancements.* Users may have the option to purchase specialized programs from celebrity sport coaches in various sports like Maria Sharapova and Venus Williams (TBA).  
 3. **Phygital Sport Marketplace** (may be included in subscripton plan)  
-	- Branded Collaborations: Actiq could partner with sportswear brands, wearable tech companies, and fitness equipment providers to offer co-branded challenges, exclusive rewards, or sponsored content.  
-	- Affiliate Partnerships and Product Integration: Actiq may incorporate affiliate links or recommendations for fitness equipment, supplements, or wearable devices that complement the AI-driven training programs. Users could be incentivized with $ACTI tokens or discounts for purchases through Actiq’s partners.
+	- *Branded Collaborations.* Actiq could partner with sportswear brands, wearable tech companies, and fitness equipment providers to offer co-branded challenges, exclusive rewards, or sponsored content.  
+	- *Affiliate Partnerships and Product Integration.* Actiq may incorporate affiliate links or recommendations for fitness equipment, supplements, or wearable devices that complement the AI-driven training programs. Users could be incentivized with $ACTI tokens or discounts for purchases through Actiq’s partners.
 4. **Corporate Wellness Plans.** Partnering with corporations for wellness initiatives could allow Actiq to offer packages for employee health and fitness programs, with customized plans and corporate access to the platform.
 5. **Professional Sports and Fitness Organizations.** Actiq will monetize aggregated, anonymized performance data for insights into fitness trends or performance benchmarks. Fitness clubs, sports academies, and health researchers could benefit from these insights, allowing Actiq to enter the B2B space as a data provider.
 6. **Commerce grade APIs for Third-Party Integrations.** Actiq’s AI capabilities could be offered to other fitness platforms, providing specialized AI modules or analytics tools for their users, creating an additional revenue stream.
@@ -127,17 +124,17 @@ In the Actiq Wallet soft launch on Telegram, the user experience centers around 
 > (DAO) structure, where users and stakeholders collectively contribute to and oversee model improvements*.  
   
 1. **Role of the DAO in AI Model Training**  
-	- Data Curation and Model Refinement: The DAO enables Actiq’s community members to participate in the curation of training data and suggest model refinements.  
-	- Voting on Incentivizing Protocol Updates: Through the DAO, members can vote on which model updates or features should be prioritized, ensuring that model development aligns with community interests. This democratic process allows users to have a say in what they need most, enhancing the relevance of AI training.  
-	- Sport-Specific AI Tuning: The DAO might establish subcommittees or working groups focused on specific sports. These groups can recommend and test adjustments to the AI models, ensuring each sport’s nuances are well-represented and that training stays accurate and beneficial.  
+	- *Data Curation and Model Refinement.* The DAO enables Actiq’s community members to participate in the curation of training data and suggest model refinements.  
+	- *Voting on Incentivizing Protocol Updates.* Through the DAO, members can vote on which model updates or features should be prioritized, ensuring that model development aligns with community interests. This democratic process allows users to have a say in what they need most, enhancing the relevance of AI training.  
+	- *Sport-Specific AI Tuning.* The DAO might establish subcommittees or working groups focused on specific sports. These groups can recommend and test adjustments to the AI models, ensuring each sport’s nuances are well-represented and that training stays accurate and beneficial.  
 2. **Community Contributions and Incentivization**  
-	- Incentives for High-Quality Contributions: To attract and retain quality contributions, Actiq incentivizes users with $ACTI tokens for verified, valuable inputs. Contributions might include sharing real-time performance data, suggesting new training programs, or tagging and annotating workout footage to improve the model’s accuracy.  
-	- Validation Mechanisms: Community members can validate each other’s contributions, ensuring that only high-quality inputs make it into the training pipeline. This peer-review process helps Actiq maintain data integrity while encouraging users to participate meaningfully.  
-	- Expert Input and Supervision: Actiq may involve coaches, trainers, or professional athletes in the DAO to provide expert insights and ensure that AI adjustments are beneficial. This expert oversight helps ensure that community-driven model updates meet high standards.  
+	- *Incentives for High-Quality Contributions.* To attract and retain quality contributions, Actiq incentivizes users with $ACTI tokens for verified, valuable inputs. Contributions might include sharing real-time performance data, suggesting new training programs, or tagging and annotating workout footage to improve the model’s accuracy.  
+	- *Validation Mechanisms.* Community members can validate each other’s contributions, ensuring that only high-quality inputs make it into the training pipeline. This peer-review process helps Actiq maintain data integrity while encouraging users to participate meaningfully.  
+	- *Expert Input and Supervision.* Actiq may involve coaches, trainers, or professional athletes in the DAO to provide expert insights and ensure that AI adjustments are beneficial. This expert oversight helps ensure that community-driven model updates meet high standards.  
 3. **Profit sharing.** DAO members will be able to share profits from AI models evaluation based on their contribution levels.  
-	- Distributing profits for Contributors: Actiq may implement a reputation or ranking system where contributors earn reputation points based on the quality of their inputs for taking a part in profits coming from AI model utilization. Those with higher reputations gain more influence in decision-making, helping Actiq incentivize and identify reliable contributors.  
+	- *Distributing profits for Contributors.* Actiq may implement a reputation or ranking system where contributors earn reputation points based on the quality of their inputs for taking a part in profits coming from AI model utilization. Those with higher reputations gain more influence in decision-making, helping Actiq incentivize and identify reliable contributors.  
 4. **Long term governance on stored AI data.**  
-	- Transparent Model and Data Governance: Through the DAO, Actiq establishes transparent governance of data and AI models, allowing community members to track and understand how their contributions impact the training process and model outcomes.
+	- *Transparent Model and Data Governance.* Through the DAO, Actiq establishes transparent governance of data and AI models, allowing community members to track and understand how their contributions impact the training process and model outcomes.
 
 ### How are training data and AI models managed and stored within the ICP-based DAO? Are there safeguards in place to maintain the models' integrity and security?
 
