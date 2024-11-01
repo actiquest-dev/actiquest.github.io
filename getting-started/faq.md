@@ -112,7 +112,7 @@ Types of Data Collected:
 	- *Premium Tiers.* Paid subscription tiers could unlock enhanced AI coaching, advanced analytics, personalized training plans, and access to exclusive content or challenges. The higher tiers may offer added benefits, like deeper progress insights and access to live training sessions with coaches.  
 2. **In-App Purchases (IAP)**  
 	- *Training Enhancements.* Users may have the option to purchase specialized programs from celebrity sport coaches in various sports like Maria Sharapova and Venus Williams (TBA).  
-3. **Phygital Sport Marketplace** (may be included in subscripton plan)  
+3. **Phygital Sport Marketplace** (may be included in subscription plan)  
 	- *Branded Collaborations.* Actiq could partner with sportswear brands, wearable tech companies, and fitness equipment providers to offer co-branded challenges, exclusive rewards, or sponsored content.  
 	- *Affiliate Partnerships and Product Integration.* Actiq may incorporate affiliate links or recommendations for fitness equipment, supplements, or wearable devices that complement the AI-driven training programs. Users could be incentivized with $ACTI tokens or discounts for purchases through Actiq’s partners.
 4. **Corporate Wellness Plans.** Partnering with corporations for wellness initiatives could allow Actiq to offer packages for employee health and fitness programs, with customized plans and corporate access to the platform.
