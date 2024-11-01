@@ -104,7 +104,7 @@ Total | 500,000,000| | | | | Unlock % TGE:2,91%
 4. Listing on exchanges: $0.07
 - Listing start date: \[03/12/24]
 - Initial market capitalization: **$450,000**
-- Exchanges: Lbank, Bitget, Mexc=>Gate=>HTX
+- Exchanges: Mexc=>Gate=>HTX
 
 ## Token metrics:
 
