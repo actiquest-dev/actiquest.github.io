@@ -35,14 +35,14 @@ label: Roadmap
 - WinterMute (MM/Liquidity support program)
 - Hummingbot (MM/Liquidity support program)
 === **Fundraising**
-- VC/Angel round (Committed are: Gate Labs, Crypto.com (lead), GDA Capital +2 others). Total Raise comfirmed = $800K (active up to 20 of December).
+- VC/Angel round (committed are: Gate Labs, Crypto.com (lead), GDA Capital +2 others). Total Raise comfirmed = $800K (active up to 20 of December).
 - IDO round (8 launchpad signed including Kommunitas, Spores, KGD, BSCS, MaticLaunchpad, Ordify +3 in reserve). Total Raise comfirmed = $1M. (starts 24 of December) ===
 
 ## Q1-2025
 === **Token**
-- Listing: Gate, Crypto.com, HTX + several Tier2 with $2M+ daily liquidity.
+- **Listing:** Gate, Crypto.com, HTX + several Tier2 with $2M+ daily liquidity.
 - Target token price: $0.07=> $0.7 (x10 token growth in 1st quarter of 2025 by good news feed, new partnership, active token buyback and MM)
-- Wiping FDV by distributing $ACTI tokens across ecosystems (ICP+SKALE).
+- Wiping out FDV by distributing $ACTI tokens across ecosystems (ICP+SKALE).
 - Incentivizing traders
 === **Development**
 - Building/testing/publishing native apps for Android and Apple
@@ -61,4 +61,4 @@ label: Roadmap
 - Launching compliant $ACTI token for US market with Coinbase
 === **Fundraising**
 - ICP DAO fundraising - $800K (running in 3-10 of Januaery 2025), 25% will be added to $ACTI liquidity.
-- Bittensor Subnet 50% returns to $ACTI liquidity (~$400K per month), starts in January 2025.
+- Bittensor Subnet 50% returns to $ACTI liquidity (~$400K per month), starts in January 2025.===
