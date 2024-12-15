@@ -63,6 +63,6 @@ label: Roadmap
 - **Traders incentivizing** campaign.
 - **Launching compliant $ACTI token** for US market with Coinbase (BASE);
 === **Fundraising**
-- **ICP DAO fundraising** ~ $800K (running in 3-10 of Januaery 2025), 25% will be added to $ACTI liquidity.
+- **ICP DAO fundraising** ~ $800K (running in 3-10 of January, 2025), 25% will be added to $ACTI liquidity.
 - **Bittensor Subnet 50% returns** to $ACTI liquidity (~$400K per month), starts in January 2025.
 ===
