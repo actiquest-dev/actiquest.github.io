@@ -9,11 +9,11 @@ label: Roadmap
 
 ## Q4-2024 
 === **Development**
-- **LLM training wizard**. Preparing for Sport Knowledge LLM and Vision Transformer 1000 athletes training program
+- **LLM training wizard**. Preparing for Sport Knowledge LLM and Vision Transformer 1K athletes training program
 - **Moving from CNN to ViT** (based on [Synthmocap](https://microsoft.github.io/SynthMoCap/))
 - **Moving from VoxelGPT to Llama** (based on [LLama Nemotron](https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct-HF/))
 - **AI training wizard app**. Developing wizard app for ViT training.
-- **Fine-tuning new ViT** to recognize the tiniest details of 60 fps sport videos, allows better recognition of fine motor skills and registering deviations in exercise technique.
+- **Fine-tuning new ViT** to recognize the tiniest details of 60-fps sport videos, allows better recognition of fine motor skills and registering deviations in exercise technique.
 - **Optimizing ViT** to spend fewer resources for training and processing video data (inference, on the phones).
 - **Modifying D.R.O.C model** (Dynamic Real-time Objective Correction) model, which allows LLM to make real-time judgments on the quality of exercise performance and correct the athlete's technique. D.R.O.C will instantly detect errors or incorrect movements and give the user feedback, helping them improve their technique without the need for repeated workout reviews or consultations with a coach. That will work as a part of a special RAG over Llama.
 === **Product**
@@ -63,6 +63,6 @@ label: Roadmap
 - **Traders incentivizing** campaign.
 - **Launching compliant $ACTI token** for US market with Coinbase (BASE);
 === **Fundraising**
-- **ICP DAO fundraising** ~ $800K (running in 3-10 of January, 2025), 25% will be added to $ACTI liquidity.
+- **Internet Computer DAO fundraising** ~ $800K in $ICP (running in 3-10 of January, 2025), 25% will be added to $ACTI liquidity.
 - **Bittensor Subnet 50% returns** to $ACTI liquidity (~$400K per month), starts in January 2025.
 ===
