@@ -28,14 +28,14 @@ label: Roadmap
 === **Marketing**
 - **$ACTICAT meme campaign** to boost crypto community + ACTI airdrop to meme holders and vice-versa.
 - **$ACTI** combined airdrop (Grand Prix), early investors, meme holders (1-3 days before listing);
-- **Sport Ambassador campaign** to boost the sport community (10 celebrity coaches, TBA).
+- **Sport Ambassador campaign** to boost the sport community (10 celebrity coaches in different sports, TBA).
 - **PR campaign**, in setup mode now: (Forbes, Bloomberg Crypto, CoinTelegraph, Sport Media, VentureBeat, KOLs);
 === **Partnerships**
-- **SKALE** (Running Gas-Free Incentivising Protocol
-- **Internet Computer** (Running DAO and Decentralized Vector Storage for AI models)
-- **Bittensor** (Running new subnet for ViT models training)
-- **WinterMute** (MM/Liquidity support program)
-- **Hummingbot** (MM/Liquidity support program)
+- **SKALE** (Running Gas-Free Incentivising Protocol);
+- **Internet Computer** (Running DAO and Decentralized Vector Storage for AI models);
+- **Bittensor** (Running new subnet for ViT models training);
+- **WinterMute** (MM/Liquidity support program);
+- **Hummingbot** (MM/Liquidity support program).
 === **Fundraising**
 - **VC/Angel round** (committed are: Gate Labs, Crypto.com (lead), GDA Capital +2 others). Total Raise comfirmed = $800K (active up to 20 of December).
 - **IDO round** (8 launchpads signed, including Kommunitas, Spores, KGD, BSCS, MaticLaunchpad, Ordify +3 in reserve). Total Raise comfirmed = **$1M**, (starts at 24 of December);
