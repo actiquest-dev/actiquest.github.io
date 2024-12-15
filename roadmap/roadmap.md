@@ -1,3 +1,8 @@
+---
+icon: project-roadmap
+label: Roadmap
+---
+
 # Roadmap
 
 > Here is project roadmap in 2024-2025
