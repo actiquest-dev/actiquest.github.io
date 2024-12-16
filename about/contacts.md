@@ -3,7 +3,7 @@ icon: location
 label: Contacts
 ---
 
-# Сontacts22
+# Сontacts
 
 ## Equity Investment Vehicle
 
