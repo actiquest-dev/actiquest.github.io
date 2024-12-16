@@ -8,6 +8,11 @@ label: Roadmap
 > Here is Actiquest roadmap in 2024-2025
 
 ## Q4-2024 
+=== **Token**
+- **Listing:** Ascendex (Hummingbot Liquidity Support) + Pancake (liquidity pair added already). Listing starts after right IDO is fullfilled.
+- **Target token price**: $0.07=> $0.7 (x10 token growth in 1st quarter of 2025 by good news feed, new partnership, active token buyback and MM).
+- **$ACTICAT meme campaign** to boost crypto community + ACTI airdrop to meme holders and vice-versa.
+- **Incentivizing traders**
 === **Development**
 - **LLM training wizard**. Preparing for Sport Knowledge LLM and Vision Transformer 1K athletes training program
 - **Moving from CNN to ViT** (based on [Synthmocap](https://microsoft.github.io/SynthMoCap/))
@@ -26,7 +31,6 @@ label: Roadmap
 - **New video guides and explainers** (how Actiq works);
 
 === **Marketing**
-- **$ACTICAT meme campaign** to boost crypto community + ACTI airdrop to meme holders and vice-versa.
 - **$ACTI** combined airdrop (Grand Prix), early investors, meme holders (1-3 days before listing);
 - **Sport Ambassador campaign** to boost the sport community (10 celebrity coaches in different sports, TBA).
 - **PR campaign**, in setup mode now: (Forbes, Bloomberg Crypto, CoinTelegraph, Sport Media, VentureBeat, KOLs);
