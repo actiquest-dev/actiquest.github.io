@@ -9,7 +9,7 @@ label: Roadmap
 
 ## Q4-2024 
 === **Token**
-- **Listing:** Ascendex (Hummingbot Liquidity Support) + Pancake (liquidity pair added already). Listing starts after right IDO is fullfilled.
+- **Listing:** Ascendex (Hummingbot Liquidity Support) + Pancake (liquidity pair added already). Listing starts after IDO is fullfilled.
 - **Target token price**: $0.07=> $0.7 (x10 token growth in 1st quarter of 2025 by good news feed, new partnership, active token buyback and MM).
 - **$ACTICAT meme campaign** to boost crypto community + ACTI airdrop to meme holders and vice-versa.
 - **Incentivizing traders**
@@ -18,15 +18,15 @@ label: Roadmap
 - **Moving from CNN to ViT** (based on [Synthmocap](https://microsoft.github.io/SynthMoCap/))
 - **Moving from VoxelGPT to Llama** (based on [LLama Nemotron](https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct-HF/))
 - **AI training wizard app**. Developing wizard app for ViT training.
-- **Fine-tuning new ViT** to recognize the tiniest details of 60-fps sport videos, allows better recognition of fine motor skills and registering deviations in exercise technique.
-- **Optimizing ViT** to spend fewer resources for training and processing video data (inference, on the phones).
-- **Modifying D.R.O.C model** (Dynamic Real-time Objective Correction) model, which allows LLM to make real-time judgments on the quality of exercise performance and correct the athlete's technique. D.R.O.C will instantly detect errors or incorrect movements and give the user feedback, helping them improve their technique without the need for repeated workout reviews or consultations with a coach. That will work as a part of a special RAG over Llama.
+- **Fine-tuning new ViT** to recognize the tiniest details of 60-fps sport videos, allows better recognition of fine motor skills and registering deviations in exercise technique;
+- **Optimizing ViT** to spend fewer resources for training and processing video data (inference, on the phones);
+- **Modifying D.R.O.C model** (Dynamic Real-time Objective Correction) model, which allows LLM to make realtime judgments on the quality of exercise performance and correct the athlete's technique. D.R.O.C will instantly detect errors or incorrect movements and give the user feedback, helping them improve their technique without the need for repeated workout reviews or consultations with a coach. That will work as a part of a special RAG over Llama.
 === **Product**
-- **Custdev** + celebrity coaches collaboration: (recruit 200 athletes to help us to train our AI engine during custdev campaign to validate product and market fit + 10 coaches as ambassadors).
-- **AI by AI program setup**: create Sport Knowledge LLM training app for athletes and coaches to train AI and be incentivized with $ACTI (alpha version of Actiq app) – running when token will be listed.
-- **Run $ACTICAT** – meme coin to promote first AIGC character (https://acticat.xyz ) + ACTI airdrop to $ACTICAT investors.
-- **Create Beta app front-end** release
-- **Web3 dashboard** mockups
+- **Custdev** + celebrity coaches collaboration: (recruit 200 athletes to help us to train our AI engine during custdev campaign to validate product and market fit + 10 coaches as ambassadors);
+- **AI by AI program setup**: create Sport Knowledge LLM training app for athletes and coaches to train AI and be incentivized with $ACTI (alpha version of Actiq app) – running when token will be listed;
+- **Run $ACTICAT** – meme coin to promote first AIGC character (https://acticat.xyz ) + ACTI airdrop to $ACTICAT investors;
+- **Create Beta app front-end** release;
+- **Web3 dashboard** mockups;
 - **New product website** (https://actiq.ai)
 - **New video guides and explainers** (how Actiq works);
 
@@ -47,9 +47,9 @@ label: Roadmap
 
 ## Q1-2025
 === **Token**
-- **Listing:** Gate, Crypto.com, HTX + several Tier2 with $2M+ daily liquidity.
-- **Target token price**: $0.07=> $0.7 (x10 token growth in 1st quarter of 2025 by good news feed, new partnership, active token buyback and MM).
-- **Wiping out FDV from BNB network** by distributing $ACTI tokens across ecosystems (ICP+SKALE).
+- **Listing:** expanding to Gate, Crypto.com, HTX + several Tier2 with $2M+ daily liquidity;
+- **Target token price**: $0.07=> $0.7 (x10 token growth in 1st quarter of 2025 on the back of new partnerships, clients, investors, active token buyback and MM).
+- **Wiping out FDV from BNB network** by distributing $ACTI tokens across ecosystems (ICP+SKALE);
 - **Incentivizing traders**
 === **Development**
 - **Building/testing/publishing** native apps for Android and Apple;
