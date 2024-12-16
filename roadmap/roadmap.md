@@ -42,7 +42,7 @@ label: Roadmap
 - **Hummingbot** (MM/Liquidity support program).
 === **Fundraising**
 - **VC/Angel round** (committed are: Gate Labs, Crypto.com (lead), GDA Capital +2 others). Total Raise comfirmed = $800K (active up to 20 of December).
-- **IDO round** (8 launchpads signed, including Kommunitas, Spores, KGD, BSCS, MaticLaunchpad, Ordify +3 in reserve). Total Raise comfirmed = **$1M**, (starts at 24 of December);
+- **IDO round** (8 launchpads signed, including Kommunitas, Spores, KGD, BSCS, MaticLaunchpad, Ordify +3 in reserve). Total Raise comfirmed = **$1M**, (starts at 24 of December). IDO starts after VC/Angel round is fullfilled;
 ===
 
 ## Q1-2025
