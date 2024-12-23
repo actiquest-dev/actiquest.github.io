@@ -12,9 +12,8 @@ The **AI Live Pod** is a state-of-the-art portable coaching device designed to r
 
 ---
 
-## Pictures of the AI Live Pod
-1. [AI Live Pod Exterior Design](https://example.com/image1)
-   - A sleek, portable design optimized for mobility and usability in various environments.
+## AI Live Pod Functionality
+1. [A sleek, portable design optimized for mobility and usability in various environments](https://actiq.ai/livepod/livepod.jpg)
 
 2. [Vision and Tracking Technology](https://example.com/image2)
    - Displays the VR180 6K HDR and LiDAR sensor setup.
