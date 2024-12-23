@@ -62,8 +62,6 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
   
   <!-- The wireless HDMI receiver adds value to both individual and group activities, supporting various use cases.
 
-
-
 ## Use Cases
 
 ### 1. **Fitness and Sports Training**
@@ -115,9 +113,3 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 
 - **Seamless Integration:**
   - Syncs with health data providers to create holistic fitness profiles.
-
----
-
-For more information, visit [Actiq's Official Website](https://example.com/actiq).
-
----
