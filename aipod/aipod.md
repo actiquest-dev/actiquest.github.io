@@ -21,15 +21,12 @@ The **AI Live Pod** is a state-of-the-art portable coaching device designed to r
 
 2.  VR180 6K HDR 60 fps motion capture and depth metadata using LiDAR sensor. Combination of several AI vision methods allows to capture high-quality 3D realtime reconstruction of the complete human body, including eyes, mimic, tongue and hands, without requiring any calibration and manual intervention.
 
-  
-
 > Motion-capture technology used in film and game production typically focuses only on face, body, and hand capture independently, involves complex and costly hardware, and requires significant manual intervention.  Even though machine-learning techniques exist to overcome these problems, they typically only support a single camera, often operate on a single body part, are not precise in world space, and rarely generalize outside a specified context.
 
  
 3. AR/VR Integration ready
 
 - Deploys captured biomechanics data to immersive AR and VR platform and applications.
-
 
 ## Indoor and Outdoor Mode
 
@@ -43,7 +40,6 @@ The **AI Live Pod** features a physical switch on the top of the device that all
 
 - This mode is optimized for personal workouts, providing real-time feedback and tracking user movements with precision.
 
-  
 
 ### Outdoor Mode
 
@@ -53,21 +49,17 @@ The **AI Live Pod** features a physical switch on the top of the device that all
 
 - Users can **live-stream games**, watch recordings immediately after the event, and bookmark crucial moments for later review.
 
-  
 
 ## Spatial Audio
 
 - Showcases the Harman Kardon Spatial 3D Audio system for immersive sound. Allows to precisely synchronize audio with video positioned, transmitted from AI pod to TV.
 
-  
 
 ## Wireless HDMI
 
-  
-
 The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers advanced connectivity options for enhanced usability:
 
-  **4K Resolution Support:**
+ **4K Resolution Support:**
 
 - Streams high-definition visuals, ensuring clarity and detail in every frame.
 
@@ -83,13 +75,9 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 
 - Simplified pairing ensures users can focus on their activities without technical distractions.
 
-  
+## Use Cases  
 
-## Use Cases
-
-  
-
-### 1. **Fitness and Sports Training**
+### Fitness and Sports Training (General)
 
 **Personalized Workouts:**
 
@@ -99,8 +87,6 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 
 - Each workout is dynamically tailored to fit the user's physical condition and goals, leveraging advanced tracking and data analysis.
 
-  
-
 **Performance Analysis:**
 
 - Tracks progress using multi-object tracking and device positioning.
@@ -109,9 +95,7 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 
 -   The tracking system ensures precision in monitoring physical activity, giving actionable insights for better performance.
 
-  
-
-### 2. **Indoor Activities**
+### Indoor Activities
 
 **Equipment Recognition:**
 
@@ -121,57 +105,42 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 
 -   The system's ability to recognize equipment makes it ideal for streamlined workouts in home or gym settings.
 
-  
-
 **Progress Tracking:**
 
 - Tracks reps and performance to provide adaptive routines.
 
 -   With continuous tracking, the device ensures users achieve steady progress by adjusting routines in real-time.
 
-  
-
-### 3. **Outdoor Activities**
+### Outdoor Activities
 
 **Advanced Tracking:**
 
 - Tracking & analyzing two player games (Tennis, Paddle, Badminton etc.)
-
 - Tracking & analyzing team games (Soccer, Baseball, Hockey etc.).
 
-### 4. **Smart Home Hub**
+## Smart Home Hub
 - Functions as a hub for other smart devices with WiFi7, Bluetooth, ZigBee support.
 
-  
-
-## 5. Health and Sport Data Integration
+## Health and Sport Data Integration
 
 The **AI Live Pod** seamlessly integrates with health and sport data providers to deliver an enhanced and comprehensive user experience:
 
 **Holistic Fitness Profiles:**
 
 - Syncs with wearable devices and health apps to gather real-time biometric data, such as heart rate, calories burned, and activity levels.
-
 - By integrating multiple data sources, the pod creates a detailed fitness profile tailored to each user's health and performance needs.
-
-  
 
 **Custom Recommendations:**
 
 - Leverages aggregated data to provide personalized workout plans, recovery advice, and dietary suggestions.
-
 - Personalized insights ensure that users receive guidance aligned with their unique goals and physical conditions
 
 **Performance Analytics:**
 
 - Tracks key metrics like speed, endurance, and strength across various sports and fitness activities.
-
-- Detailed analytics enable users to monitor improvements and refine their training regimens.
-
-  
+- Detailed analytics enable users to monitor improvements and refine their training regimens.  
 
 **Cross-Platform Integration:**
 
 - Connects seamlessly with popular platforms such as Apple Health, Google Fit, Strava, Suunto, Garmin and others.
-
 - The integration ensures compatibility with existing ecosystems, enhancing usability and accessibility.
