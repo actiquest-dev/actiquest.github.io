@@ -26,7 +26,7 @@ The **AI Live Pod** is a state-of-the-art portable coaching device designed to r
  
 3. AR/VR Integration ready
 
-- Deploys captured biomechanics data to immersive AR and VR platform and applications.
+- Deploys captured biomechanics data to immersive AR and VR platforms and applications in realtime.
 
 ## Indoor and Outdoor Mode
 
@@ -53,6 +53,7 @@ The **AI Live Pod** features a physical switch on the top of the device that all
 - Designed for sports events, this mode creates a **broadcast-like experience** by tracking players and activities dynamically.
 
 - Users can **live-stream games**, watch recordings immediately after the event, and bookmark crucial moments for later review.
+- AI sportcasting experience. AI can comment the live game in realtime.
 
 
 ## Spatial Audio
@@ -161,7 +162,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 | Vision | Stereoscopic-on-chip VR180 6K HDR, up to 120 FPS  |
 | Mechanical Switcher | Indoor mode (Stereoscopic)/ Outdoor mode (160°)  |
 | Lidar | Slamtec RPLIDAR A1-R6  |
-| Speakers | 3 wide-brimmed speakers Harman-Univox   |
+| Speakers | 3 wide-brimmed speakers Harman-Univox, 15-watt max output   |
 | Smart Home Connectivity | Matter  |
 | Wireless Connectivity | Wi-Fi 7.0, Bluetooth  |
 | HDMI | Docked wireless HDMI 2.2 Receiver  |
