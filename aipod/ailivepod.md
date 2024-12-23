@@ -1,5 +1,5 @@
 ---
-icon: icon-hubot
+icon: hubot
 label: AI Live Pod
 ---
 
