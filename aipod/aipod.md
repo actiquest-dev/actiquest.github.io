@@ -3,11 +3,9 @@ icon: hubot
 label: AI Live Pod
 ---
 
-# AI Live Pod
+# AI Live Pod Overview
 
 > Description of AI Live Pod Prototype
-
-# AI Live Pod Overview
 
 ## Description
 The **AI Live Pod** is a state-of-the-art portable coaching device designed to revolutionize fitness, sports, music, and learning by leveraging cutting-edge AI, VR/AR, and decentralized technology. Below, we provide links to visual representations and detailed use cases to showcase its capabilities.
