@@ -14,8 +14,6 @@ The **AI Live Pod** is a state-of-the-art portable coaching device designed to r
 
 ## AI Live Pod Functionality
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcoG4lJjaDMtggBT3kgWuTHPsK-zkjnkg3-229vLtm4efKjTNjuAtK-w5kpZFDQL8tT3SbxUuhlVYxfjAWYcw-uTNDUBqcZL3N-vj7rpC5PdPkIhzdkVuXPPbmLupCwfD-sgF8zrg?key=AsJEkgePh24159X10uUz6PJ-)
-
 1. A sleek, portable design optimized for mobility and usability in various environments. 
 
 2.  VR180 6K HDR 60 fps motion capture and depth metadata using LiDAR sensor. Combination of several AI vision methods allows to capture high-quality 3D realtime reconstruction of the complete human body, including eyes, mimic, tongue and hands, without requiring any calibration and manual intervention.
