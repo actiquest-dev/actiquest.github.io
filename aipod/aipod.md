@@ -36,12 +36,17 @@ The **AI Live Pod** features a physical switch on the top of the device that all
  
 ### Indoor Mode
 
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcYeduYP1EbqdzcZE9Q7LvHpHBAtn7KMcHhHvrA60HZQceuPePXq2Ax83_pgBObUsOvARi16Y9jM8H_lugldhP-ZPRvT_MVO3Ygf_Z8ovw8zPOc4QhbsduMOHBieFn3K7XhIjJnIA?key=AsJEkgePh24159X10uUz6PJ-)
+
 - The cameras are configured in a **stereo pair** setup, ideal for close-range tracking and depth perception.
 
 - This mode is optimized for personal workouts, providing real-time feedback and tracking user movements with precision.
 
 
 ### Outdoor Mode
+
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdWmd2ly1PMukj8LE1axOd8SWvyeKg-9bI64AXMPdC6gd_qGwN0aOglNdLnSY1zzgORshPiIweSECGTHEby897A7FZ8o81HPipiH7ZpobtNMl2jwCmpu0FZuJhkOwxA6CECYnr_?key=AsJEkgePh24159X10uUz6PJ-)
+
 
 - The cameras are positioned **160 degrees apart**, enabling wide-angle coverage to automatically follow actions on the field.
 
