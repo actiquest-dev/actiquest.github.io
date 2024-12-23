@@ -144,3 +144,20 @@ The **AI Live Pod** seamlessly integrates with health and sport data providers t
 
 - Connects seamlessly with popular platforms such as Apple Health, Google Fit, Strava, Suunto, Garmin and others.
 - The integration ensures compatibility with existing ecosystems, enhancing usability and accessibility.
+
+## Tech Specification
+
+The **AI Live Pod** prototype seamlessly integrates most perfect hardware and software running on it:
+
+| Type | Description |
+|--|--|
+| Platform | NVIDIA Xavier 16/256  |
+| OS | Linux L4T 32.3.1  |
+| Vision | Stereoscopic-on-chip VR180 6K HDR, up to 120 FPS  |
+| Mechanical Switcher | Indoor mode (Stereoscopic)/ Outdoor mode (160°)  |
+| Lidar | Slamtec RPLIDAR A1-R6  |
+| Speakers | 3 wide-brimmed speakers Harman-Univox   |
+| Smart Home Connectivity | Matter  |
+| Wireless Connectivity | Wi-Fi 7.0, Bluetooth  |
+| HDMI | Docked wireless HDMI 2.2 Receiver  |
+|Li-Pol 10KmAh Battery | Up to 7 hrs autonomy, fast charging|
