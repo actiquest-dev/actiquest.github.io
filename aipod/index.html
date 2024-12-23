@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788266658484">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788269423535">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -21,21 +21,23 @@
     <meta property="og:url" content="https://docs.actiq.xyz/aipod/">
     <meta property="og:title" content="AI Live Pod Overview">
     <meta property="og:description" content="Description of AI Live Pod Prototype">
+    <meta property="og:image" content="https://actiq.ai/livepod/livepod.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/aipod/">
     <meta property="twitter:title" content="AI Live Pod Overview">
     <meta property="twitter:description" content="Description of AI Live Pod Prototype">
+    <meta property="twitter:image" content="https://actiq.ai/livepod/livepod.jpg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.788266658484" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.788269423535" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788266658484" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788269423535" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788266658484" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788269423535" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -245,31 +247,95 @@
         <span>AI Live Pod Functionality</span>
     </h2>
 </doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://actiq.ai/livepod/livepod.jpg" alt="enter image description here">
+    <figcaption class="caption">enter image description here</figcaption>
+</figure>
+</p>
 <ol>
-<li><p><a href="https://actiq.ai/livepod/livepod.jpg">A sleek, portable design optimized for mobility and usability in various environments</a></p>
+<li><p>A sleek, portable design optimized for mobility and usability in various environments.</p>
 </li>
-<li><p><a href="https://example.com/image2">Vision and Tracking Technology</a></p>
-<ul>
-<li>Displays the VR180 6K HDR and LiDAR sensor setup.</li>
-</ul>
+<li><p>VR180 6K HDR 60 fps motion capture and depth metadata using LiDAR sensor. Combination of several AI vision methods allows to capture high-quality 3D realtime reconstruction of the complete human body, including eyes, mimic, tongue and hands, without requiring any calibration and manual intervention.</p>
 </li>
-<li><p><a href="https://example.com/image3">AR/VR Interface</a></p>
+</ol>
+<blockquote>
+<p>Motion-capture technology used in film and game production typically focuses only on face, body, and hand capture independently, involves complex and costly hardware, and requires significant manual intervention.  Even though machine-learning techniques exist to overcome these problems, they typically only support a single camera, often operate on a single body part, are not precise in world space, and rarely generalize outside a specified context.</p>
+</blockquote>
+<ol start="3">
+<li>AR/VR Integration
 <ul>
-<li>Highlights immersive AR and VR features in action.</li>
-</ul>
-</li>
-<li><p><a href="https://example.com/image4">Indoor and Outdoor Modes</a></p>
-<ul>
-<li>Demonstrates the pod&#x27;s adaptability to indoor fitness routines and outdoor sports environments.</li>
-</ul>
-</li>
-<li><p><a href="https://example.com/image5">Audio Integration</a></p>
-<ul>
-<li>Showcases the Harman Kardon Spatial 3D Audio system for immersive sound.</li>
+<li>Deploys captured biomechanics data to immersive AR and VR platform and applications.</li>
 </ul>
 </li>
 </ol>
-<hr>
+<doc-anchor-target id="indoor-and-outdoor-mode-switching">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#indoor-and-outdoor-mode-switching">#</doc-anchor-trigger>
+        <span>Indoor and Outdoor Mode Switching</span>
+    </h2>
+</doc-anchor-target>
+<p>The <strong>AI Live Pod</strong> features a physical switch on the top of the device that allows seamless toggling between indoor and outdoor modes. This switch adjusts the camera angles to suit the respective environment:</p>
+<doc-anchor-target id="indoor-mode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#indoor-mode">#</doc-anchor-trigger>
+        <span>Indoor Mode</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The cameras are configured in a <strong>stereo pair</strong> setup, ideal for close-range tracking and depth perception.</li>
+<li>This mode is optimized for personal workouts, providing real-time feedback and tracking user movements with precision.</li>
+</ul>
+<doc-anchor-target id="outdoor-mode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#outdoor-mode">#</doc-anchor-trigger>
+        <span>Outdoor Mode</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The cameras are positioned <strong>160 degrees apart</strong>, enabling wide-angle coverage to automatically follow actions on the field.</li>
+<li>Designed for sports events, this mode creates a <strong>broadcast-like experience</strong> by tracking players and activities dynamically.</li>
+<li>Users can <strong>live-stream games</strong>, watch recordings immediately after the event, and bookmark crucial moments for later review.</li>
+</ul>
+<doc-anchor-target id="spatial-audio">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#spatial-audio">#</doc-anchor-trigger>
+        <span>Spatial Audio</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Showcases the Harman Kardon Spatial 3D Audio system for immersive sound. Allows to precisely synchronize audio with video positioned, transmitted from AI pod to TV.</li>
+</ul>
+<doc-anchor-target id="wireless-hdmi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wireless-hdmi">#</doc-anchor-trigger>
+        <span>Wireless HDMI</span>
+    </h2>
+</doc-anchor-target>
+<p>The <strong>AI Live Pod</strong> includes a docked <strong>wireless HDMI receiver</strong> that offers advanced connectivity options for enhanced usability:</p>
+<ul>
+<li><p><strong>4K Resolution Support:</strong></p>
+<ul>
+<li>Streams high-definition visuals, ensuring clarity and detail in every frame.</li>
+</ul>
+<!-- Ideal for reviewing sports games, fitness progress, or immersive AR/VR experiences in stunning quality. -->
+</li>
+<li><p><strong>Cable-Free Convenience:</strong></p>
+<ul>
+<li>Eliminates the need for physical cables, allowing seamless device setup and operation.</li>
+</ul>
+<!-- Wireless functionality enhances portability and minimizes setup time, making it perfect for on-the-go users. -->
+</li>
+<li><p><strong>Instant Connection:</strong></p>
+<ul>
+<li>Automatically pairs with compatible devices, offering quick and hassle-free streaming.</li>
+</ul>
+<!-- Simplified pairing ensures users can focus on their activities without technical distractions. -->
+<!-- The wireless HDMI receiver adds value to both individual and group activities, supporting various use cases.
+
+
+
+</li>
+</ul>
 <doc-anchor-target id="use-cases">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#use-cases">#</doc-anchor-trigger>
@@ -288,12 +354,14 @@
 <li>Real-time coaching and customized routines based on user performance.</li>
 <li>Injury prevention through posture correction and muscle tracking.</li>
 </ul>
+<!-- Each workout is dynamically tailored to fit the user's physical condition and goals, leveraging advanced tracking and data analysis. -->
 </li>
 <li><p><strong>Performance Analysis:</strong></p>
 <ul>
 <li>Tracks progress using multi-object tracking and device positioning.</li>
 <li>Offers feedback and data-driven recommendations for improvement.</li>
 </ul>
+<!-- The tracking system ensures precision in monitoring physical activity, giving actionable insights for better performance. -->
 </li>
 </ul>
 <doc-anchor-target id="2-music-and-learning">
@@ -303,11 +371,12 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Skill Development:</strong>
+<li><p><strong>Skill Development:</strong></p>
 <ul>
 <li>Assists with learning musical instruments or dance routines using immersive AR/VR.</li>
 <li>Provides structured lessons tailored to user skills and pace.</li>
 </ul>
+<!-- AR/VR integration allows for interactive and engaging skill-building exercises, replicating real-world scenarios. -->
 </li>
 </ul>
 <doc-anchor-target id="3-indoor-activities">
@@ -322,11 +391,13 @@
 <li>Automatically detects fitness equipment to suggest exercises.</li>
 <li>Offers zero-shot capture for hands-free setup and monitoring.</li>
 </ul>
+<!-- The system's ability to recognize equipment makes it ideal for streamlined workouts in home or gym settings. -->
 </li>
 <li><p><strong>Progress Tracking:</strong></p>
 <ul>
 <li>Tracks reps and performance to provide adaptive routines.</li>
 </ul>
+<!-- With continuous tracking, the device ensures users achieve steady progress by adjusting routines in real-time. -->
 </li>
 </ul>
 <doc-anchor-target id="4-outdoor-activities">
@@ -340,11 +411,13 @@
 <ul>
 <li>Utilizes 3D LiDAR for ball tracking and environmental analysis.</li>
 </ul>
+<!-- LiDAR technology ensures precise tracking of fast-paced sports activities, adapting to dynamic environments. -->
 </li>
 <li><p><strong>Motivational Training:</strong></p>
 <ul>
 <li>Engages users through gamified incentives, including Web3 rewards ($ACTI).</li>
 </ul>
+<!-- Gamification elements, such as rewards, encourage consistency and enhance motivation for outdoor sports. -->
 </li>
 </ul>
 <doc-anchor-target id="5-smart-home-integration">
