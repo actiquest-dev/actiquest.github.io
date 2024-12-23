@@ -18,7 +18,7 @@ The **AI Live Pod** is a state-of-the-art portable coaching device designed to r
 
 1. A sleek, portable design optimized for mobility and usability in various environments. 
 
-3.  VR180 6K HDR 60 fps motion capture and depth metadata using LiDAR sensor. Combination of several AI vision methods allows to capture high-quality 3D realtime reconstruction of the complete human body, including eyes, mimic, tongue and hands, without requiring any calibration and manual intervention.
+2.  VR180 6K HDR 60 fps motion capture and depth metadata using LiDAR sensor. Combination of several AI vision methods allows to capture high-quality 3D realtime reconstruction of the complete human body, including eyes, mimic, tongue and hands, without requiring any calibration and manual intervention.
 
 > Motion-capture technology used in film and game production typically focuses only on face, body, and hand capture independently, involves complex and costly hardware, and requires significant manual intervention.  Even though machine-learning techniques exist to overcome these problems, they typically only support a single camera, often operate on a single body part, are not precise in world space, and rarely generalize outside a specified context.
 
@@ -47,19 +47,15 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 
 - **4K Resolution Support:**
   - Streams high-definition visuals, ensuring clarity and detail in every frame.
-  
   <!-- Ideal for reviewing sports games, fitness progress, or immersive AR/VR experiences in stunning quality. -->
 
 - **Cable-Free Convenience:**
-  - Eliminates the need for physical cables, allowing seamless device setup and operation.
-  
+  - Eliminates the need for physical cables, allowing seamless device setup and operation. 
   <!-- Wireless functionality enhances portability and minimizes setup time, making it perfect for on-the-go users. -->
 
 - **Instant Connection:**
   - Automatically pairs with compatible devices, offering quick and hassle-free streaming.
-  
   <!-- Simplified pairing ensures users can focus on their activities without technical distractions. -->
-  
   <!-- The wireless HDMI receiver adds value to both individual and group activities, supporting various use cases.
 
 ## Use Cases
@@ -68,7 +64,6 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 - **Personalized Workouts:**
   - Real-time coaching and customized routines based on user performance.
   - Injury prevention through posture correction and muscle tracking.  
-  
   <!-- Each workout is dynamically tailored to fit the user's physical condition and goals, leveraging advanced tracking and data analysis. -->
 
 - **Performance Analysis:**
