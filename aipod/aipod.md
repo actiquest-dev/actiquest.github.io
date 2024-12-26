@@ -126,8 +126,8 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 - Tracking & analyzing two player games (Tennis, Paddle, Badminton etc.)
 - Tracking & analyzing team games (Soccer, Baseball, Hockey etc.).
 
-## Smart Home Management
-- Functions as a hub agent for other smart devices with WiFi7, Bluetooth, ZigBee support. AI Pod will create customizable training plan and set your lights to change color or brightness according to your heart rate or mood with smart lights and thermostats that supports Matter protocol using workouts calendar. This way you can create the right ambiance and temperature for your workouts and get inspired by what motivates you, challenges you, and makes you happy. 
+## Smart Home Agent
+- Functions as a smart hub agent for various home devices with Matter protocol support. AI Pod will create customizable training plan and set your lights to change color or brightness according to your heart rate or mood with smart lights and thermostats that supports Matter protocol using workouts calendar. This way you can create the right ambiance and temperature for your workouts and get inspired by what motivates you, challenges you, and makes you happy. 
 
 
 ----------
