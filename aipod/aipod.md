@@ -13,6 +13,8 @@ label: AI Live Pod
 ## AI Live Pod
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcoG4lJjaDMtggBT3kgWuTHPsK-zkjnkg3-229vLtm4efKjTNjuAtK-w5kpZFDQL8tT3SbxUuhlVYxfjAWYcw-uTNDUBqcZL3N-vj7rpC5PdPkIhzdkVuXPPbmLupCwfD-sgF8zrg?key=AsJEkgePh24159X10uUz6PJ-)
 
+----------
+
 ## Description
 
 The **AI Live Pod** is a state-of-the-art portable coaching device designed to revolutionize fitness, sports, music, and learning by leveraging cutting-edge AI, VR/AR, and decentralized technology. Below, we provide links to visual representations and detailed use cases to showcase its capabilities.
@@ -28,9 +30,10 @@ The **AI Live Pod** is a state-of-the-art portable coaching device designed to r
 
 - Deploys captured biomechanics data to immersive AR and VR platforms and applications in realtime.
 
-## Indoor and Outdoor Mode
+----------
 
-  
+## Indoor and Outdoor Mode
+ 
 The **AI Live Pod** features a physical switch on the top of the device that allows seamless toggling between indoor and outdoor modes. This switch adjusts the camera angles to suit the respective environment:
 
  
@@ -41,7 +44,6 @@ The **AI Live Pod** features a physical switch on the top of the device that all
 - The cameras are configured in a **stereo pair** setup, ideal for close-range tracking and depth perception.
 
 - This mode is optimized for personal workouts, providing real-time feedback and tracking user movements with precision.
-
 
 ### Outdoor Mode
 
@@ -55,13 +57,11 @@ The **AI Live Pod** features a physical switch on the top of the device that all
 - Users can **live-stream games**, watch recordings immediately after the event, and bookmark crucial moments for later review.
 - AI sportcasting experience. AI can comment the live game in realtime.
 
-
-## Spatial Audio
+### Spatial Audio
 
 - Showcases the Harman Kardon Spatial 3D Audio system for immersive sound. Allows to precisely synchronize audio with video positioned, transmitted from AI pod to TV.
 
-
-## Wireless HDMI
+### Wireless HDMI
 
 The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers advanced connectivity options for enhanced usability:
 
@@ -80,6 +80,8 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 - Automatically pairs and offering quick and hassle-free streaming.
 
 - Simplified pairing ensures users can focus on their activities without technical distractions.
+
+----------
 
 ## Use Cases  
 
@@ -127,6 +129,8 @@ The **AI Live Pod** includes a docked **wireless HDMI receiver** that offers adv
 ## Smart Home Hub
 - Functions as a hub for other smart devices with WiFi7, Bluetooth, ZigBee support.
 
+----------
+
 ## Health and Sport Data Integration
 
 The **AI Live Pod** seamlessly integrates with health and sport data providers to deliver an enhanced and comprehensive user experience:
@@ -151,6 +155,8 @@ The **AI Live Pod** seamlessly integrates with health and sport data providers t
 - Connects seamlessly with popular platforms such as Apple Health, Google Fit, Strava, Suunto, Garmin and others.
 - The integration ensures compatibility with existing ecosystems, enhancing usability and accessibility.
 
+----------
+
 ## Tech Specification
 
 The **AI Live Pod** prototype seamlessly integrates most perfect hardware and software running on it:
@@ -167,6 +173,8 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 | Wireless Connectivity | Wi-Fi 7.0, Bluetooth  |
 | HDMI | Docked wireless HDMI 2.2 Receiver  |
 |Li-Pol 10KmAh Battery | Up to 5 hrs autonomy, fast charging|
+
+----------
 
 ## MVP Requirements
 
