@@ -202,7 +202,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 2.  **Neural Network Application**:
     -   Object tracking using 1x CNN (e.g., YOLOv8).
     -   Biomechanics and motion analysis via:
-        -   3x CNNs (face, body, and hands based on landmark methods).
+        -   3x CNNs (face, body, and hands based on landmark methods, works in parallel).
         -   1x SOTA model and other supportive algorithms.
 
 #### Voice Processing
