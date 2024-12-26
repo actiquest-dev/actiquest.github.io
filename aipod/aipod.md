@@ -207,7 +207,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
     -   Variable processing loads distributed across CPU and CUDA resources.
 
 ##### Data Annotation:
-1.  Local data annotation handled by CPU (16 cores available for this purpose).
+1.  Local data annotation handled by CPU.
 
 ##### Reasoning and Model Training:
 1.  Local reasoning using an LLM (balanced CPU+CUDA processing).
@@ -232,7 +232,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 **Additional Components**:
 -   **Unitree 4D LiDAR L1**  (optional): For depth and absolute positioning.
 -   **SYN4382**: A communication chip (WiFi 6, BLE, Matter).
--   **4x4K cameras + interface modules** (2 for binocular vision, wide-and short focus 160 degree fish-eye lenses for full body capure + 2 for player tracking, long focus, outdoor usage).
+-   **4x4K cameras + interface modules** (2 for binocular vision, wide-and short focus 100-160 degree fish-eye lenses for full body capure + 2 for player tracking, long focus, outdoor usage).
 
 ----------
 
