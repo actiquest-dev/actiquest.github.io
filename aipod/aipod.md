@@ -213,7 +213,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 1.  Local data annotation handled by CPU.
 
 #### Reasoning and Model Training:
-1.  Local reasoning using an LLM (balanced CPU+CUDA processing).
+1.  Local reasoning using an LLM (Google Gemma 7b, balanced CPU+CUDA loading)
 2.  Incremental training:
     -   Updates from cloud-based models to the on-device model during standby mode.
 
@@ -250,7 +250,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 2.  **Short Video Analysis**:
     -   Record and parse short videos (1-3 minutes) with local LLM annotations.
 
-### End Goal
+### Target
 
 -   A compact device that:
     -   Connects to a mobile app.
@@ -259,8 +259,8 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
     -   Processes voice commands locally.
     -   Operates autonomously for 4-6 hours on battery power.
 
-### Technological Solutions
+### Technological Challendges
 
--   **Video and Neural Processing**: Efficiently leveraging both CUDA and CPU cores.
+-   **Video and Neural Processing**: Efficiently leveraging both CUDA and CPU cores by processing several NN's and LLM at the same time.
 -   **Energy Management**: Ensuring high performance at minimal power consumption.
 -   **Data Privacy**: Maintaining full offline functionality without internet dependency.
