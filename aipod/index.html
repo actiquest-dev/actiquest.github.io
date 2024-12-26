@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788533605046">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788534093925">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.788533605046" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.788534093925" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788533605046" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788534093925" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788533605046" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788534093925" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -606,7 +606,7 @@
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Local reasoning using an LLM (balanced CPU+CUDA processing).</li>
+<li>Local reasoning using an LLM (Google Gemma 7b, balanced CPU+CUDA loading)</li>
 <li>Incremental training:
 <ul>
 <li>Updates from cloud-based models to the on-device model during standby mode.</li>
@@ -670,10 +670,10 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="end-goal">
+<doc-anchor-target id="target">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#end-goal">#</doc-anchor-trigger>
-        <span>End Goal</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#target">#</doc-anchor-trigger>
+        <span>Target</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -687,14 +687,14 @@
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="technological-solutions">
+<doc-anchor-target id="technological-challendges">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#technological-solutions">#</doc-anchor-trigger>
-        <span>Technological Solutions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#technological-challendges">#</doc-anchor-trigger>
+        <span>Technological Challendges</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Video and Neural Processing</strong>: Efficiently leveraging both CUDA and CPU cores.</li>
+<li><strong>Video and Neural Processing</strong>: Efficiently leveraging both CUDA and CPU cores by processing several NN&#x27;s and LLM at the same time.</li>
 <li><strong>Energy Management</strong>: Ensuring high performance at minimal power consumption.</li>
 <li><strong>Data Privacy</strong>: Maintaining full offline functionality without internet dependency.</li>
 </ul>
