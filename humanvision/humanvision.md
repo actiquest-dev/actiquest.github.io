@@ -4,6 +4,8 @@ label: Human Vision Subnet
 ---
 # Actiquest Human Vision Subnet on Bittensor
 
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdVMk7sTgDGggU21uxywUHHoj1yJyE9N8rOR46mN5GOOvTnsUrsKluwdZFC-x6bBNMerHMmI1_aqKn_cZq7-gUXdQw5GBTzkzEA0w_IzIerjLf_EnCBf3lA4b4R9mrOXz5Sb2Cw0Q?key=AsJEkgePh24159X10uUz6PJ-)
+
 > The rapid advancements in AI and computer vision have led to an
 > increasing demand for scalable, decentralized platforms capable of
 > supporting training and deployment of various vision models that can
