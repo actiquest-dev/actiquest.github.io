@@ -4,9 +4,14 @@ label: Human Vision Subnet
 ---
 # Actiquest Human Vision Subnet on Bittensor
 
-## Introduction
-
-The rapid advancements in AI and computer vision have led to an increasing demand for scalable, decentralized platforms capable of supporting training and deployment of various vision models that can live efficiently on-device/edge hardware. The proposed **Actiquest**  **Human**  **Vision Subnet on Bittensor** is designed to address these challenges by leveraging the decentralized nature of Bittensor's blockchain-based ecosystem. This subnet enables collaborative training of human vision models, promoting resource-sharing, innovation, and accessibility for researchers and developers worldwide.
+> The rapid advancements in AI and computer vision have led to an
+> increasing demand for scalable, decentralized platforms capable of
+> supporting training and deployment of various vision models that can
+> live efficiently on-device/edge hardware. The proposed **Actiquest** 
+> **Human**  **Vision Subnet on Bittensor** is designed to address these challenges by leveraging the decentralized nature of Bittensor's
+> blockchain-based ecosystem. This subnet enables collaborative training
+> of human vision models, promoting resource-sharing, innovation, and
+> accessibility for researchers and developers worldwide.
 
 ---
 
