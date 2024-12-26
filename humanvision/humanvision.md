@@ -21,24 +21,24 @@ The Human Vision Subnet is a specialized layer within the Bittensor network that
 
 ### Key Features
 
-1.  **Decentralized Training Environment:*
+1.  **Decentralized Training Environment:**
 -   Nodes contribute computational resources for training vision models collaboratively.       
 -   Rewards are distributed based on contributions, incentivizing participation.        
-3.  **Model Interoperability:**  
+2.  **Model Interoperability:**  
 -   Supports popular vision model architectures such as Convolutional Neural Networks (CNNs), Vision Transformers (ViTs), and hybrid models. 
 -   Compatibility with major frameworks like TensorFlow, PyTorch, and ONNX.     
-4.  **Human Vision Models:**
+3.  **Human Vision Models:**
 -   Focuses on the development and optimization of vision models tailored for human biomechanics and behavior.   
 -   These models are directly designed to support applications in **Actiq's AI Live Pod** and other edge devices, enabling features such as sports analytics, physical therapy, movement science, and real-time feedback on user performance.    
-5.  **Scalable Dataset Management:** 
+4.  **Scalable Dataset Management:** 
 -   Integrates with decentralized storage solutions for managing large datasets securely and efficiently.    
 -   Enables contributors to share and access high-quality, labeled datasets.      
-6.  **Privacy and Security:**
+5.  **Privacy and Security:**
 -   Ensures data privacy through advanced encryption and federated learning methodologies.     
 -   Protects intellectual property and sensitive data during model training and inference.       
-7.  **Tokenized Incentive Mechanism:**
+6.  **Tokenized Incentive Mechanism:**
 -   Utilizes Bittensor's token ($TAO) for rewarding contributions to model training, dataset provision, and subnet operation.   
-8.  **Incentivization Algorithm:**
+7.  **Incentivization Algorithm:**
 - Nodes contributing computational resources or datasets are rewarded using a hybrid algorithm:  
         -   **Dynamic Load Balancing:** Nodes are ranked by their computational contributions and assigned tasks based on their capacity and availability. Nodes with higher uptime and performance metrics are prioritized.     
         -   **Performance-Based Rewards:** Contribution metrics such as processing speed, accuracy of model updates, and dataset quality determine the reward distribution.   
@@ -48,7 +48,7 @@ The Human Vision Subnet is a specialized layer within the Bittensor network that
 ---
 
 ## Benefits of the Human Vision Subnet
-### For Developers
+### For Developer
 1. **Lower Barriers to Entry:**
 -   Access to decentralized resources reduces the cost of training vision models.   
 -   Shared datasets and pre-trained models accelerate development.     
