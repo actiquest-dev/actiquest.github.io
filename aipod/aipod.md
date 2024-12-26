@@ -173,7 +173,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 
 ----------
 
-#### **Core Functionality**
+#### Core Functionality
 
 1.  **Outdoor and Indoor Operation**:
     -   Operates outdoors on battery power.
@@ -189,9 +189,9 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 
 ----------
 
-#### **MVP Features**
+#### MVP Features
 
-##### **Video Processing**
+##### Video Processing
 
 1.  **Stream Handling**:
     -   Real-time processing of video streams from two cameras.
@@ -202,21 +202,21 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
         -   3x CNNs (face, body, and hands based on landmark methods).
         -   1x SOTA model and other supportive algorithms.
 
-##### **Voice Processing**
+##### Voice Processing
 1.  Bidirectional NLP (Speech-to-Text and Text-to-Speech):
     -   Variable processing loads distributed across CPU and CUDA resources.
 
-##### **Data Annotation**:
+##### Data Annotation:
 1.  Local data annotation handled by CPU (16 cores available for this purpose).
 
-##### **Reasoning and Model Training**:
+##### Reasoning and Model Training:
 1.  Local reasoning using an LLM (balanced CPU+CUDA processing).
 2.  Incremental training:
     -   Updates from cloud-based models to the on-device model during standby mode.
 
 ----------
 
-#### **Hardware Platform**
+#### Hardware Platform
 
 **NVIDIA Jetson Orin NX AI Development Module**:
 
@@ -236,14 +236,14 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 
 ----------
 
-#### **User Interface**
+#### User Interface
 
 -   Simple configuration and management via a mobile application.
 -   Outputs video analysis and voice command results directly to the app.
 
 ----------
 
-#### **Example Use Cases**
+#### Example Use Cases
 
 1.  **Sports Training**: 
     -   General analysis of body angles and movements and what sport is on video
@@ -255,7 +255,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 
 ----------
 
-#### **End Goal**
+#### End Goal
 
 -   A compact device that:
     -   Connects to a mobile app.
@@ -266,8 +266,8 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 
 ----------
 
-#### **Technological Solutions**
+#### Technological Solutions
 
--   **Video and Neural Processing**: Efficiently leveraging CUDA and CPU cores.
+-   **Video and Neural Processing**: Efficiently leveraging both CUDA and CPU cores.
 -   **Energy Management**: Ensuring high performance at minimal power consumption.
 -   **Data Privacy**: Maintaining full offline functionality without internet dependency.
