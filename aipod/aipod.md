@@ -157,7 +157,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 
 | Type | Description |
 |--|--|
-| Platform | NVIDIA Xavier 16/256  |
+| Platform | NVIDIA Orin NX Nano 16/256  |
 | OS | Linux L4T 32.3.1  |
 | Vision | Stereoscopic-on-chip VR180 6K HDR, up to 120 FPS  |
 | Mechanical Switcher | Indoor mode (Stereoscopic)/ Outdoor mode (160°)  |
@@ -166,4 +166,108 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 | Smart Home Connectivity | Matter  |
 | Wireless Connectivity | Wi-Fi 7.0, Bluetooth  |
 | HDMI | Docked wireless HDMI 2.2 Receiver  |
-|Li-Pol 10KmAh Battery | Up to 7 hrs autonomy, fast charging|
+|Li-Pol 10KmAh Battery | Up to 5 hrs autonomy, fast charging|
+
+
+### MVP Requirements for a Compact Everyday Device (smart speaker form-factor)
+
+----------
+
+#### **Core Functionality**
+
+1.  **Outdoor and Indoor Operation**:
+    -   Operates outdoors on battery power.
+    -   Charges via a docking station indoors.
+2.  **Energy Efficiency**
+    -   Maximum power consumption capped at 30W, with emphasis on optimization for lower consumption.
+3.  **Offline Functionality**:
+    -   Fully operational without internet or external data sources.
+4.  **Basic Capabilities**:
+    -   **Video Processing**: Real-time video stream handling from cameras.
+    -   **Data Annotation and Local Reasoning**: Using a locally hosted LLM.
+    -   **Speech-to-Text and Text-to-Speech (NLP)**: Processing voice commands locally.
+
+----------
+
+#### **MVP Features**
+
+##### **Video Processing**
+
+1.  **Stream Handling**:
+    -   Real-time processing of video streams from two cameras.
+    -   Stereo or combined single-frame processing with optical distortion correction.
+2.  **Neural Network Application**:
+    -   Object tracking using 1x CNN (e.g., YOLOv8).
+    -   Biomechanics and motion analysis via:
+        -   3x CNNs (face, body, and hands based on landmark methods).
+        -   1x SOTA model and other supportive algorithms.
+
+##### **Voice Processing**
+1.  Bidirectional NLP (Speech-to-Text and Text-to-Speech):
+    -   Variable processing loads distributed across CPU and CUDA resources.
+
+##### **Data Annotation**:
+1.  Local data annotation handled by CPU (16 cores available for this purpose).
+
+##### **Reasoning and Model Training**:
+1.  Local reasoning using an LLM (balanced CPU+CUDA processing).
+2.  Incremental training:
+    -   Updates from cloud-based models to the on-device model during standby mode.
+
+----------
+
+#### **Hardware Platform**
+
+**NVIDIA Jetson Orin NX AI Development Module**:
+
+-   **Key Specs**:
+    -   1024 CUDA Cores, 100 TOPS AI Performance.
+    -   GPU: NVIDIA Ampere, 32 Tensor Cores, 918 MHz Max.
+    -   CPU: 12-core ARM Cortex-A78AE, 2 GHz Max.
+    -   Memory: 16 GB LPDDR5, 102.4 GB/s bandwidth.
+    -   Power consumption: 10-25W.
+    -   Camera support: Up to 4 physical (8 virtual channels).
+    -   Multiple I/O options for USB, PCIe, and display.
+
+**Additional Components**:
+-   **Unitree 4D LiDAR L1**  (optional): For depth and absolute positioning.
+-   **SYN4382**: A communication chip (WiFi 6, BLE, Matter).
+-   **4x4K cameras + interface modules** (2 for binocular vision, wide-and short focus 160 degree fish-eye lenses for full body capure + 2 for player tracking, long focus, outdoor usage).
+
+----------
+
+#### **User Interface**
+
+-   Simple configuration and management via a mobile application.
+-   Outputs video analysis and voice command results directly to the app.
+
+----------
+
+#### **Example Use Cases**
+
+1.  **Sports Training**: 
+    -   General analysis of body angles and movements and what sport is on video
+    -   Switching/Adding exact pretrained sport vision model
+    -   Simple voice guidance for posture corrections (e.g., "Get ready, jump!")
+    -   Answers to athlete requests
+2.  **Short Video Analysis**:
+    -   Record and parse short videos (1-3 minutes) with local LLM annotations.
+
+----------
+
+#### **End Goal**
+
+-   A compact device that:
+    -   Connects to a mobile app.
+    -   Captures video and performs basic analysis (movements, angles, mimics, emotions).
+    -   Give comments on video stream in real time.
+    -   Processes voice commands locally.
+    -   Operates autonomously for 4-6 hours on battery power.
+
+----------
+
+#### **Technological Solutions**
+
+-   **Video and Neural Processing**: Efficiently leveraging CUDA and CPU cores.
+-   **Energy Management**: Ensuring high performance at minimal power consumption.
+-   **Data Privacy**: Maintaining full offline functionality without internet dependency.
