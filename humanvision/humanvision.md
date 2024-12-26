@@ -1,6 +1,6 @@
 ---
 icon: eye
-label: AI by AI program
+label: Human Vision Subnet
 ---
 # Actiquest Human Vision Subnet on Bittensor
 
@@ -16,8 +16,7 @@ The Human Vision Subnet is a specialized layer within the Bittensor network that
 
 1.  **Decentralized Training Environment:**
     
-    -   Nodes contribute computational resources for training vision models collaboratively.
-        
+    -   Nodes contribute computational resources for training vision models collaboratively.       
     -   Rewards are distributed based on contributions, incentivizing participation.
         
 2.  **Model Interoperability:**
@@ -28,20 +27,17 @@ The Human Vision Subnet is a specialized layer within the Bittensor network that
         
 3.  **Human Vision Models:**
     
-    -   Focuses on the development and optimization of vision models tailored for human biomechanics and behavior.
-        
+    -   Focuses on the development and optimization of vision models tailored for human biomechanics and behavior.   
     -   These models are directly designed to support applications in **Actiq's AI Live Pod** and other edge devices, enabling features such as sports analytics, physical therapy, movement science, and real-time feedback on user performance.
         
 4.  **Scalable Dataset Management:**
     
-    -   Integrates with decentralized storage solutions for managing large datasets securely and efficiently.
-        
+    -   Integrates with decentralized storage solutions for managing large datasets securely and efficiently.    
     -   Enables contributors to share and access high-quality, labeled datasets.
         
 5.  **Privacy and Security:**
     
-    -   Ensures data privacy through advanced encryption and federated learning methodologies.
-        
+    -   Ensures data privacy through advanced encryption and federated learning methodologies.     
     -   Protects intellectual property and sensitive data during model training and inference.
         
 6.  **Tokenized Incentive Mechanism:**
@@ -50,14 +46,10 @@ The Human Vision Subnet is a specialized layer within the Bittensor network that
         
 7.  **Incentivization Algorithm:**
     
-    -   Nodes contributing computational resources or datasets are rewarded using a hybrid algorithm:
-        
-        -   **Dynamic Load Balancing:** Nodes are ranked by their computational contributions and assigned tasks based on their capacity and availability. Nodes with higher uptime and performance metrics are prioritized.
-            
-        -   **Performance-Based Rewards:** Contribution metrics such as processing speed, accuracy of model updates, and dataset quality determine the reward distribution.
-            
-        -   **Task Weighting:** More complex training tasks or those requiring large datasets provide higher rewards to incentivize participation in challenging workloads.
-            
+    -   Nodes contributing computational resources or datasets are rewarded using a hybrid algorithm:  
+        -   **Dynamic Load Balancing:** Nodes are ranked by their computational contributions and assigned tasks based on their capacity and availability. Nodes with higher uptime and performance metrics are prioritized.     
+        -   **Performance-Based Rewards:** Contribution metrics such as processing speed, accuracy of model updates, and dataset quality determine the reward distribution.   
+        -   **Task Weighting:** More complex training tasks or those requiring large datasets provide higher rewards to incentivize participation in challenging workloads.       
         -   **Feedback Loop:** Nodes receive performance feedback, enabling them to optimize their configurations for future tasks and earn higher rewards.
             
 
@@ -126,12 +118,10 @@ The Human Vision Subnet is a specialized layer within the Bittensor network that
 
 ### Architecture
 
--   **Node Structure:**
-    
+1. **Node Structure:**    
     -   Nodes are categorized into **trainer nodes** (providing computational resources) and **dataset nodes** (storing and sharing datasets).
         
--   **Consensus Mechanism:**
-    
+2. **Consensus Mechanism:**    
     -   Bittensor’s proof-of-contribution ensures fair rewards for nodes based on their participation.
         
 
