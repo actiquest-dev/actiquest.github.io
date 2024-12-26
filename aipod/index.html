@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788276368341">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788531891002">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.788276368341" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.788531891002" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788276368341" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788531891002" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788276368341" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788531891002" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -462,7 +462,7 @@
 <tbody>
 <tr>
 <td>Platform</td>
-<td>NVIDIA Xavier 16/256</td>
+<td>NVIDIA Orin NX Nano 16/256</td>
 </tr>
 <tr>
 <td>OS</td>
@@ -498,11 +498,207 @@
 </tr>
 <tr>
 <td>Li-Pol 10KmAh Battery</td>
-<td>Up to 7 hrs autonomy, fast charging</td>
+<td>Up to 5 hrs autonomy, fast charging</td>
 </tr>
 </tbody>
 </table>
 </div>
+<doc-anchor-target id="mvp-requirements-for-a-compact-everyday-device-smart-speaker-form-factor">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mvp-requirements-for-a-compact-everyday-device-smart-speaker-form-factor">#</doc-anchor-trigger>
+        <span>MVP Requirements for a Compact Everyday Device (smart speaker form-factor)</span>
+    </h3>
+</doc-anchor-target>
+<hr>
+<doc-anchor-target id="core-functionality">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#core-functionality">#</doc-anchor-trigger>
+        <span><strong>Core Functionality</strong></span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><strong>Outdoor and Indoor Operation</strong>:
+<ul>
+<li>Operates outdoors on battery power.</li>
+<li>Charges via a docking station indoors.</li>
+</ul>
+</li>
+<li><strong>Energy Efficiency</strong>
+<ul>
+<li>Maximum power consumption capped at 30W, with emphasis on optimization for lower consumption.</li>
+</ul>
+</li>
+<li><strong>Offline Functionality</strong>:
+<ul>
+<li>Fully operational without internet or external data sources.</li>
+</ul>
+</li>
+<li><strong>Basic Capabilities</strong>:
+<ul>
+<li><strong>Video Processing</strong>: Real-time video stream handling from cameras.</li>
+<li><strong>Data Annotation and Local Reasoning</strong>: Using a locally hosted LLM.</li>
+<li><strong>Speech-to-Text and Text-to-Speech (NLP)</strong>: Processing voice commands locally.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="mvp-features">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mvp-features">#</doc-anchor-trigger>
+        <span><strong>MVP Features</strong></span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="video-processing">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#video-processing">#</doc-anchor-trigger>
+        <span><strong>Video Processing</strong></span>
+    </h5>
+</doc-anchor-target>
+<ol>
+<li><strong>Stream Handling</strong>:
+<ul>
+<li>Real-time processing of video streams from two cameras.</li>
+<li>Stereo or combined single-frame processing with optical distortion correction.</li>
+</ul>
+</li>
+<li><strong>Neural Network Application</strong>:
+<ul>
+<li>Object tracking using 1x CNN (e.g., YOLOv8).</li>
+<li>Biomechanics and motion analysis via:
+<ul>
+<li>3x CNNs (face, body, and hands based on landmark methods).</li>
+<li>1x SOTA model and other supportive algorithms.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="voice-processing">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#voice-processing">#</doc-anchor-trigger>
+        <span><strong>Voice Processing</strong></span>
+    </h5>
+</doc-anchor-target>
+<ol>
+<li>Bidirectional NLP (Speech-to-Text and Text-to-Speech):
+<ul>
+<li>Variable processing loads distributed across CPU and CUDA resources.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="data-annotation">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data-annotation">#</doc-anchor-trigger>
+        <span><strong>Data Annotation</strong>:</span>
+    </h5>
+</doc-anchor-target>
+<ol>
+<li>Local data annotation handled by CPU (16 cores available for this purpose).</li>
+</ol>
+<doc-anchor-target id="reasoning-and-model-training">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reasoning-and-model-training">#</doc-anchor-trigger>
+        <span><strong>Reasoning and Model Training</strong>:</span>
+    </h5>
+</doc-anchor-target>
+<ol>
+<li>Local reasoning using an LLM (balanced CPU+CUDA processing).</li>
+<li>Incremental training:
+<ul>
+<li>Updates from cloud-based models to the on-device model during standby mode.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="hardware-platform">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hardware-platform">#</doc-anchor-trigger>
+        <span><strong>Hardware Platform</strong></span>
+    </h4>
+</doc-anchor-target>
+<p><strong>NVIDIA Jetson Orin NX AI Development Module</strong>:</p>
+<ul>
+<li><strong>Key Specs</strong>:
+<ul>
+<li>1024 CUDA Cores, 100 TOPS AI Performance.</li>
+<li>GPU: NVIDIA Ampere, 32 Tensor Cores, 918 MHz Max.</li>
+<li>CPU: 12-core ARM Cortex-A78AE, 2 GHz Max.</li>
+<li>Memory: 16 GB LPDDR5, 102.4 GB/s bandwidth.</li>
+<li>Power consumption: 10-25W.</li>
+<li>Camera support: Up to 4 physical (8 virtual channels).</li>
+<li>Multiple I/O options for USB, PCIe, and display.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Additional Components</strong>:</p>
+<ul>
+<li><strong>Unitree 4D LiDAR L1</strong>  (optional): For depth and absolute positioning.</li>
+<li><strong>SYN4382</strong>: A communication chip (WiFi 6, BLE, Matter).</li>
+<li><strong>4x4K cameras + interface modules</strong> (2 for binocular vision, wide-and short focus 160 degree fish-eye lenses for full body capure + 2 for player tracking, long focus, outdoor usage).</li>
+</ul>
+<hr>
+<doc-anchor-target id="user-interface">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-interface">#</doc-anchor-trigger>
+        <span><strong>User Interface</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Simple configuration and management via a mobile application.</li>
+<li>Outputs video analysis and voice command results directly to the app.</li>
+</ul>
+<hr>
+<doc-anchor-target id="example-use-cases">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-use-cases">#</doc-anchor-trigger>
+        <span><strong>Example Use Cases</strong></span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><strong>Sports Training</strong>:
+<ul>
+<li>General analysis of body angles and movements and what sport is on video</li>
+<li>Switching/Adding exact pretrained sport vision model</li>
+<li>Simple voice guidance for posture corrections (e.g., &quot;Get ready, jump!&quot;)</li>
+<li>Answers to athlete requests</li>
+</ul>
+</li>
+<li><strong>Short Video Analysis</strong>:
+<ul>
+<li>Record and parse short videos (1-3 minutes) with local LLM annotations.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="end-goal">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#end-goal">#</doc-anchor-trigger>
+        <span><strong>End Goal</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>A compact device that:
+<ul>
+<li>Connects to a mobile app.</li>
+<li>Captures video and performs basic analysis (movements, angles, mimics, emotions).</li>
+<li>Give comments on video stream in real time.</li>
+<li>Processes voice commands locally.</li>
+<li>Operates autonomously for 4-6 hours on battery power.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<doc-anchor-target id="technological-solutions">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#technological-solutions">#</doc-anchor-trigger>
+        <span><strong>Technological Solutions</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Video and Neural Processing</strong>: Efficiently leveraging CUDA and CPU cores.</li>
+<li><strong>Energy Management</strong>: Ensuring high performance at minimal power consumption.</li>
+<li><strong>Data Privacy</strong>: Maintaining full offline functionality without internet dependency.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
