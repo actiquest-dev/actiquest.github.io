@@ -168,8 +168,6 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 | HDMI | Docked wireless HDMI 2.2 Receiver  |
 |Li-Pol 10KmAh Battery | Up to 5 hrs autonomy, fast charging|
 
-----------
-
 ## MVP Requirements
 
 ### Core Functionality
@@ -211,7 +209,6 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 2.  Incremental training:
     -   Updates from cloud-based models to the on-device model during standby mode.
 
-
 ### Hardware Platform
 
 **NVIDIA Jetson Orin NX AI Development Module**:
@@ -245,7 +242,6 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 2.  **Short Video Analysis**:
     -   Record and parse short videos (1-3 minutes) with local LLM annotations.
 
-
 ### End Goal
 
 -   A compact device that:
@@ -254,7 +250,6 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
     -   Give comments on video stream in real time.
     -   Processes voice commands locally.
     -   Operates autonomously for 4-6 hours on battery power.
-
 
 ### Technological Solutions
 
