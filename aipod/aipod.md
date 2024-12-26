@@ -169,7 +169,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 |Li-Pol 10KmAh Battery | Up to 5 hrs autonomy, fast charging|
 
 
-### MVP Requirements for a Compact Everyday Device (smart speaker form-factor)
+### MVP Requirements
 
 ----------
 
