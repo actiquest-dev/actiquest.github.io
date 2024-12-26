@@ -190,7 +190,7 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
     -   Fully operational without internet or external data sources.
 4.  **Basic Capabilities**:
     -   **Video Processing**: Real-time video stream handling from cameras.
-    -   **Data Annotation and Local Reasoning**: Using a locally hosted LLM.
+    -   **Data Labeling and Local Reasoning**: Using a locally hosted LLM (pre-trained Gemma 7b).
     -   **Speech-to-Text and Text-to-Speech (NLP)**: Processing voice commands locally.
 
 ### MVP Features
