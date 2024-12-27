@@ -1,8 +1,6 @@
-
 ---
 icon: versions
 label: Decentralized AI Model Storage
-
 ---
 
 # Decentralized Storage and Governance Over On-Device AI
