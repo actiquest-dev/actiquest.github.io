@@ -74,6 +74,8 @@ For  **very large**  LLMs or Vision Transformers (multi-GB or TB scale),  **hybr
 -   Actual file chunks in a  **specialized**  decentralized network (e.g.,  **Arweave, Storj, or IPFS**) or in cloud.
 -   The canister holds the  **integrity hash**  of each chunk so that anyone fetching it can verify authenticity.
 
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXd0LL0Wfp8lV3f7M4xFTnbhykYeB2RwMJG6vjVpLtc3cVuQ9NPL6ij3DA1hgUVpr8Gc2XmVesnBjMKbp8rKHhDV4irEi5Jsw_gVTOgiH697V2YzdaAbr_YeNgYZ4GpSnmott_dwkA?key=AsJEkgePh24159X10uUz6PJ-)
+
 
 ## 3. Uploading Models
 
