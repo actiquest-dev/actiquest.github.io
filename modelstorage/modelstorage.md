@@ -64,14 +64,15 @@ Instead, a  **decentralized architecture**  can address many of these concerns b
 
 ### 2.3. Where Are AI Models Stored?
 
-- **On-Chain (Canisters)**
-	-   Smaller to medium-sized models (e.g., up to ~GB scale) can be stored directly in  **ICP canisters**.
-	-   **Chunked Approach**: If a model exceeds a few hundred MB, it must be  **split into chunks**  (<1 MB each) to stay within canister message size limits. A “file canister” or “multi-canister” structure indexes these chunks.
+#### 2.3.1. On-Chain (Canisters)
+-   Smaller to medium-sized models (e.g., up to ~GB scale) can be stored directly in  **ICP canisters**.
+-   **Chunked Approach**: If a model exceeds a few hundred MB, it must be  **split into chunks**  (<1 MB each) to stay within canister message size limits. A “file canister” or “multi-canister” structure indexes these chunks.
 
-- **Off-Chain References**. For  **very large**  LLMs or Vision Transformers (multi-GB or TB scale),  **hybrid**  storage is recommended:
-	-   References (hashes, metadata) in a canister,
-	-   Actual file chunks in a  **specialized**  decentralized network (e.g.,  **Arweave, Storj, or IPFS**) or in cloud.
-    -   The canister holds the  **integrity hash**  of each chunk so that anyone fetching it can verify authenticity.
+#### 2.3.2. Off-Chain References. 
+For  **very large**  LLMs or Vision Transformers (multi-GB or TB scale),  **hybrid**  storage is recommended:
+-   References (hashes, metadata) in a canister,
+-   Actual file chunks in a  **specialized**  decentralized network (e.g.,  **Arweave, Storj, or IPFS**) or in cloud.
+-   The canister holds the  **integrity hash**  of each chunk so that anyone fetching it can verify authenticity.
 
 
 ## 3. Uploading Models
