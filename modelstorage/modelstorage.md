@@ -133,16 +133,16 @@ For  **very large**  LLMs or Vision Transformers (multi-GB or TB scale),  **hybr
 
 ### 4.2 Advantages for AI Data Storage and Governance
 
-#### 4.2.1. **Low On-Chain Storage Cost**
+#### 4.2.1. Low On-Chain Storage Cost
 - The ICP’s model, while not as inexpensive as traditional cloud storage, is comparatively cost-effective versus other blockchains that might charge significant gas fees for data.
 
-#### 4.2.2. **DAO Governance Out-of-the-Box**
+#### 4.2.2. DAO Governance Out-of-the-Box
 -   Using SNS, developers can quickly set up a governance token, proposal system, and treasury logic—ideal for datasets that require curation, licensing, or community-based moderation.
 
-#### 4.2.3. **Stable Memory for Large Data**
+#### 4.2.3. Stable Memory for Large Data
 -   Each canister can store up to 4GB of stable memory (with possible future increases), enabling direct storage for moderate-sized models or datasets. For larger ones, chunked approaches or multi-canister architectures are used.
 
-#### 4.2.4. **Global Accessibility**
+#### 4.2.4. Global Accessibility
 -   The Internet Computer is designed to be globally accessible, with boundary nodes offering near-universal coverage for data retrieval and dApp access.
 
 ### 4.3 Storage Layer
