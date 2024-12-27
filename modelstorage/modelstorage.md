@@ -168,7 +168,7 @@ For  **very large**  LLMs or Vision Transformers (multi-GB or TB scale),  **hybr
 #### 4.5.1. Data Remains in Canisters
 -   Images, videos, bounding boxes, masks (Vision models data) plus text corpora, embeddings, tokenized references (LLM data); stored in chunked file canisters or off-chain data storage, with the ICP canister tracking hashes and metadata.
 
-#### 4.5.2.  Off-Chain Training Request
+#### 4.5.2. Off-Chain Training Request
 -   A GPU/ or decentralized CPU node on Bittensor training subnet/ or any other external HPC training environment requests access to the dataset (depends on situation).
 -   The DAO or data owner grants a decryption key if the proposal is passed or the entity meets certain criteria (e.g., paid a licensing fee).
 
