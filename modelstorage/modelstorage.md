@@ -1,6 +1,6 @@
 ---
 icon: versions
-label: Decentralized Storage
+label: Decentralized AI Model Storage
 
 ---
 
