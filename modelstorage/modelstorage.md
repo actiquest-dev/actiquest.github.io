@@ -6,13 +6,16 @@ label: Decentralized Storage
 
 # Decentralized Storage and Governance Over On-Device AI
 
+
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc3PaLDPZBzyvxdgk07qmS2QxgbZIQvXP0H__VrQkF1gvO-D3TEb8eAy0YsviHYHD1MCCtkaP6Akymy4CCVGYGOG_ElD8FzYWFB_rcdEriDLJtAtNCzz2FM_QBXf62JMPD-Yt-w?key=AsJEkgePh24159X10uUz6PJ-)
+
 ----------
 ## 1. Abstract
 
 **Actiquest On-Device AI**  (running in the AI Live Pod) is the complex of Vision/LMM and NLP neural models brings next-generation edge intelligence to users’ devices by combining efficient local inference with a robust  **Compute-to-Data**  paradigm. Rather than pulling massive datasets into centralized servers for training,  Actiquest stores and governs these datasets on the **Internet Computer (ICP)**—enabling a decentralized, community-driven approach to data handling. This litepaper outlines how these components integrate to deliver private, up-to-date, and decentralized AI solutions,  **including the process of delivering the best pre-trained models to end-user devices.**
 
 
-## 1. Introduction & Motivation
+## 1. Introduction
 
 ### 1.1 Background
 
