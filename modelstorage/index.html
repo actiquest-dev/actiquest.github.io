@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788630878409">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788631387516">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.788630878409" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.788631387516" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788630878409" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788631387516" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788630878409" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788631387516" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -354,30 +354,44 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
         <span>3.1 Chunking &amp; Hashing</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li><strong>Chunk File</strong>
+<doc-anchor-target id="311-chunk-file">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#311-chunk-file">#</doc-anchor-trigger>
+        <span>3.1.1. Chunk File</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>A client-side script divides the model file (e.g., <code v-pre>model_weights.bin</code>) into ~1 MB chunks.</li>
 </ul>
-</li>
-<li><strong>Hash Each Chunk</strong>
+<doc-anchor-target id="312-hash-each-chunk">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#312-hash-each-chunk">#</doc-anchor-trigger>
+        <span>3.1.2. Hash Each Chunk</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>Compute a cryptographic hash (e.g., SHA-256) per chunk. Store these in a manifest (JSON or similar).</li>
 </ul>
-</li>
-<li><strong>Upload</strong>
+<doc-anchor-target id="313-upload">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#313-upload">#</doc-anchor-trigger>
+        <span>3.1.3. Upload</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>For on-chain, each chunk is sent to a file canister with a reference ID.</li>
 <li>For off-chain, each chunk is uploaded to a decentralized storage layer.</li>
 </ul>
-</li>
-<li><strong>Record in Canister</strong>
+<doc-anchor-target id="314-record-in-canister">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#314-record-in-canister">#</doc-anchor-trigger>
+        <span>3.1.4. Record in Canister</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>The manifest (list of chunk hashes + a global file hash) is stored in a “Model Registry” canister.</li>
 <li>Optionally store the entire chunk data in canister stable memory (if small enough).</li>
 </ul>
-</li>
-</ol>
 <doc-anchor-target id="32-encryption-optional">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#32-encryption-optional">#</doc-anchor-trigger>
@@ -395,26 +409,36 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
         <span>3.3. Versioning &amp; Updates</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li><p><strong>Immutability vs. Updates</strong></p>
+<doc-anchor-target id="331-immutability-vs-updates">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#331-immutability-vs-updates">#</doc-anchor-trigger>
+        <span>3.3.1. Immutability vs. Updates</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>Once chunks are uploaded, they are immutable—<strong>you cannot overwrite</strong>  an existing chunk.</li>
 <li><strong>New Version</strong>  = new set of chunks with a different manifest.</li>
 </ul>
-</li>
-<li><p><strong>Manifest Registry</strong></p>
+<doc-anchor-target id="332-manifest-registry">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#332-manifest-registry">#</doc-anchor-trigger>
+        <span>3.3.2. Manifest Registry</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>The “Model Registry” canister keeps track of multiple versions: <code v-pre>v1.0</code>, <code v-pre>v1.1</code>, <code v-pre>v2.0</code>, etc.</li>
 <li>A  <strong>pointer</strong>  or “current version” field indicates which version is the official release.</li>
 </ul>
-</li>
-<li><p><strong>DAO/SNS Approval</strong></p>
+<doc-anchor-target id="333-daosns-approval">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#333-daosns-approval">#</doc-anchor-trigger>
+        <span>3.3.3. <strong>DAO/SNS Approval</strong></span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>If using Actiq’s DAO system, each new version might require a  <strong>proposal</strong>  and  <strong>vote</strong>.</li>
 <li>Once approved, the  <strong>pointer</strong>  updates to the new version, and devices automatically see an update.</li>
 </ul>
-</li>
-</ol>
 <doc-anchor-target id="34-cost-consideration">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#34-cost-consideration">#</doc-anchor-trigger>
@@ -422,8 +446,8 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Storing large amounts of data in canister stable memory requires  <strong>cycles</strong>.
--   Off-chain references (Arweave/IPFS) can be more cost-effective for huge models; the  <strong>ICP canister</strong>  is used as a  <strong>“single source of truth”</strong>  for verifying references.</li>
+<li>Storing large amounts of data in canister stable memory requires  <strong>cycles</strong>.</li>
+<li>Off-chain references (Arweave/IPFS) can be more cost-effective for huge models; the  <strong>ICP canister</strong>  is used as a  <strong>“single source of truth”</strong>  for verifying references.</li>
 </ul>
 <hr>
 <doc-anchor-target id="3-the-role-of-the-internet-computer-icp">
@@ -518,138 +542,138 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <li>The Internet Computer is designed to be globally accessible, with boundary nodes offering near-universal coverage for data retrieval and dApp access.</li>
 </ul>
 <hr>
-<doc-anchor-target id="3-architectural-overview">
+<doc-anchor-target id="4-architectural-overview">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-architectural-overview">#</doc-anchor-trigger>
-        <span>3. Architectural Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-architectural-overview">#</doc-anchor-trigger>
+        <span>4. Architectural Overview</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="31-storage-layer">
+<doc-anchor-target id="41-storage-layer">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#31-storage-layer">#</doc-anchor-trigger>
-        <span>3.1 Storage Layer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#41-storage-layer">#</doc-anchor-trigger>
+        <span>4.1 Storage Layer</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="311-chunked-data-canisters">
+<doc-anchor-target id="411-chunked-data-canisters">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#311-chunked-data-canisters">#</doc-anchor-trigger>
-        <span>3.1.1. Chunked Data Canisters</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#411-chunked-data-canisters">#</doc-anchor-trigger>
+        <span>4.1.1. Chunked Data Canisters</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li><strong>File-Style Canisters</strong>: For vision datasets (images, videos), large text corpora, or sensor logs, developers can implement chunked storage. Each chunk is typically &lt;1MB, stored in stable memory.</li>
 <li><strong>Metadata Registry</strong>: A separate canister that maps dataset IDs to chunk references (hashes), file sizes, and optional encryption keys or IPFS-like references.</li>
 </ul>
-<doc-anchor-target id="312-off-chain-hybrids">
+<doc-anchor-target id="412-off-chain-hybrids">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#312-off-chain-hybrids">#</doc-anchor-trigger>
-        <span>3.1.2. Off-Chain Hybrids</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#412-off-chain-hybrids">#</doc-anchor-trigger>
+        <span>4.1.2. Off-Chain Hybrids</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li><strong>Some cases may be more effective</strong> a hybrid approach, where large or infrequently accessed data is stored using centralized cloud services. The ICP canister then holds references, licensing info, and verifies data integrity with stored hashes.</li>
 </ul>
-<doc-anchor-target id="32-governance-layer">
+<doc-anchor-target id="42-governance-layer">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#32-governance-layer">#</doc-anchor-trigger>
-        <span>3.2 Governance Layer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#42-governance-layer">#</doc-anchor-trigger>
+        <span>4.2 Governance Layer</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="321-dao-sns-or-custom-governance">
+<doc-anchor-target id="421-dao-sns-or-custom-governance">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#321-dao-sns-or-custom-governance">#</doc-anchor-trigger>
-        <span>3.2.1. DAO (SNS) or Custom Governance</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#421-dao-sns-or-custom-governance">#</doc-anchor-trigger>
+        <span>4.2.1. DAO (SNS) or Custom Governance</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li><strong>SNS</strong>: A built-in approach where the Internet Computer automatically sets up a governance token, neuron-based staking, and proposal logic. The dApp’s community can decide on data updates, usage fees, or distribution of revenues.</li>
 <li><strong>Custom DAO</strong>: Developers can also code a custom governance canister in Rust or Motoko, giving them more tailored logic (e.g., specialized curation markets, nested proposals, or fine-grained permission controls).</li>
 </ul>
-<doc-anchor-target id="322-proposal-lifecycle">
+<doc-anchor-target id="422-proposal-lifecycle">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#322-proposal-lifecycle">#</doc-anchor-trigger>
-        <span>3.2.2. Proposal Lifecycle</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#422-proposal-lifecycle">#</doc-anchor-trigger>
+        <span>4.2.2. Proposal Lifecycle</span>
     </h4>
 </doc-anchor-target>
-<ol>
+<ul>
 <li><strong>Proposal Creation</strong>: A user or recognized contributor adds a proposal to ingest a new dataset, change a licensing fee, or incorporate a new model checkpoint.</li>
 <li><strong>Voting</strong>: Token holders cast votes. If the proposal meets quorum and passes, the canister logic automatically executes the changes.</li>
 <li><strong>Actions</strong>: Approved proposals might add new chunk references, pay contributors, or update a model’s version in a specialized canister.</li>
-</ol>
-<doc-anchor-target id="33-compute-to-data-flow">
+</ul>
+<doc-anchor-target id="43-compute-to-data-flow">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#33-compute-to-data-flow">#</doc-anchor-trigger>
-        <span>3.3. Compute-to-Data Flow</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#43-compute-to-data-flow">#</doc-anchor-trigger>
+        <span>4.3. Compute-to-Data Flow</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="331-data-remains-in-canisters">
+<doc-anchor-target id="431-data-remains-in-canisters">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#331-data-remains-in-canisters">#</doc-anchor-trigger>
-        <span>3.3.1. <strong>Data Remains in Canisters</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#431-data-remains-in-canisters">#</doc-anchor-trigger>
+        <span>4.3.1. <strong>Data Remains in Canisters</strong></span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Images, videos, bounding boxes, masks (Vision models data) plus text corpora, embeddings, tokenized references (LLM data); stored in chunked file canisters or off-chain data storage, with the ICP canister tracking hashes and metadata.</li>
 </ul>
-<doc-anchor-target id="332--off-chain-training-request">
+<doc-anchor-target id="432--off-chain-training-request">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#332--off-chain-training-request">#</doc-anchor-trigger>
-        <span>3.3.2.  <strong>Off-Chain Training Request</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#432--off-chain-training-request">#</doc-anchor-trigger>
+        <span>4.3.2.  <strong>Off-Chain Training Request</strong></span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>A GPU/ or decentralized CPU node on Bittensor training subnet/ or any other external HPC training environment requests access to the dataset (depends on situation).</li>
 <li>The DAO or data owner grants a decryption key if the proposal is passed or the entity meets certain criteria (e.g., paid a licensing fee).</li>
 </ul>
-<doc-anchor-target id="333--secure-training">
+<doc-anchor-target id="433--secure-training">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#333--secure-training">#</doc-anchor-trigger>
-        <span>3.3.3.  <strong>Secure Training</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#433--secure-training">#</doc-anchor-trigger>
+        <span>4.3.3.  <strong>Secure Training</strong></span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>The HPC training environment decrypts and processes the data locally.</li>
 <li>Zero-knowledge proofs or secure enclaves may be used to reduce data exposure risks.</li>
 </ul>
-<doc-anchor-target id="334--model-checkpoint-upload">
+<doc-anchor-target id="434--model-checkpoint-upload">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#334--model-checkpoint-upload">#</doc-anchor-trigger>
-        <span>3.3.4.  <strong>Model Checkpoint Upload</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#434--model-checkpoint-upload">#</doc-anchor-trigger>
+        <span>4.3.4.  <strong>Model Checkpoint Upload</strong></span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>After training, the HPC training environment returns a new model checkpoint, which is stored in a “Model Registry Canister” on the ICP, ensuring an immutable record of model evolution.</li>
 <li>The DAO votes again to accept or reject the checkpoint, ensuring community trust.</li>
 </ul>
-<doc-anchor-target id="34-on-device-ai-delivery">
+<doc-anchor-target id="44-on-device-ai-delivery">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#34-on-device-ai-delivery">#</doc-anchor-trigger>
-        <span>3.4. On-Device AI Delivery</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#44-on-device-ai-delivery">#</doc-anchor-trigger>
+        <span>4.4. On-Device AI Delivery</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="341--running-models-on-device">
+<doc-anchor-target id="441--running-models-on-device">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#341--running-models-on-device">#</doc-anchor-trigger>
-        <span>3.4.1.  <strong>Running Models on-Device</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#441--running-models-on-device">#</doc-anchor-trigger>
+        <span>4.4.1.  <strong>Running Models on-Device</strong></span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Local Inference devices like <strong>AI Live Pod</strong> are capable of loading model weights, verifying their authenticity, and running real-time inference with a lightweight model.</li>
 </ul>
-<doc-anchor-target id="342--fetching-checkpoints">
+<doc-anchor-target id="442--fetching-checkpoints">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#342--fetching-checkpoints">#</doc-anchor-trigger>
-        <span>3.4.2.  <strong>Fetching Checkpoints</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#442--fetching-checkpoints">#</doc-anchor-trigger>
+        <span>4.4.2.  <strong>Fetching Checkpoints</strong></span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Device queries the Model Registry Canister for the latest verified checkpoint.</li>
 <li>A cryptographic signature check ensures the model is genuine.</li>
 </ul>
-<doc-anchor-target id="343--private-computation">
+<doc-anchor-target id="443--private-computation">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#343--private-computation">#</doc-anchor-trigger>
-        <span>3.4.3.  <strong>Private Computation</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#443--private-computation">#</doc-anchor-trigger>
+        <span>4.4.3.  <strong>Private Computation</strong></span>
     </h4>
 </doc-anchor-target>
 <ul>
@@ -657,184 +681,184 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <li>This fosters privacy, reduces latency, and saves network costs.</li>
 </ul>
 <hr>
-<doc-anchor-target id="4-technical-details--implementation-considerations">
+<doc-anchor-target id="5-technical-details--implementation-considerations">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-technical-details--implementation-considerations">#</doc-anchor-trigger>
-        <span>4. Technical Details &amp; Implementation Considerations</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-technical-details--implementation-considerations">#</doc-anchor-trigger>
+        <span>5. Technical Details &amp; Implementation Considerations</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="41-cryptographic-signatures--hashing">
+<doc-anchor-target id="51-cryptographic-signatures--hashing">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#41-cryptographic-signatures--hashing">#</doc-anchor-trigger>
-        <span>4.1 Cryptographic Signatures &amp; Hashing</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#51-cryptographic-signatures--hashing">#</doc-anchor-trigger>
+        <span>5.1 Cryptographic Signatures &amp; Hashing</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="411-data-upload">
+<doc-anchor-target id="511-data-upload">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#411-data-upload">#</doc-anchor-trigger>
-        <span>4.1.1. Data Upload</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#511-data-upload">#</doc-anchor-trigger>
+        <span>5.1.1. Data Upload</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Contributors sign the data with their private key, ensuring authenticity.</li>
 <li>The canister verifies the signature with the contributor’s public key.</li>
 </ul>
-<doc-anchor-target id="412-model-checkpoint">
+<doc-anchor-target id="512-model-checkpoint">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#412-model-checkpoint">#</doc-anchor-trigger>
-        <span>4.1.2. Model Checkpoint</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#512-model-checkpoint">#</doc-anchor-trigger>
+        <span>5.1.2. Model Checkpoint</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Post-training, an aggregator or HPC node signs the final weights. The DAO can verify it was indeed produced by the correct aggregator.</li>
 </ul>
-<doc-anchor-target id="413-integrity-hashes">
+<doc-anchor-target id="513-integrity-hashes">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#413-integrity-hashes">#</doc-anchor-trigger>
-        <span>4.1.3. Integrity Hashes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#513-integrity-hashes">#</doc-anchor-trigger>
+        <span>5.1.3. Integrity Hashes</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Each chunk or file is hashed (e.g., SHA-256) to detect any tampering. The canister stores these hashes, and any mismatch on retrieval flags an error.</li>
 </ul>
-<doc-anchor-target id="42-access-control--licensing">
+<doc-anchor-target id="52-access-control--licensing">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#42-access-control--licensing">#</doc-anchor-trigger>
-        <span>4.2. Access Control &amp; Licensing</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#52-access-control--licensing">#</doc-anchor-trigger>
+        <span>5.2. Access Control &amp; Licensing</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="421-open-models">
+<doc-anchor-target id="521-open-models">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#421-open-models">#</doc-anchor-trigger>
-        <span>4.2.1. Open Models</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#521-open-models">#</doc-anchor-trigger>
+        <span>5.2.1. Open Models</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>If the model is  <strong>public</strong>  (e.g., open-source), the registry canister can  <strong>expose the chunk references</strong>  to anyone.</li>
 </ul>
-<doc-anchor-target id="422-encrypted-models">
+<doc-anchor-target id="522-encrypted-models">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#422-encrypted-models">#</doc-anchor-trigger>
-        <span>4.2.2. Encrypted Models</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#522-encrypted-models">#</doc-anchor-trigger>
+        <span>5.2.2. Encrypted Models</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>If the model is  <strong>private</strong>  or  <strong>commercial</strong>, each chunk is  <strong>encrypted</strong>  with a symmetric key.</li>
 <li>Only users or devices with the correct decryption key can read the chunks.</li>
 </ul>
-<doc-anchor-target id="423-dao--sns-licenses">
+<doc-anchor-target id="523-dao--sns-licenses">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#423-dao--sns-licenses">#</doc-anchor-trigger>
-        <span>4.2.3. DAO / SNS Licenses</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#523-dao--sns-licenses">#</doc-anchor-trigger>
+        <span>5.2.3. DAO / SNS Licenses</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>A  <strong>governance canister</strong>  may require purchasing a  <strong>license token</strong>  or passing a  <strong>DAO proposal</strong>  before granting the  <strong>decryption key</strong>.</li>
 <li>The canister can store an access table mapping “Principal -&gt; Allowed to Download.”</li>
 </ul>
-<doc-anchor-target id="424-payment--royalties">
+<doc-anchor-target id="524-payment--royalties">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#424-payment--royalties">#</doc-anchor-trigger>
-        <span>4.2.4. Payment &amp; Royalties</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#524-payment--royalties">#</doc-anchor-trigger>
+        <span>5.2.4. Payment &amp; Royalties</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>The system can integrate a  <strong>payment flow</strong>  (e.g., user sends tokens/cycles), then the canister releases the encryption key or grants chunk access.</li>
 <li>The DAO can distribute revenues to model contributors or stakers.</li>
 </ul>
-<doc-anchor-target id="43-sustainability--monetization">
+<doc-anchor-target id="53-sustainability--monetization">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#43-sustainability--monetization">#</doc-anchor-trigger>
-        <span>4.3 Sustainability &amp; Monetization</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#53-sustainability--monetization">#</doc-anchor-trigger>
+        <span>5.3 Sustainability &amp; Monetization</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="431-cycles">
+<doc-anchor-target id="531-cycles">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#431-cycles">#</doc-anchor-trigger>
-        <span>4.3.1. Cycles</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#531-cycles">#</doc-anchor-trigger>
+        <span>5.3.1. Cycles</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Each canister on ICP needs  <strong>cycles</strong>  to store data and process requests. If the model is fully stored on-chain, cycle usage can become significant.</li>
 <li><strong>Hybrid</strong>  solutions (metadata on-chain, large chunks off-chain) reduce cycle consumption.</li>
 </ul>
-<doc-anchor-target id="432-upload-fees">
+<doc-anchor-target id="532-upload-fees">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#432-upload-fees">#</doc-anchor-trigger>
-        <span>4.3.2. Upload Fees*</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#532-upload-fees">#</doc-anchor-trigger>
+        <span>5.3.2. Upload Fees*</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>If a DAO or developer is uploading multi-gigabyte models, they must carefully plan cycle usage or have a treasury to cover on-chain storage.</li>
 <li>Off-chain solutions might require separate hosting costs, but are typically cheaper at large scale.</li>
 </ul>
-<doc-anchor-target id="433-revenue-streams">
+<doc-anchor-target id="533-revenue-streams">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#433-revenue-streams">#</doc-anchor-trigger>
-        <span>4.3.3. Revenue Streams</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#533-revenue-streams">#</doc-anchor-trigger>
+        <span>5.3.3. Revenue Streams</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>If models are commercial,  <strong>license fees</strong>  or pay-per-download can offset storage costs. The DAO or model creators receive the revenue, fueling further development.</li>
 </ul>
-<doc-anchor-target id="434-token-incentives">
+<doc-anchor-target id="534-token-incentives">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#434-token-incentives">#</doc-anchor-trigger>
-        <span>4.3.4. Token Incentives</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#534-token-incentives">#</doc-anchor-trigger>
+        <span>5.3.4. Token Incentives</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>If the system is governed by an SNS, the governance token can be used to reward contributions, stake in proposals, or trade on open markets.</li>
 </ul>
 <hr>
-<doc-anchor-target id="5-example-workflow">
+<doc-anchor-target id="6-example-workflow">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-example-workflow">#</doc-anchor-trigger>
-        <span>5. Example Workflow</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-example-workflow">#</doc-anchor-trigger>
+        <span>6. Example Workflow</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="51-model-creation">
+<doc-anchor-target id="61-model-creation">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#51-model-creation">#</doc-anchor-trigger>
-        <span>5.1. Model Creation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#61-model-creation">#</doc-anchor-trigger>
+        <span>6.1. Model Creation</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>A developer trains a vision or language model offline.</li>
 </ul>
-<doc-anchor-target id="52-chunk--encrypt">
+<doc-anchor-target id="62-chunk--encrypt">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#52-chunk--encrypt">#</doc-anchor-trigger>
-        <span>5.2. Chunk &amp; Encrypt</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#62-chunk--encrypt">#</doc-anchor-trigger>
+        <span>6.2. Chunk &amp; Encrypt</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Split the final weights file into 1 MB chunks, hash them, optionally encrypt them with a key.</li>
 </ul>
-<doc-anchor-target id="53-register-on-chain">
+<doc-anchor-target id="63-register-on-chain">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#53-register-on-chain">#</doc-anchor-trigger>
-        <span>5.3. Register On-Chain</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#63-register-on-chain">#</doc-anchor-trigger>
+        <span>6.3. Register On-Chain</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Upload chunk references and metadata to the “Model Registry” canister.</li>
 <li>Store the global file hash, version ID, and encryption info.</li>
 </ul>
-<doc-anchor-target id="54-dao-approval">
+<doc-anchor-target id="64-dao-approval">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#54-dao-approval">#</doc-anchor-trigger>
-        <span>5.4. DAO Approval</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#64-dao-approval">#</doc-anchor-trigger>
+        <span>6.4. DAO Approval</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Submit a proposal to label this version as “v1.0 Official.”</li>
 <li>The DAO votes, and if approved, updates the pointer to the new version.</li>
 </ul>
-<doc-anchor-target id="55-training-on-external-training-nodes">
+<doc-anchor-target id="65-training-on-external-training-nodes">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#55-training-on-external-training-nodes">#</doc-anchor-trigger>
-        <span>5.5. Training on External Training Nodes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#65-training-on-external-training-nodes">#</doc-anchor-trigger>
+        <span>6.5. Training on External Training Nodes</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -842,20 +866,20 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <li>Once training yields a strong or improved checkpoint, participants (or the training orchestrator) propose this checkpoint as an “official update.”</li>
 <li>The HPC environment re-uploads the new weights to the Model Registry Canister.</li>
 </ul>
-<doc-anchor-target id="56-user-retrieval">
+<doc-anchor-target id="66-user-retrieval">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#56-user-retrieval">#</doc-anchor-trigger>
-        <span>5.6. User Retrieval</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#66-user-retrieval">#</doc-anchor-trigger>
+        <span>6.6. User Retrieval</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>An AI Live Pod queries the registry, sees “v1.0 Official,” downloads the chunks, verifies each hash, and decrypts with the provided key (if private).</li>
 <li>The user’s device loads the model for local inference.</li>
 </ul>
-<doc-anchor-target id="57-benefits-to-on-device-ai-users">
+<doc-anchor-target id="67-benefits-to-on-device-ai-users">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#57-benefits-to-on-device-ai-users">#</doc-anchor-trigger>
-        <span>5.7. Benefits to On-Device AI users</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#67-benefits-to-on-device-ai-users">#</doc-anchor-trigger>
+        <span>6.7. Benefits to On-Device AI users</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -864,25 +888,25 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <li>If the community finds a checkpoint suboptimal, they can propose rolling back or adopting a different checkpoint—ensuring user devices always get <strong>trusted, high-quality</strong> models.</li>
 </ul>
 <hr>
-<doc-anchor-target id="6-retrieval--on-device-inference">
+<doc-anchor-target id="7-retrieval--on-device-inference">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-retrieval--on-device-inference">#</doc-anchor-trigger>
-        <span>6. Retrieval &amp; On-Device Inference</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-retrieval--on-device-inference">#</doc-anchor-trigger>
+        <span>7. Retrieval &amp; On-Device Inference</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="61--locate-the-model">
+<doc-anchor-target id="71--locate-the-model">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#61--locate-the-model">#</doc-anchor-trigger>
-        <span>6.1.  Locate the Model</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#71--locate-the-model">#</doc-anchor-trigger>
+        <span>7.1.  Locate the Model</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>A user device (Actiq’s “AI Live Pod”) queries the “Model Registry” canister for the  <strong>latest</strong>  version manifest.</li>
 </ul>
-<doc-anchor-target id="62--verify-integrity">
+<doc-anchor-target id="72--verify-integrity">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#62--verify-integrity">#</doc-anchor-trigger>
-        <span>6.2.  Verify Integrity</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#72--verify-integrity">#</doc-anchor-trigger>
+        <span>7.2.  Verify Integrity</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -892,10 +916,10 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="63--decryption">
+<doc-anchor-target id="73--decryption">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#63--decryption">#</doc-anchor-trigger>
-        <span>6.3.  Decryption</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#73--decryption">#</doc-anchor-trigger>
+        <span>7.3.  Decryption</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -905,181 +929,181 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="64--version-checking">
+<doc-anchor-target id="74--version-checking">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#64--version-checking">#</doc-anchor-trigger>
-        <span>6.4.  Version Checking</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#74--version-checking">#</doc-anchor-trigger>
+        <span>7.4.  Version Checking</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>The device can confirm the model version is signed or approved by a known DAO.</li>
 <li>This ensures the user isn’t unknowingly running a malicious or outdated model.</li>
 </ul>
-<doc-anchor-target id="7-future-enhancements">
+<doc-anchor-target id="8-future-enhancements">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#7-future-enhancements">#</doc-anchor-trigger>
-        <span>7. Future Enhancements</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-future-enhancements">#</doc-anchor-trigger>
+        <span>8. Future Enhancements</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="71-specialized-icp-subnets">
+<doc-anchor-target id="81-specialized-icp-subnets">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#71-specialized-icp-subnets">#</doc-anchor-trigger>
-        <span>7.1. Specialized ICP Subnets</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#81-specialized-icp-subnets">#</doc-anchor-trigger>
+        <span>8.1. Specialized ICP Subnets</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>High-Compute Subnets</strong>: Future ICP subnets might integrate CPU/GPU resources. This would enable direct on-chain training, reducing reliance on external HPC.</li>
 <li><strong>Large Stable Memory</strong>: Ongoing research might push stable memory limits beyond 4GB, simplifying chunking or multi-canister strategies.</li>
 </ul>
-<doc-anchor-target id="72-improved-dao-modules">
+<doc-anchor-target id="82-improved-dao-modules">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#72-improved-dao-modules">#</doc-anchor-trigger>
-        <span>7.2. Improved DAO Modules</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#82-improved-dao-modules">#</doc-anchor-trigger>
+        <span>8.2. Improved DAO Modules</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Curation Markets</strong>: Weighted voting or bonding curves for data quality can systematically reward high-value data.</li>
 <li><strong>Automated Label Bounties</strong>: Users can earn tokens for labeling unlabeled data, fostering continuous improvement.</li>
 </ul>
-<doc-anchor-target id="73-integration-with-other-protocols">
+<doc-anchor-target id="83-integration-with-other-protocols">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#73-integration-with-other-protocols">#</doc-anchor-trigger>
-        <span>7.3 Integration with Other Protocols</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#83-integration-with-other-protocols">#</doc-anchor-trigger>
+        <span>8.3 Integration with Other Protocols</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Cross-Chain Bridges</strong>: Linking ICP canisters to Ethereum, Polkadot, or Bittensor (for decentralized AI training) can broaden the ecosystem.</li>
 </ul>
-<doc-anchor-target id="74-secure-enclaves--zk-computation">
+<doc-anchor-target id="84-secure-enclaves--zk-computation">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#74-secure-enclaves--zk-computation">#</doc-anchor-trigger>
-        <span>7.4 Secure Enclaves &amp; ZK Computation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#84-secure-enclaves--zk-computation">#</doc-anchor-trigger>
+        <span>8.4 Secure Enclaves &amp; ZK Computation</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Hardware Enclaves</strong>: Potential future subnets or off-chain nodes could offer Intel SGX/TEE-based computation for advanced privacy.</li>
 <li><strong>Zero-Knowledge Training</strong>: Methods like fully homomorphic encryption or secure multi-party computation might eventually allow partial training on encrypted data without decryption.</li>
 </ul>
-<doc-anchor-target id="75-on-device-model-customization">
+<doc-anchor-target id="85-on-device-model-customization">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#75-on-device-model-customization">#</doc-anchor-trigger>
-        <span>7.5 On-Device Model Customization</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#85-on-device-model-customization">#</doc-anchor-trigger>
+        <span>8.5 On-Device Model Customization</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Future enhancements</strong> to the AI Live Pod could allow partial fine-tuning directly on the device (for small personal datasets), then contributing insights or differential privacy gradients back to the decentralized model storage.</li>
 </ul>
 <hr>
-<doc-anchor-target id="8-security--integrity-analysis">
+<doc-anchor-target id="9-security--integrity-analysis">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#8-security--integrity-analysis">#</doc-anchor-trigger>
-        <span>8. Security &amp; Integrity Analysis</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#9-security--integrity-analysis">#</doc-anchor-trigger>
+        <span>9. Security &amp; Integrity Analysis</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="81--data-authenticity">
+<doc-anchor-target id="91--data-authenticity">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#81--data-authenticity">#</doc-anchor-trigger>
-        <span>8.1.  Data Authenticity</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#91--data-authenticity">#</doc-anchor-trigger>
+        <span>9.1.  Data Authenticity</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Mandatory cryptographic signatures for data uploads.</li>
 <li>DAO can slash or penalize malicious data contributors if proven fraudulent.</li>
 </ul>
-<doc-anchor-target id="82--immutable-logging">
+<doc-anchor-target id="92--immutable-logging">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#82--immutable-logging">#</doc-anchor-trigger>
-        <span>8.2.  Immutable Logging</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#92--immutable-logging">#</doc-anchor-trigger>
+        <span>9.2.  Immutable Logging</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Any change in the canisters’ state (addition/removal of data, model checkpoint updates) is permanently recorded and visible, preventing unilateral tampering.</li>
 </ul>
-<doc-anchor-target id="83-resilience--redundancy">
+<doc-anchor-target id="93-resilience--redundancy">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#83-resilience--redundancy">#</doc-anchor-trigger>
-        <span>8.3. Resilience &amp; Redundancy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#93-resilience--redundancy">#</doc-anchor-trigger>
+        <span>9.3. Resilience &amp; Redundancy</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>ICP replicates canisters across nodes in a subnet. Even if some nodes fail, the data remains intact.</li>
 </ul>
-<doc-anchor-target id="84--dao-governance-risks">
+<doc-anchor-target id="94--dao-governance-risks">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#84--dao-governance-risks">#</doc-anchor-trigger>
-        <span>8.4.  DAO Governance Risks</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#94--dao-governance-risks">#</doc-anchor-trigger>
+        <span>9.4.  DAO Governance Risks</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>As with any token-based governance, whales or large stakeholders could exert heavy influence. Mechanisms like decentralized distribution, reputation scoring, or delegated voting can mitigate plutocratic control.</li>
 </ul>
 <hr>
-<doc-anchor-target id="9-ecosystem-benefits">
+<doc-anchor-target id="10-ecosystem-benefits">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#9-ecosystem-benefits">#</doc-anchor-trigger>
-        <span>9. Ecosystem Benefits</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#10-ecosystem-benefits">#</doc-anchor-trigger>
+        <span>10. Ecosystem Benefits</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="91--scalable--decentralized">
+<doc-anchor-target id="101--scalable--decentralized">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#91--scalable--decentralized">#</doc-anchor-trigger>
-        <span>9.1.  Scalable &amp; Decentralized</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#101--scalable--decentralized">#</doc-anchor-trigger>
+        <span>10.1.  Scalable &amp; Decentralized</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Scalable models, seamless training routine, decentralized backend, and on-device AI ecosystem, that contains from local AI inference sources can all interoperate without a single point of failure and be more effective in general.</li>
 </ul>
-<doc-anchor-target id="92-user--data-owner-trust">
+<doc-anchor-target id="102-user--data-owner-trust">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#92-user--data-owner-trust">#</doc-anchor-trigger>
-        <span>9.2. User &amp; Data Owner Trust</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#102-user--data-owner-trust">#</doc-anchor-trigger>
+        <span>10.2. User &amp; Data Owner Trust</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>The community (via DAO) collectively audits updates and usage.</li>
 <li>Data owners see a clear trail of where and how their data is used.</li>
 </ul>
-<doc-anchor-target id="93-high-quality-model-training">
+<doc-anchor-target id="103-high-quality-model-training">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#93-high-quality-model-training">#</doc-anchor-trigger>
-        <span>9.3. High-Quality Model Training</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#103-high-quality-model-training">#</doc-anchor-trigger>
+        <span>10.3. High-Quality Model Training</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Bittensor/GPU/HPC AI training ecosystems provides a robust, incentivized environment, attracting resources from around the globe.</li>
 <li>Continual improvements keep models fresh and competitive.</li>
 </ul>
-<doc-anchor-target id="94-monetization--rewards">
+<doc-anchor-target id="104-monetization--rewards">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#94-monetization--rewards">#</doc-anchor-trigger>
-        <span>9.4. Monetization &amp; Rewards</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#104-monetization--rewards">#</doc-anchor-trigger>
+        <span>10.4. Monetization &amp; Rewards</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Dataset owners, model contributors, and compute providers can earn tokens or revenue shares, making the ecosystem self-sustaining.</li>
 </ul>
-<doc-anchor-target id="95-on-device-privacy--performance">
+<doc-anchor-target id="105-on-device-privacy--performance">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#95-on-device-privacy--performance">#</doc-anchor-trigger>
-        <span>9.5. On-Device Privacy &amp; Performance</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#105-on-device-privacy--performance">#</doc-anchor-trigger>
+        <span>10.5. On-Device Privacy &amp; Performance</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>AI Live Pods run models directly on the user device, ensuring minimal latency and protecting sensitive user data from leaving the device.</li>
 </ul>
-<doc-anchor-target id="96-seamless-model-delivery">
+<doc-anchor-target id="106-seamless-model-delivery">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#96-seamless-model-delivery">#</doc-anchor-trigger>
-        <span>9.6 Seamless Model Delivery</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#106-seamless-model-delivery">#</doc-anchor-trigger>
+        <span>10.6 Seamless Model Delivery</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>End users automatically get updated model checkpoints verified by the DAO, removing friction and ensuring trust in each new release.</li>
 </ul>
-<doc-anchor-target id="10-conclusion">
+<doc-anchor-target id="11-conclusion">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#10-conclusion">#</doc-anchor-trigger>
-        <span>10. Conclusion</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#11-conclusion">#</doc-anchor-trigger>
+        <span>11. Conclusion</span>
     </h2>
 </doc-anchor-target>
 <blockquote>
