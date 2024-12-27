@@ -103,7 +103,7 @@ For  **very large**  LLMs or Vision Transformers (multi-GB or TB scale),  **hybr
 #### 3.3.2. Manifest Registry 
 -   The “Model Registry” canister keeps track of multiple versions: `v1.0`, `v1.1`, `v2.0`, etc.
 -   A  **pointer**  or “current version” field indicates which version is the official release.
-#### 3.3.3. **DAO/SNS Approval**
+#### 3.3.3. DAO/SNS Approval
 -   If using Actiq’s DAO system, each new version might require a  **proposal**  and  **vote**.
 -   Once approved, the  **pointer**  updates to the new version, and devices automatically see an update.
 
