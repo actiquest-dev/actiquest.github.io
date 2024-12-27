@@ -12,31 +12,55 @@ label: Decentralized AI Model Storage
 ----------
 ## 1. Abstract
 
-**Actiquest On-Device AI**  (running in the AI Live Pod) is the complex of Vision/LMM and NLP neural models brings next-generation edge intelligence to users’ devices by combining efficient local inference with a robust  **Compute-to-Data**  paradigm. Rather than pulling massive datasets into centralized servers for training,  Actiquest stores and governs these datasets on the **Internet Computer (ICP)**—enabling a decentralized, community-driven approach to data handling. This litepaper outlines how these components integrate to deliver private, up-to-date, and decentralized AI solutions,  **including the process of delivering the best pre-trained models to end-user devices.**
+**Actiquest On-Device AI**  (running in the AI Live Pod) is the complex of Vision/LMM and NLP neural models brings next-generation edge intelligence to users’ devices by combining efficient local inference with a robust **Compute-to-Data**  paradigm. Rather than pulling massive datasets into centralized servers for training,  Actiquest stores and governs these datasets on the **Internet Computer (ICP)**—enabling a decentralized, community-driven approach to data handling. This litepaper outlines how these components integrate to deliver private, up-to-date, and decentralized AI solutions,  **including the process of delivering the best pre-trained models to end-user devices.**
 
+### Purpose
+
+The primary goal is to define a modular, secure, and transparent method for storing and managing AI model artifacts (e.g., weights, configuration files) in the Actiq ecosystem. This includes guidelines for chunked storage, version control, and access control, ensuring that both public and proprietary models can be handled effectively on the Internet Computer (ICP) or via hybrid solutions.
+
+### Scope
+
+This document applies primarily to final or frequently accessed model checkpoints—the files needed for on-device inference and iterative improvements. It does not focus on the broader management of raw training datasets or massive data pipelines, which involve different considerations around scale, labeling, and compute. Instead, the scope here is to provide clarity on:
+
+- Chunking & Uploading AI model files to canisters or cloud/decentralized storage.
+- Governance workflows for approving and versioning new checkpoints.
+- Security practices like hashing, encryption, and licensing for private or commercial models.
+
+### Key Features
+
+- **Chunked Storage**
+Large model files are split into smaller pieces to accommodate canister or network limits, with each chunk hashed for integrity checks.
+- **Immutable References**
+Each version of the model is associated with a manifest and global hash, preventing unauthorized tampering or silent overwrites.
+- **DAO / SNS-Based Governance**
+When combined with the Actiq DAO, updates to the “official” model version require community proposals and voting—ensuring transparency and consensus.
+- **Selective Access Control**
+Public/open-source models can be freely retrieved, while private or commercial models are encrypted and licensed, requiring a key or DAO permission to decrypt.
+- **Clear Versioning**
+Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users and devices can easily identify, roll back, or upgrade to a new model release.
+
+These features form the foundation of the Actiq model-storage workflow: offering reliability, security, and scalability, while integrating seamlessly with on-device AI use cases and decentralized governance models.
 
 ## 1. Introduction
 
 ### 1.1 Background
-
 The rapid ascent of  **artificial intelligence**  (AI) in domains such as computer vision, natural language processing, and personalized recommendations has often hinged on  **centralized**  data pipelines. Traditional AI workflows store large volumes of data in monolithic data centers, train models on powerful, centralized compute clusters, and then deliver these models to end users—often via cloud APIs. However, this model presents several  **shortcomings**:
 
--   **Privacy Concerns**: Centralized datasets can be vulnerable to leaks or unauthorized usage.
--   **Single Points of Failure**: A single entity controlling data and model access can impose censorship, raise fees, or unilaterally change usage terms.
+1.1.1.  **Privacy Concerns**: Centralized datasets can be vulnerable to leaks or unauthorized usage.
+1.1.2.   **Single Points of Failure**: A single entity controlling data and model access can impose censorship, raise fees, or unilaterally change usage terms.
 -   **Limited Community Involvement**: Contributors (e.g., data owners, labelers, or subject-matter experts) typically have little direct input into model curation or governance.
 -   **Scalability & Latency**: Constantly streaming data to and from the cloud can be costly and introduce performance bottlenecks, especially for real-time or sensor-based applications.
 
 ### 1.2 Vision for a Decentralized On-Device AI Ecosystem
-
 Instead, a  **decentralized architecture**  can address many of these concerns by distributing data storage, governance, and inference. We propose the Internet Computer (ICP) as the  **trustless backbone**  to store and manage data, while allowing:
 
-1.  **On-Device Local Inference**
+1.2.1.  **On-Device Local Inference**
     -   Models run locally on user devices or edge hardware, ensuring low-latency, privacy-preserving AI.
-2.  **Community Governance**
+1.2.2.  **Community Governance**
     -   A decentralized autonomous organization (DAO) or Service Nervous System (SNS) on ICP oversees dataset curation, usage terms, and revenue distributions—enabling transparent decision-making.
-3.  **Compute-to-Data**
+1.2.3.  **Compute-to-Data**
     -   Data remains encrypted and within canisters; compute providers request access to train or fine-tune models. Once approved, the data is decrypted for that specific job (off-chain or on specialized subnets).
-4.  **Immutable Logs & Versioning**
+1.2.4.  **Immutable Logs & Versioning**
     -   All changes to datasets, model checkpoints, and governance parameters are recorded on the ICP, guaranteeing tamper-proof auditability.
 
 ----------
@@ -44,7 +68,6 @@ Instead, a  **decentralized architecture**  can address many of these concerns b
 ## 2. The Role of the Internet Computer (ICP)
 
 ### 2.1 Core ICP Design
-
 1.  **Canisters**
     -   Smart contracts on ICP, hosting both code (WebAssembly) and data (stable memory). They can hold structured data, files, and application logic.
     -   Canisters are powered by “cycles,” ensuring a predictable cost model.
@@ -57,13 +80,13 @@ Instead, a  **decentralized architecture**  can address many of these concerns b
 
 ### 2.2 Advantages for AI Data Storage and Governance
 
-1.  **Low On-Chain Storage Cost**
+2.2.1.  **Low On-Chain Storage Cost**
     -   The ICP’s model, while not as inexpensive as traditional cloud storage, is comparatively cost-effective versus other blockchains that might charge significant gas fees for data.
-2.  **DAO Governance Out-of-the-Box**
+2.2.2.  **DAO Governance Out-of-the-Box**
     -   Using SNS, developers can quickly set up a governance token, proposal system, and treasury logic—ideal for datasets that require curation, licensing, or community-based moderation.
-3.  **Stable Memory for Large Data**
+2.2.3.  **Stable Memory for Large Data**
     -   Each canister can store up to 4GB of stable memory (with possible future increases), enabling direct storage for moderate-sized models or datasets. For larger ones, chunked approaches or multi-canister architectures are used.
-4.  **Global Accessibility**
+2.2.4.  **Global Accessibility**
     -   The Internet Computer is designed to be globally accessible, with boundary nodes offering near-universal coverage for data retrieval and dApp access.
 
 ----------
@@ -91,25 +114,25 @@ Instead, a  **decentralized architecture**  can address many of these concerns b
 3.  **Actions**: Approved proposals might add new chunk references, pay contributors, or update a model’s version in a specialized canister.
 
 ### 3.3 Compute-to-Data Flow
-1.  **Data Remains in Canisters**
+3.3.1.  **Data Remains in Canisters**
     -   Images, videos, bounding boxes, masks (Vision models data) plus text corpora, embeddings, tokenized references (LLM data); stored in chunked file canisters or off-chain data storage, with the ICP canister tracking hashes and metadata.
-2.  **Off-Chain Training Request**
+3.3.2.  **Off-Chain Training Request**
     -   A GPU/ or decentralized CPU node on Bittensor training subnet/ or any other external HPC training environment requests access to the dataset (depends on situation).
     -   The DAO or data owner grants a decryption key if the proposal is passed or the entity meets certain criteria (e.g., paid a licensing fee).
-3.  **Secure Training**
+3.3.3.  **Secure Training**
     -   The HPC training environment decrypts and processes the data locally.
     -   Zero-knowledge proofs or secure enclaves may be used to reduce data exposure risks.
-4.  **Model Checkpoint Upload**
+3.3.4.  **Model Checkpoint Upload**
     -   After training, the HPC training environment returns a new model checkpoint, which is stored in a “Model Registry Canister” on the ICP, ensuring an immutable record of model evolution.
     -   The DAO votes again to accept or reject the checkpoint, ensuring community trust.
 
 ### 3.4 On-Device AI Delivery
-1.  **Running Models on-Device**
+3.4.1.  **Running Models on-Device**
     -   Local Inference devices like **AI Live Pod** are capable of loading model weights, verifying their authenticity, and running real-time inference with a lightweight model.
-2.  **Fetching Checkpoints**
+3.4.2.  **Fetching Checkpoints**
     -   Device queries the Model Registry Canister for the latest verified checkpoint.
     -   A cryptographic signature check ensures the model is genuine.
-3.  **Private Computation**
+3.4.3.  **Private Computation**
     -   Personal data of AI users (e.g., health metrics, camera images) remains on the device, never shipped to a central server.
     -   This fosters privacy, reduces latency, and saves network costs.
 
@@ -119,130 +142,166 @@ Instead, a  **decentralized architecture**  can address many of these concerns b
 
 ### 4.1 Cryptographic Signatures & Hashing
 
-1.  **Data Upload**
+4.1.1.  **Data Upload**
     -   Contributors sign the data with their private key, ensuring authenticity.
     -   The canister verifies the signature with the contributor’s public key.
-2.  **Model Checkpoints**
+4.1.2.  **Model Checkpoints**
     -   Post-training, an aggregator or HPC node signs the final weights. The DAO can verify it was indeed produced by the correct aggregator.
-3.  **Integrity Hashes**
+4.1.3.  **Integrity Hashes**
     -   Each chunk or file is hashed (e.g., SHA-256) to detect any tampering. The canister stores these hashes, and any mismatch on retrieval flags an error.
 
-### 4.2 Access Control & Encryption
+### 4.2. Access Control & Licensing
 
-1.  **Encryption Keys**
-    -   The data owner or the DAO can store encryption keys in a canister, releasing them only when an approved training request is made.
-2.  **Compute Nodes**
-    -   They decrypt data locally, train the model, and discard it after the job to minimize leakage.
-3.  **Zero-Knowledge Proofs (Optional)**
-    -   To prove certain properties (e.g., “this data meets size or content requirements”) without exposing the underlying content.
+4.2.1.  **Open Models**
+-   If the model is  **public**  (e.g., open-source), the registry canister can  **expose the chunk references**  to anyone.
+4.2.2.  **Encrypted Models**
+-   If the model is  **private**  or  **commercial**, each chunk is  **encrypted**  with a symmetric key.
+-   Only users or devices with the correct decryption key can read the chunks.
+4.2.3.  **DAO / SNS Licenses**
+-   A  **governance canister**  may require purchasing a  **license token**  or passing a  **DAO proposal**  before granting the  **decryption key**.
+-   The canister can store an access table mapping “Principal -> Allowed to Download.”
+4.2.4.  **Payment & Royalties**
+-   The system can integrate a  **payment flow**  (e.g., user sends tokens/cycles), then the canister releases the encryption key or grants chunk access.
+-   The DAO can distribute revenues to model contributors or stakers.
 
-### 4.3 Pricing & Monetization
+### 4.3 Sustainability & Monetization
 
-1.  **Cycles & ICP**
-    -   Storing metadata in canisters requires cycles. The DAO might maintain a treasury of cycles to fund ongoing storage.
-2.  **Licensing Fees**
-    -   External compute providers or organizations wanting to train with certain datasets may pay fees to the DAO, which then rewards data owners or labelers.
-3.  **Token Incentives**
+4.3.1.  **Cycles**
+-   Each canister on ICP needs  **cycles**  to store data and process requests. If the model is fully stored on-chain, cycle usage can become significant.
+-   **Hybrid**  solutions (metadata on-chain, large chunks off-chain) reduce cycle consumption.
+4.3.2.  **Upload Fees**
+-   If a DAO or developer is uploading multi-gigabyte models, they must carefully plan cycle usage or have a treasury to cover on-chain storage.
+-   Off-chain solutions might require separate hosting costs, but are typically cheaper at large scale.
+4.3.3.  **Revenue Streams**
+-   If models are commercial,  **license fees**  or pay-per-download can offset storage costs. The DAO or model creators receive the revenue, fueling further development
+4.3.4.  **Token Incentives**
     -   If the system is governed by an SNS, the governance token can be used to reward contributions, stake in proposals, or trade on open markets.
 
 ----------
 
-## 5. Example Use Case: Athlete Performance Data
+## 5. Example Workflow
 
-1.  **Dataset Capture**
-    -   Athletes record heart rate, motion, or video data using special training wizard app. Finally data is labeled and prepared for training routine using this app.
-    -   The athlete’s training wizard app signs and encrypts the data, uploading it to an ICP canister.
-2.  **DAO Proposal**
-    -   The athlete proposes that this new dataset be included in next round of training. DAO token holders vote, evaluating data authenticity and potential value for improving the AI model.
-3.  **Training on External Training Nodes**
-    -   Once approved, an external training node obtains the decryption key, trains or fine-tunes the relevant model.
-    -  Once training yields a strong or improved checkpoint, participants (or the training orchestrator) propose this checkpoint as an “official update.”
-    -   The HPC environment uploads the new weights to the Model Registry Canister.
-4.  **On-Device AI Model Activation**
-    -   The new checkpoint is loaded into memory on the on-device AI, replacing or augmenting older models.
-    - If the model is encrypted, the On-device AI obtains an access key from the DAO or canister, decrypting it locally.
-   5.  **Benefits to On-Device AI users** 
-		-   Users seamlessly benefit from updated AI capabilities (e.g., improved video recognition accuracy or reasoning).
-		- All model versions are tied to immutable references on the IC, preventing unauthorized or malicious model updates.
-		- If the community finds a checkpoint suboptimal, they can propose rolling back or adopting a different checkpoint—ensuring user devices always get **trusted, high-quality** models.
+5.1.  **Model Creation**
+-   A developer trains a vision or language model offline.
+5.2.  **Chunk & Encrypt**
+-   Split the final weights file into 1 MB chunks, hash them, optionally encrypt them with a key.
+5.3.  **Register On-Chain**
+-   Upload chunk references and metadata to the “Model Registry” canister.
+-   Store the global file hash, version ID, and encryption info.
+5.4.  **DAO Approval**
+-   Submit a proposal to label this version as “v1.0 Official.”
+-   The DAO votes, and if approved, updates the pointer to the new version.
+5.5.  **Training on External Training Nodes**
+-   Once approved, an external training node obtains the decryption key, trains or fine-tunes the relevant model.
+-   Once training yields a strong or improved checkpoint, participants (or the training orchestrator) propose this checkpoint as an “official update.”
+-   The HPC environment re-uploads the new weights to the Model Registry Canister.
+5.6.  **User Retrieval**
+-   An AI Live Pod queries the registry, sees “v1.0 Official,” downloads the chunks, verifies each hash, and decrypts with the provided key (if private).
+-   The user’s device loads the model for local inference.
+5.7.  **Benefits to On-Device AI users** 
+-   Users seamlessly benefit from updated AI capabilities (e.g., improved video recognition accuracy or reasoning).
+-   All model versions are tied to immutable references on the IC, preventing unauthorized or malicious model updates.
+-   If the community finds a checkpoint suboptimal, they can propose rolling back or adopting a different checkpoint—ensuring user devices always get **trusted, high-quality** models.
+
+
 ----------
 
 
-## 6. Future Enhancements
+## 6. Retrieval & On-Device Inference
 
-### 6.1 Specialized ICP Subnets
+6.1.  **Locate the Model**
+-   A user device (Actiq’s “AI Live Pod”) queries the “Model Registry” canister for the  **latest**  version manifest.
+6.2.  **Verify Integrity**
+-   The device downloads chunk data (on-chain or from IPFS/Arweave) and checks each chunk hash against the manifest.
+    -   If any chunk hash doesn’t match, the device rejects the file (tampering alert).
+6.3.  **Decryption**
+-   If the model is encrypted, the device must retrieve the  **encryption key**  from the governance canister or hold it locally (if purchased).
+    -   Once decrypted, the device can load the model into memory for inference.
+6.4.  **Version Checking**
+-   The device can confirm the model version is signed or approved by a known DAO.
+-   This ensures the user isn’t unknowingly running a malicious or outdated model.
+
+
+## 7. Future Enhancements
+
+### 7.1 Specialized ICP Subnets
 
 -   **High-Compute Subnets**: Future ICP subnets might integrate CPU/GPU resources. This would enable direct on-chain training, reducing reliance on external HPC.
 -   **Large Stable Memory**: Ongoing research might push stable memory limits beyond 4GB, simplifying chunking or multi-canister strategies.
 - 
 
-### 6.2 Improved DAO Modules
+### 7.2 Improved DAO Modules
 
 -   **Curation Markets**: Weighted voting or bonding curves for data quality can systematically reward high-value data.
 -   **Automated Label Bounties**: Users can earn tokens for labeling unlabeled data, fostering continuous improvement.
 
-### 6.3 Integration with Other Protocols
+### 7.3 Integration with Other Protocols
 
 -   **Cross-Chain Bridges**: Linking ICP canisters to Ethereum, Polkadot, or Bittensor (for decentralized AI training) can broaden the ecosystem.
 
-### 6.4 Secure Enclaves & ZK Computation
+### 7.4 Secure Enclaves & ZK Computation
 
 -   **Hardware Enclaves**: Potential future subnets or off-chain nodes could offer Intel SGX/TEE-based computation for advanced privacy.
 -   **Zero-Knowledge Training**: Methods like fully homomorphic encryption or secure multi-party computation might eventually allow partial training on encrypted data without decryption.
 
-### 6.4 Edge-Level Model Customization
+### 7.5 On-Device Model Customization
 - **Future enhancements** to the AI Live Pod could allow partial fine-tuning directly on the device (for small personal datasets), then contributing insights or differential privacy gradients back to the decentralized model storage.
 
-----------
-
-## 7. Security & Integrity Analysis
-
-1.  **Data Authenticity**
-    -   Mandatory cryptographic signatures for data uploads.
-    -   DAO can slash or penalize malicious data contributors if proven fraudulent.
-2.  **Immutable Logging**  
-    -   Any change in the canisters’ state (addition/removal of data, model checkpoint updates) is permanently recorded and visible, preventing unilateral tampering.
-3.  **Resilience & Redundancy**
-    -   ICP replicates canisters across nodes in a subnet. Even if some nodes fail, the data remains intact.
-4.  **DAO Governance Risks**
-    -   As with any token-based governance, whales or large stakeholders could exert heavy influence. Mechanisms like decentralized distribution, reputation scoring, or delegated voting can mitigate plutocratic control.
 
 ----------
 
-## 8. Ecosystem Benefits
+## 8. Security & Integrity Analysis
 
-1.  **Scalable & Decentralized** 
+8.1.  **Data Authenticity**
+-   Mandatory cryptographic signatures for data uploads.
+-   DAO can slash or penalize malicious data contributors if proven fraudulent.
+8.2.  **Immutable Logging**  
+-   Any change in the canisters’ state (addition/removal of data, model checkpoint updates) is permanently recorded and visible, preventing unilateral tampering.
+8.3.  **Resilience & Redundancy**
+-   ICP replicates canisters across nodes in a subnet. Even if some nodes fail, the data remains intact.
+8.4.  **DAO Governance Risks**
+-   As with any token-based governance, whales or large stakeholders could exert heavy influence. Mechanisms like decentralized distribution, reputation scoring, or delegated voting can mitigate plutocratic control.
+
+----------
+
+## 9. Ecosystem Benefits
+
+9.1.  **Scalable & Decentralized** 
 -   Scalable models, seamless training routine, decentralized backend, and on-device AI ecosystem, that contains from local AI inference sources can all interoperate without a single point of failure and be more effective in general.
  
-2.  **User & Data Owner Trust**
+9.2.  **User & Data Owner Trust**
 - The community (via DAO) collectively audits updates and usage.
 -   Data owners see a clear trail of where and how their data is used.
-3.  **High-Quality Model Training**
+9.3.  **High-Quality Model Training**
 -   Bittensor/GPU/HPC AI training ecosystems provides a robust, incentivized environment, attracting resources from around the globe.
 -   Continual improvements keep models fresh and competitive.
-4.  **Monetization & Rewards**
+9.4.  **Monetization & Rewards**
 -   Dataset owners, model contributors, and compute providers can earn tokens or revenue shares, making the ecosystem self-sustaining.
-5.  **On-Device Privacy & Performance**
+9.5.  **On-Device Privacy & Performance**
 -   AI Live Pods run models directly on the user device, ensuring minimal latency and protecting sensitive user data from leaving the device.
-6.  **Seamless Model Delivery**
+9.6.  **Seamless Model Delivery**
 -   End users automatically get updated model checkpoints verified by the DAO, removing friction and ensuring trust in each new release.
 
-## 8. Conclusion
+## 10. Conclusion
 
 **Decentralized storage and governance**  on the  **Internet Computer**  presents a powerful alternative to traditional, centralized AI pipelines.
 
-The  **Actiquest On-Device AI**  platform merges the best of decentralized technology—**immutable data storage, community governance, scalable training,**  and  **privacy-preserving inference**—all while simplifying  **model delivery**  to end-user devices. By adopting a  **Compute-to-Data**  approach on the  **Internet Computer**  for robust AI development:
+The **Actiquest On-Device AI**  platform merges the best of decentralized technology—**immutable data storage, community governance, scalable training,**  and  **privacy-preserving inference**—all while simplifying  **model delivery**  to end-user devices. By adopting a  **Compute-to-Data**  approach on the  **Internet Computer**  for robust AI development:
 
-1.  **Data owners retain control**  of their valuable datasets.
-2.  **Developers and participants**  are fairly rewarded through DAO-based monetization.
-3.  **Users**  benefit from  **on-device AI**  with minimal latency and maximum privacy.
-4.  **Model updates**  are frictionless and tamper-proof, strengthening user trust and system resilience.
+10.1.  **Data owners retain control**  of their valuable datasets.
+10.2.  **Developers and participants**  are fairly rewarded through DAO-based monetization.
+10.3.  **Users**  benefit from  **on-device AI**  with minimal latency and maximum privacy.
+10.4.  **Model updates**  are frictionless and tamper-proof, strengthening user trust and system resilience.
 
 The result is a novel AI ecosystem that meets modern demands for  **transparency, decentralization, performance,**  and  **easy model delivery**, fostering a more open, trustable, and dynamic future for vision and language AI applications at the edge.
 
--   **Data Integrity & Transparency**: Immutable canisters ensure that datasets and model checkpoints can be audited and are safe from covert manipulation.
--   **Community-Driven Governance**: SNS or custom DAO logic empowers data owners, labelers, and compute providers to shape the platform’s evolution, aligning incentives for high-quality data and model improvements.
--   **Compute-to-Data Privacy**: By encrypting data on the IC, then selectively granting access for off-chain or specialized on-chain compute, sensitive information is protected while still feeding robust training workflows.
--   **On-Device AI**: Delivering newly approved models directly to user devices reduces latency, preserves privacy, and unlocks real-time or offline use cases, especially relevant for wearables, smart home devices, or remote sensors.
+The Actiq approach to model storage balances decentralization, security, and practical costs. By chunking large files, verifying them via hashes, optionally encrypting them for private licensing, and organizing all references in a “Model Registry” canister, we achieve:
 
-In sum, this  **document**  underscores the viability of building a  **trustless, decentralized AI ecosystem**  that harnesses the Internet Computer’s technical capabilities to store, govern, and continually update AI models—paving the way for more equitable, privacy-respecting, and community-centered AI solutions at scale.
+10.6. **Data Integrity & Transparency**: Immutable canisters ensure that datasets and model checkpoints can be audited and are safe from covert manipulation. Models cannot be tampered with silently, thanks to hash checks and version history.
+10.7. **Flexible Access Control**: Public models are freely accessible, while proprietary ones remain encrypted and licensed via the DAO.
+10.8.  **Scalability:** Smaller models can live directly on the ICP; huge models can use external storage with an on-chain reference.
+10.9.  **Community-Driven Governance**: Proposals and votes ensure that only trusted versions become official, and that revenues or licensing fees flow back to contributors and maintainers. SNS or DAO logic empowers data owners, labelers, and compute providers to shape the platform’s evolution, aligning incentives for high-quality data and model improvements.
+10.10.   **Compute-to-Data Privacy**: By encrypting data on the IC, then selectively granting access for off-chain or specialized on-chain compute, sensitive information is protected while still feeding robust training workflows.
+10.11.   **On-Device AI**: Delivering newly approved models directly to user devices reduces latency, preserves privacy, and unlocks real-time or offline use cases, especially relevant for wearables, smart home devices, or remote sensors.
+
+By following these guidelines, developers and users can confidently store, retrieve, and update on-device AI models within the Actiq ecosystem, ensuring trust, transparency, and continuous innovation in a decentralized environment.
