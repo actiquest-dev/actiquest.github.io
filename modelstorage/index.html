@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788623729234">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Decentralized Storage and Governance Over On-Device AI</title>
+    <meta name="title" content="Decentralized Storage and Governance Over On-Device AI">
+    <meta name="description" content="Actiquest On-Device AI(running in the AI Live Pod) is the complex of Vision/LMM and NLP neural models brings next-generation edge intelligence to...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.actiq.xyz/modelstorage/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.actiq.xyz/modelstorage/">
+    <meta property="og:title" content="Decentralized Storage and Governance Over On-Device AI">
+    <meta property="og:description" content="Actiquest On-Device AI(running in the AI Live Pod) is the complex of Vision/LMM and NLP neural models brings next-generation edge intelligence to...">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/modelstorage/">
+    <meta property="twitter:title" content="Decentralized Storage and Governance Over On-Device AI">
+    <meta property="twitter:description" content="Actiquest On-Device AI(running in the AI Live Pod) is the complex of Vision/LMM and NLP neural models brings next-generation edge intelligence to...">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../static/favicon.png" rel="icon">
+    <link href="../resources/css/retype.css?v=3.6.0.788623729234" rel="stylesheet">
+
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788623729234" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788623729234" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../static/light-logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../static/dark-logo.svg">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Actiq</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Litepaper</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/TQDtydDPgH" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1ZM1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"/><path d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25v-9.5Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Discord</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/actiquest-dev/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" />
+                                        </g>
+                                    </svg>
+                                    <span>Github</span>
+                                </a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/TQDtydDPgH" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1ZM1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"/><path d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25v-9.5Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Discord</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/actiquest-dev/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" />
+                                                </g>
+                                            </svg>
+                                            <span>Github</span>
+                                        </a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="decentralized-storage-and-governance-over-on-device-ai" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#decentralized-storage-and-governance-over-on-device-ai">#</doc-anchor-trigger>
+        <span>Decentralized Storage and Governance Over On-Device AI</span>
+    </h1>
+</doc-anchor-target>
+<hr>
+<doc-anchor-target id="1-abstract">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-abstract">#</doc-anchor-trigger>
+        <span>1. Abstract</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Actiquest On-Device AI</strong>  (running in the AI Live Pod) is the complex of Vision/LMM and NLP neural models brings next-generation edge intelligence to users’ devices by combining efficient local inference with a robust  <strong>Compute-to-Data</strong>  paradigm. Rather than pulling massive datasets into centralized servers for training,  Actiquest stores and governs these datasets on the <strong>Internet Computer (ICP)</strong>—enabling a decentralized, community-driven approach to data handling. This litepaper outlines how these components integrate to deliver private, up-to-date, and decentralized AI solutions,  <strong>including the process of delivering the best pre-trained models to end-user devices.</strong></p>
+<doc-anchor-target id="1-introduction--motivation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-introduction--motivation">#</doc-anchor-trigger>
+        <span>1. Introduction &amp; Motivation</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="11-background">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#11-background">#</doc-anchor-trigger>
+        <span>1.1 Background</span>
+    </h3>
+</doc-anchor-target>
+<p>The rapid ascent of  <strong>artificial intelligence</strong>  (AI) in domains such as computer vision, natural language processing, and personalized recommendations has often hinged on  <strong>centralized</strong>  data pipelines. Traditional AI workflows store large volumes of data in monolithic data centers, train models on powerful, centralized compute clusters, and then deliver these models to end users—often via cloud APIs. However, this model presents several  <strong>shortcomings</strong>:</p>
+<ul>
+<li><strong>Privacy Concerns</strong>: Centralized datasets can be vulnerable to leaks or unauthorized usage.</li>
+<li><strong>Single Points of Failure</strong>: A single entity controlling data and model access can impose censorship, raise fees, or unilaterally change usage terms.</li>
+<li><strong>Limited Community Involvement</strong>: Contributors (e.g., data owners, labelers, or subject-matter experts) typically have little direct input into model curation or governance.</li>
+<li><strong>Scalability &amp; Latency</strong>: Constantly streaming data to and from the cloud can be costly and introduce performance bottlenecks, especially for real-time or sensor-based applications.</li>
+</ul>
+<doc-anchor-target id="12-vision-for-a-decentralized-on-device-ai-ecosystem">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#12-vision-for-a-decentralized-on-device-ai-ecosystem">#</doc-anchor-trigger>
+        <span>1.2 Vision for a Decentralized On-Device AI Ecosystem</span>
+    </h3>
+</doc-anchor-target>
+<p>Instead, a  <strong>decentralized architecture</strong>  can address many of these concerns by distributing data storage, governance, and inference. We propose the Internet Computer (ICP) as the  <strong>trustless backbone</strong>  to store and manage data, while allowing:</p>
+<ol>
+<li><strong>On-Device Local Inference</strong>
+<ul>
+<li>Models run locally on user devices or edge hardware, ensuring low-latency, privacy-preserving AI.</li>
+</ul>
+</li>
+<li><strong>Community Governance</strong>
+<ul>
+<li>A decentralized autonomous organization (DAO) or Service Nervous System (SNS) on ICP oversees dataset curation, usage terms, and revenue distributions—enabling transparent decision-making.</li>
+</ul>
+</li>
+<li><strong>Compute-to-Data</strong>
+<ul>
+<li>Data remains encrypted and within canisters; compute providers request access to train or fine-tune models. Once approved, the data is decrypted for that specific job (off-chain or on specialized subnets).</li>
+</ul>
+</li>
+<li><strong>Immutable Logs &amp; Versioning</strong>
+<ul>
+<li>All changes to datasets, model checkpoints, and governance parameters are recorded on the ICP, guaranteeing tamper-proof auditability.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="2-the-role-of-the-internet-computer-icp">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-the-role-of-the-internet-computer-icp">#</doc-anchor-trigger>
+        <span>2. The Role of the Internet Computer (ICP)</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="21-core-icp-design">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#21-core-icp-design">#</doc-anchor-trigger>
+        <span>2.1 Core ICP Design</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Canisters</strong>
+<ul>
+<li>Smart contracts on ICP, hosting both code (WebAssembly) and data (stable memory). They can hold structured data, files, and application logic.</li>
+<li>Canisters are powered by “cycles,” ensuring a predictable cost model.</li>
+</ul>
+</li>
+<li><strong>Boundary Nodes</strong>
+<ul>
+<li>Edge gateways that serve user-facing requests (e.g., HTTP calls) and route them to the correct canister. They can also cache static content, partially acting like a lightweight CDN.</li>
+</ul>
+</li>
+<li><strong>Subnet Architecture</strong>
+<ul>
+<li>The Internet Computer network is composed of subnets (groups of replica nodes) which can collectively run canisters. This design ensures redundancy and decentralization.</li>
+</ul>
+</li>
+<li><strong>Service Nervous System (SNS)</strong>
+<ul>
+<li>A framework that transforms a canister-based application into a community-governed DAO. Token holders can propose and vote on code updates, data changes, fees, or rewards distribution.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="22-advantages-for-ai-data-storage-and-governance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#22-advantages-for-ai-data-storage-and-governance">#</doc-anchor-trigger>
+        <span>2.2 Advantages for AI Data Storage and Governance</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Low On-Chain Storage Cost</strong>
+<ul>
+<li>The ICP’s model, while not as inexpensive as traditional cloud storage, is comparatively cost-effective versus other blockchains that might charge significant gas fees for data.</li>
+</ul>
+</li>
+<li><strong>DAO Governance Out-of-the-Box</strong>
+<ul>
+<li>Using SNS, developers can quickly set up a governance token, proposal system, and treasury logic—ideal for datasets that require curation, licensing, or community-based moderation.</li>
+</ul>
+</li>
+<li><strong>Stable Memory for Large Data</strong>
+<ul>
+<li>Each canister can store up to 4GB of stable memory (with possible future increases), enabling direct storage for moderate-sized models or datasets. For larger ones, chunked approaches or multi-canister architectures are used.</li>
+</ul>
+</li>
+<li><strong>Global Accessibility</strong>
+<ul>
+<li>The Internet Computer is designed to be globally accessible, with boundary nodes offering near-universal coverage for data retrieval and dApp access.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="3-architectural-overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-architectural-overview">#</doc-anchor-trigger>
+        <span>3. Architectural Overview</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="31-storage-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#31-storage-layer">#</doc-anchor-trigger>
+        <span>3.1 Storage Layer</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="311-chunked-data-canisters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#311-chunked-data-canisters">#</doc-anchor-trigger>
+        <span>3.1.1 Chunked Data Canisters</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>File-Style Canisters</strong>: For vision datasets (images, videos), large text corpora, or sensor logs, developers can implement chunked storage. Each chunk is typically &lt;1MB, stored in stable memory.</li>
+<li><strong>Metadata Registry</strong>: A separate canister that maps dataset IDs to chunk references (hashes), file sizes, and optional encryption keys or IPFS-like references.</li>
+</ul>
+<doc-anchor-target id="312-off-chain-hybrids">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#312-off-chain-hybrids">#</doc-anchor-trigger>
+        <span>3.1.2 Off-Chain Hybrids</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Some cases may be more effective a hybrid approach, where large or infrequently accessed data is stored using centralized cloud services. The ICP canister then holds references, licensing info, and verifies data integrity with stored hashes.</li>
+</ul>
+<doc-anchor-target id="32-governance-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#32-governance-layer">#</doc-anchor-trigger>
+        <span>3.2 Governance Layer</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="321-dao-sns-or-custom-governance">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#321-dao-sns-or-custom-governance">#</doc-anchor-trigger>
+        <span>3.2.1 DAO (SNS) or Custom Governance</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>SNS</strong>: A built-in approach where the Internet Computer automatically sets up a governance token, neuron-based staking, and proposal logic. The dApp’s community can decide on data updates, usage fees, or distribution of revenues.</li>
+<li><strong>Custom DAO</strong>: Developers can also code a custom governance canister in Rust or Motoko, giving them more tailored logic (e.g., specialized curation markets, nested proposals, or fine-grained permission controls).</li>
+</ul>
+<doc-anchor-target id="322-proposal-lifecycle">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#322-proposal-lifecycle">#</doc-anchor-trigger>
+        <span>3.2.2 Proposal Lifecycle</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><strong>Proposal Creation</strong>: A user or recognized contributor adds a proposal to ingest a new dataset, change a licensing fee, or incorporate a new model checkpoint.</li>
+<li><strong>Voting</strong>: Token holders cast votes. If the proposal meets quorum and passes, the canister logic automatically executes the changes.</li>
+<li><strong>Actions</strong>: Approved proposals might add new chunk references, pay contributors, or update a model’s version in a specialized canister.</li>
+</ol>
+<doc-anchor-target id="33-compute-to-data-flow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#33-compute-to-data-flow">#</doc-anchor-trigger>
+        <span>3.3 Compute-to-Data Flow</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Data Remains in Canisters</strong>
+<ul>
+<li>Images, videos, bounding boxes, masks (Vision models data) plus text corpora, embeddings, tokenized references (LLM data); stored in chunked file canisters or off-chain data storage, with the ICP canister tracking hashes and metadata.</li>
+</ul>
+</li>
+<li><strong>Off-Chain Training Request</strong>
+<ul>
+<li>A GPU/ or decentralized CPU node on Bittensor training subnet/ or any other external HPC training environment requests access to the dataset (depends on situation).</li>
+<li>The DAO or data owner grants a decryption key if the proposal is passed or the entity meets certain criteria (e.g., paid a licensing fee).</li>
+</ul>
+</li>
+<li><strong>Secure Training</strong>
+<ul>
+<li>The HPC training environment decrypts and processes the data locally.</li>
+<li>Zero-knowledge proofs or secure enclaves may be used to reduce data exposure risks.</li>
+</ul>
+</li>
+<li><strong>Model Checkpoint Upload</strong>
+<ul>
+<li>After training, the HPC training environment returns a new model checkpoint, which is stored in a “Model Registry Canister” on the ICP, ensuring an immutable record of model evolution.</li>
+<li>The DAO votes again to accept or reject the checkpoint, ensuring community trust.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="34-on-device-ai-delivery">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#34-on-device-ai-delivery">#</doc-anchor-trigger>
+        <span>3.4 On-Device AI Delivery</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Running Models on-Device</strong>
+<ul>
+<li>Local Inference devices like <strong>AI Live Pod</strong> are capable of loading model weights, verifying their authenticity, and running real-time inference with a lightweight model.</li>
+</ul>
+</li>
+<li><strong>Fetching Checkpoints</strong>
+<ul>
+<li>Device queries the Model Registry Canister for the latest verified checkpoint.</li>
+<li>A cryptographic signature check ensures the model is genuine.</li>
+</ul>
+</li>
+<li><strong>Private Computation</strong>
+<ul>
+<li>Personal data of AI users (e.g., health metrics, camera images) remains on the device, never shipped to a central server.</li>
+<li>This fosters privacy, reduces latency, and saves network costs.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="4-technical-details--implementation-considerations">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-technical-details--implementation-considerations">#</doc-anchor-trigger>
+        <span>4. Technical Details &amp; Implementation Considerations</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="41-cryptographic-signatures--hashing">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#41-cryptographic-signatures--hashing">#</doc-anchor-trigger>
+        <span>4.1 Cryptographic Signatures &amp; Hashing</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Data Upload</strong>
+<ul>
+<li>Contributors sign the data with their private key, ensuring authenticity.</li>
+<li>The canister verifies the signature with the contributor’s public key.</li>
+</ul>
+</li>
+<li><strong>Model Checkpoints</strong>
+<ul>
+<li>Post-training, an aggregator or HPC node signs the final weights. The DAO can verify it was indeed produced by the correct aggregator.</li>
+</ul>
+</li>
+<li><strong>Integrity Hashes</strong>
+<ul>
+<li>Each chunk or file is hashed (e.g., SHA-256) to detect any tampering. The canister stores these hashes, and any mismatch on retrieval flags an error.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="42-access-control--encryption">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#42-access-control--encryption">#</doc-anchor-trigger>
+        <span>4.2 Access Control &amp; Encryption</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Encryption Keys</strong>
+<ul>
+<li>The data owner or the DAO can store encryption keys in a canister, releasing them only when an approved training request is made.</li>
+</ul>
+</li>
+<li><strong>Compute Nodes</strong>
+<ul>
+<li>They decrypt data locally, train the model, and discard it after the job to minimize leakage.</li>
+</ul>
+</li>
+<li><strong>Zero-Knowledge Proofs (Optional)</strong>
+<ul>
+<li>To prove certain properties (e.g., “this data meets size or content requirements”) without exposing the underlying content.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="43-pricing--monetization">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#43-pricing--monetization">#</doc-anchor-trigger>
+        <span>4.3 Pricing &amp; Monetization</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Cycles &amp; ICP</strong>
+<ul>
+<li>Storing metadata in canisters requires cycles. The DAO might maintain a treasury of cycles to fund ongoing storage.</li>
+</ul>
+</li>
+<li><strong>Licensing Fees</strong>
+<ul>
+<li>External compute providers or organizations wanting to train with certain datasets may pay fees to the DAO, which then rewards data owners or labelers.</li>
+</ul>
+</li>
+<li><strong>Token Incentives</strong>
+<ul>
+<li>If the system is governed by an SNS, the governance token can be used to reward contributions, stake in proposals, or trade on open markets.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="5-example-use-case-athlete-performance-data">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-example-use-case-athlete-performance-data">#</doc-anchor-trigger>
+        <span>5. Example Use Case: Athlete Performance Data</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><strong>Dataset Capture</strong>
+<ul>
+<li>Athletes record heart rate, motion, or video data using special training wizard app. Finally data is labeled and prepared for training routine using this app.</li>
+<li>The athlete’s training wizard app signs and encrypts the data, uploading it to an ICP canister.</li>
+</ul>
+</li>
+<li><strong>DAO Proposal</strong>
+<ul>
+<li>The athlete proposes that this new dataset be included in next round of training. DAO token holders vote, evaluating data authenticity and potential value for improving the AI model.</li>
+</ul>
+</li>
+<li><strong>Training on External Training Nodes</strong>
+<ul>
+<li>Once approved, an external training node obtains the decryption key, trains or fine-tunes the relevant model.</li>
+<li>Once training yields a strong or improved checkpoint, participants (or the training orchestrator) propose this checkpoint as an “official update.”</li>
+<li>The HPC environment uploads the new weights to the Model Registry Canister.</li>
+</ul>
+</li>
+<li><strong>On-Device AI Model Activation</strong>
+<ul>
+<li>The new checkpoint is loaded into memory on the on-device AI, replacing or augmenting older models.</li>
+<li>If the model is encrypted, the On-device AI obtains an access key from the DAO or canister, decrypting it locally.</li>
+</ul>
+</li>
+<li><strong>Benefits to On-Device AI users</strong>
+<ul>
+<li>Users seamlessly benefit from updated AI capabilities (e.g., improved video recognition accuracy or reasoning).</li>
+<li>All model versions are tied to immutable references on the IC, preventing unauthorized or malicious model updates.</li>
+<li>If the community finds a checkpoint suboptimal, they can propose rolling back or adopting a different checkpoint—ensuring user devices always get <strong>trusted, high-quality</strong> models.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="6-future-enhancements">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-future-enhancements">#</doc-anchor-trigger>
+        <span>6. Future Enhancements</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="61-specialized-icp-subnets">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#61-specialized-icp-subnets">#</doc-anchor-trigger>
+        <span>6.1 Specialized ICP Subnets</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>High-Compute Subnets</strong>: Future ICP subnets might integrate CPU/GPU resources. This would enable direct on-chain training, reducing reliance on external HPC.</li>
+<li><strong>Large Stable Memory</strong>: Ongoing research might push stable memory limits beyond 4GB, simplifying chunking or multi-canister strategies.</li>
+<li></li>
+</ul>
+<doc-anchor-target id="62-improved-dao-modules">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#62-improved-dao-modules">#</doc-anchor-trigger>
+        <span>6.2 Improved DAO Modules</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Curation Markets</strong>: Weighted voting or bonding curves for data quality can systematically reward high-value data.</li>
+<li><strong>Automated Label Bounties</strong>: Users can earn tokens for labeling unlabeled data, fostering continuous improvement.</li>
+</ul>
+<doc-anchor-target id="63-integration-with-other-protocols">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#63-integration-with-other-protocols">#</doc-anchor-trigger>
+        <span>6.3 Integration with Other Protocols</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Cross-Chain Bridges</strong>: Linking ICP canisters to Ethereum, Polkadot, or Bittensor (for decentralized AI training) can broaden the ecosystem.</li>
+</ul>
+<doc-anchor-target id="64-secure-enclaves--zk-computation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#64-secure-enclaves--zk-computation">#</doc-anchor-trigger>
+        <span>6.4 Secure Enclaves &amp; ZK Computation</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Hardware Enclaves</strong>: Potential future subnets or off-chain nodes could offer Intel SGX/TEE-based computation for advanced privacy.</li>
+<li><strong>Zero-Knowledge Training</strong>: Methods like fully homomorphic encryption or secure multi-party computation might eventually allow partial training on encrypted data without decryption.</li>
+</ul>
+<doc-anchor-target id="64-edge-level-model-customization">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#64-edge-level-model-customization">#</doc-anchor-trigger>
+        <span>6.4 Edge-Level Model Customization</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Future enhancements</strong> to the AI Live Pod could allow partial fine-tuning directly on the device (for small personal datasets), then contributing insights or differential privacy gradients back to the decentralized model storage.</li>
+</ul>
+<hr>
+<doc-anchor-target id="7-security--integrity-analysis">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-security--integrity-analysis">#</doc-anchor-trigger>
+        <span>7. Security &amp; Integrity Analysis</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><strong>Data Authenticity</strong>
+<ul>
+<li>Mandatory cryptographic signatures for data uploads.</li>
+<li>DAO can slash or penalize malicious data contributors if proven fraudulent.</li>
+</ul>
+</li>
+<li><strong>Immutable Logging</strong>
+<ul>
+<li>Any change in the canisters’ state (addition/removal of data, model checkpoint updates) is permanently recorded and visible, preventing unilateral tampering.</li>
+</ul>
+</li>
+<li><strong>Resilience &amp; Redundancy</strong>
+<ul>
+<li>ICP replicates canisters across nodes in a subnet. Even if some nodes fail, the data remains intact.</li>
+</ul>
+</li>
+<li><strong>DAO Governance Risks</strong>
+<ul>
+<li>As with any token-based governance, whales or large stakeholders could exert heavy influence. Mechanisms like decentralized distribution, reputation scoring, or delegated voting can mitigate plutocratic control.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<doc-anchor-target id="8-ecosystem-benefits">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-ecosystem-benefits">#</doc-anchor-trigger>
+        <span>8. Ecosystem Benefits</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><strong>Scalable &amp; Decentralized</strong></li>
+</ol>
+<ul>
+<li>Scalable models, seamless training routine, decentralized backend, and on-device AI ecosystem, that contains from local AI inference sources can all interoperate without a single point of failure and be more effective in general.</li>
+</ul>
+<ol start="2">
+<li><strong>User &amp; Data Owner Trust</strong></li>
+</ol>
+<ul>
+<li>The community (via DAO) collectively audits updates and usage.</li>
+<li>Data owners see a clear trail of where and how their data is used.</li>
+</ul>
+<ol start="3">
+<li><strong>High-Quality Model Training</strong></li>
+</ol>
+<ul>
+<li>Bittensor/GPU/HPC AI training ecosystems provides a robust, incentivized environment, attracting resources from around the globe.</li>
+<li>Continual improvements keep models fresh and competitive.</li>
+</ul>
+<ol start="4">
+<li><strong>Monetization &amp; Rewards</strong></li>
+</ol>
+<ul>
+<li>Dataset owners, model contributors, and compute providers can earn tokens or revenue shares, making the ecosystem self-sustaining.</li>
+</ul>
+<ol start="5">
+<li><strong>On-Device Privacy &amp; Performance</strong></li>
+</ol>
+<ul>
+<li>AI Live Pods run models directly on the user device, ensuring minimal latency and protecting sensitive user data from leaving the device.</li>
+</ul>
+<ol start="6">
+<li><strong>Seamless Model Delivery</strong></li>
+</ol>
+<ul>
+<li>End users automatically get updated model checkpoints verified by the DAO, removing friction and ensuring trust in each new release.</li>
+</ul>
+<doc-anchor-target id="8-conclusion">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-conclusion">#</doc-anchor-trigger>
+        <span>8. Conclusion</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Decentralized storage and governance</strong>  on the  <strong>Internet Computer</strong>  presents a powerful alternative to traditional, centralized AI pipelines.</p>
+<p>The  <strong>Actiquest On-Device AI</strong>  platform merges the best of decentralized technology—<strong>immutable data storage, community governance, scalable training,</strong>  and  <strong>privacy-preserving inference</strong>—all while simplifying  <strong>model delivery</strong>  to end-user devices. By adopting a  <strong>Compute-to-Data</strong>  approach on the  <strong>Internet Computer</strong>  for robust AI development:</p>
+<ol>
+<li><strong>Data owners retain control</strong>  of their valuable datasets.</li>
+<li><strong>Developers and participants</strong>  are fairly rewarded through DAO-based monetization.</li>
+<li><strong>Users</strong>  benefit from  <strong>on-device AI</strong>  with minimal latency and maximum privacy.</li>
+<li><strong>Model updates</strong>  are frictionless and tamper-proof, strengthening user trust and system resilience.</li>
+</ol>
+<p>The result is a novel AI ecosystem that meets modern demands for  <strong>transparency, decentralization, performance,</strong>  and  <strong>easy model delivery</strong>, fostering a more open, trustable, and dynamic future for vision and language AI applications at the edge.</p>
+<ul>
+<li><strong>Data Integrity &amp; Transparency</strong>: Immutable canisters ensure that datasets and model checkpoints can be audited and are safe from covert manipulation.</li>
+<li><strong>Community-Driven Governance</strong>: SNS or custom DAO logic empowers data owners, labelers, and compute providers to shape the platform’s evolution, aligning incentives for high-quality data and model improvements.</li>
+<li><strong>Compute-to-Data Privacy</strong>: By encrypting data on the IC, then selectively granting access for off-chain or specialized on-chain compute, sensitive information is protected while still feeding robust training workflows.</li>
+<li><strong>On-Device AI</strong>: Delivering newly approved models directly to user devices reduces latency, preserves privacy, and unlocks real-time or offline use cases, especially relevant for wearables, smart home devices, or remote sensors.</li>
+</ul>
+<p>In sum, this  <strong>document</strong>  underscores the viability of building a  <strong>trustless, decentralized AI ecosystem</strong>  that harnesses the Internet Computer’s technical capabilities to store, govern, and continually update AI models—paving the way for more equitable, privacy-respecting, and community-centered AI solutions at scale.</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../aipod/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">AI Live Pod</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../humanvision/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Human Vision Subnet</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024, <a href="https://actiq.xyz">Actiquest Inc.</a> All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "AI Live Pod", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
