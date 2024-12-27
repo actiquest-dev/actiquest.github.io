@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788630624685">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788630878409">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.788630624685" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.788630878409" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788630624685" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788630878409" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788630624685" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788630878409" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -669,29 +669,29 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
         <span>4.1 Cryptographic Signatures &amp; Hashing</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="411---data-upload">
+<doc-anchor-target id="411-data-upload">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#411---data-upload">#</doc-anchor-trigger>
-        <span>4.1.1. **  <strong>Data Upload</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#411-data-upload">#</doc-anchor-trigger>
+        <span>4.1.1. Data Upload</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Contributors sign the data with their private key, ensuring authenticity.</li>
 <li>The canister verifies the signature with the contributor’s public key.</li>
 </ul>
-<doc-anchor-target id="412--model-checkpoints">
+<doc-anchor-target id="412-model-checkpoint">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#412--model-checkpoints">#</doc-anchor-trigger>
-        <span>4.1.2.  <strong>Model Checkpoints</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#412-model-checkpoint">#</doc-anchor-trigger>
+        <span>4.1.2. Model Checkpoint</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Post-training, an aggregator or HPC node signs the final weights. The DAO can verify it was indeed produced by the correct aggregator.</li>
 </ul>
-<doc-anchor-target id="413--integrity-hashes">
+<doc-anchor-target id="413-integrity-hashes">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#413--integrity-hashes">#</doc-anchor-trigger>
-        <span>4.1.3.  <strong>Integrity Hashes</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#413-integrity-hashes">#</doc-anchor-trigger>
+        <span>4.1.3. Integrity Hashes</span>
     </h4>
 </doc-anchor-target>
 <ul>
@@ -703,39 +703,39 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
         <span>4.2. Access Control &amp; Licensing</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="421---open-models">
+<doc-anchor-target id="421-open-models">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#421---open-models">#</doc-anchor-trigger>
-        <span>4.2.1.   <strong>Open Models</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#421-open-models">#</doc-anchor-trigger>
+        <span>4.2.1. Open Models</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>If the model is  <strong>public</strong>  (e.g., open-source), the registry canister can  <strong>expose the chunk references</strong>  to anyone.</li>
 </ul>
-<doc-anchor-target id="422----encrypted-models">
+<doc-anchor-target id="422-encrypted-models">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#422----encrypted-models">#</doc-anchor-trigger>
-        <span>4.2.2.    <strong>Encrypted Models</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#422-encrypted-models">#</doc-anchor-trigger>
+        <span>4.2.2. Encrypted Models</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>If the model is  <strong>private</strong>  or  <strong>commercial</strong>, each chunk is  <strong>encrypted</strong>  with a symmetric key.</li>
 <li>Only users or devices with the correct decryption key can read the chunks.</li>
 </ul>
-<doc-anchor-target id="423----dao--sns-licenses">
+<doc-anchor-target id="423-dao--sns-licenses">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#423----dao--sns-licenses">#</doc-anchor-trigger>
-        <span>4.2.3.    <strong>DAO / SNS Licenses</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#423-dao--sns-licenses">#</doc-anchor-trigger>
+        <span>4.2.3. DAO / SNS Licenses</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>A  <strong>governance canister</strong>  may require purchasing a  <strong>license token</strong>  or passing a  <strong>DAO proposal</strong>  before granting the  <strong>decryption key</strong>.</li>
 <li>The canister can store an access table mapping “Principal -&gt; Allowed to Download.”</li>
 </ul>
-<doc-anchor-target id="424--payment--royalties">
+<doc-anchor-target id="424-payment--royalties">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#424--payment--royalties">#</doc-anchor-trigger>
-        <span>4.2.4.  <strong>Payment &amp; Royalties</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#424-payment--royalties">#</doc-anchor-trigger>
+        <span>4.2.4. Payment &amp; Royalties</span>
     </h4>
 </doc-anchor-target>
 <ul>
@@ -748,10 +748,10 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
         <span>4.3 Sustainability &amp; Monetization</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="431----cycles">
+<doc-anchor-target id="431-cycles">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#431----cycles">#</doc-anchor-trigger>
-        <span>4.3.1.    <strong>Cycles</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#431-cycles">#</doc-anchor-trigger>
+        <span>4.3.1. Cycles</span>
     </h4>
 </doc-anchor-target>
 <ul>
@@ -761,17 +761,17 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="432-upload-fees">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#432-upload-fees">#</doc-anchor-trigger>
-        <span>4.3.2. <strong>Upload Fees</strong></span>
+        <span>4.3.2. Upload Fees*</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>If a DAO or developer is uploading multi-gigabyte models, they must carefully plan cycle usage or have a treasury to cover on-chain storage.</li>
 <li>Off-chain solutions might require separate hosting costs, but are typically cheaper at large scale.</li>
 </ul>
-<doc-anchor-target id="433---revenue-streams">
+<doc-anchor-target id="433-revenue-streams">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#433---revenue-streams">#</doc-anchor-trigger>
-        <span>4.3.3.   <strong>Revenue Streams</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#433-revenue-streams">#</doc-anchor-trigger>
+        <span>4.3.3. Revenue Streams</span>
     </h4>
 </doc-anchor-target>
 <ul>
@@ -780,7 +780,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="434-token-incentives">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#434-token-incentives">#</doc-anchor-trigger>
-        <span>4.3.4. <strong>Token Incentives</strong></span>
+        <span>4.3.4. Token Incentives</span>
     </h4>
 </doc-anchor-target>
 <ul>
@@ -796,7 +796,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="51-model-creation">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#51-model-creation">#</doc-anchor-trigger>
-        <span>5.1. <strong>Model Creation</strong></span>
+        <span>5.1. Model Creation</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -805,7 +805,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="52-chunk--encrypt">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#52-chunk--encrypt">#</doc-anchor-trigger>
-        <span>5.2. <strong>Chunk &amp; Encrypt</strong></span>
+        <span>5.2. Chunk &amp; Encrypt</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -814,7 +814,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="53-register-on-chain">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#53-register-on-chain">#</doc-anchor-trigger>
-        <span>5.3. <strong>Register On-Chain</strong></span>
+        <span>5.3. Register On-Chain</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -824,17 +824,17 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="54-dao-approval">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#54-dao-approval">#</doc-anchor-trigger>
-        <span>5.4. <strong>DAO Approval</strong></span>
+        <span>5.4. DAO Approval</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li>Submit a proposal to label this version as “v1.0 Official.”</li>
 <li>The DAO votes, and if approved, updates the pointer to the new version.</li>
 </ul>
-<doc-anchor-target id="55--training-on-external-training-nodes">
+<doc-anchor-target id="55-training-on-external-training-nodes">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#55--training-on-external-training-nodes">#</doc-anchor-trigger>
-        <span>5.5.  <strong>Training on External Training Nodes</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#55-training-on-external-training-nodes">#</doc-anchor-trigger>
+        <span>5.5. Training on External Training Nodes</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -842,10 +842,10 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <li>Once training yields a strong or improved checkpoint, participants (or the training orchestrator) propose this checkpoint as an “official update.”</li>
 <li>The HPC environment re-uploads the new weights to the Model Registry Canister.</li>
 </ul>
-<doc-anchor-target id="56--user-retrieval">
+<doc-anchor-target id="56-user-retrieval">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#56--user-retrieval">#</doc-anchor-trigger>
-        <span>5.6.  <strong>User Retrieval</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#56-user-retrieval">#</doc-anchor-trigger>
+        <span>5.6. User Retrieval</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -855,7 +855,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="57-benefits-to-on-device-ai-users">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#57-benefits-to-on-device-ai-users">#</doc-anchor-trigger>
-        <span>5.7. <strong>Benefits to On-Device AI users</strong></span>
+        <span>5.7. Benefits to On-Device AI users</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -873,7 +873,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="61--locate-the-model">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#61--locate-the-model">#</doc-anchor-trigger>
-        <span>6.1.  <strong>Locate the Model</strong></span>
+        <span>6.1.  Locate the Model</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -882,7 +882,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="62--verify-integrity">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#62--verify-integrity">#</doc-anchor-trigger>
-        <span>6.2.  <strong>Verify Integrity</strong></span>
+        <span>6.2.  Verify Integrity</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -892,10 +892,10 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="63---decryption">
+<doc-anchor-target id="63--decryption">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#63---decryption">#</doc-anchor-trigger>
-        <span>6.3.   <strong>Decryption</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#63--decryption">#</doc-anchor-trigger>
+        <span>6.3.  Decryption</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -905,10 +905,10 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="64---version-checking">
+<doc-anchor-target id="64--version-checking">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#64---version-checking">#</doc-anchor-trigger>
-        <span>6.4.   <strong>Version Checking</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#64--version-checking">#</doc-anchor-trigger>
+        <span>6.4.  Version Checking</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -921,10 +921,10 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
         <span>7. Future Enhancements</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="71--specialized-icp-subnets">
+<doc-anchor-target id="71-specialized-icp-subnets">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#71--specialized-icp-subnets">#</doc-anchor-trigger>
-        <span>7.1.  <strong>Specialized ICP Subnets</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#71-specialized-icp-subnets">#</doc-anchor-trigger>
+        <span>7.1. Specialized ICP Subnets</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -934,7 +934,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="72-improved-dao-modules">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#72-improved-dao-modules">#</doc-anchor-trigger>
-        <span>7.2. <strong>Improved DAO Modules</strong></span>
+        <span>7.2. Improved DAO Modules</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -979,7 +979,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="81--data-authenticity">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#81--data-authenticity">#</doc-anchor-trigger>
-        <span>8.1.  <strong>Data Authenticity</strong></span>
+        <span>8.1.  Data Authenticity</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -989,7 +989,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="82--immutable-logging">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#82--immutable-logging">#</doc-anchor-trigger>
-        <span>8.2.  <strong>Immutable Logging</strong></span>
+        <span>8.2.  Immutable Logging</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -998,7 +998,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="83-resilience--redundancy">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#83-resilience--redundancy">#</doc-anchor-trigger>
-        <span>8.3. <strong>Resilience &amp; Redundancy</strong></span>
+        <span>8.3. Resilience &amp; Redundancy</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -1007,7 +1007,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="84--dao-governance-risks">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#84--dao-governance-risks">#</doc-anchor-trigger>
-        <span>8.4.  <strong>DAO Governance Risks</strong></span>
+        <span>8.4.  DAO Governance Risks</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -1023,7 +1023,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="91--scalable--decentralized">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#91--scalable--decentralized">#</doc-anchor-trigger>
-        <span>9.1.  <strong>Scalable &amp; Decentralized</strong></span>
+        <span>9.1.  Scalable &amp; Decentralized</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -1032,7 +1032,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="92-user--data-owner-trust">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#92-user--data-owner-trust">#</doc-anchor-trigger>
-        <span>9.2. <strong>User &amp; Data Owner Trust</strong></span>
+        <span>9.2. User &amp; Data Owner Trust</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -1042,7 +1042,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="93-high-quality-model-training">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#93-high-quality-model-training">#</doc-anchor-trigger>
-        <span>9.3. <strong>High-Quality Model Training</strong></span>
+        <span>9.3. High-Quality Model Training</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -1052,7 +1052,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="94-monetization--rewards">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#94-monetization--rewards">#</doc-anchor-trigger>
-        <span>9.4. <strong>Monetization &amp; Rewards</strong></span>
+        <span>9.4. Monetization &amp; Rewards</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -1061,7 +1061,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="95-on-device-privacy--performance">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#95-on-device-privacy--performance">#</doc-anchor-trigger>
-        <span>9.5. <strong>On-Device Privacy &amp; Performance</strong></span>
+        <span>9.5. On-Device Privacy &amp; Performance</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -1070,7 +1070,7 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <doc-anchor-target id="96-seamless-model-delivery">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#96-seamless-model-delivery">#</doc-anchor-trigger>
-        <span>9.6 <strong>Seamless Model Delivery</strong></span>
+        <span>9.6 Seamless Model Delivery</span>
     </h3>
 </doc-anchor-target>
 <ul>
