@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788631544150">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788631742483">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.788631544150" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.788631742483" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788631544150" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788631742483" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788631544150" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788631742483" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -450,149 +450,142 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <li>Off-chain references (Arweave/IPFS) can be more cost-effective for huge models; the  <strong>ICP canister</strong>  is used as a  <strong>“single source of truth”</strong>  for verifying references.</li>
 </ul>
 <hr>
-<doc-anchor-target id="3-the-role-of-the-internet-computer-icp">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-the-role-of-the-internet-computer-icp">#</doc-anchor-trigger>
-        <span>3. The Role of the Internet Computer (ICP)</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="31-core-icp-design">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#31-core-icp-design">#</doc-anchor-trigger>
-        <span>3.1 Core ICP Design</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="311-canisters">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#311-canisters">#</doc-anchor-trigger>
-        <span>3.1.1. Canisters</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>Smart contracts on ICP, hosting both code (WebAssembly) and data (stable memory). They can hold structured data, files, and application logic.</li>
-<li>Canisters are powered by “cycles,” ensuring a predictable cost model.</li>
-</ul>
-<doc-anchor-target id="312-boundary-nodes">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#312-boundary-nodes">#</doc-anchor-trigger>
-        <span>3.1.2. Boundary Nodes</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>Edge gateways that serve user-facing requests (e.g., HTTP calls) and route them to the correct canister. They can also cache static content, partially acting like a lightweight CDN.</li>
-</ul>
-<doc-anchor-target id="313-subnet-architecture">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#313-subnet-architecture">#</doc-anchor-trigger>
-        <span>3.1.3. Subnet Architecture</span>
-    </h4>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">-   The Internet Computer network is composed of subnets (groups of replica nodes) which can collectively run canisters. This design ensures redundancy and decentralization.</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="311-service-nervous-system-sns">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#311-service-nervous-system-sns">#</doc-anchor-trigger>
-        <span>3.1.1. Service Nervous System (SNS)</span>
-    </h4>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">-   A framework that transforms a canister-based application into a community-governed DAO. Token holders can propose and vote on code updates, data changes, fees, or rewards distribution.</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="32-advantages-for-ai-data-storage-and-governance">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#32-advantages-for-ai-data-storage-and-governance">#</doc-anchor-trigger>
-        <span>3.2 Advantages for AI Data Storage and Governance</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="321-low-on-chain-storage-cost">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#321-low-on-chain-storage-cost">#</doc-anchor-trigger>
-        <span>3.2.1. <strong>Low On-Chain Storage Cost</strong></span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>The ICP’s model, while not as inexpensive as traditional cloud storage, is comparatively cost-effective versus other blockchains that might charge significant gas fees for data.</li>
-</ul>
-<doc-anchor-target id="322-dao-governance-out-of-the-box">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#322-dao-governance-out-of-the-box">#</doc-anchor-trigger>
-        <span>3.2.2. <strong>DAO Governance Out-of-the-Box</strong></span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>Using SNS, developers can quickly set up a governance token, proposal system, and treasury logic—ideal for datasets that require curation, licensing, or community-based moderation.</li>
-</ul>
-<doc-anchor-target id="323-stable-memory-for-large-data">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#323-stable-memory-for-large-data">#</doc-anchor-trigger>
-        <span>3.2.3. <strong>Stable Memory for Large Data</strong></span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>Each canister can store up to 4GB of stable memory (with possible future increases), enabling direct storage for moderate-sized models or datasets. For larger ones, chunked approaches or multi-canister architectures are used.</li>
-</ul>
-<doc-anchor-target id="324-global-accessibility">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#324-global-accessibility">#</doc-anchor-trigger>
-        <span>3.2.4. <strong>Global Accessibility</strong></span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>The Internet Computer is designed to be globally accessible, with boundary nodes offering near-universal coverage for data retrieval and dApp access.</li>
-</ul>
-<hr>
 <doc-anchor-target id="4-architectural-overview">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#4-architectural-overview">#</doc-anchor-trigger>
         <span>4. Architectural Overview</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="41-storage-layer">
+<doc-anchor-target id="41-core-icp-design">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#41-storage-layer">#</doc-anchor-trigger>
-        <span>4.1 Storage Layer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#41-core-icp-design">#</doc-anchor-trigger>
+        <span>4.1 Core ICP Design</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="411-chunked-data-canisters">
+<doc-anchor-target id="411-canisters">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#411-chunked-data-canisters">#</doc-anchor-trigger>
-        <span>4.1.1. Chunked Data Canisters</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#411-canisters">#</doc-anchor-trigger>
+        <span>4.1.1. Canisters</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Smart contracts on ICP, hosting both code (WebAssembly) and data (stable memory). They can hold structured data, files, and application logic.</li>
+<li>Canisters are powered by “cycles,” ensuring a predictable cost model.</li>
+</ul>
+<doc-anchor-target id="412-boundary-nodes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#412-boundary-nodes">#</doc-anchor-trigger>
+        <span>4.1.2. Boundary Nodes</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Edge gateways that serve user-facing requests (e.g., HTTP calls) and route them to the correct canister. They can also cache static content, partially acting like a lightweight CDN.</li>
+</ul>
+<doc-anchor-target id="413-subnet-architecture">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#413-subnet-architecture">#</doc-anchor-trigger>
+        <span>4.1.3. Subnet Architecture</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>The Internet Computer network is composed of subnets (groups of replica nodes) which can collectively run canisters. This design ensures redundancy and decentralization.</li>
+</ul>
+<doc-anchor-target id="414-service-nervous-system-sns">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#414-service-nervous-system-sns">#</doc-anchor-trigger>
+        <span>4.1.4. Service Nervous System (SNS)</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>A framework that transforms a canister-based application into a community-governed DAO. Token holders can propose and vote on code updates, data changes, fees, or rewards distribution.</li>
+</ul>
+<doc-anchor-target id="42-advantages-for-ai-data-storage-and-governance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#42-advantages-for-ai-data-storage-and-governance">#</doc-anchor-trigger>
+        <span>4.2 Advantages for AI Data Storage and Governance</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="421-low-on-chain-storage-cost">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#421-low-on-chain-storage-cost">#</doc-anchor-trigger>
+        <span>4.2.1. <strong>Low On-Chain Storage Cost</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>The ICP’s model, while not as inexpensive as traditional cloud storage, is comparatively cost-effective versus other blockchains that might charge significant gas fees for data.</li>
+</ul>
+<doc-anchor-target id="422-dao-governance-out-of-the-box">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#422-dao-governance-out-of-the-box">#</doc-anchor-trigger>
+        <span>4.2.2. <strong>DAO Governance Out-of-the-Box</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Using SNS, developers can quickly set up a governance token, proposal system, and treasury logic—ideal for datasets that require curation, licensing, or community-based moderation.</li>
+</ul>
+<doc-anchor-target id="423-stable-memory-for-large-data">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#423-stable-memory-for-large-data">#</doc-anchor-trigger>
+        <span>4.2.3. <strong>Stable Memory for Large Data</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Each canister can store up to 4GB of stable memory (with possible future increases), enabling direct storage for moderate-sized models or datasets. For larger ones, chunked approaches or multi-canister architectures are used.</li>
+</ul>
+<doc-anchor-target id="424-global-accessibility">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#424-global-accessibility">#</doc-anchor-trigger>
+        <span>4.2.4. <strong>Global Accessibility</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>The Internet Computer is designed to be globally accessible, with boundary nodes offering near-universal coverage for data retrieval and dApp access.</li>
+</ul>
+<doc-anchor-target id="43-storage-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#43-storage-layer">#</doc-anchor-trigger>
+        <span>4.3 Storage Layer</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="431-chunked-data-canisters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#431-chunked-data-canisters">#</doc-anchor-trigger>
+        <span>4.3.1. Chunked Data Canisters</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li><strong>File-Style Canisters</strong>: For vision datasets (images, videos), large text corpora, or sensor logs, developers can implement chunked storage. Each chunk is typically &lt;1MB, stored in stable memory.</li>
 <li><strong>Metadata Registry</strong>: A separate canister that maps dataset IDs to chunk references (hashes), file sizes, and optional encryption keys or IPFS-like references.</li>
 </ul>
-<doc-anchor-target id="412-off-chain-hybrids">
+<doc-anchor-target id="432-off-chain-hybrids">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#412-off-chain-hybrids">#</doc-anchor-trigger>
-        <span>4.1.2. Off-Chain Hybrids</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#432-off-chain-hybrids">#</doc-anchor-trigger>
+        <span>4.3.2. Off-Chain Hybrids</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li><strong>Some cases may be more effective</strong> a hybrid approach, where large or infrequently accessed data is stored using centralized cloud services. The ICP canister then holds references, licensing info, and verifies data integrity with stored hashes.</li>
 </ul>
-<doc-anchor-target id="42-governance-layer">
+<doc-anchor-target id="44-governance-layer">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#42-governance-layer">#</doc-anchor-trigger>
-        <span>4.2 Governance Layer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#44-governance-layer">#</doc-anchor-trigger>
+        <span>4.4 Governance Layer</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="421-dao-sns-or-custom-governance">
+<doc-anchor-target id="441-dao-sns-or-custom-governance">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#421-dao-sns-or-custom-governance">#</doc-anchor-trigger>
-        <span>4.2.1. DAO (SNS) or Custom Governance</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#441-dao-sns-or-custom-governance">#</doc-anchor-trigger>
+        <span>4.4.1. DAO (SNS) or Custom Governance</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li><strong>SNS</strong>: A built-in approach where the Internet Computer automatically sets up a governance token, neuron-based staking, and proposal logic. The dApp’s community can decide on data updates, usage fees, or distribution of revenues.</li>
 <li><strong>Custom DAO</strong>: Developers can also code a custom governance canister in Rust or Motoko, giving them more tailored logic (e.g., specialized curation markets, nested proposals, or fine-grained permission controls).</li>
 </ul>
-<doc-anchor-target id="422-proposal-lifecycle">
+<doc-anchor-target id="442-proposal-lifecycle">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#422-proposal-lifecycle">#</doc-anchor-trigger>
-        <span>4.2.2. Proposal Lifecycle</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#442-proposal-lifecycle">#</doc-anchor-trigger>
+        <span>4.4.2. Proposal Lifecycle</span>
     </h4>
 </doc-anchor-target>
 <ul>
@@ -600,80 +593,80 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
 <li><strong>Voting</strong>: Token holders cast votes. If the proposal meets quorum and passes, the canister logic automatically executes the changes.</li>
 <li><strong>Actions</strong>: Approved proposals might add new chunk references, pay contributors, or update a model’s version in a specialized canister.</li>
 </ul>
-<doc-anchor-target id="43-compute-to-data-flow">
+<doc-anchor-target id="45-compute-to-data-flow">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#43-compute-to-data-flow">#</doc-anchor-trigger>
-        <span>4.3. Compute-to-Data Flow</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#45-compute-to-data-flow">#</doc-anchor-trigger>
+        <span>4.5. Compute-to-Data Flow</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="431-data-remains-in-canisters">
+<doc-anchor-target id="451-data-remains-in-canisters">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#431-data-remains-in-canisters">#</doc-anchor-trigger>
-        <span>4.3.1. <strong>Data Remains in Canisters</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#451-data-remains-in-canisters">#</doc-anchor-trigger>
+        <span>4.5.1. <strong>Data Remains in Canisters</strong></span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Images, videos, bounding boxes, masks (Vision models data) plus text corpora, embeddings, tokenized references (LLM data); stored in chunked file canisters or off-chain data storage, with the ICP canister tracking hashes and metadata.</li>
 </ul>
-<doc-anchor-target id="432--off-chain-training-request">
+<doc-anchor-target id="452--off-chain-training-request">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#432--off-chain-training-request">#</doc-anchor-trigger>
-        <span>4.3.2.  Off-Chain Training Request</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#452--off-chain-training-request">#</doc-anchor-trigger>
+        <span>4.5.2.  Off-Chain Training Request</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>A GPU/ or decentralized CPU node on Bittensor training subnet/ or any other external HPC training environment requests access to the dataset (depends on situation).</li>
 <li>The DAO or data owner grants a decryption key if the proposal is passed or the entity meets certain criteria (e.g., paid a licensing fee).</li>
 </ul>
-<doc-anchor-target id="433--secure-training">
+<doc-anchor-target id="453--secure-training">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#433--secure-training">#</doc-anchor-trigger>
-        <span>4.3.3.  Secure Training</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#453--secure-training">#</doc-anchor-trigger>
+        <span>4.5.3.  Secure Training</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>The HPC training environment decrypts and processes the data locally.</li>
 <li>Zero-knowledge proofs or secure enclaves may be used to reduce data exposure risks.</li>
 </ul>
-<doc-anchor-target id="434--model-checkpoint-upload">
+<doc-anchor-target id="454--model-checkpoint-upload">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#434--model-checkpoint-upload">#</doc-anchor-trigger>
-        <span>4.3.4.  Model Checkpoint Upload</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#454--model-checkpoint-upload">#</doc-anchor-trigger>
+        <span>4.5.4.  Model Checkpoint Upload</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>After training, the HPC training environment returns a new model checkpoint, which is stored in a “Model Registry Canister” on the ICP, ensuring an immutable record of model evolution.</li>
 <li>The DAO votes again to accept or reject the checkpoint, ensuring community trust.</li>
 </ul>
-<doc-anchor-target id="44-on-device-ai-delivery">
+<doc-anchor-target id="46-on-device-ai-delivery">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#44-on-device-ai-delivery">#</doc-anchor-trigger>
-        <span>4.4. On-Device AI Delivery</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#46-on-device-ai-delivery">#</doc-anchor-trigger>
+        <span>4.6. On-Device AI Delivery</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="441--running-models-on-device">
+<doc-anchor-target id="461--running-models-on-device">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#441--running-models-on-device">#</doc-anchor-trigger>
-        <span>4.4.1.  Running Models on-Device</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#461--running-models-on-device">#</doc-anchor-trigger>
+        <span>4.6.1.  Running Models on-Device</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Local Inference devices like <strong>AI Live Pod</strong> are capable of loading model weights, verifying their authenticity, and running real-time inference with a lightweight model.</li>
 </ul>
-<doc-anchor-target id="442-fetching-checkpoints">
+<doc-anchor-target id="462-fetching-checkpoints">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#442-fetching-checkpoints">#</doc-anchor-trigger>
-        <span>4.4.2. Fetching Checkpoints</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#462-fetching-checkpoints">#</doc-anchor-trigger>
+        <span>4.6.2. Fetching Checkpoints</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>Device queries the Model Registry Canister for the latest verified checkpoint.</li>
 <li>A cryptographic signature check ensures the model is genuine.</li>
 </ul>
-<doc-anchor-target id="443-private-computation">
+<doc-anchor-target id="463-private-computation">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#443-private-computation">#</doc-anchor-trigger>
-        <span>4.4.3. Private Computation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#463-private-computation">#</doc-anchor-trigger>
+        <span>4.6.3. Private Computation</span>
     </h4>
 </doc-anchor-target>
 <ul>
