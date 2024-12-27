@@ -1,6 +1,6 @@
 ---
 icon: versions
-label: AI Live Pod
+label: Decentralized Storage
 
 ---
 
