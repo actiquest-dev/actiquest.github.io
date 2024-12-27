@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788630464902">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788630624685">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.6.0.788630464902" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.788630624685" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788630464902" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.788630624685" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788630464902" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.788630624685" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -438,22 +438,43 @@ Model checkpoints follow a versioned registry (e.g., v1.0, v2.0, etc.). Users an
         <span>3.1 Core ICP Design</span>
     </h3>
 </doc-anchor-target>
-<p><strong>3.1.1.</strong>  <strong>Canisters</strong></p>
+<doc-anchor-target id="311-canisters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#311-canisters">#</doc-anchor-trigger>
+        <span>3.1.1. Canisters</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>Smart contracts on ICP, hosting both code (WebAssembly) and data (stable memory). They can hold structured data, files, and application logic.</li>
 <li>Canisters are powered by “cycles,” ensuring a predictable cost model.</li>
 </ul>
-<p><strong>3.1.2.</strong>  <strong>Boundary Nodes</strong></p>
+<doc-anchor-target id="312-boundary-nodes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#312-boundary-nodes">#</doc-anchor-trigger>
+        <span>3.1.2. Boundary Nodes</span>
+    </h4>
+</doc-anchor-target>
 <ul>
-<li>Edge gateways that serve user-facing requests (e.g., HTTP calls) and route them to the correct canister. They can also cache static content, partially acting like a lightweight CDN.
-<strong>3.1.3.</strong>  <strong>Subnet Architecture</strong>
-<ul>
-<li>The Internet Computer network is composed of subnets (groups of replica nodes) which can collectively run canisters. This design ensures redundancy and decentralization.
-<strong>3.1.4.</strong> <strong>Service Nervous System (SNS)</strong></li>
-<li>A framework that transforms a canister-based application into a community-governed DAO. Token holders can propose and vote on code updates, data changes, fees, or rewards distribution.</li>
+<li>Edge gateways that serve user-facing requests (e.g., HTTP calls) and route them to the correct canister. They can also cache static content, partially acting like a lightweight CDN.</li>
 </ul>
-</li>
-</ul>
+<doc-anchor-target id="313-subnet-architecture">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#313-subnet-architecture">#</doc-anchor-trigger>
+        <span>3.1.3. Subnet Architecture</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">-   The Internet Computer network is composed of subnets (groups of replica nodes) which can collectively run canisters. This design ensures redundancy and decentralization.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="311-service-nervous-system-sns">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#311-service-nervous-system-sns">#</doc-anchor-trigger>
+        <span>3.1.1. Service Nervous System (SNS)</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">-   A framework that transforms a canister-based application into a community-governed DAO. Token holders can propose and vote on code updates, data changes, fees, or rewards distribution.</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="32-advantages-for-ai-data-storage-and-governance">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#32-advantages-for-ai-data-storage-and-governance">#</doc-anchor-trigger>
