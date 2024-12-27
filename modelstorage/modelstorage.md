@@ -121,16 +121,17 @@ Instead, a  **decentralized architecture**  can address many of these concerns b
 
 ### 3.1 Core ICP Design
 
-**3.1.1.**  **Canisters**
+#### 3.1.1. Canisters
 - Smart contracts on ICP, hosting both code (WebAssembly) and data (stable memory). They can hold structured data, files, and application logic.
 - Canisters are powered by “cycles,” ensuring a predictable cost model.
 
-**3.1.2.**  **Boundary Nodes**
+#### 3.1.2. Boundary Nodes
 
 - Edge gateways that serve user-facing requests (e.g., HTTP calls) and route them to the correct canister. They can also cache static content, partially acting like a lightweight CDN.
-**3.1.3.**  **Subnet Architecture**
+
+#### 3.1.3. Subnet Architecture
     -   The Internet Computer network is composed of subnets (groups of replica nodes) which can collectively run canisters. This design ensures redundancy and decentralization.
-**3.1.4.** **Service Nervous System (SNS)**
+#### 3.1.1. Service Nervous System (SNS)
     -   A framework that transforms a canister-based application into a community-governed DAO. Token holders can propose and vote on code updates, data changes, fees, or rewards distribution.
 
 ### 3.2 Advantages for AI Data Storage and Governance
