@@ -169,27 +169,27 @@ Instead, a  **decentralized architecture**  can address many of these concerns b
 #### 4.3.1. **Data Remains in Canisters**
 -   Images, videos, bounding boxes, masks (Vision models data) plus text corpora, embeddings, tokenized references (LLM data); stored in chunked file canisters or off-chain data storage, with the ICP canister tracking hashes and metadata.
 
-#### 4.3.2.  **Off-Chain Training Request**
+#### 4.3.2.  Off-Chain Training Request
 -   A GPU/ or decentralized CPU node on Bittensor training subnet/ or any other external HPC training environment requests access to the dataset (depends on situation).
 -   The DAO or data owner grants a decryption key if the proposal is passed or the entity meets certain criteria (e.g., paid a licensing fee).
 
-#### 4.3.3.  **Secure Training**
+#### 4.3.3.  Secure Training
 -   The HPC training environment decrypts and processes the data locally.
 -   Zero-knowledge proofs or secure enclaves may be used to reduce data exposure risks.
 
-#### 4.3.4.  **Model Checkpoint Upload**
+#### 4.3.4.  Model Checkpoint Upload
 -   After training, the HPC training environment returns a new model checkpoint, which is stored in a “Model Registry Canister” on the ICP, ensuring an immutable record of model evolution.
 -   The DAO votes again to accept or reject the checkpoint, ensuring community trust.
 
 ### 4.4. On-Device AI Delivery
-#### 4.4.1.  **Running Models on-Device**
+#### 4.4.1.  Running Models on-Device
 -   Local Inference devices like **AI Live Pod** are capable of loading model weights, verifying their authenticity, and running real-time inference with a lightweight model.
 
-#### 4.4.2.  **Fetching Checkpoints**
+#### 4.4.2. Fetching Checkpoints
 -   Device queries the Model Registry Canister for the latest verified checkpoint.
 -   A cryptographic signature check ensures the model is genuine.
 
-#### 4.4.3.  **Private Computation**
+#### 4.4.3. Private Computation
 -   Personal data of AI users (e.g., health metrics, camera images) remains on the device, never shipped to a central server.
 -   This fosters privacy, reduces latency, and saves network costs.
 
