@@ -112,84 +112,82 @@ Instead, a  **decentralized architecture**  can address many of these concerns b
 
 ----------
 
-## 3. The Role of the Internet Computer (ICP)
+## 4. Architectural Overview
 
-### 3.1 Core ICP Design
+### 4.1 Core ICP Design
 
-#### 3.1.1. Canisters
+#### 4.1.1. Canisters
 - Smart contracts on ICP, hosting both code (WebAssembly) and data (stable memory). They can hold structured data, files, and application logic.
 - Canisters are powered by “cycles,” ensuring a predictable cost model.
 
-#### 3.1.2. Boundary Nodes
+#### 4.1.2. Boundary Nodes
 
 - Edge gateways that serve user-facing requests (e.g., HTTP calls) and route them to the correct canister. They can also cache static content, partially acting like a lightweight CDN.
 
-#### 3.1.3. Subnet Architecture
-    -   The Internet Computer network is composed of subnets (groups of replica nodes) which can collectively run canisters. This design ensures redundancy and decentralization.
-#### 3.1.1. Service Nervous System (SNS)
-    -   A framework that transforms a canister-based application into a community-governed DAO. Token holders can propose and vote on code updates, data changes, fees, or rewards distribution.
+#### 4.1.3. Subnet Architecture
+-   The Internet Computer network is composed of subnets (groups of replica nodes) which can collectively run canisters. This design ensures redundancy and decentralization.
 
-### 3.2 Advantages for AI Data Storage and Governance
+#### 4.1.4. Service Nervous System (SNS)
+-   A framework that transforms a canister-based application into a community-governed DAO. Token holders can propose and vote on code updates, data changes, fees, or rewards distribution.
 
-#### 3.2.1. **Low On-Chain Storage Cost**
+### 4.2 Advantages for AI Data Storage and Governance
+
+#### 4.2.1. **Low On-Chain Storage Cost**
 - The ICP’s model, while not as inexpensive as traditional cloud storage, is comparatively cost-effective versus other blockchains that might charge significant gas fees for data.
 
-#### 3.2.2. **DAO Governance Out-of-the-Box**
+#### 4.2.2. **DAO Governance Out-of-the-Box**
 -   Using SNS, developers can quickly set up a governance token, proposal system, and treasury logic—ideal for datasets that require curation, licensing, or community-based moderation.
 
-#### 3.2.3. **Stable Memory for Large Data**
+#### 4.2.3. **Stable Memory for Large Data**
 -   Each canister can store up to 4GB of stable memory (with possible future increases), enabling direct storage for moderate-sized models or datasets. For larger ones, chunked approaches or multi-canister architectures are used.
 
-#### 3.2.4. **Global Accessibility**
+#### 4.2.4. **Global Accessibility**
 -   The Internet Computer is designed to be globally accessible, with boundary nodes offering near-universal coverage for data retrieval and dApp access.
 
-----------
+### 4.3 Storage Layer
 
-## 4. Architectural Overview
-
-### 4.1 Storage Layer
-
-#### 4.1.1. Chunked Data Canisters
+#### 4.3.1. Chunked Data Canisters
 -   **File-Style Canisters**: For vision datasets (images, videos), large text corpora, or sensor logs, developers can implement chunked storage. Each chunk is typically <1MB, stored in stable memory.
 -   **Metadata Registry**: A separate canister that maps dataset IDs to chunk references (hashes), file sizes, and optional encryption keys or IPFS-like references.
-#### 4.1.2. Off-Chain Hybrids
+#### 4.3.2. Off-Chain Hybrids
 -   **Some cases may be more effective** a hybrid approach, where large or infrequently accessed data is stored using centralized cloud services. The ICP canister then holds references, licensing info, and verifies data integrity with stored hashes.
 
-### 4.2 Governance Layer
-#### 4.2.1. DAO (SNS) or Custom Governance
+### 4.4 Governance Layer
+#### 4.4.1. DAO (SNS) or Custom Governance
 -   **SNS**: A built-in approach where the Internet Computer automatically sets up a governance token, neuron-based staking, and proposal logic. The dApp’s community can decide on data updates, usage fees, or distribution of revenues.
 -   **Custom DAO**: Developers can also code a custom governance canister in Rust or Motoko, giving them more tailored logic (e.g., specialized curation markets, nested proposals, or fine-grained permission controls).
 
-#### 4.2.2. Proposal Lifecycle
+#### 4.4.2. Proposal Lifecycle
 - **Proposal Creation**: A user or recognized contributor adds a proposal to ingest a new dataset, change a licensing fee, or incorporate a new model checkpoint.
 - **Voting**: Token holders cast votes. If the proposal meets quorum and passes, the canister logic automatically executes the changes.
 - **Actions**: Approved proposals might add new chunk references, pay contributors, or update a model’s version in a specialized canister.
 
-### 4.3. Compute-to-Data Flow
-#### 4.3.1. **Data Remains in Canisters**
+### 4.5. Compute-to-Data Flow
+
+#### 4.5.1. **Data Remains in Canisters**
 -   Images, videos, bounding boxes, masks (Vision models data) plus text corpora, embeddings, tokenized references (LLM data); stored in chunked file canisters or off-chain data storage, with the ICP canister tracking hashes and metadata.
 
-#### 4.3.2.  Off-Chain Training Request
+#### 4.5.2.  Off-Chain Training Request
 -   A GPU/ or decentralized CPU node on Bittensor training subnet/ or any other external HPC training environment requests access to the dataset (depends on situation).
 -   The DAO or data owner grants a decryption key if the proposal is passed or the entity meets certain criteria (e.g., paid a licensing fee).
 
-#### 4.3.3.  Secure Training
+#### 4.5.3.  Secure Training
 -   The HPC training environment decrypts and processes the data locally.
 -   Zero-knowledge proofs or secure enclaves may be used to reduce data exposure risks.
 
-#### 4.3.4.  Model Checkpoint Upload
+#### 4.5.4.  Model Checkpoint Upload
 -   After training, the HPC training environment returns a new model checkpoint, which is stored in a “Model Registry Canister” on the ICP, ensuring an immutable record of model evolution.
 -   The DAO votes again to accept or reject the checkpoint, ensuring community trust.
 
-### 4.4. On-Device AI Delivery
-#### 4.4.1.  Running Models on-Device
+### 4.6. On-Device AI Delivery
+#### 4.6.1.  Running Models on-Device
 -   Local Inference devices like **AI Live Pod** are capable of loading model weights, verifying their authenticity, and running real-time inference with a lightweight model.
 
-#### 4.4.2. Fetching Checkpoints
+#### 4.6.2. Fetching Checkpoints
 -   Device queries the Model Registry Canister for the latest verified checkpoint.
 -   A cryptographic signature check ensures the model is genuine.
 
-#### 4.4.3. Private Computation
+#### 4.6.3. Private Computation
 -   Personal data of AI users (e.g., health metrics, camera images) remains on the device, never shipped to a central server.
 -   This fosters privacy, reduces latency, and saves network costs.
 
