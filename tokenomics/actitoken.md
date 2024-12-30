@@ -85,24 +85,24 @@ Total | 500,000,000| | | | | Unlock % TGE:2,91%
 
 1. Private round (SAFT/KOL): $0.04, price depends on the amount of the investment check
 - Terms: 20% unlock on TGE, 5 month cliff period, then 12 months vesting with linear monthly unlock of the balance.
-- Dates: [01/08/2024 – 10/11/2024]
+- Dates: [01/08/2024 – 10/11/2024] (Partially Fulfilled. Paused. Remaining allocation transferred to VC round)
 - Raise: **$300,000**
 - Participants: SAFT Investors and KOL's.
 
 2. Seed round (VC), $0.05
 - Terms: 20% unlock on TGE, 5 month cliff period, then 18 months vesting with linear monthly unlock of the balance.
-- Date: Starts at [01/10/2024]
+- Date: Starts at [01/10/2024] (Planned to reach in early January 2025)
 - Raise: **$500,000**
 - Participants: Private investors, VC’s.
 
 3. Public round (IDO), $0.07
 - Terms: 25% unlock on TGE, 3 month cliff period, then 12 months vesting with linear monthly unlocking of the balance.
-- Date: Starts at \[20/11/2024]
+- Date: Starts at [15/01/2025]
 - Raise: **$1,000,000**
 - Participants: Launchpads
 
 4. Listing on exchanges: $0.07
-- Listing start date: \[10/12/24]
+- Listing start date: [20/01/25]
 - Initial market capitalization: **$450,000**
 - Exchanges: Mexc=>Gate=>HTX=>Сrypto.com
 
