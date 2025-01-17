@@ -163,13 +163,13 @@ The **AI Live Pod** prototype seamlessly integrates most perfect hardware and so
 | Platform | NVIDIA Orin NX Nano 16/256  |
 | OS | Linux L4T 32.3.1  |
 | Vision | Stereoscopic-on-chip VR180 6K HDR, up to 120 FPS  |
-| Mechanical Switcher | Indoor mode (Stereoscopic)/ Outdoor mode (160°)  |
-| Lidar | Slamtec RPLIDAR A1-R6  |
+| Two Camera pairs | Indoor mode (Stereoscopic)/ Outdoor mode (160°)  |
+| Lidar | TBA  |
 | Speakers | 3 wide-brimmed speakers Harman-Univox, 15-watt max output   |
 | Smart Home Connectivity | Matter  |
 | Wireless Connectivity | Wi-Fi 7.0, Bluetooth  |
 | HDMI | Docked wireless HDMI 2.2 Receiver  |
-|Li-Pol 10KmAh Battery | Up to 5 hrs autonomy, fast charging|
+|Li-Pol 20KmAh Battery | Up to 5 hrs autonomy, fast charging|
 
 ----------
 
