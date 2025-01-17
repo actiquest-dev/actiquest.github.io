@@ -34,7 +34,7 @@ The **AI Live Pod** is a state-of-the-art portable coaching device designed to r
 
 ## Indoor and Outdoor Mode
  
-The **AI Live Pod** features 4 multifocal lense cameras block on the top of the device that allows seamless toggling between indoor and outdoor modes. This switch adjusts the camera angles to suit the respective environment.
+The **AI Live Pod** features four multifocal lense cameras blocked on the top of the device and allows seamless toggling between indoor and outdoor modes. This option swithes camera pairs to suit the respective environment.
 
  
 ### Indoor Mode
