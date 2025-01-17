@@ -154,6 +154,19 @@ The **AI Live Pod** seamlessly integrates with health and sport data providers t
 
 ----------
 
+## Early Renders
+
+**White:**
+
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXez4Jv2KYTgCzCm6rG_40N2SI0KEMxaWFr3AA9qRoO-32aOg55phcRW73tGDQhgJip7h1SmO0TNvC1q4QNwFB8DcOfw37eynV0IzTqS9FMeDTVXNNwb14ajVRE5cyoxOz0keWKItw?key=AsJEkgePh24159X10uUz6PJ-)
+
+**Black in case:**
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdKaIpi03Smiolu5QwmGEgXuubFwe4RrogbqVgl2JgWdss5PKaZ6r3Z1T10SOSt7ElIVMRHLwY7D1fChPtldw4suIR09gpi8PGYzP78y7-9mVpAiGYBIgKM8vX1UHummccHhsg_vw?key=AsJEkgePh24159X10uUz6PJ-)
+
+
+----------
+
+
 ## Tech Specification
 
 The **AI Live Pod** prototype seamlessly integrates most perfect hardware and software running on it:
