@@ -11,7 +11,7 @@ label: AI Live Pod
 
  
 ## AI Live Pod
-![](https://www.youtube.com/watch?v=VjvNO23h2Rc)
+[!embed](https://www.youtube.com/watch?v=VjvNO23h2Rc)
 
 ----------
 
