@@ -19,6 +19,8 @@ label: AI Live Pod
 
 The **AI Live Pod** is a state-of-the-art portable coaching device designed to revolutionize fitness, sports, music, and learning by leveraging cutting-edge AI, VR/AR, and decentralized technology. Below, we provide links to visual representations and detailed use cases to showcase its capabilities.
 
+**Actiquest On-Device AI** (running in the AI Live Pod using local inference) is the complex of tiny Vision/LMM and NLP neural models brings next-generation edge intelligence to users’ devices by combining efficient local inference with a robust  **Compute-to-Data**  paradigm. Rather than pulling massive datasets into centralized servers for training,  Actiquest stores and governs these datasets on the **Internet Computer (ICP)**—enabling a decentralized, community-driven approach to data handling. This litepaper outlines how these components integrate to deliver private, up-to-date, and decentralized AI solutions,  **including the process of delivering the best pre-trained models to end-user devices.**
+
 1. A sleek, portable design optimized for mobility and usability in various environments.
 
 2.  VR180 6K HDR 60 fps motion capture and depth metadata using LiDAR sensor. Combination of several AI vision methods allows to capture high-quality 3D realtime reconstruction of the complete human body, including eyes, mimic, tongue and hands, without requiring any calibration and manual intervention.
