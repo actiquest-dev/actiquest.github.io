@@ -12,7 +12,7 @@ label: Acticat
  
 ## Acticat
 [!embed](https://www.youtube.com/watch?v=hQ1Mohmv92Y)
-😺 ACTICAT (https://t.me/acticat_bot) is the virtual wellness coach, on-device AI agent that sees, hears, understands, and leads to success. Using the AI Live Pod (https://docs.actiq.xyz/aipod/) and wearables, it tracks activity, delivers personalized advice, and rewards workouts with $ACTI tokens 🏆
+😺 [**ACTIcat**](https://t.me/acticat_bot) is the virtual wellness coach, on-device AI agent that sees, hears, understands, and leads to success. Using the [**AI Live Pod**](https://docs.actiq.xyz/aipod/) and wearables, it tracks activity, delivers personalized advice, and rewards workouts with $ACTI tokens 🏆
 
 ## What does the ACTICat do?
 
