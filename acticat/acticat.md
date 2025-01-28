@@ -7,7 +7,7 @@ label: Acticat
 # Acticat Multimodal AI Agent
 
  
-> AI Live Story
+> Story of Acticat AIGC Character
 
  
 ## Acticat
