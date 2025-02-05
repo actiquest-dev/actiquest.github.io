@@ -86,8 +86,8 @@ The integration of AI with blockchain is expected to be a multi-billion-dollar m
 ----------
 
 # Related Links
-- [**Website**](https:/acticat.xyz)
-- [**Twitter**](https:/x.com/acticat_agent)
-- [**Chat with Acticat**](https:/t.me/acticat_bot)
-- [**Contract**](https://solscan.io/token/9fE8RyN3G97NpqVSEx8GYciKKBsmiyHUjzHJsPyrNVXk)
+[**Website**](https:/acticat.xyz)
+[**Twitter**](https:/x.com/acticat_agent)
+[**Chat with Acticat**](https:/t.me/acticat_bot)
+[**Contract**](https://solscan.io/token/9fE8RyN3G97NpqVSEx8GYciKKBsmiyHUjzHJsPyrNVXk)
 
