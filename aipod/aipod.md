@@ -12,7 +12,6 @@ label: AI Live Pod
 
  
 ## AI Live Pod
-[!embed](https://www.youtube.com/watch?v=VjvNO23h2Rc)
 
 ----------
 
@@ -28,7 +27,10 @@ The **AI Live Pod** is a state-of-the-art portable coaching device designed to r
 
 > Motion-capture technology used in film and game production typically focuses only on face, body, and hand capture independently, involves complex and costly hardware, and requires significant manual intervention.  Even though machine-learning techniques exist to overcome these problems, they typically only support a single camera, often operate on a single body part, are not precise in world space, and rarely generalize outside a specified context.
 
- 
+
+[!embed](https://www.youtube.com/watch?v=VjvNO23h2Rc)
+
+
 3. AR/VR Integration ready
 
 - Deploys captured biomechanics data to immersive AR and VR platforms and applications in realtime.
