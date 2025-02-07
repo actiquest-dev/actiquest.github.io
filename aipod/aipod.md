@@ -8,6 +8,7 @@ label: AI Live Pod
 
  
 > Description of AI Live Pod Prototype
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcDHI19RSfwc9bjJq9H4x-I9vhzxlk7fy11r7B4bEEoj2pvYxya13PUK7UkuAdZZgDXk-nRU-OFFqI_7w6zjOOz917cY02N1Ku_CKKkTdoM9nNLWTe3bgmc4dzQesLMBNEIAwgLcg?key=AsJEkgePh24159X10uUz6PJ-)
 
  
 ## AI Live Pod
