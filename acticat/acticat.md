@@ -143,14 +143,14 @@ Using  **Telegram**  for Acticat bot interactions allows for real-time coaching,
 
 ----------
 
-### Acticat Generates a Personalized Training Plan*
+### Acticat Generates a Personalized Training Plan
 
 -   Acticat analyzes  **user activity data**  (Strava, Apple Health, Google Fit).
 -   Based on fitness level and goals, it  **creates a structured workout plan**  (e.g., running 5 km, strength training, yoga).
 
 ----------
 
-### Storing Workouts in Apple Health/Google Fit
+### Acticat is Storing Workouts in Apple Health/Google Fit
 
 To sync Acticat’s training plan with  **Apple Health**, use the  **HealthKit API**:
 
@@ -160,7 +160,7 @@ To sync Acticat’s training plan with  **Apple Health**, use the  **HealthKit A
 
 ----------
 
-### Automated Training Plan Sync via Telegram
+### Acticat Provides Automated Training Plan Sync via Telegram
 
 -   When Acticat  **creates a new plan**, it sends a  **Telegram message**  with training goals.
 -   The user can  **accept the plan**  (button click in Telegram).
