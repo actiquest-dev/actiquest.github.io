@@ -84,6 +84,8 @@ The integration of AI with blockchain is expected to be a multi-billion-dollar m
 
 ----------
 
+# Agent Integrations
+
 Acticat integrates with popular health and fitness platforms to provide a comprehensive and personalized user experience. By connecting with services like Strava, Google Fit, and Apple Health, Acticat can access and analyze your activity data to offer tailored coaching and insights.
 
 **Strava Integration:**
@@ -103,25 +105,25 @@ By leveraging these integrations, Acticat offers a holistic approach to fitness,
 
 Integrating  **Strava, Apple Health, and Google Fit**  with  **Acticat**  allows the AI to provide more personalized and context-aware coaching. Here’s how this data can enhance Acticat’s responses:
 
-### **1. Personalized Workout Adjustments**
+### Personalized Workout Adjustments
 
 -   **Performance Metrics**  (from Strava, Apple Health, or Google Fit): Acticat can analyze pace, heart rate, and power output to tailor workout intensity.
 -   **Fatigue and Recovery Insights**: If Apple Health detects poor sleep quality or high resting heart rate, Acticat may suggest  **lighter workouts**  or active recovery.
 -   **Adaptation to Training Load**: Based on cumulative workout data, Acticat can prevent overtraining by suggesting  **rest days**  or adjusting exercise intensity.
 
-### **2. Real-Time Feedback & Motivational Coaching**
+### Real-Time Feedback & Motivational Coaching
 
 -   **Post-Workout Analysis**: Acticat can review your latest Strava cycling/running session and provide insights like:
     -   "You ran  **5 km**  at an  **average pace of 6:00 min/km**—great job! Try to maintain  **consistent cadence**  next time."
 -   **Heart Rate Optimization**: If heart rate zones are too high, Acticat can remind users to  **slow down**  and maintain an efficient effort.
 
-### **3. Holistic Wellness Integration**
+### Holistic Wellness Integration
 
 -   **Sleep & Recovery-Based Coaching**: If Apple Health detects only  **5 hours of sleep**, Acticat might say:
     -   "You didn't sleep well. Let's do a light workout today and focus on recovery."
 -   **Stress & Mindfulness**: If high stress levels are detected, Acticat could recommend  **breathing exercises**  or a lighter, stress-reducing workout.
 
-### **4. Gamification & Rewards**
+### Gamification & Rewards
 
 -   **Progress Tracking**: Acticat can celebrate personal records detected from Strava (e.g., "You set a new fastest 10 km!").
 -   **Token Rewards ($ACTI)**: Reaching milestones in Strava/Apple Health can unlock rewards in the Actiquest ecosystem.
@@ -132,7 +134,7 @@ Integrating  **Strava, Apple Health, and Google Fit**  with  **Acticat**  allows
 -   **Hydration Alerts**: If a long workout is detected, Acticat can remind users to  **drink water**.
 
 ----------
-### **Telegram Integration**
+### Telegram Integration
 
 Using  **Telegram**  for Acticat bot interactions allows for real-time coaching, reminders, and progress tracking directly in chat. You can integrate  **Strava and Apple Health data**  into Telegram messages by having Acticat:
 
@@ -142,14 +144,14 @@ Using  **Telegram**  for Acticat bot interactions allows for real-time coaching,
 
 ----------
 
-### **Acticat Generates a Training Plan**
+### Acticat Generates a Training Plan*
 
 -   Acticat analyzes  **user activity data**  (Strava, Apple Health, Google Fit).
 -   Based on fitness level and goals, it  **creates a structured workout plan**  (e.g., running 5 km, strength training, yoga).
 
 ----------
 
-### **Storing Workouts in Apple Health**
+### Storing Workouts in Apple Health/Google Fit
 
 To sync Acticat’s training plan with  **Apple Health**, use the  **HealthKit API**:
 
@@ -159,7 +161,7 @@ To sync Acticat’s training plan with  **Apple Health**, use the  **HealthKit A
 
 ----------
 
-### **Automated Training Plan Sync via Telegram**
+### Automated Training Plan Sync via Telegram
 
 -   When Acticat  **creates a new plan**, it sends a  **Telegram message**  with training goals.
 -   The user can  **accept the plan**  (button click in Telegram).
@@ -171,21 +173,21 @@ _"🏋️ Your new training plan is ready! Click below to add workouts to Apple 
 
 ----------
 
-### **Monitor & Adjust in Real-Time**
+### Monitor & Adjust in Real-Time
 
 -   Acticat  **checks Apple Health**  for  **completed workouts**  (`HKWorkoutQuery`).
 -   Based on progress, Acticat  **modifies the plan**  dynamically.
 
 ----------
 
-### **Gamification & Rewards**
+### Gamification & Rewards
 
 -   Users earn  **$ACTI tokens**  when they  **complete workouts logged in Apple Health**.
 -   Telegram bot sends  **progress updates**  (e.g., “🔥 You completed 3/5 workouts this week! Keep going!”).
 
 ----------
 
-### **Tokenomics Overview for $ACTICAT:**
+# Tokenomics Overview for $ACTICAT:
 
 - **Ticker:**  $ACTICAT
 - **Hardcap:**  1B tokens
