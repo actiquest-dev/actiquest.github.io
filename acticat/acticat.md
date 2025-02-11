@@ -11,7 +11,9 @@ label: Acticat
 
  
 ## Acticat Wellness Coach
-[!embed](https://www.youtube.com/watch?v=hQ1Mohmv92Y)
+
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfzRmIGKPki2DIxAMGo7hFdxK0pxkv4N2VCSV89zVhQPkRS3V3Ub5hYQUu-0MAFHLButtbB1WjTUyhQbpvzVfFNbQw-Ybpqn8yI7HPnlIhqnHU1dvEKBV8aq_NOng-7fvSeJ0uEDg?key=AsJEkgePh24159X10uUz6PJ-)
+
 😺 [**ACTIcat**](https://t.me/acticat_bot) is the virtual wellness coach, on-device AI agent that sees, hears, understands, and leads to success. Using the [**AI Live Pod**](https://docs.actiq.xyz/aipod/) and wearables, it tracks activity, delivers personalized advice, and rewards workouts with $ACTI tokens 🏆
 
 ## What does the ACTICat do?
@@ -38,6 +40,7 @@ label: Acticat
 > potential of every single athlete and make the path to achievement
 > effective and truly exciting.
 
+[!embed](https://www.youtube.com/watch?v=hQ1Mohmv92Y)
 
 Opposed to humanoid robots from _Will Smith starring Sci-Fi thriller “I Robot”_, cat-like AIGC character design could make the whole process of learning and training more fun-less intimidating. Optimus robots, Cybercab robo-taxis, and Robovan buses were completely inspired by this film, which means that the marketing of robotic innovations is surprisingly predictable.
 
