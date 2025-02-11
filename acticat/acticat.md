@@ -182,6 +182,24 @@ _"🏋️ Your new training plan is ready! Click below to add workouts to Apple 
 
 -   Users earn  **$ACTI tokens**  when they  **complete workouts logged in Apple Health**.
 -   Telegram bot sends  **progress updates**  (e.g., “🔥 You completed 3/5 workouts this week! Keep going!”).
+
+----------
+
+### **Tokenomics Overview for $ACTICAT:**
+
+**Ticker:**  $ACTICAT
+**Hardcap:**  1B tokens
+**Blockchain:**  Solana  
+**Token Link (CA):**  [Solscan - ACTICAT Token](https://solscan.io/token/9fE8RyN3G97NpqVSEx8GYciKKBsmiyHUjzHJsPyrNVXk)  
+**Short Description:**  Multimodal AI Agent (Wellness Coach), incentivizing users with $ACTI tokens for completing sports and social tasks.  
+**Website:**  [acticat.xyz](https://acticat.xyz/)  
+**Whitepaper:**  [Acticat WP](https://docs.actiq.xyz/acticat/)  
+**Links:**  [Linktree](https://linktr.ee/acticat)
+**Vesting:**  No
+**Distribution:**  99% of $ACTICAT will be distributed to community.
+**Presale:** 10% of hardcap, please use buy button on [website](https://acticat.xyz)
+**Exchanges:** Raydium, Meteora, Jupiter.
+
 ----------
 
 # Related Links
