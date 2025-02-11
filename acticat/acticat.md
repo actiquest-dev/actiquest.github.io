@@ -6,11 +6,11 @@ label: Acticat
 
 # Acticat Multimodal AI Agent
 
- 
-> Story of Acticat AIGC Character
+
+> Prototyping Acticat AIGC Character
 
  
-## Acticat
+## Acticat Wellness Coach
 [!embed](https://www.youtube.com/watch?v=hQ1Mohmv92Y)
 😺 [**ACTIcat**](https://t.me/acticat_bot) is the virtual wellness coach, on-device AI agent that sees, hears, understands, and leads to success. Using the [**AI Live Pod**](https://docs.actiq.xyz/aipod/) and wearables, it tracks activity, delivers personalized advice, and rewards workouts with $ACTI tokens 🏆
 
@@ -61,7 +61,7 @@ Thus, it might be that athletes get emotionally tied with the sweet and friendly
 
 ----------
 
-# Utility and Functionality
+## Utility and Functionality
 The value of a token depends largely on its utility within the ecosystem:
 
 - $ACTICAT's use case: As a virtual sports coach that rewards users for fitness progress, it has clear utility for tracking, incentivizing, and managing physical activity.
@@ -71,7 +71,7 @@ If the ecosystem sustains long-term user engagement, the token can grow in value
 
 ----------
 
-# AI as a Growth Industry
+## AI as a Growth Industry
 The integration of AI with blockchain is expected to be a multi-billion-dollar market:
 
 - Tokens linked to real-world AI-driven solutions (like fitness, health, or productivity) often attract long-term investors.
@@ -84,7 +84,7 @@ The integration of AI with blockchain is expected to be a multi-billion-dollar m
 
 ----------
 
-# Agent Integrations
+## Agent Integrations
 
 Acticat integrates with popular health and fitness platforms to provide a comprehensive and personalized user experience. By connecting with services like Strava, Google Fit, and Apple Health, Acticat can access and analyze your activity data to offer tailored coaching and insights.
 
@@ -104,30 +104,30 @@ By leveraging these integrations, Acticat offers a holistic approach to fitness,
 
 Integrating  **Strava, Apple Health, and Google Fit**  with  **Acticat**  allows the AI to provide more personalized and context-aware coaching. Here’s how this data can enhance Acticat’s responses:
 
-## Personalized Workout Adjustments
+### Personalized Workout Adjustments
 
 -   **Performance Metrics**  (from Strava, Apple Health, or Google Fit): Acticat can analyze pace, heart rate, and power output to tailor workout intensity.
 -   **Fatigue and Recovery Insights**: If Apple Health detects poor sleep quality or high resting heart rate, Acticat may suggest  **lighter workouts**  or active recovery.
 -   **Adaptation to Training Load**: Based on cumulative workout data, Acticat can prevent overtraining by suggesting  **rest days**  or adjusting exercise intensity.
 
-## Real-Time Feedback & Motivational Coaching
+### Real-Time Feedback & Motivational Coaching
 
 -   **Post-Workout Analysis**: Acticat can review your latest Strava cycling/running session and provide insights like:
     -   "You ran  **5 km**  at an  **average pace of 6:00 min/km**—great job! Try to maintain  **consistent cadence**  next time."
 -   **Heart Rate Optimization**: If heart rate zones are too high, Acticat can remind users to  **slow down**  and maintain an efficient effort.
 
-## Holistic Wellness Integration
+### Holistic Wellness Integration
 
 -   **Sleep & Recovery-Based Coaching**: If Apple Health detects only  **5 hours of sleep**, Acticat might say:
     -   "You didn't sleep well. Let's do a light workout today and focus on recovery."
 -   **Stress & Mindfulness**: If high stress levels are detected, Acticat could recommend  **breathing exercises**  or a lighter, stress-reducing workout.
 
-## Gamification & Rewards
+### Gamification & Rewards
 
 -   **Progress Tracking**: Acticat can celebrate personal records detected from Strava (e.g., "You set a new fastest 10 km!").
 -   **Token Rewards ($ACTI)**: Reaching milestones in Strava/Apple Health can unlock rewards in the Actiquest ecosystem.
 
-## Adaptive Nutrition and Hydration Tips
+### Adaptive Nutrition and Hydration Tips
 
 -   **Caloric Expenditure**: Based on  **Apple Health’s calorie data**, Acticat may suggest hydration or meal timing.
 -   **Hydration Alerts**: If a long workout is detected, Acticat can remind users to  **drink water**.
@@ -143,14 +143,14 @@ Using  **Telegram**  for Acticat bot interactions allows for real-time coaching,
 
 ----------
 
-## Acticat Generates a Training Plan*
+### Acticat Generates a Personalized Training Plan*
 
 -   Acticat analyzes  **user activity data**  (Strava, Apple Health, Google Fit).
 -   Based on fitness level and goals, it  **creates a structured workout plan**  (e.g., running 5 km, strength training, yoga).
 
 ----------
 
-## Storing Workouts in Apple Health/Google Fit
+### Storing Workouts in Apple Health/Google Fit
 
 To sync Acticat’s training plan with  **Apple Health**, use the  **HealthKit API**:
 
@@ -160,7 +160,7 @@ To sync Acticat’s training plan with  **Apple Health**, use the  **HealthKit A
 
 ----------
 
-## Automated Training Plan Sync via Telegram
+### Automated Training Plan Sync via Telegram
 
 -   When Acticat  **creates a new plan**, it sends a  **Telegram message**  with training goals.
 -   The user can  **accept the plan**  (button click in Telegram).
@@ -172,21 +172,21 @@ _"🏋️ Your new training plan is ready! Click below to add workouts to Apple 
 
 ----------
 
-## Monitor & Adjust in Real-Time
+### Monitor & Adjust in Real-Time
 
 -   Acticat  **checks Apple Health**  for  **completed workouts**  (`HKWorkoutQuery`).
 -   Based on progress, Acticat  **modifies the plan**  dynamically.
 
 ----------
 
-## Gamification & Rewards
+### Gamification & Rewards
 
 -   Users earn  **$ACTI tokens**  when they  **complete workouts logged in Apple Health**.
 -   Telegram bot sends  **progress updates**  (e.g., “🔥 You completed 3/5 workouts this week! Keep going!”).
 
 ----------
 
-# Tokenomics Overview for $ACTICAT:
+## Tokenomics Overview for $ACTICAT:
 
 - **Ticker:**  $ACTICAT
 - **Hardcap:**  1B tokens
@@ -203,9 +203,8 @@ _"🏋️ Your new training plan is ready! Click below to add workouts to Apple 
 
 ----------
 
-# Related Links
+## Related Links
 - [**Website**](https://acticat.xyz)
 - [**Twitter**](https://x.com/acticat_agent)
 - [**Chat with Acticat**](https://t.me/acticat_bot)
 - [**Contract**](https://solscan.io/token/9fE8RyN3G97NpqVSEx8GYciKKBsmiyHUjzHJsPyrNVXk)
-
