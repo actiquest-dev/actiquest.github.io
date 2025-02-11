@@ -16,20 +16,18 @@ label: Acticat
 
 ## What does the ACTICat do?
 
-- Analyses the athlete's movement in real-time;
-- Develops your training plan and makes adjustments depending on the situation;
-- Provides personal recommendations for the correction of exercise technique.
-- Flexibly adjusts the volume and types of exercises depending on your health and mood;
-- Provides recommendations for nutrition and recovery, considering the peculiarities of your body;
-- Motivates with $ACTI tokens for accomplishing training goals and personal records upon completion of the workout;
-- Speaks with a voice similar to A. Banderas or A. Mironov, depending on the language;
-- Empathic & emotional communication with athletes;
-- Follow your mood;
-- He himself may be out of sorts-sometimes very rare, imitation of fatigue.
-- Conducts a system of quests and missions for more enjoyable training.
-- Joins physical training with mental practices for the all-around development of the athlete, i.e., able to switch to psychologist mode.
-- Consider long-term objectives, environment and weather, solar activity, your biorhythm, and the state of sleep on the previous day, and incorporate the short-term objectives when developing your training program.
-- Analyzes health and physical condition data with a view to enhance your workout session for better performance and injury prevention.
+-   **Real-Time Movement Analysis:**  Evaluates athletes' movements to offer immediate feedback.
+-   **Personalized Training Plans:**  Develops and adjusts training regimens based on individual progress and circumstances.
+-   **Exercise Technique Recommendations:**  Provides guidance to improve exercise form and prevent injuries.
+-   **Adaptive Exercise Volume:**  Modifies exercise intensity and type according to the user's health and mood.
+-   **Nutrition and Recovery Advice:**  Offers suggestions tailored to the user's body and needs.
+-   **Motivational Rewards:**  Incentivizes users with $ACTI tokens for achieving training goals and personal records.
+-   **Engaging Communication:**  Interacts with users in an empathetic and emotional manner, with voice options resembling well-known actors.
+-   **Mood Awareness:**  Recognizes and responds to the user's emotional state, occasionally simulating its own fatigue to create a more relatable experience.
+-   **Quest and Mission System:**  Introduces challenges to make training more enjoyable.
+-   **Holistic Development:**  Combines physical training with mental practices, acting as a psychologist when needed.
+-   **Comprehensive Training Programs:**  Considers long-term objectives, environmental factors, biorhythms, and sleep quality to develop effective training plans.
+-   **Health Data Analysis:**  Assesses health and physical condition data to enhance performance and prevent injuries.
 
 > Rather than being coaches who give instructions, AIGC in Actiq become
 > veritable companions in the sports journey of action undertaken by
@@ -39,6 +37,7 @@ label: Acticat
 > in sport preparation where technology serves to unlock the full
 > potential of every single athlete and make the path to achievement
 > effective and truly exciting.
+
 
 Opposed to humanoid robots from _Will Smith starring Sci-Fi thriller “I Robot”_, cat-like AIGC character design could make the whole process of learning and training more fun-less intimidating. Optimus robots, Cybercab robo-taxis, and Robovan buses were completely inspired by this film, which means that the marketing of robotic innovations is surprisingly predictable.
 
@@ -83,6 +82,106 @@ The integration of AI with blockchain is expected to be a multi-billion-dollar m
 >mechanisms can boost initial valuation, but long-term value will rely on real-world adoption, scalability, and
 >effective tokenomics.
 
+----------
+
+Acticat integrates with popular health and fitness platforms to provide a comprehensive and personalized user experience. By connecting with services like Strava, Google Fit, and Apple Health, Acticat can access and analyze your activity data to offer tailored coaching and insights.
+
+**Strava Integration:**
+
+Acticat can analyze data from your Strava activities to assess your performance and provide personalized coaching. To enable this integration, ensure that your Strava account is connected within the Acticat app. This connection allows Acticat to access your workout data, enhancing its ability to offer customized training plans and feedback.
+
+**Google Fit Integration:**
+
+By connecting Acticat to Google Fit, the AI Live Pod can gather real-time biometric data such as heart rate, calories burned, and activity levels. This integration enables Acticat to create a detailed fitness profile tailored to your health and performance needs. To set up this connection, ensure that your Google Fit account is linked within the Acticat app.
+
+**Apple Health Integration:**
+
+Acticat also integrates with Apple Health to provide a seamless experience for iOS users. By syncing with Apple Health, Acticat can access your health and activity data, allowing it to offer personalized workout plans, recovery advice, and dietary suggestions. To enable this integration, connect your Apple Health account within the Acticat app.
+
+By leveraging these integrations, Acticat offers a holistic approach to fitness, ensuring that all your health and activity data is utilized to provide the most effective and personalized coaching experience.
+
+
+Integrating  **Strava, Apple Health, and Google Fit**  with  **Acticat**  allows the AI to provide more personalized and context-aware coaching. Here’s how this data can enhance Acticat’s responses:
+
+### **1. Personalized Workout Adjustments**
+
+-   **Performance Metrics**  (from Strava, Apple Health, or Google Fit): Acticat can analyze pace, heart rate, and power output to tailor workout intensity.
+-   **Fatigue and Recovery Insights**: If Apple Health detects poor sleep quality or high resting heart rate, Acticat may suggest  **lighter workouts**  or active recovery.
+-   **Adaptation to Training Load**: Based on cumulative workout data, Acticat can prevent overtraining by suggesting  **rest days**  or adjusting exercise intensity.
+
+### **2. Real-Time Feedback & Motivational Coaching**
+
+-   **Post-Workout Analysis**: Acticat can review your latest Strava cycling/running session and provide insights like:
+    -   "You ran  **5 km**  at an  **average pace of 6:00 min/km**—great job! Try to maintain  **consistent cadence**  next time."
+-   **Heart Rate Optimization**: If heart rate zones are too high, Acticat can remind users to  **slow down**  and maintain an efficient effort.
+
+### **3. Holistic Wellness Integration**
+
+-   **Sleep & Recovery-Based Coaching**: If Apple Health detects only  **5 hours of sleep**, Acticat might say:
+    -   "You didn't sleep well. Let's do a light workout today and focus on recovery."
+-   **Stress & Mindfulness**: If high stress levels are detected, Acticat could recommend  **breathing exercises**  or a lighter, stress-reducing workout.
+
+### **4. Gamification & Rewards**
+
+-   **Progress Tracking**: Acticat can celebrate personal records detected from Strava (e.g., "You set a new fastest 10 km!").
+-   **Token Rewards ($ACTI)**: Reaching milestones in Strava/Apple Health can unlock rewards in the Acticat ecosystem.
+
+### **5. Adaptive Nutrition and Hydration Tips**
+
+-   **Caloric Expenditure**: Based on  **Apple Health’s calorie data**, Acticat may suggest hydration or meal timing.
+-   **Hydration Alerts**: If a long workout is detected, Acticat can remind users to  **drink water**.
+
+----------
+### **Telegram Integration**
+
+Using  **Telegram**  for Acticat bot interactions allows for real-time coaching, reminders, and progress tracking directly in chat. You can integrate  **Strava and Apple Health data**  into Telegram messages by having Acticat:
+
+-   **Send workout summaries**  after syncing with Strava (e.g., “🚴 You cycled 20 km at 25 km/h! Great pace!”).
+-   **Give daily health insights**  from Apple Health (e.g., “You walked 8,000 steps today—almost at your 10,000-step goal! 🎯”).
+-   **Send reminders**  based on recovery data (e.g., “🛌 Your heart rate variability is low. Consider an early bedtime for better recovery.”).
+
+----------
+
+### **Acticat Generates a Training Plan**
+
+-   Acticat analyzes  **user activity data**  (Strava, Apple Health, Google Fit).
+-   Based on fitness level and goals, it  **creates a structured workout plan**  (e.g., running 5 km, strength training, yoga).
+
+----------
+
+### **Storing Workouts in Apple Health**
+
+To sync Acticat’s training plan with  **Apple Health**, use the  **HealthKit API**:
+
+-   **Create workout sessions**  (`HKWorkout`  objects).
+-   **Store scheduled workouts**  (`HKWorkoutRoute`  for location-based activities).
+-   **Tag training plans**  in Health categories (cycling, running, HIIT, etc.).
+
+----------
+
+### **Automated Training Plan Sync via Telegram**
+
+-   When Acticat  **creates a new plan**, it sends a  **Telegram message**  with training goals.
+-   The user can  **accept the plan**  (button click in Telegram).
+-   The backend  **adds workouts to Apple Health**  via  **HealthKit API**.
+
+**Example Acticat Message:**  
+_"🏋️ Your new training plan is ready! Click below to add workouts to Apple Health."_  
+➡  **[Add to Apple Health]**  (Button triggers API request)
+
+----------
+
+### **Monitor & Adjust in Real-Time**
+
+-   Acticat  **checks Apple Health**  for  **completed workouts**  (`HKWorkoutQuery`).
+-   Based on progress, Acticat  **modifies the plan**  dynamically.
+
+----------
+
+### **Gamification & Rewards**
+
+-   Users earn  **$ACTI tokens**  when they  **complete workouts logged in Apple Health**.
+-   Telegram bot sends  **progress updates**  (e.g., “🔥 You completed 3/5 workouts this week! Keep going!”).
 ----------
 
 # Related Links
