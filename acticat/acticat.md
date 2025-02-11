@@ -124,7 +124,7 @@ Integrating  **Strava, Apple Health, and Google Fit**  with  **Acticat**  allows
 ### **4. Gamification & Rewards**
 
 -   **Progress Tracking**: Acticat can celebrate personal records detected from Strava (e.g., "You set a new fastest 10 km!").
--   **Token Rewards ($ACTI)**: Reaching milestones in Strava/Apple Health can unlock rewards in the Acticat ecosystem.
+-   **Token Rewards ($ACTI)**: Reaching milestones in Strava/Apple Health can unlock rewards in the Actiquest ecosystem.
 
 ### **5. Adaptive Nutrition and Hydration Tips**
 
