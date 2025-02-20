@@ -238,6 +238,8 @@ Register interest in the AI ​​by AI program by following the link below and 
 
 - [Dr. Ty Vachon](https://www.linkedin.com/in/tyvachon/) - Phd in Medical Sciences, radiologist and expert in computer vision in sports medicine. Athlete, Triathlon.
 
+- [Dr. Leonard Khirug](https://www.linkedin.com/in/tyvachon/) - Phd in Neuro Sciences, Leonard Khiroug previously works at the Neuroscience Center, University of Helsinki. They use advanced methods (such as in vivo 2-photon imaging in awake behaving mice) to study mechanisms of neurodegeneration, brain trauma and pain.
+
 - [Dr. Alex Konviser](https://www.linkedin.com/in/dr-alex-konviser/) - Curator of sports programs in Switzerland and the European Union. Type of sport: biathlon (ex-champion).
 
 - [Paul Pelosi Jr.](https://www.linkedin.com/in/paulpelosi/) - American businessman and independent consultant. Paul's experience includes investing in growth companies, investment banking, sustainable real estate and corporate governance. Sports: running, swimming.
