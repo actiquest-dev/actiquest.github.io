@@ -1,5 +1,5 @@
 ---
-icon: icon-ai-model
+icon: ai-model
 label: Knowledge Cache
 ---
 # AI Live Pod CAG/DoD Architecture
