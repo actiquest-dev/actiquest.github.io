@@ -54,18 +54,16 @@ CAG functions as a **shared knowledge memory** that many devices and agents can 
               └───────┬──────────────┘
                       ↓
         ┌─────────────▼───────────────┐
-        │  Actiq Edge Device (Tiny AI)│
+        │ Actiq Edge Device (Tiny AI) │
         │  ┌───────────────┐          │
         │  │ Local Model   │◄─────────┐
         │  └───────────────┘          │
         │  ┌───────────────┐          │
         │  │ Local RAG DB  │          │
         │  └───────────────┘          │
-        └──────────┬─────────────────┘
+        └──────────┬──────────────────┘
                    ↓
         [User Prompt / Real-Time Feedback]
-
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXd5XyLOpP-izUASJZusqPZPkvcwJtAgX1fLf7hJeS-jI9uhP7urZ3skiCmLacixgAHcs1Xp6xOuECsyQBxr42xN2o1mhctneO47zCfSBpFE2ZNN3pjN-cJNcbAOzShORMMSSOum?key=AsJEkgePh24159X10uUz6PJ-)
 
 ---
 
