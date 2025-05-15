@@ -3,13 +3,13 @@ icon: ai-model
 label: Knowledge Cache
 ---
 
-# Knowledge Cache Graph (KCG) & Cache-Augmented Generation (CAG)
+# Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline
 
 ---
 
 ## Overview
 
-Actiq combines on-device AI, distillation-on-demand (DoD), and a decentralized knowledge layer (CAG) to create a fast, private, and evolving intelligence system that learns from user interaction and scales through distributed memory.
+Actiq combines on-device AI, distillation-on-demand (DoD), and a decentralized knowledge layer (CAG) to create a fast, private, and evolving intelligence system that learns from user interaction and scales through distributed memory using Decentralized Knowledge Graph (DKG).
 
 This document outlines the architecture, purpose, and benefits of Cache-Augmented Generation (CAG) and on-demand distillation within the Actiq ecosystem.
 
@@ -69,7 +69,7 @@ While Distillation on Demand (DoD) is a central mechanism in the KCG+CAG archite
 
 2. **LoRA / PEFT (Parameter-Efficient Fine-Tuning):** Lightweight techniques that adapt small parts of the model’s parameters. These methods reduce training costs but still require infrastructure and do not scale efficiently for continuous, real-time adaptation.
 
-3. **Retrieval-Augmented Generation (RAG):** Uses external vector databases to retrieve relevant documents, which are then fed into the model's context. While flexible, maintaining large vector stores is costly, and RAG does not perform reasoning—only retrieval.
+3. **Retrieval-Augmented Generation (RAG):** Uses external vector databases to retrieve relevant documents, which are then fed into the model's context. While flexible, maintaining large vector stores is costly, and RAG does not perform reasoning-only retrieval.
 
 4. **Prompt Injection / Prompt Templating:** Simple methods of prepending prompts with factual information. Useful for quick fixes, but limited by context length and not suitable for permanent knowledge augmentation.
 
@@ -96,7 +96,7 @@ This highlights the potential for substantial optimization through caching mecha
 
 ## Proposed Solution
 
-We propose a **Knowledge Cache Graph (KCG)**, an immutable, content-addressable graph of validated knowledge, combined with **Cache-Augmented Generation (CAG)** — a mechanism allowing Tiny LLMs to retrieve distilled knowledge before resorting to expensive LLM inference.
+We propose a **Knowledge Cache Graph (KCG)**, an immutable, content-addressable graph of validated knowledge, combined with **Cache-Augmented Generation (CAG)** - a mechanism allowing Tiny LLMs to retrieve distilled knowledge before resorting to expensive LLM inference.
 
 ### Components:
 
@@ -160,7 +160,7 @@ This architecture enables the KCG+CAG ecosystem to support millions of Tiny LLMs
 
 ### 1. CAG Storage in Arweave
 
-For immutable and verifiable knowledge storage, Arweave is the preferred solution due to its permanent data availability. Each fragment of the Knowledge Cache Graph (KCG)—nodes, edges, ontologies, and indices—is stored as an individual Arweave transaction (TX). Key characteristics include:
+For immutable and verifiable knowledge storage, Arweave is the preferred solution due to its permanent data availability. Each fragment of the Knowledge Cache Graph (KCG)-nodes, edges, ontologies, and indices - is stored as an individual Arweave transaction (TX). Key characteristics include:
 
 * Each KCG object receives a unique TXID, serving as a perma-link derived from its content hash.
 * Large graphs are stored using chunked storage with CID-based linking for efficient traversal.
@@ -200,6 +200,69 @@ While Arweave and Filecoin serve as robust storage layers, efficient graph query
 
 * Frequently requested paths are cached by indexers.
 * Merkle Proofs ensure data freshness and integrity without needing to re-fetch from Arweave.
+
+---
+
+## KCG Indexing with The Graph Subgraph
+
+To achieve decentralized, scalable, and performant indexing for the Knowledge Cache Graph (KCG), we propose leveraging **The Graph Subgraph** architecture as an alternative to centralized graph databases like Neo4j.
+
+### Storage Layer: Arweave
+
+* All KCG entries (entities, relations, ontologies) are stored as immutable JSON-LD documents on Arweave.
+* Each entry is identified by its TXID and enriched with metadata tags (e.g., `Type`, `Relation`, `Ontology`).
+
+### Index & Query Layer: The Graph Subgraph
+
+* A custom Subgraph mapping is created to parse Arweave transactions based on relevant tags.
+* The mapping script extracts entity and relation data from JSON-LD payloads.
+* Subgraph Entities include:
+
+  * **KCGEntity:** id, type, attributes.
+  * **KCGRelation:** source, target, relationType, context.
+* Relationships are maintained via content-addressed links (Arweave TXIDs).
+
+### GraphQL API Interface
+
+* The Subgraph exposes a standardized GraphQL API for querying the KCG.
+* Example query:
+
+  ```graphql
+  query {
+    kcgEntities(where: {type: "Person"}) {
+      id
+      attributes { key, value }
+      relations { target { id }, relationType }
+    }
+  }
+  ```
+* This enables Tiny LLMs and DoD Agents to perform semantic searches efficiently.
+
+### Sync & Update Flow
+
+* The Graph Indexers continuously monitor Arweave for new transactions matching KCG patterns.
+* Updates to the knowledge graph are reflected in real-time within the Subgraph index.
+
+### Advantages Over Neo4j
+
+| Aspect                  | The Graph Subgraph                      | Neo4j                                    |
+| ----------------------- | --------------------------------------- | ---------------------------------------- |
+| Immutable Data Indexing | Native support for Arweave Data Sources | Requires manual synchronization          |
+| Query Interface         | Decentralized GraphQL API               | Proprietary Cypher Query                 |
+| Scalability             | Distributed Indexer Network             | Requires federated custom deployment     |
+| Decentralization        | Yes (hosted or decentralized subgraphs) | No (centralized unless custom federated) |
+| Speed of Access         | Low latency for indexed queries         | Fast on dedicated infrastructure         |
+| Standards Compliance    | OpenGraphQL Schema, Arweave Integration | Proprietary database format              |
+
+### Recommended Architecture
+
+* **Immutable Storage:** Arweave for permanent knowledge storage.
+* **Decentralized Index & Query:** The Graph Subgraph for efficient search and retrieval.
+* **Consumption Layer:** Tiny LLMs and DoD Agents interact via GraphQL.
+* **Optional Caching:** Gateways can implement caching for ultra-low latency.
+
+This approach ensures a fully decentralized, scalable, and performant knowledge indexing solution, aligning with the KCG+CAG principles of openness, permanence, and efficiency.
+
 
 ### 3. Query Verification via ZK Proofs (Privacy & Access Layer)
 
