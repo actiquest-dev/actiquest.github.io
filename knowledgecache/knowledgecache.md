@@ -243,7 +243,7 @@ To achieve decentralized, scalable, and performant indexing for the Knowledge Ca
 * The Graph Indexers continuously monitor Arweave for new transactions matching KCG patterns.
 * Updates to the knowledge graph are reflected in real-time within the Subgraph index.
 
-### Advantages Over Neo4j
+### Advantages Over Centralized Graph Databases
 
 | Aspect                  | The Graph Subgraph                      | Neo4j                                    |
 | ----------------------- | --------------------------------------- | ---------------------------------------- |
@@ -254,7 +254,7 @@ To achieve decentralized, scalable, and performant indexing for the Knowledge Ca
 | Speed of Access         | Low latency for indexed queries         | Fast on dedicated infrastructure         |
 | Standards Compliance    | OpenGraphQL Schema, Arweave Integration | Proprietary database format              |
 
-### Recommended Architecture
+### Architecture
 
 * **Immutable Storage:** Arweave for permanent knowledge storage.
 * **Decentralized Index & Query:** The Graph Subgraph for efficient search and retrieval.
