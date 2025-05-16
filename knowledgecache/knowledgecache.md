@@ -5,8 +5,6 @@ label: Knowledge Cache
 
 # Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline
 
----
-
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfgq_byivHQ01DpDdRaeJEg_Q8PI-KtKiFtJ4hWmuCYOYiPZGUt34LAH0EiRY1JAasviADLhiAC1eBbCH2gBQZK3AesyZsB0rkVBnZArwqiiNP8af4_EIEIZhVKueSPRkGfBU_tRw?key=AsJEkgePh24159X10uUz6PJ-)
 
 ---
@@ -359,22 +357,19 @@ The KCG+CAG system can be seamlessly integrated and deployed on top of **PEAK Pr
 
 ## Layered Architecture Overview
 
-```plaintext
-Application & Agent Layer
-└── Tiny LLMs, User Devices, Enterprise Agents
 
-CAG Reasoning Layer (on top of PEAK)
-└── Cache-Augmented Generation, SCR Pipelines, DoD Agents, Gateway Cache & Index
-
-KCG Core Layer (on PEAK)
-└── Knowledge Cache Graph, Distilled Knowledge, Relations, KV Layer (on-chain)
-
-PEAK Protocol Layer
-└── Validator Network, Consensus, Staking, ZK Proof Layer, Subgraph Indexing
-
-
+    Application & Agent Layer
+    └── Tiny LLMs, User Devices, Enterprise Agents
+    
+    CAG Reasoning Layer (on top of PEAK)
+    └── Cache-Augmented Generation, SCR Pipelines, DoD Agents, Gateway Cache & Index
+    
+    KCG Core Layer (on PEAK)
+    └── Knowledge Cache Graph, Distilled Knowledge, Relations, KV Layer (on-chain)
+    
+    PEAK Protocol Layer
+    └── Validator Network, Consensus, Staking, ZK Proof Layer, Subgraph Indexing
 ---
-
 
 # Tokenomics & Incentive Design
 
@@ -474,4 +469,3 @@ We envision a world where:
 By adopting the KCG+CAG architecture, we take a significant step toward **democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.**
 
 ---
-
