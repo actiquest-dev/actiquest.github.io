@@ -396,6 +396,60 @@ The following section provides an expanded step-by-step overview of the Knowledg
 
 This comprehensive workflow forms the backbone of the KCG+CAG architecture, ensuring continuous improvement of Tiny LLMs through collaborative distillation and caching.
 
+---
+
+## Distillation on Demand (DoD) Knowledge Recording Process
+
+In the KCG+CAG architecture, the process of recording new distilled knowledge into the public Knowledge Cache Graph (KCG) follows a controlled and secure workflow. This ensures that only validated, high-quality knowledge is added to the immutable graph while maintaining decentralization and incentivization mechanisms for contributors.
+
+### Corrected Knowledge Recording Workflow
+
+#### 1. DoD Agent Initiates Distillation on Demand
+
+* The DoD Agent generates a research or reasoning request.
+* Collects and synthesizes responses from RAG retrieval, KCG subgraphs, and Big LLM APIs.
+* Forms a proposed distilled knowledge summary, including supporting evidence and metadata.
+
+#### 2. Submission to Gateway
+
+* The DoD Agent **does not write directly to the KCG layer**.
+* Instead, it submits the proposed knowledge entry to the designated Gateway.
+
+#### 3. Gateway Validation and Packaging
+
+* The Gateway performs mandatory validation steps:
+
+  * Checks data format and completeness.
+  * Optionally engages Validators for consensus or quality scoring.
+  * Verifies sources and supporting evidence.
+* Ensures that the entry meets protocol standards and prevents spam or malformed data.
+
+#### 4. Recording into KCG KV-Layer
+
+* Once validated, the Gateway:
+
+  * Packages the distilled knowledge as a KCG-compliant immutable record (JSON-LD format).
+  * Publishes the record to Arweave (or equivalent immutable storage layer).
+  * Updates the KCG KV-layer with the corresponding embedding key-value pair for efficient future retrieval.
+
+#### 5. Confirmation to DoD Agent
+
+* The Gateway returns the finalized KCG TXID to the DoD Agent.
+* The Agent can now reference, use, or cache the new entry locally or within its own Gateway cache.
+
+### Key Principles
+
+| Role               | Action                                        |
+| ------------------ | --------------------------------------------- |
+| DoD Agent          | Generates and proposes distilled knowledge    |
+| Gateway            | Validates, packages, and writes to KCG        |
+| KCG (Arweave/IPFS) | Immutable, public, verifiable knowledge layer |
+
+### Rationale
+
+This controlled recording flow ensures that the system maintains integrity, traceability, and trust in the shared knowledge layer. By separating the agent proposal phase from the authoritative recording step at the Gateway level, the KCG+CAG ecosystem mitigates risks such as misinformation, low-quality data injection, and malicious spam while still enabling open community contributions through DoD Agents.
+
+This model reinforces KCG as the source of truth while maintaining efficient, flexible knowledge access layers through local and Gateway KV-caches.
 
 ---
 
