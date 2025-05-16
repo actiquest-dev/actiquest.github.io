@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800703521021">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800703896045">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.8.1.800703521021" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.8.1.800703896045" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800703521021" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800703896045" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800703521021" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800703896045" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -229,7 +229,6 @@
         <span>Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline</span>
     </h1>
 </doc-anchor-target>
-<hr>
 <p><figure class="content-center">
     <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfgq_byivHQ01DpDdRaeJEg_Q8PI-KtKiFtJ4hWmuCYOYiPZGUt34LAH0EiRY1JAasviADLhiAC1eBbCH2gBQZK3AesyZsB0rkVBnZArwqiiNP8af4_EIEIZhVKueSPRkGfBU_tRw?key=AsJEkgePh24159X10uUz6PJ-" alt="">
     <figcaption class="caption"></figcaption>
@@ -942,7 +941,6 @@
     </h2>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<div class="codeblock-title">plaintext</div>
 <pre class="language-none"><code v-pre class="language-none">Application &amp; Agent Layer
 └── Tiny LLMs, User Devices, Enterprise Agents
 
@@ -953,112 +951,218 @@ KCG Core Layer (on PEAK)
 └── Knowledge Cache Graph, Distilled Knowledge, Relations, KV Layer (on-chain)
 
 PEAK Protocol Layer
-└── Validator Network, Consensus, Staking, ZK Proof Layer, Subgraph Indexing
-
-
----
-
-
-# Tokenomics &amp; Incentive Design
-
-The KCG+CAG ecosystem introduces a deflationary, utility-driven token model designed to reward key participants, sustain decentralized infrastructure, and ensure long-term economic balance.
-
-## Token Flows
-
-### DoD Query Payments
-- Every **Distillation on Demand (DoD) request** initiated by a DoD Agent incurs a fixed token fee.
-- This covers:
-  - API calls to Big LLMs (if needed).
-  - Storage costs (Arweave, off-chain index updates).
-  - Validation and recording into KCG.
-
-### Validator &amp; Gateway Rewards
-- Validators and Gateways are compensated in tokens for:
-  - Validating knowledge proposals.
-  - Maintaining KV-caches and SCR pipelines.
-  - Hosting off-chain indexes and retrieval services.
-- Rewards are split proportionally based on workload, reputation, and node performance.
-
-### Token Burning Mechanism
-- A percentage of each DoD request fee is **burned** (removed from circulation).
-- This creates a **deflationary pressure**, balancing the incentive system and aligning with knowledge quality over quantity.
-
-## Key Economic Principles
-| Mechanism                    | Purpose                                         |
-|------------------------------|-------------------------------------------------|
-| DoD Payments (Fixed Tokens)   | Incentivize Agents to propose valuable knowledge, sustain infrastructure costs. |
-| Validator/Gateway Rewards     | Compensate nodes for validation, caching, and retrieval services. |
-| Token Burning                 | Ensure long-term deflationary pressure, avoiding unchecked token inflation. |
-
-## Sustainability Strategy
-- Incentives are designed to **reward useful knowledge contribution, validation, and retrieval**, not speculative behavior.
-- Over time, as the knowledge cache grows and DoD frequency decreases due to efficient SCR pipelines, the system self-balances toward lower operating costs and higher knowledge utility per token spent.
-
-
----
-
-
-# Governance &amp; Validator Operations
-
-The integrity, fairness, and sustainability of the KCG+CAG ecosystem are ensured by a decentralized governance model and a distributed network of Validator Nodes.
-
-## Validators
-
-### Roles
-- **Knowledge Validation**: Review and approve or reject distilled knowledge proposals submitted via Gateways.
-- **Consensus Voting**: Participate in staking-based or delegated voting mechanisms for validating high-value or disputed entries.
-- **Proof-of-Knowledge Verification**: Sign knowledge entries, providing audit trails and trust guarantees.
-- **Governance Participation**: Influence protocol upgrades, tokenomic adjustments, and dispute resolutions.
-
-### Infrastructure
-- Validators can be:
-  - **Permissionless nodes** operated by the community.
-  - **Elected by governance mechanisms** based on reputation, staking, or delegated trust.
-- They run lightweight nodes capable of:
-  - Verifying knowledge proposals.
-  - Participating in voting rounds.
-  - Optionally contributing to off-chain indexing and SCR pre-computation services.
-
-## Governance Model
-
-### DAO-Driven or Federated Governance
-- The protocol may adopt:
-  - **DAO governance models**, where token holders vote on key parameters.
-  - **Federated validator councils**, ensuring fast and efficient decision-making with delegated transparency.
-
-### Responsibilities
-- Protocol upgrades and parameter tuning (e.g., DoD fees, validator rewards, burn rates).
-- Validator slashing mechanisms for malicious behavior.
-- Dispute resolution between agents, validators, and gateways.
-- Treasury management and incentive pool allocations.
-
-## Key Governance Goals
-- **Ensure high knowledge quality and verifiability.**
-- **Prevent spam, misinformation, and abuse.**
-- **Balance openness with integrity.**
-- **Enable community participation while ensuring operational efficiency.**
-
-
----
-
-
-# Conclusion &amp; Vision
-
-The KCG+CAG ecosystem bridges the gap between heavy, centralized LLM inference and lightweight, efficient Tiny LLMs operating at the edge. By introducing an open, decentralized, and verifiable knowledge graph, coupled with Cache-Augmented Generation (CAG) and Selective Contextual Reasoning (SCR), we enable Tiny LLMs to stay continuously updated, smart, and capable — without costly retraining or vendor lock-in.
-
-This paradigm shift turns reasoning and knowledge augmentation into **an open, reusable, and community-driven resource**, breaking free from centralized control and enabling AI models to reason dynamically using decentralized knowledge caches.
-
-## Our Vision
-We envision a world where:
-- **Tiny LLMs become truly autonomous learners**, continuously improving and reasoning at the edge.
-- **Knowledge becomes a public good**, verifiable and accessible to all, stored immutably in the Knowledge Cache Graph (KCG).
-- **Users, agents, and validators collaborate in a self-reinforcing ecosystem**, where knowledge grows organically, costs decrease, and reasoning becomes more reliable, democratic, and sovereign.
-
-By adopting the KCG+CAG architecture, we take a significant step toward **democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.**
-
----
-</code></pre>
+└── Validator Network, Consensus, Staking, ZK Proof Layer, Subgraph Indexing</code></pre>
 </doc-codeblock></div>
+<hr>
+<doc-anchor-target id="tokenomics--incentive-design">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tokenomics--incentive-design">#</doc-anchor-trigger>
+        <span>Tokenomics &amp; Incentive Design</span>
+    </h1>
+</doc-anchor-target>
+<p>The KCG+CAG ecosystem introduces a deflationary, utility-driven token model designed to reward key participants, sustain decentralized infrastructure, and ensure long-term economic balance.</p>
+<doc-anchor-target id="token-flows">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#token-flows">#</doc-anchor-trigger>
+        <span>Token Flows</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="dod-query-payments">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dod-query-payments">#</doc-anchor-trigger>
+        <span>DoD Query Payments</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Every <strong>Distillation on Demand (DoD) request</strong> initiated by a DoD Agent incurs a fixed token fee.</li>
+<li>This covers:
+<ul>
+<li>API calls to Big LLMs (if needed).</li>
+<li>Storage costs (Arweave, off-chain index updates).</li>
+<li>Validation and recording into KCG.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="validator--gateway-rewards">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#validator--gateway-rewards">#</doc-anchor-trigger>
+        <span>Validator &amp; Gateway Rewards</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Validators and Gateways are compensated in tokens for:
+<ul>
+<li>Validating knowledge proposals.</li>
+<li>Maintaining KV-caches and SCR pipelines.</li>
+<li>Hosting off-chain indexes and retrieval services.</li>
+</ul>
+</li>
+<li>Rewards are split proportionally based on workload, reputation, and node performance.</li>
+</ul>
+<doc-anchor-target id="token-burning-mechanism">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#token-burning-mechanism">#</doc-anchor-trigger>
+        <span>Token Burning Mechanism</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>A percentage of each DoD request fee is <strong>burned</strong> (removed from circulation).</li>
+<li>This creates a <strong>deflationary pressure</strong>, balancing the incentive system and aligning with knowledge quality over quantity.</li>
+</ul>
+<doc-anchor-target id="key-economic-principles">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-economic-principles">#</doc-anchor-trigger>
+        <span>Key Economic Principles</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DoD Payments (Fixed Tokens)</td>
+<td>Incentivize Agents to propose valuable knowledge, sustain infrastructure costs.</td>
+</tr>
+<tr>
+<td>Validator/Gateway Rewards</td>
+<td>Compensate nodes for validation, caching, and retrieval services.</td>
+</tr>
+<tr>
+<td>Token Burning</td>
+<td>Ensure long-term deflationary pressure, avoiding unchecked token inflation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="sustainability-strategy">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sustainability-strategy">#</doc-anchor-trigger>
+        <span>Sustainability Strategy</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Incentives are designed to <strong>reward useful knowledge contribution, validation, and retrieval</strong>, not speculative behavior.</li>
+<li>Over time, as the knowledge cache grows and DoD frequency decreases due to efficient SCR pipelines, the system self-balances toward lower operating costs and higher knowledge utility per token spent.</li>
+</ul>
+<hr>
+<doc-anchor-target id="governance--validator-operations">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#governance--validator-operations">#</doc-anchor-trigger>
+        <span>Governance &amp; Validator Operations</span>
+    </h1>
+</doc-anchor-target>
+<p>The integrity, fairness, and sustainability of the KCG+CAG ecosystem are ensured by a decentralized governance model and a distributed network of Validator Nodes.</p>
+<doc-anchor-target id="validators">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#validators">#</doc-anchor-trigger>
+        <span>Validators</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="roles">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#roles">#</doc-anchor-trigger>
+        <span>Roles</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Knowledge Validation</strong>: Review and approve or reject distilled knowledge proposals submitted via Gateways.</li>
+<li><strong>Consensus Voting</strong>: Participate in staking-based or delegated voting mechanisms for validating high-value or disputed entries.</li>
+<li><strong>Proof-of-Knowledge Verification</strong>: Sign knowledge entries, providing audit trails and trust guarantees.</li>
+<li><strong>Governance Participation</strong>: Influence protocol upgrades, tokenomic adjustments, and dispute resolutions.</li>
+</ul>
+<doc-anchor-target id="infrastructure">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#infrastructure">#</doc-anchor-trigger>
+        <span>Infrastructure</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Validators can be:
+<ul>
+<li><strong>Permissionless nodes</strong> operated by the community.</li>
+<li><strong>Elected by governance mechanisms</strong> based on reputation, staking, or delegated trust.</li>
+</ul>
+</li>
+<li>They run lightweight nodes capable of:
+<ul>
+<li>Verifying knowledge proposals.</li>
+<li>Participating in voting rounds.</li>
+<li>Optionally contributing to off-chain indexing and SCR pre-computation services.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="governance-model">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#governance-model">#</doc-anchor-trigger>
+        <span>Governance Model</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="dao-driven-or-federated-governance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dao-driven-or-federated-governance">#</doc-anchor-trigger>
+        <span>DAO-Driven or Federated Governance</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The protocol may adopt:
+<ul>
+<li><strong>DAO governance models</strong>, where token holders vote on key parameters.</li>
+<li><strong>Federated validator councils</strong>, ensuring fast and efficient decision-making with delegated transparency.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="responsibilities">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#responsibilities">#</doc-anchor-trigger>
+        <span>Responsibilities</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Protocol upgrades and parameter tuning (e.g., DoD fees, validator rewards, burn rates).</li>
+<li>Validator slashing mechanisms for malicious behavior.</li>
+<li>Dispute resolution between agents, validators, and gateways.</li>
+<li>Treasury management and incentive pool allocations.</li>
+</ul>
+<doc-anchor-target id="key-governance-goals">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-governance-goals">#</doc-anchor-trigger>
+        <span>Key Governance Goals</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Ensure high knowledge quality and verifiability.</strong></li>
+<li><strong>Prevent spam, misinformation, and abuse.</strong></li>
+<li><strong>Balance openness with integrity.</strong></li>
+<li><strong>Enable community participation while ensuring operational efficiency.</strong></li>
+</ul>
+<hr>
+<doc-anchor-target id="conclusion--vision">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion--vision">#</doc-anchor-trigger>
+        <span>Conclusion &amp; Vision</span>
+    </h1>
+</doc-anchor-target>
+<p>The KCG+CAG ecosystem bridges the gap between heavy, centralized LLM inference and lightweight, efficient Tiny LLMs operating at the edge. By introducing an open, decentralized, and verifiable knowledge graph, coupled with Cache-Augmented Generation (CAG) and Selective Contextual Reasoning (SCR), we enable Tiny LLMs to stay continuously updated, smart, and capable — without costly retraining or vendor lock-in.</p>
+<p>This paradigm shift turns reasoning and knowledge augmentation into <strong>an open, reusable, and community-driven resource</strong>, breaking free from centralized control and enabling AI models to reason dynamically using decentralized knowledge caches.</p>
+<doc-anchor-target id="our-vision">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#our-vision">#</doc-anchor-trigger>
+        <span>Our Vision</span>
+    </h2>
+</doc-anchor-target>
+<p>We envision a world where:</p>
+<ul>
+<li><strong>Tiny LLMs become truly autonomous learners</strong>, continuously improving and reasoning at the edge.</li>
+<li><strong>Knowledge becomes a public good</strong>, verifiable and accessible to all, stored immutably in the Knowledge Cache Graph (KCG).</li>
+<li><strong>Users, agents, and validators collaborate in a self-reinforcing ecosystem</strong>, where knowledge grows organically, costs decrease, and reasoning becomes more reliable, democratic, and sovereign.</li>
+</ul>
+<p>By adopting the KCG+CAG architecture, we take a significant step toward <strong>democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.</strong></p>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
