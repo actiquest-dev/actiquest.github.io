@@ -15,12 +15,12 @@ label: AI Live Pod
 
 ## Overview
 
-AI Live Pod is a next-generation, privacy-first, multimodal AI assistant designed to live with you, learn from you, and support your everyday life as a proactive, emotionally aware companion — all without relying on the cloud.  
+AI Live Pod is a next-generation, privacy-first, multimodal AI assistant designed to live with you, learn from you, and support your everyday life as a proactive, emotionally aware companion - all without relying on the cloud.  
 It combines cutting-edge on-device AI inference, continuous local learning, and decentralized networks to deliver personalized, human-like interactions in real time, with zero data leakage.
 
 ## The Market Opportunity
 
-In an age of cloud-based assistants that feel generic, intrusive, and reactive, AI Live Pod addresses an urgent gap: the need for **deeply personal, private, and human-like AI companions** that can engage users proactively, understand nuanced context, and become part of their daily routines — at home, at work, and on the move.
+In an age of cloud-based assistants that feel generic, intrusive, and reactive, AI Live Pod addresses an urgent gap: the need for **deeply personal, private, and human-like AI companions** that can engage users proactively, understand nuanced context, and become part of their daily routines - at home, at work, and on the move.
 
 This is not just an assistant. This is the **first step towards embodied, emotionally resonant AI that lives with you, not in a server farm**.
 
@@ -35,7 +35,7 @@ Several key triggers make now the right time to launch AI Live Pod:
 - **Societal Shifts**: Growing awareness of data privacy, digital wellbeing, and the loneliness epidemic create demand for more human-centered, private AI.
 - **Economic Forces**: The rise of DePIN (Decentralized Physical Infrastructure Networks) and blockchain-enabled data economies open the door for new, user-first AI business models.
 
-AI Live Pod captures this moment by uniting these forces into a **human-scale, private, and decentralized AI ecosystem** — designed for a world that is tired of cloud dependency, data exploitation, and cold, transactional interactions.
+AI Live Pod captures this moment by uniting these forces into a **human-scale, private, and decentralized AI ecosystem** - designed for a world that is tired of cloud dependency, data exploitation, and cold, transactional interactions.
 
 ---
 
@@ -43,22 +43,22 @@ AI Live Pod captures this moment by uniting these forces into a **human-scale, p
 
 ## What is AI Live Pod?
 
-AI Live Pod is a compact, always-with-you AI assistant — a fusion of advanced local AI inference, multimodal sensing, and privacy-first design.  
-It is more than a device: it's a **personal AI node that lives alongside you**, learns continuously, interacts naturally across voice, vision, gestures, and context, and keeps your data where it belongs — with you.
+AI Live Pod is a compact, always-with-you AI assistant - a fusion of advanced local AI inference, multimodal sensing, and privacy-first design.  
+It is more than a device: it's a **personal AI node that lives alongside you**, learns continuously, interacts naturally across voice, vision, gestures, and context, and keeps your data where it belongs - with you.
 
 This is the next leap beyond smartphones, smart speakers, and cloud AI chatbots.  
-AI Live Pod offers an **embodied, proactive, emotionally aware AI companion**, designed to support users across daily routines, self-improvement journeys, family life, and professional tasks — all while respecting autonomy and privacy.
+AI Live Pod offers an **embodied, proactive, emotionally aware AI companion**, designed to support users across daily routines, self-improvement journeys, family life, and professional tasks - all while respecting autonomy and privacy.
 
 ## From Cloud AI to On-Device, Multimodal, Privacy-First Assistants
 
-For over a decade, AI assistants have lived in the cloud. They answered queries, set timers, and provided basic task automation — but they always remained **generic, reactive, and disconnected from the user’s real life**.  
+For over a decade, AI assistants have lived in the cloud. They answered queries, set timers, and provided basic task automation - but they always remained **generic, reactive, and disconnected from the user’s real life**.  
 Worse, they came with trade-offs: **latency, privacy concerns, and an inherent coldness in interaction**.
 
 At the same time, Large Language Models (LLMs) and multimodal AI have made leaps in capabilities. Yet, these breakthroughs are often trapped behind server walls and subscription paywalls, delivering one-size-fits-all answers and failing to truly **personalize or contextualize AI to the user’s world**.
 
 AI Live Pod represents a new chapter:  
 - **AI that lives with you, not above you.**
-- **AI that sees, listens, learns — but never leaks your data.**
+- **AI that sees, listens, learns - but never leaks your data.**
 - **AI that grows to understand you deeply and becomes an emotionally present companion.**
 
 ## Vision and Mission
@@ -68,7 +68,7 @@ We believe the future of AI is **on the edge, multimodal, decentralized, and dee
 
 Our mission with AI Live Pod is to deliver the **first truly personal AI assistant that runs locally, respects user autonomy, and leverages the power of decentralized networks to create a safer, fairer, and more empowering AI ecosystem for individuals and communities alike.**
 
-AI Live Pod is **your AI, your data, your rules — always.**
+AI Live Pod is **your AI, your data, your rules - always.**
 
 ---
 
@@ -115,7 +115,7 @@ This gap leaves immense untapped potential for **LLM-driven assistants that trul
 ## DePIN and Decentralization Challenges
 
 While **Decentralized Physical Infrastructure Networks (DePIN)** promise user-owned, privacy-respecting AI ecosystems, today’s implementations remain fragmented and technically inaccessible to everyday users.  
-AI Live Pod addresses this by offering a **frictionless entry point into DePIN**, where users can own and operate their AI node without technical hurdles — unlocking the power of distributed intelligence, while keeping control firmly in the user’s hands.
+AI Live Pod addresses this by offering a **frictionless entry point into DePIN**, where users can own and operate their AI node without technical hurdles - unlocking the power of distributed intelligence, while keeping control firmly in the user’s hands.
 
 ---
 
@@ -124,7 +124,7 @@ AI Live Pod addresses this by offering a **frictionless entry point into DePIN**
 
 ## Overview of AI Live Pod Hardware and Software Ecosystem
 
-AI Live Pod is a **portable, always-present AI companion in a compact tabletop form factor** — blending advanced edge AI hardware, multimodal sensing, and privacy-first design.  
+AI Live Pod is a **portable, always-present AI companion in a compact tabletop form factor** - blending advanced edge AI hardware, multimodal sensing, and privacy-first design.  
 Its approachable form resembles a Bluetooth speaker or smart display, making it naturally fit into home, office, or personal spaces.
 
 AI Live Pod creates a **personal AI environment that accompanies the user across daily routines**, learns continuously on-device, and interacts naturally through:
@@ -133,17 +133,17 @@ AI Live Pod creates a **personal AI environment that accompanies the user across
 - Gestures
 - Environmental and contextual cues
 
-It is a **physical, embodied AI node** that belongs to the user, lives in their space, and operates autonomously — **no always-on cloud connection required**.
+It is a **physical, embodied AI node** that belongs to the user, lives in their space, and operates autonomously - **no always-on cloud connection required**.
 
 ## Core Value Proposition
 
 AI Live Pod delivers:
 - **Deep personalization through continuous, on-device learning**.
 - **Multimodal, natural interaction that feels like a supportive presence, not just a utility**.
-- **Zero data leakage — privacy by design, no data leaves the device without explicit user consent**.
-- **Proactive engagement — AI Live Pod observes, suggests, and supports users across contexts, not waiting passively for commands**.
+- **Zero data leakage - privacy by design, no data leaves the device without explicit user consent**.
+- **Proactive engagement - AI Live Pod observes, suggests, and supports users across contexts, not waiting passively for commands**.
 
-AI Live Pod is the **missing bridge between powerful AI models and the human world** — enabling emotionally resonant, contextually aware, and trusted AI companionship.
+AI Live Pod is the **missing bridge between powerful AI models and the human world** - enabling emotionally resonant, contextually aware, and trusted AI companionship.
 
 ## Key Differentiators
 
@@ -161,7 +161,7 @@ AI Live Pod leverages its **sensor suite and advanced multimodal models** to und
 - Edge-optimized inference for real-time responsiveness.
 
 ### Distillation-on-Demand (DoD) and Cache-Augmented Generation (CAG)
-AI Live Pod introduces **distillation-on-demand (DoD)** — creating user-personalized micro-models that evolve over time based on user interactions.  
+AI Live Pod introduces **distillation-on-demand (DoD)** - creating user-personalized micro-models that evolve over time based on user interactions.  
 Combined with **Cache-Augmented Generation (CAG)**, it allows:
 - Faster, more personalized responses.
 - Memory of key user knowledge, preferences, routines, and events.
@@ -181,8 +181,8 @@ AI Live Pod acts as a **node in a decentralized AI swarm**, enabling:
 
 ---
 
-AI Live Pod is **AI that lives with you, listens, sees, learns — but never leaves your side.  
-It’s AI that respects, adapts, and empowers — while protecting your privacy and agency at every step.**
+AI Live Pod is **AI that lives with you, listens, sees, learns - but never leaves your side.  
+It’s AI that respects, adapts, and empowers - while protecting your privacy and agency at every step.**
 
 ---
 
@@ -289,14 +289,14 @@ This layer seamlessly integrates the following components into a unified process
 
 ---
 
-AI Live Pod embodies the **new paradigm of sovereign, decentralized, fully multimodal AI assistants** — blending dual 4K vision, local reasoning agents, and personal LLMs into a **coherent, proactive, and trusted AI ecosystem on the edge**.
+AI Live Pod embodies the **new paradigm of sovereign, decentralized, fully multimodal AI assistants** - blending dual 4K vision, local reasoning agents, and personal LLMs into a **coherent, proactive, and trusted AI ecosystem on the edge**.
 
 ---
 
 
 # 5. Use Cases
 
-AI Live Pod opens a new category of **privacy-first, portable AI assistants capable of blending indoor and outdoor contexts**, personal routines, and family life — all while running fully offline.
+AI Live Pod opens a new category of **privacy-first, portable AI assistants capable of blending indoor and outdoor contexts**, personal routines, and family life - all while running fully offline.
 
 ## 5.1 Mass Market Use Cases (Family, Home, Lifestyle)
 
@@ -317,7 +317,7 @@ AI Live Pod opens a new category of **privacy-first, portable AI assistants capa
 
 ### Educational Assistant for Kids
 - Indoor learning companion that assists with homework, reading, and interactive games.
-- Outdoor exploration assistant (e.g., recognizing birds, plants using local CV models — no internet needed).
+- Outdoor exploration assistant (e.g., recognizing birds, plants using local CV models - no internet needed).
 - Generates personalized bedtime stories or interactive learning content, based on the child's interests and recent activities.
 
 ### Smart Home Orchestration Hub
@@ -346,18 +346,18 @@ AI Live Pod opens a new category of **privacy-first, portable AI assistants capa
 ### Enterprise Wellness and Productivity Programs
 - AI Live Pod as a **personalized team coach**, running in meeting rooms, home offices, or break areas.
 - Assists with cognitive load management, micro-break suggestions, and wellness routines.
-- All data processed locally — no privacy compromise for employees.
+- All data processed locally - no privacy compromise for employees.
 
 ## Key Differentiators Across Use Cases
-- **Fully Offline, Privacy-Safe**: Zero data leaves the device — suitable for families, sensitive industries, and regulated environments.
+- **Fully Offline, Privacy-Safe**: Zero data leaves the device - suitable for families, sensitive industries, and regulated environments.
 - **Indoor/Outdoor Adaptive AI**: Dual 4K cameras and multimodal sensors enable context-aware experiences both inside and outside.
-- **Proactive, Personalized AI**: AI Live Pod doesn’t wait for commands — it observes, reasons, and offers tailored suggestions in real time.
+- **Proactive, Personalized AI**: AI Live Pod doesn’t wait for commands - it observes, reasons, and offers tailored suggestions in real time.
 - **Open and Extensible Application Layer**: Businesses can develop custom agents, workflows, and integrations directly on-device.
 - **DePIN Ready**: Optional participation in decentralized AI mesh economies (e.g., collective knowledge sharing, inference-as-a-service).
 
 ---
 
-AI Live Pod enables a future where **AI is embodied, local, adaptive, and deeply personal**, delivering **contextual, human-like support at home, at work, or in the field — without ever compromising user data privacy or autonomy**.
+AI Live Pod enables a future where **AI is embodied, local, adaptive, and deeply personal**, delivering **contextual, human-like support at home, at work, or in the field - without ever compromising user data privacy or autonomy**.
 
 ---
 
@@ -366,7 +366,7 @@ AI Live Pod enables a future where **AI is embodied, local, adaptive, and deeply
 ## Why Hyperpersonalization Matters
 
 In an age of generic cloud AI, **users crave assistants that feel personal, proactive, and truly understand their world**.  
-Hyperpersonalization with AI Live Pod is not about tweaking settings manually — it's about **delegating everyday cognitive load to an AI that learns, reasons, and acts like a personal digital twin**.
+Hyperpersonalization with AI Live Pod is not about tweaking settings manually - it's about **delegating everyday cognitive load to an AI that learns, reasons, and acts like a personal digital twin**.
 
 ### User Motivations
 
@@ -407,7 +407,7 @@ AI Live Pod applies a **multimodal, continuous hyperpersonalization loop**, inte
 7. **Feedback and Adaptation Loop**  
    - User reactions (voice, gestures, acceptance of suggestions) feed into continuous fine-tuning.
 
-This approach ensures AI Live Pod **understands not only what the user does, but also why and how they feel — reacting in real time, always locally, always privately**.
+This approach ensures AI Live Pod **understands not only what the user does, but also why and how they feel - reacting in real time, always locally, always privately**.
 
 ---
 
@@ -439,7 +439,7 @@ AI Live Pod follows a **staged personalization roadmap**, ensuring users experie
 - Consolidated RAG, CAG, LoRA into **Hyperpersonalized AI Profile v1.0**.
 - Summary report of user progress, content preferences, and behavioral patterns.
 
-> **Result**: In just 30 days, AI Live Pod evolves from generic assistant to **emotionally resonant, context-aware, proactive AI companion — all fully offline and under user control**.
+> **Result**: In just 30 days, AI Live Pod evolves from generic assistant to **emotionally resonant, context-aware, proactive AI companion - all fully offline and under user control**.
 
 ---
 
@@ -467,7 +467,7 @@ AI Live Pod builds **distinct knowledge graphs, dialogue styles, and routines fo
 
 ---
 
-AI Live Pod’s hyperpersonalization methodology turns everyday interactions into a **living relationship between user and AI — private, adaptive, proactive, and human-like**.
+AI Live Pod’s hyperpersonalization methodology turns everyday interactions into a **living relationship between user and AI - private, adaptive, proactive, and human-like**.
 
 ---
 
@@ -487,7 +487,7 @@ AI Live Pod introduces a **hybrid economic model**, combining direct hardware sa
     - Additional voice profiles and behavioral agents.
     - Multi-user household mode.
     - Personalized routines and content packs.
-  - Fully processed and stored locally — subscription covers software upgrades, not data storage.
+  - Fully processed and stored locally - subscription covers software upgrades, not data storage.
 
 ## Knowledge Caching Economy (Arweave Mesh Integration)
 
@@ -522,7 +522,7 @@ As part of the **Decentralized Physical Infrastructure Network (DePIN)**, AI Liv
 
 ---
 
-AI Live Pod’s economic model is **designed for sustainability, decentralization, and user empowerment** — shifting the value capture from cloud-centric subscriptions to **user-owned, on-device intelligence economies**.
+AI Live Pod’s economic model is **designed for sustainability, decentralization, and user empowerment** - shifting the value capture from cloud-centric subscriptions to **user-owned, on-device intelligence economies**.
 
 ---
 
@@ -545,7 +545,7 @@ Yet, all these players share critical limitations in personalization depth, priv
 ## AI Live Pod's Key Advantages
 
 ### Fully Offline, Privacy-by-Design Architecture
-- **Zero-cloud data retention** — all data, models, and interactions remain on-device.
+- **Zero-cloud data retention** - all data, models, and interactions remain on-device.
 - No third-party data harvesting or external APIs needed for core functions.
 
 ### Multimodal, Context-Aware AI (Indoor & Outdoor)
@@ -557,7 +557,7 @@ Yet, all these players share critical limitations in personalization depth, priv
 - Evolves into a **hyperpersonalized digital twin that grows with the user**, understands routines, preferences, moods, and context in real time.
 
 ### Proactive and Emotionally-Aware AI
-- AI Live Pod does not wait for commands — it observes, reasons, and **offers proactive, human-like interventions** across personal, family, and professional domains.
+- AI Live Pod does not wait for commands - it observes, reasons, and **offers proactive, human-like interventions** across personal, family, and professional domains.
 
 ### DePIN Ready and Open
 - Supports participation in **decentralized knowledge and inference networks (Arweave Mesh, DePIN)**.
@@ -582,7 +582,7 @@ Yet, all these players share critical limitations in personalization depth, priv
 
 ---
 
-AI Live Pod redefines the category from **cloud-controlled gadgets to sovereign, proactive, privacy-first personal AI nodes** that live with the user — **on their terms, on their device, in their world**.
+AI Live Pod redefines the category from **cloud-controlled gadgets to sovereign, proactive, privacy-first personal AI nodes** that live with the user - **on their terms, on their device, in their world**.
 
 ---
 
@@ -651,7 +651,7 @@ AI Live Pod follows a **phased deployment strategy**, focused on achieving early
 
 ---
 
-AI Live Pod’s deployment plan balances **controlled MVP rollout with visionary scaling into decentralized, sovereign AI economies** — paving the way for **a world where every user owns, controls, and benefits from their personal AI node**.
+AI Live Pod’s deployment plan balances **controlled MVP rollout with visionary scaling into decentralized, sovereign AI economies** - paving the way for **a world where every user owns, controls, and benefits from their personal AI node**.
 
 ---
 
@@ -659,7 +659,7 @@ AI Live Pod’s deployment plan balances **controlled MVP rollout with visionary
 
 ## Vision: AI at the Edge, for the People
 
-AI Live Pod is more than a product — it is a **node in a new human-centered, decentralized AI ecosystem**, where individuals own their data, models, and agents.  
+AI Live Pod is more than a product - it is a **node in a new human-centered, decentralized AI ecosystem**, where individuals own their data, models, and agents.  
 Our mission is to **empower users, families, and communities to become sovereign actors in the future of AI**, participating in **peer-to-peer intelligence economies while protecting autonomy and privacy**.
 
 We envision a world where:
@@ -689,7 +689,7 @@ AI Live Pod lays the groundwork for:
 - **Decentralized reasoning ecosystems**: Personal and shared agents cooperating via secure mesh networks.
 - **Open, user-controlled AI infrastructures**: Enabling a truly distributed, transparent, and equitable AI future.
 
-> AI Live Pod is not just a device — it’s the first building block in the **Decentralized Physical AI Infrastructure of the future**.
+> AI Live Pod is not just a device - it’s the first building block in the **Decentralized Physical AI Infrastructure of the future**.
 
 
 # 11. Conclusion and Call to Action
@@ -697,15 +697,15 @@ AI Live Pod lays the groundwork for:
 ## Summary of the Opportunity
 
 The world is at a turning point.  
-AI is becoming more powerful, yet more centralized, more generic, more opaque — leaving users feeling like passengers in someone else’s system.
+AI is becoming more powerful, yet more centralized, more generic, more opaque - leaving users feeling like passengers in someone else’s system.
 
 AI Live Pod offers a **radically different path forward**:
 - **AI that lives with you, not above you**.
-- **AI that is personalized, proactive, multimodal — and fully yours**.
+- **AI that is personalized, proactive, multimodal - and fully yours**.
 - **AI that never sends your data to the cloud, never compromises your privacy, and grows into a digital companion that understands your life, your context, your values**.
 
 This is more than a product.  
-It’s the **first node in a new era of decentralized, human-centered AI infrastructures** — where users become owners, communities become ecosystems, and AI becomes a force for empowerment, not exploitation.
+It’s the **first node in a new era of decentralized, human-centered AI infrastructures** - where users become owners, communities become ecosystems, and AI becomes a force for empowerment, not exploitation.
 
 ## Why Now Is the Moment
 
@@ -713,14 +713,14 @@ It’s the **first node in a new era of decentralized, human-centered AI infrast
 - **Social shifts**: Users demand privacy, personalization, and sovereignty over their data and digital lives.
 - **Economic transformation**: DePIN and decentralized AI infrastructures enable new models where individuals capture the value of their AI nodes.
 
-> AI Live Pod captures this historic moment by delivering the **world’s first fully offline, multimodal, hyperpersonalized AI assistant that belongs to the user — and only the user.**
+> AI Live Pod captures this historic moment by delivering the **world’s first fully offline, multimodal, hyperpersonalized AI assistant that belongs to the user - and only the user.**
 
 ## Call to Action
 
 We invite partners, developers, early adopters, and visionaries to:
 - **Join us in bringing AI Live Pod to life**.
 - **Support the first pilots and become part of the DePIN mesh revolution**.
-- **Invest in a future where AI is sovereign, private, and human-scale — not cloud-scale**.
+- **Invest in a future where AI is sovereign, private, and human-scale - not cloud-scale**.
 
 Together, we can **make personal AI truly personal, truly private, and truly yours**.
 
