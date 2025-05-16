@@ -7,6 +7,10 @@ label: Knowledge Cache
 
 ---
 
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfgq_byivHQ01DpDdRaeJEg_Q8PI-KtKiFtJ4hWmuCYOYiPZGUt34LAH0EiRY1JAasviADLhiAC1eBbCH2gBQZK3AesyZsB0rkVBnZArwqiiNP8af4_EIEIZhVKueSPRkGfBU_tRw?key=AsJEkgePh24159X10uUz6PJ-)
+
+---
+
 # Executive Summary
 
 The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge freshness, and reasoning capabilities. While millions of users deploy these models for everyday tasks, their ability to learn, update, and reason remains limited, requiring costly and slow interventions via centralized Big LLM APIs or fine-tuning.
