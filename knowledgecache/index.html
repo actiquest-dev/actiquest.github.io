@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800617395187">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800674905127">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.8.1.800617395187" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.8.1.800674905127" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800617395187" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800674905127" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800617395187" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.800617395187" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800674905127" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.800674905127" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -817,6 +817,121 @@ EchoLM analysis indicates that 60% of user queries exhibit semantically similar 
 <li>Fair economic incentives aligned with contribution value.</li>
 </ul>
 <p>This comprehensive workflow forms the backbone of the KCG+CAG architecture, ensuring continuous improvement of Tiny LLMs through collaborative distillation and caching.</p>
+<hr>
+<doc-anchor-target id="distillation-on-demand-dod-knowledge-recording-process">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#distillation-on-demand-dod-knowledge-recording-process">#</doc-anchor-trigger>
+        <span>Distillation on Demand (DoD) Knowledge Recording Process</span>
+    </h2>
+</doc-anchor-target>
+<p>In the KCG+CAG architecture, the process of recording new distilled knowledge into the public Knowledge Cache Graph (KCG) follows a controlled and secure workflow. This ensures that only validated, high-quality knowledge is added to the immutable graph while maintaining decentralization and incentivization mechanisms for contributors.</p>
+<doc-anchor-target id="corrected-knowledge-recording-workflow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#corrected-knowledge-recording-workflow">#</doc-anchor-trigger>
+        <span>Corrected Knowledge Recording Workflow</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="1-dod-agent-initiates-distillation-on-demand">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-dod-agent-initiates-distillation-on-demand">#</doc-anchor-trigger>
+        <span>1. DoD Agent Initiates Distillation on Demand</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>The DoD Agent generates a research or reasoning request.</li>
+<li>Collects and synthesizes responses from RAG retrieval, KCG subgraphs, and Big LLM APIs.</li>
+<li>Forms a proposed distilled knowledge summary, including supporting evidence and metadata.</li>
+</ul>
+<doc-anchor-target id="2-submission-to-gateway">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-submission-to-gateway">#</doc-anchor-trigger>
+        <span>2. Submission to Gateway</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>The DoD Agent <strong>does not write directly to the KCG layer</strong>.</li>
+<li>Instead, it submits the proposed knowledge entry to the designated Gateway.</li>
+</ul>
+<doc-anchor-target id="3-gateway-validation-and-packaging">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-gateway-validation-and-packaging">#</doc-anchor-trigger>
+        <span>3. Gateway Validation and Packaging</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><p>The Gateway performs mandatory validation steps:</p>
+<ul>
+<li>Checks data format and completeness.</li>
+<li>Optionally engages Validators for consensus or quality scoring.</li>
+<li>Verifies sources and supporting evidence.</li>
+</ul>
+</li>
+<li><p>Ensures that the entry meets protocol standards and prevents spam or malformed data.</p>
+</li>
+</ul>
+<doc-anchor-target id="4-recording-into-kcg-kv-layer">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-recording-into-kcg-kv-layer">#</doc-anchor-trigger>
+        <span>4. Recording into KCG KV-Layer</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><p>Once validated, the Gateway:</p>
+<ul>
+<li>Packages the distilled knowledge as a KCG-compliant immutable record (JSON-LD format).</li>
+<li>Publishes the record to Arweave (or equivalent immutable storage layer).</li>
+<li>Updates the KCG KV-layer with the corresponding embedding key-value pair for efficient future retrieval.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="5-confirmation-to-dod-agent">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-confirmation-to-dod-agent">#</doc-anchor-trigger>
+        <span>5. Confirmation to DoD Agent</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>The Gateway returns the finalized KCG TXID to the DoD Agent.</li>
+<li>The Agent can now reference, use, or cache the new entry locally or within its own Gateway cache.</li>
+</ul>
+<doc-anchor-target id="key-principles">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-principles">#</doc-anchor-trigger>
+        <span>Key Principles</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Role</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DoD Agent</td>
+<td>Generates and proposes distilled knowledge</td>
+</tr>
+<tr>
+<td>Gateway</td>
+<td>Validates, packages, and writes to KCG</td>
+</tr>
+<tr>
+<td>KCG (Arweave/IPFS)</td>
+<td>Immutable, public, verifiable knowledge layer</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="rationale">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rationale">#</doc-anchor-trigger>
+        <span>Rationale</span>
+    </h3>
+</doc-anchor-target>
+<p>This controlled recording flow ensures that the system maintains integrity, traceability, and trust in the shared knowledge layer. By separating the agent proposal phase from the authoritative recording step at the Gateway level, the KCG+CAG ecosystem mitigates risks such as misinformation, low-quality data injection, and malicious spam while still enabling open community contributions through DoD Agents.</p>
+<p>This model reinforces KCG as the source of truth while maintaining efficient, flexible knowledge access layers through local and Gateway KV-caches.</p>
 <hr>
 <doc-anchor-target id="roles-of-validators-gateways-and-dod-agents">
     <h2>
