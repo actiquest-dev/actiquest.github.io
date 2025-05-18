@@ -334,6 +334,204 @@ By combining SCR with multi-layered caching, KCG+CAG establishes an **agile, sel
 
 ---
 
+## Gateway Reasoning Orchestration & Knowledge Gap Detection
+
+The Gateway is more than a passive storage and query endpoint — it actively orchestrates the quality and structure of the Knowledge Cache Graph (KCG). Its core responsibility is to detect reasoning gaps, manage KV-caching layers, and coordinate the creation of new knowledge via DoD agents.
+
+### Detecting Knowledge Gaps and Hot Topics
+
+Gateways continuously monitor query traffic and KV cache behavior to detect:
+
+- Frequent KV misses: repeated user queries where no matching cached KV exists.
+- Spikes in similar queries: indicating a trend or emerging interest (e.g. "fine-tuning LLaMA", "RAG vs CAG").
+- Redundant calls to Big LLMs: same queries triggering repeated costly API calls — a sign of missing reusable reasoning.
+- Stale or outdated KV blocks: old distillations no longer consistent with updated knowledge graphs or ontologies.
+
+This results in the identification of Knowledge Hotspots or Reasoning Deficits.
+
+### KV Cache Orchestration
+
+The Gateway maintains a multi-tiered cache structure:
+
+- Hot Layer: High-frequency, high-importance KV blocks.
+- Warm Layer: Medium-use, non-volatile knowledge.
+- Cold Layer: Low-use, outdated, or weakly relevant KV blocks.
+
+Each entry is annotated with:
+- `importance_score`: provided by DoD agent or inferred via usage analytics.
+- `last_accessed` timestamp.
+- `source_confidence` and `validation_passed`.
+
+Based on these signals, the Gateway:
+- Ranks new KV entries using a hybrid scoring model (importance × frequency × freshness).
+- Evicts or offloads stale entries to disk/off-chain cold storage.
+- Recalls pages of KV blocks when relevant topics re-emerge (recency-based paging).
+- Bundles KV-chains and reasoning paths for replay and reconstruction.
+
+### Proactive Distillation Task Creation
+
+When a pattern of deficiency is detected, the Gateway generates and queues distillation tasks:
+
+```json
+{
+  "query": "how to train LLaMA on custom data",
+  "pattern_id": "llama_ft_2024",
+  "trigger": "miss_rate>80%",
+  "task_type": "proactive_distillation",
+  "bounty": 4,
+  "requirements": {
+    "agent_status": "idle",
+    "gpu": true,
+    "max_latency": "5s"
+  }
+}
+```
+
+These tasks are broadcast to DoD Agents that meet the resource and status conditions.
+
+### Intelligent KV Layering and Feedback Loop
+
+As agents submit new KV blocks and reasoning chains:
+- Gateway scores and validates them.
+- High-confidence blocks are pushed to the hot layer.
+- Usage data is fed back to reinforce or decay importance scores.
+
+This feedback loop ensures self-improvement of the reasoning layer over time — without requiring global retraining of any model.
+
+### Outcome
+
+- Better reuse of reasoning → lower Big LLM cost.
+- Dynamic adaptation of the knowledge graph to user demand.
+- Coordinated, decentralized creation of new verified knowledge via task-market economics.
+
+---
+
+## Incentivized Task Routing: Proactive DoD Distillation from Gateway
+
+To ensure the quality and freshness of knowledge in the KCG (Knowledge Cache Graph), Gateways can proactively request knowledge distillation - even when no user explicitly triggers it. This is especially useful for trending queries or emerging knowledge gaps.
+
+### Why Gateways Initiate Proactive DoD Tasks
+
+Gateways detect:
+- Frequent KV cache misses for a specific query pattern
+- High-volume repeated API calls to Big LLMs for the same topic
+- Insufficient reasoning coverage in the current KCG
+
+They then generate a **distillation task** with a canonical query and metadata, and broadcast it to available DoD Agents.
+
+### What a Distillation Task Looks Like
+
+```json
+{
+  "type": "distillation_request",
+  "triggered_by": "kv_miss_frequency",
+  "canonical_query": "how to fine-tune LLaMA",
+  "priority": "high",
+  "bounty": 3,
+  "requirements": {
+    "agent_status": "idle",
+    "min_gpu_mem": "12GB",
+    "response_time": "<10s"
+  }
+}
+```
+
+### Who Pays for the Distillation?
+
+Options include:
+- **Gateway treasury** funded from user token fees
+- **Task-level bounties** paid to the first agent who completes and passes validation
+- **Enterprise sponsors** funding custom knowledge domains
+
+Agents only earn rewards if their results:
+- Pass semantic and factual validation
+- Are accepted into the KCG by the Gateway
+- Remain cached beyond a minimum usage threshold
+
+### DoD Agent Task Acceptance Protocol
+
+Agents may **accept or reject** tasks based on:
+- Device status (CPU/GPU/TPU load, memory, battery state etc.)
+- Recent task queue
+- Reward threshold
+
+### Key Benefits
+
+- Incentivized load balancing across edge agents
+- Minimal latency for hot-topic knowledge retrieval
+- Reduced redundant Big LLM calls
+- Efficient use of idle resources
+
+This model transforms Gateway nodes into **active coordinators of knowledge**, while DoD Agents become **economic actors in an open market of reasoning services**.
+
+---
+
+## Segmented KV Buffer & Prioritized Paging for DoD Agent
+
+To support efficient reasoning and memory management, each DoD Agent maintains a **Segmented KV Buffer** — a multi-layered cache that mirrors the mental model of short-term memory, long-term knowledge, and shared intelligence.
+
+This buffer is not a flat list of KV pairs but a **prioritized, dynamic structure** divided by scope and usage intent.
+
+### KV Buffer Segments
+
+1. **Session Memory**  
+   - Stores recent tokens, prompts, and in-context outputs.  
+   - Volatile and specific to the current user/task.  
+   - Used for continuity in short dialogs and multi-turn queries.
+
+2. **Local Knowledge Cache**  
+   - Stores previously distilled or reused knowledge from past tasks.  
+   - Retrieved from prior DoD calls or localized user storage.  
+   - Adaptively refreshed based on reuse frequency.
+
+3. **Global Shared KV Layer (KCG-derived)**  
+   - Contains verified reasoning blocks from the Gateway or global KCG.  
+   - Pulled in lazily or preloaded based on semantic match with query.  
+   - Immutable and tagged with metadata (source, confidence, TTL).
+
+Each segment has its own memory policy: TTL, max size, eviction rules, and update frequency.
+
+### Paging and Prioritization Logic
+
+Before executing inference, the DoD Agent performs:
+
+- **Semantic prefiltering**: scoring available KV entries based on relevance to the current prompt/query.
+- **Priority ranking**: weighting entries by segment (session > local > global), recency, and confidence.
+- **Page selection**: choosing top-N blocks to load into active KV memory.
+- **KV hydration**: loading precomputed values directly into the model’s attention cache.
+
+If memory is constrained (e.g., GPU VRAM), paging strategies are applied:
+
+- **Evict least recently used (LRU)** entries first.
+- **Drop low-confidence or low-impact chains**.
+- **Recall previously offloaded KV blocks from disk or host memory** if needed.
+
+### Benefits for Reasoning
+
+- Reduces prompt size by reusing memory instead of refeeding tokens.
+- Speeds up inference via prehydrated KV attention.
+- Enables long-form or multi-stage reasoning without exceeding context limits.
+- Supports “memory-based personalization” without model fine-tuning.
+
+### Real User Value
+
+For end users, this means:
+- **Faster answers** — as the model skips redundant context and loads memory directly.
+- **Cheaper queries** — fewer tokens sent to Big LLM APIs or fewer cycles burned locally.
+- **Smarter responses over time** — as the agent remembers what it learned and reuses it.
+- **No lag during long tasks** — complex queries feel instant, even on edge devices.
+
+### Future Optimizations
+
+- Learning-based context routers to optimize KV selection dynamically.
+- Attention-aware scheduling: align paging with expected model read patterns.
+- Collaborative KV: agents share anonymized hot blocks via Gateway to bootstrap each other’s reasoning.
+
+This architecture transforms DoD Agents from stateless callers into **adaptive, memory-efficient reasoning units**, capable of high-quality inference under local constraints — and delivering visible gains in speed, cost, and usefulness to users.
+
+
+---
+
 # Integration with PEAK Protocol
 
 The KCG+CAG system can be seamlessly integrated and deployed on top of **PEAK Protocol**, leveraging its existing decentralized infrastructure, consensus mechanisms, and privacy-enhancing features.
