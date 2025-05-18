@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800703896045">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800884757969">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.8.1.800703896045" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.8.1.800884757969" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800703896045" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800884757969" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800703896045" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800884757969" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.800884757969" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -867,6 +868,278 @@
 </ul>
 <p>By combining SCR with multi-layered caching, KCG+CAG establishes an <strong>agile, self-learning reasoning infrastructure</strong>, enabling Tiny LLMs to stay fresh, responsive, and efficient at the edge.</p>
 <hr>
+<doc-anchor-target id="gateway-reasoning-orchestration--knowledge-gap-detection">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gateway-reasoning-orchestration--knowledge-gap-detection">#</doc-anchor-trigger>
+        <span>Gateway Reasoning Orchestration &amp; Knowledge Gap Detection</span>
+    </h2>
+</doc-anchor-target>
+<p>The Gateway is more than a passive storage and query endpoint — it actively orchestrates the quality and structure of the Knowledge Cache Graph (KCG). Its core responsibility is to detect reasoning gaps, manage KV-caching layers, and coordinate the creation of new knowledge via DoD agents.</p>
+<doc-anchor-target id="detecting-knowledge-gaps-and-hot-topics">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#detecting-knowledge-gaps-and-hot-topics">#</doc-anchor-trigger>
+        <span>Detecting Knowledge Gaps and Hot Topics</span>
+    </h3>
+</doc-anchor-target>
+<p>Gateways continuously monitor query traffic and KV cache behavior to detect:</p>
+<ul>
+<li>Frequent KV misses: repeated user queries where no matching cached KV exists.</li>
+<li>Spikes in similar queries: indicating a trend or emerging interest (e.g. &quot;fine-tuning LLaMA&quot;, &quot;RAG vs CAG&quot;).</li>
+<li>Redundant calls to Big LLMs: same queries triggering repeated costly API calls — a sign of missing reusable reasoning.</li>
+<li>Stale or outdated KV blocks: old distillations no longer consistent with updated knowledge graphs or ontologies.</li>
+</ul>
+<p>This results in the identification of Knowledge Hotspots or Reasoning Deficits.</p>
+<doc-anchor-target id="kv-cache-orchestration">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kv-cache-orchestration">#</doc-anchor-trigger>
+        <span>KV Cache Orchestration</span>
+    </h3>
+</doc-anchor-target>
+<p>The Gateway maintains a multi-tiered cache structure:</p>
+<ul>
+<li>Hot Layer: High-frequency, high-importance KV blocks.</li>
+<li>Warm Layer: Medium-use, non-volatile knowledge.</li>
+<li>Cold Layer: Low-use, outdated, or weakly relevant KV blocks.</li>
+</ul>
+<p>Each entry is annotated with:</p>
+<ul>
+<li><code v-pre>importance_score</code>: provided by DoD agent or inferred via usage analytics.</li>
+<li><code v-pre>last_accessed</code> timestamp.</li>
+<li><code v-pre>source_confidence</code> and <code v-pre>validation_passed</code>.</li>
+</ul>
+<p>Based on these signals, the Gateway:</p>
+<ul>
+<li>Ranks new KV entries using a hybrid scoring model (importance × frequency × freshness).</li>
+<li>Evicts or offloads stale entries to disk/off-chain cold storage.</li>
+<li>Recalls pages of KV blocks when relevant topics re-emerge (recency-based paging).</li>
+<li>Bundles KV-chains and reasoning paths for replay and reconstruction.</li>
+</ul>
+<doc-anchor-target id="proactive-distillation-task-creation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proactive-distillation-task-creation">#</doc-anchor-trigger>
+        <span>Proactive Distillation Task Creation</span>
+    </h3>
+</doc-anchor-target>
+<p>When a pattern of deficiency is detected, the Gateway generates and queues distillation tasks:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;query&quot;: &quot;how to train LLaMA on custom data&quot;,
+  &quot;pattern_id&quot;: &quot;llama_ft_2024&quot;,
+  &quot;trigger&quot;: &quot;miss_rate&gt;80%&quot;,
+  &quot;task_type&quot;: &quot;proactive_distillation&quot;,
+  &quot;bounty&quot;: 4,
+  &quot;requirements&quot;: {
+    &quot;agent_status&quot;: &quot;idle&quot;,
+    &quot;gpu&quot;: true,
+    &quot;max_latency&quot;: &quot;5s&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<p>These tasks are broadcast to DoD Agents that meet the resource and status conditions.</p>
+<doc-anchor-target id="intelligent-kv-layering-and-feedback-loop">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#intelligent-kv-layering-and-feedback-loop">#</doc-anchor-trigger>
+        <span>Intelligent KV Layering and Feedback Loop</span>
+    </h3>
+</doc-anchor-target>
+<p>As agents submit new KV blocks and reasoning chains:</p>
+<ul>
+<li>Gateway scores and validates them.</li>
+<li>High-confidence blocks are pushed to the hot layer.</li>
+<li>Usage data is fed back to reinforce or decay importance scores.</li>
+</ul>
+<p>This feedback loop ensures self-improvement of the reasoning layer over time — without requiring global retraining of any model.</p>
+<doc-anchor-target id="outcome">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#outcome">#</doc-anchor-trigger>
+        <span>Outcome</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Better reuse of reasoning → lower Big LLM cost.</li>
+<li>Dynamic adaptation of the knowledge graph to user demand.</li>
+<li>Coordinated, decentralized creation of new verified knowledge via task-market economics.</li>
+</ul>
+<hr>
+<doc-anchor-target id="incentivized-task-routing-proactive-dod-distillation-from-gateway">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#incentivized-task-routing-proactive-dod-distillation-from-gateway">#</doc-anchor-trigger>
+        <span>Incentivized Task Routing: Proactive DoD Distillation from Gateway</span>
+    </h2>
+</doc-anchor-target>
+<p>To ensure the quality and freshness of knowledge in the KCG (Knowledge Cache Graph), Gateways can proactively request knowledge distillation - even when no user explicitly triggers it. This is especially useful for trending queries or emerging knowledge gaps.</p>
+<doc-anchor-target id="why-gateways-initiate-proactive-dod-tasks">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-gateways-initiate-proactive-dod-tasks">#</doc-anchor-trigger>
+        <span>Why Gateways Initiate Proactive DoD Tasks</span>
+    </h3>
+</doc-anchor-target>
+<p>Gateways detect:</p>
+<ul>
+<li>Frequent KV cache misses for a specific query pattern</li>
+<li>High-volume repeated API calls to Big LLMs for the same topic</li>
+<li>Insufficient reasoning coverage in the current KCG</li>
+</ul>
+<p>They then generate a <strong>distillation task</strong> with a canonical query and metadata, and broadcast it to available DoD Agents.</p>
+<doc-anchor-target id="what-a-distillation-task-looks-like">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-a-distillation-task-looks-like">#</doc-anchor-trigger>
+        <span>What a Distillation Task Looks Like</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;type&quot;: &quot;distillation_request&quot;,
+  &quot;triggered_by&quot;: &quot;kv_miss_frequency&quot;,
+  &quot;canonical_query&quot;: &quot;how to fine-tune LLaMA&quot;,
+  &quot;priority&quot;: &quot;high&quot;,
+  &quot;bounty&quot;: 3,
+  &quot;requirements&quot;: {
+    &quot;agent_status&quot;: &quot;idle&quot;,
+    &quot;min_gpu_mem&quot;: &quot;12GB&quot;,
+    &quot;response_time&quot;: &quot;&lt;10s&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="who-pays-for-the-distillation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#who-pays-for-the-distillation">#</doc-anchor-trigger>
+        <span>Who Pays for the Distillation?</span>
+    </h3>
+</doc-anchor-target>
+<p>Options include:</p>
+<ul>
+<li><strong>Gateway treasury</strong> funded from user token fees</li>
+<li><strong>Task-level bounties</strong> paid to the first agent who completes and passes validation</li>
+<li><strong>Enterprise sponsors</strong> funding custom knowledge domains</li>
+</ul>
+<p>Agents only earn rewards if their results:</p>
+<ul>
+<li>Pass semantic and factual validation</li>
+<li>Are accepted into the KCG by the Gateway</li>
+<li>Remain cached beyond a minimum usage threshold</li>
+</ul>
+<doc-anchor-target id="dod-agent-task-acceptance-protocol">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dod-agent-task-acceptance-protocol">#</doc-anchor-trigger>
+        <span>DoD Agent Task Acceptance Protocol</span>
+    </h3>
+</doc-anchor-target>
+<p>Agents may <strong>accept or reject</strong> tasks based on:</p>
+<ul>
+<li>Device status (CPU/GPU/TPU load, memory, battery state etc.)</li>
+<li>Recent task queue</li>
+<li>Reward threshold</li>
+</ul>
+<doc-anchor-target id="key-benefits-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-benefits-1">#</doc-anchor-trigger>
+        <span>Key Benefits</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Incentivized load balancing across edge agents</li>
+<li>Minimal latency for hot-topic knowledge retrieval</li>
+<li>Reduced redundant Big LLM calls</li>
+<li>Efficient use of idle resources</li>
+</ul>
+<p>This model transforms Gateway nodes into <strong>active coordinators of knowledge</strong>, while DoD Agents become <strong>economic actors in an open market of reasoning services</strong>.</p>
+<hr>
+<doc-anchor-target id="segmented-kv-buffer--prioritized-paging-for-dod-agent">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#segmented-kv-buffer--prioritized-paging-for-dod-agent">#</doc-anchor-trigger>
+        <span>Segmented KV Buffer &amp; Prioritized Paging for DoD Agent</span>
+    </h2>
+</doc-anchor-target>
+<p>To support efficient reasoning and memory management, each DoD Agent maintains a <strong>Segmented KV Buffer</strong> — a multi-layered cache that mirrors the mental model of short-term memory, long-term knowledge, and shared intelligence.</p>
+<p>This buffer is not a flat list of KV pairs but a <strong>prioritized, dynamic structure</strong> divided by scope and usage intent.</p>
+<doc-anchor-target id="kv-buffer-segments">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kv-buffer-segments">#</doc-anchor-trigger>
+        <span>KV Buffer Segments</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Session Memory</strong></p>
+<ul>
+<li>Stores recent tokens, prompts, and in-context outputs.</li>
+<li>Volatile and specific to the current user/task.</li>
+<li>Used for continuity in short dialogs and multi-turn queries.</li>
+</ul>
+</li>
+<li><p><strong>Local Knowledge Cache</strong></p>
+<ul>
+<li>Stores previously distilled or reused knowledge from past tasks.</li>
+<li>Retrieved from prior DoD calls or localized user storage.</li>
+<li>Adaptively refreshed based on reuse frequency.</li>
+</ul>
+</li>
+<li><p><strong>Global Shared KV Layer (KCG-derived)</strong></p>
+<ul>
+<li>Contains verified reasoning blocks from the Gateway or global KCG.</li>
+<li>Pulled in lazily or preloaded based on semantic match with query.</li>
+<li>Immutable and tagged with metadata (source, confidence, TTL).</li>
+</ul>
+</li>
+</ol>
+<p>Each segment has its own memory policy: TTL, max size, eviction rules, and update frequency.</p>
+<doc-anchor-target id="paging-and-prioritization-logic">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paging-and-prioritization-logic">#</doc-anchor-trigger>
+        <span>Paging and Prioritization Logic</span>
+    </h3>
+</doc-anchor-target>
+<p>Before executing inference, the DoD Agent performs:</p>
+<ul>
+<li><strong>Semantic prefiltering</strong>: scoring available KV entries based on relevance to the current prompt/query.</li>
+<li><strong>Priority ranking</strong>: weighting entries by segment (session &gt; local &gt; global), recency, and confidence.</li>
+<li><strong>Page selection</strong>: choosing top-N blocks to load into active KV memory.</li>
+<li><strong>KV hydration</strong>: loading precomputed values directly into the model’s attention cache.</li>
+</ul>
+<p>If memory is constrained (e.g., GPU VRAM), paging strategies are applied:</p>
+<ul>
+<li><strong>Evict least recently used (LRU)</strong> entries first.</li>
+<li><strong>Drop low-confidence or low-impact chains</strong>.</li>
+<li><strong>Recall previously offloaded KV blocks from disk or host memory</strong> if needed.</li>
+</ul>
+<doc-anchor-target id="benefits-for-reasoning">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#benefits-for-reasoning">#</doc-anchor-trigger>
+        <span>Benefits for Reasoning</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Reduces prompt size by reusing memory instead of refeeding tokens.</li>
+<li>Speeds up inference via prehydrated KV attention.</li>
+<li>Enables long-form or multi-stage reasoning without exceeding context limits.</li>
+<li>Supports “memory-based personalization” without model fine-tuning.</li>
+</ul>
+<doc-anchor-target id="real-user-value">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#real-user-value">#</doc-anchor-trigger>
+        <span>Real User Value</span>
+    </h3>
+</doc-anchor-target>
+<p>For end users, this means:</p>
+<ul>
+<li><strong>Faster answers</strong> — as the model skips redundant context and loads memory directly.</li>
+<li><strong>Cheaper queries</strong> — fewer tokens sent to Big LLM APIs or fewer cycles burned locally.</li>
+<li><strong>Smarter responses over time</strong> — as the agent remembers what it learned and reuses it.</li>
+<li><strong>No lag during long tasks</strong> — complex queries feel instant, even on edge devices.</li>
+</ul>
+<doc-anchor-target id="future-optimizations">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#future-optimizations">#</doc-anchor-trigger>
+        <span>Future Optimizations</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Learning-based context routers to optimize KV selection dynamically.</li>
+<li>Attention-aware scheduling: align paging with expected model read patterns.</li>
+<li>Collaborative KV: agents share anonymized hot blocks via Gateway to bootstrap each other’s reasoning.</li>
+</ul>
+<p>This architecture transforms DoD Agents from stateless callers into <strong>adaptive, memory-efficient reasoning units</strong>, capable of high-quality inference under local constraints — and delivering visible gains in speed, cost, and usefulness to users.</p>
+<hr>
 <doc-anchor-target id="integration-with-peak-protocol">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#integration-with-peak-protocol">#</doc-anchor-trigger>
@@ -1229,6 +1502,6 @@ PEAK Protocol Layer
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Knowledge Cache", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Knowledge Cache", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
