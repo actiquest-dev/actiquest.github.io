@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800884757969">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800898054397">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.8.1.800884757969" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.8.1.800898054397" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800884757969" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800898054397" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800884757969" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.800884757969" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800898054397" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.800898054397" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -1001,10 +1001,10 @@
   }
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="who-pays-for-the-distillation">
+<doc-anchor-target id="distillation-tasks-incentivization-for-dod-agents">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#who-pays-for-the-distillation">#</doc-anchor-trigger>
-        <span>Who Pays for the Distillation?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#distillation-tasks-incentivization-for-dod-agents">#</doc-anchor-trigger>
+        <span>Distillation tasks Incentivization for DoD Agents?</span>
     </h3>
 </doc-anchor-target>
 <p>Options include:</p>
@@ -1045,10 +1045,88 @@
 </ul>
 <p>This model transforms Gateway nodes into <strong>active coordinators of knowledge</strong>, while DoD Agents become <strong>economic actors in an open market of reasoning services</strong>.</p>
 <hr>
-<doc-anchor-target id="segmented-kv-buffer--prioritized-paging-for-dod-agent">
+<doc-anchor-target id="context-window-optimization">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#segmented-kv-buffer--prioritized-paging-for-dod-agent">#</doc-anchor-trigger>
-        <span>Segmented KV Buffer &amp; Prioritized Paging for DoD Agent</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context-window-optimization">#</doc-anchor-trigger>
+        <span>Context Window Optimization</span>
+    </h2>
+</doc-anchor-target>
+<p>Tiny LLMs, while efficient and portable, are often limited by their small context windows (512–2048 tokens). To make Cache-Augmented Generation (CAG) viable on such models, we implement intelligent strategies to ensure only the most relevant, high-value information is loaded into the prompt. This optimization maximizes the quality of reasoning without exceeding memory or latency budgets.</p>
+<doc-anchor-target id="design-segmented-kv-buffer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#design-segmented-kv-buffer">#</doc-anchor-trigger>
+        <span>Design: Segmented KV Buffer</span>
+    </h3>
+</doc-anchor-target>
+<p>We introduce a <strong>Segmented Key-Value Buffer</strong> within the DoD Agent or runtime environment:</p>
+<ul>
+<li><strong>Static Core Slot:</strong> Long-term, frequently accessed domain facts (e.g. atomic knowledge)</li>
+<li><strong>Dynamic Slot:</strong> Fetched knowledge highly relevant to the current query (determined via semantic similarity or attention hinting)</li>
+<li><strong>Recall Slot:</strong> Recently used paths in reasoning, offering continuity across turns</li>
+</ul>
+<p>At each generation step, a runtime scheduler assembles the prompt buffer from these segments, prioritizing tokens under a fixed token limit.</p>
+<doc-anchor-target id="importance-scoring--prioritized-paging">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#importance-scoring--prioritized-paging">#</doc-anchor-trigger>
+        <span>Importance Scoring &amp; Prioritized Paging</span>
+    </h3>
+</doc-anchor-target>
+<p>Each cached item (text chunk or KV pair) is ranked using:</p>
+<ul>
+<li>Relevance to query (via embedding similarity)</li>
+<li>Usage frequency (historical reuse)</li>
+<li>Role in reasoning chains (e.g., root → conclusion → supporting node)</li>
+</ul>
+<p>This scoring ensures that only knowledge with <strong>highest utility</strong> is included in inference prompts.</p>
+<doc-anchor-target id="compression-of-knowledge-items">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#compression-of-knowledge-items">#</doc-anchor-trigger>
+        <span>Compression of Knowledge Items</span>
+    </h3>
+</doc-anchor-target>
+<p>To fit more content per token budget:</p>
+<ul>
+<li><strong>Summarization models</strong> (e.g., MiniLM or TinyBERT) are used to produce compact versions of longer documents</li>
+<li>Knowledge is reformatted into <strong>bullet points, entity-relationship triples</strong>, or <strong>graph edges</strong></li>
+<li>Chain-of-thought reasoning is <strong>condensed</strong> into minimal logical steps</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;concept&quot;: &quot;photosynthesis&quot;,
+  &quot;summary&quot;: &quot;Plants convert light into energy via chlorophyll.&quot;,
+  &quot;facts&quot;: [&quot;Needs sunlight&quot;, &quot;Produces O2&quot;, &quot;Occurs in chloroplasts&quot;]
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="rollover-scheduling--memory-swapping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rollover-scheduling--memory-swapping">#</doc-anchor-trigger>
+        <span>Rollover Scheduling &amp; Memory Swapping</span>
+    </h3>
+</doc-anchor-target>
+<p>When a query requires more tokens than the model can ingest:</p>
+<ul>
+<li>The DoD Agent conducts <strong>multi-pass inference</strong></li>
+<li>Each pass feeds different segments of the relevant cache</li>
+<li>Final answers are <strong>aggregated and reconciled</strong>, preserving accuracy while reducing load</li>
+</ul>
+<doc-anchor-target id="benefits-for-users">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#benefits-for-users">#</doc-anchor-trigger>
+        <span>Benefits for Users</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Higher answer quality, with focused, relevant facts</li>
+<li>Fewer hallucinations, due to grounding in verified cache</li>
+<li>Faster response time, by avoiding bloated, irrelevant context</li>
+<li>Better personalization, as the buffer can adapt to user history or device profile</li>
+</ul>
+<p>This context-aware design unlocks the full power of CAG even on low-resource, edge-deployed LLMs, making them viable agents of real-time reasoning.</p>
+<hr>
+<doc-anchor-target id="segmented-kv-buffer--prioritized-paging">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#segmented-kv-buffer--prioritized-paging">#</doc-anchor-trigger>
+        <span>Segmented KV Buffer &amp; Prioritized Paging</span>
     </h2>
 </doc-anchor-target>
 <p>To support efficient reasoning and memory management, each DoD Agent maintains a <strong>Segmented KV Buffer</strong> — a multi-layered cache that mirrors the mental model of short-term memory, long-term knowledge, and shared intelligence.</p>
