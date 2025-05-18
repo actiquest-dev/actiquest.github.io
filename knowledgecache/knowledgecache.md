@@ -436,7 +436,7 @@ They then generate a **distillation task** with a canonical query and metadata, 
 }
 ```
 
-### Who Pays for the Distillation?
+### Distillation tasks Incentivization for DoD Agents?
 
 Options include:
 - **Gateway treasury** funded from user token fees
@@ -466,7 +466,66 @@ This model transforms Gateway nodes into **active coordinators of knowledge**, w
 
 ---
 
-## Segmented KV Buffer & Prioritized Paging for DoD Agent
+## Context Window Optimization
+
+Tiny LLMs, while efficient and portable, are often limited by their small context windows (512–2048 tokens). To make Cache-Augmented Generation (CAG) viable on such models, we implement intelligent strategies to ensure only the most relevant, high-value information is loaded into the prompt. This optimization maximizes the quality of reasoning without exceeding memory or latency budgets.
+
+### Design: Segmented KV Buffer
+
+We introduce a **Segmented Key-Value Buffer** within the DoD Agent or runtime environment:
+
+- **Static Core Slot:** Long-term, frequently accessed domain facts (e.g. atomic knowledge)
+- **Dynamic Slot:** Fetched knowledge highly relevant to the current query (determined via semantic similarity or attention hinting)
+- **Recall Slot:** Recently used paths in reasoning, offering continuity across turns
+
+At each generation step, a runtime scheduler assembles the prompt buffer from these segments, prioritizing tokens under a fixed token limit.
+
+### Importance Scoring & Prioritized Paging
+
+Each cached item (text chunk or KV pair) is ranked using:
+
+- Relevance to query (via embedding similarity)
+- Usage frequency (historical reuse)
+- Role in reasoning chains (e.g., root → conclusion → supporting node)
+
+This scoring ensures that only knowledge with **highest utility** is included in inference prompts.
+
+### Compression of Knowledge Items
+
+To fit more content per token budget:
+
+- **Summarization models** (e.g., MiniLM or TinyBERT) are used to produce compact versions of longer documents
+- Knowledge is reformatted into **bullet points, entity-relationship triples**, or **graph edges**
+- Chain-of-thought reasoning is **condensed** into minimal logical steps
+
+```json
+{
+  "concept": "photosynthesis",
+  "summary": "Plants convert light into energy via chlorophyll.",
+  "facts": ["Needs sunlight", "Produces O2", "Occurs in chloroplasts"]
+}
+```
+
+### Rollover Scheduling & Memory Swapping
+
+When a query requires more tokens than the model can ingest:
+
+- The DoD Agent conducts **multi-pass inference**
+- Each pass feeds different segments of the relevant cache
+- Final answers are **aggregated and reconciled**, preserving accuracy while reducing load
+
+### Benefits for Users
+
+- Higher answer quality, with focused, relevant facts
+- Fewer hallucinations, due to grounding in verified cache
+- Faster response time, by avoiding bloated, irrelevant context
+- Better personalization, as the buffer can adapt to user history or device profile
+
+This context-aware design unlocks the full power of CAG even on low-resource, edge-deployed LLMs, making them viable agents of real-time reasoning.
+
+---
+
+## Segmented KV Buffer & Prioritized Paging
 
 To support efficient reasoning and memory management, each DoD Agent maintains a **Segmented KV Buffer** — a multi-layered cache that mirrors the mental model of short-term memory, long-term knowledge, and shared intelligence.
 
@@ -604,7 +663,6 @@ The KCG+CAG ecosystem introduces a deflationary, utility-driven token model desi
 - Incentives are designed to **reward useful knowledge contribution, validation, and retrieval**, not speculative behavior.
 - Over time, as the knowledge cache grows and DoD frequency decreases due to efficient SCR pipelines, the system self-balances toward lower operating costs and higher knowledge utility per token spent.
 
-
 ---
 
 
@@ -648,9 +706,7 @@ The integrity, fairness, and sustainability of the KCG+CAG ecosystem are ensured
 - **Balance openness with integrity.**
 - **Enable community participation while ensuring operational efficiency.**
 
-
 ---
-
 
 # Conclusion & Vision
 
