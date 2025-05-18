@@ -3,7 +3,7 @@ icon: ai-model
 label: Knowledge Cache
 ---
 
-# Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline
+# Membria: Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfgq_byivHQ01DpDdRaeJEg_Q8PI-KtKiFtJ4hWmuCYOYiPZGUt34LAH0EiRY1JAasviADLhiAC1eBbCH2gBQZK3AesyZsB0rkVBnZArwqiiNP8af4_EIEIZhVKueSPRkGfBU_tRw?key=AsJEkgePh24159X10uUz6PJ-)
 
@@ -591,6 +591,51 @@ This architecture transforms DoD Agents from stateless callers into **adaptive, 
 
 ---
 
+
+## Comparative Table: Membria vs. Leading LLM Learning & Adaptation Solutions
+
+### Overview
+
+As the demand for more private, efficient, and customizable AI grows, the market has responded with a variety of solutions—from centralized APIs to retrieval-augmented generation (RAG) systems and lightweight finetuning frameworks. However, most approaches either depend on constant cloud interaction, lack persistence, or do not offer real-time reasoning improvements for on-device LLMs.
+
+**Membria** introduces a new paradigm: Cache-Augmented Generation (CAG), combining structured, validated memory (KCG), real-time distillation (DoD Agents), and edge-native inference. This comparative table benchmarks Membria against seven of the most prominent systems currently in the market.
+
+- **Gemini Nano (Google):** Uses limited RAG from on-device search, no persistent memory or caching, short context windows, inference-only.
+- **GPT-4 with RAG (OpenAI):** Long context, document retrieval at inference time, but no persistent cache or KV buffer reuse.
+- **GPTCache:** Semantic caching plugin that reuses full responses based on similarity, but lacks reasoning-path control or KV structure.
+- **Hugging Face Transformers + PEFT:** Custom finetuning pipelines, no built-in runtime KV cache logic.
+- **Cohere Embed & RAG API:** Offers embeddings + vector retrieval, but no on-device precomputed cache structure.
+
+
+### Comparative Table
+
+| Feature / Platform               | **Membria**                           | Amazon Bedrock       | Google Vertex AI (Gemini) | Hugging Face AutoTrain | GPTCache           | Cohere API         | AI21 Labs           |
+|----------------------------------|----------------------------------------|------------------------|-----------------------------|--------------------------|--------------------|---------------------|----------------------|
+| **Deployment Model**            | On-device / no-cloud                  | Cloud-hosted           | Cloud + Edge (Pixel)        | Cloud-based              | Plugin-based       | API-based           | API-based            |
+| **Learning Paradigm**           | CAG + DoD + Shared KCG                | Offline distillation   | RAG + prompting             | LoRA/PEFT finetuning     | Response caching   | Embedding + RAG     | Embedding + RAG      |
+| **Real-Time Adaptation**        | ✅ Yes                                 | ❌ No                  | ⚠️ Limited                   | ❌ No                    | ⚠️ Similar queries | ❌ No               | ❌ No                |
+| **Inference Location**          | ✅ Fully local                         | ❌ Cloud               | ⚠️ Partial (Gemini Nano)     | ⚠️ Optional on-prem     | ⚠️ User-defined    | ❌ Cloud            | ❌ Cloud             |
+| **Persistent Memory Layer**     | ✅ Yes (KCG)                           | ❌ No                  | ❌ No                        | ❌ No                    | ⚠️ In-memory only  | ❌ No               | ❌ No                |
+| **Context Optimization**        | ✅ Segmented KV + Prioritized Paging  | ❌ None                | ⚠️ Prompt structuring        | ❌ None                  | ❌ None            | ⚠️ Some filtering   | ⚠️ Some filtering    |
+| **Offline Capability**          | ✅ Yes                                 | ❌ No                  | ⚠️ Partial                  | ❌ No                    | ✅ If local        | ❌ No               | ❌ No                |
+| **Reasoning Enhancements**      | ✅ CAG + Chain Condensation            | ❌ None                | ⚠️ Embedding-based           | ❌ None                  | ❌ None            | ❌ None             | ❌ None              |
+| **Knowledge Sharing**           | ✅ Public/Private KCG                  | ❌ Closed              | ❌ Closed                   | ❌ Per model             | ❌ Local only      | ❌ Closed           | ❌ Closed            |
+| **Personalization Strategy**    | ✅ Local + Shared memory               | ❌ None                | ⚠️ Google Workspace only     | ✅ Finetuning            | ⚠️ Basic tuning    | ⚠️ Prompt tuning    | ⚠️ Prompt tuning     |
+| **Cost Efficiency**             | ✅ Very high (no tokens, local)        | ❌ Expensive cloud     | ❌ API metered               | ⚠️ Medium               | ✅ High             | ❌ Subscription     | ❌ Subscription      |
+
+### Summary
+
+Membria is the only solution in this landscape that combines:
+- **Real-time, on-device inference and learning**
+- **Structured knowledge caching with validation**
+- **Cost-efficient and private reasoning**
+- **Scalable, persistent memory usable by multiple agents**
+
+Other systems focus on cloud delivery, static models, or inference-time hacks (e.g., caching or RAG), without providing a framework for **ongoing, distributed intelligence**. Membria’s architecture offers a truly decentralized foundation for the next generation of lightweight, smart AI agents.
+
+---
+
+
 # Integration with PEAK Protocol
 
 The KCG+CAG system can be seamlessly integrated and deployed on top of **PEAK Protocol**, leveraging its existing decentralized infrastructure, consensus mechanisms, and privacy-enhancing features.
@@ -663,6 +708,7 @@ The KCG+CAG ecosystem introduces a deflationary, utility-driven token model desi
 - Incentives are designed to **reward useful knowledge contribution, validation, and retrieval**, not speculative behavior.
 - Over time, as the knowledge cache grows and DoD frequency decreases due to efficient SCR pipelines, the system self-balances toward lower operating costs and higher knowledge utility per token spent.
 
+
 ---
 
 
@@ -706,7 +752,9 @@ The integrity, fairness, and sustainability of the KCG+CAG ecosystem are ensured
 - **Balance openness with integrity.**
 - **Enable community participation while ensuring operational efficiency.**
 
+
 ---
+
 
 # Conclusion & Vision
 
