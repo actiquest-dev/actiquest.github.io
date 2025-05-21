@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800899148656">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801148161853">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.8.1.800899148656" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.8.1.801148161853" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.800899148656" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.801148161853" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.800899148656" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.800899148656" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.801148161853" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.801148161853" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -1217,6 +1217,113 @@
 <li>Collaborative KV: agents share anonymized hot blocks via Gateway to bootstrap each other’s reasoning.</li>
 </ul>
 <p>This architecture transforms DoD Agents from stateless callers into <strong>adaptive, memory-efficient reasoning units</strong>, capable of high-quality inference under local constraints — and delivering visible gains in speed, cost, and usefulness to users.</p>
+<hr>
+<doc-anchor-target id="persistent-memory-for-tiny-llms-preventing-forgetfulness">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#persistent-memory-for-tiny-llms-preventing-forgetfulness">#</doc-anchor-trigger>
+        <span>Persistent Memory for Tiny LLMs: Preventing Forgetfulness</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="the-problem">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-problem">#</doc-anchor-trigger>
+        <span>The Problem</span>
+    </h3>
+</doc-anchor-target>
+<p>Tiny LLMs rely on KV caches to temporarily hold context and knowledge retrieved from DoD queries. But due to strict memory limits (e.g., 4k–8k tokens), these caches are flushed when memory is full, sessions end, or the app is restarted. This leads to repetitive queries, latency, and model &quot;amnesia.&quot;</p>
+<doc-anchor-target id="optimal-solution-hybrid-storage-with-rag--lightweight-disk-kv">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#optimal-solution-hybrid-storage-with-rag--lightweight-disk-kv">#</doc-anchor-trigger>
+        <span>Optimal Solution: Hybrid Storage with RAG + Lightweight Disk KV</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="1-distillation-into-local-rag-store">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-distillation-into-local-rag-store">#</doc-anchor-trigger>
+        <span>1. Distillation into Local RAG Store</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>After a DoD session, the generated reasoning and final answers are abstracted into Q&amp;A or knowledge tuples.</li>
+<li>Stored in a local lightweight vector database (e.g., <strong>Qdrant + SQLite</strong>).</li>
+<li>Allows fast semantic retrieval to rehydrate context for future queries.</li>
+</ul>
+<doc-anchor-target id="2-fast-disk-based-kv-cache">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-fast-disk-based-kv-cache">#</doc-anchor-trigger>
+        <span>2. Fast Disk-Based KV Cache</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Selected key-value pairs (attention snapshots) are stored in a fast disk-based store like <strong>LMDB</strong>.</li>
+<li>On session start, only relevant KV-pairs are mapped into memory — no full reloads.</li>
+<li>Enables partial context reconstruction and avoids total reset of memory.</li>
+</ul>
+<doc-anchor-target id="3-periodic-knowledge-distiller">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-periodic-knowledge-distiller">#</doc-anchor-trigger>
+        <span>3. Periodic Knowledge Distiller</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>A background process compresses multiple cache fragments into reusable, generalized fact sets.</li>
+<li>These are pushed into the RAG store and linked semantically.</li>
+</ul>
+<doc-anchor-target id="architecture-overview">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture-overview">#</doc-anchor-trigger>
+        <span>Architecture Overview</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Layer</th>
+<th>Purpose</th>
+<th>Storage</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>KV Cache</code></td>
+<td>Active attention memory</td>
+<td>RAM</td>
+<td>Used during live session</td>
+</tr>
+<tr>
+<td><code v-pre>RAG Memory</code></td>
+<td>Reasoning / abstracted facts</td>
+<td>Qdrant + SQLite</td>
+<td>Queried via embeddings</td>
+</tr>
+<tr>
+<td><code v-pre>KV Archive</code></td>
+<td>Disk-persistent attention data</td>
+<td>LMDB / mmap</td>
+<td>On-demand preload</td>
+</tr>
+<tr>
+<td><code v-pre>Distiller Agent</code></td>
+<td>Rewrites &amp; generalizes memory</td>
+<td>JSONL or raw vectors</td>
+<td>Scheduled / background</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="benefits">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#benefits">#</doc-anchor-trigger>
+        <span>Benefits</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Prevents memory loss in Tiny LLMs.</li>
+<li>Reduces repeat DoD queries and latency.</li>
+<li>Improves coherence and user experience.</li>
+</ul>
 <hr>
 <doc-anchor-target id="comparative-table-membria-vs-leading-llm-learning--adaptation-solutions">
     <h2>
