@@ -588,6 +588,43 @@ For end users, this means:
 
 This architecture transforms DoD Agents from stateless callers into **adaptive, memory-efficient reasoning units**, capable of high-quality inference under local constraints — and delivering visible gains in speed, cost, and usefulness to users.
 
+---
+
+## Persistent Memory for Tiny LLMs: Preventing Forgetfulness
+
+### The Problem
+Tiny LLMs rely on KV caches to temporarily hold context and knowledge retrieved from DoD queries. But due to strict memory limits (e.g., 4k–8k tokens), these caches are flushed when memory is full, sessions end, or the app is restarted. This leads to repetitive queries, latency, and model "amnesia."
+
+### Optimal Solution: Hybrid Storage with RAG + Lightweight Disk KV
+
+#### 1. Distillation into Local RAG Store
+- After a DoD session, the generated reasoning and final answers are abstracted into Q&A or knowledge tuples.
+- Stored in a local lightweight vector database (e.g., **Qdrant + SQLite**).
+- Allows fast semantic retrieval to rehydrate context for future queries.
+
+#### 2. Fast Disk-Based KV Cache
+- Selected key-value pairs (attention snapshots) are stored in a fast disk-based store like **LMDB**.
+- On session start, only relevant KV-pairs are mapped into memory — no full reloads.
+- Enables partial context reconstruction and avoids total reset of memory.
+
+#### 3. Periodic Knowledge Distiller
+- A background process compresses multiple cache fragments into reusable, generalized fact sets.
+- These are pushed into the RAG store and linked semantically.
+
+### Architecture Overview
+
+| Layer           | Purpose                       | Storage               | Trigger                   |
+|------------------|-------------------------------|------------------------|---------------------------|
+| `KV Cache`       | Active attention memory        | RAM                   | Used during live session |
+| `RAG Memory`     | Reasoning / abstracted facts   | Qdrant + SQLite       | Queried via embeddings   |
+| `KV Archive`     | Disk-persistent attention data | LMDB / mmap           | On-demand preload        |
+| `Distiller Agent`| Rewrites & generalizes memory | JSONL or raw vectors  | Scheduled / background   |
+
+### Benefits
+- Prevents memory loss in Tiny LLMs.
+- Reduces repeat DoD queries and latency.
+- Improves coherence and user experience.
+
 
 ---
 
@@ -771,3 +808,4 @@ We envision a world where:
 By adopting the KCG+CAG architecture, we take a significant step toward **democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.**
 
 ---
+
