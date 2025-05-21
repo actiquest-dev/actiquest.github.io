@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801148161853">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801186083617">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.8.1.801148161853" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.8.1.801186083617" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.801148161853" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.801186083617" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.801148161853" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.801148161853" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.801186083617" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.801186083617" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -243,7 +243,7 @@
     </h1>
 </doc-anchor-target>
 <p>The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge freshness, and reasoning capabilities. While millions of users deploy these models for everyday tasks, their ability to learn, update, and reason remains limited, requiring costly and slow interventions via centralized Big LLM APIs or fine-tuning.</p>
-<p>We introduce the <strong>Knowledge Cache Graph (KCG)</strong> and <strong>Cache-Augmented Generation (CAG)</strong> — a decentralized, verifiable, and efficient knowledge reasoning framework. Instead of relying on retraining or direct weight manipulation, KCG+CAG enables <strong>Distillation on Demand (DoD)</strong>, where knowledge is distilled, validated, and recorded in a public, immutable knowledge cache. This approach empowers Tiny LLMs to dynamically retrieve, reason over, and consume high-quality, validated knowledge via fast <strong>Selective Contextual Reasoning (SCR)</strong> pipelines, dramatically reducing inference costs, latency, and vendor lock-in.</p>
+<p>We introduce the <strong>Knowledge Cache Graph (KCG)</strong> and <strong>Cache-Augmented Generation (CAG)</strong> - a decentralized, verifiable, and efficient knowledge reasoning framework. Instead of relying on retraining or direct weight manipulation, KCG+CAG enables <strong>Distillation on Demand (DoD)</strong>, where knowledge is distilled, validated, and recorded in a public, immutable knowledge cache. This approach empowers Tiny LLMs to dynamically retrieve, reason over, and consume high-quality, validated knowledge via fast <strong>Selective Contextual Reasoning (SCR)</strong> pipelines, dramatically reducing inference costs, latency, and vendor lock-in.</p>
 <p>By creating an ecosystem where <strong>knowledge grows, self-validates, and becomes reusable</strong>, KCG+CAG transforms AI reasoning into an open, democratic, and self-improving infrastructure for millions of Tiny LLMs.</p>
 <doc-anchor-target id="problem-statement">
     <h1>
@@ -251,7 +251,7 @@
         <span>Problem Statement</span>
     </h1>
 </doc-anchor-target>
-<p>The rise of Tiny LLMs — lightweight, on-device large language models — is transforming the AI landscape by bringing generative intelligence to billions of devices. However, this explosion of local inference introduces a fundamental bottleneck in personalization, knowledge freshness, and continuous learning:</p>
+<p>The rise of Tiny LLMs - lightweight, on-device large language models - is transforming the AI landscape by bringing generative intelligence to billions of devices. However, this explosion of local inference introduces a fundamental bottleneck in personalization, knowledge freshness, and continuous learning:</p>
 <ul>
 <li><strong>Static and outdated models</strong>: Once deployed, Tiny LLMs quickly become stale, as they cannot natively update their knowledge base or integrate new information without retraining.</li>
 <li><strong>Costly and centralized fine-tuning</strong>: Existing methods for updating models, such as LoRA or QLoRA fine-tuning, require cloud GPUs, expert intervention, and significant time and money.</li>
@@ -259,7 +259,7 @@
 <li><strong>Absence of a shared, reusable knowledge memory</strong>: Tiny LLMs operate in isolation, lacking access to a federated, verified, and continuously growing knowledge layer they can rely on.</li>
 </ul>
 <p>These limitations block the scalability of Tiny LLM reasoning capabilities, fragment knowledge across devices, and create inefficiencies both for users and for the broader AI ecosystem.</p>
-<p>There is a critical need for a new approach where Tiny LLMs can <strong>dynamically acquire, reason over, and integrate fresh, verified knowledge</strong> — without retraining, without centralization, and without sacrificing privacy or efficiency.</p>
+<p>There is a critical need for a new approach where Tiny LLMs can <strong>dynamically acquire, reason over, and integrate fresh, verified knowledge</strong> - without retraining, without centralization, and without sacrificing privacy or efficiency.</p>
 <hr>
 <doc-anchor-target id="proposed-solution-overview">
     <h1>
@@ -267,7 +267,7 @@
         <span>Proposed Solution Overview</span>
     </h1>
 </doc-anchor-target>
-<p>To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the <strong>Knowledge Cache Graph (KCG)</strong> combined with <strong>Cache-Augmented Generation (CAG)</strong> — a decentralized knowledge reasoning layer designed for scalable, efficient, and continuous learning without retraining.</p>
+<p>To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the <strong>Knowledge Cache Graph (KCG)</strong> combined with <strong>Cache-Augmented Generation (CAG)</strong> - a decentralized knowledge reasoning layer designed for scalable, efficient, and continuous learning without retraining.</p>
 <doc-anchor-target id="knowledge-cache-graph-kcg">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#knowledge-cache-graph-kcg">#</doc-anchor-trigger>
@@ -317,7 +317,7 @@
 <li><strong>Decentralized, shared, and verifiable knowledge memory</strong>, fostering ecosystem-wide efficiency.</li>
 <li><strong>Open, democratized reasoning layer</strong>, removing reliance on centralized AI providers.</li>
 </ul>
-<p>This model empowers Tiny LLMs to stay fresh, relevant, and capable — at the edge, in real-time, and with minimal costs.</p>
+<p>This model empowers Tiny LLMs to stay fresh, relevant, and capable - at the edge, in real-time, and with minimal costs.</p>
 <hr>
 <doc-anchor-target id="technical-architecture-overview">
     <h1>
@@ -799,10 +799,10 @@
 </doc-anchor-target>
 <p>Inspired by state-of-the-art research (arXiv:2503.05212), SCR enables Tiny LLMs to perform <strong>lightweight, dynamic reasoning over external knowledge caches without modifying model weights</strong>.</p>
 <ul>
-<li><strong>Step 1: Semantic Retrieval</strong> — Retrieve relevant knowledge entries from the KV-cache and semantic graph indexes.</li>
-<li><strong>Step 2: Confirmation and Filtering</strong> — Tiny LLMs or Gateways filter, confirm, and deduplicate retrieved entries, ensuring contextual fit and factual accuracy.</li>
-<li><strong>Step 3: Contextual Reasoning</strong> — Construct an enriched prompt using confirmed knowledge, allowing Tiny LLMs to perform high-quality reasoning locally.</li>
-<li><strong>Step 4: Fallback to DoD and Big LLMs</strong> — Only if SCR fails or lacks confidence, a DoD escalation is triggered.</li>
+<li><strong>Step 1: Semantic Retrieval</strong> - Retrieve relevant knowledge entries from the KV-cache and semantic graph indexes.</li>
+<li><strong>Step 2: Confirmation and Filtering</strong> - Tiny LLMs or Gateways filter, confirm, and deduplicate retrieved entries, ensuring contextual fit and factual accuracy.</li>
+<li><strong>Step 3: Contextual Reasoning</strong> - Construct an enriched prompt using confirmed knowledge, allowing Tiny LLMs to perform high-quality reasoning locally.</li>
+<li><strong>Step 4: Fallback to DoD and Big LLMs</strong> - Only if SCR fails or lacks confidence, a DoD escalation is triggered.</li>
 </ul>
 <doc-anchor-target id="hybrid-kv-cache-architecture-1">
     <h2>
@@ -874,7 +874,7 @@
         <span>Gateway Reasoning Orchestration &amp; Knowledge Gap Detection</span>
     </h2>
 </doc-anchor-target>
-<p>The Gateway is more than a passive storage and query endpoint — it actively orchestrates the quality and structure of the Knowledge Cache Graph (KCG). Its core responsibility is to detect reasoning gaps, manage KV-caching layers, and coordinate the creation of new knowledge via DoD agents.</p>
+<p>The Gateway is more than a passive storage and query endpoint - it actively orchestrates the quality and structure of the Knowledge Cache Graph (KCG). Its core responsibility is to detect reasoning gaps, manage KV-caching layers, and coordinate the creation of new knowledge via DoD agents.</p>
 <doc-anchor-target id="detecting-knowledge-gaps-and-hot-topics">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#detecting-knowledge-gaps-and-hot-topics">#</doc-anchor-trigger>
@@ -885,7 +885,7 @@
 <ul>
 <li>Frequent KV misses: repeated user queries where no matching cached KV exists.</li>
 <li>Spikes in similar queries: indicating a trend or emerging interest (e.g. &quot;fine-tuning LLaMA&quot;, &quot;RAG vs CAG&quot;).</li>
-<li>Redundant calls to Big LLMs: same queries triggering repeated costly API calls — a sign of missing reusable reasoning.</li>
+<li>Redundant calls to Big LLMs: same queries triggering repeated costly API calls - a sign of missing reusable reasoning.</li>
 <li>Stale or outdated KV blocks: old distillations no longer consistent with updated knowledge graphs or ontologies.</li>
 </ul>
 <p>This results in the identification of Knowledge Hotspots or Reasoning Deficits.</p>
@@ -948,7 +948,7 @@
 <li>High-confidence blocks are pushed to the hot layer.</li>
 <li>Usage data is fed back to reinforce or decay importance scores.</li>
 </ul>
-<p>This feedback loop ensures self-improvement of the reasoning layer over time — without requiring global retraining of any model.</p>
+<p>This feedback loop ensures self-improvement of the reasoning layer over time - without requiring global retraining of any model.</p>
 <doc-anchor-target id="outcome">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#outcome">#</doc-anchor-trigger>
@@ -1129,7 +1129,7 @@
         <span>Segmented KV Buffer &amp; Prioritized Paging</span>
     </h2>
 </doc-anchor-target>
-<p>To support efficient reasoning and memory management, each DoD Agent maintains a <strong>Segmented KV Buffer</strong> — a multi-layered cache that mirrors the mental model of short-term memory, long-term knowledge, and shared intelligence.</p>
+<p>To support efficient reasoning and memory management, each DoD Agent maintains a <strong>Segmented KV Buffer</strong> - a multi-layered cache that mirrors the mental model of short-term memory, long-term knowledge, and shared intelligence.</p>
 <p>This buffer is not a flat list of KV pairs but a <strong>prioritized, dynamic structure</strong> divided by scope and usage intent.</p>
 <doc-anchor-target id="kv-buffer-segments">
     <h3>
@@ -1200,10 +1200,10 @@
 </doc-anchor-target>
 <p>For end users, this means:</p>
 <ul>
-<li><strong>Faster answers</strong> — as the model skips redundant context and loads memory directly.</li>
-<li><strong>Cheaper queries</strong> — fewer tokens sent to Big LLM APIs or fewer cycles burned locally.</li>
-<li><strong>Smarter responses over time</strong> — as the agent remembers what it learned and reuses it.</li>
-<li><strong>No lag during long tasks</strong> — complex queries feel instant, even on edge devices.</li>
+<li><strong>Faster answers</strong> - as the model skips redundant context and loads memory directly.</li>
+<li><strong>Cheaper queries</strong> - fewer tokens sent to Big LLM APIs or fewer cycles burned locally.</li>
+<li><strong>Smarter responses over time</strong> - as the agent remembers what it learned and reuses it.</li>
+<li><strong>No lag during long tasks</strong> - complex queries feel instant, even on edge devices.</li>
 </ul>
 <doc-anchor-target id="future-optimizations">
     <h3>
@@ -1216,7 +1216,7 @@
 <li>Attention-aware scheduling: align paging with expected model read patterns.</li>
 <li>Collaborative KV: agents share anonymized hot blocks via Gateway to bootstrap each other’s reasoning.</li>
 </ul>
-<p>This architecture transforms DoD Agents from stateless callers into <strong>adaptive, memory-efficient reasoning units</strong>, capable of high-quality inference under local constraints — and delivering visible gains in speed, cost, and usefulness to users.</p>
+<p>This architecture transforms DoD Agents from stateless callers into <strong>adaptive, memory-efficient reasoning units</strong>, capable of high-quality inference under local constraints - and delivering visible gains in speed, cost, and usefulness to users.</p>
 <hr>
 <doc-anchor-target id="persistent-memory-for-tiny-llms-preventing-forgetfulness">
     <h2>
@@ -1256,7 +1256,7 @@
 </doc-anchor-target>
 <ul>
 <li>Selected key-value pairs (attention snapshots) are stored in a fast disk-based store like <strong>LMDB</strong>.</li>
-<li>On session start, only relevant KV-pairs are mapped into memory — no full reloads.</li>
+<li>On session start, only relevant KV-pairs are mapped into memory - no full reloads.</li>
 <li>Enables partial context reconstruction and avoids total reset of memory.</li>
 </ul>
 <doc-anchor-target id="3-periodic-knowledge-distiller">
@@ -1337,7 +1337,7 @@
         <span>Overview</span>
     </h3>
 </doc-anchor-target>
-<p>As the demand for more private, efficient, and customizable AI grows, the market has responded with a variety of solutions—from centralized APIs to retrieval-augmented generation (RAG) systems and lightweight finetuning frameworks. However, most approaches either depend on constant cloud interaction, lack persistence, or do not offer real-time reasoning improvements for on-device LLMs.</p>
+<p>As the demand for more private, efficient, and customizable AI grows, the market has responded with a variety of solutions-from centralized APIs to retrieval-augmented generation (RAG) systems and lightweight finetuning frameworks. However, most approaches either depend on constant cloud interaction, lack persistence, or do not offer real-time reasoning improvements for on-device LLMs.</p>
 <p><strong>Membria</strong> introduces a new paradigm: Cache-Augmented Generation (CAG), combining structured, validated memory (KCG), real-time distillation (DoD Agents), and edge-native inference. This comparative table benchmarks Membria against seven of the most prominent systems currently in the market.</p>
 <ul>
 <li><strong>Gemini Nano (Google):</strong> Uses limited RAG from on-device search, no persistent memory or caching, short context windows, inference-only.</li>
@@ -1775,7 +1775,7 @@ PEAK Protocol Layer
         <span>Conclusion &amp; Vision</span>
     </h1>
 </doc-anchor-target>
-<p>The KCG+CAG ecosystem bridges the gap between heavy, centralized LLM inference and lightweight, efficient Tiny LLMs operating at the edge. By introducing an open, decentralized, and verifiable knowledge graph, coupled with Cache-Augmented Generation (CAG) and Selective Contextual Reasoning (SCR), we enable Tiny LLMs to stay continuously updated, smart, and capable — without costly retraining or vendor lock-in.</p>
+<p>The KCG+CAG ecosystem bridges the gap between heavy, centralized LLM inference and lightweight, efficient Tiny LLMs operating at the edge. By introducing an open, decentralized, and verifiable knowledge graph, coupled with Cache-Augmented Generation (CAG) and Selective Contextual Reasoning (SCR), we enable Tiny LLMs to stay continuously updated, smart, and capable - without costly retraining or vendor lock-in.</p>
 <p>This paradigm shift turns reasoning and knowledge augmentation into <strong>an open, reusable, and community-driven resource</strong>, breaking free from centralized control and enabling AI models to reason dynamically using decentralized knowledge caches.</p>
 <doc-anchor-target id="our-vision">
     <h2>
