@@ -694,6 +694,86 @@ The KCG+CAG system can be seamlessly integrated and deployed on top of **PEAK Pr
 - **ZK Proof Layer**: PEAK's ZK Layer can serve as the foundation for query privacy, access control, and proof-of-knowledge attestations within KCG and DoD requests.
 - **Optimized Querying and Indexing**: By utilizing PEAK's subgraph and indexing services, KCG can enhance its off-chain semantic querying layer, accelerating SCR pipelines without duplicating infrastructure.
 
+---
+
+# Ontology Support in Peak Protocol
+
+## Overview
+
+Peak Protocol provides a flexible and extensible semantic layer designed to support decentralized knowledge representation and validation. It enables structured, type-rich data within its knowledge graph ecosystem, making it ideal for applications like Membria that require structured reasoning, chain validation, and semantic filtering.
+
+---
+
+## Core Ontology Features
+
+- **Typed Knowledge Nodes**  
+  Every knowledge entry in Peak includes a `@type` field, enabling clear categorization (e.g., `Fact`, `Claim`, `QA`, `Chain`, `Procedure`).
+
+- **Domain & Tag Metadata**  
+  Semantic context is added through:
+  - `@domain`: categorizes knowledge by field (e.g., `medicine`, `law.contracts`)
+  - `@tags`: custom attributes like `symptom`, `causal`, `verified`
+
+- **Supertype Hierarchies**  
+  Through `@supertype` or `@inherits`, entries can form lightweight ontological trees:
+  ```json
+  {
+    "@type": "Fact",
+    "@supertype": "AtomicKnowledge"
+  }
+  ```
+
+- **Semantic Relationships**  
+  Entries can include relational fields:
+  - `@linked_to`, `@supports`, `@refutes`, `@cites`
+  - Enables causal chains and QA traceability
+  - Compatible with RDF-like linking logic
+
+- **Subgraph Indexers**  
+  Each domain or vertical can define a custom Subgraph Indexer:
+  - Parses and indexes knowledge entries by `@type`, `@domain`, `@topic`
+  - Enables efficient querying and retrieval
+  - Supports scoped GraphQL/REST API access
+
+---
+
+## Why This Suits Membria
+
+Membria’s Knowledge Cache Graph (KCG) relies on:
+- Ontology-scoped reasoning chains
+- Domain-bound DoD entries
+- Strict cache typing for local inference
+
+Peak’s native ontology support allows:
+- Filtering reasoning by topic/type before caching
+- Defining custom types (`ReasoningStep`, `DoDTrace`, `Rationale`)
+- Enforcing validation rules per knowledge category
+
+---
+
+## Example: Fact Node in Peak-Compatible Ontology
+
+```json
+{
+  "@id": "fact_xyz",
+  "@type": "Fact",
+  "@supertype": "AtomicKnowledge",
+  "@domain": "biology.genetics",
+  "@tags": ["DNA", "cell nucleus"],
+  "content": "DNA is located in the nucleus of eukaryotic cells.",
+  "source": "DoD_abc123",
+  "confidence": 0.97
+}
+```
+
+
+> By leveraging Peak’s semantic core, Membria can maintain clarity, modularity, and safety in distributed reasoning — without requiring full OWL/RDF complexity.
+
+---
+
+
+
+
 ## Layered Architecture Overview
 
 
