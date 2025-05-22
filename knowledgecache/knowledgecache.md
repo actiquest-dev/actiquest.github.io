@@ -663,7 +663,7 @@ CREATE TABLE event_log (
 
 ---
 
-## 2. Ontology Support (Peak-Compatible)
+## Ontology Support (Peak-Compatible)
 
 Membria adopts a simplified semantic structure inspired by Peak Protocol, allowing flexible knowledge typing and domain categorization.
 
@@ -692,7 +692,7 @@ All entries are typed, linked, and indexed by domain.
 
 ---
 
-## 💾 3. Local Cache Storage with SQLite (In-Memory + JSON1)
+## Local Cache Storage with SQLite (In-Memory + JSON1)
 
 SQLite provides an optimal local storage layer that balances speed, structure, and simplicity.
 
