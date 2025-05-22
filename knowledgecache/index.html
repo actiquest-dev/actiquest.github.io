@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801186083617">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801246676670">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.8.1.801186083617" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.8.1.801246676670" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.801186083617" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.801246676670" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.801186083617" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.801186083617" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.801246676670" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.801246676670" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -1562,6 +1562,106 @@
 <li><strong>ZK Proof Layer</strong>: PEAK&#x27;s ZK Layer can serve as the foundation for query privacy, access control, and proof-of-knowledge attestations within KCG and DoD requests.</li>
 <li><strong>Optimized Querying and Indexing</strong>: By utilizing PEAK&#x27;s subgraph and indexing services, KCG can enhance its off-chain semantic querying layer, accelerating SCR pipelines without duplicating infrastructure.</li>
 </ul>
+<hr>
+<doc-anchor-target id="ontology-support-in-peak-protocol">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ontology-support-in-peak-protocol">#</doc-anchor-trigger>
+        <span>Ontology Support in Peak Protocol</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="overview-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview-1">#</doc-anchor-trigger>
+        <span>Overview</span>
+    </h2>
+</doc-anchor-target>
+<p>Peak Protocol provides a flexible and extensible semantic layer designed to support decentralized knowledge representation and validation. It enables structured, type-rich data within its knowledge graph ecosystem, making it ideal for applications like Membria that require structured reasoning, chain validation, and semantic filtering.</p>
+<hr>
+<doc-anchor-target id="core-ontology-features">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#core-ontology-features">#</doc-anchor-trigger>
+        <span>Core Ontology Features</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p><strong>Typed Knowledge Nodes</strong><br />
+Every knowledge entry in Peak includes a <code v-pre>@type</code> field, enabling clear categorization (e.g., <code v-pre>Fact</code>, <code v-pre>Claim</code>, <code v-pre>QA</code>, <code v-pre>Chain</code>, <code v-pre>Procedure</code>).</p>
+</li>
+<li><p><strong>Domain &amp; Tag Metadata</strong><br />
+Semantic context is added through:</p>
+<ul>
+<li><code v-pre>@domain</code>: categorizes knowledge by field (e.g., <code v-pre>medicine</code>, <code v-pre>law.contracts</code>)</li>
+<li><code v-pre>@tags</code>: custom attributes like <code v-pre>symptom</code>, <code v-pre>causal</code>, <code v-pre>verified</code></li>
+</ul>
+</li>
+<li><p><strong>Supertype Hierarchies</strong><br />
+Through <code v-pre>@supertype</code> or <code v-pre>@inherits</code>, entries can form lightweight ontological trees:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;@type&quot;: &quot;Fact&quot;,
+  &quot;@supertype&quot;: &quot;AtomicKnowledge&quot;
+}</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p><strong>Semantic Relationships</strong><br />
+Entries can include relational fields:</p>
+<ul>
+<li><code v-pre>@linked_to</code>, <code v-pre>@supports</code>, <code v-pre>@refutes</code>, <code v-pre>@cites</code></li>
+<li>Enables causal chains and QA traceability</li>
+<li>Compatible with RDF-like linking logic</li>
+</ul>
+</li>
+<li><p><strong>Subgraph Indexers</strong><br />
+Each domain or vertical can define a custom Subgraph Indexer:</p>
+<ul>
+<li>Parses and indexes knowledge entries by <code v-pre>@type</code>, <code v-pre>@domain</code>, <code v-pre>@topic</code></li>
+<li>Enables efficient querying and retrieval</li>
+<li>Supports scoped GraphQL/REST API access</li>
+</ul>
+</li>
+</ul>
+<hr>
+<doc-anchor-target id="why-this-suits-membria">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-this-suits-membria">#</doc-anchor-trigger>
+        <span>Why This Suits Membria</span>
+    </h2>
+</doc-anchor-target>
+<p>Membria’s Knowledge Cache Graph (KCG) relies on:</p>
+<ul>
+<li>Ontology-scoped reasoning chains</li>
+<li>Domain-bound DoD entries</li>
+<li>Strict cache typing for local inference</li>
+</ul>
+<p>Peak’s native ontology support allows:</p>
+<ul>
+<li>Filtering reasoning by topic/type before caching</li>
+<li>Defining custom types (<code v-pre>ReasoningStep</code>, <code v-pre>DoDTrace</code>, <code v-pre>Rationale</code>)</li>
+<li>Enforcing validation rules per knowledge category</li>
+</ul>
+<hr>
+<doc-anchor-target id="example-fact-node-in-peak-compatible-ontology">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-fact-node-in-peak-compatible-ontology">#</doc-anchor-trigger>
+        <span>Example: Fact Node in Peak-Compatible Ontology</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;@id&quot;: &quot;fact_xyz&quot;,
+  &quot;@type&quot;: &quot;Fact&quot;,
+  &quot;@supertype&quot;: &quot;AtomicKnowledge&quot;,
+  &quot;@domain&quot;: &quot;biology.genetics&quot;,
+  &quot;@tags&quot;: [&quot;DNA&quot;, &quot;cell nucleus&quot;],
+  &quot;content&quot;: &quot;DNA is located in the nucleus of eukaryotic cells.&quot;,
+  &quot;source&quot;: &quot;DoD_abc123&quot;,
+  &quot;confidence&quot;: 0.97
+}</code></pre>
+</doc-codeblock></div>
+<blockquote>
+<p>By leveraging Peak’s semantic core, Membria can maintain clarity, modularity, and safety in distributed reasoning — without requiring full OWL/RDF complexity.</p>
+</blockquote>
+<hr>
 <doc-anchor-target id="layered-architecture-overview">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#layered-architecture-overview">#</doc-anchor-trigger>
