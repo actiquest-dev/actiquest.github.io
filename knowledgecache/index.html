@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801246676670">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801247425837">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.8.1.801246676670" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.8.1.801247425837" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.801246676670" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.8.1.801247425837" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.801246676670" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.801246676670" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.8.1.801247425837" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.8.1.801247425837" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -1325,15 +1325,178 @@
 <li>Improves coherence and user experience.</li>
 </ul>
 <hr>
+<doc-anchor-target id="local-knowledge--event-storage-for-membria">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#local-knowledge--event-storage-for-membria">#</doc-anchor-trigger>
+        <span>Local Knowledge &amp; Event Storage for Membria</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <span>Overview</span>
+    </h2>
+</doc-anchor-target>
+<p>Membria relies on a fast, flexible, and private infrastructure to manage cached reasoning, DoD traces, and semantic retrieval directly on edge devices. This requires a blend of:</p>
+<ul>
+<li>A lightweight <strong>event graph</strong> to record actions and reasoning chains,</li>
+<li>A minimal but extensible <strong>ontology layer</strong> to semantically classify knowledge,</li>
+<li>An efficient <strong>local database</strong> (SQLite with JSON1) for in-memory caching and retrieval.</li>
+</ul>
+<hr>
+<doc-anchor-target id="1-event-graph-for-dod-agent-memory">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-event-graph-for-dod-agent-memory">#</doc-anchor-trigger>
+        <span>1. Event Graph for DoD Agent Memory</span>
+    </h2>
+</doc-anchor-target>
+<p>A local event graph enables the DoD agent to maintain a memory timeline of actions, reasoning outcomes, and DoD interactions.</p>
+<doc-anchor-target id="example-event-log-schema">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-event-log-schema">#</doc-anchor-trigger>
+        <span>Example Event Log Schema</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-sql"><code v-pre class="language-sql">CREATE TABLE event_log (
+  id TEXT PRIMARY KEY,
+  type TEXT,                 -- e.g. 'DoDQuery', 'CacheWrite', 'Validation'
+  timestamp INTEGER,
+  actor TEXT,                -- agent ID or user session
+  related_to TEXT,           -- link to knowledge or cache entry
+  payload JSON
+);</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Events can be queried by time, type, or relationship.</li>
+<li>Enables undo, debugging, plan-and-act chains.</li>
+<li>Can be persisted or purely in-memory.</li>
+</ul>
+<hr>
+<doc-anchor-target id="2-ontology-support-peak-compatible">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-ontology-support-peak-compatible">#</doc-anchor-trigger>
+        <span>2. Ontology Support (Peak-Compatible)</span>
+    </h2>
+</doc-anchor-target>
+<p>Membria adopts a simplified semantic structure inspired by Peak Protocol, allowing flexible knowledge typing and domain categorization.</p>
+<doc-anchor-target id="ontological-node-structure">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ontological-node-structure">#</doc-anchor-trigger>
+        <span>Ontological Node Structure</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;@id&quot;: &quot;fact_xyz&quot;,
+  &quot;@type&quot;: &quot;Fact&quot;,
+  &quot;@supertype&quot;: &quot;AtomicKnowledge&quot;,
+  &quot;@domain&quot;: &quot;biology.genetics&quot;,
+  &quot;@tags&quot;: [&quot;DNA&quot;, &quot;cell nucleus&quot;],
+  &quot;content&quot;: &quot;DNA is located in the nucleus of eukaryotic cells.&quot;,
+  &quot;source&quot;: &quot;DoD_abc123&quot;,
+  &quot;confidence&quot;: 0.97
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="recommended-types">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recommended-types">#</doc-anchor-trigger>
+        <span>Recommended Types</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>Fact</code>, <code v-pre>Claim</code>, <code v-pre>Definition</code></li>
+<li><code v-pre>ReasoningChain</code>, <code v-pre>Step</code>, <code v-pre>QA</code>, <code v-pre>Answer</code></li>
+<li><code v-pre>DoDTrace</code>, <code v-pre>AgentLog</code>, <code v-pre>Vote</code></li>
+</ul>
+<p>All entries are typed, linked, and indexed by domain.</p>
+<hr>
+<doc-anchor-target id="3-local-cache-storage-with-sqlite-in-memory-json1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-local-cache-storage-with-sqlite-in-memory-json1">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4BE;</span> 3. Local Cache Storage with SQLite (In-Memory + JSON1)</span>
+    </h2>
+</doc-anchor-target>
+<p>SQLite provides an optimal local storage layer that balances speed, structure, and simplicity.</p>
+<doc-anchor-target id="in-memory-or-hybrid-usage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#in-memory-or-hybrid-usage">#</doc-anchor-trigger>
+        <span>In-Memory or Hybrid Usage</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-sql"><code v-pre class="language-sql">sqlite3 :memory:
+-- or --
+sqlite3 file:mem.db?mode=memory&amp;cache=shared</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="typical-tables">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#typical-tables">#</doc-anchor-trigger>
+        <span>Typical Tables</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-sql"><code v-pre class="language-sql">CREATE TEMP TABLE kv_cache (
+  key TEXT PRIMARY KEY,
+  value TEXT,
+  expires_at INTEGER
+);
+
+CREATE TABLE local_index (
+  id TEXT PRIMARY KEY,
+  embedding BLOB,
+  domain TEXT,
+  metadata JSON
+);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="json-queries">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#json-queries">#</doc-anchor-trigger>
+        <span>JSON Queries</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-sql"><code v-pre class="language-sql">SELECT json_extract(payload, '$.step') FROM event_log WHERE type = 'ReasoningStep';</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="wal-mode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wal-mode">#</doc-anchor-trigger>
+        <span>WAL Mode</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-sql"><code v-pre class="language-sql">PRAGMA journal_mode=WAL;</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Enables fast concurrent writes</li>
+<li>Improves reliability of hybrid cache</li>
+</ul>
+<hr>
+<doc-anchor-target id="summary">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#summary">#</doc-anchor-trigger>
+        <span>Summary</span>
+    </h2>
+</doc-anchor-target>
+<p>Membria’s local reasoning architecture combines:</p>
+<ul>
+<li>A temporal <strong>event graph</strong> for agent memory and DoD tracking</li>
+<li>A <strong>typed knowledge layer</strong> compatible with semantic indexing</li>
+<li>An efficient <strong>SQLite in-memory engine</strong> with JSON1 for fast KV and structured data</li>
+</ul>
+<blockquote>
+<p>Together, this stack enables private, fast, and autonomous AI memory on-device — without reliance on cloud inference or heavyweight models.</p>
+</blockquote>
+<hr>
 <doc-anchor-target id="comparative-table-membria-vs-leading-llm-learning--adaptation-solutions">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#comparative-table-membria-vs-leading-llm-learning--adaptation-solutions">#</doc-anchor-trigger>
         <span>Comparative Table: Membria vs. Leading LLM Learning &amp; Adaptation Solutions</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="overview">
+<doc-anchor-target id="overview-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview-1">#</doc-anchor-trigger>
         <span>Overview</span>
     </h3>
 </doc-anchor-target>
@@ -1480,9 +1643,9 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="summary">
+<doc-anchor-target id="summary-1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#summary">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#summary-1">#</doc-anchor-trigger>
         <span>Summary</span>
     </h3>
 </doc-anchor-target>
@@ -1569,9 +1732,9 @@
         <span>Ontology Support in Peak Protocol</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="overview-1">
+<doc-anchor-target id="overview-2">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overview-1">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview-2">#</doc-anchor-trigger>
         <span>Overview</span>
     </h2>
 </doc-anchor-target>
