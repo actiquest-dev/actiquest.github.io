@@ -628,6 +628,128 @@ Tiny LLMs rely on KV caches to temporarily hold context and knowledge retrieved 
 
 ---
 
+# Local Knowledge & Event Storage for Membria
+
+## Overview
+
+Membria relies on a fast, flexible, and private infrastructure to manage cached reasoning, DoD traces, and semantic retrieval directly on edge devices. This requires a blend of:
+
+- A lightweight **event graph** to record actions and reasoning chains,
+- A minimal but extensible **ontology layer** to semantically classify knowledge,
+- An efficient **local database** (SQLite with JSON1) for in-memory caching and retrieval.
+
+---
+
+## 1. Event Graph for DoD Agent Memory
+
+A local event graph enables the DoD agent to maintain a memory timeline of actions, reasoning outcomes, and DoD interactions.
+
+### Example Event Log Schema
+
+```sql
+CREATE TABLE event_log (
+  id TEXT PRIMARY KEY,
+  type TEXT,                 -- e.g. 'DoDQuery', 'CacheWrite', 'Validation'
+  timestamp INTEGER,
+  actor TEXT,                -- agent ID or user session
+  related_to TEXT,           -- link to knowledge or cache entry
+  payload JSON
+);
+```
+
+- Events can be queried by time, type, or relationship.
+- Enables undo, debugging, plan-and-act chains.
+- Can be persisted or purely in-memory.
+
+---
+
+## 2. Ontology Support (Peak-Compatible)
+
+Membria adopts a simplified semantic structure inspired by Peak Protocol, allowing flexible knowledge typing and domain categorization.
+
+### Ontological Node Structure
+
+```json
+{
+  "@id": "fact_xyz",
+  "@type": "Fact",
+  "@supertype": "AtomicKnowledge",
+  "@domain": "biology.genetics",
+  "@tags": ["DNA", "cell nucleus"],
+  "content": "DNA is located in the nucleus of eukaryotic cells.",
+  "source": "DoD_abc123",
+  "confidence": 0.97
+}
+```
+
+### Recommended Types
+
+- `Fact`, `Claim`, `Definition`
+- `ReasoningChain`, `Step`, `QA`, `Answer`
+- `DoDTrace`, `AgentLog`, `Vote`
+
+All entries are typed, linked, and indexed by domain.
+
+---
+
+## 💾 3. Local Cache Storage with SQLite (In-Memory + JSON1)
+
+SQLite provides an optimal local storage layer that balances speed, structure, and simplicity.
+
+### In-Memory or Hybrid Usage
+
+```sql
+sqlite3 :memory:
+-- or --
+sqlite3 file:mem.db?mode=memory&cache=shared
+```
+
+#### Typical Tables
+
+```sql
+CREATE TEMP TABLE kv_cache (
+  key TEXT PRIMARY KEY,
+  value TEXT,
+  expires_at INTEGER
+);
+
+CREATE TABLE local_index (
+  id TEXT PRIMARY KEY,
+  embedding BLOB,
+  domain TEXT,
+  metadata JSON
+);
+```
+
+### JSON Queries
+
+```sql
+SELECT json_extract(payload, '$.step') FROM event_log WHERE type = 'ReasoningStep';
+```
+
+### WAL Mode
+
+```sql
+PRAGMA journal_mode=WAL;
+```
+
+- Enables fast concurrent writes
+- Improves reliability of hybrid cache
+
+---
+
+## Summary
+
+Membria’s local reasoning architecture combines:
+- A temporal **event graph** for agent memory and DoD tracking
+- A **typed knowledge layer** compatible with semantic indexing
+- An efficient **SQLite in-memory engine** with JSON1 for fast KV and structured data
+
+> Together, this stack enables private, fast, and autonomous AI memory on-device — without reliance on cloud inference or heavyweight models.
+
+
+---
+
 
 ## Comparative Table: Membria vs. Leading LLM Learning & Adaptation Solutions
 
