@@ -663,9 +663,9 @@ CREATE TABLE event_log (
 
 ---
 
-## Ontology Support (Peak-Compatible)
+## 2. Ontology Support (Peaq-Compatible)
 
-Membria adopts a simplified semantic structure inspired by Peak Protocol, allowing flexible knowledge typing and domain categorization.
+Membria adopts a simplified semantic structure inspired by Peaq Protocol, allowing flexible knowledge typing and domain categorization.
 
 ### Ontological Node Structure
 
@@ -692,7 +692,7 @@ All entries are typed, linked, and indexed by domain.
 
 ---
 
-## Local Cache Storage with SQLite (In-Memory + JSON1)
+## 💾 3. Local Cache Storage with SQLite (In-Memory + JSON1)
 
 SQLite provides an optimal local storage layer that balances speed, structure, and simplicity.
 
@@ -795,41 +795,41 @@ Other systems focus on cloud delivery, static models, or inference-time hacks (e
 ---
 
 
-# Integration with PEAK Protocol
+# Integration with Peaq Protocol
 
-The KCG+CAG system can be seamlessly integrated and deployed on top of **PEAK Protocol**, leveraging its existing decentralized infrastructure, consensus mechanisms, and privacy-enhancing features.
+The KCG+CAG system can be seamlessly integrated and deployed on top of **Peaq Protocol**, leveraging its existing decentralized infrastructure, consensus mechanisms, and privacy-enhancing features.
 
-## PEAK-Enabled Components
+## Peaq-Enabled Components
 
-| KCG+CAG Component             | Integration with PEAK Protocol                                      | Comment                                                  |
+| KCG+CAG Component             | Integration with Peaq Protocol                                      | Comment                                                  |
 |-------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------|
-| KCG On-Chain Storage & TX     | ✅ Use PEAK Chain for transaction recording and consensus            | Knowledge entries, validator approvals, governance votes  |
-| ZK Proofs for DoD & Access    | ✅ Use PEAK ZK Layer for privacy-preserving queries & attestation     | ZK Proof-of-Access, ZK validation of query authorization  |
-| Off-chain Indexing & Subgraphs | ✅ Use PEAK Subgraph Infrastructure for accelerated querying         | Gateways can offload indexing to PEAK Subgraph tooling     |
-| SCR Pipelines & Reasoning     | KCG+CAG Layer                                             | Application-specific layer on top of PEAK                 |
+| KCG On-Chain Storage & TX     | ✅ Use Peaq Chain for transaction recording and consensus            | Knowledge entries, validator approvals, governance votes  |
+| ZK Proofs for DoD & Access    | ✅ Use Peaq ZK Layer for privacy-preserving queries & attestation     | ZK Proof-of-Access, ZK validation of query authorization  |
+| Off-chain Indexing & Subgraphs | ✅ Use Peaq Subgraph Infrastructure for accelerated querying         | Gateways can offload indexing to Peaq Subgraph tooling     |
+| SCR Pipelines & Reasoning     | KCG+CAG Layer                                             | Application-specific layer on top of Peaq                 |
 | Local Tiny LLM KV Cache       | Device or Gateway Level                                  | Fast inference on device or at gateway edge nodes         |
-| DoD Agents and CAG Pipelines  | KCG+CAG Layer                                             | Orchestrate reasoning and distillation above PEAK         |
+| DoD Agents and CAG Pipelines  | KCG+CAG Layer                                             | Orchestrate reasoning and distillation above Peaq         |
 
-## Benefits of Deploying KCG+CAG over PEAK Protocol
+## Benefits of Deploying KCG+CAG over Peaq Protocol
 
-- **Validator Network and Governance**: KCG can adopt PEAK's validator network, staking mechanisms, and DAO governance, reducing the need to bootstrap a separate validator economy.
-- **ZK Proof Layer**: PEAK's ZK Layer can serve as the foundation for query privacy, access control, and proof-of-knowledge attestations within KCG and DoD requests.
-- **Optimized Querying and Indexing**: By utilizing PEAK's subgraph and indexing services, KCG can enhance its off-chain semantic querying layer, accelerating SCR pipelines without duplicating infrastructure.
+- **Validator Network and Governance**: KCG can adopt Peaq's validator network, staking mechanisms, and DAO governance, reducing the need to bootstrap a separate validator economy.
+- **ZK Proof Layer**: Peaq's ZK Layer can serve as the foundation for query privacy, access control, and proof-of-knowledge attestations within KCG and DoD requests.
+- **Optimized Querying and Indexing**: By utilizing Peaq's subgraph and indexing services, KCG can enhance its off-chain semantic querying layer, accelerating SCR pipelines without duplicating infrastructure.
 
 ---
 
-# Ontology Support in Peak Protocol
+# Ontology Support in Peaq Protocol
 
 ## Overview
 
-Peak Protocol provides a flexible and extensible semantic layer designed to support decentralized knowledge representation and validation. It enables structured, type-rich data within its knowledge graph ecosystem, making it ideal for applications like Membria that require structured reasoning, chain validation, and semantic filtering.
+Peaq Protocol provides a flexible and extensible semantic layer designed to support decentralized knowledge representation and validation. It enables structured, type-rich data within its knowledge graph ecosystem, making it ideal for applications like Membria that require structured reasoning, chain validation, and semantic filtering.
 
 ---
 
 ## Core Ontology Features
 
 - **Typed Knowledge Nodes**  
-  Every knowledge entry in Peak includes a `@type` field, enabling clear categorization (e.g., `Fact`, `Claim`, `QA`, `Chain`, `Procedure`).
+  Every knowledge entry in Peaq includes a `@type` field, enabling clear categorization (e.g., `Fact`, `Claim`, `QA`, `Chain`, `Procedure`).
 
 - **Domain & Tag Metadata**  
   Semantic context is added through:
@@ -866,14 +866,14 @@ Membria’s Knowledge Cache Graph (KCG) relies on:
 - Domain-bound DoD entries
 - Strict cache typing for local inference
 
-Peak’s native ontology support allows:
+Peaq’s native ontology support allows:
 - Filtering reasoning by topic/type before caching
 - Defining custom types (`ReasoningStep`, `DoDTrace`, `Rationale`)
 - Enforcing validation rules per knowledge category
 
 ---
 
-## Example: Fact Node in Peak-Compatible Ontology
+## Example: Fact Node in Peaq-Compatible Ontology
 
 ```json
 {
@@ -889,7 +889,7 @@ Peak’s native ontology support allows:
 ```
 
 
-> By leveraging Peak’s semantic core, Membria can maintain clarity, modularity, and safety in distributed reasoning — without requiring full OWL/RDF complexity.
+> By leveraging Peaq’s semantic core, Membria can maintain clarity, modularity, and safety in distributed reasoning — without requiring full OWL/RDF complexity.
 
 ---
 
@@ -902,13 +902,13 @@ Peak’s native ontology support allows:
     Application & Agent Layer
     └── Tiny LLMs, User Devices, Enterprise Agents
     
-    CAG Reasoning Layer (on top of PEAK)
+    CAG Reasoning Layer (on top of Peaq)
     └── Cache-Augmented Generation, SCR Pipelines, DoD Agents, Gateway Cache & Index
     
-    KCG Core Layer (on PEAK)
+    KCG Core Layer (on Peaq)
     └── Knowledge Cache Graph, Distilled Knowledge, Relations, KV Layer (on-chain)
     
-    PEAK Protocol Layer
+    Peaq Protocol Layer
     └── Validator Network, Consensus, Staking, ZK Proof Layer, Subgraph Indexing
 ---
 
