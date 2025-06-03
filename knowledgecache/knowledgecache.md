@@ -351,52 +351,104 @@ This results in the identification of Knowledge Hotspots or Reasoning Deficits.
 
 ---
 
-## Self-RAG in DoD Agents
 
-In Membria, Self-RAG (Self-Retrieval-Augmented Generation) empowers local DoD agents to dynamically decide whether external context is needed to answer a query. This mechanism ensures efficient use of resources, lower latency, and enhanced privacy by limiting external requests only to cases that genuinely require them.
+## Local Evaluation and Self-Knowledge Checkpoint for DoD Responses
 
-### 1. Query Reception
-The DoD agent receives a user's query, which is passed to a lightweight local language model or scoring function. This model evaluates the query and determines whether existing knowledge is sufficient or if external context (e.g., from the Knowledge Cache Graph, or KCG) is required.
+This section outlines how Membria's DoD agent determines the optimal path to answering a user query. It uses a local Self-Knowledge Checkpoint module to decide whether the query can be answered from internal knowledge, from a local RAG system, or requires external DoD inference. All reasoning is performed locally using a lightweight reward model (TinyRM), a local SLM, and optional use of the Knowledge Cache Graph (KCG).
 
-### 2. Context Decision
-If the model concludes that the query can be answered from local reasoning, it proceeds directly to response generation. Otherwise, the agent queries the KCG for relevant cached reasoning paths, facts, or chains of thought. Optionally, the agent may invoke a Big LLM via the Distillation on Demand (DoD) mechanism if local caches are insufficient.
+### Objective
 
-### 3. Retrieval and Filtering
-Retrieved context fragments from the KCG are evaluated for relevance. This filtering may involve local scoring models (e.g., TinyRM), confidence thresholds, or other semantic heuristics to ensure only the most pertinent information is used.
+Efficiently select the most accurate and useful answer while minimizing unnecessary computation and external calls. The Self-Knowledge Checkpoint module ensures that retrieval and generation are invoked only when needed.
 
-### 4. Response Generation
-With the filtered context, the local SLM generates a final answer. This may include Chain-of-Thought reasoning, compact summaries, or context-sensitive elaborations, all done locally.
+### Architecture Overview
 
-### 5. Reintegration into Memory
-If the resulting answer is verified as high-quality (e.g., via validation agents or local heuristics), it is stored back into the KCG for future reuse. This loop allows Membria to continually evolve its knowledge layer and reduce future inference costs.
+```
+User Query
+   │
+   ▼
+Self-Knowledge Checkpoint (SLM)
+   │
+   ├─ LOCAL → SLM Answer Generation
+   │
+   ├─ CACHE → Query Knowledge Cache Graph (KCG)
+   │
+   ├─ LOCAL RAG → Local Retrieval-Augmented Generation
+   │
+   └─ DOD → Distillation-on-Demand (Big LLMs)
+             │
+             ▼
+     Receive 3–4 LLM Answers
+             ▼
+   TinyRM Scoring + Optional SLM Tie-Break
+             ▼
+   Best Answer → Output + Optional Caching in KCG
+```
 
+### Components
 
-                ┌────────────┐
-                │ User Query │
-                └─────┬──────┘
-                      ↓
- ┌────────────────────────────────────────┐
- │              Self-RAG Decision         │ ←── local SLM or scoring-model
- └───┬───────────────────────────┬────────┘
-     │Yes                        │No
-     ↓                           ↓
-[Context-Enriched           [DoD query]
-Response Generation]          to KCG]
-                     ↓
-        [Relevance Filtering & Scoring]
-                     ↓
-            [SLM + reasoning]
-                     ↓
-      [Answer ↘ Validation & Cache to KGC]
+1. **Self-Knowledge Checkpoint**  
+   A local SLM that decides whether to answer using built-in knowledge, the cache, a local RAG system, or to escalate to external distillation. This step prevents unnecessary computation and improves response time.
 
+2. **Local RAG Module**  
+   If needed, a local vector database (e.g., FAISS, Qdrant) is queried using the input prompt to provide retrieved context for the SLM to use in answer generation.
 
- ### Key Advantages:
-  • Privacy: The query remains local unless external context is explicitly needed.
-  • Speed: Most queries are resolved locally, minimizing latency.
-  • Accuracy: The cache is only accessed when necessary, improving relevance.
-  • On-device learning: Each reasoning result reinforces the local memory through the KCG.
+3. **TinyRM Scoring**  
+   A small reward model evaluates answers for quality and relevance based on the original query.
 
-Self-RAG enables Membria's agents to act intelligently and selectively, blending fast local reasoning with global collective memory only when needed. This approach supports privacy-preserving, low-latency AI on edge devices without compromising quality.
+4. **SLM Tie-Breaker**  
+   If scores are inconclusive, the SLM selects the most accurate answer with reasoning.
+
+5. **Caching**  
+   Final verified answers may be stored in KCG for future reuse.
+
+### Pseudocode Example
+
+```python
+decision = self_knowledge_checkpoint(query)
+
+if decision == "LOCAL":
+    return slm_answer(query)
+elif decision == "CACHE":
+    context = query_kcg(query)
+    return slm_with_context(query, context)
+elif decision == "LOCAL_RAG":
+    context = query_local_vectordb(query)
+    return slm_with_context(query, context)
+elif decision == "DOD":
+    answers = call_big_llms(query)
+    scores = [tinyrm_score(query, a) for a in answers]
+    if max(scores) - sorted(scores)[-2] < 0.1:
+        return slm_compare_all(query, answers)
+    else:
+        return answers[argmax(scores)]
+```
+
+### Total Latency Estimate
+
+| Step                             | Estimated Delay     |
+|----------------------------------|---------------------|
+| Self-Knowledge Checkpoint (SLM)  | 100–300 ms          |
+| TinyRM Scoring                   | 200–400 ms          |
+| SLM Tie-break Reasoning          | 300–600 ms          |
+| KCG Retrieval (if used)          | 200–500 ms          |
+| Local RAG Retrieval              | 150–400 ms          |
+| DoD Request (optional, external) | 800–2000 ms         |
+| Output & Caching                 | 50–100 ms           |
+
+### Overall Delay Summary
+
+- Local only with cache or RAG: 0.8–1.6 seconds
+- With external DoD inference: 2.5–5 seconds
+- Fully local with fallback: 1.0–1.8 seconds
+
+### Benefits
+
+- **Privacy**: All routing logic is local and intelligent.
+- **Speed**: Avoids unnecessary retrieval or external calls.
+- **Quality**: Scales from built-in knowledge to local RAG to global distillation.
+- **Learning**: Answer paths and outputs improve the cache over time.
+
+This modular architecture allows Membria agents to act with contextual intelligence and progressive autonomy while maintaining trust and performance across environments.
 
 ---
 
@@ -1062,3 +1114,4 @@ We envision a world where:
 By adopting the KCG+CAG architecture, we take a significant step toward **democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.**
 
 ---
+
