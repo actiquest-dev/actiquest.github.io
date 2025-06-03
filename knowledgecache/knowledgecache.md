@@ -349,6 +349,58 @@ Gateways continuously monitor query traffic and KV cache behavior to detect:
 
 This results in the identification of Knowledge Hotspots or Reasoning Deficits.
 
+---
+
+## Self-RAG in DoD Agents
+
+In Membria, Self-RAG (Self-Retrieval-Augmented Generation) empowers local DoD agents to dynamically decide whether external context is needed to answer a query. This mechanism ensures efficient use of resources, lower latency, and enhanced privacy by limiting external requests only to cases that genuinely require them.
+
+### 1. Query Reception
+The DoD agent receives a user's query, which is passed to a lightweight local language model or scoring function. This model evaluates the query and determines whether existing knowledge is sufficient or if external context (e.g., from the Knowledge Cache Graph, or KCG) is required.
+
+### 2. Context Decision
+If the model concludes that the query can be answered from local reasoning, it proceeds directly to response generation. Otherwise, the agent queries the KCG for relevant cached reasoning paths, facts, or chains of thought. Optionally, the agent may invoke a Big LLM via the Distillation on Demand (DoD) mechanism if local caches are insufficient.
+
+### 3. Retrieval and Filtering
+Retrieved context fragments from the KCG are evaluated for relevance. This filtering may involve local scoring models (e.g., TinyRM), confidence thresholds, or other semantic heuristics to ensure only the most pertinent information is used.
+
+### 4. Response Generation
+With the filtered context, the local SLM generates a final answer. This may include Chain-of-Thought reasoning, compact summaries, or context-sensitive elaborations, all done locally.
+
+### 5. Reintegration into Memory
+If the resulting answer is verified as high-quality (e.g., via validation agents or local heuristics), it is stored back into the KCG for future reuse. This loop allows Membria to continually evolve its knowledge layer and reduce future inference costs.
+
+
+                ┌────────────┐
+                │ User Query │
+                └─────┬──────┘
+                      ↓
+ ┌────────────────────────────────────────┐
+ │              Self-RAG Decision         │ ←── local SLM or scoring-model
+ └───┬───────────────────────────┬────────┘
+     │Yes                        │No
+     ↓                           ↓
+[Context-Enriched           [DoD query]
+Response Generation]          to KCG]
+                     ↓
+        [Relevance Filtering & Scoring]
+                     ↓
+            [SLM + reasoning]
+                     ↓
+      [Answer ↘ Validation & Cache to KGC]
+
+
+ ### Key Advantages:
+  • Privacy: The query remains local unless external context is explicitly needed.
+  • Speed: Most queries are resolved locally, minimizing latency.
+  • Accuracy: The cache is only accessed when necessary, improving relevance.
+  • On-device learning: Each reasoning result reinforces the local memory through the KCG.
+
+Self-RAG enables Membria's agents to act intelligently and selectively, blending fast local reasoning with global collective memory only when needed. This approach supports privacy-preserving, low-latency AI on edge devices without compromising quality.
+
+---
+
+
 ### KV Cache Orchestration
 
 The Gateway maintains a multi-tiered cache structure:
@@ -1010,4 +1062,3 @@ We envision a world where:
 By adopting the KCG+CAG architecture, we take a significant step toward **democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.**
 
 ---
-
