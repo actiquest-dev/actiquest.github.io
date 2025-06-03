@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.801927850321">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802284124204">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.9.0.801927850321" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.9.0.802284124204" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.9.0.801927850321" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.9.0.802284124204" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.9.0.801927850321" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.9.0.801927850321" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.9.0.802284124204" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.9.0.802284124204" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -889,6 +889,80 @@
 <li>Stale or outdated KV blocks: old distillations no longer consistent with updated knowledge graphs or ontologies.</li>
 </ul>
 <p>This results in the identification of Knowledge Hotspots or Reasoning Deficits.</p>
+<hr>
+<doc-anchor-target id="self-rag-in-dod-agents">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#self-rag-in-dod-agents">#</doc-anchor-trigger>
+        <span>Self-RAG in DoD Agents</span>
+    </h2>
+</doc-anchor-target>
+<p>In Membria, Self-RAG (Self-Retrieval-Augmented Generation) empowers local DoD agents to dynamically decide whether external context is needed to answer a query. This mechanism ensures efficient use of resources, lower latency, and enhanced privacy by limiting external requests only to cases that genuinely require them.</p>
+<doc-anchor-target id="1-query-reception">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-query-reception">#</doc-anchor-trigger>
+        <span>1. Query Reception</span>
+    </h3>
+</doc-anchor-target>
+<p>The DoD agent receives a user&#x27;s query, which is passed to a lightweight local language model or scoring function. This model evaluates the query and determines whether existing knowledge is sufficient or if external context (e.g., from the Knowledge Cache Graph, or KCG) is required.</p>
+<doc-anchor-target id="2-context-decision">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-context-decision">#</doc-anchor-trigger>
+        <span>2. Context Decision</span>
+    </h3>
+</doc-anchor-target>
+<p>If the model concludes that the query can be answered from local reasoning, it proceeds directly to response generation. Otherwise, the agent queries the KCG for relevant cached reasoning paths, facts, or chains of thought. Optionally, the agent may invoke a Big LLM via the Distillation on Demand (DoD) mechanism if local caches are insufficient.</p>
+<doc-anchor-target id="3-retrieval-and-filtering">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-retrieval-and-filtering">#</doc-anchor-trigger>
+        <span>3. Retrieval and Filtering</span>
+    </h3>
+</doc-anchor-target>
+<p>Retrieved context fragments from the KCG are evaluated for relevance. This filtering may involve local scoring models (e.g., TinyRM), confidence thresholds, or other semantic heuristics to ensure only the most pertinent information is used.</p>
+<doc-anchor-target id="4-response-generation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-response-generation">#</doc-anchor-trigger>
+        <span>4. Response Generation</span>
+    </h3>
+</doc-anchor-target>
+<p>With the filtered context, the local SLM generates a final answer. This may include Chain-of-Thought reasoning, compact summaries, or context-sensitive elaborations, all done locally.</p>
+<doc-anchor-target id="5-reintegration-into-memory">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-reintegration-into-memory">#</doc-anchor-trigger>
+        <span>5. Reintegration into Memory</span>
+    </h3>
+</doc-anchor-target>
+<p>If the resulting answer is verified as high-quality (e.g., via validation agents or local heuristics), it is stored back into the KCG for future reuse. This loop allows Membria to continually evolve its knowledge layer and reduce future inference costs.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">            ┌────────────┐
+            │ User Query │
+            └─────┬──────┘
+                  ↓</code></pre>
+</doc-codeblock></div>
+<p>┌────────────────────────────────────────┐
+│              Self-RAG Decision         │ ←── local SLM or scoring-model
+└───┬───────────────────────────┬────────┘
+│Yes                        │No
+↓                           ↓
+[Context-Enriched           [DoD query]
+Response Generation]          to KCG]
+↓
+[Relevance Filtering &amp; Scoring]
+↓
+[SLM + reasoning]
+↓
+[Answer ↘ Validation &amp; Cache to KGC]</p>
+<doc-anchor-target id="key-advantages">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-advantages">#</doc-anchor-trigger>
+        <span>Key Advantages:</span>
+    </h3>
+</doc-anchor-target>
+<p>• Privacy: The query remains local unless external context is explicitly needed.
+• Speed: Most queries are resolved locally, minimizing latency.
+• Accuracy: The cache is only accessed when necessary, improving relevance.
+• On-device learning: Each reasoning result reinforces the local memory through the KCG.</p>
+<p>Self-RAG enables Membria&#x27;s agents to act intelligently and selectively, blending fast local reasoning with global collective memory only when needed. This approach supports privacy-preserving, low-latency AI on edge devices without compromising quality.</p>
+<hr>
 <doc-anchor-target id="kv-cache-orchestration">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#kv-cache-orchestration">#</doc-anchor-trigger>
