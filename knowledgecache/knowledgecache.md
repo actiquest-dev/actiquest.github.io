@@ -1527,6 +1527,34 @@ Other systems focus on cloud delivery, static models, or inference-time hacks (e
 ---
 
 
+## Ontology-Enhanced Knowledge Cache: Integrating KNOW into Membria
+
+To ensure semantic interoperability and structured reasoning, Membria integrates the KNOW ontology into its decentralized knowledge architecture. KNOW (Knowledge Navigator Ontology for the World) provides a universal, pragmatic vocabulary of everyday human concepts—such as People, Places, Events, and Organizations—along with consistent subject–predicate–object relationships. This ontology becomes the structural backbone of the Knowledge Cache Graph (KCG) and all cache layers in the Membria ecosystem.
+
+### Usage Across the Stack
+
+- **On-Device KV-Cache**: Instead of storing knowledge as opaque embeddings or raw text, each DoD agent uses structured triples aligned with KNOW. This facilitates faster matching, more accurate reasoning, and long-term reusability of distilled knowledge.
+- **Gateway Indexing and Federation**: Gateways construct symbolic and vector-based indexes using KNOW’s schema, enabling semantically-aware retrieval and Selective Contextual Reasoning (SCR). Each gateway registers its supported ontology segments within the peaq-based service discovery layer.
+- **On-Chain Storage (KCG)**: Validated and distilled reasoning results are stored in Arweave/IPFS using JSON-LD or RDF formats, preserving their semantic structure. Versioning is maintained via ArNS or other decentralized naming layers, allowing consistent updates without modifying historical data.
+
+### Semantic Discovery and Routing
+
+By embedding KNOW structure into cache metadata, DoD agents can perform ontology-aware discovery:
+- Query gateways that cache specific types of knowledge (e.g., `Event → located_in → Lisbon`)
+- Prefer nodes specializing in particular domains or temporal contexts
+- Route prompts more intelligently, reducing both latency and cost
+
+### Integration Pipeline
+
+1. **LLM Response Capture**: After a reasoning session (local or remote), DoD agents apply a triple-extraction mechanism.
+2. **Triple Structuring**: The extracted facts are mapped to the KNOW schema.
+3. **Validation and Storage**: The resulting triples are validated and stored in the local or gateway cache, or recorded on-chain in KCG.
+
+This architecture transforms Membria into a semantic memory fabric, supporting scalable, verifiable, and privacy-preserving knowledge reuse. KNOW ensures that agents share a common understanding of concepts, enabling fluid communication, long-term memory, and intelligent decision-making across devices and domains.
+
+
+---
+
 ## Validation and Consensus Mechanisms: Ensuring Data Integrity and Trust
 
 ### 1. Introduction to Validation and Consensus
@@ -2220,3 +2248,4 @@ We envision a world where:
 By adopting the KCG+CAG architecture, we take a significant step toward **democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.**
 
 ---
+
