@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802314795755">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802367145031">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.9.0.802314795755" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.9.0.802367145031" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.9.0.802314795755" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.9.0.802367145031" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.9.0.802314795755" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.9.0.802314795755" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.9.0.802367145031" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.9.0.802367145031" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -2766,6 +2766,49 @@ Periodic QLoRA fine-tuning of an SLM using daily knowledge accumulated in Membri
 <li><strong>Scalable, persistent memory usable by multiple agents</strong></li>
 </ul>
 <p>Other systems focus on cloud delivery, static models, or inference-time hacks (e.g., caching or RAG), without providing a framework for <strong>ongoing, distributed intelligence</strong>. Membria’s architecture offers a truly decentralized foundation for the next generation of lightweight, smart AI agents.</p>
+<hr>
+<doc-anchor-target id="ontology-enhanced-knowledge-cache-integrating-know-into-membria">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ontology-enhanced-knowledge-cache-integrating-know-into-membria">#</doc-anchor-trigger>
+        <span>Ontology-Enhanced Knowledge Cache: Integrating KNOW into Membria</span>
+    </h2>
+</doc-anchor-target>
+<p>To ensure semantic interoperability and structured reasoning, Membria integrates the KNOW ontology into its decentralized knowledge architecture. KNOW (Knowledge Navigator Ontology for the World) provides a universal, pragmatic vocabulary of everyday human concepts—such as People, Places, Events, and Organizations—along with consistent subject–predicate–object relationships. This ontology becomes the structural backbone of the Knowledge Cache Graph (KCG) and all cache layers in the Membria ecosystem.</p>
+<doc-anchor-target id="usage-across-the-stack">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage-across-the-stack">#</doc-anchor-trigger>
+        <span>Usage Across the Stack</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>On-Device KV-Cache</strong>: Instead of storing knowledge as opaque embeddings or raw text, each DoD agent uses structured triples aligned with KNOW. This facilitates faster matching, more accurate reasoning, and long-term reusability of distilled knowledge.</li>
+<li><strong>Gateway Indexing and Federation</strong>: Gateways construct symbolic and vector-based indexes using KNOW’s schema, enabling semantically-aware retrieval and Selective Contextual Reasoning (SCR). Each gateway registers its supported ontology segments within the peaq-based service discovery layer.</li>
+<li><strong>On-Chain Storage (KCG)</strong>: Validated and distilled reasoning results are stored in Arweave/IPFS using JSON-LD or RDF formats, preserving their semantic structure. Versioning is maintained via ArNS or other decentralized naming layers, allowing consistent updates without modifying historical data.</li>
+</ul>
+<doc-anchor-target id="semantic-discovery-and-routing">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#semantic-discovery-and-routing">#</doc-anchor-trigger>
+        <span>Semantic Discovery and Routing</span>
+    </h3>
+</doc-anchor-target>
+<p>By embedding KNOW structure into cache metadata, DoD agents can perform ontology-aware discovery:</p>
+<ul>
+<li>Query gateways that cache specific types of knowledge (e.g., <code v-pre>Event → located_in → Lisbon</code>)</li>
+<li>Prefer nodes specializing in particular domains or temporal contexts</li>
+<li>Route prompts more intelligently, reducing both latency and cost</li>
+</ul>
+<doc-anchor-target id="integration-pipeline">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#integration-pipeline">#</doc-anchor-trigger>
+        <span>Integration Pipeline</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>LLM Response Capture</strong>: After a reasoning session (local or remote), DoD agents apply a triple-extraction mechanism.</li>
+<li><strong>Triple Structuring</strong>: The extracted facts are mapped to the KNOW schema.</li>
+<li><strong>Validation and Storage</strong>: The resulting triples are validated and stored in the local or gateway cache, or recorded on-chain in KCG.</li>
+</ol>
+<p>This architecture transforms Membria into a semantic memory fabric, supporting scalable, verifiable, and privacy-preserving knowledge reuse. KNOW ensures that agents share a common understanding of concepts, enabling fluid communication, long-term memory, and intelligent decision-making across devices and domains.</p>
 <hr>
 <doc-anchor-target id="validation-and-consensus-mechanisms-ensuring-data-integrity-and-trust-1">
     <h2>
