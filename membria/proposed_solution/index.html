@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802629548955">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802629595047">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Proposed Solution</title>
-    <meta name="title" content="Proposed Solution">
-    <meta name="description" content="We propose a Knowledge Cache Graph (KCG), an immutable, content-addressable graph of validated knowledge, combined with ">
+    <title>Proposed Solution Overview</title>
+    <meta name="title" content="Proposed Solution Overview">
+    <meta name="description" content="To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the Knowledge Cache Graph (KCG)">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/proposed_solution/">
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/proposed_solution/">
-    <meta property="og:title" content="Proposed Solution">
-    <meta property="og:description" content="We propose a Knowledge Cache Graph (KCG), an immutable, content-addressable graph of validated knowledge, combined with ">
+    <meta property="og:title" content="Proposed Solution Overview">
+    <meta property="og:description" content="To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the Knowledge Cache Graph (KCG)">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/proposed_solution/">
-    <meta property="twitter:title" content="Proposed Solution">
-    <meta property="twitter:description" content="We propose a Knowledge Cache Graph (KCG), an immutable, content-addressable graph of validated knowledge, combined with ">
+    <meta property="twitter:title" content="Proposed Solution Overview">
+    <meta property="twitter:description" content="To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the Knowledge Cache Graph (KCG)">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802629548955" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802629595047" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802629548955" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802629595047" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802629548955" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802629595047" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,26 +221,63 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="proposed-solution" class="break-words">
+<doc-anchor-target id="proposed-solution-overview" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#proposed-solution">#</doc-anchor-trigger>
-        <span>Proposed Solution</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proposed-solution-overview">#</doc-anchor-trigger>
+        <span>Proposed Solution Overview</span>
     </h1>
 </doc-anchor-target>
-<p>We propose a <strong>Knowledge Cache Graph (KCG)</strong>, an immutable, content-addressable graph of validated knowledge, combined with <strong>Cache-Augmented Generation (CAG)</strong> - a mechanism allowing Tiny LLMs to retrieve distilled knowledge before resorting to expensive LLM inference.</p>
-<doc-anchor-target id="components">
+<p>To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the <strong>Knowledge Cache Graph (KCG)</strong> combined with <strong>Cache-Augmented Generation (CAG)</strong> - a decentralized knowledge reasoning layer designed for scalable, efficient, and continuous learning without retraining.</p>
+<doc-anchor-target id="knowledge-cache-graph-kcg">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#components">#</doc-anchor-trigger>
-        <span>Components</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#knowledge-cache-graph-kcg">#</doc-anchor-trigger>
+        <span>Knowledge Cache Graph (KCG)</span>
+    </h2>
+</doc-anchor-target>
+<p>KCG is a decentralized, immutable, and verifiable knowledge graph layer, built on top of permanent storage solutions like Arweave or IPFS. It stores:</p>
+<ul>
+<li>Distilled knowledge entries (facts, QA, reasoning chains).</li>
+<li>Verified entity relations and semantic links.</li>
+<li>Embedded key-value caches for fast retrieval.</li>
+<li>Proof-of-knowledge metadata ensuring data integrity and consensus validation.</li>
+</ul>
+<doc-anchor-target id="cache-augmented-generation-cag">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-augmented-generation-cag">#</doc-anchor-trigger>
+        <span>Cache-Augmented Generation (CAG)</span>
+    </h2>
+</doc-anchor-target>
+<p>CAG introduces a <strong>Cache-Augmented Generation pipeline</strong> where Tiny LLMs no longer rely solely on RAG (retrieval-augmented generation) or direct inference from Big LLMs. Instead:</p>
+<ul>
+<li>Tiny LLMs first query <strong>local or Gateway KV caches</strong>, pre-filled from the KCG layer.</li>
+<li>Utilize <strong>Selective Contextual Reasoning (SCR)</strong> pipelines to reason over retrieved knowledge without invoking external APIs.</li>
+<li>Fallback to <strong>Distillation on Demand (DoD)</strong> requests to Big LLMs only when necessary, ensuring minimal usage of expensive inference services.</li>
+</ul>
+<doc-anchor-target id="distillation-on-demand-dod">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#distillation-on-demand-dod">#</doc-anchor-trigger>
+        <span>Distillation on Demand (DoD)</span>
+    </h2>
+</doc-anchor-target>
+<p>DoD allows Tiny LLMs and DoD Agents to trigger <strong>on-demand distillation of new knowledge</strong> when gaps or outdated data are detected:</p>
+<ul>
+<li>Distilled knowledge is submitted to Gateways.</li>
+<li>Gateways validate, package, and record the knowledge into KCG.</li>
+<li>This ensures that knowledge becomes reusable, validated, and available to all network participants.</li>
+</ul>
+<doc-anchor-target id="key-benefits-of-kcgcag">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-benefits-of-kcgcag">#</doc-anchor-trigger>
+        <span>Key Benefits of KCG+CAG</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><strong>KCG (Knowledge Cache Graph):</strong> A structured graph stored on Arweave/IPFS where each entity, relation, and reasoning chain is immutable and verifiable.</li>
-<li><strong>CAG (Cache-Augmented Generation):</strong> A generation workflow where Tiny LLMs leverage KCG for fast, low-cost reasoning.</li>
-<li><strong>DoD Agents (Distillation on Demand):</strong> Autonomous agents that request knowledge from Big LLMs, distill responses, and propose updates to KCG.</li>
-<li><strong>Federated Gateways:</strong> Trusted nodes managing API access to Big LLMs and handling KCG updates.</li>
-<li><strong>Community Validators:</strong> Stakeholders who verify the quality of new knowledge entries.</li>
+<li><strong>Continuous, lightweight learning</strong> for Tiny LLMs without retraining.</li>
+<li><strong>Dramatically reduced inference costs and latency</strong>, by leveraging fast local and Gateway caching.</li>
+<li><strong>Decentralized, shared, and verifiable knowledge memory</strong>, fostering ecosystem-wide efficiency.</li>
+<li><strong>Open, democratized reasoning layer</strong>, removing reliance on centralized AI providers.</li>
 </ul>
+<p>This model empowers Tiny LLMs to stay fresh, relevant, and capable - at the edge, in real-time, and with minimal costs.</p>
 
                                 
                                 <!-- Required only on API pages -->
