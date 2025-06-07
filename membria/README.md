@@ -71,8 +71,9 @@ This documentation describes the architecture, purpose, and benefits of Cache-Au
     - 14.1 Internal Validator Allocation
     - 14.2 Dynamic Complexity Adjustment
     - 14.3 DoD Agents Performance Bonuses
-15. [Advantages of the KCG+CAG Approach](advantages.md)
-16. [Conclusion](conclusion.md)
+15. [Integrations](integrations.md)
+16. [Advantages of the KCG+CAG Approach](advantages.md)
+17. [Conclusion](conclusion.md)
 
 ## Purpose of Documentation
 
