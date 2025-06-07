@@ -1,6 +1,7 @@
 ---
 icon: database
 label: Storage, Query & Privacy
+order: 93
 ---
 
 # CAG Storage, Query & Privacy Architecture
