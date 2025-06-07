@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Proposed Solution Overview</title>
-    <meta name="title" content="Proposed Solution Overview">
-    <meta name="description" content="To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the Knowledge Cache Graph (KCG)">
+    <title>Validators</title>
+    <meta name="title" content="Validators">
+    <meta name="description" content="Validators provide the final layer of trust in Membria, confirming the correctness of knowledge proposals and enforcing network rules through...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.actiq.xyz/membria/proposed_solution/">
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/validators/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.actiq.xyz/membria/proposed_solution/">
-    <meta property="og:title" content="Proposed Solution Overview">
-    <meta property="og:description" content="To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the Knowledge Cache Graph (KCG)">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/validators/">
+    <meta property="og:title" content="Validators">
+    <meta property="og:description" content="Validators provide the final layer of trust in Membria, confirming the correctness of knowledge proposals and enforcing network rules through...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/proposed_solution/">
-    <meta property="twitter:title" content="Proposed Solution Overview">
-    <meta property="twitter:description" content="To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the Knowledge Cache Graph (KCG)">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/validators/">
+    <meta property="twitter:title" content="Validators">
+    <meta property="twitter:description" content="Validators provide the final layer of trust in Membria, confirming the correctness of knowledge proposals and enforcing network rules through...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -221,63 +221,123 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="proposed-solution-overview" class="break-words">
+<doc-anchor-target id="validators" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#proposed-solution-overview">#</doc-anchor-trigger>
-        <span>Proposed Solution Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#validators">#</doc-anchor-trigger>
+        <span>Validators</span>
     </h1>
 </doc-anchor-target>
-<p>To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the <strong>Knowledge Cache Graph (KCG)</strong> combined with <strong>Cache-Augmented Generation (CAG)</strong> - a decentralized knowledge reasoning layer designed for scalable, efficient, and continuous learning without retraining.</p>
-<doc-anchor-target id="knowledge-cache-graph-kcg">
+<p>Validators provide the final layer of trust in Membria, confirming the correctness of knowledge proposals and enforcing network rules through stake-weighted consensus.</p>
+<doc-anchor-target id="core-responsibilities">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#knowledge-cache-graph-kcg">#</doc-anchor-trigger>
-        <span>Knowledge Cache Graph (KCG)</span>
-    </h2>
-</doc-anchor-target>
-<p>KCG is a decentralized, immutable, and verifiable knowledge graph layer, built on top of permanent storage solutions like Arweave or IPFS. It stores:</p>
-<ul>
-<li>Distilled knowledge entries (facts, QA, reasoning chains).</li>
-<li>Verified entity relations and semantic links.</li>
-<li>Embedded key-value caches for fast retrieval.</li>
-<li>Proof-of-knowledge metadata ensuring data integrity and consensus validation.</li>
-</ul>
-<doc-anchor-target id="cache-augmented-generation-cag">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-augmented-generation-cag">#</doc-anchor-trigger>
-        <span>Cache-Augmented Generation (CAG)</span>
-    </h2>
-</doc-anchor-target>
-<p>CAG introduces a <strong>Cache-Augmented Generation pipeline</strong> where Tiny LLMs no longer rely solely on RAG (retrieval-augmented generation) or direct inference from Big LLMs. Instead:</p>
-<ul>
-<li>Tiny LLMs first query <strong>local or Gateway KV caches</strong>, pre-filled from the KCG layer.</li>
-<li>Utilize <strong>Selective Contextual Reasoning (SCR)</strong> pipelines to reason over retrieved knowledge without invoking external APIs.</li>
-<li>Fallback to <strong>Distillation on Demand (DoD)</strong> requests to Big LLMs only when necessary, ensuring minimal usage of expensive inference services.</li>
-</ul>
-<doc-anchor-target id="distillation-on-demand-dod">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#distillation-on-demand-dod">#</doc-anchor-trigger>
-        <span>Distillation on Demand (DoD)</span>
-    </h2>
-</doc-anchor-target>
-<p>DoD allows Tiny LLMs and DoD Agents to trigger <strong>on-demand distillation of new knowledge</strong> when gaps or outdated data are detected:</p>
-<ul>
-<li>Distilled knowledge is submitted to Gateways.</li>
-<li>Gateways validate, package, and record the knowledge into KCG.</li>
-<li>This ensures that knowledge becomes reusable, validated, and available to all network participants.</li>
-</ul>
-<doc-anchor-target id="key-benefits-of-kcgcag">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key-benefits-of-kcgcag">#</doc-anchor-trigger>
-        <span>Key Benefits of KCG+CAG</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#core-responsibilities">#</doc-anchor-trigger>
+        <span>Core Responsibilities</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><strong>Continuous, lightweight learning</strong> for Tiny LLMs without retraining.</li>
-<li><strong>Dramatically reduced inference costs and latency</strong>, by leveraging fast local and Gateway caching.</li>
-<li><strong>Decentralized, shared, and verifiable knowledge memory</strong>, fostering ecosystem-wide efficiency.</li>
-<li><strong>Open, democratized reasoning layer</strong>, removing reliance on centralized AI providers.</li>
+<li><strong>Knowledge validation</strong><br />
+Review distilled entries submitted by gateways, verify supporting evidence and ensure semantic coherence.</li>
+<li><strong>Consensus voting</strong><br />
+Sign or reject proposals in a stake-weighted quorum; finality is reached when a super-majority of signatures is recorded.</li>
+<li><strong>Proof-of-Knowledge attestation</strong><br />
+Issue cryptographic attestations that bind each accepted entry to its on-chain transaction ID, enabling end-to-end provenance.</li>
+<li><strong>Dispute resolution</strong><br />
+Arbitrate conflicts or appeals when competing claims or malicious submissions arise.</li>
 </ul>
-<p>This model empowers Tiny LLMs to stay fresh, relevant, and capable - at the edge, in real-time, and with minimal costs.</p>
+<doc-anchor-target id="staking-and-rewards">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#staking-and-rewards">#</doc-anchor-trigger>
+        <span>Staking and Rewards</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Validators lock tokens as collateral; larger stakes grant higher voting power but increase potential loss on misbehavior.</li>
+<li>Successful validation cycles yield block rewards and a share of DoD fees.</li>
+<li>Slashing mechanisms penalize validators who sign fraudulent or low-quality entries.</li>
+</ul>
+<doc-anchor-target id="infrastructure-requirements">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#infrastructure-requirements">#</doc-anchor-trigger>
+        <span>Infrastructure Requirements</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Component</th>
+<th>Minimum Spec</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Validation node</td>
+<td>4 vCPU, 8 GB RAM</td>
+<td>Signature aggregation and voting</td>
+</tr>
+<tr>
+<td>Light index</td>
+<td>20 GB SSD</td>
+<td>Quick access to recent KCG entries</td>
+</tr>
+<tr>
+<td>Uptime target</td>
+<td>99.5 percent</td>
+<td>Maintain quorum availability</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nodes do not store full gateway caches, keeping hardware costs modest.</p>
+<doc-anchor-target id="governance-role">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#governance-role">#</doc-anchor-trigger>
+        <span>Governance Role</span>
+    </h2>
+</doc-anchor-target>
+<p>Validators participate in on-chain voting to adjust:</p>
+<ul>
+<li>Quorum size and signature thresholds</li>
+<li>Slashing parameters and reward rates</li>
+<li>Protocol upgrades affecting KCG schemas or cache policies</li>
+</ul>
+<p>This makes them stewards of both technical security and economic health.</p>
+<doc-anchor-target id="fraud-detection-and-auditing">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fraud-detection-and-auditing">#</doc-anchor-trigger>
+        <span>Fraud Detection and Auditing</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Validators run statistical and semantic checks to spot spam or contradictory claims.</li>
+<li>Periodic audits compare validator signatures with historical accuracy scores; repeated errors lower reputation and staking limits.</li>
+<li>All validator actions are logged on-chain, allowing independent review.</li>
+</ul>
+<doc-anchor-target id="interaction-with-gateways">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#interaction-with-gateways">#</doc-anchor-trigger>
+        <span>Interaction with Gateways</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Gateway packages a validated proposal and broadcasts it.</li>
+<li>Validators retrieve the package, verify evidence and cast votes.</li>
+<li>Once quorum is met, the gateway finalizes the write to KCG.</li>
+<li>Validators’ signatures become an immutable part of the record.</li>
+</ol>
+<doc-anchor-target id="security-and-resilience">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-and-resilience">#</doc-anchor-trigger>
+        <span>Security and Resilience</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Stake-weighted voting discourages Sybil attacks.</li>
+<li>Rotating committee selection prevents collusion.</li>
+<li>Slashed stakes are partially burned and partially redistributed to honest validators, reinforcing correct behavior.</li>
+</ul>
+<p>Validators thus serve as the cryptographic and economic backbone of Membria, ensuring that only accurate, well-sourced knowledge becomes part of the collective memory.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -287,20 +347,20 @@
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/alternative_learning_methods/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/tokenomics/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Alternative Methods</span>
+                                                <span class="block mt-1">Tokenomics</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/technical-architecture/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/knowledge_gap/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Architecture</span>
+                                                <span class="block mt-1">Knowledge Gaps</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -344,6 +404,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Proposed Solution", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Validators", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
