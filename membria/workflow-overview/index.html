@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802630400089">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802630489961">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Architecture</title>
-    <meta name="title" content="Architecture">
+    <title>Workflow Overview</title>
+    <meta name="title" content="Workflow Overview">
+    <meta name="description" content="The KCG+CAG system introduces an optimized workflow that allows Tiny LLMs to acquire, reason over, and integrate fresh knowledge without the need for...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/workflow-overview/">
@@ -18,21 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/workflow-overview/">
-    <meta property="og:title" content="Architecture">
+    <meta property="og:title" content="Workflow Overview">
+    <meta property="og:description" content="The KCG+CAG system introduces an optimized workflow that allows Tiny LLMs to acquire, reason over, and integrate fresh knowledge without the need for...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/workflow-overview/">
-    <meta property="twitter:title" content="Architecture">
+    <meta property="twitter:title" content="Workflow Overview">
+    <meta property="twitter:description" content="The KCG+CAG system introduces an optimized workflow that allows Tiny LLMs to acquire, reason over, and integrate fresh knowledge without the need for...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802630400089" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802630489961" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802630400089" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802630489961" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802630400089" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802630489961" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,12 +221,114 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="architecture" class="break-words">
+<doc-anchor-target id="workflow-overview" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture">#</doc-anchor-trigger>
-        <span>Architecture</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#workflow-overview">#</doc-anchor-trigger>
+        <span>Workflow Overview</span>
     </h1>
 </doc-anchor-target>
+<p>The KCG+CAG system introduces an optimized workflow that allows Tiny LLMs to acquire, reason over, and integrate fresh knowledge without the need for retraining. The process leverages multi-layer caching, Selective Contextual Reasoning (SCR), and Distillation on Demand (DoD) to ensure knowledge freshness, verifiability, and efficiency.</p>
+<doc-anchor-target id="full-knowledge-lifecycle-workflow">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#full-knowledge-lifecycle-workflow">#</doc-anchor-trigger>
+        <span>Full Knowledge Lifecycle Workflow</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="1-dod-request-trigger">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-dod-request-trigger">#</doc-anchor-trigger>
+        <span>1. DoD Request Trigger</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>A Tiny LLM or DoD Agent identifies a knowledge gap, outdated fact, or complex reasoning need.</li>
+<li>It initiates a <strong>DoD query</strong>, requesting knowledge retrieval, validation, or distillation.</li>
+</ul>
+<doc-anchor-target id="2-scr-reasoning-pipeline-via-gateway">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-scr-reasoning-pipeline-via-gateway">#</doc-anchor-trigger>
+        <span>2. SCR Reasoning Pipeline via Gateway</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The DoD Agent or Tiny LLM triggers the <strong>Selective Contextual Reasoning (SCR)</strong> pipeline via the Gateway:
+<ul>
+<li><strong>Semantic retrieval</strong> from the KCG KV-layer and Gateway off-chain index.</li>
+<li><strong>Filtering and confirmation step</strong> performed locally by the agent or Tiny LLM.</li>
+<li><strong>Contextual reasoning</strong> using enriched prompt with retrieved knowledge.</li>
+</ul>
+</li>
+<li>If sufficient reasoning is possible using the local or Gateway caches, the process completes without invoking Big LLMs.</li>
+</ul>
+<doc-anchor-target id="3-fallback-to-big-llm-if-necessary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-fallback-to-big-llm-if-necessary">#</doc-anchor-trigger>
+        <span>3. Fallback to Big LLM (if necessary)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>For novel, ambiguous, or high-confidence-required queries, the DoD Agent escalates the request to selected Big LLM APIs (GPT, Claude, Gemini, etc.).</li>
+<li>Multiple models may be queried and compared.</li>
+</ul>
+<doc-anchor-target id="4-knowledge-distillation-proposal">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-knowledge-distillation-proposal">#</doc-anchor-trigger>
+        <span>4. Knowledge Distillation Proposal</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Based on SCR or Big LLM outputs, the DoD Agent synthesizes a <strong>distilled knowledge proposal</strong>.</li>
+<li>The proposal includes:
+<ul>
+<li>Summary.</li>
+<li>Sources and evidence.</li>
+<li>Semantic relations and context.</li>
+<li>Optional embeddings for KV-caching.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="5-gateway-validation-and-recording">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-gateway-validation-and-recording">#</doc-anchor-trigger>
+        <span>5. Gateway Validation and Recording</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The proposal is submitted to the Gateway.</li>
+<li>The Gateway performs validation steps:
+<ul>
+<li>Verifies data integrity and formatting.</li>
+<li>Checks evidence, references, and originality.</li>
+<li>Optionally invokes Validator consensus for high-value knowledge.</li>
+</ul>
+</li>
+<li>If validated, the Gateway records the entry into the KCG (Arweave).</li>
+<li>A corresponding <strong>KV entry is updated in the public KCG KV-layer</strong> for efficient future retrieval.</li>
+</ul>
+<doc-anchor-target id="6-confirmation-and-reward-distribution">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-confirmation-and-reward-distribution">#</doc-anchor-trigger>
+        <span>6. Confirmation and Reward Distribution</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The DoD Agent receives the finalized KCG TXID as confirmation.</li>
+<li>Validators and Gateways receive incentives for their role.</li>
+<li>A portion of tokens from the DoD query are burned to maintain deflationary tokenomics.</li>
+</ul>
+<doc-anchor-target id="key-optimizations-in-the-workflow">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-optimizations-in-the-workflow">#</doc-anchor-trigger>
+        <span>Key Optimizations in the Workflow</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>SCR-first by default</strong> reduces calls to Big LLM by up to 80%.</li>
+<li><strong>Multi-layer caching</strong> ensures fastest possible retrieval for repeated or similar queries.</li>
+<li><strong>Federated Gateway layer</strong> enables scaling and redundancy of knowledge retrieval and validation services.</li>
+<li><strong>Immutable KCG layer</strong> ensures global, shared, and verifiable knowledge memory for all participants.</li>
+</ul>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -233,20 +338,20 @@
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/technical-architecture/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/scr-reasoning/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Architecture</span>
+                                                <span class="block mt-1">SCR Reasoning</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/tiny_lms/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/capabilities/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">What are Tiny LM's</span>
+                                                <span class="block mt-1">Membria for Tiny LM's</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -290,6 +395,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Architecture", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Workwlow", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
