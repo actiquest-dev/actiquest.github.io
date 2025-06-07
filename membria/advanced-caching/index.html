@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Conclusion</title>
-    <meta name="title" content="Conclusion">
-    <meta name="description" content="The KCG+CAG ecosystem bridges the gap between heavy LLM inference and lightweight, efficient Tiny LLMs.">
+    <title>Advanced Caching Strategies &amp; SCR Pipeline</title>
+    <meta name="title" content="Advanced Caching Strategies & SCR Pipeline">
+    <meta name="description" content="To maximize reasoning efficiency, minimize inference costs, and enable dynamic knowledge integration for Tiny LLMs, the KCG+CAG architecture...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.actiq.xyz/membria/conclusion/">
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/advanced-caching/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.actiq.xyz/membria/conclusion/">
-    <meta property="og:title" content="Conclusion">
-    <meta property="og:description" content="The KCG+CAG ecosystem bridges the gap between heavy LLM inference and lightweight, efficient Tiny LLMs.">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/advanced-caching/">
+    <meta property="og:title" content="Advanced Caching Strategies & SCR Pipeline">
+    <meta property="og:description" content="To maximize reasoning efficiency, minimize inference costs, and enable dynamic knowledge integration for Tiny LLMs, the KCG+CAG architecture...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/conclusion/">
-    <meta property="twitter:title" content="Conclusion">
-    <meta property="twitter:description" content="The KCG+CAG ecosystem bridges the gap between heavy LLM inference and lightweight, efficient Tiny LLMs.">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/advanced-caching/">
+    <meta property="twitter:title" content="Advanced Caching Strategies & SCR Pipeline">
+    <meta property="twitter:description" content="To maximize reasoning efficiency, minimize inference costs, and enable dynamic knowledge integration for Tiny LLMs, the KCG+CAG architecture...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -221,15 +221,28 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="conclusion" class="break-words">
+<doc-anchor-target id="advanced-caching-strategies--scr-pipeline" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
-        <span>Conclusion</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-caching-strategies--scr-pipeline">#</doc-anchor-trigger>
+        <span>Advanced Caching Strategies &amp; SCR Pipeline</span>
     </h1>
 </doc-anchor-target>
-<p>The KCG+CAG ecosystem bridges the gap between heavy LLM inference and lightweight, efficient Tiny LLMs. By implementing a shared, verified knowledge graph, we create a self-reinforcing system where knowledge grows organically, costs decrease, and reliability improves. Distillation on Demand becomes a practical, scalable pathway to democratize edge-AI personalizing, fine-tuning and learning.</p>
-<p>In an era where millions of Tiny LLMs are deployed across personal devices, edge environments, and specialized domains, the need for scalable, efficient, and verifiable knowledge augmentation is critical. Traditional fine-tuning methods and centralized inference APIs are costly, slow, and often impractical for edge deployment.</p>
-<p>The KCG+CAG approach offers a sustainable alternative, enabling continuous learning without prohibitive computational overhead. By combining the strengths of decentralized storage, federated validation, and economic incentives, we create an ecosystem where knowledge becomes a shared, evolving resource that benefits all participants.</p>
+<hr>
+<p>To maximize reasoning efficiency, minimize inference costs, and enable dynamic knowledge integration for Tiny LLMs, the KCG+CAG architecture incorporates advanced caching strategies enhanced by <strong>Selective Contextual Reasoning (SCR)</strong> pipelines.</p>
+<doc-anchor-target id="selective-contextual-reasoning-scr">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selective-contextual-reasoning-scr">#</doc-anchor-trigger>
+        <span>Selective Contextual Reasoning (SCR)</span>
+    </h2>
+</doc-anchor-target>
+<p>Inspired by state-of-the-art research (arXiv:2503.05212), SCR enables Tiny LLMs to perform <strong>lightweight, dynamic reasoning over external knowledge caches without modifying model weights</strong>.</p>
+<ul>
+<li><strong>Step 1: Semantic Retrieval</strong> - Retrieve relevant knowledge entries from the KV-cache and semantic graph indexes.</li>
+<li><strong>Step 2: Confirmation and Filtering</strong> - Tiny LLMs or Gateways filter, confirm, and deduplicate retrieved entries, ensuring contextual fit and factual accuracy.</li>
+<li><strong>Step 3: Contextual Reasoning</strong> - Construct an enriched prompt using confirmed knowledge, allowing Tiny LLMs to perform high-quality reasoning locally.</li>
+<li><strong>Step 4: Fallback to DoD and Big LLMs</strong> - Only if SCR fails or lacks confidence, a DoD escalation is triggered.</li>
+</ul>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -239,20 +252,20 @@
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/advantages/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kv-indexing/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Advantages</span>
+                                                <span class="block mt-1">Hybrid Cache</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kcg_indexing/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/tokenomics/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">KCG Indexing</span>
+                                                <span class="block mt-1">Tokenomics</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -296,6 +309,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Conclusion", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Alternative Methods", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
