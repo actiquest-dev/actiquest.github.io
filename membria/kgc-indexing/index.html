@@ -9,35 +9,33 @@
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Acticat Multimodal AI Agent</title>
-    <meta name="title" content="Acticat Multimodal AI Agent">
-    <meta name="description" content="Prototyping Acticat AIGC Character">
+    <title>Knowledge Cache Graph (KCG) Data Model &amp; Indexing</title>
+    <meta name="title" content="Knowledge Cache Graph (KCG) Data Model & Indexing">
+    <meta name="description" content="The Knowledge Cache Graph (KCG) serves as the immutable, decentralized knowledge memory layer for the ecosystem.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.actiq.xyz/acticat/">
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/kgc-indexing/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.actiq.xyz/acticat/">
-    <meta property="og:title" content="Acticat Multimodal AI Agent">
-    <meta property="og:description" content="Prototyping Acticat AIGC Character">
-    <meta property="og:image" content="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfzRmIGKPki2DIxAMGo7hFdxK0pxkv4N2VCSV89zVhQPkRS3V3Ub5hYQUu-0MAFHLButtbB1WjTUyhQbpvzVfFNbQw-Ybpqn8yI7HPnlIhqnHU1dvEKBV8aq_NOng-7fvSeJ0uEDg?key=AsJEkgePh24159X10uUz6PJ-">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/kgc-indexing/">
+    <meta property="og:title" content="Knowledge Cache Graph (KCG) Data Model & Indexing">
+    <meta property="og:description" content="The Knowledge Cache Graph (KCG) serves as the immutable, decentralized knowledge memory layer for the ecosystem.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.actiq.xyz/acticat/">
-    <meta property="twitter:title" content="Acticat Multimodal AI Agent">
-    <meta property="twitter:description" content="Prototyping Acticat AIGC Character">
-    <meta property="twitter:image" content="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfzRmIGKPki2DIxAMGo7hFdxK0pxkv4N2VCSV89zVhQPkRS3V3Ub5hYQUu-0MAFHLButtbB1WjTUyhQbpvzVfFNbQw-Ybpqn8yI7HPnlIhqnHU1dvEKBV8aq_NOng-7fvSeJ0uEDg?key=AsJEkgePh24159X10uUz6PJ-">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/kgc-indexing/">
+    <meta property="twitter:title" content="Knowledge Cache Graph (KCG) Data Model & Indexing">
+    <meta property="twitter:description" content="The Knowledge Cache Graph (KCG) serves as the immutable, decentralized knowledge memory layer for the ecosystem.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../static/favicon.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.9.0.802631078047" rel="stylesheet">
+    <link href="../../static/favicon.png" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.9.0.802631078047" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.9.0.802631078047" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.9.0.802631078047" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802631078047" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802631078047" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -52,10 +50,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../static/light-logo.svg">
-                                <img class="max-h-10 hidden dark:inline-block" src="../static/dark-logo.svg">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/light-logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/dark-logo.svg">
                             </span>
                             <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Actiq</span>
                         </a><span class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">Litepaper</span>
@@ -69,7 +67,7 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                         <g fill="currentColor">
                                             <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
@@ -172,7 +170,7 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="../../">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                                 <g fill="currentColor">
                                                     <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
@@ -223,300 +221,153 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="acticat-multimodal-ai-agent" class="break-words">
+<doc-anchor-target id="knowledge-cache-graph-kcg-data-model--indexing" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#acticat-multimodal-ai-agent">#</doc-anchor-trigger>
-        <span>Acticat Multimodal AI Agent</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#knowledge-cache-graph-kcg-data-model--indexing">#</doc-anchor-trigger>
+        <span>Knowledge Cache Graph (KCG) Data Model &amp; Indexing</span>
     </h1>
 </doc-anchor-target>
-<blockquote>
-<p>Prototyping Acticat AIGC Character</p>
-</blockquote>
-<doc-anchor-target id="acticat-wellness-coach">
+<p>The Knowledge Cache Graph (KCG) serves as the immutable, decentralized knowledge memory layer for the ecosystem. It is optimized to store, retrieve, and reason over distilled knowledge efficiently, while ensuring verifiability and traceability.</p>
+<doc-anchor-target id="kcg-data-types">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#acticat-wellness-coach">#</doc-anchor-trigger>
-        <span>Acticat Wellness Coach</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kcg-data-types">#</doc-anchor-trigger>
+        <span>KCG Data Types</span>
     </h2>
 </doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfzRmIGKPki2DIxAMGo7hFdxK0pxkv4N2VCSV89zVhQPkRS3V3Ub5hYQUu-0MAFHLButtbB1WjTUyhQbpvzVfFNbQw-Ybpqn8yI7HPnlIhqnHU1dvEKBV8aq_NOng-7fvSeJ0uEDg?key=AsJEkgePh24159X10uUz6PJ-" alt="" />
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p><span class="docs-emoji">&#x1F63A;</span> <a href="https://t.me/acticat_bot"><strong>ACTIcat</strong></a> is the virtual wellness coach, on-device AI agent that sees, hears, understands, and leads to success. Using the <a href="https://docs.actiq.xyz/aipod/"><strong>AI Live Pod</strong></a> and wearables, it tracks activity, delivers personalized advice, and rewards workouts with $ACTI tokens <span class="docs-emoji">&#x1F3C6;</span></p>
-<doc-anchor-target id="what-does-the-acticat-do">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-does-the-acticat-do">#</doc-anchor-trigger>
-        <span>What does the ACTICat do?</span>
-    </h2>
+<doc-anchor-target id="distilled-knowledge-entries">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#distilled-knowledge-entries">#</doc-anchor-trigger>
+        <span>Distilled Knowledge Entries</span>
+    </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Real-Time Movement Analysis:</strong>  Evaluates athletes&#x27; movements to offer immediate feedback.</li>
-<li><strong>Personalized Training Plans:</strong>  Develops and adjusts training regimens based on individual progress and circumstances.</li>
-<li><strong>Exercise Technique Recommendations:</strong>  Provides guidance to improve exercise form and prevent injuries.</li>
-<li><strong>Adaptive Exercise Volume:</strong>  Modifies exercise intensity and type according to the user&#x27;s health and mood.</li>
-<li><strong>Nutrition and Recovery Advice:</strong>  Offers suggestions tailored to the user&#x27;s body and needs.</li>
-<li><strong>Motivational Rewards:</strong>  Incentivizes users with $ACTI tokens for achieving training goals and personal records.</li>
-<li><strong>Engaging Communication:</strong>  Interacts with users in an empathetic and emotional manner, with voice options resembling well-known actors.</li>
-<li><strong>Mood Awareness:</strong>  Recognizes and responds to the user&#x27;s emotional state, occasionally simulating its own fatigue to create a more relatable experience.</li>
-<li><strong>Quest and Mission System:</strong>  Introduces challenges to make training more enjoyable.</li>
-<li><strong>Holistic Development:</strong>  Combines physical training with mental practices, acting as a psychologist when needed.</li>
-<li><strong>Comprehensive Training Programs:</strong>  Considers long-term objectives, environmental factors, biorhythms, and sleep quality to develop effective training plans.</li>
-<li><strong>Health Data Analysis:</strong>  Assesses health and physical condition data to enhance performance and prevent injuries.</li>
+<li>Core units of validated knowledge.</li>
+<li>Contain:
+<ul>
+<li>Distilled summaries.</li>
+<li>Supporting evidence and sources.</li>
+<li>Metadata (creation date, proposer, validator signatures).</li>
+<li>Optional embeddings for KV-layer indexing.</li>
 </ul>
-<blockquote>
-<p>Rather than being coaches who give instructions, AIGC in Actiq become
-veritable companions in the sports journey of action undertaken by
-each user. Advanced technology, a personalized approach, a reward
-system, and friendly interface combine in an environment where
-training becomes entertaining and motivating. This is a new standard
-in sport preparation where technology serves to unlock the full
-potential of every single athlete and make the path to achievement
-effective and truly exciting.</p>
-</blockquote>
-<p>
-<figure>
-    <div class="relative w-full mb-6 overflow-hidden pt-9/16">
-        <iframe class="w-full h-full border-0 absolute inset-0" src="https://www.youtube.com/embed/hQ1Mohmv92Y" allowfullscreen></iframe>
-    </div>
-</figure>
-</p>
-<p>Opposed to humanoid robots from <em>Will Smith starring Sci-Fi thriller “I Robot”</em>, cat-like AIGC character design could make the whole process of learning and training more fun-less intimidating. Optimus robots, Cybercab robo-taxis, and Robovan buses were completely inspired by this film, which means that the marketing of robotic innovations is surprisingly predictable.</p>
-<p>Why a cat? Humanoid robots sometimes fall into an &quot;uncanny valley&quot; where they are almost human but with subtle differences that are disquieting. The virtual cat character avoids this problem in its entirety by taking on a very non-human form that is universally attractive and non-threatening. People have a natural affection for animals, cats especially. This helps, in some cases, to work out a sense of camaraderie and, therefore, motivation to make the workout experience more comfortable.</p>
-<p>It is possible to attribute a personality to ACTIcat, adapting it to different age ranges, sports, and forms of training in such a way that the AI will adapt to different users&#x27; needs.</p>
-<p>Thus, it might be that athletes get emotionally tied with the sweet and friendly AIGC; hence, commitment to the training program increases. Therefore, with this, it will keep them more motivated by sticking to your exercise schedule.</p>
-<blockquote>
-<p>The value of AI agent tokens can be influenced by several key factors, reflecting their potential as an emerging trend &gt; in the blockchain and Web3 space. Here&#x27;s a breakdown of what is typically known about their value.</p>
-</blockquote>
-<hr>
-<doc-anchor-target id="market-trends">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#market-trends">#</doc-anchor-trigger>
-        <span>Market Trends</span>
-    </h2>
-</doc-anchor-target>
-<ul>
-<li><p>AI and blockchain integration is one of the hottest trends in technology. Tokens tied to AI projects, such as AI agents, often attract significant investor interest due to their potential to combine the scalability of AI with the transparency and utility of blockchain.</p>
-</li>
-<li><p>AI-focused tokens have seen significant interest in the Web3 ecosystem, driven by innovation and the demand for personalized, data-driven services.</p>
-</li>
-<li><p>Memecoin markets (like $ACTICAT&#x27;s positioning) thrive on hype, branding, and a strong community, which can inflate the token value quickly.</p>
 </li>
 </ul>
-<hr>
-<doc-anchor-target id="utility-and-functionality">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#utility-and-functionality">#</doc-anchor-trigger>
-        <span>Utility and Functionality</span>
-    </h2>
-</doc-anchor-target>
-<p>The value of a token depends largely on its utility within the ecosystem:</p>
-<ul>
-<li>$ACTICAT&#x27;s use case: As a virtual sports coach that rewards users for fitness progress, it has clear utility for tracking, incentivizing, and managing physical activity.</li>
-<li>Interoperability with wearables and AI Live Pod expands its value proposition beyond just token speculation.
-If the ecosystem sustains long-term user engagement, the token can grow in value as demand increases.</li>
-<li>Guding on Actiq AIGC ecosystem.</li>
-</ul>
-<hr>
-<doc-anchor-target id="ai-as-a-growth-industry">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-as-a-growth-industry">#</doc-anchor-trigger>
-        <span>AI as a Growth Industry</span>
-    </h2>
-</doc-anchor-target>
-<p>The integration of AI with blockchain is expected to be a multi-billion-dollar market:</p>
-<ul>
-<li>Tokens linked to real-world AI-driven solutions (like fitness, health, or productivity) often attract long-term investors.</li>
-<li>If $ACTICAT succeeds in offering measurable value (e.g., improved fitness outcomes), it may justify a strong valuation over time.</li>
-</ul>
-<blockquote>
-<p>The value of AI agent tokens like $ACTICAT depends on their ability to deliver unique AI-driven solutions, build a
-robust community, and sustain demand in the broader blockchain and fitness industries. Early hype and rewards
-mechanisms can boost initial valuation, but long-term value will rely on real-world adoption, scalability, and
-effective tokenomics.</p>
-</blockquote>
-<hr>
-<doc-anchor-target id="agent-integrations">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#agent-integrations">#</doc-anchor-trigger>
-        <span>Agent Integrations</span>
-    </h2>
-</doc-anchor-target>
-<p>Acticat integrates with popular health and fitness platforms to provide a comprehensive and personalized user experience. By connecting with services like Strava, Google Fit, and Apple Health, Acticat can access and analyze your activity data to offer tailored coaching and insights.</p>
-<p><strong>Strava:</strong></p>
-<p>Acticat can analyze data from your Strava activities to assess your performance and provide personalized coaching. To enable this integration, ensure that your Strava account is connected within the Acticat app. This connection allows Acticat to access your workout data, enhancing its ability to offer customized training plans and feedback.</p>
-<p><strong>Google Fit:</strong></p>
-<p>By connecting Acticat to Google Fit, the AI Live Pod can gather real-time biometric data such as heart rate, calories burned, and activity levels. This integration enables Acticat to create a detailed fitness profile tailored to your health and performance needs. To set up this connection, ensure that your Google Fit account is linked within the Acticat app.</p>
-<p><strong>Apple Health:</strong></p>
-<p>Acticat also integrates with Apple Health to provide a seamless experience for iOS users. By syncing with Apple Health, Acticat can access your health and activity data, allowing it to offer personalized workout plans, recovery advice, and dietary suggestions. To enable this integration, connect your Apple Health account within the Acticat app.</p>
-<p>By leveraging these integrations, Acticat offers a holistic approach to fitness, ensuring that all your health and activity data is utilized to provide the most effective and personalized coaching experience.</p>
-<p>Integrating  <strong>Strava, Apple Health, and Google Fit</strong>  with  <strong>Acticat</strong>  allows the AI to provide more personalized and context-aware coaching. Here’s how this data can enhance Acticat’s responses:</p>
-<doc-anchor-target id="personalized-workout-adjustments">
+<doc-anchor-target id="entities">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#personalized-workout-adjustments">#</doc-anchor-trigger>
-        <span>Personalized Workout Adjustments</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#entities">#</doc-anchor-trigger>
+        <span>Entities</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Performance Metrics</strong>  (from Strava, Apple Health, or Google Fit): Acticat can analyze pace, heart rate, and power output to tailor workout intensity.</li>
-<li><strong>Fatigue and Recovery Insights</strong>: If Apple Health detects poor sleep quality or high resting heart rate, Acticat may suggest  <strong>lighter workouts</strong>  or active recovery.</li>
-<li><strong>Adaptation to Training Load</strong>: Based on cumulative workout data, Acticat can prevent overtraining by suggesting  <strong>rest days</strong>  or adjusting exercise intensity.</li>
+<li>Discrete concepts, objects, or named entities.</li>
+<li>Serve as graph nodes for semantic linking.</li>
+<li>Example: <code v-pre>&quot;Sparse Transformer&quot;</code>, <code v-pre>&quot;Switch Transformer&quot;</code>.</li>
 </ul>
-<doc-anchor-target id="real-time-feedback--motivational-coaching">
+<doc-anchor-target id="relations">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#real-time-feedback--motivational-coaching">#</doc-anchor-trigger>
-        <span>Real-Time Feedback &amp; Motivational Coaching</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#relations">#</doc-anchor-trigger>
+        <span>Relations</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Post-Workout Analysis</strong>: Acticat can review your latest Strava cycling/running session and provide insights like:
+<li>Semantic links between entities and knowledge entries.</li>
+<li>Types:
 <ul>
-<li>&quot;You ran  <strong>5 km</strong>  at an  <strong>average pace of 6:00 min/km</strong>—great job! Try to maintain  <strong>consistent cadence</strong>  next time.&quot;</li>
+<li><code v-pre>isA</code></li>
+<li><code v-pre>relatedTo</code></li>
+<li><code v-pre>usedBy</code></li>
 </ul>
 </li>
-<li><strong>Heart Rate Optimization</strong>: If heart rate zones are too high, Acticat can remind users to  <strong>slow down</strong>  and maintain an efficient effort.</li>
+<li>Include descriptions, confidence scores, and provenance data.</li>
 </ul>
-<doc-anchor-target id="holistic-wellness-integration">
+<doc-anchor-target id="reasoning-chains">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#holistic-wellness-integration">#</doc-anchor-trigger>
-        <span>Holistic Wellness Integration</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reasoning-chains">#</doc-anchor-trigger>
+        <span>Reasoning Chains</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Sleep &amp; Recovery-Based Coaching</strong>: If Apple Health detects only  <strong>5 hours of sleep</strong>, Acticat might say:
+<li>Multi-step logical explanations or derivations.</li>
+<li>Stored as ordered steps with supporting evidence.</li>
+<li>Enable Tiny LLMs to shortcut complex reasoning by using pre-validated chains.</li>
+</ul>
+<doc-anchor-target id="faq-patterns">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#faq-patterns">#</doc-anchor-trigger>
+        <span>FAQ Patterns</span>
+    </h3>
+</doc-anchor-target>
 <ul>
-<li>&quot;You didn&#x27;t sleep well. Let&#x27;s do a light workout today and focus on recovery.&quot;</li>
+<li>Standardized question-answer pairs.</li>
+<li>Cover frequent queries and enable ultra-fast retrieval for common reasoning needs.</li>
+</ul>
+<doc-anchor-target id="data-format">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data-format">#</doc-anchor-trigger>
+        <span>Data Format</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>All data is stored as <strong>JSON-LD</strong> following linked data principles.</li>
+<li>Ensures compatibility with semantic web standards and decentralized querying.</li>
+</ul>
+<doc-anchor-target id="indexing-strategies">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#indexing-strategies">#</doc-anchor-trigger>
+        <span>Indexing Strategies</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="kv-cache-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kv-cache-layer">#</doc-anchor-trigger>
+        <span>KV-Cache Layer</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Distilled entries and reasoning chains are indexed by:
+<ul>
+<li>Query embeddings.</li>
+<li>Canonical questions.</li>
+<li>Topics and categories.</li>
 </ul>
 </li>
-<li><strong>Stress &amp; Mindfulness</strong>: If high stress levels are detected, Acticat could recommend  <strong>breathing exercises</strong>  or a lighter, stress-reducing workout.</li>
+<li>This layer supports ultra-fast retrieval by agents and Tiny LLMs.</li>
 </ul>
-<doc-anchor-target id="gamification--rewards">
+<doc-anchor-target id="semantic-graph-indexes">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gamification--rewards">#</doc-anchor-trigger>
-        <span>Gamification &amp; Rewards</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#semantic-graph-indexes">#</doc-anchor-trigger>
+        <span>Semantic Graph Indexes</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Progress Tracking</strong>: Acticat can celebrate personal records detected from Strava (e.g., &quot;You set a new fastest 10 km!&quot;).</li>
-<li><strong>Token Rewards ($ACTI)</strong>: Reaching milestones in Strava/Apple Health can unlock rewards in the Actiquest ecosystem.</li>
+<li>Gateways and off-chain nodes maintain semantic graphs of relations and entities.</li>
+<li>These indexes support complex reasoning paths and chaining queries.</li>
 </ul>
-<doc-anchor-target id="adaptive-nutrition-and-hydration-tips">
+<doc-anchor-target id="proof-of-knowledge-and-metadata">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adaptive-nutrition-and-hydration-tips">#</doc-anchor-trigger>
-        <span>Adaptive Nutrition and Hydration Tips</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proof-of-knowledge-and-metadata">#</doc-anchor-trigger>
+        <span>Proof-of-Knowledge and Metadata</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Caloric Expenditure</strong>: Based on  <strong>Apple Health’s calorie data</strong>, Acticat may suggest hydration or meal timing.</li>
-<li><strong>Hydration Alerts</strong>: If a long workout is detected, Acticat can remind users to  <strong>drink water</strong>.</li>
+<li>Each entry contains:
+<ul>
+<li>TXID from Arweave (content-addressed, immutable).</li>
+<li>Validator signatures and consensus proofs.</li>
+<li>Timestamps and provenance records.</li>
 </ul>
-<hr>
-<doc-anchor-target id="telegram-integration">
+</li>
+</ul>
+<doc-anchor-target id="key-benefits">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#telegram-integration">#</doc-anchor-trigger>
-        <span>Telegram Integration</span>
-    </h2>
-</doc-anchor-target>
-<p>Using  <strong>Telegram</strong>  for Acticat bot interactions allows for real-time coaching, reminders, and progress tracking directly in chat. You can integrate  <strong>Strava and Apple Health data</strong>  into Telegram messages by having Acticat:</p>
-<ul>
-<li><strong>Send workout summaries</strong>  after syncing with Strava (e.g., “<span class="docs-emoji">&#x1F6B4;</span> You cycled 20 km at 25 km/h! Great pace!”).</li>
-<li><strong>Give daily health insights</strong>  from Apple Health (e.g., “You walked 8,000 steps today—almost at your 10,000-step goal! <span class="docs-emoji">&#x1F3AF;</span>”).</li>
-<li><strong>Send reminders</strong>  based on recovery data (e.g., “<span class="docs-emoji">&#x1F6CC;</span> Your heart rate variability is low. Consider an early bedtime for better recovery.”).</li>
-</ul>
-<hr>
-<doc-anchor-target id="acticat-generates-a-personalized-training-plan">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#acticat-generates-a-personalized-training-plan">#</doc-anchor-trigger>
-        <span>Acticat Generates a Personalized Training Plan</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Acticat analyzes  <strong>user activity data</strong>  (Strava, Apple Health, Google Fit).</li>
-<li>Based on fitness level and goals, it  <strong>creates a structured workout plan</strong>  (e.g., running 5 km, strength training, yoga).</li>
-</ul>
-<hr>
-<doc-anchor-target id="acticat-is-storing-workouts-in-apple-healthgoogle-fit">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#acticat-is-storing-workouts-in-apple-healthgoogle-fit">#</doc-anchor-trigger>
-        <span>Acticat is Storing Workouts in Apple Health/Google Fit</span>
-    </h3>
-</doc-anchor-target>
-<p>To sync Acticat’s training plan with  <strong>Apple Health</strong>, use the  <strong>HealthKit API</strong>:</p>
-<ul>
-<li><strong>Create workout sessions</strong>  (<code v-pre>HKWorkout</code>  objects).</li>
-<li><strong>Store scheduled workouts</strong>  (<code v-pre>HKWorkoutRoute</code>  for location-based activities).</li>
-<li><strong>Tag training plans</strong>  in Health categories (cycling, running, HIIT, etc.).</li>
-</ul>
-<hr>
-<doc-anchor-target id="acticat-provides-automated-training-plan-sync-via-telegram">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#acticat-provides-automated-training-plan-sync-via-telegram">#</doc-anchor-trigger>
-        <span>Acticat Provides Automated Training Plan Sync via Telegram</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>When Acticat  <strong>creates a new plan</strong>, it sends a  <strong>Telegram message</strong>  with training goals.</li>
-<li>The user can  <strong>accept the plan</strong>  (button click in Telegram).</li>
-<li>The backend  <strong>adds workouts to Apple Health</strong>  via  <strong>HealthKit API</strong>.</li>
-</ul>
-<p><strong>Example Acticat Message:</strong><br />
-<em>&quot;<span class="docs-emoji">&#x1F3CB;&#xFE0F;</span> Your new training plan is ready! Click below to add workouts to Apple Health.&quot;</em><br />
-➡  <strong>[Add to Apple Health]</strong>  (Button triggers API request)</p>
-<hr>
-<doc-anchor-target id="monitor--adjust-in-real-time">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#monitor--adjust-in-real-time">#</doc-anchor-trigger>
-        <span>Monitor &amp; Adjust in Real-Time</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Acticat  <strong>checks Apple Health</strong>  for  <strong>completed workouts</strong>  (<code v-pre>HKWorkoutQuery</code>).</li>
-<li>Based on progress, Acticat  <strong>modifies the plan</strong>  dynamically.</li>
-</ul>
-<hr>
-<doc-anchor-target id="gamification--rewards-1">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gamification--rewards-1">#</doc-anchor-trigger>
-        <span>Gamification &amp; Rewards</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Users earn  <strong>$ACTI tokens</strong>  when they  <strong>complete workouts logged in Apple Health</strong>.</li>
-<li>Telegram bot sends  <strong>progress updates</strong>  (e.g., “<span class="docs-emoji">&#x1F525;</span> You completed 3/5 workouts this week! Keep going!”).</li>
-</ul>
-<hr>
-<doc-anchor-target id="tokenomics-overview-for-acticat">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tokenomics-overview-for-acticat">#</doc-anchor-trigger>
-        <span>Tokenomics Overview for $ACTICAT:</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-benefits">#</doc-anchor-trigger>
+        <span>Key Benefits</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><strong>Ticker:</strong>  $ACTICAT</li>
-<li><strong>Hardcap:</strong>  1B tokens</li>
-<li><strong>Blockchain:</strong>  Solana</li>
-<li><strong>Token Link (CA):</strong>  <a href="https://solscan.io/token/9fE8RyN3G97NpqVSEx8GYciKKBsmiyHUjzHJsPyrNVXk">Solscan - ACTICAT Token</a></li>
-<li><strong>Short Description:</strong>  Multimodal AI Agent (Wellness Coach), incentivizing users with $ACTI tokens for completing sports and social tasks.</li>
-<li><strong>Website:</strong>  <a href="https://acticat.xyz/">acticat.xyz</a></li>
-<li><strong>Whitepaper:</strong>  <a href="https://docs.actiq.xyz/acticat/">Acticat WP</a></li>
-<li><strong>Links:</strong>  <a href="https://linktr.ee/acticat">Linktree</a></li>
-<li><strong>Vesting:</strong>  No</li>
-<li><strong>Distribution:</strong>  99% of $ACTICAT will be distributed to community.</li>
-<li><strong>Presale:</strong> 10% of hardcap, please use buy button on <a href="https://acticat.xyz">website</a></li>
-<li><strong>Exchanges:</strong> Raydium, Meteora, Jupiter.</li>
-</ul>
-<hr>
-<doc-anchor-target id="related-links">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#related-links">#</doc-anchor-trigger>
-        <span>Related Links</span>
-    </h2>
-</doc-anchor-target>
-<ul>
-<li><a href="https://acticat.xyz"><strong>Website</strong></a></li>
-<li><a href="https://x.com/acticat_agent"><strong>Twitter</strong></a></li>
-<li><a href="https://t.me/acticat_bot"><strong>Chat with Acticat</strong></a></li>
-<li><a href="https://solscan.io/token/9fE8RyN3G97NpqVSEx8GYciKKBsmiyHUjzHJsPyrNVXk"><strong>Contract</strong></a></li>
+<li><strong>Efficient retrieval</strong> for Tiny LLMs without requiring expensive Big LLM inference.</li>
+<li><strong>Verifiability and immutability</strong> via Arweave/IPFS storage.</li>
+<li><strong>Semantic reasoning-ready</strong> via graph relations and reasoning chains.</li>
+<li><strong>Optimized for caching and reuse</strong> via KV-layer and embeddings.</li>
 </ul>
 
                                 
@@ -527,20 +378,20 @@ effective tokenomics.</p>
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../membria/kcg_indexing/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/validator-infrastructure/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">KCG Indexing</span>
+                                                <span class="block mt-1">Validation & Consensus</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../aipod/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kcg-entry-format/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">AI Live Pod</span>
+                                                <span class="block mt-1">KCG Entry Format</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -584,6 +435,6 @@ effective tokenomics.</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Acticat", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Graph Data Model", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
