@@ -1,6 +1,6 @@
 ---
 icon: square-circle
-label: Storage, Query & Privacy
+label: SCR Reasoning
 order: 92
 ---
 
