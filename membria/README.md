@@ -1,6 +1,6 @@
 ---
 icon: ai-model
-label: Knowledge Cache Graph
+label: Membria
 ---
 
 # Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG)
