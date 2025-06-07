@@ -22,9 +22,10 @@ This documentation describes the architecture, purpose, and benefits of Cache-Au
    - 3.3 Current Limitations
    - 3.4 Role of Distillation on Demand (DoD)
 4. [Alternative Knowledge Learning Methods](alternative-methods.md)
-5. [Proposed Solution](proposed-solution.md)
+5. [What Are Tiny Language Models](tiny_lms.md)
+6. [Proposed Solution](proposed-solution.md)
    - 5.1 Components
-6. [Technical Architecture Overview](technical-architecture.md)
+7. [Technical Architecture Overview](technical-architecture.md)
    - 6.1 Storage Layer
    - 6.2 Index & Graph Layer
    - 6.3 Access & Query Layer
@@ -32,50 +33,50 @@ This documentation describes the architecture, purpose, and benefits of Cache-Au
    - 6.5 Economic Layer
    - 6.6 Governance & Reputation Layer
    - 6.7 Architectural Principles
-7. [CAG Storage, Query & Privacy Architecture](storage-query-privacy.md)
+8. [CAG Storage, Query & Privacy Architecture](storage-query-privacy.md)
    - 7.1 CAG Storage in Arweave
    - 7.2 Fast Querying and Relationship Analysis (Graph Layer)
-8. [KCG Indexing with The Graph Subgraph](kcg-indexing.md)
+9. [KCG Indexing with The Graph Subgraph](kcg-indexing.md)
    - 8.1 Storage Layer: Arweave
    - 8.2 Index & Query Layer: The Graph Subgraph
    - 8.3 GraphQL API Interface
    - 8.4 Sync & Update Flow
    - 8.5 Advantages Over Centralized Graph Databases
    - 8.6 Architecture
-9. [SCR-enhanced Reasoning Pipeline for KCG+CAG](scr-reasoning.md)
+10. [SCR-enhanced Reasoning Pipeline for KCG+CAG](scr-reasoning.md)
    - 9.1 SCR Reasoning Layer as the Default Inference Path
-10. [Roles of Validators, Gateways, and DoD Agents](roles.md)
+11. [Roles of Validators, Gateways, and DoD Agents](roles.md)
     - 10.1 DoD Agents: Knowledge Distillation Layer
     - 10.2 Gateways: Infrastructure & Access Layer
     - 10.3 Validators: Quality & Consensus Layer
     - 10.4 Role Comparison
     - 10.5 Synergy of Roles
-11. [Validator Infrastructure & Placement](validator-infrastructure.md)
+12. [Validator Infrastructure & Placement](validator-infrastructure.md)
     - 11.1 Off-chain Validator Nodes
     - 11.2 Consensus & Proof Submission (On-chain Interaction)
     - 11.3 Validator Deployment Environments
     - 11.4 Architectural Positioning
     - 11.5 Benefits of Off-chain Validation
-12. [KCG Entry Format for Arweave Storage](kcg-entry-format.md)
+13. [KCG Entry Format for Arweave Storage](kcg-entry-format.md)
     - 12.1 Entity Entry Example (JSON format)
     - 12.2 Relation Entry Example (JSON format)
     - 12.3 Arweave Transaction Tags
     - 12.4 Integrity and Linking
     - 12.5 Storage Optimizations
-13. [Tokenomics & Deflation Design](tokenomics.md)
+14. [Tokenomics & Deflation Design](tokenomics.md)
     - 13.1 Sources of Token Demand
     - 13.2 Reward Distribution (Emission Side)
     - 13.3 Deflationary Burn Mechanisms
     - 13.4 Emission Control Levers
     - 13.5 Sustainability & Scarcity Model
     - 13.6 Summary Flow
-14. [Token Flow and Reward Distribution](token-flow.md)
+15. [Token Flow and Reward Distribution](token-flow.md)
     - 14.1 Internal Validator Allocation
     - 14.2 Dynamic Complexity Adjustment
     - 14.3 DoD Agents Performance Bonuses
-15. [Integrations](integrations.md)
-16. [Advantages of the KCG+CAG Approach](advantages.md)
-17. [Conclusion](conclusion.md)
+16. [Integrations](integrations.md)
+17. [Advantages of the KCG+CAG Approach](advantages.md)
+18. [Conclusion](conclusion.md)
 
 ## Purpose of Documentation
 
