@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802625490853">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802626004439">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>CAG Storage, Query &amp; Privacy Architecture</title>
-    <meta name="title" content="CAG Storage, Query & Privacy Architecture">
-    <meta name="description" content="For immutable and verifiable knowledge storage, Arweave is the preferred solution due to its permanent data availability.">
+    <title>KCG Indexing with The Graph Subgraph</title>
+    <meta name="title" content="KCG Indexing with The Graph Subgraph">
+    <meta name="description" content="To achieve decentralized, scalable, and performant indexing for the Knowledge Cache Graph (KCG), we propose leveraging ">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.actiq.xyz/membria/architecture/">
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/kcg_indexing/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.actiq.xyz/membria/architecture/">
-    <meta property="og:title" content="CAG Storage, Query & Privacy Architecture">
-    <meta property="og:description" content="For immutable and verifiable knowledge storage, Arweave is the preferred solution due to its permanent data availability.">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/kcg_indexing/">
+    <meta property="og:title" content="KCG Indexing with The Graph Subgraph">
+    <meta property="og:description" content="To achieve decentralized, scalable, and performant indexing for the Knowledge Cache Graph (KCG), we propose leveraging ">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/architecture/">
-    <meta property="twitter:title" content="CAG Storage, Query & Privacy Architecture">
-    <meta property="twitter:description" content="For immutable and verifiable knowledge storage, Arweave is the preferred solution due to its permanent data availability.">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/kcg_indexing/">
+    <meta property="twitter:title" content="KCG Indexing with The Graph Subgraph">
+    <meta property="twitter:description" content="To achieve decentralized, scalable, and performant indexing for the Knowledge Cache Graph (KCG), we propose leveraging ">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802625490853" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802626004439" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802625490853" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802626004439" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802625490853" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802626004439" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802626004439" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,64 +222,138 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="cag-storage-query--privacy-architecture" class="break-words">
+<doc-anchor-target id="kcg-indexing-with-the-graph-subgraph" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cag-storage-query--privacy-architecture">#</doc-anchor-trigger>
-        <span>CAG Storage, Query &amp; Privacy Architecture</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kcg-indexing-with-the-graph-subgraph">#</doc-anchor-trigger>
+        <span>KCG Indexing with The Graph Subgraph</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="cag-storage-in-arweave">
+<p>To achieve decentralized, scalable, and performant indexing for the Knowledge Cache Graph (KCG), we propose leveraging <strong>The Graph Subgraph</strong> architecture as an alternative to centralized graph databases like Neo4j.</p>
+<doc-anchor-target id="storage-layer-arweave">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cag-storage-in-arweave">#</doc-anchor-trigger>
-        <span>CAG Storage in Arweave</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#storage-layer-arweave">#</doc-anchor-trigger>
+        <span>Storage Layer: Arweave</span>
     </h2>
 </doc-anchor-target>
-<p>For immutable and verifiable knowledge storage, Arweave is the preferred solution due to its permanent data availability. Each fragment of the Knowledge Cache Graph (KCG)-nodes, edges, ontologies, and indices - is stored as an individual Arweave transaction (TX). Key characteristics include:</p>
 <ul>
-<li>Each KCG object receives a unique TXID, serving as a perma-link derived from its content hash.</li>
-<li>Large graphs are stored using chunked storage with CID-based linking for efficient traversal.</li>
+<li>All KCG entries (entities, relations, ontologies) are stored as immutable JSON-LD documents on Arweave.</li>
+<li>Each entry is identified by its TXID and enriched with metadata tags (e.g., <code v-pre>Type</code>, <code v-pre>Relation</code>, <code v-pre>Ontology</code>).</li>
 </ul>
-<p><strong>Example:</strong></p>
-<ul>
-<li>Entity Node X → Attributes file → TXID: 0xabc123.</li>
-<li>Relation (X relates to Y) → Separate file → TXID: 0xdef456.</li>
-<li>The entire graph is connected via an index file or JSON-LD structure with its own TXID.</li>
-</ul>
-<p>Filecoin offers a similar decentralized storage model but relies on signed storage contracts (6-12 months), making it less practical for permanent knowledge preservation. Therefore, Arweave remains the primary storage layer for long-term knowledge caching.</p>
-<doc-anchor-target id="fast-querying-and-relationship-analysis-graph-layer">
+<doc-anchor-target id="index--query-layer-the-graph-subgraph">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fast-querying-and-relationship-analysis-graph-layer">#</doc-anchor-trigger>
-        <span>Fast Querying and Relationship Analysis (Graph Layer)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#index--query-layer-the-graph-subgraph">#</doc-anchor-trigger>
+        <span>Index &amp; Query Layer: The Graph Subgraph</span>
     </h2>
 </doc-anchor-target>
-<p>While Arweave and Filecoin serve as robust storage layers, efficient graph querying necessitates an additional index and query layer.</p>
-<p><strong>Graph Layer Architecture:</strong></p>
-<ol>
-<li><p><strong>Off-chain Graph Indexing:</strong></p>
 <ul>
-<li>Network participants (indexers) parse Arweave data using TXIDs and CIDs.</li>
-<li>The graph structure is reconstructed and maintained locally using graph databases (e.g., Neo4j, TypeDB, custom RDF stores).</li>
-<li>Index layers can be decentralized via IPFS/DAG protocols.</li>
+<li><p>A custom Subgraph mapping is created to parse Arweave transactions based on relevant tags.</p>
+</li>
+<li><p>The mapping script extracts entity and relation data from JSON-LD payloads.</p>
+</li>
+<li><p>Subgraph Entities include:</p>
+<ul>
+<li><strong>KCGEntity:</strong> id, type, attributes.</li>
+<li><strong>KCGRelation:</strong> source, target, relationType, context.</li>
 </ul>
 </li>
-<li><p><strong>Semantic Query API:</strong></p>
-<ul>
-<li>Provides REST or GraphQL endpoints for graph traversal, relationship queries, and semantic searches.</li>
-<li>Example query: &quot;Retrieve all relationships from Node X to Category Y within period T.&quot;</li>
-</ul>
+<li><p>Relationships are maintained via content-addressed links (Arweave TXIDs).</p>
 </li>
-</ol>
-<p><strong>Best Practices &amp; Tools:</strong></p>
-<ul>
-<li>Utilize The Graph&#x27;s Subgraph architecture with Arweave Data Sources.</li>
-<li>Explore OriginTrail DKG integrations with Arweave/IPFS.</li>
-<li>Develop a custom micro-subgraph indexer tailored for CAG.</li>
 </ul>
-<p><strong>Caching Popular Relationships:</strong></p>
+<doc-anchor-target id="graphql-api-interface">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#graphql-api-interface">#</doc-anchor-trigger>
+        <span>GraphQL API Interface</span>
+    </h2>
+</doc-anchor-target>
 <ul>
-<li>Frequently requested paths are cached by indexers.</li>
-<li>Merkle Proofs ensure data freshness and integrity without needing to re-fetch from Arweave.</li>
+<li><p>The Subgraph exposes a standardized GraphQL API for querying the KCG.</p>
+</li>
+<li><p>Example query:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-graphql"><code v-pre class="language-graphql">query {
+  kcgEntities(where: {type: &quot;Person&quot;}) {
+    id
+    attributes { key, value }
+    relations { target { id }, relationType }
+  }
+}</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>This enables Tiny LLMs and DoD Agents to perform semantic searches efficiently.</p>
+</li>
 </ul>
+<doc-anchor-target id="sync--update-flow">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sync--update-flow">#</doc-anchor-trigger>
+        <span>Sync &amp; Update Flow</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>The Graph Indexers continuously monitor Arweave for new transactions matching KCG patterns.</li>
+<li>Updates to the knowledge graph are reflected in real-time within the Subgraph index.</li>
+</ul>
+<doc-anchor-target id="advantages-over-centralized-graph-databases">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advantages-over-centralized-graph-databases">#</doc-anchor-trigger>
+        <span>Advantages Over Centralized Graph Databases</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Aspect</th>
+<th>The Graph Subgraph</th>
+<th>Neo4j</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immutable Data Indexing</td>
+<td>Native support for Arweave Data Sources</td>
+<td>Requires manual synchronization</td>
+</tr>
+<tr>
+<td>Query Interface</td>
+<td>Decentralized GraphQL API</td>
+<td>Proprietary Cypher Query</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Distributed Indexer Network</td>
+<td>Requires federated custom deployment</td>
+</tr>
+<tr>
+<td>Decentralization</td>
+<td>Yes (hosted or decentralized subgraphs)</td>
+<td>No (centralized unless custom federated)</td>
+</tr>
+<tr>
+<td>Speed of Access</td>
+<td>Low latency for indexed queries</td>
+<td>Fast on dedicated infrastructure</td>
+</tr>
+<tr>
+<td>Standards Compliance</td>
+<td>OpenGraphQL Schema, Arweave Integration</td>
+<td>Proprietary database format</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="architecture">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture">#</doc-anchor-trigger>
+        <span>Architecture</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Immutable Storage:</strong> Arweave for permanent knowledge storage.</li>
+<li><strong>Decentralized Index &amp; Query:</strong> The Graph Subgraph for efficient search and retrieval.</li>
+<li><strong>Consumption Layer:</strong> Tiny LLMs and DoD Agents interact via GraphQL.</li>
+<li><strong>Optional Caching:</strong> Gateways can implement caching for ultra-low latency.</li>
+</ul>
+<p>This approach ensures a fully decentralized, scalable, and performant knowledge indexing solution, aligning with the KCG+CAG principles of openness, permanence, and efficiency.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -288,20 +363,20 @@
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/proposed_solution/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/arweave_storage/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Proposed Solution</span>
+                                                <span class="block mt-1">KCG Entry Format</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/training-methods/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/overview/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Training methods</span>
+                                                <span class="block mt-1">Overview</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -345,6 +420,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Storage, Query & Privacy", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "KCG Indexing", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
