@@ -24,8 +24,8 @@ This documentation describes the architecture, purpose, and benefits of Cache-Au
 4. [Alternative Knowledge Learning Methods](alternative-methods.md)
 5. [What Are Tiny Language Models](tiny_lms.md)
 6. [Proposed Solution](proposed-solution.md)
-   - 5.1 Components
-7. [Technical Architecture Overview](technical-architecture.md)
+7. [Membria for Tiny LM's](capabilities.md)
+9. [Technical Architecture Overview](technical-architecture.md)
    - 6.1 Storage Layer
    - 6.2 Index & Graph Layer
    - 6.3 Access & Query Layer
@@ -33,17 +33,17 @@ This documentation describes the architecture, purpose, and benefits of Cache-Au
    - 6.5 Economic Layer
    - 6.6 Governance & Reputation Layer
    - 6.7 Architectural Principles
-8. [CAG Storage, Query & Privacy Architecture](storage-query-privacy.md)
+10. [CAG Storage, Query & Privacy Architecture](storage-query-privacy.md)
    - 7.1 CAG Storage in Arweave
    - 7.2 Fast Querying and Relationship Analysis (Graph Layer)
-9. [KCG Indexing with The Graph Subgraph](kcg-indexing.md)
+11. [KCG Indexing with The Graph Subgraph](kcg-indexing.md)
    - 8.1 Storage Layer: Arweave
    - 8.2 Index & Query Layer: The Graph Subgraph
    - 8.3 GraphQL API Interface
    - 8.4 Sync & Update Flow
    - 8.5 Advantages Over Centralized Graph Databases
    - 8.6 Architecture
-10. [SCR-enhanced Reasoning Pipeline for KCG+CAG](scr-reasoning.md)
+11. [SCR-enhanced Reasoning Pipeline for KCG+CAG](scr-reasoning.md)
    - 9.1 SCR Reasoning Layer as the Default Inference Path
 11. [Roles of Validators, Gateways, and DoD Agents](roles.md)
     - 10.1 DoD Agents: Knowledge Distillation Layer
