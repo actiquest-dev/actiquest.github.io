@@ -5,9 +5,51 @@ order: 85
 ---
 
 # Gateways
+Gateways sit between on-device DoD agents and the immutable Knowledge Cache Graph (KCG). They validate, enrich and route knowledge while maintaining high-performance caches and semantic indexes.
 
-## 4. The Gateway role in Knowledge Validation Process
+## Core Responsibilities
+- **Validation and packaging**  
+  Gateways receive distilled knowledge from agents, run quorum-based fact-checking and write accepted entries to the KCG.
+- **Index and retrieval services**  
+  Each gateway hosts vector indexes and ontology graphs that link embeddings to KCG transaction IDs, enabling sub-second Selective Contextual Reasoning (SCR).
+- **Cache management**  
+  A multi-tier KV cache (hot, warm, cold) stores frequently requested reasoning blocks with 50-200 ms access latency.
+- **Quality enforcement**  
+  Spam filters, reputation scores and stake requirements protect the network from low-value or malicious content.
 
+## Off-Chain Index Layer and Knowledge Mesh
+- Gateways publish lightweight indexes that map entities and embeddings to on-chain data.
+- Indexes can be shared in a federated mesh, giving redundancy and locality without hammering Arweave for every query.
+- This layer keeps SCR fast even as the global KCG scales.
+
+## Hybrid KV Cache and Orchestration
+| Layer | Purpose | Typical TTL |
+|-------|---------|-------------|
+| Hot   | High-frequency facts and chains | Seconds to minutes |
+| Warm  | Medium-use validated knowledge | Hours to days |
+| Cold  | Archived or less relevant entries | Days to weeks |
+
+Promotion and eviction follow an importance × frequency × freshness score. Gateways monitor hit rates and dynamically rebalance the tiers.
+
+## Knowledge Gap Detection and Proactive Distillation
+- Continuous analytics flag KV misses, query spikes and repeated Big-LLM calls.
+- When a gap emerges, the gateway creates a **distillation task** that describes the missing knowledge, required confidence and bounty.
+- Idle DoD agents compete to fill the gap. The first validated answer earns the reward and is cached for future use.
+
+## Incentives and Governance
+- Gateways earn tokens for validation work, cache hits and task orchestration.
+- Misbehavior, such as approving spam, is penalized by stake slashing.
+- A portion of every DoD fee funds gateway operations while another portion is burned to maintain deflationary tokenomics.
+- Governance parameters (task fees, quorum size, cache limits) are set by on-chain voting.
+
+## Security and Privacy
+- All private data stays on the user’s device until a gateway receives only the distilled, context-safe portion required for validation.
+- Gateways sign their outputs, providing provenance and auditability without exposing raw user data.
+Gateways form the high-performance and trust-enforcing backbone of the Membria network, reducing latency and cost while preserving the quality and integrity of shared knowledge.
+
+---
+
+## The Gateway role in Knowledge Validation Process
 The process of data validation within a gateway typically follows these automated steps upon receiving a request (and similarly, before sending a response if applicable):
 
 1.  **Initial Connection & Parsing:** The gateway receives the request, parses basic protocol information (e.g., HTTP headers).
@@ -23,10 +65,10 @@ The process of data validation within a gateway typically follows these automate
     * **If Valid:** The request is forwarded to the appropriate backend service (or the response is sent to the client).
     * **If Invalid:** The gateway rejects the request with an appropriate error code (e.g., HTTP 400 Bad Request) and a descriptive error message. It does not forward the invalid data.
 
-### 5. Relationship between Gateway Validation and Consensus Mechanisms
+---
 
+## Relationship between Gateway Validation and Consensus Mechanisms
 The relationship between gateway validation and consensus mechanisms depends on the system architecture:
-
 * **Centralized/Traditional Systems:** In systems without distributed consensus for data writes (e.g., a typical microservice architecture behind an API gateway), the gateway is a primary validator. There isn't a "consensus" step for the validation itself among multiple gateways in the same way as a blockchain. However, consistency is crucial:
     * **Consistent Policy Enforcement:** If multiple gateway instances exist (e.g., for load balancing or high availability), they must all apply the *same* validation rules. This is typically achieved through centralized configuration management and deployment.
     * **Consistent Logging:** Validation results from all instances should be logged to a central system for coherent monitoring and auditing.
