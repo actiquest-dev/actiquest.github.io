@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802628918329">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802629222803">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802628918329" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802629222803" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802628918329" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802629222803" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802628918329" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802629222803" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -236,12 +236,13 @@
     </h2>
 </doc-anchor-target>
 <ul>
-<li>Hyper-personalization of millions of Tiny LLM instances is unscalable.</li>
-<li>Continuous fine-tuning is resource-intensive and impractical for edge devices.</li>
-<li>High cost and latency of API calls to Big LLMs.</li>
-<li>Hallucinated or unverifiable answers.</li>
-<li>Lack of reusable, validated knowledge caches.</li>
-<li>No incentive model for community-driven knowledge distillation.</li>
+<li><strong>Static and outdated models</strong>: Once deployed, Tiny LLMs quickly become stale, as they cannot natively update their knowledge base or integrate new information without retraining.</li>
+<li><strong>Hyper-personalization</strong> of millions of Tiny LLM instances is unscalable</li>
+<li><strong>Hallucinated or unverifiable</strong> SLM answers.</li>
+<li><strong>Costly and centralized fine-tuning</strong>: Existing methods for updating models, such as LoRA or QLoRA fine-tuning, require cloud GPUs, expert intervention, and significant time and money.</li>
+<li><strong>Dependency on Big LLM APIs</strong>: Users and apps frequently fall back on Big LLM APIs (GPT, Claude, Gemini) to access fresh or complex knowledge, incurring high costs and introducing privacy, latency, and control issues.</li>
+<li><strong>Absence of a shared, reusable knowledge memory</strong>: Tiny LLMs operate in isolation, lacking access to a federated, verified, and continuously growing knowledge layer they can rely on.</li>
+<li><strong>No incentive model</strong> for community-driven knowledge distillation.</li>
 </ul>
 
                                 
