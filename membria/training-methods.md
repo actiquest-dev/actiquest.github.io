@@ -1,5 +1,5 @@
 ---
 icon: codespaces
-label: Alternative Methods
+label: Training Methods
 order: 97
 ---
