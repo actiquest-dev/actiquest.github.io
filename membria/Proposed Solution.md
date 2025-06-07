@@ -1,5 +1,5 @@
 ---
-icon: lightbulb
+icon: light-bulb
 label: Proposed Solution
 ---
 
