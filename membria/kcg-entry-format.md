@@ -1,6 +1,7 @@
 ---
 icon: file-code
 label: KCG Entry Format
+order: 90
 ---
 
 # KCG Entry Format for Arweave Storage
