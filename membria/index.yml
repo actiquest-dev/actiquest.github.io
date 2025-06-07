@@ -2,14 +2,13 @@ icon: ai-model
 label: Membria
 order: 3
 pages:
-  - 01-overview.md
-  - 02-problem-statement.md
-  - 03-training-methods.md
-  - 04-alternative_learning_methods.md
-  - 05-proposed-solution.md
-  - 04-technical-architecture.md
-  - 05-storage-query-privacy.md
-  - 06-storage-query-privacy.md
+  - overview.md
+  - problem-statement.md
+  - training-methods.md
+  - alternative_learning_methods.md
+  - proposed-solution.md
+  - technical-architecture.md
+  - storage-query-privacy.md
 
 
 
