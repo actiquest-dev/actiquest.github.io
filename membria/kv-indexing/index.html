@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802631453644">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802631533582">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Cache Indexing</title>
-    <meta name="title" content="Cache Indexing">
-    <meta name="description" content="In the Membria system, the \"cold\" cache layer and data versioning are managed through a multi-tiered caching architecture and the immutability of the...">
+    <title>Hybrid Cache</title>
+    <meta name="title" content="Hybrid Cache">
+    <meta name="description" content="Location: Directly on user devices.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/kv-indexing/">
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/kv-indexing/">
-    <meta property="og:title" content="Cache Indexing">
-    <meta property="og:description" content="In the Membria system, the \"cold\" cache layer and data versioning are managed through a multi-tiered caching architecture and the immutability of the...">
+    <meta property="og:title" content="Hybrid Cache">
+    <meta property="og:description" content="Location: Directly on user devices.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/kv-indexing/">
-    <meta property="twitter:title" content="Cache Indexing">
-    <meta property="twitter:description" content="In the Membria system, the \"cold\" cache layer and data versioning are managed through a multi-tiered caching architecture and the immutability of the...">
+    <meta property="twitter:title" content="Hybrid Cache">
+    <meta property="twitter:description" content="Location: Directly on user devices.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802631453644" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802631533582" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802631453644" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802631533582" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802631453644" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802631533582" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,12 +221,75 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="cache-indexing" class="break-words">
+<doc-anchor-target id="hybrid-cache" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-indexing">#</doc-anchor-trigger>
-        <span>Cache Indexing</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-cache">#</doc-anchor-trigger>
+        <span>Hybrid Cache</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="hybrid-kv-cache-architecture">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-kv-cache-architecture">#</doc-anchor-trigger>
+        <span>Hybrid KV-Cache Architecture</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="on-device-tiny-llm-kv-cache">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#on-device-tiny-llm-kv-cache">#</doc-anchor-trigger>
+        <span>On-Device Tiny LLM KV-Cache</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Location</strong>: Directly on user devices.</li>
+<li><strong>Purpose</strong>: Fast, personalized retrieval for frequent or user-specific knowledge.</li>
+<li><strong>Latency</strong>: Sub-20 ms access time.</li>
+</ul>
+<doc-anchor-target id="gateway-kv-cache">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gateway-kv-cache">#</doc-anchor-trigger>
+        <span>Gateway KV-Cache</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Location</strong>: Gateways or local edge servers.</li>
+<li><strong>Purpose</strong>: Shared, community-level cache of validated knowledge and reasoning chains.</li>
+<li><strong>Latency</strong>: 50–200 ms access time.</li>
+</ul>
+<doc-anchor-target id="public-kv-layer-in-kcg">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#public-kv-layer-in-kcg">#</doc-anchor-trigger>
+        <span>Public KV-Layer in KCG</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Location</strong>: Immutable storage (Arweave/IPFS).</li>
+<li><strong>Purpose</strong>: Community-validated, permanent cache of distilled knowledge and reasoning blocks.</li>
+<li><strong>Latency</strong>: 300–1000 ms (direct access), faster via Gateway indexes.</li>
+</ul>
+<doc-anchor-target id="gateway-off-chain-index-layer">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gateway-off-chain-index-layer">#</doc-anchor-trigger>
+        <span>Gateway Off-Chain Index Layer</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Gateways maintain lightweight off-chain semantic graphs, vector indexes, and retrieval services.</li>
+<li>These indexes accelerate SCR pipelines, enabling sub-second retrieval even from large, decentralized knowledge graphs.</li>
+<li>They also serve as a <strong>Federated Knowledge Mesh</strong>, ensuring redundancy, locality, and resilience.</li>
+</ul>
+<doc-anchor-target id="key-benefits-of-scr-and-advanced-caching">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-benefits-of-scr-and-advanced-caching">#</doc-anchor-trigger>
+        <span>Key Benefits of SCR and Advanced Caching</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Up to 80% of reasoning queries served locally or via Gateway SCR pipelines</strong>, drastically reducing Big LLM API calls.</li>
+<li><strong>Dynamic reasoning capabilities without retraining or fine-tuning</strong>.</li>
+<li><strong>Privacy-preserving local reasoning with fallback to decentralized DoD processes</strong>.</li>
+<li><strong>Efficient caching and routing optimized for Tiny LLM environments</strong>.</li>
+</ul>
+<p>By combining SCR with multi-layered caching, KCG+CAG establishes an <strong>agile, self-learning reasoning infrastructure</strong>, enabling Tiny LLMs to stay fresh, responsive, and efficient at the edge.</p>
 <doc-anchor-target id="hybrid-cache-management-and-data-versioning">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-cache-management-and-data-versioning">#</doc-anchor-trigger>
@@ -372,6 +435,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Cache Indexing", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Hybrid Cache", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
