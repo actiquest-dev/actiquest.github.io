@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802637522113">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802639491563">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Membria: Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline</title>
-    <meta name="title" content="Membria: Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline">
-    <meta name="description" content="Actiq combines on-device AI, distillation-on-demand (DoD), and a decentralized knowledge layer (CAG) to create a fast, private, and evolving...">
+    <title>Membria: A Decentralized Knowledge Framework for Tiny LLMs</title>
+    <meta name="title" content="Membria: A Decentralized Knowledge Framework for Tiny LLMs">
+    <meta name="description" content="The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/whitepaper/">
@@ -19,24 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/whitepaper/">
-    <meta property="og:title" content="Membria: Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline">
-    <meta property="og:description" content="Actiq combines on-device AI, distillation-on-demand (DoD), and a decentralized knowledge layer (CAG) to create a fast, private, and evolving...">
+    <meta property="og:title" content="Membria: A Decentralized Knowledge Framework for Tiny LLMs">
+    <meta property="og:description" content="The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/whitepaper/">
-    <meta property="twitter:title" content="Membria: Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline">
-    <meta property="twitter:description" content="Actiq combines on-device AI, distillation-on-demand (DoD), and a decentralized knowledge layer (CAG) to create a fast, private, and evolving...">
+    <meta property="twitter:title" content="Membria: A Decentralized Knowledge Framework for Tiny LLMs">
+    <meta property="twitter:description" content="The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802637522113" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802639491563" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802637522113" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802639491563" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802637522113" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802637522113" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802639491563" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -222,970 +221,723 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="membria-knowledge-cache-graph-kcg-for-cache-augmented-generation-cag-in-tiny-llms-continuous-learning-pipeline" class="break-words">
+<doc-anchor-target id="membria-a-decentralized-knowledge-framework-for-tiny-llms" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#membria-knowledge-cache-graph-kcg-for-cache-augmented-generation-cag-in-tiny-llms-continuous-learning-pipeline">#</doc-anchor-trigger>
-        <span>Membria: Knowledge Cache Graph (KCG) for Cache-Augmented Generation (CAG) in Tiny LLMs Continuous Learning Pipeline</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membria-a-decentralized-knowledge-framework-for-tiny-llms">#</doc-anchor-trigger>
+        <span><strong>Membria: A Decentralized Knowledge Framework for Tiny LLMs</strong></span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="1-overview">
+<doc-anchor-target id="part-1-vision-and-problem-statement">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-overview">#</doc-anchor-trigger>
-        <span>1. Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#part-1-vision-and-problem-statement">#</doc-anchor-trigger>
+        <span><strong>Part 1: Vision and Problem Statement</strong></span>
     </h2>
 </doc-anchor-target>
-<p>Actiq combines on-device AI, distillation-on-demand (DoD), and a decentralized knowledge layer (CAG) to create a fast, private, and evolving intelligence system that learns from user interaction and scales through distributed memory using Decentralized Knowledge Graph (DKG).</p>
-<p>This document outlines the architecture, purpose, and benefits of Cache-Augmented Generation (CAG) and on-demand distillation within the Actiq ecosystem.</p>
-<doc-anchor-target id="2-problem-statement">
+<doc-anchor-target id="11-executive-summary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#11-executive-summary">#</doc-anchor-trigger>
+        <span><strong>1.1. Executive Summary</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge freshness, and reasoning capabilities. While millions of users deploy these models for everyday tasks, their ability to learn and reason remains limited, requiring costly and slow interventions via centralized APIs or fine-tuning.</p>
+<p>We introduce Membria, a decentralized, verifiable, and efficient knowledge reasoning framework built around a <strong>Knowledge Cache Graph (KCG)</strong> and <strong>Cache-Augmented Generation (CAG)</strong>. Instead of relying on retraining, Membria enables <strong>Distillation on Demand (DoD)</strong>, where knowledge is distilled, validated, and recorded in a public, immutable knowledge cache. This approach empowers Tiny LLMs to dynamically retrieve, reason over, and consume high-quality, validated knowledge via fast <strong>Selective Contextual Reasoning (SCR)</strong> pipelines, dramatically reducing inference costs, latency, and vendor lock-in.</p>
+<p>By creating an ecosystem where knowledge grows, self-validates, and becomes reusable, Membria transforms AI reasoning into an open, democratic, and self-improving infrastructure for millions of Tiny LLMs.</p>
+<doc-anchor-target id="12-the-problem-with-on-device-ai">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#12-the-problem-with-on-device-ai">#</doc-anchor-trigger>
+        <span><strong>1.2. The Problem with On-Device AI</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>The rise of Tiny LLMs is transforming the AI landscape by bringing generative intelligence to billions of devices. However, this explosion of local inference introduces fundamental bottlenecks:</p>
+<ul>
+<li><strong>Static and Outdated Models</strong>: Once deployed, Tiny LLMs quickly become stale, as they cannot natively update their knowledge base or integrate new information without retraining.</li>
+<li><strong>Costly and Centralized Updates</strong>: Existing methods for updating models, such as LoRA or QLoRA fine-tuning, require cloud GPUs, expert intervention, and significant time and money.</li>
+<li><strong>Dependency on Centralized APIs</strong>: Users and applications frequently fall back on large LLM APIs (e.g., GPT, Claude, Gemini) to access fresh or complex knowledge, incurring high costs and introducing privacy, latency, and control issues.</li>
+<li><strong>Absence of Shared Memory</strong>: Tiny LLMs operate in isolation, lacking access to a federated, verified, and continuously growing knowledge layer they can rely on.</li>
+</ul>
+<p>These limitations block the scalability of Tiny LLM reasoning capabilities, fragment knowledge across devices, and create systemic inefficiencies. There is a critical need for a new approach where Tiny LLMs can dynamically acquire, reason over, and integrate fresh, verified knowledge without retraining, centralization, privacy loss, or inefficiency.</p>
+<doc-anchor-target id="13-membrias-core-capabilities-and-value-proposition">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#13-membrias-core-capabilities-and-value-proposition">#</doc-anchor-trigger>
+        <span><strong>1.3. Membria&#x27;s Core Capabilities and Value Proposition</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>The primary purpose of integrating a system like Membria with Tiny LLMs stems from the need to overcome their inherent limitations without losing their efficiency advantages.</p>
+<doc-anchor-target id="standalone-tiny-llm-capabilities">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#standalone-tiny-llm-capabilities">#</doc-anchor-trigger>
+        <span><strong>Standalone Tiny LLM Capabilities</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>Based on their pre-trained knowledge, standalone Tiny LLMs are capable of:</p>
+<ul>
+<li><strong>General Text Generation</strong>: Creating coherent text, drafting emails, or simple content.</li>
+<li><strong>Basic Summarization</strong>: Condensing provided text into shorter versions.</li>
+<li><strong>Simple Q&amp;A</strong>: Answering questions with answers likely contained within their training data.</li>
+<li><strong>Limited Reasoning</strong>: Performing simple reasoning if concepts are well-represented in their training.</li>
+</ul>
+<p>However, they are limited by their static knowledge, a higher propensity for hallucination, and an inability to access private or real-time data sources.</p>
+<doc-anchor-target id="membria-enhanced-tiny-llm-capabilities">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membria-enhanced-tiny-llm-capabilities">#</doc-anchor-trigger>
+        <span><strong>Membria-Enhanced Tiny LLM Capabilities</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>Integrating a Tiny LLM with Membria significantly expands its capabilities:</p>
+<ul>
+<li><strong>Factually Grounded Q&amp;A</strong>: Answering questions based on specific, up-to-date external documents, drastically reducing hallucinations.</li>
+<li><strong>Context-Aware Analysis</strong>: Summarizing and analyzing large volumes of external or private documents the LLM was not trained on.</li>
+<li><strong>Personalization</strong>: Delivering personalized responses based on user history or private contextual data managed by Membria.</li>
+<li><strong>Domain-Specific Expertise</strong>: Functioning as an expert in niche domains (legal, medical) by accessing specialized knowledge bases.</li>
+<li><strong>Real-Time Information Processing</strong>: Incorporating live data feeds or recently updated information into responses.</li>
+<li><strong>Complex Reasoning</strong>: Synthesizing information from multiple sources provided by Membria to answer complex queries.</li>
+</ul>
+<p>In essence, Membria empowers Tiny LLMs to perform tasks that would otherwise require much larger, more resource-intensive models, by intelligently providing the right information at the right time. This combination offers a powerful and practical solution for deploying AI that is both capable and efficient.</p>
+<doc-anchor-target id="part-2-the-membria-architecture-and-workflow">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-problem-statement">#</doc-anchor-trigger>
-        <span>2. Problem Statement</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#part-2-the-membria-architecture-and-workflow">#</doc-anchor-trigger>
+        <span><strong>Part 2: The Membria Architecture and Workflow</strong></span>
     </h2>
 </doc-anchor-target>
-<p>The proliferation of Tiny LLMs, downloaded and run on millions of edge devices, has created a fundamental challenge: hyper-personalization and continuous fine-tuning of these small models is computationally infeasible for most users. Each Tiny LLM faces knowledge gaps, context fragmentation, and high costs associated with maintaining up-to-date, relevant knowledge bases. The current AI ecosystem lacks scalable mechanisms to empower Tiny LLMs with fresh, verified knowledge without constant dependence on cloud-based inference.</p>
-<p>EchoLM analysis indicates that 75% of user queries exhibit semantically similar counterparts in historical data.</p>
-<doc-anchor-target id="21-key-challenges">
+<doc-anchor-target id="21-proposed-solution-overview">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#21-key-challenges">#</doc-anchor-trigger>
-        <span>2.1 Key Challenges</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#21-proposed-solution-overview">#</doc-anchor-trigger>
+        <span><strong>2.1. Proposed Solution Overview</strong></span>
     </h3>
 </doc-anchor-target>
+<p>To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the <strong>Knowledge Cache Graph (KCG)</strong> combined with <strong>Cache-Augmented Generation (CAG)</strong>, a decentralized knowledge reasoning layer designed for scalable, efficient, and continuous learning without retraining.</p>
 <ul>
-<li>Hyper-personalization of millions of Tiny LLM instances is unscalable.</li>
-<li>Continuous fine-tuning is resource-intensive and impractical for edge devices.</li>
-<li>High cost and latency of API calls to Big LLMs.</li>
-<li>Hallucinated or unverifiable answers.</li>
-<li>Lack of reusable, validated knowledge caches.</li>
-<li>No incentive model for community-driven knowledge distillation.</li>
+<li><strong>Knowledge Cache Graph (KCG)</strong>: A decentralized, immutable, and verifiable knowledge graph layer, built on permanent storage. It stores distilled knowledge entries, verified entity relations, and embedded key-value caches for fast retrieval.</li>
+<li><strong>Cache-Augmented Generation (CAG)</strong>: An advanced pipeline where Tiny LLMs first query local or Gateway KV caches from the KCG layer and use <strong>Selective Contextual Reasoning (SCR)</strong> to reason over retrieved knowledge, minimizing reliance on external APIs.</li>
+<li><strong>Distillation on Demand (DoD)</strong>: A mechanism that allows Tiny LLMs to trigger on-demand distillation of new knowledge when gaps are detected. This new knowledge is then validated and recorded into the KCG, making it reusable for all network participants.</li>
 </ul>
-<doc-anchor-target id="3-training-methods-for-large-and-tiny-models">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-training-methods-for-large-and-tiny-models">#</doc-anchor-trigger>
-        <span>3. Training Methods for Large and Tiny Models</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="31-centralized-foundation-model-training">
+<doc-anchor-target id="22-technical-architecture-overview">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#31-centralized-foundation-model-training">#</doc-anchor-trigger>
-        <span>3.1 Centralized Foundation Model Training</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#22-technical-architecture-overview">#</doc-anchor-trigger>
+        <span><strong>2.2. Technical Architecture Overview</strong></span>
     </h3>
 </doc-anchor-target>
-<p>Leading technology companies such as Meta, Google, Microsoft, OpenAI, and Anthropic are responsible for training the world&#x27;s most powerful foundation models, including LLaMa, Phi-3, Gemini, GPT, and Claude. These training processes involve:</p>
+<p>The KCG+CAG ecosystem is composed of several interconnected layers and actors, forming a decentralized and efficient knowledge reasoning pipeline.</p>
 <ul>
-<li>Massive datasets and computational resources.</li>
-<li>Infrastructure comprising state-of-the-art data centers, H100, and MI300X accelerators.</li>
-<li>Costs that reach into the tens or hundreds of millions of dollars per model iteration.</li>
+<li><strong>Knowledge Cache Graph (KCG)</strong>: The immutable knowledge layer stored on Arweave, containing distilled knowledge, semantic relations, KV-cache entries, and proof-of-knowledge metadata.</li>
+<li><strong>Cache-Augmented Generation (CAG) Layer</strong>: The reasoning layer that enables Tiny LLMs to perform fast retrieval and reasoning over verified knowledge using SCR pipelines.</li>
+<li><strong>Distillation on Demand (DoD) Agents</strong>: Specialized agents or Tiny LLMs that detect knowledge gaps and orchestrate the creation of new, distilled knowledge.</li>
+<li><strong>Gateways</strong>: Federated nodes that act as intermediaries, responsible for knowledge validation, packaging, recording entries into the KCG, and managing off-chain indexes and caches for fast retrieval.</li>
+<li><strong>Validator Nodes</strong>: Participants in consensus voting and knowledge verification, ensuring correctness and providing auditability.</li>
+<li><strong>Hybrid KV-Cache Architecture</strong>: A multi-layered caching system including an on-device cache, a shared Gateway cache, and a public, immutable cache within the KCG.</li>
 </ul>
-<p>Additionally, fine-tuning of these models is performed using methods like LoRA and QLoRA to adapt them for specific enterprise, research, or community applications. Open-source models benefit from this approach, enabling niche optimizations without the need for retraining the entire model.</p>
-<doc-anchor-target id="32-decentralized--self-hosted-approaches">
+<p>This modular, multi-layered architecture ensures that Tiny LLMs can learn dynamically while Gateways and Validators enforce knowledge quality, all while reducing inference costs and latency.</p>
+<doc-anchor-target id="layered-architecture-overview">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#layered-architecture-overview">#</doc-anchor-trigger>
+        <span><strong>Layered Architecture Overview</strong></span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Application &amp; Agent Layer  
+└── Tiny LLMs, User Devices, Enterprise Agents  
+  
+CAG Reasoning Layer (on top of Peaq)  
+└── Cache-Augmented Generation, SCR Pipelines, DoD Agents, Gateway Cache &amp; Index  
+  
+KCG Core Layer (on Peaq)  
+└── Knowledge Cache Graph, Distilled Knowledge, Relations, KV Layer (on-chain)  
+  
+Peaq Protocol Layer  
+└── Validator Network, Consensus, Staking, ZK Proof Layer, Subgraph Indexing</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="23-full-knowledge-lifecycle-workflow">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#32-decentralized--self-hosted-approaches">#</doc-anchor-trigger>
-        <span>3.2 Decentralized &amp; Self-Hosted Approaches</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#23-full-knowledge-lifecycle-workflow">#</doc-anchor-trigger>
+        <span><strong>2.3. Full Knowledge Lifecycle Workflow</strong></span>
     </h3>
 </doc-anchor-target>
-<p>For smaller-scale, community-driven, or edge-based applications, decentralized methods are increasingly popular:</p>
-<ul>
-<li><strong>Inference on Local Devices:</strong> Tools like Ollama, LM Studio, and HuggingFace enable running quantized versions of LLMs (4-bit, 8-bit) on consumer-grade hardware.</li>
-<li><strong>Fine-Tuning on Consumer GPUs:</strong> With platforms like Google Colab, rented A100 instances, or local RTX 4090 GPUs, users can perform efficient fine-tuning using QLoRA and PEFT (Parameter-Efficient Fine-Tuning).</li>
-<li><strong>Community RLHF Initiatives:</strong> Projects such as OpenDevin and DeepSeek demonstrate collaborative efforts in Reinforcement Learning from Human Feedback (RLHF), further enhancing model capabilities.</li>
-</ul>
-<doc-anchor-target id="33-current-limitations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#33-current-limitations">#</doc-anchor-trigger>
-        <span>3.3 Current Limitations</span>
-    </h3>
-</doc-anchor-target>
-<p>While these methods have democratized model deployment and customization, real-time, on-demand training remains constrained:</p>
-<ul>
-<li>Fast LoRA fine-tuning offers incremental improvements but is not suitable for dynamic, continuous knowledge updates.</li>
-<li>Retrieval-Augmented Generation (RAG) provides external context but does not truly enhance the model&#x27;s internal reasoning capabilities.</li>
-</ul>
-<doc-anchor-target id="34-role-of-distillation-on-demand-dod">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#34-role-of-distillation-on-demand-dod">#</doc-anchor-trigger>
-        <span>3.4 Role of Distillation on Demand (DoD)</span>
-    </h3>
-</doc-anchor-target>
-<p>In this landscape, <strong>DoD emerges as a critical solution</strong> for bridging the gap between static fine-tuning and real-time knowledge enrichment. By enabling Tiny LLMs to dynamically request and distill new knowledge from Big LLMs and update the Knowledge Cache Graph (KCG), DoD facilitates:</p>
-<ul>
-<li>Cost-effective, scalable knowledge expansion.</li>
-<li>Real-time adaptability without heavy retraining cycles.</li>
-<li>Collaborative knowledge growth across decentralized networks.</li>
-</ul>
-<p>Thus, DoD complements both centralized and decentralized training paradigms, ensuring continuous enhancement of Tiny LLMs in a practical, efficient manner.</p>
-<doc-anchor-target id="4-alternative-knowledge-learning-methods">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-alternative-knowledge-learning-methods">#</doc-anchor-trigger>
-        <span>4. Alternative Knowledge Learning Methods</span>
-    </h2>
-</doc-anchor-target>
-<p>While Distillation on Demand (DoD) is a central mechanism in the KCG+CAG architecture, it is not the only approach available for enhancing Tiny LLMs. Several alternative methods exist, each with unique trade-offs:</p>
+<p>The system introduces an optimized workflow that allows Tiny LLMs to acquire, reason over, and integrate fresh knowledge efficiently.</p>
 <ol>
-<li><p><strong>Full Fine-Tuning:</strong> Comprehensive retraining of the Tiny LLM on new datasets. Although it provides deep integration of new knowledge, it is computationally intensive and impractical for frequent updates, especially on edge devices.</p>
+<li><strong>DoD Request Trigger &amp; Local Evaluation</strong>: A DoD Agent identifies a knowledge gap. It first performs a <strong>Self-Knowledge Checkpoint</strong> to intelligently decide whether to answer using its internal knowledge, the cache, a local RAG system, or to escalate to external distillation. This local-first approach prevents unnecessary computation.</li>
+<li><strong>SCR Reasoning Pipeline via Gateway</strong>: If the knowledge is not available locally, the agent triggers an SCR pipeline via a Gateway to retrieve information from the KCG and perform local reasoning.</li>
+<li><strong>Fallback to Big LLM (if necessary)</strong>: Only for novel, ambiguous, or high-confidence queries does the agent escalate the request to external Big LLM APIs.</li>
+<li><strong>Knowledge Distillation Proposal</strong>: Based on the reasoning output, the agent synthesizes a distilled knowledge proposal with a summary, sources, and context.</li>
+<li><strong>Gateway Validation and Recording</strong>: The proposal is submitted to a Gateway for validation. If validated, the Gateway records the entry into the immutable KCG on Arweave and updates its own high-speed caches.</li>
+<li><strong>Confirmation and Reward Distribution</strong>: The DoD agent receives confirmation, and incentives are distributed to participating Gateways and Validators.</li>
+</ol>
+<p>This workflow, which defaults to SCR and local processing first, dramatically reduces calls to expensive Big LLMs, ensures the fastest possible retrieval for repeated queries, and creates a globally shared and verifiable knowledge memory.</p>
+<doc-anchor-target id="part-3-core-components-and-technologies-in-detail">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#part-3-core-components-and-technologies-in-detail">#</doc-anchor-trigger>
+        <span><strong>Part 3: Core Components and Technologies in Detail</strong></span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="31-the-knowledge-cache-graph-kcg-data-model">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#31-the-knowledge-cache-graph-kcg-data-model">#</doc-anchor-trigger>
+        <span><strong>3.1. The Knowledge Cache Graph (KCG) Data Model</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>The KCG serves as the immutable, decentralized knowledge memory layer. It is optimized to store, retrieve, and reason over distilled knowledge efficiently while ensuring verifiability and traceability.</p>
+<ul>
+<li><strong>KCG Data Types</strong>:
+<ul>
+<li><strong>Distilled Knowledge Entries</strong>: Core units of validated knowledge with summaries, evidence, and metadata.</li>
+<li><strong>Entities</strong>: Discrete concepts that serve as graph nodes for semantic linking.</li>
+<li><strong>Relations</strong>: Semantic links between entities and knowledge entries (isA, relatedTo).</li>
+<li><strong>Reasoning Chains</strong>: Multi-step logical explanations that allow Tiny LLMs to shortcut complex reasoning.</li>
+<li><strong>FAQ Patterns</strong>: Standardized question-answer pairs for frequent queries.</li>
+</ul>
 </li>
-<li><p><strong>LoRA / PEFT (Parameter-Efficient Fine-Tuning):</strong> Lightweight techniques that adapt small parts of the model&#x27;s parameters. These methods reduce training costs but still require infrastructure and do not scale efficiently for continuous, real-time adaptation.</p>
+<li><strong>Data Format</strong>: All data is stored as <strong>JSON-LD</strong> following linked data principles, ensuring compatibility with semantic web standards.</li>
+<li><strong>Indexing Strategies</strong>:
+<ul>
+<li><strong>KV-Cache Layer</strong>: Entries are indexed by query embeddings, canonical questions, and topics for ultra-fast retrieval.</li>
+<li><strong>Semantic Graph Indexes</strong>: Gateways and off-chain nodes maintain semantic graphs of relations and entities for complex reasoning.</li>
+<li><strong>Proof-of-Knowledge and Metadata</strong>: Each entry contains an immutable transaction ID (from Arweave), validator signatures, and provenance records.</li>
+</ul>
 </li>
-<li><p><strong>Retrieval-Augmented Generation (RAG):</strong> Uses external vector databases to retrieve relevant documents, which are then fed into the model&#x27;s context. While flexible, maintaining large vector stores is costly, and RAG does not perform reasoning-only retrieval.</p>
+</ul>
+<doc-anchor-target id="32-advanced-caching-and-reasoning-engine">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#32-advanced-caching-and-reasoning-engine">#</doc-anchor-trigger>
+        <span><strong>3.2. Advanced Caching and Reasoning Engine</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>Membria’s architecture incorporates advanced caching strategies to maximize reasoning efficiency, minimize costs, and enable dynamic knowledge integration for Tiny LLMs.</p>
+<doc-anchor-target id="selective-contextual-reasoning-scr-pipeline">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selective-contextual-reasoning-scr-pipeline">#</doc-anchor-trigger>
+        <span><strong>Selective Contextual Reasoning (SCR) Pipeline</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>SCR enables Tiny LLMs to perform lightweight, dynamic reasoning over external knowledge caches without modifying model weights. The pipeline consists of four steps:</p>
+<ol>
+<li><strong>Semantic Retrieval</strong>: Retrieve relevant knowledge entries from the KV-cache and semantic graph indexes.</li>
+<li><strong>Confirmation and Filtering</strong>: The Tiny LLM or Gateway filters, confirms, and deduplicates retrieved entries to ensure contextual fit and factual accuracy.</li>
+<li><strong>Contextual Reasoning</strong>: Construct an enriched prompt using the confirmed knowledge, allowing the Tiny LLM to perform high-quality reasoning locally.</li>
+<li><strong>Fallback to DoD</strong>: Only if SCR fails or lacks sufficient confidence is a DoD escalation to a Big LLM triggered.</li>
+</ol>
+<doc-anchor-target id="hybrid-kv-cache-architecture-and-management">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-kv-cache-architecture-and-management">#</doc-anchor-trigger>
+        <span><strong>Hybrid KV-Cache Architecture and Management</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>On-Device Tiny LLM KV-Cache</strong>: Located directly on the user&#x27;s device for fast, personalized, sub-20ms access.</li>
+<li><strong>Gateway KV-Cache</strong>: A shared, community-level cache managed by Gateways with 50-200ms access.</li>
+<li><strong>Public KV-Layer in KCG</strong>: The immutable, permanent cache on Arweave.</li>
+<li><strong>Data Obsolescence and Versioning</strong>: Outdated data is not deleted from the immutable KCG. Instead, new versions are created, and the mutable Gateway indexes are updated to point to the current information. The system can mark and deprioritize older entries.</li>
+<li><strong>Cold Layer Management</strong>: Gateways manage cache layers (hot, warm, cold). Entries with low usage or freshness are moved to &quot;off-chain cold storage&quot; on disk, from which they can be recalled if they become relevant again.</li>
+</ul>
+<doc-anchor-target id="context-window-optimization-and-memory-management">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context-window-optimization-and-memory-management">#</doc-anchor-trigger>
+        <span><strong>Context Window Optimization and Memory Management</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Segmented KV Buffer &amp; Prioritized Paging</strong>: To manage memory efficiently, each DoD Agent maintains a segmented buffer divided by scope (Session Memory, Local Knowledge Cache, Global Shared KV Layer). Before inference, the agent performs semantic prefiltering and priority ranking to select the top entries to load into active memory, evicting least-recently-used items if memory is constrained.</li>
+<li><strong>Persistent Memory for Tiny LLMs</strong>: To prevent model &quot;amnesia&quot; between sessions, the agent uses a hybrid storage solution. Reasoning outcomes are distilled into a local vector database (like Qdrant + SQLite) for semantic retrieval, while key attention snapshots are persisted to a fast disk-based store (like LMDB) for partial context reconstruction on session restart.</li>
+<li><strong>Local Knowledge &amp; Event Storage</strong>: On the device, the agent uses a lightweight infrastructure for its memory. This includes a local <strong>event graph</strong> (in SQLite) to log actions and reasoning chains, a minimal <strong>ontology layer</strong> for semantic classification, and an efficient <strong>local database</strong> (SQLite with JSON1 extensions) for caching and retrieval.</li>
+</ul>
+<doc-anchor-target id="33-roles-and-responsibilities-in-the-ecosystem">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#33-roles-and-responsibilities-in-the-ecosystem">#</doc-anchor-trigger>
+        <span><strong>3.3. Roles and Responsibilities in the Ecosystem</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>The ecosystem is supported by distinct roles, each playing a critical part in the knowledge pipeline.</p>
+<doc-anchor-target id="dod-agents">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dod-agents">#</doc-anchor-trigger>
+        <span><strong>DoD Agents</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>DoD Agents are the orchestrators of knowledge creation. They can be deployed on a wide spectrum of hardware, adapting their role and capabilities accordingly. On low-power mobile devices, they act as edge interaction points, while on high-performance servers, they can be central knowledge hubs performing advanced analytics and knowledge distillation for the entire network.</p>
+<ul>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Identify knowledge gaps and initiate reasoning pipelines.</li>
+<li>Perform local evaluation using the Self-Knowledge Checkpoint.</li>
+<li>Aggregate outputs to propose new, distilled knowledge.</li>
+</ul>
 </li>
-<li><p><strong>Prompt Injection / Prompt Templating:</strong> Simple methods of prepending prompts with factual information. Useful for quick fixes, but limited by context length and not suitable for permanent knowledge augmentation.</p>
+<li><strong>Incentives</strong>: Earn rewards for valuable queries and benefit from lower costs via local caching.</li>
+</ul>
+<doc-anchor-target id="gateways">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gateways">#</doc-anchor-trigger>
+        <span><strong>Gateways</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>Gateways are federated nodes that serve as the crucial intermediaries and active coordinators of knowledge quality.</p>
+<ul>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Validate, package, and record knowledge proposals into the KCG.</li>
+<li>Operate high-performance KV-caching services and off-chain semantic indexes.</li>
+<li>Enforce quality and anti-spam measures.</li>
+</ul>
 </li>
-<li><p><strong>Cache-Augmented Generation (CAG) with KCG:</strong> Our proposed solution leverages a shared, validated knowledge cache. Once distilled through DoD, this knowledge becomes reusable for future queries, enabling low-latency, cost-effective reasoning.</p>
+<li><strong>Gateway Reasoning Orchestration &amp; Knowledge Gap Detection</strong>: Gateways monitor query traffic to detect knowledge gaps and &quot;hot topics&quot; (e.g., frequent cache misses, spikes in similar queries). When a pattern of deficiency is detected, they can proactively generate and broadcast incentivized distillation tasks.</li>
+<li><strong>Incentivized Task Routing</strong>: These proactively generated tasks include a bounty and resource requirements, creating an open market for reasoning services. Agents can accept or reject tasks based on their device status and the offered reward.</li>
+<li><strong>Discovery and Efficient Selection</strong>: Agents discover suitable Gateways via a decentralized service registry (e.g., based on the Peaq Protocol), selecting them based on proximity, load, and reputation, ensuring efficient routing.</li>
+</ul>
+<doc-anchor-target id="validator-nodes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#validator-nodes">#</doc-anchor-trigger>
+        <span><strong>Validator Nodes</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>Validators are the guardians of the ecosystem&#x27;s integrity and consensus.</p>
+<ul>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Participate in voting and validation of proposed knowledge entries.</li>
+<li>Ensure factual correctness and semantic consistency.</li>
+<li>Provide audit trails and proof-of-knowledge attestations.</li>
+</ul>
+</li>
+<li><strong>Incentives</strong>: Earn validation rewards from token flows and receive staking benefits.</li>
+</ul>
+<doc-anchor-target id="part-4-trust-validation-and-consensus">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#part-4-trust-validation-and-consensus">#</doc-anchor-trigger>
+        <span><strong>Part 4: Trust, Validation, and Consensus</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>Membria establishes trust and verifies information without a central authority through a robust, multi-layered process of validation, consensus, and cryptographic proofs. This is the foundation for ensuring data integrity.</p>
+<doc-anchor-target id="41-the-validation-and-consensus-pipeline">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#41-the-validation-and-consensus-pipeline">#</doc-anchor-trigger>
+        <span><strong>4.1. The Validation and Consensus Pipeline</strong></span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Gateway Validation (First Line of Defense)</strong>: Gateways serve as the critical first checkpoint. They perform a series of automated checks on all incoming data submissions.
+<ul>
+<li><strong>Data Integrity Checks</strong>: Type checking, range constraints, uniqueness, completeness, and checksums.</li>
+<li><strong>Data Formatting Checks</strong>: Syntax validation (JSON), schema compliance (JSON Schema, OpenAPI Specification), and validation of specific formats like emails or dates using regular expressions.</li>
+<li><strong>Specifics for JSON-LD and Metadata</strong>: Gateways validate JSON-LD syntax and structure, resolve its @context, and can validate the data against additional schemas like SHACL or standard metadata formats like Dublin Core and Schema.org.</li>
+<li><strong>The Process</strong>: This automated process involves security checks, parameter validation, content-type validation, and schema compliance checks. If any check fails, the gateway rejects the request with an error, preventing invalid data from reaching the network.</li>
+</ul>
+</li>
+<li><strong>Validator Node Consensus (Final Agreement)</strong>: For a knowledge entry to be permanently added to the KCG, it must be approved by the Validator Nodes. The system uses a hybrid consensus model that combines the strengths of multiple approaches.
+<ul>
+<li><strong>Proof-of-Stake (PoS)</strong> is used for validator selection and incentives, ensuring a decentralized and economically secure pool of participants.</li>
+<li><strong>Byzantine Fault Tolerant (BFT)</strong> protocols are used by a smaller, rotated committee of validators to achieve rapid and irreversible agreement on the content of KCG blocks.</li>
+<li><strong>Finality</strong>: Once the BFT committee reaches consensus, the data is immutably added to the KCG, ensuring its finality.</li>
+</ul>
+</li>
+<li><strong>Proof-of-Knowledge (PoK)</strong>: To enhance privacy and verifiability, the system uses PoK protocols, often in the form of <strong>Zero-Knowledge Proofs (ZKPs)</strong>.
+<ul>
+<li><strong>Core Concept</strong>: A Prover convinces a Verifier of possessing specific knowledge (a &quot;witness&quot;) without revealing the knowledge itself. This is formalized by the existence of a hypothetical &quot;knowledge extractor.&quot;</li>
+<li><strong>zk-SNARKs</strong>: A powerful type of ZKP that provides succinct (small), non-interactive proofs, ideal for blockchain applications.</li>
+<li><strong>Use Cases</strong>: PoK can be used to prove that a private computation was performed correctly, that a validator has checked a fact against a confidential database without revealing it, or to validate contributions in federated learning (ZKPoT) without sharing the ML models.</li>
+</ul>
 </li>
 </ol>
-<p>In this ecosystem, <strong>DoD serves as the generator of missing knowledge</strong>, addressing queries where existing caches fall short. Unlike retraining or static prompt engineering, DoD enables dynamic, real-time enrichment of Tiny LLMs by distilling knowledge from Big LLMs and recording it in the KCG for scalable reuse.</p>
-<p>By combining DoD with Cache-Augmented Generation, we achieve a sustainable balance: costly distillation happens only when necessary, while repetitive queries benefit from fast, cached responses.</p>
-<p>This approach ensures that Tiny LLMs can continuously evolve and deliver high-quality, verified outputs without incurring prohibitive computational or financial overhead.</p>
-<p>This highlights the potential for substantial optimization through caching mechanisms like KCG, reducing redundant inference calls to Large Language Models (LLMs).</p>
-<doc-anchor-target id="5-proposed-solution">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-proposed-solution">#</doc-anchor-trigger>
-        <span>5. Proposed Solution</span>
-    </h2>
-</doc-anchor-target>
-<p>We propose a <strong>Knowledge Cache Graph (KCG)</strong>, an immutable, content-addressable graph of validated knowledge, combined with <strong>Cache-Augmented Generation (CAG)</strong> - a mechanism allowing Tiny LLMs to retrieve distilled knowledge before resorting to expensive LLM inference.</p>
-<doc-anchor-target id="51-components">
+<p>This integrated hybrid model ensures that only well-formed, policy-compliant, and verified knowledge becomes a permanent part of the shared graph.</p>
+<doc-anchor-target id="42-distributed-fact-checking-architecture">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#51-components">#</doc-anchor-trigger>
-        <span>5.1 Components</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#42-distributed-fact-checking-architecture">#</doc-anchor-trigger>
+        <span><strong>4.2. Distributed Fact-Checking Architecture</strong></span>
     </h3>
 </doc-anchor-target>
+<p>To protect against misinformation and abuse, the system employs a layered defense:</p>
 <ul>
-<li><strong>KCG (Knowledge Cache Graph):</strong> A structured graph stored on Arweave/IPFS where each entity, relation, and reasoning chain is immutable and verifiable.</li>
-<li><strong>CAG (Cache-Augmented Generation):</strong> A generation workflow where Tiny LLMs leverage KCG for fast, low-cost reasoning.</li>
-<li><strong>DoD Agents (Distillation on Demand):</strong> Autonomous agents that request knowledge from Big LLMs, distill responses, and propose updates to KCG.</li>
-<li><strong>Federated Gateways:</strong> Trusted nodes managing API access to Big LLMs and handling KCG updates.</li>
-<li><strong>Community Validators:</strong> Stakeholders who verify the quality of new knowledge entries.</li>
+<li><strong>Local Prefiltering</strong>: DoD agents use a tiny reward model (TinyRM) to locally filter out obviously flawed or low-quality reasoning chains.</li>
+<li><strong>Distributed Validation</strong>: A quorum of Gateway or Validator nodes (e.g., √N sampling) performs inference-based fact-checking on proposed knowledge, cross-checking claims against existing KCG entries.</li>
+<li><strong>Consensus-Based Acceptance</strong>: Reasoning is accepted if the quorum reaches a confidence threshold, and the result is cached to prevent redundant checks.</li>
+<li><strong>Spam Detection and Anti-Abuse</strong>: Gateways track statistical metadata to detect suspicious patterns. Responses are scored for coherence and novelty, and any flagged entries are tagged with a SPAM label in the ontology layer to prevent their future use.</li>
 </ul>
-<doc-anchor-target id="6-technical-architecture-overview">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-technical-architecture-overview">#</doc-anchor-trigger>
-        <span>6. Technical Architecture Overview</span>
-    </h2>
-</doc-anchor-target>
-<p>The KCG+CAG ecosystem is designed to balance scalability, decentralization, and quality assurance through a modular architecture comprising several interconnected layers.</p>
-<doc-anchor-target id="61-storage-layer">
+<p>Code snippet</p>
+<p>graph TD<br />
+A[DoD Agent sends Reasoning] --&gt; B[TinyRM Local Filter]<br />
+B --&gt;|Valid| C[Gateway Selection]<br />
+C --&gt; D[Quorum Gateways (√N)]<br />
+D --&gt; E[SLM-based Fact-Checking]<br />
+E --&gt; F{Consensus Reached?}<br />
+F --&gt;|Yes| G[Store in Gateway Cache]<br />
+G --&gt; H[Write to KCG]<br />
+F --&gt;|No| I[Reject Reasoning]<br />
+I --&gt; J[Log as Disputed]</p>
+<doc-anchor-target id="43-dispute-resolution-mechanisms">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#61-storage-layer">#</doc-anchor-trigger>
-        <span>6.1 Storage Layer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#43-dispute-resolution-mechanisms">#</doc-anchor-trigger>
+        <span><strong>4.3. Dispute Resolution Mechanisms</strong></span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><strong>Arweave/IPFS:</strong> Immutable, decentralized storage for KCG Entries (entities, relations, ontologies, indices).</li>
-<li><strong>Chunked Graph Storage:</strong> Large graphs are partitioned into linked fragments using CIDs, ensuring efficient retrieval and content-addressability.</li>
-</ul>
-<doc-anchor-target id="62-index--graph-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#62-index--graph-layer">#</doc-anchor-trigger>
-        <span>6.2 Index &amp; Graph Layer</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Off-Chain Graph Indexers:</strong> Nodes parse Arweave data, rebuild KCG structures locally (Neo4j, TypeDB, RDF).</li>
-<li><strong>Micro-Subgraph Indexers:</strong> Custom indexers designed for fast traversal and semantic queries.</li>
-<li><strong>Caching of Popular Relationships:</strong> Frequently queried paths are cached for low-latency access.</li>
-</ul>
-<doc-anchor-target id="63-access--query-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#63-access--query-layer">#</doc-anchor-trigger>
-        <span>6.3 Access &amp; Query Layer</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Federated Gateways:</strong> API mediation with Big LLMs, storage operations, indexing updates, and query handling.</li>
-<li><strong>Semantic Query API:</strong> REST/GraphQL endpoints for graph exploration, relationship queries, and metadata retrieval.</li>
-<li><strong>ZK Proof-Based Access Control:</strong> Privacy-preserving authorization for graph queries.</li>
-</ul>
-<doc-anchor-target id="64-distillation--validation-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#64-distillation--validation-layer">#</doc-anchor-trigger>
-        <span>6.4 Distillation &amp; Validation Layer</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>DoD Agents:</strong> Responsible for querying Big LLMs, distilling knowledge, and proposing KCG Entries.</li>
-<li><strong>Community Validators:</strong> Decentralized verification of KCG Entries, enforcing quality and ontology compliance.</li>
-</ul>
-<doc-anchor-target id="65-economic-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#65-economic-layer">#</doc-anchor-trigger>
-        <span>6.5 Economic Layer</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Tokenomics Mechanisms:</strong> Usage tokens for DoD queries, rewards for contributors, staking for validators, and burn mechanisms for deflation.</li>
-<li><strong>Dynamic Emission Control:</strong> Adaptive reward rates based on network activity and governance votes.</li>
-</ul>
-<doc-anchor-target id="66-governance--reputation-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#66-governance--reputation-layer">#</doc-anchor-trigger>
-        <span>6.6 Governance &amp; Reputation Layer</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Staking &amp; Slashing:</strong> Economic incentives and penalties to ensure honest participation.</li>
-<li><strong>Reputation Scoring:</strong> Tracking contributor reliability and quality over time.</li>
-<li><strong>On-chain Governance:</strong> Token-weighted voting for protocol upgrades and parameter adjustments.</li>
-</ul>
-<doc-anchor-target id="67-architectural-principles">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#67-architectural-principles">#</doc-anchor-trigger>
-        <span>6.7 Architectural Principles</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Modularity:</strong> Each layer operates independently but synergistically.</li>
-<li><strong>Scalability:</strong> Off-chain indexing and caching ensure performance at scale.</li>
-<li><strong>Transparency &amp; Verifiability:</strong> Immutable storage with provenance data.</li>
-<li><strong>Privacy &amp; Security:</strong> ZK Proofs safeguard access control without compromising user privacy.</li>
-</ul>
-<p>This architecture enables the KCG+CAG ecosystem to support millions of Tiny LLMs with efficient, reliable, and continuously evolving knowledge augmentation.</p>
-<doc-anchor-target id="7-cag-storage-query--privacy-architecture">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#7-cag-storage-query--privacy-architecture">#</doc-anchor-trigger>
-        <span>7. CAG Storage, Query &amp; Privacy Architecture</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="71-cag-storage-in-arweave">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#71-cag-storage-in-arweave">#</doc-anchor-trigger>
-        <span>7.1 CAG Storage in Arweave</span>
-    </h3>
-</doc-anchor-target>
-<p>For immutable and verifiable knowledge storage, Arweave is the preferred solution due to its permanent data availability. Each fragment of the Knowledge Cache Graph (KCG)-nodes, edges, ontologies, and indices - is stored as an individual Arweave transaction (TX). Key characteristics include:</p>
-<ul>
-<li>Each KCG object receives a unique TXID, serving as a perma-link derived from its content hash.</li>
-<li>Large graphs are stored using chunked storage with CID-based linking for efficient traversal.</li>
-</ul>
-<p><strong>Example:</strong></p>
-<ul>
-<li>Entity Node X → Attributes file → TXID: 0xabc123.</li>
-<li>Relation (X relates to Y) → Separate file → TXID: 0xdef456.</li>
-<li>The entire graph is connected via an index file or JSON-LD structure with its own TXID.</li>
-</ul>
-<p>Filecoin offers a similar decentralized storage model but relies on signed storage contracts (6-12 months), making it less practical for permanent knowledge preservation. Therefore, Arweave remains the primary storage layer for long-term knowledge caching.</p>
-<doc-anchor-target id="72-fast-querying-and-relationship-analysis-graph-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#72-fast-querying-and-relationship-analysis-graph-layer">#</doc-anchor-trigger>
-        <span>7.2 Fast Querying and Relationship Analysis (Graph Layer)</span>
-    </h3>
-</doc-anchor-target>
-<p>While Arweave and Filecoin serve as robust storage layers, efficient graph querying necessitates an additional index and query layer.</p>
-<p><strong>Graph Layer Architecture:</strong></p>
+<p>To maintain long-term integrity, Membria features an economically incentivized challenge system.</p>
 <ol>
-<li><p><strong>Off-chain Graph Indexing:</strong></p>
+<li><strong>Challenge Initiation</strong>: Any network participant with sufficient stake can challenge an entry in the KCG by locking their stake as collateral and providing evidence.</li>
+<li><strong>Verification Phase</strong>: A committee of validators re-evaluates the challenged assertion, weighing evidence from both the challenger and the original entry.</li>
+<li><strong>Resolution</strong>: The outcome is decided by a stake-weighted vote.
 <ul>
-<li>Network participants (indexers) parse Arweave data using TXIDs and CIDs.</li>
-<li>The graph structure is reconstructed and maintained locally using graph databases (e.g., Neo4j, TypeDB, custom RDF stores).</li>
-<li>Index layers can be decentralized via IPFS/DAG protocols.</li>
-</ul>
-</li>
-<li><p><strong>Semantic Query API:</strong></p>
-<ul>
-<li>Provides REST or GraphQL endpoints for graph traversal, relationship queries, and semantic searches.</li>
-<li>Example query: &quot;Retrieve all relationships from Node X to Category Y within period T.&quot;</li>
+<li><strong>If the challenge succeeds</strong>: The entry is marked as incorrect, the challenger recovers their collateral plus a reward, and the validators who approved the incorrect entry are penalized (slashed).</li>
+<li><strong>If the challenge fails</strong>: The challenger&#x27;s collateral is slashed, deterring frivolous disputes.</li>
 </ul>
 </li>
 </ol>
-<p><strong>Best Practices &amp; Tools:</strong></p>
-<ul>
-<li>Utilize The Graph&#x27;s Subgraph architecture with Arweave Data Sources.</li>
-<li>Explore OriginTrail DKG integrations with Arweave/IPFS.</li>
-<li>Develop a custom micro-subgraph indexer tailored for CAG.</li>
-</ul>
-<p><strong>Caching Popular Relationships:</strong></p>
-<ul>
-<li>Frequently requested paths are cached by indexers.</li>
-<li>Merkle Proofs ensure data freshness and integrity without needing to re-fetch from Arweave.</li>
-</ul>
-<doc-anchor-target id="8-kcg-indexing-with-the-graph-subgraph">
+<p>This mechanism relies on the economic incentives of the network&#x27;s participants to maintain truth, rather than a centralized arbitration body. In extreme cases, appeals can be made by re-challenging with a higher stake or, as a last resort, through a community-driven general audit or hard fork.</p>
+<doc-anchor-target id="part-5-economic-model-and-governance">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#8-kcg-indexing-with-the-graph-subgraph">#</doc-anchor-trigger>
-        <span>8. KCG Indexing with The Graph Subgraph</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#part-5-economic-model-and-governance">#</doc-anchor-trigger>
+        <span><strong>Part 5: Economic Model and Governance</strong></span>
     </h2>
 </doc-anchor-target>
-<p>To achieve decentralized, scalable, and performant indexing for the Knowledge Cache Graph (KCG), we propose leveraging <strong>The Graph Subgraph</strong> architecture as an alternative to centralized graph databases like Neo4j.</p>
-<doc-anchor-target id="81-storage-layer-arweave">
+<doc-anchor-target id="51-tokenomics--incentive-design">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#81-storage-layer-arweave">#</doc-anchor-trigger>
-        <span>8.1 Storage Layer: Arweave</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#51-tokenomics--incentive-design">#</doc-anchor-trigger>
+        <span><strong>5.1. Tokenomics &amp; Incentive Design</strong></span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li>All KCG entries (entities, relations, ontologies) are stored as immutable JSON-LD documents on Arweave.</li>
-<li>Each entry is identified by its TXID and enriched with metadata tags (e.g., <code v-pre>Type</code>, <code v-pre>Relation</code>, <code v-pre>Ontology</code>).</li>
-</ul>
-<doc-anchor-target id="82-index--query-layer-the-graph-subgraph">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#82-index--query-layer-the-graph-subgraph">#</doc-anchor-trigger>
-        <span>8.2 Index &amp; Query Layer: The Graph Subgraph</span>
-    </h3>
+<p>The KCG+CAG ecosystem introduces a deflationary, utility-driven token model designed to reward key participants, sustain decentralized infrastructure, and ensure long-term economic balance.</p>
+<doc-anchor-target id="token-flows">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#token-flows">#</doc-anchor-trigger>
+        <span><strong>Token Flows</strong></span>
+    </h4>
 </doc-anchor-target>
 <ul>
-<li><p>A custom Subgraph mapping is created to parse Arweave transactions based on relevant tags.</p>
-</li>
-<li><p>The mapping script extracts entity and relation data from JSON-LD payloads.</p>
-</li>
-<li><p>Subgraph Entities include:</p>
-<ul>
-<li><strong>KCGEntity:</strong> id, type, attributes.</li>
-<li><strong>KCGRelation:</strong> source, target, relationType, context.</li>
+<li><strong>DoD Query Payments</strong>: Every DoD request initiated by a DoD Agent incurs a fixed token fee. This covers API calls, storage costs, and validation.</li>
+<li><strong>Validator &amp; Gateway Rewards</strong>: Validators and Gateways are compensated in tokens for validating proposals, maintaining caches, and hosting retrieval services.</li>
+<li><strong>Token Burning Mechanism</strong>: A percentage of each DoD request fee is burned (removed from circulation), creating deflationary pressure.</li>
 </ul>
-</li>
-<li><p>Relationships are maintained via content-addressed links (Arweave TXIDs).</p>
-</li>
-</ul>
-<doc-anchor-target id="83-graphql-api-interface">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#83-graphql-api-interface">#</doc-anchor-trigger>
-        <span>8.3 GraphQL API Interface</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><p>The Subgraph exposes a standardized GraphQL API for querying the KCG.</p>
-</li>
-<li><p>Example query:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-graphql"><code v-pre class="language-graphql">query {
-  kcgEntities(where: {type: &quot;Person&quot;}) {
-    id
-    attributes { key, value }
-    relations { target { id }, relationType }
-  }
-}</code></pre>
-</doc-codeblock></div>
-</li>
-<li><p>This enables Tiny LLMs and DoD Agents to perform semantic searches efficiently.</p>
-</li>
-</ul>
-<doc-anchor-target id="84-sync--update-flow">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#84-sync--update-flow">#</doc-anchor-trigger>
-        <span>8.4 Sync &amp; Update Flow</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>The Graph Indexers continuously monitor Arweave for new transactions matching KCG patterns.</li>
-<li>Updates to the knowledge graph are reflected in real-time within the Subgraph index.</li>
-</ul>
-<doc-anchor-target id="85-advantages-over-centralized-graph-databases">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#85-advantages-over-centralized-graph-databases">#</doc-anchor-trigger>
-        <span>8.5 Advantages Over Centralized Graph Databases</span>
-    </h3>
-</doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Aspect</th>
-<th>The Graph Subgraph</th>
-<th>Neo4j</th>
+<th style="text-align: left;">Mechanism</th>
+<th style="text-align: left;">Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Immutable Data Indexing</td>
-<td>Native support for Arweave Data Sources</td>
-<td>Requires manual synchronization</td>
+<td style="text-align: left;">DoD Payments (Fixed Tokens)</td>
+<td style="text-align: left;">Incentivize Agents to propose valuable knowledge, sustain infrastructure costs.</td>
 </tr>
 <tr>
-<td>Query Interface</td>
-<td>Decentralized GraphQL API</td>
-<td>Proprietary Cypher Query</td>
+<td style="text-align: left;">Validator/Gateway Rewards</td>
+<td style="text-align: left;">Compensate nodes for validation, caching, and retrieval services.</td>
 </tr>
 <tr>
-<td>Scalability</td>
-<td>Distributed Indexer Network</td>
-<td>Requires federated custom deployment</td>
-</tr>
-<tr>
-<td>Decentralization</td>
-<td>Yes (hosted or decentralized subgraphs)</td>
-<td>No (centralized unless custom federated)</td>
-</tr>
-<tr>
-<td>Speed of Access</td>
-<td>Low latency for indexed queries</td>
-<td>Fast on dedicated infrastructure</td>
-</tr>
-<tr>
-<td>Standards Compliance</td>
-<td>OpenGraphQL Schema, Arweave Integration</td>
-<td>Proprietary database format</td>
+<td style="text-align: left;">Token Burning</td>
+<td style="text-align: left;">Ensure long-term deflationary pressure, avoiding unchecked token inflation.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="86-architecture">
+<doc-anchor-target id="52-economic-sustainability-of-the-network">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#86-architecture">#</doc-anchor-trigger>
-        <span>8.6 Architecture</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#52-economic-sustainability-of-the-network">#</doc-anchor-trigger>
+        <span><strong>5.2. Economic Sustainability of the Network</strong></span>
     </h3>
 </doc-anchor-target>
+<p>The network treasury, which funds infrastructure like off-chain indexing nodes and dispute resolution rewards, is replenished through a sustainable and balanced multi-source approach.</p>
 <ul>
-<li><strong>Immutable Storage:</strong> Arweave for permanent knowledge storage.</li>
-<li><strong>Decentralized Index &amp; Query:</strong> The Graph Subgraph for efficient search and retrieval.</li>
-<li><strong>Consumption Layer:</strong> Tiny LLMs and DoD Agents interact via GraphQL.</li>
-<li><strong>Optional Caching:</strong> Gateways can implement caching for ultra-low latency.</li>
+<li><strong>Transaction Fee Allocations</strong>: A portion of DoD query fees is directed to the treasury, directly correlating funding with system usage.</li>
+<li><strong>Dedicated Vesting Fund</strong>: A significant portion of the total token supply is reserved under a long-term (e.g., 20-year) vesting program. A predictable amount is unlocked periodically to provide stable funding for critical security functions like the dispute resolution mechanism.</li>
+<li><strong>Slashing Penalties</strong>: A portion of tokens slashed from malicious actors can be routed to the treasury, acting as both a punitive measure and a source of replenishment.</li>
 </ul>
-<p>This approach ensures a fully decentralized, scalable, and performant knowledge indexing solution, aligning with the KCG+CAG principles of openness, permanence, and efficiency.</p>
-<doc-anchor-target id="9-scr-enhanced-reasoning-pipeline-for-kcgcag">
+<doc-anchor-target id="53-governance--validator-operations">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#53-governance--validator-operations">#</doc-anchor-trigger>
+        <span><strong>5.3. Governance &amp; Validator Operations</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>The integrity and fairness of the ecosystem are ensured by a decentralized governance model and a distributed network of Validator Nodes.</p>
+<doc-anchor-target id="validators">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#validators">#</doc-anchor-trigger>
+        <span><strong>Validators</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Roles</strong>: Validators are responsible for knowledge validation, consensus voting, proof-of-knowledge verification, and participating in governance to influence protocol upgrades and dispute resolutions.</li>
+<li><strong>Infrastructure</strong>: Validators can be permissionless community nodes or elected via governance mechanisms, running lightweight nodes capable of verifying proposals and participating in voting.</li>
+</ul>
+<doc-anchor-target id="governance-model">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#governance-model">#</doc-anchor-trigger>
+        <span><strong>Governance Model</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>DAO-Driven or Federated Governance</strong>: The protocol may adopt DAO governance models, where token holders vote on key parameters, or federated validator councils for efficient decision-making.</li>
+<li><strong>Responsibilities</strong>: Key responsibilities include managing protocol upgrades, validator slashing mechanisms, dispute resolution, and treasury management.</li>
+</ul>
+<doc-anchor-target id="part-6-integrations-and-advanced-strategies">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#9-scr-enhanced-reasoning-pipeline-for-kcgcag">#</doc-anchor-trigger>
-        <span>9. SCR-enhanced Reasoning Pipeline for KCG+CAG</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#part-6-integrations-and-advanced-strategies">#</doc-anchor-trigger>
+        <span><strong>Part 6: Integrations and Advanced Strategies</strong></span>
     </h2>
 </doc-anchor-target>
-<p>Based on recent advancements in the field of Selective Contextual Reasoning (SCR), particularly the insights from the paper &quot;Selective Contextual Reasoning Enables Efficient Model Editing for Language Models&quot; (arXiv:2503.05212), the KCG+CAG architecture can be significantly optimized to enhance reasoning efficiency, minimize reliance on Big LLM APIs, and empower Tiny LLMs to reason over evolving knowledge.</p>
-<doc-anchor-target id="91-scr-reasoning-layer-as-the-default-inference-path">
+<doc-anchor-target id="61-integration-with-peaq-protocol">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#91-scr-reasoning-layer-as-the-default-inference-path">#</doc-anchor-trigger>
-        <span>9.1 SCR Reasoning Layer as the Default Inference Path</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#61-integration-with-peaq-protocol">#</doc-anchor-trigger>
+        <span><strong>6.1. Integration with Peaq Protocol</strong></span>
     </h3>
 </doc-anchor-target>
+<p>The Membria architecture can be seamlessly deployed on top of the <strong>Peaq Protocol</strong>, leveraging its existing decentralized infrastructure for enhanced functionality and faster development.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">KCG+CAG Component</th>
+<th style="text-align: left;">Integration with Peaq Protocol</th>
+<th style="text-align: left;">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">KCG On-Chain Storage &amp; TX</td>
+<td style="text-align: left;">Use Peaq Chain for transaction recording and consensus</td>
+<td style="text-align: left;">Knowledge entries, validator approvals, governance votes</td>
+</tr>
+<tr>
+<td style="text-align: left;">ZK Proofs for DoD &amp; Access</td>
+<td style="text-align: left;">Use Peaq ZK Layer for privacy-preserving queries &amp; attestation</td>
+<td style="text-align: left;">ZK Proof-of-Access, ZK validation of query authorization</td>
+</tr>
+<tr>
+<td style="text-align: left;">Off-chain Indexing &amp; Subgraphs</td>
+<td style="text-align: left;">Use Peaq Subgraph Infrastructure for accelerated querying</td>
+<td style="text-align: left;">Gateways can offload indexing to Peaq Subgraph tooling</td>
+</tr>
+<tr>
+<td style="text-align: left;">SCR Pipelines &amp; Reasoning</td>
+<td style="text-align: left;">KCG+CAG Layer</td>
+<td style="text-align: left;">Application-specific layer on top of Peaq</td>
+</tr>
+<tr>
+<td style="text-align: left;">Local Tiny LLM KV Cache</td>
+<td style="text-align: left;">Device or Gateway Level</td>
+<td style="text-align: left;">Fast inference on device or at gateway edge nodes</td>
+</tr>
+<tr>
+<td style="text-align: left;">DoD Agents and CAG Pipelines</td>
+<td style="text-align: left;">KCG+CAG Layer</td>
+<td style="text-align: left;">Orchestrate reasoning and distillation above Peaq</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Benefits of Deploying over Peaq</strong>:</p>
 <ul>
-<li><p>Every query from Tiny LLM or DoD Agent triggers an SCR pipeline first:</p>
+<li><strong>Validator Network and Governance</strong>: Membria can adopt Peaq&#x27;s validator network, staking mechanisms, and DAO governance.</li>
+<li><strong>ZK Proof Layer</strong>: Peaq&#x27;s ZK Layer can serve as the foundation for query privacy and proof-of-knowledge attestations.</li>
+<li><strong>Optimized Querying</strong>: Utilizing Peaq&#x27;s subgraph and indexing services can accelerate SCR pipelines without duplicating infrastructure.</li>
+</ul>
+<doc-anchor-target id="ontology-support-in-peaq-protocol">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ontology-support-in-peaq-protocol">#</doc-anchor-trigger>
+        <span><strong>Ontology Support in Peaq Protocol</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>Peaq Protocol provides a flexible and extensible semantic layer ideal for Membria.</p>
 <ul>
-<li><strong>Semantic Retrieval</strong> from the KCG KV-layer</li>
+<li><strong>Core Ontology Features</strong>: Peaq supports typed knowledge nodes (@type), domain and tag metadata (@domain, @tags), supertype hierarchies, and semantic relationships, all of which are compatible with RDF-like logic.</li>
+<li><strong>Subgraph Indexers</strong>: Each domain can define a custom Subgraph Indexer to parse and index knowledge entries by type or topic, enabling efficient, scoped querying.</li>
+<li><strong>Suitability for Membria</strong>: Peaq’s native ontology support allows Membria to filter reasoning by topic, define custom types (ReasoningStep, DoDTrace), and enforce validation rules per knowledge category, maintaining clarity and modularity in a distributed environment.</li>
+</ul>
+<doc-anchor-target id="62-synergizing-with-periodic-model-adaptation-lora">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#62-synergizing-with-periodic-model-adaptation-lora">#</doc-anchor-trigger>
+        <span><strong>6.2. Synergizing with Periodic Model Adaptation (LoRA)</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>While Membria&#x27;s core focus is real-time knowledge updates via CAG/SCR, it can be synergistically combined with periodic, low-frequency model adaptation using techniques like <strong>LoRA/QLoRA</strong>.</p>
+<p>An automated nightly pipeline could extract new, high-value knowledge accumulated in the KCG and use it to fine-tune the base Tiny LLM. This process &quot;embeds&quot; stable, frequently used reasoning patterns into the model itself. The benefits include:</p>
+<ul>
+<li><strong>Improved Base Understanding</strong>: The model becomes better at generalizing and understanding the types of knowledge in the KCG.</li>
+<li><strong>More Efficient SCR</strong>: A better-adapted model may require less context from the SCR pipeline to achieve high-quality responses.</li>
+<li><strong>Adaptation to Evolving Knowledge</strong>: The model&#x27;s &quot;base&quot; adapts to macro-level shifts in the KCG&#x27;s content over time.</li>
+</ul>
+<p>This combination allows the model to learn in two ways: instantly through caching (CAG) and periodically through fine-tuning (LoRA), creating a highly adaptive and efficient learning system. Using <strong>QLoRA</strong> for this process is particularly effective, as it allows for significant model enhancement with minimal or even no increase in the final model size on the device.</p>
+<doc-anchor-target id="part-7-conclusion-and-vision">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#part-7-conclusion-and-vision">#</doc-anchor-trigger>
+        <span><strong>Part 7: Conclusion and Vision</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>The KCG+CAG ecosystem bridges the gap between heavy, centralized LLM inference and lightweight, efficient Tiny LLMs operating at the edge. By introducing an open, decentralized, and verifiable knowledge graph, coupled with Cache-Augmented Generation (CAG) and Selective Contextual Reasoning (SCR), we enable Tiny LLMs to stay continuously updated, smart, and capable - without costly retraining or vendor lock-in.</p>
+<p>This paradigm shift turns reasoning and knowledge augmentation into <strong>an open, reusable, and community-driven resource</strong>, breaking free from centralized control and enabling AI models to reason dynamically using decentralized knowledge caches.</p>
+<doc-anchor-target id="our-vision">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#our-vision">#</doc-anchor-trigger>
+        <span><strong>Our Vision</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>We envision a world where:</p>
+<ul>
+<li><strong>Tiny LLMs become truly autonomous learners</strong>, continuously improving and reasoning at the edge.</li>
+<li><strong>Knowledge becomes a public good</strong>, verifiable and accessible to all, stored immutably in the Knowledge Cache Graph (KCG).</li>
+<li><strong>Users, agents, and validators collaborate in a self-reinforcing ecosystem</strong>, where knowledge grows organically, costs decrease, and reasoning becomes more reliable, democratic, and sovereign.</li>
+</ul>
+<p>By adopting the KCG+CAG architecture, we take a significant step toward <strong>democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.</strong></p>
+<doc-anchor-target id="part-8-appendices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#part-8-appendices">#</doc-anchor-trigger>
+        <span><strong>Part 8: Appendices</strong></span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="appendix-a-specifications-for-tiny-llms">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#appendix-a-specifications-for-tiny-llms">#</doc-anchor-trigger>
+        <span><strong>Appendix A: Specifications for &quot;Tiny LLMs&quot;</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>&quot;Tiny LLMs&quot; are a segment of Small Language Models (SLMs) designed for efficiency and on-device deployment.</p>
+<ul>
+<li><strong>Parameter Range</strong>: 4 billion to 30 billion parameters.</li>
+<li><strong>Architectures</strong>: Primarily Transformer-based (Decoder-only or MoE), often enhanced with optimization techniques like Grouped-Query Attention (GQA), Quantization (INT4/INT8), and Pruning.</li>
+<li><strong>Computational Resources</strong>: Designed to be runnable on modern multi-core CPUs and consumer-grade GPUs (e.g., with 8-24GB of VRAM). They are increasingly targeted for devices with Neural Processing Units (NPUs).</li>
+<li><strong>Advantages</strong>: Efficiency, cost-effectiveness, accessibility, customization, and on-device deployment for lower latency and enhanced privacy.</li>
+<li><strong>Limitations</strong>: Reduced generalization compared to larger models, a smaller inherent knowledge base, and a higher dependency on fine-tuning for specific tasks.</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>Phi-3 Family (Microsoft)</li>
+<li>Gemma Family (Google)</li>
+<li>Llama 3 8B (Meta)</li>
+<li>Mistral 7B (Mistral AI)</li>
+<li>Qwen2-7B (Alibaba Cloud)</li>
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="10-roles-of-validators-gateways-and-dod-agents">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#10-roles-of-validators-gateways-and-dod-agents">#</doc-anchor-trigger>
-        <span>10. Roles of Validators, Gateways, and DoD Agents</span>
-    </h2>
-</doc-anchor-target>
-<p>The KCG+CAG architecture defines three key participant roles: <strong>DoD Agents</strong>, <strong>Gateways</strong>, and <strong>Validators</strong>. Each role is essential but distinct, contributing to the seamless flow, verification, and enrichment of knowledge.</p>
-<doc-anchor-target id="101-dod-agents-knowledge-distillation-layer">
+<doc-anchor-target id="appendix-b-comparative-analysis-table">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#101-dod-agents-knowledge-distillation-layer">#</doc-anchor-trigger>
-        <span>10.1 DoD Agents: Knowledge Distillation Layer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#appendix-b-comparative-analysis-table">#</doc-anchor-trigger>
+        <span><strong>Appendix B: Comparative Analysis Table</strong></span>
     </h3>
 </doc-anchor-target>
-<p><strong>Primary Role:</strong>
-DoD Agents are responsible for identifying knowledge gaps, querying Big LLMs, and distilling their responses into structured KCG Entries.</p>
-<p><strong>Core Functions:</strong></p>
-<ul>
-<li><strong>Knowledge Gap Detection:</strong> Identifying missing knowledge in Tiny LLM contexts.</li>
-<li><strong>Big LLM Querying:</strong> Orchestrating API calls via Gateways to retrieve relevant knowledge.</li>
-<li><strong>Knowledge Distillation:</strong> Aggregating and refining LLM responses into KCG-compatible formats.</li>
-<li><strong>Entry Submission:</strong> Proposing new KCG Entries for validation and storage.</li>
-</ul>
-<p><strong>Analogy:</strong> DoD Agents are the &quot;knowledge miners,&quot; dynamically extracting and refining new information.</p>
-<doc-anchor-target id="102-gateways-infrastructure--access-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#102-gateways-infrastructure--access-layer">#</doc-anchor-trigger>
-        <span>10.2 Gateways: Infrastructure &amp; Access Layer</span>
-    </h3>
-</doc-anchor-target>
-<p><strong>Primary Role:</strong>
-Gateways act as intermediaries between DoD Agents, Big LLM APIs, and decentralized storage systems.</p>
-<p><strong>Core Functions:</strong></p>
-<ul>
-<li><strong>API Mediation:</strong> Managing requests to external LLM services.</li>
-<li><strong>Storage Operations:</strong> Writing validated KCG Entries to Arweave/IPFS.</li>
-<li><strong>Graph Indexing:</strong> Maintaining searchable graph structures.</li>
-<li><strong>Query Handling:</strong> Providing access interfaces (REST/GraphQL).</li>
-<li><strong>Access Control:</strong> Enforcing privacy-preserving access via ZK Proofs.</li>
-</ul>
-<p><strong>Analogy:</strong> Gateways are the &quot;bridges&quot; facilitating the technical flow of knowledge.</p>
-<doc-anchor-target id="103-validators-quality--consensus-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#103-validators-quality--consensus-layer">#</doc-anchor-trigger>
-        <span>10.3 Validators: Quality &amp; Consensus Layer</span>
-    </h3>
-</doc-anchor-target>
-<p><strong>Primary Role:</strong>
-Validators ensure the integrity, accuracy, and compliance of knowledge within the KCG.</p>
-<p><strong>Core Functions:</strong></p>
-<ul>
-<li><strong>Entry Validation:</strong> Verifying newly proposed KCG Entries.</li>
-<li><strong>Semantic Consistency:</strong> Checking for duplications, conflicts, and logical coherence.</li>
-<li><strong>Ontology Compliance:</strong> Ensuring adherence to KCG data standards.</li>
-<li><strong>Consensus Participation:</strong> Voting on contentious entries.</li>
-<li><strong>Staking &amp; Slashing:</strong> Engaging in staking with risks for poor validation.</li>
-</ul>
-<p><strong>Analogy:</strong> Validators are the &quot;quality control guardians&quot; of the knowledge graph.</p>
-<doc-anchor-target id="104-role-comparison">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#104-role-comparison">#</doc-anchor-trigger>
-        <span>10.4 Role Comparison</span>
-    </h3>
-</doc-anchor-target>
+<p>Membria offers a unique combination of real-time, on-device inference, structured knowledge caching, and decentralized learning that sets it apart from existing solutions.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Role</th>
-<th>Primary Function</th>
-<th>Core Activities</th>
-<th>Risks &amp; Incentives</th>
+<th style="text-align: left;">Feature / Platform</th>
+<th style="text-align: left;">Membria</th>
+<th style="text-align: left;">Amazon Bedrock</th>
+<th style="text-align: left;">Google Vertex AI (Gemini)</th>
+<th style="text-align: left;">Hugging Face AutoTrain</th>
+<th style="text-align: left;">GPTCache</th>
+<th style="text-align: left;">Cohere API</th>
+<th style="text-align: left;">AI21 Labs</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>DoD Agent</td>
-<td>Knowledge distillation &amp; enrichment</td>
-<td>Query Big LLMs, distill responses, propose entries</td>
-<td>Incentives for contributions, no slashing</td>
+<td style="text-align: left;"><strong>Deployment Model</strong></td>
+<td style="text-align: left;">On-device / no-cloud</td>
+<td style="text-align: left;">Cloud-hosted</td>
+<td style="text-align: left;">Cloud + Edge</td>
+<td style="text-align: left;">Cloud-based</td>
+<td style="text-align: left;">Plugin-based</td>
+<td style="text-align: left;">API-based</td>
+<td style="text-align: left;">API-based</td>
 </tr>
 <tr>
-<td>Gateway</td>
-<td>Infrastructure mediation &amp; storage</td>
-<td>API calls, storage writes, indexing, access control</td>
-<td>Operational costs, per-query rewards</td>
+<td style="text-align: left;"><strong>Learning Paradigm</strong></td>
+<td style="text-align: left;">CAG + DoD + Shared KCG</td>
+<td style="text-align: left;">Offline distillation</td>
+<td style="text-align: left;">RAG + prompting</td>
+<td style="text-align: left;">LoRA/PEFT finetuning</td>
+<td style="text-align: left;">Response caching</td>
+<td style="text-align: left;">Embedding + RAG</td>
+<td style="text-align: left;">Embedding + RAG</td>
 </tr>
 <tr>
-<td>Validator</td>
-<td>Knowledge quality assurance &amp; consensus</td>
-<td>Entry validation, semantic checks, consensus voting</td>
-<td>Staking rewards, slashing penalties</td>
+<td style="text-align: left;"><strong>Real-Time Adaptation</strong></td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Limited</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Similar queries</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Inference Location</strong></td>
+<td style="text-align: left;">Fully local</td>
+<td style="text-align: left;">Cloud</td>
+<td style="text-align: left;">Partial (Gemini Nano)</td>
+<td style="text-align: left;">Optional on-prem</td>
+<td style="text-align: left;">User-defined</td>
+<td style="text-align: left;">Cloud</td>
+<td style="text-align: left;">Cloud</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Persistent Memory Layer</strong></td>
+<td style="text-align: left;">Yes (KCG)</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">In-memory only</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Context Optimization</strong></td>
+<td style="text-align: left;">Segmented KV + Prioritized Paging</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Prompt structuring</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Some filtering</td>
+<td style="text-align: left;">Some filtering</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Offline Capability</strong></td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Partial</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">If local</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reasoning Enhancements</strong></td>
+<td style="text-align: left;">CAG + Chain Condensation</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Embedding-based</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Knowledge Sharing</strong></td>
+<td style="text-align: left;">Public/Private KCG</td>
+<td style="text-align: left;">Closed</td>
+<td style="text-align: left;">Closed</td>
+<td style="text-align: left;">Per model</td>
+<td style="text-align: left;">Local only</td>
+<td style="text-align: left;">Closed</td>
+<td style="text-align: left;">Closed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Personalization Strategy</strong></td>
+<td style="text-align: left;">Local + Shared memory</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Google Workspace only</td>
+<td style="text-align: left;">Finetuning</td>
+<td style="text-align: left;">Basic tuning</td>
+<td style="text-align: left;">Prompt tuning</td>
+<td style="text-align: left;">Prompt tuning</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost Efficiency</strong></td>
+<td style="text-align: left;">Very high (no tokens, local)</td>
+<td style="text-align: left;">Expensive cloud</td>
+<td style="text-align: left;">API metered</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Subscription</td>
+<td style="text-align: left;">Subscription</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="105-synergy-of-roles">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#105-synergy-of-roles">#</doc-anchor-trigger>
-        <span>10.5 Synergy of Roles</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>DoD Agents enrich KCG with new knowledge.</strong></li>
-<li><strong>Gateways facilitate seamless data flow and storage.</strong></li>
-<li><strong>Validators ensure that only high-quality, verified knowledge persists.</strong></li>
-</ul>
-<p>This tri-layered structure balances scalability, reliability, and quality assurance across the KCG+CAG ecosystem.</p>
-<doc-anchor-target id="11-validator-infrastructure--placement">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#11-validator-infrastructure--placement">#</doc-anchor-trigger>
-        <span>11. Validator Infrastructure &amp; Placement</span>
-    </h2>
-</doc-anchor-target>
-<p>Validators play a critical role in ensuring the quality, consistency, and trustworthiness of knowledge within the KCG+CAG ecosystem. Their operations span both logical (off-chain) and infrastructural (physical) layers.</p>
-<doc-anchor-target id="111-off-chain-validator-nodes">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#111-off-chain-validator-nodes">#</doc-anchor-trigger>
-        <span>11.1 Off-chain Validator Nodes</span>
-    </h3>
-</doc-anchor-target>
-<p>Validators operate as independent nodes, running locally on participant infrastructure or in the cloud. Their primary functions are:</p>
-<ul>
-<li><strong>Receiving KCG Entries:</strong> Fetching new knowledge proposals via pub/sub channels or Gateway-indexed feeds.</li>
-<li><strong>Performing Validation Checks:</strong> Locally executing semantic similarity analysis, ontology compliance checks, and logical reasoning validations.</li>
-<li><strong>Storing Local Indices:</strong> Maintaining up-to-date local caches of KCG fragments to optimize validation efficiency.</li>
-</ul>
-<doc-anchor-target id="112-consensus--proof-submission-on-chain-interaction">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#112-consensus--proof-submission-on-chain-interaction">#</doc-anchor-trigger>
-        <span>11.2 Consensus &amp; Proof Submission (On-chain Interaction)</span>
-    </h3>
-</doc-anchor-target>
-<p>While validation computations happen off-chain, Validators contribute to network consensus through:</p>
-<ul>
-<li><strong>Publishing Votes &amp; Proofs:</strong> Submitting attestations, ZK Proofs, or digital signatures to the blockchain layer.</li>
-<li><strong>Participating in Governance:</strong> Engaging in on-chain staking, voting, and slashing mechanisms tied to validation performance.</li>
-</ul>
-<p>Validated entries are only marked as &quot;Validated&quot; once sufficient consensus is achieved based on staking weights and validator participation.</p>
-<doc-anchor-target id="113-validator-deployment-environments">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#113-validator-deployment-environments">#</doc-anchor-trigger>
-        <span>11.3 Validator Deployment Environments</span>
-    </h3>
-</doc-anchor-target>
-<p>Validators can operate across various physical infrastructures:</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Infrastructure Type</th>
-<th>Example Deployments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Local Enterprise Servers</td>
-<td>Corporate data centers, high-availability clusters</td>
-</tr>
-<tr>
-<td>Cloud Instances</td>
-<td>AWS, Hetzner, OVH, decentralized clouds (e.g., Akash)</td>
-</tr>
-<tr>
-<td>Edge / High-end PCs</td>
-<td>Community validators using local GPUs (RTX 4090, etc.)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="114-architectural-positioning">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#114-architectural-positioning">#</doc-anchor-trigger>
-        <span>11.4 Architectural Positioning</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Above Gateway Layer:</strong> Validators engage after KCG Entries are proposed and stored.</li>
-<li><strong>Peer-to-Peer Validator Mesh:</strong> Validators collaborate in a decentralized network for distributed validation tasks.</li>
-<li><strong>Connected to Governance Contracts:</strong> Interfacing with on-chain smart contracts for staking, rewards, and slashing.</li>
-</ul>
-<doc-anchor-target id="115-benefits-of-off-chain-validation">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#115-benefits-of-off-chain-validation">#</doc-anchor-trigger>
-        <span>11.5 Benefits of Off-chain Validation</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Efficiency:</strong> Resource-intensive validations are offloaded from the blockchain.</li>
-<li><strong>Privacy:</strong> Sensitive data remains off-chain, with only proofs being published.</li>
-<li><strong>Scalability:</strong> Validators can operate asynchronously, scaling horizontally with network growth.</li>
-</ul>
-<p>By structuring validator operations in this hybrid off-chain/on-chain model, KCG+CAG achieves a balance between computational efficiency, transparency, and decentralized trust.</p>
-<doc-anchor-target id="12-kcg-entry-format-for-arweave-storage">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#12-kcg-entry-format-for-arweave-storage">#</doc-anchor-trigger>
-        <span>12. KCG Entry Format for Arweave Storage</span>
-    </h2>
-</doc-anchor-target>
-<p>Each KCG Entry represents either an <strong>Entity</strong> or a <strong>Relation</strong> and is stored immutably on Arweave/IPFS. The entries are designed to be content-addressable and verifiable, ensuring transparency and data integrity.</p>
-<doc-anchor-target id="121-entity-entry-example-json-format">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#121-entity-entry-example-json-format">#</doc-anchor-trigger>
-        <span>12.1 Entity Entry Example (JSON format):</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-  &quot;type&quot;: &quot;Entity&quot;,
-  &quot;id&quot;: &quot;kcg:0xabc123&quot;,
-  &quot;label&quot;: &quot;Electric Vehicle&quot;,
-  &quot;attributes&quot;: {
-    &quot;category&quot;: &quot;Product&quot;,
-    &quot;manufacturer&quot;: &quot;Tesla&quot;,
-    &quot;region&quot;: &quot;Global&quot;
-  },
-  &quot;evidence&quot;: {
-    &quot;source&quot;: &quot;DoD-Query from Claude 3&quot;,
-    &quot;confidence&quot;: 0.92,
-    &quot;created_at&quot;: &quot;2025-05-14T12:34:56Z&quot;,
-    &quot;created_by&quot;: &quot;DoD-Agent:Node42&quot;
-  }
-}</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="122-relation-entry-example-json-format">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#122-relation-entry-example-json-format">#</doc-anchor-trigger>
-        <span>12.2 Relation Entry Example (JSON format):</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-  &quot;type&quot;: &quot;Relation&quot;,
-  &quot;id&quot;: &quot;kcg:0xdef456&quot;,
-  &quot;source&quot;: &quot;kcg:0xabc123&quot;,
-  &quot;target&quot;: &quot;kcg:0xdef789&quot;,
-  &quot;relation&quot;: &quot;depends_on&quot;,
-  &quot;context&quot;: &quot;Global Battery Supply Chain&quot;,
-  &quot;evidence&quot;: {
-    &quot;source&quot;: &quot;DoD-Query from GPT-4 Turbo&quot;,
-    &quot;confidence&quot;: 0.89,
-    &quot;created_at&quot;: &quot;2025-05-14T12:36:00Z&quot;,
-    &quot;created_by&quot;: &quot;DoD-Agent:Node42&quot;
-  }
-}</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="123-arweave-transaction-tags">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#123-arweave-transaction-tags">#</doc-anchor-trigger>
-        <span>12.3 Arweave Transaction Tags:</span>
-    </h3>
-</doc-anchor-target>
-<p>Each entry is accompanied by Arweave tags for indexing and searchability:</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Tag Key</th>
-<th>Example Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code v-pre>App</code></td>
-<td><code v-pre>KnowledgeCacheGraph</code></td>
-</tr>
-<tr>
-<td><code v-pre>Type</code></td>
-<td><code v-pre>Entity</code> / <code v-pre>Relation</code></td>
-</tr>
-<tr>
-<td><code v-pre>Relation</code></td>
-<td><code v-pre>depends_on</code> (for Relation type)</td>
-</tr>
-<tr>
-<td><code v-pre>SourceModel</code></td>
-<td><code v-pre>GPT-4</code>, <code v-pre>Claude 3</code></td>
-</tr>
-<tr>
-<td><code v-pre>Category</code></td>
-<td><code v-pre>SupplyChain</code>, <code v-pre>Product</code>, etc.</td>
-</tr>
-<tr>
-<td><code v-pre>Confidence</code></td>
-<td><code v-pre>0.89</code></td>
-</tr>
-<tr>
-<td><code v-pre>CreatedBy</code></td>
-<td><code v-pre>DoD-Agent:Node42</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="124-integrity-and-linking">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#124-integrity-and-linking">#</doc-anchor-trigger>
-        <span>12.4 Integrity and Linking:</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>The <code v-pre>id</code> field is derived from the Arweave transaction ID (TXID), ensuring content-addressability.</li>
-<li><code v-pre>source</code> and <code v-pre>target</code> in Relation entries refer to other Entity IDs, maintaining graph structure.</li>
-<li>Provenance data in <code v-pre>evidence</code> ensures transparency of origin and quality.</li>
-</ul>
-<doc-anchor-target id="125-storage-optimizations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#125-storage-optimizations">#</doc-anchor-trigger>
-        <span>12.5 Storage Optimizations:</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Bundling multiple entries in a single Arweave transaction via Bundlr to optimize costs.</li>
-<li>CID linkage for efficient DAG-based traversal.</li>
-</ul>
-<p>This format provides a robust, scalable method for storing and retrieving validated knowledge in a decentralized, immutable graph structure.</p>
-<doc-anchor-target id="13-tokenomics--deflation-design">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#13-tokenomics--deflation-design">#</doc-anchor-trigger>
-        <span>13. Tokenomics &amp; Deflation Design</span>
-    </h2>
-</doc-anchor-target>
-<p>To ensure the long-term sustainability and economic health of the KCG+CAG ecosystem, a carefully balanced deflationary tokenomics model is essential. This model must incentivize active participants (DoD Agents, Validators, Gateways) while controlling token supply through systematic burning mechanisms.</p>
-<doc-anchor-target id="131-sources-of-token-demand">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#131-sources-of-token-demand">#</doc-anchor-trigger>
-        <span>13.1 Sources of Token Demand</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>DoD Queries:</strong> Tokens are required for each knowledge distillation request.</li>
-<li><strong>Priority Access Fees:</strong> Premium services such as low-latency and enterprise SLAs.</li>
-<li><strong>Storage Fees:</strong> Permanent recording of KCG entries on Arweave.</li>
-<li><strong>Custom Knowledge Requests:</strong> Specialized distillation tasks.</li>
-<li><strong>Governance Participation:</strong> Token staking for protocol governance.</li>
-</ul>
-<doc-anchor-target id="132-reward-distribution-emission-side">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#132-reward-distribution-emission-side">#</doc-anchor-trigger>
-        <span>13.2 Reward Distribution (Emission Side)</span>
-    </h3>
-</doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Participant</th>
-<th>% of DoD Request Payment</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DoD Agents</td>
-<td>35-45%</td>
-</tr>
-<tr>
-<td>Validators Pool</td>
-<td>20-25%</td>
-</tr>
-<tr>
-<td>Gateway Operators</td>
-<td>10-15%</td>
-</tr>
-<tr>
-<td>Protocol Treasury</td>
-<td>10%</td>
-</tr>
-<tr>
-<td>Burn Mechanism</td>
-<td>15-20%</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>Reward shares are dynamically adjustable via governance.</li>
-<li>Validators and Agents earn proportionally to their stake, participation, and accuracy.</li>
-</ul>
-<doc-anchor-target id="133-deflationary-burn-mechanisms">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#133-deflationary-burn-mechanisms">#</doc-anchor-trigger>
-        <span>13.3 Deflationary Burn Mechanisms</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Per-Query Burn:</strong> A fixed percentage (15-20%) of tokens from every DoD request is permanently burned.</li>
-<li><strong>Dynamic Burn Adjustment:</strong> The burn rate increases if token velocity exceeds predefined thresholds.</li>
-<li><strong>Treasury Supply Burns:</strong> Regular burns from surplus treasury tokens.</li>
-<li><strong>Slashing Penalties:</strong> Validators and Agents failing quality or performance standards face token slashing and burns.</li>
-<li><strong>Voluntary Burn Programs:</strong> Users can burn tokens to increase their reputation or unlock advanced capabilities.</li>
-</ul>
-<doc-anchor-target id="134-emission-control-levers">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#134-emission-control-levers">#</doc-anchor-trigger>
-        <span>13.4 Emission Control Levers</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Decreasing Emission Over Time:</strong> Gradual reduction of reward rates to prevent long-term inflation.</li>
-<li><strong>Demand-Weighted Rewards:</strong> Adaptive reward pools based on actual network usage.</li>
-<li><strong>Staking Lockups:</strong> Time-locked rewards to reduce sell pressure and encourage long-term alignment.</li>
-</ul>
-<doc-anchor-target id="135-sustainability--scarcity-model">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#135-sustainability--scarcity-model">#</doc-anchor-trigger>
-        <span>13.5 Sustainability &amp; Scarcity Model</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Token velocity is regulated through a combination of burns, staking, and emission throttling.</li>
-<li>As the KCG cache grows, reliance on costly DoD queries diminishes, shifting token usage towards governance and staking.</li>
-<li>This ensures a net deflationary environment as adoption scales, increasing token scarcity and value.</li>
-</ul>
-<doc-anchor-target id="136-summary-flow">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#136-summary-flow">#</doc-anchor-trigger>
-        <span>13.6 Summary Flow:</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>DoD Agents:</strong> Receive tokens per query for their computational work in distilling knowledge, preparing KCG entries, and improving the knowledge base.</li>
-<li><strong>Validators Pool:</strong> Allocated tokens as compensation for verifying and maintaining the integrity of KCG entries. Their share reflects the critical role in ensuring quality and preventing spam.</li>
-<li><strong>Federated Gateways:</strong> Earn tokens for mediating Big LLM API access, performing transaction writes to Arweave/IPFS, and maintaining network infrastructure.</li>
-<li><strong>Token Burn Mechanism:</strong> Portion of tokens from each DoD query are burned, reducing circulating supply and creating deflationary pressure.</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<div class="codeblock-title">plaintext</div>
-<pre class="language-none"><code v-pre class="language-none">DoD Query Payment:
- ├── 35-45% → DoD Agents
- ├── 20-25% → Validators
- ├── 10-15% → Gateways
- ├── 10% → Protocol Treasury
- └── 15-20% → Burn (Deflation)
-
-Additional Burns:
- ├── Dynamic Burn Adjustments
- ├── Slashing &amp; Penalties
- ├── Treasury Supply Burns
- └── Voluntary Reputation Burns</code></pre>
-</doc-codeblock></div>
-<p>This tokenomics design ensures that active contributors are fairly rewarded while enforcing a robust deflationary pressure, aligning economic incentives with the growth and quality of the Knowledge Cache Graph.</p>
-<doc-anchor-target id="14-token-flow-and-reward-distribution">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#14-token-flow-and-reward-distribution">#</doc-anchor-trigger>
-        <span>14. Token Flow and Reward Distribution</span>
-    </h2>
-</doc-anchor-target>
-<p>Each DoD query initiated by a Tiny LLM involves a token payment that is distributed across ecosystem participants based on their roles and contributions:</p>
-<doc-anchor-target id="141-internal-validator-allocation">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#141-internal-validator-allocation">#</doc-anchor-trigger>
-        <span>14.1 Internal Validator Allocation:</span>
-    </h3>
-</doc-anchor-target>
-<p>Within the Validators Pool, rewards are distributed based on:</p>
-<ul>
-<li><strong>Staked Tokens:</strong> Weight of validator&#x27;s stake in the system.</li>
-<li><strong>Participation Activity:</strong> Volume and quality of validations performed.</li>
-<li><strong>Reputation &amp; Accuracy:</strong> Historical performance and adherence to protocol.</li>
-</ul>
-<p>Validators incur real computational costs, including CPU/GPU usage for semantic and reasoning checks, bandwidth for data synchronization, and storage for local indexing of KCG entries. The reward distribution ensures these operational expenses are compensated fairly.</p>
-<doc-anchor-target id="142-dynamic-complexity-adjustment">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#142-dynamic-complexity-adjustment">#</doc-anchor-trigger>
-        <span>14.2 Dynamic Complexity Adjustment:</span>
-    </h3>
-</doc-anchor-target>
-<p>DoD queries of varying complexity adjust the total reward pool:</p>
-<ul>
-<li><strong>Simple factual queries</strong> yield smaller pools.</li>
-<li><strong>Complex reasoning chains</strong> result in larger reward allocations.</li>
-</ul>
-<p>Gateways classify DoD queries into difficulty tiers to proportionally adjust token flows.</p>
-<doc-anchor-target id="143-dod-agents-performance-bonuses">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#143-dod-agents-performance-bonuses">#</doc-anchor-trigger>
-        <span>14.3 DoD Agents Performance Bonuses:</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Additional token bonuses are awarded to DoD Agents who contribute unique, novel knowledge entries.</li>
-<li>Agents demonstrating high-quality, efficient distillation benefit from governance-defined incentive multipliers.</li>
-</ul>
-<p>This dynamic, performance-based token flow ensures a fair, sustainable economic model where contributors are rewarded in proportion to their computational effort and impact on the shared knowledge base.</p>
-<doc-anchor-target id="15-advantages-of-the-kcgcag-approach">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#15-advantages-of-the-kcgcag-approach">#</doc-anchor-trigger>
-        <span>15. Advantages of the KCG+CAG Approach</span>
-    </h2>
-</doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Problem</th>
-<th>Solution with KCG+CAG</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Unscalable Tiny LLM personalization</td>
-<td>Shared, validated knowledge layer via KCG</td>
-</tr>
-<tr>
-<td>High LLM API Costs</td>
-<td>Cache hits reduce redundant expensive calls</td>
-</tr>
-<tr>
-<td>Hallucinations / Unverifiable Facts</td>
-<td>Immutable, validated knowledge entries</td>
-</tr>
-<tr>
-<td>Tiny LLM limitations</td>
-<td>Augmented with curated knowledge from KCG</td>
-</tr>
-<tr>
-<td>Lack of knowledge traceability</td>
-<td>Provenance metadata stored with each entry</td>
-</tr>
-<tr>
-<td>Centralized dependency</td>
-<td>Federated Gateway model with ZK proofs</td>
-</tr>
-<tr>
-<td>No community involvement</td>
-<td>Incentive layers for agents and validators</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="16-conclusion">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#16-conclusion">#</doc-anchor-trigger>
-        <span>16. Conclusion</span>
-    </h2>
-</doc-anchor-target>
-<p>The KCG+CAG ecosystem bridges the gap between heavy LLM inference and lightweight, efficient Tiny LLMs. By implementing a shared, verified knowledge graph, we create a self-reinforcing system where knowledge grows organically, costs decrease, and reliability improves. Distillation on Demand becomes a practical, scalable pathway to democratize edge-AI personalizing, fine-tuning and learning.</p>
-<p>In an era where millions of Tiny LLMs are deployed across personal devices, edge environments, and specialized domains, the need for scalable, efficient, and verifiable knowledge augmentation is critical. Traditional fine-tuning methods and centralized inference APIs are costly, slow, and often impractical for edge deployment.</p>
-<p>The KCG+CAG approach offers a sustainable alternative, enabling continuous learning without prohibitive computational overhead. By combining the strengths of decentralized storage, federated validation, and economic incentives, we create an ecosystem where knowledge becomes a shared, evolving resource that benefits all participants.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -1252,6 +1004,6 @@ Additional Burns:
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Litepaper", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Litepaper", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
