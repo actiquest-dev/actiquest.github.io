@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Knowledge Cache Graph (KCG) Data Model &amp; Indexing</title>
-    <meta name="title" content="Knowledge Cache Graph (KCG) Data Model & Indexing">
-    <meta name="description" content="The Knowledge Cache Graph (KCG) serves as the immutable, decentralized knowledge memory layer for the ecosystem.">
+    <title>Cache Indexing</title>
+    <meta name="title" content="Cache Indexing">
+    <meta name="description" content="In the Membria system, the \"cold\" cache layer and data versioning are managed through a multi-tiered caching architecture and the immutability of the...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.actiq.xyz/membria/kgc-indexing/">
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/kv-indexing/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.actiq.xyz/membria/kgc-indexing/">
-    <meta property="og:title" content="Knowledge Cache Graph (KCG) Data Model & Indexing">
-    <meta property="og:description" content="The Knowledge Cache Graph (KCG) serves as the immutable, decentralized knowledge memory layer for the ecosystem.">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/kv-indexing/">
+    <meta property="og:title" content="Cache Indexing">
+    <meta property="og:description" content="In the Membria system, the \"cold\" cache layer and data versioning are managed through a multi-tiered caching architecture and the immutability of the...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/kgc-indexing/">
-    <meta property="twitter:title" content="Knowledge Cache Graph (KCG) Data Model & Indexing">
-    <meta property="twitter:description" content="The Knowledge Cache Graph (KCG) serves as the immutable, decentralized knowledge memory layer for the ecosystem.">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/kv-indexing/">
+    <meta property="twitter:title" content="Cache Indexing">
+    <meta property="twitter:description" content="In the Membria system, the \"cold\" cache layer and data versioning are managed through a multi-tiered caching architecture and the immutability of the...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -221,154 +221,91 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="knowledge-cache-graph-kcg-data-model--indexing" class="break-words">
+<doc-anchor-target id="cache-indexing" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#knowledge-cache-graph-kcg-data-model--indexing">#</doc-anchor-trigger>
-        <span>Knowledge Cache Graph (KCG) Data Model &amp; Indexing</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-indexing">#</doc-anchor-trigger>
+        <span>Cache Indexing</span>
     </h1>
 </doc-anchor-target>
-<p>The Knowledge Cache Graph (KCG) serves as the immutable, decentralized knowledge memory layer for the ecosystem. It is optimized to store, retrieve, and reason over distilled knowledge efficiently, while ensuring verifiability and traceability.</p>
-<doc-anchor-target id="kcg-data-types">
+<doc-anchor-target id="hybrid-cache-management-and-data-versioning">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#kcg-data-types">#</doc-anchor-trigger>
-        <span>KCG Data Types</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-cache-management-and-data-versioning">#</doc-anchor-trigger>
+        <span>Hybrid Cache Management and Data Versioning</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="distilled-knowledge-entries">
+<p>In the Membria system, the &quot;cold&quot; cache layer and data versioning are managed through a multi-tiered caching architecture and the immutability of the Knowledge Cache Graph (KCG) on Arweave.</p>
+<doc-anchor-target id="cold-layer-cache-management">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#distilled-knowledge-entries">#</doc-anchor-trigger>
-        <span>Distilled Knowledge Entries</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cold-layer-cache-management">#</doc-anchor-trigger>
+        <span>Cold Layer Cache Management</span>
+    </h3>
+</doc-anchor-target>
+<p>The &quot;cold&quot; KV-cache layer is designed for &quot;low-frequency, outdated, or weakly relevant KV-blocks&quot;. Management involves:</p>
+<ul>
+<li><strong>Movement to Cold Layer:</strong> Entries are moved from &quot;hot&quot; and &quot;warm&quot; layers based on low usage frequency, low importance score, last accessed timestamp, and overall freshness. Gateways rank entries using a hybrid scoring model (importance x frequency x freshness) and evict or offload stale entries.</li>
+<li><strong>Storage:</strong> Outdated entries are offloaded to &quot;disk/off-chain cold storage&quot;.</li>
+<li><strong>Access and Retrieval:</strong> Data from the cold layer can be recalled if relevant topics re-emerge, using a &quot;recency-based paging&quot; mechanism.</li>
+</ul>
+<doc-anchor-target id="data-obsolescence-criteria">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data-obsolescence-criteria">#</doc-anchor-trigger>
+        <span>Data Obsolescence Criteria</span>
+    </h3>
+</doc-anchor-target>
+<p>Data in the KCG or KV-cache is considered &quot;outdated&quot; based on:</p>
+<ul>
+<li><strong>Time Since Last Access:</strong> Entries that haven&#x27;t been accessed for a long time.</li>
+<li><strong>Newer, More Relevant Information:</strong> Gateways track &quot;stale or outdated KV-blocks: old distillations no longer consistent with updated knowledge graphs or ontologies&quot;. This means if new, validated information on the same topic appears, the old information may be considered outdated.</li>
+<li><strong>Low Relevance or Utility:</strong> Entries that the system deems weakly relevant to current queries or of low importance.</li>
+<li><strong>Validation of New Information:</strong> The validator process for new knowledge implicitly helps identify outdated data if the new information refutes or replaces the old.</li>
+</ul>
+<doc-anchor-target id="handling-outdated-data-and-versioning-in-an-immutable-kcg">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#handling-outdated-data-and-versioning-in-an-immutable-kcg">#</doc-anchor-trigger>
+        <span>Handling Outdated Data and Versioning in an Immutable KCG</span>
+    </h3>
+</doc-anchor-target>
+<p>Since the KCG is stored on Arweave and is immutable, outdated entries cannot be directly deleted or modified within the KCG. Instead, the system uses the following approaches:</p>
+<ul>
+<li><strong>Creation of New Versions:</strong> When information is updated, a new entry is created in the KCG. This new entry undergoes validation by Gateways and Validators.</li>
+<li><strong>Updating Indexing Layers:</strong> While the KCG data itself is immutable, the indexing layers managed by Gateways (e.g., Gateway KV-cache, off-chain semantic indexes) are mutable. These layers are updated to point to the latest and most relevant versions of knowledge in the KCG. The &quot;Workflow Overview&quot; states that after validation, the Gateway records the entry into the KCG, and a &quot;corresponding KV entry is updated in the public KCG KV-layer for efficient future retrieval&quot;. This &quot;update&quot; likely refers to adding new pointers or updating metadata associated with pointers to immutable KCG data to ensure access to the current version.</li>
+<li><strong>Marking and Deprioritization:</strong> Outdated entries can be marked as such or deprioritized in the mutable Gateway indexes. This ensures that when a query is made, the Selective Contextual Reasoning (SCR) system retrieves the current information.</li>
+<li><strong>Semantic Overlap:</strong> Newer, more complete, or more accurate knowledge entries may semantically overlap with older ones. The older entry remains on Arweave, but the system prioritizes the newer one.</li>
+</ul>
+<p>Although the document does not explicitly mention protocols like ArFS (Arweave File System) or ArNS (Arweave Name System), the described architecture is compatible with using such systems for version management (e.g., where a name points to the TXID of the current knowledge version). This would allow for maintaining current pointers to the latest knowledge versions within immutable storage.</p>
+<doc-anchor-target id="accessing-cold-data-off-chain-cold-storage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-cold-data-off-chain-cold-storage">#</doc-anchor-trigger>
+        <span>Accessing &quot;Cold&quot; Data (Off-Chain Cold Storage)</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Core units of validated knowledge.</li>
-<li>Contain:
-<ul>
-<li>Distilled summaries.</li>
-<li>Supporting evidence and sources.</li>
-<li>Metadata (creation date, proposer, validator signatures).</li>
-<li>Optional embeddings for KV-layer indexing.</li>
+<li><strong>Latency:</strong> The document does not specify exact latency values for accessing &quot;off-chain cold storage&quot;. However, it implies that access to this layer will be slower compared to the &quot;hot&quot; and &quot;warm&quot; cache layers. Retrieving data from cold storage would impact overall response time.</li>
+<li><strong>Cost:</strong> Specific cost metrics are not detailed. Primary costs would be associated with maintaining this storage (disk space, I/O operations). The system aims to minimize calls to the cold layer through efficient management of faster cache tiers.</li>
 </ul>
-</li>
-</ul>
-<doc-anchor-target id="entities">
+<p>Thus, Membria addresses data obsolescence and versioning in the immutable KCG by creating new entries for updated information and managing access to these versions through flexible, mutable indexing and caching layers controlled by Gateways.</p>
+<doc-anchor-target id="membrias-hybrid-cache-architecture">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#entities">#</doc-anchor-trigger>
-        <span>Entities</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membrias-hybrid-cache-architecture">#</doc-anchor-trigger>
+        <span>Membria&#x27;s Hybrid Cache Architecture</span>
     </h3>
 </doc-anchor-target>
+<p>Membria employs a hybrid approach to knowledge storage and caching, leveraging both on-chain immutability and off-chain speed and flexibility.</p>
+<p>The core, immutable Knowledge Cache Graph (KCG) is designed for decentralized networks like Arweave, including a &quot;Public KV-layer in KCG&quot; that is part of this immutable, community-verified cache.</p>
+<p>However, to ensure speed, efficiency, and flexibility, Membria also utilizes several off-chain caching and indexing layers managed by various system participants:</p>
 <ul>
-<li>Discrete concepts, objects, or named entities.</li>
-<li>Serve as graph nodes for semantic linking.</li>
-<li>Example: <code v-pre>&quot;Sparse Transformer&quot;</code>, <code v-pre>&quot;Switch Transformer&quot;</code>.</li>
+<li><strong>Gateway KV-cache:</strong> This is a &quot;high-performance, shared caching of validated knowledge and reasoning shortcuts&quot; managed by Gateways. It resides on the Gateway&#x27;s infrastructure, not on Arweave, and provides fast access to frequently requested data.</li>
+<li><strong>Gateway Off-Chain Index Layer:</strong> Gateways maintain &quot;lightweight off-chain semantic graphs, vector indexes, and retrieval services&quot;. These indexes are also off-chain and accelerate the Selective Contextual Reasoning (SCR) pipelines.</li>
+<li><strong>On-device Tiny LLM KV-cache:</strong> This is a &quot;fast, personalized cache of frequently used knowledge&quot; located directly on user devices.</li>
+<li><strong>Off-chain cold storage:</strong> The &quot;KV Cache Orchestration&quot; section mentions that Gateways &quot;evict or offload stale entries to disk/off-chain cold storage&quot;. This storage is used by Gateways for data that has become less relevant to their active (&quot;hot&quot; or &quot;warm&quot;) caches, and it is also off-chain.</li>
 </ul>
-<doc-anchor-target id="relations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#relations">#</doc-anchor-trigger>
-        <span>Relations</span>
-    </h3>
-</doc-anchor-target>
+<p>This hybrid architecture means:</p>
 <ul>
-<li>Semantic links between entities and knowledge entries.</li>
-<li>Types:
-<ul>
-<li><code v-pre>isA</code></li>
-<li><code v-pre>relatedTo</code></li>
-<li><code v-pre>usedBy</code></li>
+<li><strong>On-chain (Arweave):</strong> Stores the primary, immutable, and verifiable knowledge layer (KCG), including the public KV-layer.</li>
+<li><strong>Off-chain:</strong> Various levels of caching and indexing exist (on Gateways, on devices, in Gateway cold storage) to provide fast access, personalization, and efficient data lifecycle management. These off-chain systems can store copies of frequently used data from Arweave, derived data (e.g., indexes), or temporary data.</li>
 </ul>
-</li>
-<li>Include descriptions, confidence scores, and provenance data.</li>
-</ul>
-<doc-anchor-target id="reasoning-chains">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reasoning-chains">#</doc-anchor-trigger>
-        <span>Reasoning Chains</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Multi-step logical explanations or derivations.</li>
-<li>Stored as ordered steps with supporting evidence.</li>
-<li>Enable Tiny LLMs to shortcut complex reasoning by using pre-validated chains.</li>
-</ul>
-<doc-anchor-target id="faq-patterns">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#faq-patterns">#</doc-anchor-trigger>
-        <span>FAQ Patterns</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Standardized question-answer pairs.</li>
-<li>Cover frequent queries and enable ultra-fast retrieval for common reasoning needs.</li>
-</ul>
-<doc-anchor-target id="data-format">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data-format">#</doc-anchor-trigger>
-        <span>Data Format</span>
-    </h2>
-</doc-anchor-target>
-<ul>
-<li>All data is stored as <strong>JSON-LD</strong> following linked data principles.</li>
-<li>Ensures compatibility with semantic web standards and decentralized querying.</li>
-</ul>
-<doc-anchor-target id="indexing-strategies">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#indexing-strategies">#</doc-anchor-trigger>
-        <span>Indexing Strategies</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="kv-cache-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#kv-cache-layer">#</doc-anchor-trigger>
-        <span>KV-Cache Layer</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Distilled entries and reasoning chains are indexed by:
-<ul>
-<li>Query embeddings.</li>
-<li>Canonical questions.</li>
-<li>Topics and categories.</li>
-</ul>
-</li>
-<li>This layer supports ultra-fast retrieval by agents and Tiny LLMs.</li>
-</ul>
-<doc-anchor-target id="semantic-graph-indexes">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#semantic-graph-indexes">#</doc-anchor-trigger>
-        <span>Semantic Graph Indexes</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Gateways and off-chain nodes maintain semantic graphs of relations and entities.</li>
-<li>These indexes support complex reasoning paths and chaining queries.</li>
-</ul>
-<doc-anchor-target id="proof-of-knowledge-and-metadata">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#proof-of-knowledge-and-metadata">#</doc-anchor-trigger>
-        <span>Proof-of-Knowledge and Metadata</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Each entry contains:
-<ul>
-<li>TXID from Arweave (content-addressed, immutable).</li>
-<li>Validator signatures and consensus proofs.</li>
-<li>Timestamps and provenance records.</li>
-</ul>
-</li>
-</ul>
-<doc-anchor-target id="key-benefits">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key-benefits">#</doc-anchor-trigger>
-        <span>Key Benefits</span>
-    </h2>
-</doc-anchor-target>
-<ul>
-<li><strong>Efficient retrieval</strong> for Tiny LLMs without requiring expensive Big LLM inference.</li>
-<li><strong>Verifiability and immutability</strong> via Arweave/IPFS storage.</li>
-<li><strong>Semantic reasoning-ready</strong> via graph relations and reasoning chains.</li>
-<li><strong>Optimized for caching and reuse</strong> via KV-layer and embeddings.</li>
-</ul>
+<p>The off-chain components are crucial for system performance, allowing Tiny LLMs to quickly access knowledge without needing constant direct interaction with the (potentially slower) Arweave storage for every operation.</p>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -378,20 +315,20 @@
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/validator-infrastructure/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kcg-entry-format/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Validation & Consensus</span>
+                                                <span class="block mt-1">KCG Entry Format</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kcg-entry-format/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/tokenomics/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">KCG Entry Format</span>
+                                                <span class="block mt-1">Tokenomics</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -435,6 +372,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Graph Data Model", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Cache Indexing", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
