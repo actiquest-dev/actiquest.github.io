@@ -1,8 +1,38 @@
 ---
 icon: cache
-label: Cache Indexing
+label: Hybrid Cache
 order: 89
 ---
+
+## Hybrid KV-Cache Architecture
+
+### On-Device Tiny LLM KV-Cache
+- **Location**: Directly on user devices.
+- **Purpose**: Fast, personalized retrieval for frequent or user-specific knowledge.
+- **Latency**: Sub-20 ms access time.
+
+### Gateway KV-Cache
+- **Location**: Gateways or local edge servers.
+- **Purpose**: Shared, community-level cache of validated knowledge and reasoning chains.
+- **Latency**: 50–200 ms access time.
+
+### Public KV-Layer in KCG
+- **Location**: Immutable storage (Arweave/IPFS).
+- **Purpose**: Community-validated, permanent cache of distilled knowledge and reasoning blocks.
+- **Latency**: 300–1000 ms (direct access), faster via Gateway indexes.
+
+## Gateway Off-Chain Index Layer
+- Gateways maintain lightweight off-chain semantic graphs, vector indexes, and retrieval services.
+- These indexes accelerate SCR pipelines, enabling sub-second retrieval even from large, decentralized knowledge graphs.
+- They also serve as a **Federated Knowledge Mesh**, ensuring redundancy, locality, and resilience.
+
+## Key Benefits of SCR and Advanced Caching
+- **Up to 80% of reasoning queries served locally or via Gateway SCR pipelines**, drastically reducing Big LLM API calls.
+- **Dynamic reasoning capabilities without retraining or fine-tuning**.
+- **Privacy-preserving local reasoning with fallback to decentralized DoD processes**.
+- **Efficient caching and routing optimized for Tiny LLM environments**.
+
+By combining SCR with multi-layered caching, KCG+CAG establishes an **agile, self-learning reasoning infrastructure**, enabling Tiny LLMs to stay fresh, responsive, and efficient at the edge.
 
 ## Hybrid Cache Management and Data Versioning
 
