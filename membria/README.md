@@ -37,7 +37,7 @@ This documentation describes the architecture, purpose, and benefits of Cache-Au
 10. [CAG Storage, Query & Privacy Architecture](storage-query-privacy.md)
    - 10.1 CAG Storage in Arweave
    - 10.2 Fast Querying and Relationship Analysis (Graph Layer)
-11. [KCG Indexing with The Graph Subgraph](kcg-indexing.md)
+11. [KCG Indexing](kcg-indexing.md)
    - 11.1 Storage Layer: Arweave
    - 11.2 Index & Query Layer: The Graph Subgraph
    - 11.3 GraphQL API Interface
