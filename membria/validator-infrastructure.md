@@ -1,5 +1,5 @@
 ---
 icon: star
-label: Alternative Methods
+label: Validators
 order: 91
 ---
