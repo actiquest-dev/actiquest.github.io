@@ -9,21 +9,24 @@
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>TBA SOON</title>
-    <meta name="title" content="TBA SOON">
+    <title>Self-Knowledge Checkpoint</title>
+    <meta name="title" content="Self-Knowledge Checkpoint">
+    <meta name="description" content="This section outlines how Membria's DoD agent determines the optimal path to answering a user query.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.actiq.xyz/getting-started/incentives/">
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/self-knowledge/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.actiq.xyz/getting-started/incentives/">
-    <meta property="og:title" content="TBA SOON">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/self-knowledge/">
+    <meta property="og:title" content="Self-Knowledge Checkpoint">
+    <meta property="og:description" content="This section outlines how Membria's DoD agent determines the optimal path to answering a user query.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.actiq.xyz/getting-started/incentives/">
-    <meta property="twitter:title" content="TBA SOON">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/self-knowledge/">
+    <meta property="twitter:title" content="Self-Knowledge Checkpoint">
+    <meta property="twitter:description" content="This section outlines how Membria's DoD agent determines the optimal path to answering a user query.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -33,6 +36,7 @@
     <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802634977155" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802634977155" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802634977155" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,12 +222,172 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tba-soon" class="break-words">
+<doc-anchor-target id="self-knowledge-checkpoint" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tba-soon">#</doc-anchor-trigger>
-        <span>TBA SOON</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#self-knowledge-checkpoint">#</doc-anchor-trigger>
+        <span>Self-Knowledge Checkpoint</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="local-evaluation-and-self-knowledge-checkpoint-for-dod-responses">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#local-evaluation-and-self-knowledge-checkpoint-for-dod-responses">#</doc-anchor-trigger>
+        <span>Local Evaluation and Self-Knowledge Checkpoint for DoD Responses</span>
+    </h2>
+</doc-anchor-target>
+<p>This section outlines how Membria&#x27;s DoD agent determines the optimal path to answering a user query. It uses a local Self-Knowledge Checkpoint module to decide whether the query can be answered from internal knowledge, from a local RAG system, or requires external DoD inference. All reasoning is performed locally using a lightweight reward model (TinyRM), a local SLM, and optional use of the Knowledge Cache Graph (KCG).</p>
+<doc-anchor-target id="objective">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#objective">#</doc-anchor-trigger>
+        <span>Objective</span>
+    </h3>
+</doc-anchor-target>
+<p>Efficiently select the most accurate and useful answer while minimizing unnecessary computation and external calls. The Self-Knowledge Checkpoint module ensures that retrieval and generation are invoked only when needed.</p>
+<doc-anchor-target id="architecture-overview">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture-overview">#</doc-anchor-trigger>
+        <span>Architecture Overview</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">User Query
+   │
+   ▼
+Self-Knowledge Checkpoint (SLM)
+   │
+   ├─ LOCAL → SLM Answer Generation
+   │
+   ├─ CACHE → Query Knowledge Cache Graph (KCG)
+   │
+   ├─ LOCAL RAG → Local Retrieval-Augmented Generation
+   │
+   └─ DOD → Distillation-on-Demand (Big LLMs)
+             │
+             ▼
+     Receive 3–4 LLM Answers
+             ▼
+   TinyRM Scoring + Optional SLM Tie-Break
+             ▼
+   Best Answer → Output + Optional Caching in KCG</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="components">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#components">#</doc-anchor-trigger>
+        <span>Components</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Self-Knowledge Checkpoint</strong><br />
+A local SLM that decides whether to answer using built-in knowledge, the cache, a local RAG system, or to escalate to external distillation. This step prevents unnecessary computation and improves response time.</p>
+</li>
+<li><p><strong>Local RAG Module</strong><br />
+If needed, a local vector database (e.g., FAISS, Qdrant) is queried using the input prompt to provide retrieved context for the SLM to use in answer generation.</p>
+</li>
+<li><p><strong>TinyRM Scoring</strong><br />
+A small reward model evaluates answers for quality and relevance based on the original query.</p>
+</li>
+<li><p><strong>SLM Tie-Breaker</strong><br />
+If scores are inconclusive, the SLM selects the most accurate answer with reasoning.</p>
+</li>
+<li><p><strong>Caching</strong><br />
+Final verified answers may be stored in KCG for future reuse.</p>
+</li>
+</ol>
+<doc-anchor-target id="pseudocode-example">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pseudocode-example">#</doc-anchor-trigger>
+        <span>Pseudocode Example</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">decision = self_knowledge_checkpoint(query)
+
+if decision == &quot;LOCAL&quot;:
+    return slm_answer(query)
+elif decision == &quot;CACHE&quot;:
+    context = query_kcg(query)
+    return slm_with_context(query, context)
+elif decision == &quot;LOCAL_RAG&quot;:
+    context = query_local_vectordb(query)
+    return slm_with_context(query, context)
+elif decision == &quot;DOD&quot;:
+    answers = call_big_llms(query)
+    scores = [tinyrm_score(query, a) for a in answers]
+    if max(scores) - sorted(scores)[-2] &lt; 0.1:
+        return slm_compare_all(query, answers)
+    else:
+        return answers[argmax(scores)]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="total-latency-estimate">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#total-latency-estimate">#</doc-anchor-trigger>
+        <span>Total Latency Estimate</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Step</th>
+<th>Estimated Delay</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Self-Knowledge Checkpoint (SLM)</td>
+<td>100–300 ms</td>
+</tr>
+<tr>
+<td>TinyRM Scoring</td>
+<td>200–400 ms</td>
+</tr>
+<tr>
+<td>SLM Tie-break Reasoning</td>
+<td>300–600 ms</td>
+</tr>
+<tr>
+<td>KCG Retrieval (if used)</td>
+<td>200–500 ms</td>
+</tr>
+<tr>
+<td>Local RAG Retrieval</td>
+<td>150–400 ms</td>
+</tr>
+<tr>
+<td>DoD Request (optional, external)</td>
+<td>800–2000 ms</td>
+</tr>
+<tr>
+<td>Output &amp; Caching</td>
+<td>50–100 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="overall-delay-summary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overall-delay-summary">#</doc-anchor-trigger>
+        <span>Overall Delay Summary</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Local only with cache or RAG: 0.8–1.6 seconds</li>
+<li>With external DoD inference: 2.5–5 seconds</li>
+<li>Fully local with fallback: 1.0–1.8 seconds</li>
+</ul>
+<doc-anchor-target id="benefits">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#benefits">#</doc-anchor-trigger>
+        <span>Benefits</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Privacy</strong>: All routing logic is local and intelligent.</li>
+<li><strong>Speed</strong>: Avoids unnecessary retrieval or external calls.</li>
+<li><strong>Quality</strong>: Scales from built-in knowledge to local RAG to global distillation.</li>
+<li><strong>Learning</strong>: Answer paths and outputs improve the cache over time.</li>
+</ul>
+<p>This modular architecture allows Membria agents to act with contextual intelligence and progressive autonomy while maintaining trust and performance across environments.</p>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -233,20 +397,20 @@
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../getting-started/faq/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/gateway-discovery/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">FAQ</span>
+                                                <span class="block mt-1">Gateway Discovery</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/token-flow/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Membria</span>
+                                                <span class="block mt-1">Token Flow</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -290,6 +454,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tokenized Incentives", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Self-Knowledge Checkpoint", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
