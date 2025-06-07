@@ -1,6 +1,6 @@
 ---
 icon: workflow
-label: Workwlow
+label: Workflow
 order: 92
 ---
 # Workflow Overview
