@@ -1,5 +1,5 @@
 ---
-icon: book-open
+icon: book
 label: Alternative Methods
 ---
 
