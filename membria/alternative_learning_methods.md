@@ -1,7 +1,7 @@
 ---
 icon: book
 label: Alternative Methods
-order: 97
+order: 96
 ---
 
 # Alternative Knowledge Learning Methods
