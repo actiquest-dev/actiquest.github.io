@@ -1,6 +1,7 @@
 ---
 icon: check
 label: Advantages
+order: 77
 ---
 
 # Advantages of the KCG+CAG Approach
