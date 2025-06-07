@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802637147814">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802637522113">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>SCR Reasoning</title>
-    <meta name="title" content="SCR Reasoning">
+    <title>Selective Contextual Reasoning (SCR)</title>
+    <meta name="title" content="Selective Contextual Reasoning (SCR)">
+    <meta name="description" content="Selective Contextual Reasoning is Membria’s method for delivering fast, context-aware answers without overwhelming Tiny Language Models.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/scr-reasoning/">
@@ -18,21 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/scr-reasoning/">
-    <meta property="og:title" content="SCR Reasoning">
+    <meta property="og:title" content="Selective Contextual Reasoning (SCR)">
+    <meta property="og:description" content="Selective Contextual Reasoning is Membria’s method for delivering fast, context-aware answers without overwhelming Tiny Language Models.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/scr-reasoning/">
-    <meta property="twitter:title" content="SCR Reasoning">
+    <meta property="twitter:title" content="Selective Contextual Reasoning (SCR)">
+    <meta property="twitter:description" content="Selective Contextual Reasoning is Membria’s method for delivering fast, context-aware answers without overwhelming Tiny Language Models.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802637147814" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802637522113" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802637147814" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802637522113" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802637147814" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802637522113" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,12 +221,101 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="scr-reasoning" class="break-words">
+<doc-anchor-target id="selective-contextual-reasoning-scr" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scr-reasoning">#</doc-anchor-trigger>
-        <span>SCR Reasoning</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selective-contextual-reasoning-scr">#</doc-anchor-trigger>
+        <span>Selective Contextual Reasoning (SCR)</span>
     </h1>
 </doc-anchor-target>
+<p>Selective Contextual Reasoning is Membria’s method for delivering fast, context-aware answers without overwhelming Tiny Language Models. SCR retrieves only the most relevant knowledge fragments, confirms them, and injects them into the prompt in a structured way.</p>
+<doc-anchor-target id="core-steps">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#core-steps">#</doc-anchor-trigger>
+        <span>Core Steps</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Semantic Retrieval</strong><br />
+The agent searches its local KV cache and the nearest gateway index for high-similarity chunks related to the current query.</p>
+</li>
+<li><p><strong>Filtering and Deduplication</strong><br />
+Retrieved chunks are ranked by freshness, confidence and semantic distance. Duplicates and low-scoring items are discarded.</p>
+</li>
+<li><p><strong>Context Assembly</strong><br />
+The agent builds a compact prompt buffer composed of:</p>
+<ul>
+<li>static facts (long-term)</li>
+<li>dynamic facts (query-specific)</li>
+<li>short recall from recent turns</li>
+</ul>
+</li>
+<li><p><strong>Local Inference</strong><br />
+The Tiny LM receives the trimmed context and generates a response. Because the prompt is lean, latency stays sub-200 ms even on modest hardware.</p>
+</li>
+<li><p><strong>Fallback to DoD</strong><br />
+If the model’s confidence is below threshold or a cache miss occurs, the agent triggers a Distillation-on-Demand cycle with a Big LLM.</p>
+</li>
+</ol>
+<doc-anchor-target id="segmented-kv-buffer">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#segmented-kv-buffer">#</doc-anchor-trigger>
+        <span>Segmented KV Buffer</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Segment</th>
+<th>Content Type</th>
+<th>Typical TTL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Session Memory</td>
+<td>Recent dialog turns</td>
+<td>Seconds to hours</td>
+</tr>
+<tr>
+<td>Local Cache</td>
+<td>Personal or domain data</td>
+<td>Hours to days</td>
+</tr>
+<tr>
+<td>Global Cache</td>
+<td>Gateway / KCG facts</td>
+<td>Days to weeks</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A scheduler prioritizes tokens from the highest-value segments until the model’s context limit is reached.</p>
+<doc-anchor-target id="performance-advantages">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#performance-advantages">#</doc-anchor-trigger>
+        <span>Performance Advantages</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Latency</strong> Retrieval and inference complete in &lt; 200 ms on edge devices.</li>
+<li><strong>Token Savings</strong> Up to 80 percent fewer Big-LLM calls versus naive RAG.</li>
+<li><strong>Personalization</strong> Local cache keeps user-specific facts close to the model.</li>
+<li><strong>Privacy</strong> Only distilled context leaves the device when fallback is needed.</li>
+</ul>
+<doc-anchor-target id="implementation-notes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#implementation-notes">#</doc-anchor-trigger>
+        <span>Implementation Notes</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Embedding search uses HNSW or Faiss for sub-millisecond nearest-neighbor lookups.</li>
+<li>Filtering relies on cosine similarity plus freshness weighting.</li>
+<li>Prompt budgets are enforced by a hard token cap; excess chunks are paged out.</li>
+<li>SCR runs in a separate thread so UI latency remains low.</li>
+</ul>
+<p>Selective Contextual Reasoning turns Tiny LMs into efficient, privacy-preserving assistants capable of answering most queries without expensive cloud inference.</p>
 
                                 
                                 <!-- Required only on API pages -->
