@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802629936793">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802630369152">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Architecture</title>
-    <meta name="title" content="Architecture">
+    <title>Technical Architecture Overview</title>
+    <meta name="title" content="Technical Architecture Overview">
+    <meta name="description" content="The KCG+CAG ecosystem is composed of several interconnected layers and actors, forming a decentralized, efficient, and verifiable knowledge reasoning...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/technical-architecture/">
@@ -18,21 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/technical-architecture/">
-    <meta property="og:title" content="Architecture">
+    <meta property="og:title" content="Technical Architecture Overview">
+    <meta property="og:description" content="The KCG+CAG ecosystem is composed of several interconnected layers and actors, forming a decentralized, efficient, and verifiable knowledge reasoning...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/technical-architecture/">
-    <meta property="twitter:title" content="Architecture">
+    <meta property="twitter:title" content="Technical Architecture Overview">
+    <meta property="twitter:description" content="The KCG+CAG ecosystem is composed of several interconnected layers and actors, forming a decentralized, efficient, and verifiable knowledge reasoning...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802629936793" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802630369152" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802629936793" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802630369152" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802629936793" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802630369152" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,12 +221,114 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="architecture" class="break-words">
+<doc-anchor-target id="technical-architecture-overview" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture">#</doc-anchor-trigger>
-        <span>Architecture</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#technical-architecture-overview">#</doc-anchor-trigger>
+        <span>Technical Architecture Overview</span>
     </h1>
 </doc-anchor-target>
+<p>The KCG+CAG ecosystem is composed of several interconnected layers and actors, forming a decentralized, efficient, and verifiable knowledge reasoning pipeline optimized for Tiny LLMs.</p>
+<doc-anchor-target id="components-overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#components-overview">#</doc-anchor-trigger>
+        <span>Components Overview</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="knowledge-cache-graph-kcg">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#knowledge-cache-graph-kcg">#</doc-anchor-trigger>
+        <span>Knowledge Cache Graph (KCG)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Immutable Knowledge Layer</strong>: Stored on Arweave.</li>
+<li><strong>Stores</strong>:
+<ul>
+<li>Distilled knowledge entries (facts, QA pairs, reasoning chains).</li>
+<li>Semantic relations and ontologies.</li>
+<li>KV-cache entries for fast retrieval (keyed by embeddings, queries, or topics).</li>
+<li>Proof-of-knowledge and validator signatures.</li>
+</ul>
+</li>
+<li><strong>Public and verifiable</strong>: Accessible by any Gateway, agent, or user.</li>
+</ul>
+<doc-anchor-target id="cache-augmented-generation-cag-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-augmented-generation-cag-layer">#</doc-anchor-trigger>
+        <span>Cache-Augmented Generation (CAG) Layer</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Reasoning Layer</strong> on top of KCG and KV-caches.</li>
+<li><strong>Enables Tiny LLMs to perform fast retrieval and reasoning over verified knowledge without retraining</strong>.</li>
+<li>Utilizes <strong>Selective Contextual Reasoning (SCR)</strong> pipelines:
+<ul>
+<li>Semantic retrieval.</li>
+<li>Filtering and confirmation.</li>
+<li>Context-enriched generation.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="distillation-on-demand-dod-agents">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#distillation-on-demand-dod-agents">#</doc-anchor-trigger>
+        <span>Distillation on Demand (DoD) Agents</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Specialized agents or Tiny LLMs acting as initiators of DoD queries.</li>
+<li>Responsible for detecting outdated knowledge, gaps, or novel queries.</li>
+<li>Orchestrate SCR reasoning pipelines.</li>
+<li>Propose distilled knowledge entries to Gateways for validation.</li>
+</ul>
+<doc-anchor-target id="gateways">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gateways">#</doc-anchor-trigger>
+        <span>Gateways</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Federated nodes acting as intermediaries between DoD agents and KCG.</li>
+<li>Responsible for:
+<ul>
+<li>Knowledge validation and packaging.</li>
+<li>Recording entries into KCG.</li>
+<li>Managing off-chain semantic indexes and vector stores for ultra-fast retrieval.</li>
+<li>Serving enriched knowledge and SCR-ready prompts to Tiny LLMs and agents.</li>
+</ul>
+</li>
+<li>Gateways control write-access to KCG and enforce quality standards.</li>
+</ul>
+<doc-anchor-target id="validator-nodes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#validator-nodes">#</doc-anchor-trigger>
+        <span>Validator Nodes</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Participate in consensus voting, knowledge verification, and proof-of-knowledge processes.</li>
+<li>Ensure correctness, prevent spam, and provide auditability.</li>
+<li>Optionally contribute to off-chain indexing or SCR pre-computation services.</li>
+</ul>
+<doc-anchor-target id="hybrid-kv-cache-architecture">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-kv-cache-architecture">#</doc-anchor-trigger>
+        <span>Hybrid KV-Cache Architecture</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>On-device Tiny LLM KV-cache</strong>: Fast, personalized cache of frequently used knowledge.</li>
+<li><strong>Gateway KV-cache</strong>: High-performance, shared caching of validated knowledge and reasoning shortcuts.</li>
+<li><strong>Public KV-layer in KCG</strong>: Immutable, community-validated cache ensuring knowledge persistence and transparency.</li>
+</ul>
+<hr>
+<p>This modular, multi-layered architecture ensures:</p>
+<ul>
+<li><strong>Tiny LLMs can reason, learn, and update dynamically without retraining.</strong></li>
+<li><strong>Gateways and validators enforce knowledge quality and validation.</strong></li>
+<li><strong>Caching at multiple layers reduces inference costs, latency, and dependence on Big LLMs.</strong></li>
+</ul>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
