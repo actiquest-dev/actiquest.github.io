@@ -4,11 +4,11 @@ label: Litepaper
 order: 133
 ---
 
-# **Membria: A Decentralized Knowledge Framework for Tiny LLMs**
+# Membria: A Decentralized Knowledge Framework for Tiny LLMs
 
-## **Part 1: Vision and Problem Statement**
+## Part 1: Vision and Problem Statement
 
-### **1.1. Executive Summary**
+### 1.1. Executive Summary
 
 The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge freshness, and reasoning capabilities. While millions of users deploy these models for everyday tasks, their ability to learn and reason remains limited, requiring costly and slow interventions via centralized APIs or fine-tuning.
 
@@ -16,7 +16,7 @@ We introduce Membria, a decentralized, verifiable, and efficient knowledge reaso
 
 By creating an ecosystem where knowledge grows, self-validates, and becomes reusable, Membria transforms AI reasoning into an open, democratic, and self-improving infrastructure for millions of Tiny LLMs.
 
-### **1.2. The Problem with On-Device AI**
+### 1.2. The Problem with On-Device AI
 
 The rise of Tiny LLMs is transforming the AI landscape by bringing generative intelligence to billions of devices. However, this explosion of local inference introduces fundamental bottlenecks:
 
@@ -27,7 +27,7 @@ The rise of Tiny LLMs is transforming the AI landscape by bringing generative in
 
 These limitations block the scalability of Tiny LLM reasoning capabilities, fragment knowledge across devices, and create systemic inefficiencies. There is a critical need for a new approach where Tiny LLMs can dynamically acquire, reason over, and integrate fresh, verified knowledge without retraining, centralization, privacy loss, or inefficiency.
 
-### **1.3. Membria's Core Capabilities and Value Proposition**
+### 1.3. Membria's Core Capabilities and Value Proposition
 
 The primary purpose of integrating a system like Membria with Tiny LLMs stems from the need to overcome their inherent limitations without losing their efficiency advantages.
 
