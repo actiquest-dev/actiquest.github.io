@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802629682359">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802629812588">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Capabilities</title>
-    <meta name="title" content="Capabilities">
+    <title>Membria&#39;s Core Capabilities for Tiny LMs</title>
+    <meta name="title" content="Membria's Core Capabilities for Tiny LMs">
+    <meta name="description" content="This outlines what Tiny LLMs (4-30B parameters) can typically do alone versus what they can achieve when integrated with a knowledge/context...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/capabilities/">
@@ -18,21 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/capabilities/">
-    <meta property="og:title" content="Capabilities">
+    <meta property="og:title" content="Membria's Core Capabilities for Tiny LMs">
+    <meta property="og:description" content="This outlines what Tiny LLMs (4-30B parameters) can typically do alone versus what they can achieve when integrated with a knowledge/context...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/capabilities/">
-    <meta property="twitter:title" content="Capabilities">
+    <meta property="twitter:title" content="Membria's Core Capabilities for Tiny LMs">
+    <meta property="twitter:description" content="This outlines what Tiny LLMs (4-30B parameters) can typically do alone versus what they can achieve when integrated with a knowledge/context...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802629682359" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802629812588" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802629682359" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802629812588" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802629682359" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802629812588" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,12 +221,104 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="capabilities" class="break-words">
+<doc-anchor-target id="membrias-core-capabilities-for-tiny-lms" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#capabilities">#</doc-anchor-trigger>
-        <span>Capabilities</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membrias-core-capabilities-for-tiny-lms">#</doc-anchor-trigger>
+        <span>Membria&#x27;s Core Capabilities for Tiny LMs</span>
     </h1>
 </doc-anchor-target>
+<p>This outlines what Tiny LLMs (4-30B parameters) can typically do alone versus what they can achieve when integrated with a knowledge/context augmentation system like Membria.</p>
+<doc-anchor-target id="standalone-capabilities-without-membriakcgcag">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#standalone-capabilities-without-membriakcgcag">#</doc-anchor-trigger>
+        <span>Standalone Capabilities (Without Membria/KCG/CAG)</span>
+    </h2>
+</doc-anchor-target>
+<p>Tiny LLMs, despite their smaller size compared to massive models, are inherently capable of various tasks based on their training data. Their strengths lie in <strong>pattern recognition, language understanding, and generation within the scope of their pre-trained knowledge</strong>.</p>
+<p>Typical standalone tasks include:</p>
+<ul>
+<li><strong>General Text Generation:</strong> Creating coherent text, writing assistance, drafting emails or simple content based on general prompts.</li>
+<li><strong>Basic Summarization:</strong> Condensing provided text into shorter versions, capturing main ideas from the input.</li>
+<li><strong>Simple Q&amp;A:</strong> Answering questions whose answers are likely contained within their general training data (common knowledge up to their training cutoff date).</li>
+<li><strong>Language Tasks:</strong> Translation (for multilingual models), sentiment analysis, grammar correction, and text classification on familiar topics.</li>
+<li><strong>Instruction Following (for fine-tuned models):</strong> Executing commands on provided text, such as reformatting, style transfer, or extracting specific, explicitly stated information.</li>
+<li><strong>Limited Reasoning:</strong> Performing simple reasoning tasks if the concepts and relationships are well-represented in their training.</li>
+</ul>
+<p>However, standalone Tiny LLMs are <strong>limited by</strong>:</p>
+<ul>
+<li>Their <strong>static internal knowledge</strong> (frozen at the time of training).</li>
+<li>A higher propensity for <strong>hallucination</strong> when asked about topics outside their training or requiring up-to-date information.</li>
+<li>Difficulty with tasks requiring deep, <strong>domain-specific knowledge</strong> not extensively covered in their general training.</li>
+<li>Inability to access or process <strong>private, real-time, or external unstructured data sources</strong>.</li>
+</ul>
+<hr>
+<doc-anchor-target id="enhanced-tiny-lm-capabilities">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enhanced-tiny-lm-capabilities">#</doc-anchor-trigger>
+        <span>Enhanced Tiny LM Capabilities</span>
+    </h2>
+</doc-anchor-target>
+<p>Integrating a Tiny LLM with a system like <strong>Membria</strong> (acting as a Knowledge-Context Graph or Context Augmented Generation engine) significantly expands its capabilities by providing it with <strong>relevant, timely, and specific context on-demand</strong>.</p>
+<p>Tasks and improvements enabled by Membria include:</p>
+<ul>
+<li><strong>Factually Grounded Q&amp;A:</strong>
+<ul>
+<li>Answering questions based on specific, up-to-date external documents or databases (e.g., company policies, product specifications, recent news).</li>
+<li>Drastically reducing hallucinations by providing verifiable information.</li>
+</ul>
+</li>
+<li><strong>Context-Aware Summarization &amp; Analysis:</strong>
+<ul>
+<li>Summarizing large volumes of external or private documents that the LLM hasn&#x27;t been trained on.</li>
+<li>Performing analysis (e.g., sentiment, trends) on specific datasets provided by Membria.</li>
+</ul>
+</li>
+<li><strong>Personalized Interactions:</strong>
+<ul>
+<li>Personalized responses or recommendations based on user history or private contextual data managed by Membria.</li>
+</ul>
+</li>
+<li><strong>Complex, Multi-Turn Conversations:</strong>
+<ul>
+<li>Maintaining coherence and relevance over longer interactions by using Membria to store and retrieve conversation history and related contextual information.</li>
+</ul>
+</li>
+<li><strong>Domain-Specific Expertise:</strong>
+<ul>
+<li>Functioning as an expert in niche domains (e.g., legal, medical, engineering) by accessing and reasoning over specialized knowledge bases fed through Membria.</li>
+<li>Understanding and using enterprise-specific jargon and processes.</li>
+</ul>
+</li>
+<li><strong>Real-Time Information Processing:</strong>
+<ul>
+<li>Incorporating live data feeds or recently updated information into responses and analyses.</li>
+</ul>
+</li>
+<li><strong>Enhanced Reasoning over Data:</strong>
+<ul>
+<li>Answering complex queries that require synthesizing information from multiple sources provided by Membria.</li>
+<li>Performing tasks that require understanding relationships within structured and unstructured data.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<doc-anchor-target id="why-membria-is-valuable-for-tiny-lms">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-membria-is-valuable-for-tiny-lms">#</doc-anchor-trigger>
+        <span>Why Membria is Valuable for Tiny LMs</span>
+    </h2>
+</doc-anchor-target>
+<p>The primary purpose of integrating a system like Membria with Tiny LLMs stems from the need to <strong>overcome their inherent limitations without losing their efficiency advantages</strong>.</p>
+<ol>
+<li><strong>Compensating for Limited Internal Knowledge:</strong> Tiny LLMs have a smaller knowledge base than massive models. Membria acts as an &quot;external brain,&quot; providing vast amounts of relevant information precisely when needed, making the Tiny LLM behave as if it knows much more.</li>
+<li><strong>Ensuring Factual Accuracy &amp; Reducing Hallucinations:</strong> By grounding responses in verifiable data retrieved by Membria, the reliability of the Tiny LLM increases significantly, making it suitable for enterprise and critical applications.</li>
+<li><strong>Enabling Access to Private &amp; Dynamic Data:</strong> Standalone LLMs cannot access proprietary company data or real-time information. Membria bridges this gap, allowing Tiny LLMs to operate on private, secure, and up-to-the-minute data.</li>
+<li><strong>Maintaining Efficiency &amp; Cost-Effectiveness:</strong> Instead of training or fine-tuning massive LLMs for every specific domain or dataset (which is expensive and time-consuming), Membria allows organizations to use more agile and cost-effective Tiny LLMs augmented with specific knowledge. This is often a more scalable approach.</li>
+<li><strong>Adaptability &amp; Scalability:</strong> Knowledge within Membria can be updated, expanded, or swapped without retraining the core Tiny LLM. This makes the system highly adaptable to changing information landscapes and business needs.</li>
+<li><strong>Task Specialization:</strong> Tiny LLMs are often fine-tuned for specific skills. Membria can provide the deep, factual knowledge needed for those skills, allowing the Tiny LLM to focus on its core competencies (e.g., language generation, reasoning) applied to the Membria-supplied context.</li>
+</ol>
+<p>In essence, Membria empowers Tiny LLMs to perform tasks that would otherwise require much larger, more resource-intensive models, by intelligently providing the right information at the right time. This combination offers a powerful and practical solution for deploying AI that is both capable and efficient.</p>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -233,20 +328,20 @@
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/conclusion/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/scr-reasoning/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Conclusion</span>
+                                                <span class="block mt-1">SCR Reasoning</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kcg_indexing/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/validator-infrastructure/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">KCG Indexing</span>
+                                                <span class="block mt-1">Validators</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -290,6 +385,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Capabilities", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Membria for Tiny LM's", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
