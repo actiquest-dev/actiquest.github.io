@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802636051534">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802636791066">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Gateways</title>
     <meta name="title" content="Gateways">
-    <meta name="description" content="The process of data validation within a gateway typically follows these automated steps upon receiving a request (and similarly, before sending a...">
+    <meta name="description" content="Gateways sit between on-device DoD agents and the immutable Knowledge Cache Graph (KCG).">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/gateway-infrastructure/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/gateway-infrastructure/">
     <meta property="og:title" content="Gateways">
-    <meta property="og:description" content="The process of data validation within a gateway typically follows these automated steps upon receiving a request (and similarly, before sending a...">
+    <meta property="og:description" content="Gateways sit between on-device DoD agents and the immutable Knowledge Cache Graph (KCG).">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/gateway-infrastructure/">
     <meta property="twitter:title" content="Gateways">
-    <meta property="twitter:description" content="The process of data validation within a gateway typically follows these automated steps upon receiving a request (and similarly, before sending a...">
+    <meta property="twitter:description" content="Gateways sit between on-device DoD agents and the immutable Knowledge Cache Graph (KCG).">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802636051534" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802636791066" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802636051534" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802636791066" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802636051534" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802636051534" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802636791066" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802636791066" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -228,10 +228,108 @@
         <span>Gateways</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="4-the-gateway-role-in-knowledge-validation-process">
+<p>Gateways sit between on-device DoD agents and the immutable Knowledge Cache Graph (KCG). They validate, enrich and route knowledge while maintaining high-performance caches and semantic indexes.</p>
+<doc-anchor-target id="core-responsibilities">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-the-gateway-role-in-knowledge-validation-process">#</doc-anchor-trigger>
-        <span>4. The Gateway role in Knowledge Validation Process</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#core-responsibilities">#</doc-anchor-trigger>
+        <span>Core Responsibilities</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Validation and packaging</strong><br />
+Gateways receive distilled knowledge from agents, run quorum-based fact-checking and write accepted entries to the KCG.</li>
+<li><strong>Index and retrieval services</strong><br />
+Each gateway hosts vector indexes and ontology graphs that link embeddings to KCG transaction IDs, enabling sub-second Selective Contextual Reasoning (SCR).</li>
+<li><strong>Cache management</strong><br />
+A multi-tier KV cache (hot, warm, cold) stores frequently requested reasoning blocks with 50-200 ms access latency.</li>
+<li><strong>Quality enforcement</strong><br />
+Spam filters, reputation scores and stake requirements protect the network from low-value or malicious content.</li>
+</ul>
+<doc-anchor-target id="off-chain-index-layer-and-knowledge-mesh">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#off-chain-index-layer-and-knowledge-mesh">#</doc-anchor-trigger>
+        <span>Off-Chain Index Layer and Knowledge Mesh</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Gateways publish lightweight indexes that map entities and embeddings to on-chain data.</li>
+<li>Indexes can be shared in a federated mesh, giving redundancy and locality without hammering Arweave for every query.</li>
+<li>This layer keeps SCR fast even as the global KCG scales.</li>
+</ul>
+<doc-anchor-target id="hybrid-kv-cache-and-orchestration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-kv-cache-and-orchestration">#</doc-anchor-trigger>
+        <span>Hybrid KV Cache and Orchestration</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Layer</th>
+<th>Purpose</th>
+<th>Typical TTL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hot</td>
+<td>High-frequency facts and chains</td>
+<td>Seconds to minutes</td>
+</tr>
+<tr>
+<td>Warm</td>
+<td>Medium-use validated knowledge</td>
+<td>Hours to days</td>
+</tr>
+<tr>
+<td>Cold</td>
+<td>Archived or less relevant entries</td>
+<td>Days to weeks</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Promotion and eviction follow an importance × frequency × freshness score. Gateways monitor hit rates and dynamically rebalance the tiers.</p>
+<doc-anchor-target id="knowledge-gap-detection-and-proactive-distillation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#knowledge-gap-detection-and-proactive-distillation">#</doc-anchor-trigger>
+        <span>Knowledge Gap Detection and Proactive Distillation</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Continuous analytics flag KV misses, query spikes and repeated Big-LLM calls.</li>
+<li>When a gap emerges, the gateway creates a <strong>distillation task</strong> that describes the missing knowledge, required confidence and bounty.</li>
+<li>Idle DoD agents compete to fill the gap. The first validated answer earns the reward and is cached for future use.</li>
+</ul>
+<doc-anchor-target id="incentives-and-governance">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#incentives-and-governance">#</doc-anchor-trigger>
+        <span>Incentives and Governance</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Gateways earn tokens for validation work, cache hits and task orchestration.</li>
+<li>Misbehavior, such as approving spam, is penalized by stake slashing.</li>
+<li>A portion of every DoD fee funds gateway operations while another portion is burned to maintain deflationary tokenomics.</li>
+<li>Governance parameters (task fees, quorum size, cache limits) are set by on-chain voting.</li>
+</ul>
+<doc-anchor-target id="security-and-privacy">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-and-privacy">#</doc-anchor-trigger>
+        <span>Security and Privacy</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>All private data stays on the user’s device until a gateway receives only the distilled, context-safe portion required for validation.</li>
+<li>Gateways sign their outputs, providing provenance and auditability without exposing raw user data.
+Gateways form the high-performance and trust-enforcing backbone of the Membria network, reducing latency and cost while preserving the quality and integrity of shared knowledge.</li>
+</ul>
+<hr>
+<doc-anchor-target id="the-gateway-role-in-knowledge-validation-process">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-gateway-role-in-knowledge-validation-process">#</doc-anchor-trigger>
+        <span>The Gateway role in Knowledge Validation Process</span>
     </h2>
 </doc-anchor-target>
 <p>The process of data validation within a gateway typically follows these automated steps upon receiving a request (and similarly, before sending a response if applicable):</p>
@@ -252,11 +350,12 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="5-relationship-between-gateway-validation-and-consensus-mechanisms">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-relationship-between-gateway-validation-and-consensus-mechanisms">#</doc-anchor-trigger>
-        <span>5. Relationship between Gateway Validation and Consensus Mechanisms</span>
-    </h3>
+<hr>
+<doc-anchor-target id="relationship-between-gateway-validation-and-consensus-mechanisms">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#relationship-between-gateway-validation-and-consensus-mechanisms">#</doc-anchor-trigger>
+        <span>Relationship between Gateway Validation and Consensus Mechanisms</span>
+    </h2>
 </doc-anchor-target>
 <p>The relationship between gateway validation and consensus mechanisms depends on the system architecture:</p>
 <ul>
