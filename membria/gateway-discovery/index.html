@@ -9,21 +9,24 @@
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tokenomics</title>
-    <meta name="title" content="Tokenomics">
+    <title>Gateway Discovery</title>
+    <meta name="title" content="Gateway Discovery">
+    <meta name="description" content="In decentralized architectures like KnowledgeCache, it is inefficient for a DoD agent to blindly contact random Gateways, especially without knowing...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.actiq.xyz/membria/tokenomics/">
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/gateway-discovery/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.actiq.xyz/membria/tokenomics/">
-    <meta property="og:title" content="Tokenomics">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/gateway-discovery/">
+    <meta property="og:title" content="Gateway Discovery">
+    <meta property="og:description" content="In decentralized architectures like KnowledgeCache, it is inefficient for a DoD agent to blindly contact random Gateways, especially without knowing...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/tokenomics/">
-    <meta property="twitter:title" content="Tokenomics">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/gateway-discovery/">
+    <meta property="twitter:title" content="Gateway Discovery">
+    <meta property="twitter:description" content="In decentralized architectures like KnowledgeCache, it is inefficient for a DoD agent to blindly contact random Gateways, especially without knowing...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -218,12 +221,85 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tokenomics" class="break-words">
+<doc-anchor-target id="gateway-discovery" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tokenomics">#</doc-anchor-trigger>
-        <span>Tokenomics</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gateway-discovery">#</doc-anchor-trigger>
+        <span>Gateway Discovery</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="discovery-and-efficient-gateway-selection">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#discovery-and-efficient-gateway-selection">#</doc-anchor-trigger>
+        <span>Discovery and Efficient Gateway Selection</span>
+    </h2>
+</doc-anchor-target>
+<p>In decentralized architectures like KnowledgeCache, it is inefficient for a DoD agent to blindly contact random Gateways, especially without knowing which ones are suitable for a given task. However, established decentralized discovery mechanisms can address this without requiring knowledge of each Gateway&#x27;s cache contents.</p>
+<doc-anchor-target id="discovery-mechanism-overview">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#discovery-mechanism-overview">#</doc-anchor-trigger>
+        <span>Discovery Mechanism Overview</span>
+    </h3>
+</doc-anchor-target>
+<p>While not explicitly described in the documentation, the system implies a discovery model based on the Peaq Protocol:</p>
+<ol>
+<li><p><strong>Service Discovery via Peaq Protocol:</strong><br />
+Gateways register their presence and capabilities (e.g., location, load, specialization) in a decentralized service registry. DoD agents query this registry to discover available Gateways.</p>
+</li>
+<li><p><strong>Capability-based Selection:</strong><br />
+After retrieving available Gateway metadata, the DoD agent selects the most appropriate node using:</p>
+<ul>
+<li><strong>Geographic Proximity</strong> to minimize latency.</li>
+<li><strong>Load and Availability</strong>, choosing underutilized nodes.</li>
+<li><strong>Reputation or Staking</strong>, favoring trusted Gateways.</li>
+<li><strong>Domain Specialization</strong>, optionally preferring nodes tuned for specific topics.</li>
+</ul>
+</li>
+<li><p><strong>Routing Logic Inside Gateway:</strong><br />
+Once a Gateway is selected, the DoD agent sends the request. The Gateway:</p>
+<ul>
+<li>First checks its <strong>off-chain Gateway KV-cache</strong>.</li>
+<li>If no match, uses <strong>semantic and vector indexes</strong> to locate facts in the <strong>on-chain KCG</strong> (Arweave).</li>
+<li>Applies <strong>contextual reasoning</strong> to construct a prompt using the retrieved knowledge.</li>
+<li>Optionally falls back to a Big LLM if necessary.</li>
+</ul>
+</li>
+<li><p><strong>Distillation and Write-back:</strong><br />
+If new insights are distilled, the DoD agent sends back the result to the Gateway for validation and permanent write to the on-chain KCG.</p>
+</li>
+</ol>
+<doc-anchor-target id="caching-strategy-and-priority-layers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#caching-strategy-and-priority-layers">#</doc-anchor-trigger>
+        <span>Caching Strategy and Priority Layers</span>
+    </h3>
+</doc-anchor-target>
+<p>Gateways are designed to optimize speed and cost:</p>
+<ul>
+<li>On-device Tiny LLM KV-cache: ~20 ms latency.</li>
+<li>Gateway shared KV-cache: 50–200 ms.</li>
+<li>Public KCG access (Arweave): 300–1000 ms (direct), faster via index.</li>
+<li>Big LLM fallback: 800–2000 ms.</li>
+</ul>
+<p>This hierarchy ensures:</p>
+<ul>
+<li>Most lookups are handled locally or via Gateway caches.</li>
+<li>Gateway caches are dynamically updated using usage analytics (e.g., repeated misses, request spikes).</li>
+<li>High-demand knowledge is promoted to “hot” or “warm” tiers for optimal reuse.</li>
+</ul>
+<doc-anchor-target id="accelerated-kcg-access-via-gateway-indexes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#accelerated-kcg-access-via-gateway-indexes">#</doc-anchor-trigger>
+        <span>Accelerated KCG Access via Gateway Indexes</span>
+    </h3>
+</doc-anchor-target>
+<p>Gateways avoid querying Arweave directly for each lookup. Instead, they:</p>
+<ul>
+<li>Maintain <strong>off-chain semantic graphs and vector indexes</strong> pointing into the KCG.</li>
+<li>Leverage these for sub-second retrieval from large knowledge graphs.</li>
+<li>Operate a <strong>Federated Knowledge Mesh</strong>, replicating indices across multiple nodes to enhance locality and fault-tolerance.</li>
+<li>Use multi-layered hybrid caching: on-device, Gateway-level, and public (KCG).</li>
+</ul>
+<p>This design provides a scalable and low-latency infrastructure for real-time, on-demand knowledge reasoning in a fully decentralized setting.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -233,20 +309,20 @@
                             
                                 <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/advanced-caching/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/knowledge_gap/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Alternative Methods</span>
+                                                <span class="block mt-1">Knowledge Gaps</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/knowledge_gap/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/token-flow/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Knowledge Gaps</span>
+                                                <span class="block mt-1">Token Flow</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -290,6 +366,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tokenomics", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Gateway Discovery", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
