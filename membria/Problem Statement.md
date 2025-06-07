@@ -1,5 +1,5 @@
 ---
-icon: question
+icon: briefcase
 label: Problem Statement
 ---
 
