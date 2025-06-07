@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802630489961">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802630550211">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
-    <title>Ecosystem Roles</title>
-    <meta name="title" content="Ecosystem Roles">
+    <title>Roles and Responsibilities</title>
+    <meta name="title" content="Roles and Responsibilities">
+    <meta name="description" content="The KCG+CAG ecosystem is supported by distinct roles, each playing a critical part in ensuring the quality, efficiency, and scalability of the...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/roles/">
@@ -18,21 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/roles/">
-    <meta property="og:title" content="Ecosystem Roles">
+    <meta property="og:title" content="Roles and Responsibilities">
+    <meta property="og:description" content="The KCG+CAG ecosystem is supported by distinct roles, each playing a critical part in ensuring the quality, efficiency, and scalability of the...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/roles/">
-    <meta property="twitter:title" content="Ecosystem Roles">
+    <meta property="twitter:title" content="Roles and Responsibilities">
+    <meta property="twitter:description" content="The KCG+CAG ecosystem is supported by distinct roles, each playing a critical part in ensuring the quality, efficiency, and scalability of the...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.9.0.802630489961" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802630550211" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802630489961" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802630550211" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802630489961" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802630550211" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,12 +221,106 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="ecosystem-roles" class="break-words">
+<doc-anchor-target id="roles-and-responsibilities" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ecosystem-roles">#</doc-anchor-trigger>
-        <span>Ecosystem Roles</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#roles-and-responsibilities">#</doc-anchor-trigger>
+        <span>Roles and Responsibilities</span>
     </h1>
 </doc-anchor-target>
+<p>The KCG+CAG ecosystem is supported by distinct roles, each playing a critical part in ensuring the quality, efficiency, and scalability of the knowledge reasoning pipeline.</p>
+<doc-anchor-target id="dod-agents">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dod-agents">#</doc-anchor-trigger>
+        <span>DoD Agents</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Role</strong>: Orchestrators of Distillation on Demand (DoD) queries and reasoning pipelines.</li>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Identify knowledge gaps or outdated information.</li>
+<li>Initiate SCR reasoning pipelines.</li>
+<li>Aggregate outputs from SCR, local caches, and Big LLM APIs.</li>
+<li>Propose distilled knowledge entries for validation.</li>
+<li>Use and maintain local KV-caches for fast reasoning.</li>
+</ul>
+</li>
+<li><strong>Incentives</strong>:
+<ul>
+<li>Earn rewards for initiating valuable DoD queries.</li>
+<li>Benefit from lower inference costs via SCR and caching.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="gateways">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gateways">#</doc-anchor-trigger>
+        <span>Gateways</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Role</strong>: Federated nodes serving as intermediaries between agents and the KCG.</li>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Validate, package, and record knowledge into KCG.</li>
+<li>Manage off-chain semantic indexes and vector stores.</li>
+<li>Operate KV-caching services for Tiny LLMs and agents.</li>
+<li>Enforce quality and anti-spam measures.</li>
+<li>Distribute SCR-ready prompts and knowledge to agents.</li>
+</ul>
+</li>
+<li><strong>Incentives</strong>:
+<ul>
+<li>Earn transaction fees and validation rewards.</li>
+<li>Maintain economic sustainability by hosting caching and reasoning infrastructure.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="validator-nodes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#validator-nodes">#</doc-anchor-trigger>
+        <span>Validator Nodes</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Role</strong>: Guardians of knowledge correctness and consensus.</li>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Participate in voting and validation of proposed knowledge entries.</li>
+<li>Ensure factual correctness, source verification, and semantic consistency.</li>
+<li>Provide audit trails and proof-of-knowledge attestations.</li>
+<li>Optionally participate in dispute resolution and governance processes.</li>
+</ul>
+</li>
+<li><strong>Incentives</strong>:
+<ul>
+<li>Earn validation rewards from token flows.</li>
+<li>Receive staking benefits and governance rights.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="off-chain-indexing-nodes-optional-layer">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#off-chain-indexing-nodes-optional-layer">#</doc-anchor-trigger>
+        <span>Off-Chain Indexing Nodes (Optional Layer)</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Role</strong>: Specialized nodes supporting Gateways.</li>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Maintain lightweight off-chain semantic graphs and vector indexes.</li>
+<li>Serve SCR pipelines with ultra-fast retrieval.</li>
+<li>Optimize query routing and ranking.</li>
+</ul>
+</li>
+<li><strong>Incentives</strong>:
+<ul>
+<li>Earn rewards from Gateway operators or network treasury.</li>
+</ul>
+</li>
+</ul>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
