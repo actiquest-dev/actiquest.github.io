@@ -1,6 +1,7 @@
 ---
 icon: light-bulb
 label: Proposed Solution
+order: 98
 ---
 
 # Proposed Solution
