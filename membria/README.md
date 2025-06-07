@@ -44,14 +44,15 @@ This documentation describes the architecture, purpose, and benefits of Cache-Au
    - 11.4 Sync & Update Flow
    - 11.5 Advantages Over Centralized Graph Databases
    - 11.6 Architecture
-12. [SCR-enhanced Reasoning Pipeline for KCG+CAG](scr-reasoning.md)
-   - 12.1 SCR Reasoning Layer as the Default Inference Path
+12. [KV-Cache Indexing](kv-indexing.md)
+13. [SCR-enhanced Reasoning Pipeline for KCG+CAG](scr-reasoning.md)
+   - 13.1 SCR Reasoning Layer as the Default Inference Path
 13. [Roles of Validators, Gateways, and DoD Agents](roles.md)
-    - 13.1 DoD Agents: Knowledge Distillation Layer
-    - 10.2 Gateways: Infrastructure & Access Layer
-    - 10.3 Validators: Quality & Consensus Layer
-    - 10.4 Role Comparison
-    - 10.5 Synergy of Roles
+    - 14.1 DoD Agents: Knowledge Distillation Layer
+    - 14.2 Gateways: Infrastructure & Access Layer
+    - 14.3 Validators: Quality & Consensus Layer
+    - 14.4 Role Comparison
+    - 14.5 Synergy of Roles
 14. [Validator Infrastructure & Placement](validator-infrastructure.md)
     - 14.1 Off-chain Validator Nodes
     - 14.2 Consensus & Proof Submission (On-chain Interaction)
