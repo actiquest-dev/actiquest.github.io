@@ -12,9 +12,10 @@ EchoLM analysis indicates that 60% of user queries exhibit semantically similar 
 
 ## Key Challenges
 
-* Hyper-personalization of millions of Tiny LLM instances is unscalable.
-* Continuous fine-tuning is resource-intensive and impractical for edge devices.
-* High cost and latency of API calls to Big LLMs.
-* Hallucinated or unverifiable answers.
-* Lack of reusable, validated knowledge caches.
-* No incentive model for community-driven knowledge distillation.
+- **Static and outdated models**: Once deployed, Tiny LLMs quickly become stale, as they cannot natively update their knowledge base or integrate new information without retraining.
+- **Hyper-personalization** of millions of Tiny LLM instances is unscalable
+- **Hallucinated or unverifiable** SLM answers.
+- **Costly and centralized fine-tuning**: Existing methods for updating models, such as LoRA or QLoRA fine-tuning, require cloud GPUs, expert intervention, and significant time and money.
+- **Dependency on Big LLM APIs**: Users and apps frequently fall back on Big LLM APIs (GPT, Claude, Gemini) to access fresh or complex knowledge, incurring high costs and introducing privacy, latency, and control issues.
+- **Absence of a shared, reusable knowledge memory**: Tiny LLMs operate in isolation, lacking access to a federated, verified, and continuously growing knowledge layer they can rely on.
+- **No incentive model** for community-driven knowledge distillation.
