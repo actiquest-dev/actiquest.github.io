@@ -10,7 +10,7 @@
 - [Ecosystem Roles](roles.md)
 - [Validator Infrastructure](validator-infrastructure.md)
 - [Arweave Storage](kcg-entry-format.md)
-- [Tokenomics & Deflation Design](tokenomics.md)
+- [Tokenomics Design](tokenomics.md)
 - [Token Flow](token-flow.md)
 - [Integrations](integrations.md)
 - [Advantages](advantages.md)
