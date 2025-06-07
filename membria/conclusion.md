@@ -1,6 +1,7 @@
 ---
 icon: check-circle
 label: Conclusion
+order: 70
 ---
 
 # Conclusion
