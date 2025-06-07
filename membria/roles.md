@@ -1,5 +1,5 @@
 ---
 icon: stack
-label: Storage, Query & Privacy
+label: Ecosystem Roles
 order: 92
 ---
