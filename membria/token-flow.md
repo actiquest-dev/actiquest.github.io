@@ -1,5 +1,5 @@
 ---
 icon: iterations
-label: Alternative Methods
+label: Token Flow
 order: 86
 ---
