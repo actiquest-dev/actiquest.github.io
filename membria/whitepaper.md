@@ -31,7 +31,7 @@ These limitations block the scalability of Tiny LLM reasoning capabilities, frag
 
 The primary purpose of integrating a system like Membria with Tiny LLMs stems from the need to overcome their inherent limitations without losing their efficiency advantages.
 
-#### **Standalone Tiny LLM Capabilities**
+#### Standalone Tiny LLM Capabilities
 
 Based on their pre-trained knowledge, standalone Tiny LLMs are capable of:
 
@@ -42,7 +42,7 @@ Based on their pre-trained knowledge, standalone Tiny LLMs are capable of:
 
 However, they are limited by their static knowledge, a higher propensity for hallucination, and an inability to access private or real-time data sources.
 
-#### **Membria-Enhanced Tiny LLM Capabilities**
+#### Membria-Enhanced Tiny LLM Capabilities
 
 Integrating a Tiny LLM with Membria significantly expands its capabilities:
 
@@ -55,9 +55,9 @@ Integrating a Tiny LLM with Membria significantly expands its capabilities:
 
 In essence, Membria empowers Tiny LLMs to perform tasks that would otherwise require much larger, more resource-intensive models, by intelligently providing the right information at the right time. This combination offers a powerful and practical solution for deploying AI that is both capable and efficient.
 
-## **Part 2: The Membria Architecture and Workflow**
+## Part 2: The Membria Architecture and Workflow
 
-### **2.1. Proposed Solution Overview**
+### 2.1. Proposed Solution Overview
 
 To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propose the **Knowledge Cache Graph (KCG)** combined with **Cache-Augmented Generation (CAG)**, a decentralized knowledge reasoning layer designed for scalable, efficient, and continuous learning without retraining.
 
@@ -65,7 +65,7 @@ To overcome the personalization and reasoning bottleneck for Tiny LLMs, we propo
 * **Cache-Augmented Generation (CAG)**: An advanced pipeline where Tiny LLMs first query local or Gateway KV caches from the KCG layer and use **Selective Contextual Reasoning (SCR)** to reason over retrieved knowledge, minimizing reliance on external APIs.  
 * **Distillation on Demand (DoD)**: A mechanism that allows Tiny LLMs to trigger on-demand distillation of new knowledge when gaps are detected. This new knowledge is then validated and recorded into the KCG, making it reusable for all network participants.
 
-### **2.2. Technical Architecture Overview**
+### 2.2. Technical Architecture Overview
 
 The KCG+CAG ecosystem is composed of several interconnected layers and actors, forming a decentralized and efficient knowledge reasoning pipeline.
 
@@ -78,7 +78,7 @@ The KCG+CAG ecosystem is composed of several interconnected layers and actors, f
 
 This modular, multi-layered architecture ensures that Tiny LLMs can learn dynamically while Gateways and Validators enforce knowledge quality, all while reducing inference costs and latency.
 
-#### **Layered Architecture Overview**
+#### Layered Architecture Overview
 
     Application & Agent Layer  
     └── Tiny LLMs, User Devices, Enterprise Agents  
@@ -92,7 +92,7 @@ This modular, multi-layered architecture ensures that Tiny LLMs can learn dynami
     Peaq Protocol Layer  
     └── Validator Network, Consensus, Staking, ZK Proof Layer, Subgraph Indexing
 
-### **2.3. Full Knowledge Lifecycle Workflow**
+### 2.3. Full Knowledge Lifecycle Workflow
 
 The system introduces an optimized workflow that allows Tiny LLMs to acquire, reason over, and integrate fresh knowledge efficiently.
 
@@ -105,9 +105,9 @@ The system introduces an optimized workflow that allows Tiny LLMs to acquire, re
 
 This workflow, which defaults to SCR and local processing first, dramatically reduces calls to expensive Big LLMs, ensures the fastest possible retrieval for repeated queries, and creates a globally shared and verifiable knowledge memory.
 
-## **Part 3: Core Components and Technologies in Detail**
+## Part 3: Core Components and Technologies in Detail
 
-### **3.1. The Knowledge Cache Graph (KCG) Data Model**
+### 3.1. The Knowledge Cache Graph (KCG) Data Model
 
 The KCG serves as the immutable, decentralized knowledge memory layer. It is optimized to store, retrieve, and reason over distilled knowledge efficiently while ensuring verifiability and traceability.
 
@@ -123,11 +123,11 @@ The KCG serves as the immutable, decentralized knowledge memory layer. It is opt
   * **Semantic Graph Indexes**: Gateways and off-chain nodes maintain semantic graphs of relations and entities for complex reasoning.  
   * **Proof-of-Knowledge and Metadata**: Each entry contains an immutable transaction ID (from Arweave), validator signatures, and provenance records.
 
-### **3.2. Advanced Caching and Reasoning Engine**
+### 3.2. Advanced Caching and Reasoning Engine
 
 Membria’s architecture incorporates advanced caching strategies to maximize reasoning efficiency, minimize costs, and enable dynamic knowledge integration for Tiny LLMs.
 
-#### **Selective Contextual Reasoning (SCR) Pipeline**
+#### Selective Contextual Reasoning (SCR) Pipeline
 
 SCR enables Tiny LLMs to perform lightweight, dynamic reasoning over external knowledge caches without modifying model weights. The pipeline consists of four steps:
 
@@ -136,7 +136,7 @@ SCR enables Tiny LLMs to perform lightweight, dynamic reasoning over external kn
 3. **Contextual Reasoning**: Construct an enriched prompt using the confirmed knowledge, allowing the Tiny LLM to perform high-quality reasoning locally.  
 4. **Fallback to DoD**: Only if SCR fails or lacks sufficient confidence is a DoD escalation to a Big LLM triggered.
 
-#### **Hybrid KV-Cache Architecture and Management**
+#### Hybrid KV-Cache Architecture and Management
 
 * **On-Device Tiny LLM KV-Cache**: Located directly on the user's device for fast, personalized, sub-20ms access.  
 * **Gateway KV-Cache**: A shared, community-level cache managed by Gateways with 50-200ms access.  
@@ -144,17 +144,17 @@ SCR enables Tiny LLMs to perform lightweight, dynamic reasoning over external kn
 * **Data Obsolescence and Versioning**: Outdated data is not deleted from the immutable KCG. Instead, new versions are created, and the mutable Gateway indexes are updated to point to the current information. The system can mark and deprioritize older entries.  
 * **Cold Layer Management**: Gateways manage cache layers (hot, warm, cold). Entries with low usage or freshness are moved to "off-chain cold storage" on disk, from which they can be recalled if they become relevant again.
 
-#### **Context Window Optimization and Memory Management**
+#### Context Window Optimization and Memory Management
 
 * **Segmented KV Buffer & Prioritized Paging**: To manage memory efficiently, each DoD Agent maintains a segmented buffer divided by scope (Session Memory, Local Knowledge Cache, Global Shared KV Layer). Before inference, the agent performs semantic prefiltering and priority ranking to select the top entries to load into active memory, evicting least-recently-used items if memory is constrained.  
 * **Persistent Memory for Tiny LLMs**: To prevent model "amnesia" between sessions, the agent uses a hybrid storage solution. Reasoning outcomes are distilled into a local vector database (like Qdrant \+ SQLite) for semantic retrieval, while key attention snapshots are persisted to a fast disk-based store (like LMDB) for partial context reconstruction on session restart.  
 * **Local Knowledge & Event Storage**: On the device, the agent uses a lightweight infrastructure for its memory. This includes a local **event graph** (in SQLite) to log actions and reasoning chains, a minimal **ontology layer** for semantic classification, and an efficient **local database** (SQLite with JSON1 extensions) for caching and retrieval.
 
-### **3.3. Roles and Responsibilities in the Ecosystem**
+### 3.3. Roles and Responsibilities in the Ecosystem
 
 The ecosystem is supported by distinct roles, each playing a critical part in the knowledge pipeline.
 
-#### **DoD Agents**
+#### DoD Agents
 
 DoD Agents are the orchestrators of knowledge creation. They can be deployed on a wide spectrum of hardware, adapting their role and capabilities accordingly. On low-power mobile devices, they act as edge interaction points, while on high-performance servers, they can be central knowledge hubs performing advanced analytics and knowledge distillation for the entire network.
 
@@ -164,7 +164,7 @@ DoD Agents are the orchestrators of knowledge creation. They can be deployed on 
   * Aggregate outputs to propose new, distilled knowledge.  
 * **Incentives**: Earn rewards for valuable queries and benefit from lower costs via local caching.
 
-#### **Gateways**
+#### Gateways
 
 Gateways are federated nodes that serve as the crucial intermediaries and active coordinators of knowledge quality.
 
@@ -176,7 +176,7 @@ Gateways are federated nodes that serve as the crucial intermediaries and active
 * **Incentivized Task Routing**: These proactively generated tasks include a bounty and resource requirements, creating an open market for reasoning services. Agents can accept or reject tasks based on their device status and the offered reward.  
 * **Discovery and Efficient Selection**: Agents discover suitable Gateways via a decentralized service registry (e.g., based on the Peaq Protocol), selecting them based on proximity, load, and reputation, ensuring efficient routing.
 
-#### **Validator Nodes**
+#### Validator Nodes
 
 Validators are the guardians of the ecosystem's integrity and consensus.
 
@@ -186,11 +186,11 @@ Validators are the guardians of the ecosystem's integrity and consensus.
   * Provide audit trails and proof-of-knowledge attestations.  
 * **Incentives**: Earn validation rewards from token flows and receive staking benefits.
 
-## **Part 4: Trust, Validation, and Consensus**
+## Part 4: Trust, Validation, and Consensus
 
 Membria establishes trust and verifies information without a central authority through a robust, multi-layered process of validation, consensus, and cryptographic proofs. This is the foundation for ensuring data integrity.
 
-### **4.1. The Validation and Consensus Pipeline**
+### 4.1. The Validation and Consensus Pipeline
 
 1. **Gateway Validation (First Line of Defense)**: Gateways serve as the critical first checkpoint. They perform a series of automated checks on all incoming data submissions.  
    * **Data Integrity Checks**: Type checking, range constraints, uniqueness, completeness, and checksums.  
@@ -208,7 +208,7 @@ Membria establishes trust and verifies information without a central authority t
 
 This integrated hybrid model ensures that only well-formed, policy-compliant, and verified knowledge becomes a permanent part of the shared graph.
 
-### **4.2. Distributed Fact-Checking Architecture**
+### 4.2. Distributed Fact-Checking Architecture
 
 To protect against misinformation and abuse, the system employs a layered defense:
 
@@ -230,7 +230,7 @@ graph TD
     F \--\>|No| I\[Reject Reasoning\]  
     I \--\> J\[Log as Disputed\]
 
-### **4.3. Dispute Resolution Mechanisms**
+### 4.3. Dispute Resolution Mechanisms
 
 To maintain long-term integrity, Membria features an economically incentivized challenge system.
 
@@ -242,13 +242,13 @@ To maintain long-term integrity, Membria features an economically incentivized c
 
 This mechanism relies on the economic incentives of the network's participants to maintain truth, rather than a centralized arbitration body. In extreme cases, appeals can be made by re-challenging with a higher stake or, as a last resort, through a community-driven general audit or hard fork.
 
-## **Part 5: Economic Model and Governance**
+## Part 5: Economic Model and Governance
 
-### **5.1. Tokenomics & Incentive Design**
+### 5.1. Tokenomics & Incentive Design
 
 The KCG+CAG ecosystem introduces a deflationary, utility-driven token model designed to reward key participants, sustain decentralized infrastructure, and ensure long-term economic balance.
 
-#### **Token Flows**
+#### Token Flows
 
 * **DoD Query Payments**: Every DoD request initiated by a DoD Agent incurs a fixed token fee. This covers API calls, storage costs, and validation.  
 * **Validator & Gateway Rewards**: Validators and Gateways are compensated in tokens for validating proposals, maintaining caches, and hosting retrieval services.  
@@ -260,7 +260,7 @@ The KCG+CAG ecosystem introduces a deflationary, utility-driven token model desi
 | Validator/Gateway Rewards | Compensate nodes for validation, caching, and retrieval services. |
 | Token Burning | Ensure long-term deflationary pressure, avoiding unchecked token inflation. |
 
-### **5.2. Economic Sustainability of the Network**
+### 5.2. Economic Sustainability of the Network
 
 The network treasury, which funds infrastructure like off-chain indexing nodes and dispute resolution rewards, is replenished through a sustainable and balanced multi-source approach.
 
@@ -268,23 +268,23 @@ The network treasury, which funds infrastructure like off-chain indexing nodes a
 * **Dedicated Vesting Fund**: A significant portion of the total token supply is reserved under a long-term (e.g., 20-year) vesting program. A predictable amount is unlocked periodically to provide stable funding for critical security functions like the dispute resolution mechanism.  
 * **Slashing Penalties**: A portion of tokens slashed from malicious actors can be routed to the treasury, acting as both a punitive measure and a source of replenishment.
 
-### **5.3. Governance & Validator Operations**
+### 5.3. Governance & Validator Operations
 
 The integrity and fairness of the ecosystem are ensured by a decentralized governance model and a distributed network of Validator Nodes.
 
-#### **Validators**
+#### Validators
 
 * **Roles**: Validators are responsible for knowledge validation, consensus voting, proof-of-knowledge verification, and participating in governance to influence protocol upgrades and dispute resolutions.  
 * **Infrastructure**: Validators can be permissionless community nodes or elected via governance mechanisms, running lightweight nodes capable of verifying proposals and participating in voting.
 
-#### **Governance Model**
+#### Governance Model
 
 * **DAO-Driven or Federated Governance**: The protocol may adopt DAO governance models, where token holders vote on key parameters, or federated validator councils for efficient decision-making.  
 * **Responsibilities**: Key responsibilities include managing protocol upgrades, validator slashing mechanisms, dispute resolution, and treasury management.
 
-## **Part 6: Integrations and Advanced Strategies**
+## Part 6: Integrations and Advanced Strategies
 
-### **6.1. Integration with Peaq Protocol**
+### 6.1. Integration with Peaq Protocol
 
 The Membria architecture can be seamlessly deployed on top of the **Peaq Protocol**, leveraging its existing decentralized infrastructure for enhanced functionality and faster development.
 
@@ -303,7 +303,7 @@ The Membria architecture can be seamlessly deployed on top of the **Peaq Protoco
 * **ZK Proof Layer**: Peaq's ZK Layer can serve as the foundation for query privacy and proof-of-knowledge attestations.  
 * **Optimized Querying**: Utilizing Peaq's subgraph and indexing services can accelerate SCR pipelines without duplicating infrastructure.
 
-#### **Ontology Support in Peaq Protocol**
+#### Ontology Support in Peaq Protocol
 
 Peaq Protocol provides a flexible and extensible semantic layer ideal for Membria.
 
@@ -311,7 +311,7 @@ Peaq Protocol provides a flexible and extensible semantic layer ideal for Membri
 * **Subgraph Indexers**: Each domain can define a custom Subgraph Indexer to parse and index knowledge entries by type or topic, enabling efficient, scoped querying.  
 * **Suitability for Membria**: Peaq’s native ontology support allows Membria to filter reasoning by topic, define custom types (ReasoningStep, DoDTrace), and enforce validation rules per knowledge category, maintaining clarity and modularity in a distributed environment.
 
-### **6.2. Synergizing with Periodic Model Adaptation (LoRA)**
+### 6.2. Synergizing with Periodic Model Adaptation (LoRA)
 
 While Membria's core focus is real-time knowledge updates via CAG/SCR, it can be synergistically combined with periodic, low-frequency model adaptation using techniques like **LoRA/QLoRA**.
 
@@ -323,13 +323,13 @@ An automated nightly pipeline could extract new, high-value knowledge accumulate
 
 This combination allows the model to learn in two ways: instantly through caching (CAG) and periodically through fine-tuning (LoRA), creating a highly adaptive and efficient learning system. Using **QLoRA** for this process is particularly effective, as it allows for significant model enhancement with minimal or even no increase in the final model size on the device.
 
-## **Part 7: Conclusion and Vision**
+## Part 7: Conclusion and Vision
 
 The KCG+CAG ecosystem bridges the gap between heavy, centralized LLM inference and lightweight, efficient Tiny LLMs operating at the edge. By introducing an open, decentralized, and verifiable knowledge graph, coupled with Cache-Augmented Generation (CAG) and Selective Contextual Reasoning (SCR), we enable Tiny LLMs to stay continuously updated, smart, and capable \- without costly retraining or vendor lock-in.
 
 This paradigm shift turns reasoning and knowledge augmentation into **an open, reusable, and community-driven resource**, breaking free from centralized control and enabling AI models to reason dynamically using decentralized knowledge caches.
 
-### **Our Vision**
+### Our Vision
 
 We envision a world where:
 
@@ -339,9 +339,9 @@ We envision a world where:
 
 By adopting the KCG+CAG architecture, we take a significant step toward **democratizing AI reasoning, decentralizing knowledge creation, and empowering users everywhere to control, enhance, and benefit from their own intelligent agents.**
 
-## **Part 8: Appendices**
+## Part 8: Appendices
 
-### **Appendix A: Specifications for "Tiny LLMs"**
+### Appendix A: Specifications for "Tiny LLMs"
 
 "Tiny LLMs" are a segment of Small Language Models (SLMs) designed for efficiency and on-device deployment.
 
@@ -357,7 +357,7 @@ By adopting the KCG+CAG architecture, we take a significant step toward **democr
   * Mistral 7B (Mistral AI)  
   * Qwen2-7B (Alibaba Cloud)
 
-### **Appendix B: Comparative Analysis Table**
+### Appendix B: Comparative Analysis Table
 
 Membria offers a unique combination of real-time, on-device inference, structured knowledge caching, and decentralized learning that sets it apart from existing solutions.
 
