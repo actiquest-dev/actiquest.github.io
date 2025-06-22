@@ -4,7 +4,7 @@ label: Comparision
 order: 89
 ---
 
-# Membria vs. Alternative AI Solutions (2026)
+# Membria vs. Alternative AI Solutions
 
 |                      | **Membria (Edge + Gateway)**                                     | **Cloud‑only LLM (e.g., GPT‑4o API)**              | **On‑Device Big‑Tech (Apple, Google Nano)** | **Hybrid RAG Frameworks (LangChain + Remote)**    | **Private LLM Packs (MLC LLM, PrivateGPT)** |
 | -------------------- | ---------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------- | ------------------------------------------------- | ------------------------------------------- |
