@@ -21,7 +21,7 @@ order: 89
 
 ---
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeRdMJzyet1aT8mr-U12q7nnDDPG7nejxv5JyJlThUQz-Y-u8P24E47ygzwRdWH-LlumnfKpiXf0d5U1s7mQGAcFvKhKldqbquXpNXt-0CFBUbdSWhdinRtLZYPzPfTcG3lYC-DjQ?key=AsJEkgePh24159X10uUz6PJ-)
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXchpE9eNdaSTtG3zDlG8BUVE0UlmRxcs-LgPAaWlv5VtXYmKGXSie80CCAnE3laYckln350zqe4YqY6kMzevLyC4F9U634ruAmAPn7lNxPT2V_FmOmTVDvBovbBT2RsWde0yudsbA?key=AsJEkgePh24159X10uUz6PJ-)
 
 ---
 ### Key Take-aways
