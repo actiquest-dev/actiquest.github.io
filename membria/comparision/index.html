@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803870316295">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803870855933">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Membria vs. Alternative AI Solutions</title>
     <meta name="title" content="Membria vs. Alternative AI Solutions">
-    <meta name="description" content="Membria (Edge + Gateway)">
+    <meta name="description" content="Feature">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/comparision/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/comparision/">
     <meta property="og:title" content="Membria vs. Alternative AI Solutions">
-    <meta property="og:description" content="Membria (Edge + Gateway)">
+    <meta property="og:description" content="Feature">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/comparision/">
     <meta property="twitter:title" content="Membria vs. Alternative AI Solutions">
-    <meta property="twitter:description" content="Membria (Edge + Gateway)">
+    <meta property="twitter:description" content="Feature">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.1.803870316295" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.803870855933" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803870316295" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803870855933" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803870316295" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803870855933" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -231,241 +231,230 @@
 <table class="comfortable">
 <thead>
 <tr>
-<th></th>
-<th><strong>Membria (Edge + Gateway)</strong></th>
-<th><strong>Cloud‑only LLM (e.g., GPT‑4o API)</strong></th>
-<th><strong>On‑Device Big‑Tech (Apple, Google Nano)</strong></th>
-<th><strong>Hybrid RAG Frameworks (LangChain + Remote)</strong></th>
-<th><strong>Private LLM Packs (MLC LLM, PrivateGPT)</strong></th>
+<th>Feature</th>
+<th><strong>Membria (Edge + Gateway)</strong></th>
+<th><strong>Cloud-only LLM<br>(GPT-4o API, Claude-Opus)</strong></th>
+<th><strong>On-Device Big-Tech<br>(Apple, Google Nano)</strong></th>
+<th><strong>Hybrid RAG<br>(LangChain + Remote)</strong></th>
+<th><strong>Private LLM Packs<br>(MLC LLM, PrivateGPT)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Core Approach</strong></td>
-<td>Tiny‑LLM on device + Gateway router → Cloud MoE only <em>on demand</em></td>
-<td>Monolithic frontier model in vendor DC</td>
-<td>Medium model compiled for phone/PC NPU</td>
-<td>Local RAG index ↔ calls remote LLM for generation</td>
+<td><strong>Core Approach</strong></td>
+<td>Tiny-LLM on device + Gateway router → Cloud MoE <em>on demand</em></td>
+<td>Monolithic frontier model in vendor datacenter</td>
+<td>Mid-size model compiled for phone/PC NPU</td>
+<td>Local RAG index → remote LLM for generation</td>
 <td>Full model quantised &amp; sideloaded locally</td>
 </tr>
 <tr>
-<td><strong>Compute Location</strong></td>
-<td>90‑95 % Edge, 5‑10 % Cloud</td>
-<td>100 % Cloud</td>
-<td>100 % Edge</td>
+<td><strong>Compute Location</strong></td>
+<td>90–95 % Edge, 5–10 % Cloud</td>
+<td>100 % Cloud</td>
+<td>100 % Edge</td>
 <td>Retrieval on Edge, generation in Cloud</td>
-<td>100 % Edge</td>
+<td>100 % Edge</td>
 </tr>
 <tr>
-<td><strong>Model Size</strong></td>
-<td>3‑7 B active / 50 B capacity via DoD</td>
-<td>175‑1000 B dense (or MoE 1‑2 T)</td>
-<td>7‑15 B</td>
-<td>~1‑3 B retriever, 175‑400 B generator</td>
-<td>4‑8 B</td>
+<td><strong>Model Size</strong></td>
+<td>3–7 B active / 50 B capacity via DoD</td>
+<td>175–1000 B dense (or 1-2 T MoE)</td>
+<td>7–15 B</td>
+<td>~1–3 B retriever, 175–400 B generator</td>
+<td>4–8 B</td>
 </tr>
 <tr>
-<td><strong>Context Handling</strong></td>
-<td>Graph + CAG → &quot;unlimited&quot; select retrieval</td>
-<td>Fixed 128 k window; pay per token</td>
-<td>8-32 k</td>
-<td>Local docs unlimited, but must fit window</td>
-<td>4‑8 k</td>
+<td><strong>Context Handling</strong></td>
+<td>Graph + CAG → “unlimited” selective retrieval</td>
+<td>Fixed 128 k window; pay per token</td>
+<td>8–32 k</td>
+<td>Unlimited docs → must fit model window</td>
+<td>4–8 k</td>
 </tr>
 <tr>
 <td><strong>Personalisation</strong></td>
-<td>Per‑user Knowledge Cache; private DoD distils new skills</td>
-<td>Limited; shared model weights</td>
+<td>Per-user Knowledge Cache; on-device LoRA DoD</td>
+<td>Limited; shared weights</td>
 <td>Device profile only</td>
 <td>User docs in RAG; no weight change</td>
-<td>Manual fine‑tune required</td>
+<td>Manual fine-tune required</td>
 </tr>
 <tr>
 <td><strong>Privacy</strong></td>
 <td>Data stays on device; only anonymised queries leave</td>
-<td>All prompts/CoT stored server‑side</td>
-<td>On‑device; vendor firmware closed</td>
-<td>Docs local, but prompt leaves device</td>
+<td>Prompts/CoT stored server-side</td>
+<td>On-device; closed firmware</td>
+<td>Docs local, prompts leave device</td>
 <td>Fully offline</td>
 </tr>
 <tr>
-<td><strong>Cost Model</strong></td>
-<td>One‑time HW + pay‑per‑consult (¢)</td>
-<td>$20‑40 / mo + token fees</td>
+<td><strong>Cost Model</strong></td>
+<td>One-time HW + pay-per-consult (¢)</td>
+<td>$20-40 / mo + token fees</td>
 <td>Bundled in device</td>
-<td>Cloud token fees + local infra</td>
+<td>Token fees + local infra</td>
 <td>No subscription; HW &amp; storage</td>
 </tr>
 <tr>
-<td><strong>Typical Latency</strong></td>
-<td>△ &lt; 300 ms local; 1‑2 s when cloud hop</td>
-<td>1‑3 s per call</td>
-<td>200‑400 ms</td>
-<td>400 ms retrieval + 2 s gen</td>
-<td>300‑600 ms</td>
+<td><strong>Typical Latency</strong></td>
+<td>&lt; 300 ms local; 1–2 s with cloud hop</td>
+<td>1–3 s per call</td>
+<td>200–400 ms</td>
+<td>400 ms retrieval + 2 s gen</td>
+<td>300–600 ms</td>
 </tr>
 <tr>
 <td><strong>Strengths</strong></td>
-<td>• Fast &amp; private • Scales without GPU hunger • No monthly fee</td>
-<td>• Highest quality &amp; creativity • Always up‑to‑date</td>
-<td>• Works offline • Tight OS integration</td>
-<td>• Best of both worlds for docs</td>
-<td>• Maximum privacy • No vendor lock‑in</td>
+<td>Fast &amp; private; no monthly fee; scales without GPU hunger</td>
+<td>Highest quality &amp; creativity</td>
+<td>Works offline; tight OS integration</td>
+<td>Good for doc search</td>
+<td>Max privacy; no vendor lock-in</td>
 </tr>
 <tr>
 <td><strong>Limitations</strong></td>
 <td>Needs Gateway orchestration; rare heavy queries still cost</td>
-<td>Expensive, privacy concerns, GPU bottlenecks</td>
-<td>Limited quality vs GPT‑4</td>
-<td>Two moving parts; privacy still partial</td>
-<td>Model quality below GPT‑4 class</td>
+<td>Expensive, privacy concerns</td>
+<td>Quality below GPT-4 class</td>
+<td>Two moving parts; privacy partial</td>
+<td>Quality below GPT-4 class</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="key-takeaways">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key-takeaways">#</doc-anchor-trigger>
-        <span>Key Take‑aways</span>
-    </h2>
+<hr>
+<doc-anchor-target id="key-take-aways">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-take-aways">#</doc-anchor-trigger>
+        <span><strong>Key Take-aways</strong></span>
+    </h3>
 </doc-anchor-target>
 <ol>
-<li><strong>Economic Edge</strong>: Membria shifts the cost curve—users avoid recurring fees while providers avoid runaway GPU cap‑ex.</li>
-<li><strong>Privacy Advantage</strong>: Only Membria and full private packs keep personal knowledge on‑device <em>and</em> still grant frontier‑class reasoning via selective distillation.</li>
-<li><strong>Developer Flexibility</strong>: Gateway routing lets teams mix local skills with best‑in‑class experts without re‑architecting apps.</li>
-<li><strong>Future‑proof</strong>: As cloud prices erode and regulation tightens, hybrid‑edge models like Membria are positioned to win.</li>
+<li><strong>Economics flip:</strong> Membria shifts costs to the edge and turns cloud usage into a pay-per-consult micro-fee, while pure-cloud vendors fight margin erosion.</li>
+<li><strong>Privacy by default:</strong> Only Membria and Private LLM Packs keep <em>all</em> user data on-device without manual setup.</li>
+<li><strong>Latency wins UX:</strong> Sub-300 ms offline answers feel instant; cloud calls stay 1-3 s even on fast links.</li>
+<li><strong>Future-proof routing:</strong> Gateway design lets developers mix local skills with frontier experts via a single API, no prompt-gymnastics needed.</li>
 </ol>
 <hr>
-<doc-anchor-target id="memory-systems-for-llmagent">
+<doc-anchor-target id="memory-systems-for-llm-agents-2026">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#memory-systems-for-llmagent">#</doc-anchor-trigger>
-        <span>Memory Systems for LLM‑Agent</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memory-systems-for-llm-agents-2026">#</doc-anchor-trigger>
+        <span>Memory Systems for LLM Agents (2026)</span>
     </h1>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th></th>
-<th><strong>Membria MCP</strong><br>(Hybrid RAG / CAG + Ontology Graph)</th>
+<th>Feature</th>
+<th><strong>Membria MCP</strong><br>(Hybrid RAG/CAG + Ontology Graph)</th>
 <th><strong>Mem0</strong></th>
 <th><strong>Zep</strong></th>
-<th><strong>Asimov Protocol KCG</strong></th>
-<th><strong>Asimov Positron</strong></th>
+<th><strong>Asimov KCG</strong></th>
+<th><strong>Asimov Positron</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Design Goal</strong></td>
-<td>Local “swap” context for tiny‑LLM; keeps full user graph offline, calls cloud experts only on demand</td>
-<td>Cloud conversational memory that auto‑extracts facts &amp; CoT for SaaS LLMs</td>
-<td>Low‑latency memory/cache service for agent frameworks</td>
-<td>Public, verifiable knowledge graph (ontology‑driven) for LLM + symbolic reasoning</td>
-<td>Personal MCP node that builds user-specific graph from local &amp; social data</td>
+<td>Local “swap-context” for tiny-LLM; keeps full user graph offline; calls cloud experts only on demand</td>
+<td>Cloud conversational memory that auto-extracts facts &amp; CoT</td>
+<td>Low-latency memory/cache service for agents</td>
+<td>Public, verifiable ontology-driven knowledge graph</td>
+<td>Personal MCP node that builds user graph from local &amp; social data</td>
 </tr>
 <tr>
 <td><strong>Storage Tier</strong></td>
-<td>Edge SQLite/Parquet + optional Arweave backup; RDF/Property‑Graph; LoRA patches side‑by‑side</td>
-<td>Redis / Postgres + vector index (vendor cloud)</td>
-<td>Managed PG/vector store (cloud)</td>
-<td>IPFS / Arweave + on‑chain attestations</td>
-<td>Runs 100 % on user device (RocksDB / LiteFS)</td>
+<td>Edge SQLite / Parquet + optional Arweave; RDF/Property-Graph; LoRA patches side-by-side</td>
+<td>Redis / Postgres + vector index (cloud)</td>
+<td>Managed PG + vector (cloud)</td>
+<td>IPFS / Arweave + on-chain attestations</td>
+<td>RocksDB / LiteFS (edge)</td>
 </tr>
 <tr>
 <td><strong>Retrieval API</strong></td>
-<td>CAG (exact CoT reuse) + RAG (semantic); &lt;1 ms local</td>
-<td><code v-pre>/memory</code> REST; automatic embeddings search</td>
-<td>LangChain “Memory” plugin; vector search in 10–30 ms</td>
-<td>SPARQL / GraphQL queries; P2T (Prompt‑to‑Triple)</td>
+<td>CAG (exact CoT reuse) + RAG (semantic) — &lt;1 ms</td>
+<td><code v-pre>/memory</code> REST; automatic embedding search</td>
+<td>Zep-LangChain client</td>
+<td>SPARQL / GraphQL; Prompt-to-Triple</td>
 <td>gRPC / HTTP; GraphQL for triples</td>
 </tr>
 <tr>
 <td><strong>Context Swap</strong></td>
-<td>Router injects distilled triples / snippets into prompt when window ≈75 % full</td>
-<td>Returns recent facts &amp; CoT to caller LLM</td>
-<td>Returns summarised chat thread chunks</td>
-<td>External to calling LLM; user must embed into prompt</td>
+<td>Router injects distilled triples/snippets when prompt ≈ 75 % full</td>
+<td>Returns recent facts &amp; CoT</td>
+<td>Returns summarised chat chunks</td>
+<td>External to caller LLM</td>
 <td>Same as Membria but local</td>
 </tr>
 <tr>
 <td><strong>Personalisation</strong></td>
-<td>Per‑user graph, on‑device training (LoRA) via DoD</td>
-<td>Shared cloud instance per tenant</td>
-<td>Shared cloud; no on‑device weights</td>
-<td>Public knowledge; no personal state</td>
-<td>100 % personal; optional encrypted backup</td>
+<td>Per-user graph, on-device LoRA via DoD</td>
+<td>Tenant-scoped cloud</td>
+<td>Cloud only</td>
+<td>None (public graph)</td>
+<td>100 % personal, optional encrypted backup</td>
 </tr>
 <tr>
 <td><strong>Privacy</strong></td>
-<td>Default offline; cloud hop opt‑in</td>
-<td>Data resides in vendor cloud</td>
-<td>Same</td>
-<td>Fully public graph; pseudonymity only</td>
-<td>Full data sovereignty, but user hardware risk</td>
+<td>Offline-by-default</td>
+<td>Vendor cloud</td>
+<td>Vendor cloud</td>
+<td>Public graph (pseudonymous)</td>
+<td>Full offline</td>
 </tr>
 <tr>
-<td><strong>Scalability</strong></td>
-<td>Unlimited offline, selective cloud; fits on 32 GB phone</td>
-<td>Scales horiz. in cloud</td>
-<td>Horiz. but pay‑per‑token</td>
-<td>Global, but high latency</td>
-<td>Limited by edge HW</td>
+<td><strong>Latency</strong></td>
+<td>~0.3 s offline</td>
+<td>~0.4 s</td>
+<td>~0.4 s</td>
+<td>2 s +</td>
+<td>~0.3 s</td>
 </tr>
 <tr>
-<td><strong>Licence / Business</strong></td>
-<td>Apache‑2 core; commercial Gateway SaaS only when cloud consults</td>
+<td><strong>Licensing</strong></td>
+<td>Apache-2 core; commercial Gateway SaaS if cloud consults</td>
 <td>MIT</td>
-<td>Apache‑2</td>
-<td>GPL‑3 code, Polyform data</td>
-<td>GPL‑3</td>
+<td>Apache-2</td>
+<td>GPL-3 code, Polyform data</td>
+<td>GPL-3</td>
 </tr>
 <tr>
 <td><strong>Strengths</strong></td>
-<td>Fast, private, hybrid; acts as real “RAM swap” for tiny‑LLM</td>
-<td>Automatic fact extraction; drop‑in for SaaS</td>
-<td>Ultra‑fast recall; easy LangChain</td>
-<td>Verifiable provenance; rich ontology</td>
-<td>Complete sovereignty; zero subscription</td>
+<td>Fast, private, hybrid; true “RAM swap”</td>
+<td>Automatic fact extraction</td>
+<td>Ultra-fast recall</td>
+<td>Verifiable provenance</td>
+<td>Full sovereignty; zero subscription</td>
 </tr>
 <tr>
 <td><strong>Limitations</strong></td>
 <td>Needs Gateway orchestration; edge disk space</td>
-<td>Central privacy risk; per‑token cost</td>
+<td>Central privacy risk; per-token cost</td>
 <td>Same risk; no DoD</td>
-<td>Heavy Web3 stack; seconds‑level latency</td>
+<td>Heavy Web3 stack; latency seconds</td>
 <td>User must maintain daemon; HW limits</td>
 </tr>
 </tbody>
 </table>
 </div>
 <hr>
-<doc-anchor-target id="key-findings-en">
+<doc-anchor-target id="key-findings">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key-findings-en">#</doc-anchor-trigger>
-        <span>Key Findings (EN)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-findings">#</doc-anchor-trigger>
+        <span>Key Findings</span>
     </h2>
 </doc-anchor-target>
 <ol>
-<li><strong>Membria MCP is the only option that combines an on‑device &quot;swap‑context&quot; RAG/CAG store with hybrid routing to cloud experts.</strong> This minimizes token overhead while still giving access to frontier‑level reasoning on demand.</li>
-<li><strong>Privacy spectrum:</strong>
-<ul>
-<li>Full offline privacy — Membria MCP and Asimov Positron.</li>
-<li>Partial (data in a vendor cloud) — Mem0 and Zep.</li>
-<li>Public yet verifiable data — Asimov KCG.</li>
-</ul>
-</li>
-<li><strong>Economics:</strong> Membria’s hybrid approach removes recurring fees for the user and slashes GPU cap‑ex for the provider, unlike cloud‑only Mem0/Zep.</li>
-<li><strong>Latency &amp; UX:</strong> Membria and Positron deliver sub‑300 ms offline answers; Mem0/Zep are fast but depend on connectivity; Asimov KCG suffers multi‑second latency due to its Web3 stack.</li>
-<li><strong>Developer effort:</strong>
-<ul>
-<li>Minimum effort — Zep/Mem0 (simple REST drop‑in).</li>
-<li>Best balance of control and flexibility — Membria Gateway SDK (Edge + Cloud via one call).</li>
-<li>Highest barrier — Asimov KCG (SPARQL) and Positron (self‑hosted daemon).</li>
-</ul>
-</li>
+<li><strong>Membria MCP</strong> is the only option combining an on-device swap-context store <strong>and</strong> hybrid routing to cloud experts, minimising token overhead while retaining frontier reasoning on demand.</li>
+<li><strong>Privacy spectrum:</strong> full offline privacy (Membria MCP, Positron) → vendor-cloud (Mem0, Zep) → public verifiable graph (Asimov KCG).</li>
+<li><strong>Economics:</strong> Membria’s hybrid model removes recurring fees for users and slashes GPU cap-ex for providers, unlike cloud-only Mem0/Zep.</li>
+<li><strong>Latency &amp; UX:</strong> Membria and Positron deliver sub-300 ms offline answers; Mem0/Zep are fast but depend on connectivity; Asimov KCG suffers multi-second latency due to Web3.</li>
+<li><strong>Developer effort:</strong> easiest drop-in: Zep/Mem0; best flexibility: Membria Gateway SDK; highest barrier: Asimov KCG &amp; Positron.</li>
 </ol>
 <blockquote>
-<p><strong>Bottom line:</strong> For a private, cost‑efficient and low‑latency memory layer that still lets agents tap frontier reasoning when needed, <strong>Membria MCP</strong> is the most balanced solution in 2026.</p>
+<p><strong>Bottom line:</strong> For a private, cost-efficient, low-latency memory layer that still lets agents tap frontier reasoning when needed, <strong>Membria MCP</strong> is the most balanced solution in 2026.</p>
 </blockquote>
 
                                 
