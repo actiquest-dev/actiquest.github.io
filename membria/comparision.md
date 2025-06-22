@@ -21,6 +21,9 @@ order: 89
 
 ---
 
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeRdMJzyet1aT8mr-U12q7nnDDPG7nejxv5JyJlThUQz-Y-u8P24E47ygzwRdWH-LlumnfKpiXf0d5U1s7mQGAcFvKhKldqbquXpNXt-0CFBUbdSWhdinRtLZYPzPfTcG3lYC-DjQ?key=AsJEkgePh24159X10uUz6PJ-)
+
+---
 ### Key Take-aways
 
 1. **Economics flip:** Membria shifts costs to the edge and turns cloud usage into a pay-per-consult micro-fee, while pure-cloud vendors fight margin erosion.  
@@ -47,6 +50,9 @@ order: 89
 | **Limitations** | Needs Gateway orchestration; edge disk space | Central privacy risk; per-token cost | Same risk; no DoD | Heavy Web3 stack; latency seconds | User must maintain daemon; HW limits |
 
 ---
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXerq0JiCzurtkega3ATyAjeTiL4vQZY_e24alSoXHO2inRxYZqivfHu24mdu4EvBv89675wJhKJHPrAB8AQiZ0mKvVROEBh_vWsNck8k9NHpjy8McfDbSTuuVOThl3Pcuib_MXa7g?key=AsJEkgePh24159X10uUz6PJ-)
+
+---
 
 ## Key Findings
 
@@ -57,8 +63,5 @@ order: 89
 5. **Developer effort:** easiest drop-in: Zep/Mem0; best flexibility: Membria Gateway SDK; highest barrier: Asimov KCG & Positron.
 
 > **Bottom line:** For a private, cost-efficient, low-latency memory layer that still lets agents tap frontier reasoning when needed, **Membria MCP** is the most balanced solution in 2026.
-
----
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXerq0JiCzurtkega3ATyAjeTiL4vQZY_e24alSoXHO2inRxYZqivfHu24mdu4EvBv89675wJhKJHPrAB8AQiZ0mKvVROEBh_vWsNck8k9NHpjy8McfDbSTuuVOThl3Pcuib_MXa7g?key=AsJEkgePh24159X10uUz6PJ-)
 
 ---
