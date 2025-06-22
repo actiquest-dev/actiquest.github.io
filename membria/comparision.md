@@ -1,7 +1,7 @@
 ---
 icon: package
-label: Proposed Solution
-order: 85
+label: Comparision
+order: 89
 ---
 
 # Membria vs. Alternative AI Solutions (2026)
