@@ -50,7 +50,7 @@ order: 89
 | **Limitations** | Needs Gateway orchestration; edge disk space | Central privacy risk; per-token cost | Same risk; no DoD | Heavy Web3 stack; latency seconds | User must maintain daemon; HW limits |
 
 ---
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXerq0JiCzurtkega3ATyAjeTiL4vQZY_e24alSoXHO2inRxYZqivfHu24mdu4EvBv89675wJhKJHPrAB8AQiZ0mKvVROEBh_vWsNck8k9NHpjy8McfDbSTuuVOThl3Pcuib_MXa7g?key=AsJEkgePh24159X10uUz6PJ-)
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXchpE9eNdaSTtG3zDlG8BUVE0UlmRxcs-LgPAaWlv5VtXYmKGXSie80CCAnE3laYckln350zqe4YqY6kMzevLyC4F9U634ruAmAPn7lNxPT2V_FmOmTVDvBovbBT2RsWde0yudsbA?key=AsJEkgePh24159X10uUz6PJ-)
 
 ---
 
