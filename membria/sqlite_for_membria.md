@@ -4,8 +4,6 @@ label: SQLite for Membria
 order: 92
 ---
 
----
-
 -----
 
 # Hybrid Vector/Relational RAG/CAG DBMS for Edge Devices with Agent Memory
@@ -15,7 +13,7 @@ order: 92
 For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and processing complex data structures for AI agents. This includes:
 
 1.  **RAG (Retrieval-Augmented Generation):** Unstructured "facts" for semantic search.
-2.  **Knowledge Graph:** Structured entities and their relationships, defined by an ontology.
+2.  **Knowledge Graph:** Structured entities and their relationships, defined by an ontology and tracked over time.
 3.  **Agent Memory:** State, history, and internal "thought" processes for multiple, distinct AI agents.
 
 The goal of this architecture is to unify all these data types into a **single, transactional, high-performance database** with minimal overhead.
@@ -60,13 +58,15 @@ CREATE TABLE knowledge_nodes (
     FOREIGN KEY (node_type) REFERENCES ontology_schema(item_label)
 );
 
--- Stores Edges (relationships) between nodes
+-- Stores Edges (relationships) between nodes with temporal tracking
 CREATE TABLE knowledge_edges (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     source_node_id TEXT NOT NULL,
     target_node_id TEXT NOT NULL,
     label TEXT NOT NULL,
     properties JSON,
+    valid_from_ts INTEGER NOT NULL, -- Unix timestamp of when the relationship became valid
+    valid_until_ts INTEGER,         -- Unix timestamp of when it ceased to be valid. NULL means it's current.
     FOREIGN KEY (source_node_id) REFERENCES knowledge_nodes(id),
     FOREIGN KEY (target_node_id) REFERENCES knowledge_nodes(id),
     FOREIGN KEY (label) REFERENCES ontology_schema(item_label)
@@ -134,101 +134,89 @@ CREATE TABLE agent_scratchpad (
 );
 ```
 
-## 4\. Implementing the Knowledge Graph & KNOW Ontology
+## 4\. Implementing the Knowledge Graph: Ontology & Temporality
 
-The KNOW ontology provides the vocabulary and structure for the knowledge graph. The `ontology_schema` table stores the allowed node and edge types (e.g., 'Person', 'Equipment', 'MAINTAINS'), while the `knowledge_nodes` and `knowledge_edges` tables store the instance data conforming to this ontology. This enables powerful, structured queries about the relationships between entities.
+### 4.1. The KNOW Ontology
+
+The KNOW ontology provides the vocabulary and structure for the knowledge graph. The `ontology_schema` table stores the allowed node and edge types (e.g., 'Person', 'Equipment', 'MAINTAINS'), while the `knowledge_nodes` and `knowledge_edges` tables store the instance data conforming to this ontology.
+
+### 4.2. Implementing a Temporal Graph
+
+A key feature of advanced memory systems is temporality—the ability to understand how relationships change over time. This is achieved by adding `valid_from_ts` and `valid_until_ts` columns to the `knowledge_edges` table.
+
+**How it works:** Instead of deleting or overwriting relationships, we preserve history. When a relationship changes:
+
+1.  The old record is updated by setting `valid_until_ts` to the current timestamp, "closing" it.
+2.  A new record is inserted with `valid_from_ts` as the current timestamp and `valid_until_ts` as `NULL`, indicating it's the new "current" state.
+
+**Example: An employee promotion**
+
+1.  **Initial State:** John Doe is a 'Technician'. An edge is created with `valid_from_ts` = (start\_date) and `valid_until_ts` = `NULL`.
+2.  **State Change:** He is promoted to 'Senior Technician'.
+3.  **Action:** The old edge is updated with `valid_until_ts` = (promotion\_date). A new edge is inserted with the 'Senior Technician' role, `valid_from_ts` = (promotion\_date), and `valid_until_ts` = `NULL`.
+
+This allows for powerful historical queries.
+
+**Example Temporal Query:** "What was John Doe's role on January 1st, 2024?"
+
+```sql
+SELECT target_node_id AS role_id
+FROM knowledge_edges
+WHERE
+    source_node_id = 'person:john_doe'
+    AND label = 'HAS_ROLE'
+    AND 1704067200 BETWEEN valid_from_ts AND COALESCE(valid_until_ts, 9999999999);
+```
+
+The `COALESCE` function correctly handles currently valid relationships where `valid_until_ts` is `NULL`.
 
 ## 5\. Implementing Agent Memory Architecture
 
-To support sophisticated, stateful AI agents, the architecture defines three types of memory, each implemented with dedicated tables in the SQLite database.
+To support sophisticated, stateful AI agents, the architecture defines three types of memory:
 
-### 5.1. The Three Types of Agent Memory
+1.  **Long-Term Memory (`agents` table):** Stores the core identity of each agent—its purpose, instructions, and permitted tools.
+2.  **Episodic Memory (`agent_conversations`, `conversation_history` tables):** Records the complete history of interactions.
+3.  **Working Memory (`agent_scratchpad` table):** Provides a "thought space" for an agent to plan multi-step tasks, execute tools, and record observations before formulating a final response.
 
-1.  **Long-Term Memory (`agents` table):** Stores the core identity of each agent—its purpose, instructions, personality, and permitted tools (e.g., the `system_prompt` defines "You are a helpful safety assistant...").
-2.  **Episodic Memory (`agent_conversations`, `conversation_history` tables):** Records the complete, turn-by-turn history of interactions between a user and an agent, preserving the full context of each conversation.
-3.  **Working Memory (`agent_scratchpad` table):** Provides a temporary "thought space" for an agent. Here, it can plan multi-step tasks, execute tools (like RAG or graph queries), and record the results (observations) before formulating a final response. This is critical for implementing advanced reasoning patterns like ReAct (Reason + Act).
+## 6\. Functional Workflows
 
-### 5.2. The Agent Work Cycle
+The agent is the primary driver of all other workflows. A typical interaction follows a "Reason-Act" loop where the agent uses its Working Memory (`agent_scratchpad`) to plan steps, and then executes actions by triggering RAG, CAG, or temporal Graph workflows to gather information before generating a final response.
 
-A typical agent interaction follows this stateful loop:
-
-1.  **Initialization:** The application loads the agent's core instructions from the `agents` table based on the selected `agent_id`.
-2.  **Conversation Start:** A new record is created in `agent_conversations` with a unique `session_id`.
-3.  **User Interaction:** The user's message is saved to `conversation_history` with `role = 'user'`.
-4.  **Reasoning Loop (The "Thinking" Process):**
-      * **Thought:** The LLM analyzes the history and its goal, then generates a plan. This internal monologue is saved to the `thought` column in `agent_scratchpad`. (e.g., "User is asking about safety for valve VX-55. I need to query the knowledge graph for its location and then use RAG to find the relevant safety doc.").
-      * **Action:** The LLM generates a structured `action` to execute a tool, e.g., `{"tool": "rag_search", "query": "safety procedure for VX-55"}`. This is also saved to the scratchpad.
-      * **Observation:** The system executes the action, and the result (e.g., a text chunk from a manual) is saved to the `observation` column.
-      * The loop repeats, feeding the history of thoughts, actions, and observations back into the LLM's context until it has enough information.
-5.  **Final Response:** The agent generates the final answer for the user, which is saved to `conversation_history` with `role = 'assistant'`.
-
-### 5.3. Example Query: Reconstructing Full Context
-
-To reconstruct the full context for an agent during its reasoning loop, the application can run the following query:
-
-```sql
--- Get all messages and scratchpad entries for a given session, ordered by time
-SELECT
-    'message' AS entry_type,
-    role,
-    content,
-    timestamp
-FROM conversation_history
-WHERE session_id = 'session-123-abc'
-
-UNION ALL
-
-SELECT
-    'scratchpad' AS entry_type,
-    'assistant' AS role, -- The agent's own internal work
-    'Thought: ' || thought || ' | Action: ' || action || ' | Observation: ' || observation AS content,
-    timestamp
-FROM agent_scratchpad
-WHERE session_id = 'session-123-abc'
-
-ORDER BY timestamp ASC;
-```
-
-## 6\. "Unlimited Context" Implementation
+## 7\. "Unlimited Context" Implementation
 
 "Unlimited context" is achieved via a **hybrid memory management system**:
 
 1.  **Active Memory:** The LLM's native context window (KV-cache), residing in shared system RAM and accelerated by the device's NPU.
-2.  **Long-Term Memory:** The entire SQLite database, which acts as a vast, searchable knowledge repository.
+2.  **Long-Term Memory:** The entire SQLite database, which acts as a vast, searchable, and time-aware knowledge repository on disk.
 
-The agent's reasoning process intelligently retrieves only the most relevant data from its Long-Term and Episodic Memory to construct a compact, effective prompt for its Active Memory.
+## 8\. Architectural Advantages
 
-## 7\. Architectural Advantages
-
-  * **Unification:** A single, coherent system for RAG, Knowledge Graphs, and stateful Agent Memory.
-  * **Stateful Autonomy:** Enables multiple, distinct agents to operate on a single device, each with its own memory and purpose.
-  * **Traceability:** The `agent_scratchpad` table provides a full audit trail of the agent's "thought process," invaluable for debugging, analysis, and safety.
-  * **Efficiency & Reliability:** Achieves high performance and ACID-guaranteed data integrity with minimal resource footprint, ideal for edge deployments.
+  * **Unification:** A single, coherent system for RAG, temporal Knowledge Graphs, and stateful Agent Memory.
+  * **Stateful Autonomy & Historicity:** Enables multiple agents to operate with full conversational history and understand how knowledge changes over time.
+  * **Traceability:** The `agent_scratchpad` provides a full audit trail of the agent's "thought process".
+  * **Efficiency & Reliability:** Achieves high performance and ACID-guaranteed data integrity with minimal resource footprint.
 
 -----
 
 ## Appendix A: Hardware Provider Overview (NVIDIA / AMD / Intel)
 
-This section provides a brief overview of the three main semiconductor companies and their roles in an AI architecture like Membria.
-
-  * **NVIDIA:** The leader in AI acceleration due to its powerful GPUs (e.g., RTX series for the edge, Blackwell for the cloud) and the mature CUDA software ecosystem. In this architecture, it powers cloud inference.
-  * **AMD:** A leader in high-performance CPUs (e.g., Threadripper for cloud nodes) and a growing competitor in AI with its Instinct GPUs and Ryzen AI NPUs for edge devices.
-  * **Intel:** A dominant player in client CPUs and a leader in edge AI with its Core Ultra processors featuring integrated NPUs, making them an ideal hardware base for the Membria edge device.
+  * **NVIDIA:** Leader in AI acceleration with its GPUs (e.g., RTX series) and the mature CUDA software ecosystem. Powers cloud inference in the Membria architecture.
+  * **AMD:** Leader in high-performance CPUs (e.g., Threadripper) and a growing competitor in AI with its Instinct GPUs and Ryzen AI NPUs for edge devices.
+  * **Intel:** Leader in client CPUs and edge AI with its Core Ultra processors featuring integrated NPUs, making them an ideal hardware base for the Membria edge device.
 
 -----
 
 ## Appendix B: Comparison of Agent Memory Approaches
 
-While the proposed unified SQLite architecture is optimized for this project's goals, other approaches exist for implementing agent memory.
-
-| Criteria | Unified SQLite (Proposed) | AI Frameworks (LangChain/LlamaIndex) | Specialized Architectures (e.g., MemGPT) | Traditional DBMS Stack (e.g., Postgres+Redis) |
-| :--- | :--- | :--- | :--- | :--- |
-| **Deployment Model**| **Embedded.** Single file, no server process. Ideal for offline edge. | **Primarily Client-Server.** Can wrap local stores, but designed around service calls. Not ideal for offline-first. | **Embedded, but complex.** A self-contained architectural pattern. | **Client-Server.** Requires network connection to multiple database servers. Not for edge. |
-| **Dependencies & Footprint** | **Minimal.** A single, lightweight library. | **High.** Brings in a large number of dependencies, potentially bloated for edge use. | **Very High.** Emulates OS-level memory management, resource-intensive. | **High.** Requires running and managing multiple, heavy server processes. |
-| **Data Integrity (ACID)**| **Excellent.** Full ACID transactions ensure memory consistency. | **Dependent.** Integrity depends on the underlying database; not guaranteed at the framework level. | **Managed by framework.** | **High (Postgres),** but consistency between Redis and Postgres must be handled by the application. |
-| **Flexibility & Control**| **Maximum.** Full control over schema, queries, and logic via standard SQL. | **Limited.** Abstractions can be restrictive and hard to customize or debug. | **Limited.** Imposes its specific hierarchical memory structure. | **Maximum.** |
-| **Best for...** | **Reliable, production-grade edge applications** requiring efficiency and control. | **Rapid prototyping** and cloud-based agents where development speed is prioritized. | **Research** and agents needing to manage very long-running, evolving contexts. | **High-performance, scalable cloud applications** with a dedicated DevOps team. |
+| Criteria | Unified SQLite (Proposed) | AI Frameworks (LangChain) | Specialized Memory Stores (Mem0, Zep) |
+| :--- | :--- | :--- | :--- |
+| **Deployment Model**| **Embedded.** Ideal for offline edge. | **Primarily Client-Server.** Not ideal for offline-first. | **Client-Server.** Deployed as separate services. Not for offline edge. |
+| **Dependencies & Footprint** | **Minimal.** A single, lightweight library. | **High.** Potentially bloated for edge use. | **High.** Requires running and managing separate, often containerized, services. |
+| **Key Feature** | **Unification & Reliability.** RAG, Graph, and Agent Memory in one ACID-compliant store. | **Rapid Prototyping.** High-level abstractions for quick development. | **Managed Memory.** Provides ready-to-use APIs for semantic and temporal memory search. |
+| **Data Integrity (ACID)**| **Excellent.** Full ACID transactions ensure memory consistency. | **Dependent.** Depends on the underlying database; not guaranteed at the framework level. | **Managed by the service.** Typically high. |
+| **Flexibility & Control**| **Maximum.** Full control over schema and logic via standard SQL. | **Limited.** Abstractions can be restrictive and hard to customize. | **Limited.** Restricted to the capabilities of their API. |
+| **Best for...** | **Reliable, production-grade edge applications** requiring efficiency and control. | **Rapid prototyping** and cloud-based agents where development speed is prioritized. | **Cloud-native applications** that need a managed, off-the-shelf memory solution. |
 
 ### Analysis
 
-For the Membria EE use case, which demands **offline-first autonomy, resource efficiency, and transactional reliability**, the proposed unified SQLite architecture is superior. High-level frameworks like LangChain, while excellent for prototyping, introduce unnecessary overhead and dependencies for a production edge environment. The SQLite solution provides the required control, reliability, and performance with the lowest possible footprint.
+For the Membria EE use case, which demands **offline-first autonomy, resource efficiency, and transactional reliability**, the proposed unified SQLite architecture is superior. High-level frameworks and managed memory services, while powerful in the cloud, introduce dependencies and a client-server model that are unsuitable for a disconnected edge environment. The SQLite solution provides the required control, reliability, and performance with the lowest possible footprint.
