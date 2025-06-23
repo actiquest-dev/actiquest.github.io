@@ -100,7 +100,7 @@ Audit & KPI"]
 | Parameter | Value / Formula | Notes |
 |---|---|---|
 | **Sustained throughput** | **20–40 tokens / sec** on 4 × RTX 5090 32 GB @ 4‑bit | Measured with vLLM paged‑attention, context 8 k. |
-| **Interactive chat budget** | *concurrent users* ≈ **throughput / 1 tok·s⁻¹** | To keep latency \< 5 s, aim for ≥1 tok/s per session. |
+| **Interactive chat budget** | *concurrent users* ≈ **throughput / 10 tok·s⁻¹** | To keep latency \< 5 s, aim for ≥1 tok/s per session. |
 | **Example** | 30 tok/s ⇒ **\~30 simultaneous users** get \~200‑token answer in ≈7 s. | Suitable for one engineering shift. |
 | **Burst mode (batch)** | vLLM micro‑batch 8 req ⇒ +25 % throughput | Spikes handled without over‑scaling. |
 | **Autoscale metric** | GPU util \> 70 % *and* queue \> 3 s → add node | K8s + KEDA or Slurm + Prometheus. |
