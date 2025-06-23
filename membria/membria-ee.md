@@ -1,6 +1,6 @@
 ---
 icon: star
-label: Alternative Methods
+label: Membria-Enterprise
 order: 94
 ---
 
