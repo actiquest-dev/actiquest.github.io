@@ -1,6 +1,6 @@
 ---
 icon: database
-label: Comparision
+label: SQLite for Membria
 order: 89
 ---
 
