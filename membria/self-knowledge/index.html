@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804019901269">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804020487594">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
 
     <!-- Primary Meta Tags -->
-    <title>Self-Knowledge Checkpoint</title>
-    <meta name="title" content="Self-Knowledge Checkpoint">
-    <meta name="description" content="This section outlines how Membria's DoD agent determines the optimal path to answering a user query.">
+    <title>Architecture: A Unified RAG/CAG DBMS for Edge Devices</title>
+    <meta name="title" content="Architecture: A Unified RAG/CAG DBMS for Edge Devices">
+    <meta name="description" content="For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/self-knowledge/">
@@ -19,24 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/self-knowledge/">
-    <meta property="og:title" content="Self-Knowledge Checkpoint">
-    <meta property="og:description" content="This section outlines how Membria's DoD agent determines the optimal path to answering a user query.">
+    <meta property="og:title" content="Architecture: A Unified RAG/CAG DBMS for Edge Devices">
+    <meta property="og:description" content="For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/self-knowledge/">
-    <meta property="twitter:title" content="Self-Knowledge Checkpoint">
-    <meta property="twitter:description" content="This section outlines how Membria's DoD agent determines the optimal path to answering a user query.">
+    <meta property="twitter:title" content="Architecture: A Unified RAG/CAG DBMS for Edge Devices">
+    <meta property="twitter:description" content="For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.1.804019901269" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.804020487594" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804019901269" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804020487594" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804019901269" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.804019901269" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804020487594" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.804020487594" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -222,172 +222,229 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="self-knowledge-checkpoint" class="break-words">
+<hr>
+<doc-anchor-target id="architecture-a-unified-ragcag-dbms-for-edge-devices" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#self-knowledge-checkpoint">#</doc-anchor-trigger>
-        <span>Self-Knowledge Checkpoint</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture-a-unified-ragcag-dbms-for-edge-devices">#</doc-anchor-trigger>
+        <span><strong>Architecture: A Unified RAG/CAG DBMS for Edge Devices</strong></span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="local-evaluation-and-self-knowledge-checkpoint-for-dod-responses">
+<doc-anchor-target id="1-overview-and-goals">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#local-evaluation-and-self-knowledge-checkpoint-for-dod-responses">#</doc-anchor-trigger>
-        <span>Local Evaluation and Self-Knowledge Checkpoint for DoD Responses</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-overview-and-goals">#</doc-anchor-trigger>
+        <span>1. Overview and Goals</span>
     </h2>
 </doc-anchor-target>
-<p>This section outlines how Membria&#x27;s DoD agent determines the optimal path to answering a user query. It uses a local Self-Knowledge Checkpoint module to decide whether the query can be answered from internal knowledge, from a local RAG system, or requires external DoD inference. All reasoning is performed locally using a lightweight reward model (TinyRM), a local SLM, and optional use of the Knowledge Cache Graph (KCG).</p>
-<doc-anchor-target id="objective">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#objective">#</doc-anchor-trigger>
-        <span>Objective</span>
-    </h3>
-</doc-anchor-target>
-<p>Efficiently select the most accurate and useful answer while minimizing unnecessary computation and external calls. The Self-Knowledge Checkpoint module ensures that retrieval and generation are invoked only when needed.</p>
-<doc-anchor-target id="architecture-overview">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture-overview">#</doc-anchor-trigger>
-        <span>Architecture Overview</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">User Query
-   │
-   ▼
-Self-Knowledge Checkpoint (SLM)
-   │
-   ├─ LOCAL → SLM Answer Generation
-   │
-   ├─ CACHE → Query Knowledge Cache Graph (KCG)
-   │
-   ├─ LOCAL RAG → Local Retrieval-Augmented Generation
-   │
-   └─ DOD → Distillation-on-Demand (Big LLMs)
-             │
-             ▼
-     Receive 3–4 LLM Answers
-             ▼
-   TinyRM Scoring + Optional SLM Tie-Break
-             ▼
-   Best Answer → Output + Optional Caching in KCG</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="components">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#components">#</doc-anchor-trigger>
-        <span>Components</span>
-    </h3>
-</doc-anchor-target>
+<p>For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and processing complex data structures for AI agents. This includes:</p>
 <ol>
-<li><p><strong>Self-Knowledge Checkpoint</strong><br />
-A local SLM that decides whether to answer using built-in knowledge, the cache, a local RAG system, or to escalate to external distillation. This step prevents unnecessary computation and improves response time.</p>
-</li>
-<li><p><strong>Local RAG Module</strong><br />
-If needed, a local vector database (e.g., FAISS, Qdrant) is queried using the input prompt to provide retrieved context for the SLM to use in answer generation.</p>
-</li>
-<li><p><strong>TinyRM Scoring</strong><br />
-A small reward model evaluates answers for quality and relevance based on the original query.</p>
-</li>
-<li><p><strong>SLM Tie-Breaker</strong><br />
-If scores are inconclusive, the SLM selects the most accurate answer with reasoning.</p>
-</li>
-<li><p><strong>Caching</strong><br />
-Final verified answers may be stored in KCG for future reuse.</p>
-</li>
+<li><strong>RAG (Retrieval-Augmented Generation):</strong> Unstructured &quot;facts&quot; for semantic search.</li>
+<li><strong>Knowledge Graph:</strong> Structured entities and their relationships, defined by an ontology.</li>
+<li><strong>Agent Memory:</strong> State, history, and internal &quot;thought&quot; processes for multiple, distinct AI agents.</li>
 </ol>
-<doc-anchor-target id="pseudocode-example">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pseudocode-example">#</doc-anchor-trigger>
-        <span>Pseudocode Example</span>
-    </h3>
+<p>The goal of this architecture is to unify all these data types into a <strong>single, transactional, high-performance database</strong> with minimal overhead.</p>
+<doc-anchor-target id="2-technology-choice-sqlite-with-extensions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-technology-choice-sqlite-with-extensions">#</doc-anchor-trigger>
+        <span>2. Technology Choice: SQLite with Extensions</span>
+    </h2>
 </doc-anchor-target>
+<p><strong>SQLite</strong> is selected as the foundation due to its unique advantages for edge scenarios:</p>
+<ul>
+<li><strong>Single File:</strong> Simplifies deployment, backup, and synchronization.</li>
+<li><strong>Serverless Operation:</strong> Embeds directly into the application, saving system resources.</li>
+<li><strong>Transactional (ACID):</strong> Guarantees data integrity.</li>
+<li><strong>Extensibility:</strong> Supports powerful extensions for specific tasks like vector search and JSON processing.</li>
+</ul>
+<p>We will use two key extensions:</p>
+<ul>
+<li><strong><code v-pre>sqlite-vss</code></strong>: For efficient vector search (RAG).</li>
+<li><strong><code v-pre>JSON1</code></strong>: For native handling of structured JSON data (properties, agent memory).</li>
+</ul>
+<doc-anchor-target id="3-database-schema">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-database-schema">#</doc-anchor-trigger>
+        <span>3. Database Schema</span>
+    </h2>
+</doc-anchor-target>
+<p>The entire logic is implemented within a single file, <code v-pre>membria_edge.db</code>. The schema is designed to be comprehensive, supporting all required functionalities.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-python"><code v-pre class="language-python">decision = self_knowledge_checkpoint(query)
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">/*
+ =================================================================
+ CORE KNOWLEDGE TABLES (RAG &amp; Knowledge Graph)
+ =================================================================
+*/
 
-if decision == &quot;LOCAL&quot;:
-    return slm_answer(query)
-elif decision == &quot;CACHE&quot;:
-    context = query_kcg(query)
-    return slm_with_context(query, context)
-elif decision == &quot;LOCAL_RAG&quot;:
-    context = query_local_vectordb(query)
-    return slm_with_context(query, context)
-elif decision == &quot;DOD&quot;:
-    answers = call_big_llms(query)
-    scores = [tinyrm_score(query, a) for a in answers]
-    if max(scores) - sorted(scores)[-2] &lt; 0.1:
-        return slm_compare_all(query, answers)
-    else:
-        return answers[argmax(scores)]</code></pre>
+-- Stores the KNOW Ontology schema itself
+CREATE TABLE ontology_schema (
+    item_type TEXT NOT NULL, -- &quot;NODE&quot; or &quot;EDGE&quot;
+    item_label TEXT NOT NULL PRIMARY KEY,
+    description TEXT
+);
+
+-- Stores Nodes (entities) of the knowledge graph
+CREATE TABLE knowledge_nodes (
+    id TEXT PRIMARY KEY,
+    node_type TEXT NOT NULL,
+    properties JSON NOT NULL,
+    FOREIGN KEY (node_type) REFERENCES ontology_schema(item_label)
+);
+
+-- Stores Edges (relationships) between nodes
+CREATE TABLE knowledge_edges (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    source_node_id TEXT NOT NULL,
+    target_node_id TEXT NOT NULL,
+    label TEXT NOT NULL,
+    properties JSON,
+    FOREIGN KEY (source_node_id) REFERENCES knowledge_nodes(id),
+    FOREIGN KEY (target_node_id) REFERENCES knowledge_nodes(id),
+    FOREIGN KEY (label) REFERENCES ontology_schema(item_label)
+);
+
+-- Stores text chunks for RAG, linkable to the knowledge graph
+CREATE TABLE chunks (
+    id TEXT PRIMARY KEY,
+    content TEXT NOT NULL,
+    embedding BLOB NOT NULL,
+    related_node_id TEXT,
+    sync_status TEXT NOT NULL DEFAULT 'local', -- for cloud sync
+    FOREIGN KEY (related_node_id) REFERENCES knowledge_nodes(id)
+);
+
+-- Virtual table for fast vector search
+CREATE VIRTUAL TABLE vss_chunks USING vss0(embedding(1024));
+
+
+/*
+ =================================================================
+ AGENT MEMORY TABLES
+ =================================================================
+*/
+
+-- Defines the Agents themselves (Long-Term Memory)
+CREATE TABLE agents (
+    agent_id TEXT PRIMARY KEY,
+    description TEXT,
+    system_prompt TEXT NOT NULL,
+    allowed_tools JSON,
+    created_ts INTEGER NOT NULL
+);
+
+-- Groups messages into conversation sessions
+CREATE TABLE agent_conversations (
+    session_id TEXT PRIMARY KEY,
+    agent_id TEXT NOT NULL,
+    user_id TEXT NOT NULL,
+    start_ts INTEGER NOT NULL,
+    summary TEXT, -- Optional summary for long conversations
+    FOREIGN KEY (agent_id) REFERENCES agents(id)
+);
+
+-- Stores turn-by-turn message history (Episodic Memory)
+CREATE TABLE conversation_history (
+    message_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id TEXT NOT NULL,
+    role TEXT NOT NULL, -- 'user', 'assistant', 'system', 'tool'
+    content TEXT NOT NULL,
+    metadata JSON,
+    timestamp INTEGER NOT NULL,
+    FOREIGN KEY (session_id) REFERENCES agent_conversations(session_id)
+);
+
+-- The Agent's &quot;scratchpad&quot; for reasoning (Working Memory)
+CREATE TABLE agent_scratchpad (
+    step_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id TEXT NOT NULL,
+    thought TEXT, -- The agent's reasoning process
+    action JSON,  -- The tool call it decided to make
+    observation TEXT, -- The result from the tool call
+    timestamp INTEGER NOT NULL,
+    FOREIGN KEY (session_id) REFERENCES agent_conversations(session_id)
+);</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="total-latency-estimate">
+<doc-anchor-target id="4-implementing-the-knowledge-graph--know-ontology">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-implementing-the-knowledge-graph--know-ontology">#</doc-anchor-trigger>
+        <span>4. Implementing the Knowledge Graph &amp; KNOW Ontology</span>
+    </h2>
+</doc-anchor-target>
+<p>The KNOW ontology provides the vocabulary and structure for the knowledge graph, ensuring data is consistent and semantically rich. The <code v-pre>ontology_schema</code> table stores the allowed node and edge types (e.g., &#x27;Person&#x27;, &#x27;Equipment&#x27;, &#x27;MAINTAINS&#x27;), while the <code v-pre>knowledge_nodes</code> and <code v-pre>knowledge_edges</code> tables store the instance data conforming to this ontology. This enables powerful, structured queries about the relationships between entities.</p>
+<doc-anchor-target id="5-implementing-agent-memory-architecture">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-implementing-agent-memory-architecture">#</doc-anchor-trigger>
+        <span>5. Implementing Agent Memory Architecture</span>
+    </h2>
+</doc-anchor-target>
+<p>To support sophisticated, stateful AI agents, the architecture defines three types of memory, implemented in the corresponding SQLite tables.</p>
+<ol>
+<li><strong>Long-Term Memory (<code v-pre>agents</code> table):</strong> Stores the core identity of each agent—its purpose, instructions, and permitted tools (e.g., <code v-pre>system_prompt</code> for &quot;You are a helpful safety assistant...&quot;).</li>
+<li><strong>Episodic Memory (<code v-pre>agent_conversations</code>, <code v-pre>conversation_history</code> tables):</strong> Records the complete history of interactions between a user and an agent, preserving the context of each conversation.</li>
+<li><strong>Working Memory (<code v-pre>agent_scratchpad</code> table):</strong> Provides a temporary &quot;thought space&quot; for an agent. Here, it can plan multi-step tasks, execute tools, and record the results (observations) before formulating a final response. This is critical for implementing reasoning patterns like ReAct (Reason + Act).</li>
+</ol>
+<doc-anchor-target id="6-functional-workflows">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-functional-workflows">#</doc-anchor-trigger>
+        <span>6. Functional Workflows</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="61-agent-driven-workflow">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#total-latency-estimate">#</doc-anchor-trigger>
-        <span>Total Latency Estimate</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#61-agent-driven-workflow">#</doc-anchor-trigger>
+        <span>6.1 Agent-driven Workflow</span>
     </h3>
 </doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Step</th>
-<th>Estimated Delay</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Self-Knowledge Checkpoint (SLM)</td>
-<td>100–300 ms</td>
-</tr>
-<tr>
-<td>TinyRM Scoring</td>
-<td>200–400 ms</td>
-</tr>
-<tr>
-<td>SLM Tie-break Reasoning</td>
-<td>300–600 ms</td>
-</tr>
-<tr>
-<td>KCG Retrieval (if used)</td>
-<td>200–500 ms</td>
-</tr>
-<tr>
-<td>Local RAG Retrieval</td>
-<td>150–400 ms</td>
-</tr>
-<tr>
-<td>DoD Request (optional, external)</td>
-<td>800–2000 ms</td>
-</tr>
-<tr>
-<td>Output &amp; Caching</td>
-<td>50–100 ms</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="overall-delay-summary">
+<p>The agent is the primary driver of all other workflows. A typical interaction follows this loop:</p>
+<ol>
+<li><strong>Initialization:</strong> The agent&#x27;s identity is loaded from the <code v-pre>agents</code> table.</li>
+<li><strong>User Input:</strong> A user message is logged in <code v-pre>conversation_history</code>.</li>
+<li><strong>Reasoning Loop (Scratchpad):</strong>
+<ul>
+<li>The agent assesses the user&#x27;s request and its conversation history.</li>
+<li>It formulates a <strong>Thought</strong> (e.g., &quot;I need to find the maintenance procedure for this valve&quot;).</li>
+<li>It selects an <strong>Action</strong> (e.g., <code v-pre>{&quot;tool&quot;: &quot;graph_query&quot;, &quot;query&quot;: &quot;...&quot;}</code>).</li>
+<li>The system executes the action (by calling one of the workflows below).</li>
+<li>The result is saved as an <strong>Observation</strong>.</li>
+<li>This loop continues until the agent has sufficient information.</li>
+</ul>
+</li>
+<li><strong>Final Response:</strong> The agent generates a final answer, which is logged to <code v-pre>conversation_history</code>.</li>
+</ol>
+<doc-anchor-target id="62-supporting-workflows-triggered-by-agents">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overall-delay-summary">#</doc-anchor-trigger>
-        <span>Overall Delay Summary</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#62-supporting-workflows-triggered-by-agents">#</doc-anchor-trigger>
+        <span>6.2 Supporting Workflows (Triggered by Agents)</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Local only with cache or RAG: 0.8–1.6 seconds</li>
-<li>With external DoD inference: 2.5–5 seconds</li>
-<li>Fully local with fallback: 1.0–1.8 seconds</li>
+<li><strong>RAG Workflow:</strong> An agent&#x27;s action can trigger a vector search against the <code v-pre>vss_chunks</code> table to find relevant text passages.</li>
+<li><strong>Graph Workflow:</strong> An agent&#x27;s action can trigger a structured SQL query against the <code v-pre>knowledge_nodes</code> and <code v-pre>knowledge_edges</code> tables to find entities and relationships.</li>
+<li><strong>CAG Workflow:</strong> The system can cache final agent responses in a <code v-pre>chains_of_thought</code>-like table to quickly answer repeated queries.</li>
 </ul>
-<doc-anchor-target id="benefits">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#benefits">#</doc-anchor-trigger>
-        <span>Benefits</span>
-    </h3>
+<doc-anchor-target id="7-unlimited-context-implementation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-unlimited-context-implementation">#</doc-anchor-trigger>
+        <span>7. &quot;Unlimited Context&quot; Implementation</span>
+    </h2>
+</doc-anchor-target>
+<p>&quot;Unlimited context&quot; is achieved via a <strong>hybrid memory management system</strong>:</p>
+<ol>
+<li><strong>Active Memory:</strong> The LLM&#x27;s native context window (KV-cache), residing in shared system RAM and accelerated by the device&#x27;s NPU.</li>
+<li><strong>Long-Term Memory:</strong> The entire SQLite database, which acts as a vast, searchable knowledge repository on disk.</li>
+</ol>
+<p>The agent&#x27;s reasoning process intelligently retrieves only the most relevant data from Long-Term Memory (via RAG and graph queries) to construct a compact, effective prompt for its Active Memory.</p>
+<doc-anchor-target id="8-architectural-advantages">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-architectural-advantages">#</doc-anchor-trigger>
+        <span>8. Architectural Advantages</span>
+    </h2>
 </doc-anchor-target>
 <ul>
-<li><strong>Privacy</strong>: All routing logic is local and intelligent.</li>
-<li><strong>Speed</strong>: Avoids unnecessary retrieval or external calls.</li>
-<li><strong>Quality</strong>: Scales from built-in knowledge to local RAG to global distillation.</li>
-<li><strong>Learning</strong>: Answer paths and outputs improve the cache over time.</li>
+<li><strong>Unification:</strong> A single, coherent system for RAG, Knowledge Graphs, and stateful Agent Memory.</li>
+<li><strong>Stateful Autonomy:</strong> Enables multiple, distinct agents to operate on a single device, each with its own memory and purpose.</li>
+<li><strong>Traceability:</strong> The <code v-pre>agent_scratchpad</code> table provides a full audit trail of the agent&#x27;s &quot;thought process,&quot; which is invaluable for debugging and analysis.</li>
+<li><strong>Efficiency &amp; Reliability:</strong> Achieves high performance and ACID-guaranteed data integrity with minimal resource footprint, ideal for edge deployments.</li>
+<li><strong>Flexibility:</strong> The combination of SQL, vector search, and JSON support provides a powerful and adaptable foundation for building sophisticated AI applications.</li>
 </ul>
-<p>This modular architecture allows Membria agents to act with contextual intelligence and progressive autonomy while maintaining trust and performance across environments.</p>
-<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -397,20 +454,20 @@ elif decision == &quot;DOD&quot;:
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/gateway-discovery/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/comparision/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Gateway Discovery</span>
+                                                <span class="block mt-1">Comparision</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/token-flow/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kv-indexing/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Token Flow</span>
+                                                <span class="block mt-1">Hybrid Cache</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -454,6 +511,6 @@ elif decision == &quot;DOD&quot;:
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Self-Knowledge Checkpoint", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Comparision", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
