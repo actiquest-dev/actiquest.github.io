@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804021209244">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804021683200">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.1.804021209244" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.804021683200" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804021209244" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804021683200" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804021209244" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.804021209244" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804021683200" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.804021683200" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -223,7 +223,6 @@
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <hr>
-<hr>
 <doc-anchor-target id="hybrid-vectorrelational-ragcag-dbms-for-edge-devices-with-agent-memory" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-vectorrelational-ragcag-dbms-for-edge-devices-with-agent-memory">#</doc-anchor-trigger>
@@ -239,7 +238,7 @@
 <p>For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and processing complex data structures for AI agents. This includes:</p>
 <ol>
 <li><strong>RAG (Retrieval-Augmented Generation):</strong> Unstructured &quot;facts&quot; for semantic search.</li>
-<li><strong>Knowledge Graph:</strong> Structured entities and their relationships, defined by an ontology.</li>
+<li><strong>Knowledge Graph:</strong> Structured entities and their relationships, defined by an ontology and tracked over time.</li>
 <li><strong>Agent Memory:</strong> State, history, and internal &quot;thought&quot; processes for multiple, distinct AI agents.</li>
 </ol>
 <p>The goal of this architecture is to unify all these data types into a <strong>single, transactional, high-performance database</strong> with minimal overhead.</p>
@@ -290,13 +289,15 @@ CREATE TABLE knowledge_nodes (
     FOREIGN KEY (node_type) REFERENCES ontology_schema(item_label)
 );
 
--- Stores Edges (relationships) between nodes
+-- Stores Edges (relationships) between nodes with temporal tracking
 CREATE TABLE knowledge_edges (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     source_node_id TEXT NOT NULL,
     target_node_id TEXT NOT NULL,
     label TEXT NOT NULL,
     properties JSON,
+    valid_from_ts INTEGER NOT NULL, -- Unix timestamp of when the relationship became valid
+    valid_until_ts INTEGER,         -- Unix timestamp of when it ceased to be valid. NULL means it's current.
     FOREIGN KEY (source_node_id) REFERENCES knowledge_nodes(id),
     FOREIGN KEY (target_node_id) REFERENCES knowledge_nodes(id),
     FOREIGN KEY (label) REFERENCES ontology_schema(item_label)
@@ -363,104 +364,89 @@ CREATE TABLE agent_scratchpad (
     FOREIGN KEY (session_id) REFERENCES agent_conversations(session_id)
 );</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="4-implementing-the-knowledge-graph--know-ontology">
+<doc-anchor-target id="4-implementing-the-knowledge-graph-ontology--temporality">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-implementing-the-knowledge-graph--know-ontology">#</doc-anchor-trigger>
-        <span>4. Implementing the Knowledge Graph &amp; KNOW Ontology</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-implementing-the-knowledge-graph-ontology--temporality">#</doc-anchor-trigger>
+        <span>4. Implementing the Knowledge Graph: Ontology &amp; Temporality</span>
     </h2>
 </doc-anchor-target>
-<p>The KNOW ontology provides the vocabulary and structure for the knowledge graph. The <code v-pre>ontology_schema</code> table stores the allowed node and edge types (e.g., &#x27;Person&#x27;, &#x27;Equipment&#x27;, &#x27;MAINTAINS&#x27;), while the <code v-pre>knowledge_nodes</code> and <code v-pre>knowledge_edges</code> tables store the instance data conforming to this ontology. This enables powerful, structured queries about the relationships between entities.</p>
+<doc-anchor-target id="41-the-know-ontology">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#41-the-know-ontology">#</doc-anchor-trigger>
+        <span>4.1. The KNOW Ontology</span>
+    </h3>
+</doc-anchor-target>
+<p>The KNOW ontology provides the vocabulary and structure for the knowledge graph. The <code v-pre>ontology_schema</code> table stores the allowed node and edge types (e.g., &#x27;Person&#x27;, &#x27;Equipment&#x27;, &#x27;MAINTAINS&#x27;), while the <code v-pre>knowledge_nodes</code> and <code v-pre>knowledge_edges</code> tables store the instance data conforming to this ontology.</p>
+<doc-anchor-target id="42-implementing-a-temporal-graph">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#42-implementing-a-temporal-graph">#</doc-anchor-trigger>
+        <span>4.2. Implementing a Temporal Graph</span>
+    </h3>
+</doc-anchor-target>
+<p>A key feature of advanced memory systems is temporality—the ability to understand how relationships change over time. This is achieved by adding <code v-pre>valid_from_ts</code> and <code v-pre>valid_until_ts</code> columns to the <code v-pre>knowledge_edges</code> table.</p>
+<p><strong>How it works:</strong> Instead of deleting or overwriting relationships, we preserve history. When a relationship changes:</p>
+<ol>
+<li>The old record is updated by setting <code v-pre>valid_until_ts</code> to the current timestamp, &quot;closing&quot; it.</li>
+<li>A new record is inserted with <code v-pre>valid_from_ts</code> as the current timestamp and <code v-pre>valid_until_ts</code> as <code v-pre>NULL</code>, indicating it&#x27;s the new &quot;current&quot; state.</li>
+</ol>
+<p><strong>Example: An employee promotion</strong></p>
+<ol>
+<li><strong>Initial State:</strong> John Doe is a &#x27;Technician&#x27;. An edge is created with <code v-pre>valid_from_ts</code> = (start_date) and <code v-pre>valid_until_ts</code> = <code v-pre>NULL</code>.</li>
+<li><strong>State Change:</strong> He is promoted to &#x27;Senior Technician&#x27;.</li>
+<li><strong>Action:</strong> The old edge is updated with <code v-pre>valid_until_ts</code> = (promotion_date). A new edge is inserted with the &#x27;Senior Technician&#x27; role, <code v-pre>valid_from_ts</code> = (promotion_date), and <code v-pre>valid_until_ts</code> = <code v-pre>NULL</code>.</li>
+</ol>
+<p>This allows for powerful historical queries.</p>
+<p><strong>Example Temporal Query:</strong> &quot;What was John Doe&#x27;s role on January 1st, 2024?&quot;</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">SELECT target_node_id AS role_id
+FROM knowledge_edges
+WHERE
+    source_node_id = 'person:john_doe'
+    AND label = 'HAS_ROLE'
+    AND 1704067200 BETWEEN valid_from_ts AND COALESCE(valid_until_ts, 9999999999);</code></pre>
+</doc-codeblock></div>
+<p>The <code v-pre>COALESCE</code> function correctly handles currently valid relationships where <code v-pre>valid_until_ts</code> is <code v-pre>NULL</code>.</p>
 <doc-anchor-target id="5-implementing-agent-memory-architecture">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#5-implementing-agent-memory-architecture">#</doc-anchor-trigger>
         <span>5. Implementing Agent Memory Architecture</span>
     </h2>
 </doc-anchor-target>
-<p>To support sophisticated, stateful AI agents, the architecture defines three types of memory, each implemented with dedicated tables in the SQLite database.</p>
-<doc-anchor-target id="51-the-three-types-of-agent-memory">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#51-the-three-types-of-agent-memory">#</doc-anchor-trigger>
-        <span>5.1. The Three Types of Agent Memory</span>
-    </h3>
-</doc-anchor-target>
+<p>To support sophisticated, stateful AI agents, the architecture defines three types of memory:</p>
 <ol>
-<li><strong>Long-Term Memory (<code v-pre>agents</code> table):</strong> Stores the core identity of each agent—its purpose, instructions, personality, and permitted tools (e.g., the <code v-pre>system_prompt</code> defines &quot;You are a helpful safety assistant...&quot;).</li>
-<li><strong>Episodic Memory (<code v-pre>agent_conversations</code>, <code v-pre>conversation_history</code> tables):</strong> Records the complete, turn-by-turn history of interactions between a user and an agent, preserving the full context of each conversation.</li>
-<li><strong>Working Memory (<code v-pre>agent_scratchpad</code> table):</strong> Provides a temporary &quot;thought space&quot; for an agent. Here, it can plan multi-step tasks, execute tools (like RAG or graph queries), and record the results (observations) before formulating a final response. This is critical for implementing advanced reasoning patterns like ReAct (Reason + Act).</li>
+<li><strong>Long-Term Memory (<code v-pre>agents</code> table):</strong> Stores the core identity of each agent—its purpose, instructions, and permitted tools.</li>
+<li><strong>Episodic Memory (<code v-pre>agent_conversations</code>, <code v-pre>conversation_history</code> tables):</strong> Records the complete history of interactions.</li>
+<li><strong>Working Memory (<code v-pre>agent_scratchpad</code> table):</strong> Provides a &quot;thought space&quot; for an agent to plan multi-step tasks, execute tools, and record observations before formulating a final response.</li>
 </ol>
-<doc-anchor-target id="52-the-agent-work-cycle">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#52-the-agent-work-cycle">#</doc-anchor-trigger>
-        <span>5.2. The Agent Work Cycle</span>
-    </h3>
-</doc-anchor-target>
-<p>A typical agent interaction follows this stateful loop:</p>
-<ol>
-<li><strong>Initialization:</strong> The application loads the agent&#x27;s core instructions from the <code v-pre>agents</code> table based on the selected <code v-pre>agent_id</code>.</li>
-<li><strong>Conversation Start:</strong> A new record is created in <code v-pre>agent_conversations</code> with a unique <code v-pre>session_id</code>.</li>
-<li><strong>User Interaction:</strong> The user&#x27;s message is saved to <code v-pre>conversation_history</code> with <code v-pre>role = 'user'</code>.</li>
-<li><strong>Reasoning Loop (The &quot;Thinking&quot; Process):</strong>
-<ul>
-<li><strong>Thought:</strong> The LLM analyzes the history and its goal, then generates a plan. This internal monologue is saved to the <code v-pre>thought</code> column in <code v-pre>agent_scratchpad</code>. (e.g., &quot;User is asking about safety for valve VX-55. I need to query the knowledge graph for its location and then use RAG to find the relevant safety doc.&quot;).</li>
-<li><strong>Action:</strong> The LLM generates a structured <code v-pre>action</code> to execute a tool, e.g., <code v-pre>{&quot;tool&quot;: &quot;rag_search&quot;, &quot;query&quot;: &quot;safety procedure for VX-55&quot;}</code>. This is also saved to the scratchpad.</li>
-<li><strong>Observation:</strong> The system executes the action, and the result (e.g., a text chunk from a manual) is saved to the <code v-pre>observation</code> column.</li>
-<li>The loop repeats, feeding the history of thoughts, actions, and observations back into the LLM&#x27;s context until it has enough information.</li>
-</ul>
-</li>
-<li><strong>Final Response:</strong> The agent generates the final answer for the user, which is saved to <code v-pre>conversation_history</code> with <code v-pre>role = 'assistant'</code>.</li>
-</ol>
-<doc-anchor-target id="53-example-query-reconstructing-full-context">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#53-example-query-reconstructing-full-context">#</doc-anchor-trigger>
-        <span>5.3. Example Query: Reconstructing Full Context</span>
-    </h3>
-</doc-anchor-target>
-<p>To reconstruct the full context for an agent during its reasoning loop, the application can run the following query:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-sql"><code v-pre class="language-sql">-- Get all messages and scratchpad entries for a given session, ordered by time
-SELECT
-    'message' AS entry_type,
-    role,
-    content,
-    timestamp
-FROM conversation_history
-WHERE session_id = 'session-123-abc'
-
-UNION ALL
-
-SELECT
-    'scratchpad' AS entry_type,
-    'assistant' AS role, -- The agent's own internal work
-    'Thought: ' || thought || ' | Action: ' || action || ' | Observation: ' || observation AS content,
-    timestamp
-FROM agent_scratchpad
-WHERE session_id = 'session-123-abc'
-
-ORDER BY timestamp ASC;</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="6-unlimited-context-implementation">
+<doc-anchor-target id="6-functional-workflows">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-unlimited-context-implementation">#</doc-anchor-trigger>
-        <span>6. &quot;Unlimited Context&quot; Implementation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-functional-workflows">#</doc-anchor-trigger>
+        <span>6. Functional Workflows</span>
+    </h2>
+</doc-anchor-target>
+<p>The agent is the primary driver of all other workflows. A typical interaction follows a &quot;Reason-Act&quot; loop where the agent uses its Working Memory (<code v-pre>agent_scratchpad</code>) to plan steps, and then executes actions by triggering RAG, CAG, or temporal Graph workflows to gather information before generating a final response.</p>
+<doc-anchor-target id="7-unlimited-context-implementation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-unlimited-context-implementation">#</doc-anchor-trigger>
+        <span>7. &quot;Unlimited Context&quot; Implementation</span>
     </h2>
 </doc-anchor-target>
 <p>&quot;Unlimited context&quot; is achieved via a <strong>hybrid memory management system</strong>:</p>
 <ol>
 <li><strong>Active Memory:</strong> The LLM&#x27;s native context window (KV-cache), residing in shared system RAM and accelerated by the device&#x27;s NPU.</li>
-<li><strong>Long-Term Memory:</strong> The entire SQLite database, which acts as a vast, searchable knowledge repository.</li>
+<li><strong>Long-Term Memory:</strong> The entire SQLite database, which acts as a vast, searchable, and time-aware knowledge repository on disk.</li>
 </ol>
-<p>The agent&#x27;s reasoning process intelligently retrieves only the most relevant data from its Long-Term and Episodic Memory to construct a compact, effective prompt for its Active Memory.</p>
-<doc-anchor-target id="7-architectural-advantages">
+<doc-anchor-target id="8-architectural-advantages">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#7-architectural-advantages">#</doc-anchor-trigger>
-        <span>7. Architectural Advantages</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-architectural-advantages">#</doc-anchor-trigger>
+        <span>8. Architectural Advantages</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><strong>Unification:</strong> A single, coherent system for RAG, Knowledge Graphs, and stateful Agent Memory.</li>
-<li><strong>Stateful Autonomy:</strong> Enables multiple, distinct agents to operate on a single device, each with its own memory and purpose.</li>
-<li><strong>Traceability:</strong> The <code v-pre>agent_scratchpad</code> table provides a full audit trail of the agent&#x27;s &quot;thought process,&quot; invaluable for debugging, analysis, and safety.</li>
-<li><strong>Efficiency &amp; Reliability:</strong> Achieves high performance and ACID-guaranteed data integrity with minimal resource footprint, ideal for edge deployments.</li>
+<li><strong>Unification:</strong> A single, coherent system for RAG, temporal Knowledge Graphs, and stateful Agent Memory.</li>
+<li><strong>Stateful Autonomy &amp; Historicity:</strong> Enables multiple agents to operate with full conversational history and understand how knowledge changes over time.</li>
+<li><strong>Traceability:</strong> The <code v-pre>agent_scratchpad</code> provides a full audit trail of the agent&#x27;s &quot;thought process&quot;.</li>
+<li><strong>Efficiency &amp; Reliability:</strong> Achieves high performance and ACID-guaranteed data integrity with minimal resource footprint.</li>
 </ul>
 <hr>
 <doc-anchor-target id="appendix-a-hardware-provider-overview-nvidia--amd--intel">
@@ -469,11 +455,10 @@ ORDER BY timestamp ASC;</code></pre>
         <span>Appendix A: Hardware Provider Overview (NVIDIA / AMD / Intel)</span>
     </h2>
 </doc-anchor-target>
-<p>This section provides a brief overview of the three main semiconductor companies and their roles in an AI architecture like Membria.</p>
 <ul>
-<li><strong>NVIDIA:</strong> The leader in AI acceleration due to its powerful GPUs (e.g., RTX series for the edge, Blackwell for the cloud) and the mature CUDA software ecosystem. In this architecture, it powers cloud inference.</li>
-<li><strong>AMD:</strong> A leader in high-performance CPUs (e.g., Threadripper for cloud nodes) and a growing competitor in AI with its Instinct GPUs and Ryzen AI NPUs for edge devices.</li>
-<li><strong>Intel:</strong> A dominant player in client CPUs and a leader in edge AI with its Core Ultra processors featuring integrated NPUs, making them an ideal hardware base for the Membria edge device.</li>
+<li><strong>NVIDIA:</strong> Leader in AI acceleration with its GPUs (e.g., RTX series) and the mature CUDA software ecosystem. Powers cloud inference in the Membria architecture.</li>
+<li><strong>AMD:</strong> Leader in high-performance CPUs (e.g., Threadripper) and a growing competitor in AI with its Instinct GPUs and Ryzen AI NPUs for edge devices.</li>
+<li><strong>Intel:</strong> Leader in client CPUs and edge AI with its Core Ultra processors featuring integrated NPUs, making them an ideal hardware base for the Membria edge device.</li>
 </ul>
 <hr>
 <doc-anchor-target id="appendix-b-comparison-of-agent-memory-approaches">
@@ -482,53 +467,52 @@ ORDER BY timestamp ASC;</code></pre>
         <span>Appendix B: Comparison of Agent Memory Approaches</span>
     </h2>
 </doc-anchor-target>
-<p>While the proposed unified SQLite architecture is optimized for this project&#x27;s goals, other approaches exist for implementing agent memory.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
 <th style="text-align: left;">Criteria</th>
 <th style="text-align: left;">Unified SQLite (Proposed)</th>
-<th style="text-align: left;">AI Frameworks (LangChain/LlamaIndex)</th>
-<th style="text-align: left;">Specialized Architectures (e.g., MemGPT)</th>
-<th style="text-align: left;">Traditional DBMS Stack (e.g., Postgres+Redis)</th>
+<th style="text-align: left;">AI Frameworks (LangChain)</th>
+<th style="text-align: left;">Specialized Memory Stores (Mem0, Zep)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>Deployment Model</strong></td>
-<td style="text-align: left;"><strong>Embedded.</strong> Single file, no server process. Ideal for offline edge.</td>
-<td style="text-align: left;"><strong>Primarily Client-Server.</strong> Can wrap local stores, but designed around service calls. Not ideal for offline-first.</td>
-<td style="text-align: left;"><strong>Embedded, but complex.</strong> A self-contained architectural pattern.</td>
-<td style="text-align: left;"><strong>Client-Server.</strong> Requires network connection to multiple database servers. Not for edge.</td>
+<td style="text-align: left;"><strong>Embedded.</strong> Ideal for offline edge.</td>
+<td style="text-align: left;"><strong>Primarily Client-Server.</strong> Not ideal for offline-first.</td>
+<td style="text-align: left;"><strong>Client-Server.</strong> Deployed as separate services. Not for offline edge.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Dependencies &amp; Footprint</strong></td>
 <td style="text-align: left;"><strong>Minimal.</strong> A single, lightweight library.</td>
-<td style="text-align: left;"><strong>High.</strong> Brings in a large number of dependencies, potentially bloated for edge use.</td>
-<td style="text-align: left;"><strong>Very High.</strong> Emulates OS-level memory management, resource-intensive.</td>
-<td style="text-align: left;"><strong>High.</strong> Requires running and managing multiple, heavy server processes.</td>
+<td style="text-align: left;"><strong>High.</strong> Potentially bloated for edge use.</td>
+<td style="text-align: left;"><strong>High.</strong> Requires running and managing separate, often containerized, services.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Key Feature</strong></td>
+<td style="text-align: left;"><strong>Unification &amp; Reliability.</strong> RAG, Graph, and Agent Memory in one ACID-compliant store.</td>
+<td style="text-align: left;"><strong>Rapid Prototyping.</strong> High-level abstractions for quick development.</td>
+<td style="text-align: left;"><strong>Managed Memory.</strong> Provides ready-to-use APIs for semantic and temporal memory search.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Data Integrity (ACID)</strong></td>
 <td style="text-align: left;"><strong>Excellent.</strong> Full ACID transactions ensure memory consistency.</td>
-<td style="text-align: left;"><strong>Dependent.</strong> Integrity depends on the underlying database; not guaranteed at the framework level.</td>
-<td style="text-align: left;"><strong>Managed by framework.</strong></td>
-<td style="text-align: left;"><strong>High (Postgres),</strong> but consistency between Redis and Postgres must be handled by the application.</td>
+<td style="text-align: left;"><strong>Dependent.</strong> Depends on the underlying database; not guaranteed at the framework level.</td>
+<td style="text-align: left;"><strong>Managed by the service.</strong> Typically high.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Flexibility &amp; Control</strong></td>
-<td style="text-align: left;"><strong>Maximum.</strong> Full control over schema, queries, and logic via standard SQL.</td>
-<td style="text-align: left;"><strong>Limited.</strong> Abstractions can be restrictive and hard to customize or debug.</td>
-<td style="text-align: left;"><strong>Limited.</strong> Imposes its specific hierarchical memory structure.</td>
-<td style="text-align: left;"><strong>Maximum.</strong></td>
+<td style="text-align: left;"><strong>Maximum.</strong> Full control over schema and logic via standard SQL.</td>
+<td style="text-align: left;"><strong>Limited.</strong> Abstractions can be restrictive and hard to customize.</td>
+<td style="text-align: left;"><strong>Limited.</strong> Restricted to the capabilities of their API.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Best for...</strong></td>
 <td style="text-align: left;"><strong>Reliable, production-grade edge applications</strong> requiring efficiency and control.</td>
 <td style="text-align: left;"><strong>Rapid prototyping</strong> and cloud-based agents where development speed is prioritized.</td>
-<td style="text-align: left;"><strong>Research</strong> and agents needing to manage very long-running, evolving contexts.</td>
-<td style="text-align: left;"><strong>High-performance, scalable cloud applications</strong> with a dedicated DevOps team.</td>
+<td style="text-align: left;"><strong>Cloud-native applications</strong> that need a managed, off-the-shelf memory solution.</td>
 </tr>
 </tbody>
 </table>
@@ -539,7 +523,7 @@ ORDER BY timestamp ASC;</code></pre>
         <span>Analysis</span>
     </h3>
 </doc-anchor-target>
-<p>For the Membria EE use case, which demands <strong>offline-first autonomy, resource efficiency, and transactional reliability</strong>, the proposed unified SQLite architecture is superior. High-level frameworks like LangChain, while excellent for prototyping, introduce unnecessary overhead and dependencies for a production edge environment. The SQLite solution provides the required control, reliability, and performance with the lowest possible footprint.</p>
+<p>For the Membria EE use case, which demands <strong>offline-first autonomy, resource efficiency, and transactional reliability</strong>, the proposed unified SQLite architecture is superior. High-level frameworks and managed memory services, while powerful in the cloud, introduce dependencies and a client-server model that are unsuitable for a disconnected edge environment. The SQLite solution provides the required control, reliability, and performance with the lowest possible footprint.</p>
 
                                 
                                 <!-- Required only on API pages -->
