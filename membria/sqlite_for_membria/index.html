@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804021076903">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804021190768">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
 
     <!-- Primary Meta Tags -->
-    <title>In-Memory and Hybrid SQLite Use in Membria</title>
-    <meta name="title" content="In-Memory and Hybrid SQLite Use in Membria">
-    <meta name="description" content="For edge-based reasoning, caching, and agent memory in Membria, SQLite provides an ideal lightweight storage engine.">
+    <title>Hybrid Vector/Relational RAG/CAG DBMS for Edge Devices with Agent Memory</title>
+    <meta name="title" content="Hybrid Vector/Relational RAG/CAG DBMS for Edge Devices with Agent Memory">
+    <meta name="description" content="For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/sqlite_for_membria/">
@@ -19,24 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/sqlite_for_membria/">
-    <meta property="og:title" content="In-Memory and Hybrid SQLite Use in Membria">
-    <meta property="og:description" content="For edge-based reasoning, caching, and agent memory in Membria, SQLite provides an ideal lightweight storage engine.">
+    <meta property="og:title" content="Hybrid Vector/Relational RAG/CAG DBMS for Edge Devices with Agent Memory">
+    <meta property="og:description" content="For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/sqlite_for_membria/">
-    <meta property="twitter:title" content="In-Memory and Hybrid SQLite Use in Membria">
-    <meta property="twitter:description" content="For edge-based reasoning, caching, and agent memory in Membria, SQLite provides an ideal lightweight storage engine.">
+    <meta property="twitter:title" content="Hybrid Vector/Relational RAG/CAG DBMS for Edge Devices with Agent Memory">
+    <meta property="twitter:description" content="For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.1.804021076903" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.804021190768" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804021076903" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804021190768" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804021076903" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.804021076903" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804021190768" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.804021190768" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -223,179 +223,323 @@
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <hr>
-<doc-anchor-target id="in-memory-and-hybrid-sqlite-use-in-membria" class="break-words">
+<hr>
+<doc-anchor-target id="hybrid-vectorrelational-ragcag-dbms-for-edge-devices-with-agent-memory" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#in-memory-and-hybrid-sqlite-use-in-membria">#</doc-anchor-trigger>
-        <span>In-Memory and Hybrid SQLite Use in Membria</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hybrid-vectorrelational-ragcag-dbms-for-edge-devices-with-agent-memory">#</doc-anchor-trigger>
+        <span>Hybrid Vector/Relational RAG/CAG DBMS for Edge Devices with Agent Memory</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="overview">
+<doc-anchor-target id="1-overview-and-goals">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
-        <span>Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-overview-and-goals">#</doc-anchor-trigger>
+        <span>1. Overview and Goals</span>
     </h2>
 </doc-anchor-target>
-<p>For edge-based reasoning, caching, and agent memory in Membria, SQLite provides an ideal lightweight storage engine. It supports pure in-memory mode, hybrid (in-memory + persistent), and optimized configurations with JSON support. This enables low-latency, private, and portable knowledge management directly on user devices.</p>
-<hr>
-<doc-anchor-target id="-sqlite-modes-for-membria">
+<p>For hybrid AI systems to operate effectively on peripheral (edge) devices, a compact, fast, and reliable solution is required for storing and processing complex data structures for AI agents. This includes:</p>
+<ol>
+<li><strong>RAG (Retrieval-Augmented Generation):</strong> Unstructured &quot;facts&quot; for semantic search.</li>
+<li><strong>Knowledge Graph:</strong> Structured entities and their relationships, defined by an ontology.</li>
+<li><strong>Agent Memory:</strong> State, history, and internal &quot;thought&quot; processes for multiple, distinct AI agents.</li>
+</ol>
+<p>The goal of this architecture is to unify all these data types into a <strong>single, transactional, high-performance database</strong> with minimal overhead.</p>
+<doc-anchor-target id="2-technology-choice-sqlite-with-extensions">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-sqlite-modes-for-membria">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F9E0;</span> SQLite Modes for Membria</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-technology-choice-sqlite-with-extensions">#</doc-anchor-trigger>
+        <span>2. Technology Choice: SQLite with Extensions</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="1-pure-in-memory-mode">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-pure-in-memory-mode">#</doc-anchor-trigger>
-        <span>1. Pure In-Memory Mode</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-sql"><code v-pre class="language-sql">sqlite3 :memory:</code></pre>
-</doc-codeblock></div>
+<p><strong>SQLite</strong> is selected as the foundation due to its unique advantages for edge scenarios:</p>
 <ul>
-<li>Fully memory-resident database</li>
-<li>Fastest access (no disk IO)</li>
-<li>Data lost on shutdown</li>
-<li>Ideal for runtime reasoning chains or ephemeral KV caches</li>
+<li><strong>Single File:</strong> Simplifies deployment, backup, and synchronization.</li>
+<li><strong>Serverless Operation:</strong> Embeds directly into the application, saving system resources.</li>
+<li><strong>Transactional (ACID):</strong> Guarantees data integrity.</li>
+<li><strong>Extensibility:</strong> Supports powerful extensions for specific tasks like vector search and JSON processing.</li>
 </ul>
-<hr>
-<doc-anchor-target id="2-hybrid-mode-in-memory--persistent-backup">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-hybrid-mode-in-memory--persistent-backup">#</doc-anchor-trigger>
-        <span>2. Hybrid Mode (In-Memory + Persistent Backup)</span>
-    </h3>
-</doc-anchor-target>
-<p>Use an in-memory database and periodically back it up to disk:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-sql"><code v-pre class="language-sql">ATTACH DATABASE 'backup.db' AS disk;
-BACKUP TO disk;</code></pre>
-</doc-codeblock></div>
+<p>We will use two key extensions:</p>
 <ul>
-<li>Combines speed of RAM with persistence</li>
-<li>Useful for agent sessions with autosave</li>
-<li>Easy recovery on reboot</li>
+<li><strong><code v-pre>sqlite-vss</code></strong>: For efficient vector search (RAG).</li>
+<li><strong><code v-pre>JSON1</code></strong>: For native handling of structured JSON data (properties, agent memory).</li>
 </ul>
-<hr>
-<doc-anchor-target id="3-in-memory-tables-inside-persistent-db">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-in-memory-tables-inside-persistent-db">#</doc-anchor-trigger>
-        <span>3. In-Memory Tables Inside Persistent DB</span>
-    </h3>
-</doc-anchor-target>
-<p>Within a persistent DB file, use temporary tables for volatile data:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-sql"><code v-pre class="language-sql">CREATE TEMP TABLE kv_cache (...);</code></pre>
-</doc-codeblock></div>
-<ul>
-<li>Cached data is in RAM only</li>
-<li>Cleared when session ends</li>
-<li>Great for session-based reasoning cache</li>
-</ul>
-<hr>
-<doc-anchor-target id="4-shared-memory-mode">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-shared-memory-mode">#</doc-anchor-trigger>
-        <span>4. Shared Memory Mode</span>
-    </h3>
-</doc-anchor-target>
-<p>SQLite supports shared cache between threads or agents:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-sql"><code v-pre class="language-sql">sqlite3 file:memdb1?mode=memory&amp;cache=shared</code></pre>
-</doc-codeblock></div>
-<ul>
-<li>Enables multi-agent reasoning or shared context across threads</li>
-</ul>
-<hr>
-<doc-anchor-target id="-performance-boosters">
+<doc-anchor-target id="3-database-schema">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-performance-boosters">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x2699;&#xFE0F;</span> Performance Boosters</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-database-schema">#</doc-anchor-trigger>
+        <span>3. Database Schema</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="wal-mode-write-ahead-logging">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#wal-mode-write-ahead-logging">#</doc-anchor-trigger>
-        <span>WAL Mode (Write-Ahead Logging)</span>
-    </h3>
-</doc-anchor-target>
+<p>The entire logic is implemented within a single file, <code v-pre>membria_edge.db</code>. The schema is designed to be comprehensive, supporting all required functionalities.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-sql"><code v-pre class="language-sql">PRAGMA journal_mode=WAL;</code></pre>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">/*
+ =================================================================
+ CORE KNOWLEDGE TABLES (RAG &amp; Knowledge Graph)
+ =================================================================
+*/
+
+-- Stores the KNOW Ontology schema itself
+CREATE TABLE ontology_schema (
+    item_type TEXT NOT NULL, -- &quot;NODE&quot; or &quot;EDGE&quot;
+    item_label TEXT NOT NULL PRIMARY KEY,
+    description TEXT
+);
+
+-- Stores Nodes (entities) of the knowledge graph
+CREATE TABLE knowledge_nodes (
+    id TEXT PRIMARY KEY,
+    node_type TEXT NOT NULL,
+    properties JSON NOT NULL,
+    FOREIGN KEY (node_type) REFERENCES ontology_schema(item_label)
+);
+
+-- Stores Edges (relationships) between nodes
+CREATE TABLE knowledge_edges (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    source_node_id TEXT NOT NULL,
+    target_node_id TEXT NOT NULL,
+    label TEXT NOT NULL,
+    properties JSON,
+    FOREIGN KEY (source_node_id) REFERENCES knowledge_nodes(id),
+    FOREIGN KEY (target_node_id) REFERENCES knowledge_nodes(id),
+    FOREIGN KEY (label) REFERENCES ontology_schema(item_label)
+);
+
+-- Stores text chunks for RAG, linkable to the knowledge graph
+CREATE TABLE chunks (
+    id TEXT PRIMARY KEY,
+    content TEXT NOT NULL,
+    embedding BLOB NOT NULL,
+    related_node_id TEXT, -- Optional: Foreign key to the knowledge_nodes table
+    sync_status TEXT NOT NULL DEFAULT 'local', -- for cloud sync
+    FOREIGN KEY (related_node_id) REFERENCES knowledge_nodes(id)
+);
+
+-- Virtual table for fast vector search
+CREATE VIRTUAL TABLE vss_chunks USING vss0(embedding(1024));
+
+
+/*
+ =================================================================
+ AGENT MEMORY TABLES
+ =================================================================
+*/
+
+-- Defines the Agents themselves (Long-Term Memory)
+CREATE TABLE agents (
+    agent_id TEXT PRIMARY KEY,
+    description TEXT,
+    system_prompt TEXT NOT NULL,
+    allowed_tools JSON,
+    created_ts INTEGER NOT NULL
+);
+
+-- Groups messages into conversation sessions
+CREATE TABLE agent_conversations (
+    session_id TEXT PRIMARY KEY,
+    agent_id TEXT NOT NULL,
+    user_id TEXT NOT NULL,
+    start_ts INTEGER NOT NULL,
+    summary TEXT, -- Optional summary for long conversations
+    FOREIGN KEY (agent_id) REFERENCES agents(id)
+);
+
+-- Stores turn-by-turn message history (Episodic Memory)
+CREATE TABLE conversation_history (
+    message_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id TEXT NOT NULL,
+    role TEXT NOT NULL, -- 'user', 'assistant', 'system', 'tool'
+    content TEXT NOT NULL,
+    metadata JSON,
+    timestamp INTEGER NOT NULL,
+    FOREIGN KEY (session_id) REFERENCES agent_conversations(session_id)
+);
+
+-- The Agent's &quot;scratchpad&quot; for reasoning (Working Memory)
+CREATE TABLE agent_scratchpad (
+    step_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id TEXT NOT NULL,
+    thought TEXT, -- The agent's reasoning process
+    action JSON,  -- The tool call it decided to make
+    observation TEXT, -- The result from the tool call
+    timestamp INTEGER NOT NULL,
+    FOREIGN KEY (session_id) REFERENCES agent_conversations(session_id)
+);</code></pre>
 </doc-codeblock></div>
-<ul>
-<li>Speeds up concurrent reads/writes</li>
-<li>Efficient for background syncs</li>
-</ul>
-<hr>
-<doc-anchor-target id="json-support-built-in">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#json-support-built-in">#</doc-anchor-trigger>
-        <span>JSON Support (Built-in)</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-sql"><code v-pre class="language-sql">SELECT json_extract(payload, '$.step');</code></pre>
-</doc-codeblock></div>
-<ul>
-<li>JSON1 extension enables flexible querying</li>
-<li>Store reasoning steps, KV entries, events as structured JSON</li>
-</ul>
-<hr>
-<doc-anchor-target id="-use-cases-in-membria">
+<doc-anchor-target id="4-implementing-the-knowledge-graph--know-ontology">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-use-cases-in-membria">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x2705;</span> Use Cases in Membria</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-implementing-the-knowledge-graph--know-ontology">#</doc-anchor-trigger>
+        <span>4. Implementing the Knowledge Graph &amp; KNOW Ontology</span>
     </h2>
 </doc-anchor-target>
+<p>The KNOW ontology provides the vocabulary and structure for the knowledge graph. The <code v-pre>ontology_schema</code> table stores the allowed node and edge types (e.g., &#x27;Person&#x27;, &#x27;Equipment&#x27;, &#x27;MAINTAINS&#x27;), while the <code v-pre>knowledge_nodes</code> and <code v-pre>knowledge_edges</code> tables store the instance data conforming to this ontology. This enables powerful, structured queries about the relationships between entities.</p>
+<doc-anchor-target id="5-implementing-agent-memory-architecture">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-implementing-agent-memory-architecture">#</doc-anchor-trigger>
+        <span>5. Implementing Agent Memory Architecture</span>
+    </h2>
+</doc-anchor-target>
+<p>To support sophisticated, stateful AI agents, the architecture defines three types of memory, each implemented with dedicated tables in the SQLite database.</p>
+<doc-anchor-target id="51-the-three-types-of-agent-memory">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#51-the-three-types-of-agent-memory">#</doc-anchor-trigger>
+        <span>5.1. The Three Types of Agent Memory</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Long-Term Memory (<code v-pre>agents</code> table):</strong> Stores the core identity of each agent—its purpose, instructions, personality, and permitted tools (e.g., the <code v-pre>system_prompt</code> defines &quot;You are a helpful safety assistant...&quot;).</li>
+<li><strong>Episodic Memory (<code v-pre>agent_conversations</code>, <code v-pre>conversation_history</code> tables):</strong> Records the complete, turn-by-turn history of interactions between a user and an agent, preserving the full context of each conversation.</li>
+<li><strong>Working Memory (<code v-pre>agent_scratchpad</code> table):</strong> Provides a temporary &quot;thought space&quot; for an agent. Here, it can plan multi-step tasks, execute tools (like RAG or graph queries), and record the results (observations) before formulating a final response. This is critical for implementing advanced reasoning patterns like ReAct (Reason + Act).</li>
+</ol>
+<doc-anchor-target id="52-the-agent-work-cycle">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#52-the-agent-work-cycle">#</doc-anchor-trigger>
+        <span>5.2. The Agent Work Cycle</span>
+    </h3>
+</doc-anchor-target>
+<p>A typical agent interaction follows this stateful loop:</p>
+<ol>
+<li><strong>Initialization:</strong> The application loads the agent&#x27;s core instructions from the <code v-pre>agents</code> table based on the selected <code v-pre>agent_id</code>.</li>
+<li><strong>Conversation Start:</strong> A new record is created in <code v-pre>agent_conversations</code> with a unique <code v-pre>session_id</code>.</li>
+<li><strong>User Interaction:</strong> The user&#x27;s message is saved to <code v-pre>conversation_history</code> with <code v-pre>role = 'user'</code>.</li>
+<li><strong>Reasoning Loop (The &quot;Thinking&quot; Process):</strong>
+<ul>
+<li><strong>Thought:</strong> The LLM analyzes the history and its goal, then generates a plan. This internal monologue is saved to the <code v-pre>thought</code> column in <code v-pre>agent_scratchpad</code>. (e.g., &quot;User is asking about safety for valve VX-55. I need to query the knowledge graph for its location and then use RAG to find the relevant safety doc.&quot;).</li>
+<li><strong>Action:</strong> The LLM generates a structured <code v-pre>action</code> to execute a tool, e.g., <code v-pre>{&quot;tool&quot;: &quot;rag_search&quot;, &quot;query&quot;: &quot;safety procedure for VX-55&quot;}</code>. This is also saved to the scratchpad.</li>
+<li><strong>Observation:</strong> The system executes the action, and the result (e.g., a text chunk from a manual) is saved to the <code v-pre>observation</code> column.</li>
+<li>The loop repeats, feeding the history of thoughts, actions, and observations back into the LLM&#x27;s context until it has enough information.</li>
+</ul>
+</li>
+<li><strong>Final Response:</strong> The agent generates the final answer for the user, which is saved to <code v-pre>conversation_history</code> with <code v-pre>role = 'assistant'</code>.</li>
+</ol>
+<doc-anchor-target id="53-example-query-reconstructing-full-context">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#53-example-query-reconstructing-full-context">#</doc-anchor-trigger>
+        <span>5.3. Example Query: Reconstructing Full Context</span>
+    </h3>
+</doc-anchor-target>
+<p>To reconstruct the full context for an agent during its reasoning loop, the application can run the following query:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">-- Get all messages and scratchpad entries for a given session, ordered by time
+SELECT
+    'message' AS entry_type,
+    role,
+    content,
+    timestamp
+FROM conversation_history
+WHERE session_id = 'session-123-abc'
+
+UNION ALL
+
+SELECT
+    'scratchpad' AS entry_type,
+    'assistant' AS role, -- The agent's own internal work
+    'Thought: ' || thought || ' | Action: ' || action || ' | Observation: ' || observation AS content,
+    timestamp
+FROM agent_scratchpad
+WHERE session_id = 'session-123-abc'
+
+ORDER BY timestamp ASC;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="6-unlimited-context-implementation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-unlimited-context-implementation">#</doc-anchor-trigger>
+        <span>6. &quot;Unlimited Context&quot; Implementation</span>
+    </h2>
+</doc-anchor-target>
+<p>&quot;Unlimited context&quot; is achieved via a <strong>hybrid memory management system</strong>:</p>
+<ol>
+<li><strong>Active Memory:</strong> The LLM&#x27;s native context window (KV-cache), residing in shared system RAM and accelerated by the device&#x27;s NPU.</li>
+<li><strong>Long-Term Memory:</strong> The entire SQLite database, which acts as a vast, searchable knowledge repository.</li>
+</ol>
+<p>The agent&#x27;s reasoning process intelligently retrieves only the most relevant data from its Long-Term and Episodic Memory to construct a compact, effective prompt for its Active Memory.</p>
+<doc-anchor-target id="7-architectural-advantages">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-architectural-advantages">#</doc-anchor-trigger>
+        <span>7. Architectural Advantages</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Unification:</strong> A single, coherent system for RAG, Knowledge Graphs, and stateful Agent Memory.</li>
+<li><strong>Stateful Autonomy:</strong> Enables multiple, distinct agents to operate on a single device, each with its own memory and purpose.</li>
+<li><strong>Traceability:</strong> The <code v-pre>agent_scratchpad</code> table provides a full audit trail of the agent&#x27;s &quot;thought process,&quot; invaluable for debugging, analysis, and safety.</li>
+<li><strong>Efficiency &amp; Reliability:</strong> Achieves high performance and ACID-guaranteed data integrity with minimal resource footprint, ideal for edge deployments.</li>
+</ul>
+<hr>
+<doc-anchor-target id="appendix-a-hardware-provider-overview-nvidia--amd--intel">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#appendix-a-hardware-provider-overview-nvidia--amd--intel">#</doc-anchor-trigger>
+        <span>Appendix A: Hardware Provider Overview (NVIDIA / AMD / Intel)</span>
+    </h2>
+</doc-anchor-target>
+<p>This section provides a brief overview of the three main semiconductor companies and their roles in an AI architecture like Membria.</p>
+<ul>
+<li><strong>NVIDIA:</strong> The leader in AI acceleration due to its powerful GPUs (e.g., RTX series for the edge, Blackwell for the cloud) and the mature CUDA software ecosystem. In this architecture, it powers cloud inference.</li>
+<li><strong>AMD:</strong> A leader in high-performance CPUs (e.g., Threadripper for cloud nodes) and a growing competitor in AI with its Instinct GPUs and Ryzen AI NPUs for edge devices.</li>
+<li><strong>Intel:</strong> A dominant player in client CPUs and a leader in edge AI with its Core Ultra processors featuring integrated NPUs, making them an ideal hardware base for the Membria edge device.</li>
+</ul>
+<hr>
+<doc-anchor-target id="appendix-b-comparison-of-agent-memory-approaches">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#appendix-b-comparison-of-agent-memory-approaches">#</doc-anchor-trigger>
+        <span>Appendix B: Comparison of Agent Memory Approaches</span>
+    </h2>
+</doc-anchor-target>
+<p>While the proposed unified SQLite architecture is optimized for this project&#x27;s goals, other approaches exist for implementing agent memory.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Component</th>
-<th>SQLite Mode</th>
-<th>Description</th>
+<th style="text-align: left;">Criteria</th>
+<th style="text-align: left;">Unified SQLite (Proposed)</th>
+<th style="text-align: left;">AI Frameworks (LangChain/LlamaIndex)</th>
+<th style="text-align: left;">Specialized Architectures (e.g., MemGPT)</th>
+<th style="text-align: left;">Traditional DBMS Stack (e.g., Postgres+Redis)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>kv_cache</code></td>
-<td>TEMP Table</td>
-<td>Volatile session-level reasoning cache</td>
+<td style="text-align: left;"><strong>Deployment Model</strong></td>
+<td style="text-align: left;"><strong>Embedded.</strong> Single file, no server process. Ideal for offline edge.</td>
+<td style="text-align: left;"><strong>Primarily Client-Server.</strong> Can wrap local stores, but designed around service calls. Not ideal for offline-first.</td>
+<td style="text-align: left;"><strong>Embedded, but complex.</strong> A self-contained architectural pattern.</td>
+<td style="text-align: left;"><strong>Client-Server.</strong> Requires network connection to multiple database servers. Not for edge.</td>
 </tr>
 <tr>
-<td><code v-pre>event_log</code></td>
-<td>Hybrid</td>
-<td>Persistent timeline of agent actions and events</td>
+<td style="text-align: left;"><strong>Dependencies &amp; Footprint</strong></td>
+<td style="text-align: left;"><strong>Minimal.</strong> A single, lightweight library.</td>
+<td style="text-align: left;"><strong>High.</strong> Brings in a large number of dependencies, potentially bloated for edge use.</td>
+<td style="text-align: left;"><strong>Very High.</strong> Emulates OS-level memory management, resource-intensive.</td>
+<td style="text-align: left;"><strong>High.</strong> Requires running and managing multiple, heavy server processes.</td>
 </tr>
 <tr>
-<td><code v-pre>reasoning_path</code></td>
-<td>In-Memory</td>
-<td>Fast access to active chains</td>
+<td style="text-align: left;"><strong>Data Integrity (ACID)</strong></td>
+<td style="text-align: left;"><strong>Excellent.</strong> Full ACID transactions ensure memory consistency.</td>
+<td style="text-align: left;"><strong>Dependent.</strong> Integrity depends on the underlying database; not guaranteed at the framework level.</td>
+<td style="text-align: left;"><strong>Managed by framework.</strong></td>
+<td style="text-align: left;"><strong>High (Postgres),</strong> but consistency between Redis and Postgres must be handled by the application.</td>
 </tr>
 <tr>
-<td><code v-pre>local_index</code></td>
-<td>Persistent</td>
-<td>Topic/domain embedding search support</td>
+<td style="text-align: left;"><strong>Flexibility &amp; Control</strong></td>
+<td style="text-align: left;"><strong>Maximum.</strong> Full control over schema, queries, and logic via standard SQL.</td>
+<td style="text-align: left;"><strong>Limited.</strong> Abstractions can be restrictive and hard to customize or debug.</td>
+<td style="text-align: left;"><strong>Limited.</strong> Imposes its specific hierarchical memory structure.</td>
+<td style="text-align: left;"><strong>Maximum.</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Best for...</strong></td>
+<td style="text-align: left;"><strong>Reliable, production-grade edge applications</strong> requiring efficiency and control.</td>
+<td style="text-align: left;"><strong>Rapid prototyping</strong> and cloud-based agents where development speed is prioritized.</td>
+<td style="text-align: left;"><strong>Research</strong> and agents needing to manage very long-running, evolving contexts.</td>
+<td style="text-align: left;"><strong>High-performance, scalable cloud applications</strong> with a dedicated DevOps team.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<hr>
-<doc-anchor-target id="-summary">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-summary">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F4D8;</span> Summary</span>
-    </h2>
+<doc-anchor-target id="analysis">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#analysis">#</doc-anchor-trigger>
+        <span>Analysis</span>
+    </h3>
 </doc-anchor-target>
-<p>SQLite enables blazing-fast and privacy-preserving reasoning memory on-device:</p>
-<ul>
-<li>No server dependency</li>
-<li>No setup required</li>
-<li>Easily portable across devices</li>
-<li>Integrates seamlessly with Membria’s caching and reasoning stack</li>
-</ul>
-<blockquote>
-<p>Combine this with JSON schemas and local event graphs for full DoD agent memory and autonomy.</p>
-</blockquote>
+<p>For the Membria EE use case, which demands <strong>offline-first autonomy, resource efficiency, and transactional reliability</strong>, the proposed unified SQLite architecture is superior. High-level frameworks like LangChain, while excellent for prototyping, introduce unnecessary overhead and dependencies for a production edge environment. The SQLite solution provides the required control, reliability, and performance with the lowest possible footprint.</p>
 
                                 
                                 <!-- Required only on API pages -->
