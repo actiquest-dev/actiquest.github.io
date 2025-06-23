@@ -1,5 +1,5 @@
 ---
-icon: package
+icon: database
 label: SQLite for Membria
 order: 92
 ---
