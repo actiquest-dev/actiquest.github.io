@@ -6,7 +6,7 @@ order: 89
 
 -----
 
-# **Architecture: A Unified RAG/CAG DBMS for Edge Devices**
+# Unified RAG/CAG Hybrid Vector/Relational DBMS for Edge Devices
 
 ## 1\. Overview and Goals
 
