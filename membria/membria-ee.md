@@ -3,8 +3,8 @@ icon: star
 label: Alternative Methods
 order: 94
 ---
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdfrLIwLcz7IlKzo2pWTTcM3ZcQ5Sz8o40nhgvFgRkVrhEKbY9gjnDme9YadAb2GIRkFTxHYW3Y752wYtwMsMN09iU3h9To1NM3T2B_0VV4BxJZIbxzg7_xCuQ9HaNFK31R3RYv?key=AsJEkgePh24159X10uUz6PJ-)
 -----
-
 # Membria Enterprise Edition
 
 *A Hybrid Memory & Routing Layer for Privacy‑First Corporate AI*
