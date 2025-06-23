@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804019728071">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804019901269">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
 
     <!-- Primary Meta Tags -->
-    <title>Sqlite for membria</title>
-    <meta name="title" content="Sqlite for membria">
+    <title>In-Memory and Hybrid SQLite Use in Membria</title>
+    <meta name="title" content="In-Memory and Hybrid SQLite Use in Membria">
+    <meta name="description" content="For edge-based reasoning, caching, and agent memory in Membria, SQLite provides an ideal lightweight storage engine.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.actiq.xyz/membria/sqlite_for_membria/">
@@ -18,21 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/sqlite_for_membria/">
-    <meta property="og:title" content="Sqlite for membria">
+    <meta property="og:title" content="In-Memory and Hybrid SQLite Use in Membria">
+    <meta property="og:description" content="For edge-based reasoning, caching, and agent memory in Membria, SQLite provides an ideal lightweight storage engine.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/sqlite_for_membria/">
-    <meta property="twitter:title" content="Sqlite for membria">
+    <meta property="twitter:title" content="In-Memory and Hybrid SQLite Use in Membria">
+    <meta property="twitter:description" content="For edge-based reasoning, caching, and agent memory in Membria, SQLite provides an ideal lightweight storage engine.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.1.804019728071" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.804019901269" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804019728071" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804019901269" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804019728071" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804019901269" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.804019901269" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,12 +222,180 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="sqlite-for-membria" class="break-words">
+<hr>
+<doc-anchor-target id="in-memory-and-hybrid-sqlite-use-in-membria" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sqlite-for-membria">#</doc-anchor-trigger>
-        <span>Sqlite for membria</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#in-memory-and-hybrid-sqlite-use-in-membria">#</doc-anchor-trigger>
+        <span>In-Memory and Hybrid SQLite Use in Membria</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <span>Overview</span>
+    </h2>
+</doc-anchor-target>
+<p>For edge-based reasoning, caching, and agent memory in Membria, SQLite provides an ideal lightweight storage engine. It supports pure in-memory mode, hybrid (in-memory + persistent), and optimized configurations with JSON support. This enables low-latency, private, and portable knowledge management directly on user devices.</p>
+<hr>
+<doc-anchor-target id="-sqlite-modes-for-membria">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-sqlite-modes-for-membria">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F9E0;</span> SQLite Modes for Membria</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="1-pure-in-memory-mode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-pure-in-memory-mode">#</doc-anchor-trigger>
+        <span>1. Pure In-Memory Mode</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">sqlite3 :memory:</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Fully memory-resident database</li>
+<li>Fastest access (no disk IO)</li>
+<li>Data lost on shutdown</li>
+<li>Ideal for runtime reasoning chains or ephemeral KV caches</li>
+</ul>
+<hr>
+<doc-anchor-target id="2-hybrid-mode-in-memory--persistent-backup">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-hybrid-mode-in-memory--persistent-backup">#</doc-anchor-trigger>
+        <span>2. Hybrid Mode (In-Memory + Persistent Backup)</span>
+    </h3>
+</doc-anchor-target>
+<p>Use an in-memory database and periodically back it up to disk:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">ATTACH DATABASE 'backup.db' AS disk;
+BACKUP TO disk;</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Combines speed of RAM with persistence</li>
+<li>Useful for agent sessions with autosave</li>
+<li>Easy recovery on reboot</li>
+</ul>
+<hr>
+<doc-anchor-target id="3-in-memory-tables-inside-persistent-db">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-in-memory-tables-inside-persistent-db">#</doc-anchor-trigger>
+        <span>3. In-Memory Tables Inside Persistent DB</span>
+    </h3>
+</doc-anchor-target>
+<p>Within a persistent DB file, use temporary tables for volatile data:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">CREATE TEMP TABLE kv_cache (...);</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Cached data is in RAM only</li>
+<li>Cleared when session ends</li>
+<li>Great for session-based reasoning cache</li>
+</ul>
+<hr>
+<doc-anchor-target id="4-shared-memory-mode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-shared-memory-mode">#</doc-anchor-trigger>
+        <span>4. Shared Memory Mode</span>
+    </h3>
+</doc-anchor-target>
+<p>SQLite supports shared cache between threads or agents:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">sqlite3 file:memdb1?mode=memory&amp;cache=shared</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Enables multi-agent reasoning or shared context across threads</li>
+</ul>
+<hr>
+<doc-anchor-target id="-performance-boosters">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-performance-boosters">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2699;&#xFE0F;</span> Performance Boosters</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="wal-mode-write-ahead-logging">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wal-mode-write-ahead-logging">#</doc-anchor-trigger>
+        <span>WAL Mode (Write-Ahead Logging)</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">PRAGMA journal_mode=WAL;</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>Speeds up concurrent reads/writes</li>
+<li>Efficient for background syncs</li>
+</ul>
+<hr>
+<doc-anchor-target id="json-support-built-in">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#json-support-built-in">#</doc-anchor-trigger>
+        <span>JSON Support (Built-in)</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-sql"><code v-pre class="language-sql">SELECT json_extract(payload, '$.step');</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>JSON1 extension enables flexible querying</li>
+<li>Store reasoning steps, KV entries, events as structured JSON</li>
+</ul>
+<hr>
+<doc-anchor-target id="-use-cases-in-membria">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-use-cases-in-membria">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2705;</span> Use Cases in Membria</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Component</th>
+<th>SQLite Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>kv_cache</code></td>
+<td>TEMP Table</td>
+<td>Volatile session-level reasoning cache</td>
+</tr>
+<tr>
+<td><code v-pre>event_log</code></td>
+<td>Hybrid</td>
+<td>Persistent timeline of agent actions and events</td>
+</tr>
+<tr>
+<td><code v-pre>reasoning_path</code></td>
+<td>In-Memory</td>
+<td>Fast access to active chains</td>
+</tr>
+<tr>
+<td><code v-pre>local_index</code></td>
+<td>Persistent</td>
+<td>Topic/domain embedding search support</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<doc-anchor-target id="-summary">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-summary">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4D8;</span> Summary</span>
+    </h2>
+</doc-anchor-target>
+<p>SQLite enables blazing-fast and privacy-preserving reasoning memory on-device:</p>
+<ul>
+<li>No server dependency</li>
+<li>No setup required</li>
+<li>Easily portable across devices</li>
+<li>Integrates seamlessly with Membria’s caching and reasoning stack</li>
+</ul>
+<blockquote>
+<p>Combine this with JSON schemas and local event graphs for full DoD agent memory and autonomy.</p>
+</blockquote>
 
                                 
                                 <!-- Required only on API pages -->
@@ -233,20 +405,20 @@
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kcg_indexing/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/scr-reasoning/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">KCG Indexing</span>
+                                                <span class="block mt-1">SCR Reasoning</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../acticat/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/workflow-overview/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Acticat</span>
+                                                <span class="block mt-1">Workflow</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -290,6 +462,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Sqlite for membria", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "SQLite for Membria", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
