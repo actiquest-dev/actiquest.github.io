@@ -6,7 +6,7 @@ order: 92
 
 -----
 
-# Hybrid Vector/Relational RAG/CAG DBMS for Edge Devices with Agent Memory
+# Hybrid Vector/Relational in-memory DBMS for RAG/CAG/Agents running on Edge Devices
 
 ## 1\. Overview and Goals
 
