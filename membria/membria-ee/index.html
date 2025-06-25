@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804021788735">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804138568382">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.1.804021788735" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.804138568382" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804021788735" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804138568382" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804021788735" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804138568382" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.10.1" defer></script>
     <link href="../../resources/css/katex.css?v=3.10.1" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../resources/js/katex.js?v=3.10.1" defer></script>
@@ -235,7 +235,7 @@
 <doc-anchor-target id="membria-enterprise-edition" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#membria-enterprise-edition">#</doc-anchor-trigger>
-        <span>Membria Enterprise Edition</span>
+        <span><strong>Membria Enterprise Edition</strong></span>
     </h1>
 </doc-anchor-target>
 <p><em>A Hybrid Memory &amp; Routing Layer for Privacy‑First Corporate AI</em></p>
@@ -246,7 +246,7 @@
         <span>Executive Summary</span>
     </h2>
 </doc-anchor-target>
-<p>Membria Enterprise Edition (EE) delivers <strong>GPT‑4‑class intelligence on‑device</strong> while keeping corporate data private and GPU costs under control. <em>Edge</em> devices run an INT8 <strong>Qwen‑2 7B</strong> model accelerated by Kinara Ara2; <em>cloud</em> hosts a <strong>Qwen3‑235B‑A22B</strong> frontier LLM. A role‑aware Gateway routes only unfamiliar or high‑risk queries to the cloud, returns answers, and distils them into lightweight LoRA patches for reuse on the edge. Result: field staff get realtime, offline answers; headquarters retain full audit &amp; RBAC over knowledge access.</p>
+<p>Membria Enterprise Edition (EE) delivers <strong>GPT‑4‑class intelligence on‑device</strong> while keeping corporate data private and GPU costs under control. <em>Edge</em> devices run an INT8 <strong>Qwen‑2 7B</strong> model accelerated by an on-device <strong>NPU (e.g., from Intel, AMD, NVIDIA)</strong>. Instead of slow, per-task fine-tuning, Membria EE uses a proprietary <strong>Skill Forge</strong> that creates task-specific LoRA patches in seconds. This process is driven by an autonomous <strong>Knowledge Curator</strong> agent that selects the best examples from the local database. A role‑aware Gateway routes only the most complex queries to the cloud. Result: field staff get realtime, offline, and instantly personalized AI through an <strong>Autonomous Personalization Loop</strong>; headquarters retain full audit, IP protection, and license control.</p>
 <hr>
 <doc-anchor-target id="1-problem-space">
     <h2>
@@ -293,12 +293,7 @@
 </tbody>
 </table>
 </div>
-<p>Existing stop‑gaps (paper manuals, VDI, caching proxy) address <strong>one</strong> constraint but break another. <strong>Membria EE</strong> integrates:</p>
-<ul>
-<li>on‑device tiny‑LLM + swap‑graph → offline &amp; law‑compliant,</li>
-<li>hybrid Gateway routing → GPU only for 5 % hardest queries,</li>
-<li>diff‑sync knowledge shards → fleet stays aligned while private LoRA patches remain on their originating devices.</li>
-</ul>
+<hr>
 <doc-anchor-target id="2-highlevel-architecture">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2-highlevel-architecture">#</doc-anchor-trigger>
@@ -309,17 +304,26 @@
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">flowchart TD
     subgraph Edge[&quot;Field Device – Offline‑First&quot;]
         Tiny[&quot;Tiny Qwen‑2 7B
-INT8 on Kinara Ara2&quot;]
-        Graph[&quot;Swap‑Graph
-(RAG + CAG)&quot;]
-        LoRA[&quot;Δ‑LoRA Trainer&quot;]
+INT8 on Edge NPU&quot;]
+        Graph[&quot;Knowledge Core
+(SQLite)&quot;]
+        Curator[&quot;Knowledge Curator
+(Example Selector)&quot;]
+        SkillForge[&quot;Skill Forge
+(Parameter Generator)&quot;]
+
         Tiny --&gt;|read / write| Graph
-        Tiny --&gt;|distil| LoRA
+        Tiny -- &quot;knowledge gap&quot; --&gt; Curator
+        Curator -- &quot;finds best examples&quot; --&gt; Graph
+        Graph -- &quot;provides examples&quot; --&gt; Curator
+        Curator -- &quot;sends curated examples&quot; --&gt; SkillForge
+        SkillForge -- &quot;generates&quot; --&gt; LoRA[&quot;Δ-LoRA Patch&quot;]
+        LoRA --&gt; Tiny
     end
 
     subgraph Cloud[&quot;Private Cluster&quot;]
         GW[&quot;Membria Gateway
-Auth • RBAC • Routing&quot;]
+Auth • RBAC • Licensing&quot;]
         Big[&quot;Qwen‑3 235B 4‑bit
 4 × RTX 5090 32 GB&quot;]
         Vec[&quot;Milvus 2.3 (vector DB)&quot;]
@@ -331,11 +335,11 @@ Audit &amp; KPI&quot;]
         GW --&gt; Ops
     end
 
-    Tiny -- &quot;mTLS query / ΔLoRA&quot; --&gt; GW
-    Graph -- &quot;Role‑scoped shard sync&quot; --&gt; GW</pre></div>
+    Edge -- &quot;mTLS (Query / RAG-Push / License Check)&quot; --&gt; GW</pre></div>
 <blockquote>
-<p><strong>Edge</strong> answers ~90 % locally. Only unfamiliar or high‑risk queries travel the red mTLS link; the cloud reply is distilled and shared back overnight.</p>
+<p><strong>Edge</strong> answers ~90 % locally. Personalization is instantaneous and autonomous. Only the most complex queries travel the red mTLS link.</p>
 </blockquote>
+<hr>
 <doc-anchor-target id="3-core-components">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#3-core-components">#</doc-anchor-trigger>
@@ -363,31 +367,31 @@ Audit &amp; KPI&quot;]
 <td><strong>Tiny‑LLM</strong></td>
 <td>Qwen‑2 7B‑INT8</td>
 <td>≈3.4 GB</td>
-<td>Runs all common prompts offline</td>
+<td>Runs all common prompts offline.</td>
 </tr>
 <tr>
 <td><strong>Hardware NPU</strong></td>
-<td>Kinara Ara2 (M.2)</td>
-<td>&lt;5 W</td>
-<td>280 ms median latency</td>
+<td>Edge NPU (e.g., Intel, AMD, NVIDIA)</td>
+<td>&lt;10 W</td>
+<td>Provides low-latency hardware acceleration.</td>
 </tr>
 <tr>
-<td><strong>Swap‑RAM Graph</strong></td>
-<td>SQLite + Qdrant‑lite</td>
+<td><strong>Knowledge Core</strong></td>
+<td>SQLite (RAG + Graph + Agent Memory)</td>
 <td>up to 1 GB</td>
-<td>Stores facts (RAG) + chains‑of‑thought (CAG)</td>
+<td>Stores all local knowledge and agent state.</td>
 </tr>
 <tr>
-<td><strong>DoD Loop</strong></td>
-<td>LoRA trainer (bitsandbytes)</td>
-<td>bursts 1.2 W</td>
-<td>Distils cloud answers into Δ‑weights</td>
+<td><strong>Personalization Loop</strong></td>
+<td><strong>Knowledge Curator</strong> + <strong>Skill Forge</strong></td>
+<td>≈1.5 GB</td>
+<td><strong>Instantly generates LoRA weights from curated examples.</strong></td>
 </tr>
 <tr>
 <td><strong>Response Cache</strong></td>
 <td>ModelCache</td>
 <td>optional</td>
-<td>Instant replay of identical queries</td>
+<td>Instant replay of identical queries.</td>
 </tr>
 </tbody>
 </table>
@@ -411,7 +415,7 @@ Audit &amp; KPI&quot;]
 <tr>
 <td><strong>Gateway</strong></td>
 <td>Membria Gateway (Go, gRPC/HTTP)</td>
-<td>JWT Auth • RBAC • Adaptive routing</td>
+<td>JWT Auth • RBAC • <strong>Policy-based routing &amp; Licensing</strong></td>
 </tr>
 <tr>
 <td><strong>Frontier LLM</strong></td>
@@ -426,7 +430,7 @@ Audit &amp; KPI&quot;]
 <tr>
 <td><strong>Vector DB</strong></td>
 <td>Milvus 2.3 + RBAC</td>
-<td>per‑role partitions, HNSW‑GPU</td>
+<td>Per‑role partitions, HNSW‑GPU</td>
 </tr>
 <tr>
 <td><strong>Ops Analytics</strong></td>
@@ -495,9 +499,6 @@ Audit &amp; KPI&quot;]
 </tbody>
 </table>
 </div>
-<blockquote>
-<p><strong>Take‑away:</strong> one 4‑GPU box covers a small field fleet; scale horizontally by adding identical nodes—no model re‑shard needed because LMCache + Gateway round‑robins at token level.</p>
-</blockquote>
 <doc-anchor-target id="34-base-node-hardware-spec">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#34-base-node-hardware-spec">#</doc-anchor-trigger>
@@ -514,24 +515,18 @@ Audit &amp; KPI&quot;]
 • Capacity: one node ⇒ ≤ 100 concurrent users (@30 tok/s budget)
 • Scale‑out: add 1 node, link over 200 Gbps IB; Gateway load‑balances &amp; LMCache sharding auto‑sync.</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="4-data-flow">
+<hr>
+<doc-anchor-target id="4-data-flow--offline-resilience">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-data-flow">#</doc-anchor-trigger>
-        <span>4 Data Flow</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-data-flow--offline-resilience">#</doc-anchor-trigger>
+        <span>4 Data Flow &amp; Offline Resilience</span>
     </h2>
-</doc-anchor-target>
-<p><em>(see diagram above)</em></p>
-<doc-anchor-target id="offline-resilience--gateway-failover">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#offline-resilience--gateway-failover">#</doc-anchor-trigger>
-        <span>Offline Resilience &amp; Gateway Fail‑over</span>
-    </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Local-first autonomy</strong> keeps 90 % of answers offline.</li>
-<li>All new chunks/logs queue in an encrypted outbox.</li>
-<li>UI shows “Cloud unavailable — best‑effort answer”.</li>
-<li>Secondary Gateway list → round‑robin retry.</li>
+<li>All new data and logs queue in an encrypted outbox in the local SQLite DB.</li>
+<li>UI shows “Cloud unavailable — best‑effort answer” during connectivity loss.</li>
+<li>The system automatically syncs when connectivity is restored.</li>
 </ul>
 <hr>
 <doc-anchor-target id="5-synchronization--versioning-protocol">
@@ -540,6 +535,7 @@ Audit &amp; KPI&quot;]
         <span>5 Synchronization &amp; Versioning Protocol</span>
     </h2>
 </doc-anchor-target>
+<p>This section details the bidirectional data flow that keeps the edge fleet aligned with the central knowledge base while allowing new information to be securely uploaded from the field.</p>
 <doc-anchor-target id="51-object-model">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#51-object-model">#</doc-anchor-trigger>
@@ -578,10 +574,10 @@ Audit &amp; KPI&quot;]
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="52-delta-sync-chase-algorithm">
+<doc-anchor-target id="52-cloud-to-edge-sync-delta-download">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#52-delta-sync-chase-algorithm">#</doc-anchor-trigger>
-        <span>5.2 Delta sync (&quot;chase&quot; algorithm)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#52-cloud-to-edge-sync-delta-download">#</doc-anchor-trigger>
+        <span>5.2 Cloud-to-Edge Sync (Delta Download)</span>
     </h3>
 </doc-anchor-target>
 <ol>
@@ -590,10 +586,17 @@ Audit &amp; KPI&quot;]
 <li>Gateway streams blocks (<code v-pre>PUT /sync?id=&amp;rev=</code>) in order; device acks.</li>
 <li>After full catch‑up, device sends its own queued chunks (<code v-pre>POST /push</code>).</li>
 </ol>
-<doc-anchor-target id="53-conflict-resolution">
+<doc-anchor-target id="53-edge-to-cloud-sync-rag-upload">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#53-conflict-resolution">#</doc-anchor-trigger>
-        <span>5.3 Conflict resolution</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#53-edge-to-cloud-sync-rag-upload">#</doc-anchor-trigger>
+        <span>5.3 Edge-to-Cloud Sync (RAG Upload)</span>
+    </h3>
+</doc-anchor-target>
+<p>This workflow securely uploads new documents and facts created by field workers to the central Milvus database, with full role-based access control enforced by the Gateway. The <code v-pre>sync_status</code> flag in the local SQLite <code v-pre>chunks</code> table tracks the state of each chunk (<code v-pre>local</code>, <code v-pre>queued</code>, <code v-pre>synced</code>) to ensure reliable, transactional updates.</p>
+<doc-anchor-target id="54-conflict-resolution">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#54-conflict-resolution">#</doc-anchor-trigger>
+        <span>5.4 Conflict resolution</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -601,10 +604,10 @@ Audit &amp; KPI&quot;]
 <li><strong>CoT</strong> – immutable; duplicates deduped via hash in Milvus tag.</li>
 <li><strong>Δ‑LoRA</strong> – private per device; no merge.</li>
 </ul>
-<doc-anchor-target id="54-longoffline-devices--30-days">
+<doc-anchor-target id="55-longoffline-devices--30-days">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#54-longoffline-devices--30-days">#</doc-anchor-trigger>
-        <span>5.4 Long‑offline devices (&gt; 30 days)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#55-longoffline-devices--30-days">#</doc-anchor-trigger>
+        <span>5.5 Long‑offline devices (&gt; 30 days)</span>
     </h3>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -627,85 +630,49 @@ Audit &amp; KPI&quot;]
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="55-security">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#55-security">#</doc-anchor-trigger>
-        <span>5.5 Security</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>All endpoints mTLS; snapshot encrypted with device TPM‑bound key.</li>
-<li>Outbox rotates key daily; if device revoked → key purge.</li>
-</ul>
 <hr>
-<doc-anchor-target id="6-lora-distillation-pipeline">
+<doc-anchor-target id="6-the-autonomous-personalization-loop-apl">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-lora-distillation-pipeline">#</doc-anchor-trigger>
-        <span>6 LoRA Distillation Pipeline</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-the-autonomous-personalization-loop-apl">#</doc-anchor-trigger>
+        <span>6 The Autonomous Personalization Loop (APL)</span>
     </h2>
 </doc-anchor-target>
-<p><em>How a cloud answer becomes a private Δ‑LoRA patch</em></p>
-<doc-anchor-target id="61-steps">
+<p>To eliminate the time and resource costs of on-device fine-tuning, Membria EE uses an <strong>Autonomous Personalization Loop</strong>. This replaces the slow, traditional &quot;distillation-via-training&quot; pipeline with an instantaneous &quot;personalization-via-generation&quot; process. The loop consists of two key proprietary components.</p>
+<doc-anchor-target id="61-apl-components">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#61-steps">#</doc-anchor-trigger>
-        <span>6.1 Steps</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#61-apl-components">#</doc-anchor-trigger>
+        <span>6.1 APL Components</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li><strong>Capture pair</strong> — Edge device stores <em>(prompt, cloud_answer, CoT)</em> in an encrypted buffer.</li>
-<li><strong>Data augmentation</strong> — Tiny script creates 3–5 paraphrase variants via on‑device Qwen‑Paraphraser (1.3 B).
-<em>Rationale: diversifies gradients, avoids over‑fitting.</em></li>
-<li><strong>QLoRA fine‑tune</strong>
-<ul>
-<li>Base: Tiny Qwen‑2 7 B INT8 weights.</li>
-<li>Optimiser: 8‑bit AdamW, 4 epochs, learning‑rate 2e‑4.</li>
-<li>Target modules: <strong>LoRA‑A/B</strong> on attention q,k,v + MLP gates (rank = 8).</li>
-</ul>
+<li><p><strong>The Knowledge Curator:</strong> This is an intelligent agent within the Edge SDK. When a knowledge gap is identified (e.g., a failed local query), its job is to automatically search the entire SQLite <strong>Knowledge Core</strong>. It selects a small, diverse, and representative set of examples that best define the new task or skill the local LLM needs to learn.</p>
 </li>
-<li><strong>Self‑eval</strong> — New LoRA patch is mounted in a sandbox; device runs a 30‑example regression set (locally cached).
-Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency &lt; +5 ms.</li>
-<li><strong>Apply or discard</strong>
-<em>If pass →</em> move patch to live folder and increment <code v-pre>lora_version</code>.
-<em>If fail →</em> wipe patch; log diff for later analysis.</li>
-<li><strong>Privacy guarantee</strong> — Patch never leaves device. Only quality telemetry (<code v-pre>pass/fail</code>, token diff) is uploaded in outbox.</li>
+<li><p><strong>The Skill Forge (Parameter Generator):</strong> This is a pre-trained &quot;hyper-network&quot; model. It takes the curated examples from the <strong>Knowledge Curator</strong> as input. In a single forward pass that takes <strong>seconds</strong>, the Skill Forge generates a new, highly specialized <code v-pre>Δ-LoRA</code> patch tailored to the new task.</p>
+</li>
 </ol>
-<doc-anchor-target id="62-why-not-distil-on-gateway">
+<doc-anchor-target id="62-key-advantages">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#62-why-not-distil-on-gateway">#</doc-anchor-trigger>
-        <span>6.2 Why not distil on gateway?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#62-key-advantages">#</doc-anchor-trigger>
+        <span>6.2 Key Advantages</span>
     </h3>
 </doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Edge‑only distil</th>
-<th>Benefit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data never leaves laptop</td>
-<td>GDPR / ITAR safe</td>
-</tr>
-<tr>
-<td>Tailors to user phrasing</td>
-<td>Higher hit‑rate in ModelCache &amp; CAG</td>
-</tr>
-<tr>
-<td>Kinara Ara2 INT8 matmul fast enough (≃4 min/train)</td>
-<td>No extra cloud GPU</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="63-rollback-mechanism">
+<ul>
+<li><strong>Massive Time &amp; Energy Savings:</strong> Replaces a multi-minute, energy-intensive fine-tuning process with a near-instantaneous one.</li>
+<li><strong>Fully Autonomous:</strong> The Knowledge Curator automates the example selection process, removing the need for human intervention to personalize the model.</li>
+<li><strong>Zero-Shot Personalization:</strong> The system can adapt to completely new tasks on the fly.</li>
+</ul>
+<doc-anchor-target id="63-resilience-to-catastrophic-forgetting">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#63-rollback-mechanism">#</doc-anchor-trigger>
-        <span>6.3 Roll‑back mechanism</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#63-resilience-to-catastrophic-forgetting">#</doc-anchor-trigger>
+        <span>6.3 Resilience to Catastrophic Forgetting</span>
     </h3>
 </doc-anchor-target>
-<p>A “gold prompts” suite (encrypted) runs weekly; if BLEU or JEM falls &gt; σ, the device rolls back to previous LoRA version and flags for support.</p>
+<p>A key challenge in continuous learning is &quot;catastrophic forgetting&quot;. The Membria architecture has a multi-layered defense against this:</p>
+<ol>
+<li><strong>Inherent LoRA Stability:</strong> LoRA only modifies a small fraction of the model&#x27;s weights, leaving the vast knowledge of the base LLM untouched.</li>
+<li><strong>Dynamic Patch Management:</strong> The system maintains a library of task-specific LoRA patches. A lightweight intent classifier in the Edge SDK analyzes each user query and <strong>dynamically loads only the relevant LoRA patch</strong> for that specific task.</li>
+<li><strong>External Knowledge Core as a Safety Net:</strong> The system&#x27;s true &quot;memory&quot; is externalized in the SQLite database. Even if a LoRA patch were to degrade the model&#x27;s ability to recall a fact, the RAG system will still retrieve the correct information from the database and provide it to the model as context.</li>
+</ol>
 <hr>
 <doc-anchor-target id="7-roadmap">
     <h2>
@@ -724,15 +691,15 @@ Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency &lt; +5 ms.</li>
 <tbody>
 <tr>
 <td><strong>Q3 2025</strong></td>
-<td>Pilot with 50 field laptops in oil-&amp;-gas plant (Loira, TX).</td>
+<td>Pilot with 50 field laptops.</td>
 </tr>
 <tr>
 <td><strong>Q4 2025</strong></td>
-<td>Full RBAC diff-sync; delta-LoRA v2 (parameter-efficient).</td>
+<td>Full RBAC diff-sync; Skill Forge v1.2 with improved generalization.</td>
 </tr>
 <tr>
 <td><strong>Q1 2026</strong></td>
-<td>Kinara Ara3 support (INT4); multilingual OCR.</td>
+<td>Support for next-gen Edge NPUs (INT4); multilingual OCR.</td>
 </tr>
 <tr>
 <td><strong>Q2 2026</strong></td>
@@ -748,87 +715,11 @@ Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency &lt; +5 ms.</li>
         <span>8 Threat Model &amp; Security</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="81-physical-device-risks">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#81-physical-device-risks">#</doc-anchor-trigger>
-        <span>8.1 Physical Device Risks</span>
-    </h3>
-</doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Risk</th>
-<th>Mitigation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Theft / loss</td>
-<td>Full-disk encryption (AES-256 XTS); TPM-bound key; PIN/biometric unlock</td>
-</tr>
-<tr>
-<td>Cold-boot / DMA attack</td>
-<td>Memory scrambling; Thunderbolt disabled; no RAM-sleep</td>
-</tr>
-<tr>
-<td>Hardware tamper</td>
-<td>Seals + chassis intrusion sensor → key wipe</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="82-data--model-protection">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#82-data--model-protection">#</doc-anchor-trigger>
-        <span>8.2 Data &amp; Model Protection</span>
-    </h3>
-</doc-anchor-target>
 <ul>
-<li>On-device graph &amp; LoRA encrypted with ChaCha20-Poly1305; keys in RAM only.</li>
-<li>Kinara Ara2 secure enclave loads weights, thwarts DMA.</li>
-<li>Models signed with ECDSA; verified at load.</li>
-</ul>
-<doc-anchor-target id="83-remote-revocation">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#83-remote-revocation">#</doc-anchor-trigger>
-        <span>8.3 Remote Revocation</span>
-    </h3>
-</doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Stolen device</td>
-<td>Gateway flags device revoked → wipe keys after 3 handshake failures</td>
-</tr>
-<tr>
-<td>Offboard</td>
-<td>SCIM service triggers blacklist → next sync clears shards &amp; tokens</td>
-</tr>
-<tr>
-<td>Suspected compromise</td>
-<td>Ops sends signed wipe command → device enters lockdown</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="84-network-security">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#84-network-security">#</doc-anchor-trigger>
-        <span>8.4 Network Security</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>mTLS v1.3 mutual-auth; cert pinning.</li>
-<li>OIDC JWT refresh daily; role tags enforced.</li>
-<li>OPA policies for row-level access in Milvus.</li>
+<li><strong>Physical Security:</strong> Full-disk encryption, TPM-bound keys.</li>
+<li><strong>Data Protection:</strong> On-device DB encrypted; model weights protected by NPU secure enclave.</li>
+<li><strong>Remote Revocation:</strong> Stolen or non-compliant devices can be remotely wiped or locked out by the Gateway.</li>
+<li><strong>Network Security:</strong> End-to-end mTLS 1.3 with certificate pinning.</li>
 </ul>
 <hr>
 <doc-anchor-target id="9-operational-model--tco">
@@ -837,15 +728,15 @@ Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency &lt; +5 ms.</li>
         <span>9 Operational Model &amp; TCO</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="91-managedservice-approach">
+<doc-anchor-target id="91-managed-service-approach">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#91-managedservice-approach">#</doc-anchor-trigger>
-        <span>9.1 Managed‑Service Approach</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#91-managed-service-approach">#</doc-anchor-trigger>
+        <span>9.1 Managed-Service Approach</span>
     </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Primary ops owner:</strong> Membria NOC (24×7) operates Gateway, Milvus, LMCache and ClickHouse in the customer’s private VPC or on‑prem K8s.</li>
-<li><strong>Edge fleet support:</strong> Certified SI / device‑OEM partner (e.g. Accenture, Jabil) images Kinara‑enabled laptops and handles RMA.</li>
+<li><strong>Edge fleet support:</strong> Certified SI / device‑OEM partner (e.g. Accenture, Jabil) images NPU-enabled laptops and handles RMA.</li>
 <li><strong>Update pipeline:</strong>
 <ol>
 <li>Monthly <strong>security patch</strong> (Gateway container).</li>
@@ -855,12 +746,13 @@ Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency &lt; +5 ms.</li>
 </li>
 <li><strong>Customer IT</strong> is responsible only for network, VPN and account provisioning (LDAP/OIDC).</li>
 </ul>
-<doc-anchor-target id="92-total-cost-of-ownership-3year-500-field-workers">
+<doc-anchor-target id="92-detailed-tco-analysis-3-year-500-workers">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#92-total-cost-of-ownership-3year-500-field-workers">#</doc-anchor-trigger>
-        <span>9.2 Total Cost of Ownership (3‑Year, 500 Field Workers)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#92-detailed-tco-analysis-3-year-500-workers">#</doc-anchor-trigger>
+        <span>9.2 Detailed TCO Analysis (3-Year, 500 Workers)</span>
     </h3>
 </doc-anchor-target>
+<p>The Total Cost of Ownership (TCO) is calculated for a deployment scenario of 500 field workers over a 3-year period to provide a transparent view of all capital (CapEx) and operational (OpEx) expenditures.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -874,165 +766,103 @@ Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency &lt; +5 ms.</li>
 </thead>
 <tbody>
 <tr>
-<td><strong>Edge HW</strong> (rugged laptops + Ara2)</td>
+<td><strong>Edge HW</strong> (laptops + NPU)</td>
 <td>500</td>
-<td>$1 800</td>
+<td>$1,800</td>
 <td><strong>$0.90 M</strong></td>
-<td>amortised 3 yrs</td>
+<td>CapEx for 500 field worker devices.</td>
 </tr>
 <tr>
-<td>Tiny‑LLM lic. (Apache)</td>
+<td><strong>Tiny-LLM License</strong></td>
 <td>―</td>
 <td>$0</td>
 <td>—</td>
-<td>OSS / Apache‑2.0</td>
+<td>Based on Apache 2.0 licensed Qwen-2 model.</td>
 </tr>
 <tr>
-<td><strong>Central Services Nodes (Gateway/Milvus)</strong></td>
-<td>2 nodes</td>
-<td>$28 k</td>
+<td><strong>Central Services Nodes</strong></td>
+<td>2</td>
+<td>$28,000</td>
 <td><strong>$0.06 M</strong></td>
-<td>2 nodes for High Availability. Calc. load for 500 workers (~15-20 tok/s) fits within one node&#x27;s capacity; second node provides redundancy.</td>
+<td>High Availability cluster for Gateway/Milvus.</td>
 </tr>
 <tr>
-<td>Kinara SDK + support</td>
+<td><strong>Edge NPU SDK + Support</strong></td>
 <td>500</td>
 <td>$30</td>
 <td><strong>$0.015 M</strong></td>
-<td>1‑yr, then 20 % maint.</td>
+<td>Proprietary SDK license for NPU optimization.</td>
 </tr>
 <tr>
-<td>Membria Managed‑Service fee</td>
+<td><strong>Membria Managed Service</strong></td>
 <td>1</td>
-<td>$12 k / yr</td>
+<td>$12,000 /yr</td>
 <td><strong>$0.036 M</strong></td>
-<td>incl. 24×7 NOC</td>
+<td>Annual fee for 24/7 NOC and updates.</td>
 </tr>
 <tr>
-<td>Cloud GPU burst (5 %)</td>
-<td>15 M tokens/mo</td>
-<td>$0.005</td>
+<td><strong>Cloud GPU Burst (5%)</strong></td>
+<td>1.5M tok/mo</td>
+<td>$0.005 /token</td>
 <td><strong>$0.27 M</strong></td>
-<td>3 yrs, LMCache offsets 35 %</td>
+<td>OpEx for complex queries sent to cloud LLM.</td>
 </tr>
 <tr>
-<td>Internal IT labour</td>
+<td><strong>Internal IT Labour</strong></td>
 <td>0.5 FTE</td>
-<td>$120 k</td>
+<td>$120,000 /yr</td>
 <td><strong>$0.18 M</strong></td>
-<td>onboarding &amp; RBAC</td>
+<td>Client-side user and role management.</td>
 </tr>
 <tr>
-<td><strong>Total 3‑yr TCO</strong></td>
+<td><strong>Total 3-yr TCO</strong></td>
 <td></td>
 <td></td>
 <td><strong>$1.46 M</strong></td>
-<td>≈ $975 / worker / yr</td>
+<td><strong>(≈ $975 per worker per year)</strong></td>
 </tr>
 </tbody>
 </table>
 </div>
-<blockquote>
-<p><strong>Benchmark:</strong> Pure‑cloud GPT‑4o at 500 workers × 1 k prompts /day would cost ~$10 M over 3 yrs (GPU tokens + API fees). Membria EE saves <strong>85 %</strong>.</p>
-</blockquote>
 <hr>
-<doc-anchor-target id="10-central-data-plane-disaster-recovery">
+<doc-anchor-target id="10-licensing-model">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#10-central-data-plane-disaster-recovery">#</doc-anchor-trigger>
-        <span>10 Central Data-Plane Disaster Recovery</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#10-licensing-model">#</doc-anchor-trigger>
+        <span>10 Licensing Model</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="101-failure-scenarios">
+<p>Membria Enterprise Edition utilizes a <strong>per-seat, annual subscription model</strong>, enforced by the Gateway acting as a central <strong>License Server</strong>.</p>
+<doc-anchor-target id="101-licensed-components">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#101-failure-scenarios">#</doc-anchor-trigger>
-        <span>10.1 Failure Scenarios</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#101-licensed-components">#</doc-anchor-trigger>
+        <span>10.1 Licensed Components</span>
     </h3>
 </doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Component</th>
-<th>Failure Mode</th>
-<th>Edge Impact</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Milvus</strong></td>
-<td>Pod crash / disk failure</td>
-<td>Edge continues offline; cloud retrieval returns &quot;context unavailable&quot;</td>
-</tr>
-<tr>
-<td><strong>ClickHouse</strong></td>
-<td>Replica lag / table corrupt</td>
-<td>Audit metrics delayed; no interruption to field device operations</td>
-</tr>
-<tr>
-<td><strong>Gateway</strong></td>
-<td>Container crash / network</td>
-<td>Secondary endpoint used; if both fail, cloud-assist layer degrades but edge autonomy remains</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="102-ha--backup-strategy">
+<p>The license covers the proprietary <strong>Membria Gateway</strong>, the <strong>Edge SDK</strong> (which includes the Knowledge Curator and Skill Forge), and the <strong>Support &amp; Maintenance Contract</strong>.</p>
+<doc-anchor-target id="102-activation--watermarking">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#102-ha--backup-strategy">#</doc-anchor-trigger>
-        <span>10.2 HA &amp; Backup Strategy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#102-activation--watermarking">#</doc-anchor-trigger>
+        <span>10.2 Activation &amp; Watermarking</span>
     </h3>
 </doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Layer</th>
-<th>Technique</th>
-<th>RPO / RTO</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Milvus</strong></td>
-<td>Raft metadata replicas; WAL to object store; hourly snapshots</td>
-<td>RPO ≤ 60 s; RTO ≈ 15 min</td>
-</tr>
-<tr>
-<td><strong>ClickHouse</strong></td>
-<td>ReplicatedMergeTree (3 replicas); incremental backups every 5 min</td>
-<td>RPO ≤ 5 min; RTO &lt; 10 min via SYSTEM RESTORE</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="103-recovery-procedure-milvus">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#103-recovery-procedure-milvus">#</doc-anchor-trigger>
-        <span>10.3 Recovery Procedure (Milvus)</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li><strong>Detect</strong> via Prometheus alert on replica lag (&gt;30 s).</li>
-<li><strong>Isolate</strong> failing pod with Kubernetes taint; remove from service.</li>
-<li><strong>Recreate</strong> new pod; replay WAL from object store.</li>
-<li><strong>Re-index</strong> HNSW index in background; Gateway serves partial queries.</li>
-<li><strong>Heal</strong>: LB reintegrates node once health checks pass.</li>
-</ol>
-<doc-anchor-target id="104-edge-continuity-guarantee">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#104-edge-continuity-guarantee">#</doc-anchor-trigger>
-        <span>10.4 Edge Continuity Guarantee</span>
-    </h3>
+<p>Each licensed device receives a unique cryptographic <strong>Device License Certificate</strong> from the Gateway upon first activation. The LoRA patches generated by the Skill Forge are automatically <strong>watermarked</strong> using this certificate. The Edge SDK will refuse to load any LoRA patch with a missing or invalid watermark, thus tying the use of personalized skills to a valid license.</p>
+<hr>
+<doc-anchor-target id="11-central-data-plane-disaster-recovery">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#11-central-data-plane-disaster-recovery">#</doc-anchor-trigger>
+        <span>11 Central Data-Plane Disaster Recovery</span>
+    </h2>
 </doc-anchor-target>
 <ul>
-<li>Field devices remain fully operational; only cloud-assist results delay.</li>
-<li>On recovery, queued cloud prompts replay and vector shards sync at next diff.</li>
+<li><strong>Milvus:</strong> HA via Raft, WAL backups, hourly snapshots (RPO ≤ 60s).</li>
+<li><strong>ClickHouse:</strong> 3-replica cluster, incremental backups (RPO ≤ 5 min).</li>
+<li><strong>Gateway:</strong> Redundant instances behind a load balancer.</li>
 </ul>
 <hr>
-<doc-anchor-target id="11-competitive-comparison">
+<doc-anchor-target id="12-competitive-comparison">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#11-competitive-comparison">#</doc-anchor-trigger>
-        <span>11 Competitive Comparison</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#12-competitive-comparison">#</doc-anchor-trigger>
+        <span>12 Competitive Comparison</span>
     </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -1041,102 +871,34 @@ Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency &lt; +5 ms.</li>
 <tr>
 <th>Criteria</th>
 <th><strong>Membria EE</strong></th>
-<th>Azure AI (Private Link)</th>
-<th>AWS Bedrock (VPC Endpoints)</th>
+<th>Azure AI / AWS Bedrock (Private)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Edge autonomy</strong></td>
-<td>Tiny Qwen on Kinara; 90 % offline queries</td>
-<td>No on-device LLM; 100 % cloud</td>
-<td>100 % cloud</td>
+<td>90% offline via on-device LLM+NPU</td>
+<td>100% cloud-dependent</td>
 </tr>
 <tr>
 <td><strong>GPU cost savings</strong></td>
-<td>≈ 85 % via edge pre-filter &amp; LoRA adaptation</td>
-<td>None; full VM billing</td>
+<td>≈ 85% via edge pre-filtering</td>
 <td>None; full instance billing</td>
 </tr>
 <tr>
 <td><strong>Privacy &amp; sovereignty</strong></td>
-<td>Local data &amp; LoRA; only shard deltas to cloud</td>
-<td>Data in Azure region; limited on-prem</td>
-<td>Data in AWS region; Outposts limited</td>
+<td>Sensitive data never leaves device</td>
+<td>Data resides in cloud region</td>
 </tr>
 <tr>
 <td><strong>Self-improving</strong></td>
-<td>On-device Δ-LoRA fine-tune</td>
-<td>No local fine-tune</td>
-<td>No local fine-tune</td>
-</tr>
-<tr>
-<td><strong>Scale model</strong></td>
-<td>4×RTX 5090 nodes; linear add</td>
-<td>A100/H100 VMs; higher cost</td>
-<td>Trn1/Inf2 instances; variable cost</td>
+<td><strong>Instant</strong> on-device personalization via APL</td>
+<td>No local fine-tuning</td>
 </tr>
 <tr>
 <td><strong>Offline resilience</strong></td>
-<td>Field answers 90 % offline</td>
-<td>No answers if cloud down</td>
-<td>Same</td>
-</tr>
-<tr>
-<td><strong>3-yr TCO (500 users)</strong></td>
-<td>≈ $1.46 M (≈$975/user/yr)</td>
-<td>≈ $9 M</td>
-<td>≈ $8 M</td>
-</tr>
-</tbody>
-</table>
-</div>
-<blockquote>
-<p><strong>Summary:</strong> Membria EE uniquely combines offline-first AI, self-learning and low TCO, outperforming hyperscaler private AI offerings.</p>
-</blockquote>
-<hr>
-<doc-anchor-target id="12-appendix--hardware-node-spec">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#12-appendix--hardware-node-spec">#</doc-anchor-trigger>
-        <span>12 Appendix — Hardware Node Spec</span>
-    </h2>
-</doc-anchor-target>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Component</th>
-<th>Spec</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CPU</strong></td>
-<td>AMD Threadripper PRO 7995WX (96c/192t)</td>
-</tr>
-<tr>
-<td><strong>RAM</strong></td>
-<td>256–512 GB DDR5 ECC</td>
-</tr>
-<tr>
-<td><strong>GPU</strong></td>
-<td>4 × RTX 5090 32 GB (NVLink)</td>
-</tr>
-<tr>
-<td><strong>Storage</strong></td>
-<td>2 TB NVMe RAID-0 (Gen4)</td>
-</tr>
-<tr>
-<td><strong>Network</strong></td>
-<td>dual 10 GbE + 200 Gbps InfiniBand</td>
-</tr>
-<tr>
-<td><strong>Throughput</strong></td>
-<td>20–40 tokens / s (Qwen-3 235B 4-bit via vLLM TP+EP)</td>
-</tr>
-<tr>
-<td><strong>Concurrent users</strong></td>
-<td>≤ 100 per node</td>
+<td>Fully functional offline</td>
+<td>No functionality if cloud is down</td>
 </tr>
 </tbody>
 </table>
@@ -1148,16 +910,14 @@ Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency &lt; +5 ms.</li>
         <span>13 Conclusion</span>
     </h2>
 </doc-anchor-target>
-<p>Membria Enterprise Edition empowers organisations with:</p>
-<ul>
-<li><strong>Offline autonomy</strong> for critical field operations.</li>
-<li><strong>Data sovereignty</strong> via encrypted on-device graph &amp; LoRA.</li>
-<li><strong>Seamless scaling</strong> on commodity hardware.</li>
-<li><strong>Cost-effectiveness</strong>—under <strong>$1 000 per user per year</strong>.</li>
-</ul>
-<blockquote>
-<p><strong>Membria EE</strong> is the strategic choice for deploying frontier AI securely and affordably at the edge.</p>
-</blockquote>
+<p>Membria Enterprise Edition empowers organisations with a self-improving, privacy-first AI fabric that scales from cloud to edge. By leveraging a cutting-edge <strong>Autonomous Personalization Loop</strong>, it delivers instantaneous on-device personalization, ensuring offline autonomy, data sovereignty, and significant cost savings while remaining highly resilient to common continual learning challenges.</p>
+<p>The primary value for corporate clients lies in solving four critical, previously irreconcilable challenges of modern AI deployment:</p>
+<ol>
+<li><strong>True Offline Autonomy:</strong> It provides continuous AI support for field workers in environments with unstable or non-existent connectivity.</li>
+<li><strong>Unyielding Data Sovereignty:</strong> By processing sensitive information and personalizing models directly on the device, it guarantees compliance with strict data privacy laws like GDPR, ITAR, and HIPAA.</li>
+<li><strong>Enhanced Reliability:</strong> The hybrid architecture drastically reduces context deficits and knowledge drift, minimizing model hallucinations.</li>
+<li><strong>Fundamental Economic Shift:</strong> Most importantly, Membria EE fundamentally changes the economic model of using frontier AI. It moves enterprises away from the prohibitively high and unpredictable operational expenditure (OpEx) of per-token API calls to a predictable, controlled cost structure. The Total Cost of Ownership analysis shows that for a fleet of 500 workers, the 3-year cost is approximately <strong>$1.46 million</strong>, representing a cost reduction of up to <strong>85%</strong> compared to the estimated <strong>~$10 million</strong> for a pure-cloud solution.</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
