@@ -1,6 +1,6 @@
 ---
 icon: star
-label: Membria-Enterprise
+label: Membria for Enterprises
 order: 94
 ---
 
