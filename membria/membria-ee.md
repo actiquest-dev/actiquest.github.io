@@ -8,7 +8,7 @@ order: 94
 
 -----
 
-# **Membria Enterprise Edition**
+# Membria Enterprise Edition
 
 *A Hybrid Memory & Routing Layer for Privacy‑First Corporate AI*
 
