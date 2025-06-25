@@ -8,7 +8,7 @@ order: 94
 
 -----
 
-# Membria Enterprise Edition
+# **Membria Enterprise Edition**
 
 *A Hybrid Memory & Routing Layer for Privacy‑First Corporate AI*
 
@@ -16,7 +16,7 @@ order: 94
 
 ## Executive Summary
 
-Membria Enterprise Edition (EE) delivers **GPT‑4‑class intelligence on‑device** while keeping corporate data private and GPU costs under control. *Edge* devices run an INT8 **Qwen‑2 7B** model accelerated by Kinara Ara2; *cloud* hosts a **Qwen3‑235B‑A22B** frontier LLM. A role‑aware Gateway routes only unfamiliar or high‑risk queries to the cloud, returns answers, and distils them into lightweight LoRA patches for reuse on the edge. Result: field staff get realtime, offline answers; headquarters retain full audit & RBAC over knowledge access.
+Membria Enterprise Edition (EE) delivers **GPT‑4‑class intelligence on‑device** while keeping corporate data private and GPU costs under control. *Edge* devices run an INT8 **Qwen‑2 7B** model accelerated by an on-device **NPU (e.g., from Intel, AMD, NVIDIA)**. Instead of slow, per-task fine-tuning, Membria EE uses a proprietary **Skill Forge** that creates task-specific LoRA patches in seconds. This process is driven by an autonomous **Knowledge Curator** agent that selects the best examples from the local database. A role‑aware Gateway routes only the most complex queries to the cloud. Result: field staff get realtime, offline, and instantly personalized AI through an **Autonomous Personalization Loop**; headquarters retain full audit, IP protection, and license control.
 
 -----
 
@@ -31,11 +31,7 @@ Real‑world deployments expose **four** overlapping bottlenecks that classic cl
 | **3** | **Exploding GPU & token cost** | Frontier‑model API = $0.01–0.03 / token → O(10⁶ $/ year) for a fleet. | 1 000 techs × 1 k prompts /day × 1 k tok =$ 10 k / day. |
 | **4** | **Context deficit & knowledge drift** | Cloud LLM forgets site‑specific SOP, causing hallucinations; re‑upload each prompt wastes tokens. | "Torque spec for Valve ZX‑14?" — model hallucinates 45 N·m, real is 60 N·m. |
 
-Existing stop‑gaps (paper manuals, VDI, caching proxy) address **one** constraint but break another. **Membria EE** integrates:
-
-  * on‑device tiny‑LLM + swap‑graph → offline & law‑compliant,
-  * hybrid Gateway routing → GPU only for 5 % hardest queries,
-  * diff‑sync knowledge shards → fleet stays aligned while private LoRA patches remain on their originating devices.
+-----
 
 ## 2 High‑Level Architecture
 
@@ -45,17 +41,26 @@ Existing stop‑gaps (paper manuals, VDI, caching proxy) address **one** constra
 flowchart TD
     subgraph Edge["Field Device – Offline‑First"]
         Tiny["Tiny Qwen‑2 7B
-INT8 on Kinara Ara2"]
-        Graph["Swap‑Graph
-(RAG + CAG)"]
-        LoRA["Δ‑LoRA Trainer"]
+INT8 on Edge NPU"]
+        Graph["Knowledge Core
+(SQLite)"]
+        Curator["Knowledge Curator
+(Example Selector)"]
+        SkillForge["Skill Forge
+(Parameter Generator)"]
+
         Tiny -->|read / write| Graph
-        Tiny -->|distil| LoRA
+        Tiny -- "knowledge gap" --> Curator
+        Curator -- "finds best examples" --> Graph
+        Graph -- "provides examples" --> Curator
+        Curator -- "sends curated examples" --> SkillForge
+        SkillForge -- "generates" --> LoRA["Δ-LoRA Patch"]
+        LoRA --> Tiny
     end
 
     subgraph Cloud["Private Cluster"]
         GW["Membria Gateway
-Auth • RBAC • Routing"]
+Auth • RBAC • Licensing"]
         Big["Qwen‑3 235B 4‑bit
 4 × RTX 5090 32 GB"]
         Vec["Milvus 2.3 (vector DB)"]
@@ -67,11 +72,12 @@ Audit & KPI"]
         GW --> Ops
     end
 
-    Tiny -- "mTLS query / ΔLoRA" --> GW
-    Graph -- "Role‑scoped shard sync" --> GW
+    Edge -- "mTLS (Query / RAG-Push / License Check)" --> GW
 ```
 
-> **Edge** answers \~90 % locally. Only unfamiliar or high‑risk queries travel the red mTLS link; the cloud reply is distilled and shared back overnight.
+> **Edge** answers \~90 % locally. Personalization is instantaneous and autonomous. Only the most complex queries travel the red mTLS link.
+
+-----
 
 ## 3 Core Components
 
@@ -79,20 +85,20 @@ Audit & KPI"]
 
 | Module | Tech | Footprint | Function |
 |---|---|---|---|
-| **Tiny‑LLM** | Qwen‑2 7B‑INT8 | ≈3.4 GB | Runs all common prompts offline |
-| **Hardware NPU** | Kinara Ara2 (M.2) | \<5 W | 280 ms median latency |
-| **Swap‑RAM Graph** | SQLite + Qdrant‑lite | up to 1 GB | Stores facts (RAG) + chains‑of‑thought (CAG) |
-| **DoD Loop** | LoRA trainer (bitsandbytes) | bursts 1.2 W | Distils cloud answers into Δ‑weights |
-| **Response Cache** | ModelCache | optional | Instant replay of identical queries |
+| **Tiny‑LLM** | Qwen‑2 7B‑INT8 | ≈3.4 GB | Runs all common prompts offline. |
+| **Hardware NPU** | Edge NPU (e.g., Intel, AMD, NVIDIA) | \<10 W | Provides low-latency hardware acceleration. |
+| **Knowledge Core** | SQLite (RAG + Graph + Agent Memory) | up to 1 GB | Stores all local knowledge and agent state. |
+| **Personalization Loop** | **Knowledge Curator** + **Skill Forge** | ≈1.5 GB | **Instantly generates LoRA weights from curated examples.** |
+| **Response Cache** | ModelCache | optional | Instant replay of identical queries. |
 
 ### 3.2 Cloud Stack
 
 | Module | Tech | Notes |
 |---|---|---|
-| **Gateway** | Membria Gateway (Go, gRPC/HTTP) | JWT Auth • RBAC • Adaptive routing |
+| **Gateway** | Membria Gateway (Go, gRPC/HTTP) | JWT Auth • RBAC • **Policy-based routing & Licensing** |
 | **Frontier LLM** | Qwen3‑235B 4‑bit (GPTQ) | 4 × RTX 5090 32 GB · 20–40 tok/s |
 | **LMCache Layer** | LMCache (Apache‑2.0) | KV‑reuse; cuts TTFT & GPU by \~35 % |
-| **Vector DB** | Milvus 2.3 + RBAC | per‑role partitions, HNSW‑GPU |
+| **Vector DB** | Milvus 2.3 + RBAC | Per‑role partitions, HNSW‑GPU |
 | **Ops Analytics** | ClickHouse + Superset | Token savings, SLA, audit trails |
 
 ### 3.3 GPU Scaling & Concurrency Capacity
@@ -108,8 +114,6 @@ Audit & KPI"]
 | **Linear capacity rule** | n nodes × 30 tok/s ≈ *n × 30 users* | 10 nodes → \~300 concurrent users. |
 | **Edge off‑load win** | If 90 % queries served on device, cloud sees only **3 tok/s per 100 workers** | Delays cluster expansion by \~10×. |
 
-> **Take‑away:** one 4‑GPU box covers a small field fleet; scale horizontally by adding identical nodes—no model re‑shard needed because LMCache + Gateway round‑robins at token level.
-
 ### 3.4 Base Node Hardware Spec
 
 ```
@@ -123,20 +127,20 @@ Audit & KPI"]
 • Scale‑out: add 1 node, link over 200 Gbps IB; Gateway load‑balances & LMCache sharding auto‑sync.
 ```
 
-## 4 Data Flow
+-----
 
-*(see diagram above)*
-
-### Offline Resilience & Gateway Fail‑over
+## 4 Data Flow & Offline Resilience
 
   * **Local-first autonomy** keeps 90 % of answers offline.
-  * All new chunks/logs queue in an encrypted outbox.
-  * UI shows “Cloud unavailable — best‑effort answer”.
-  * Secondary Gateway list → round‑robin retry.
+  * All new data and logs queue in an encrypted outbox in the local SQLite DB.
+  * UI shows “Cloud unavailable — best‑effort answer” during connectivity loss.
+  * The system automatically syncs when connectivity is restored.
 
 -----
 
 ## 5 Synchronization & Versioning Protocol
+
+This section details the bidirectional data flow that keeps the edge fleet aligned with the central knowledge base while allowing new information to be securely uploaded from the field.
 
 ### 5.1 Object model
 
@@ -146,64 +150,55 @@ Audit & KPI"]
 | **CoT trace** | `sha256(prompt‖crc32(CoT))` | implicit (immutable) | JSON array of steps |
 | **Δ‑LoRA patch** | `sha256(base‑model‖timestamp)` | `semantic ver` | 16‑bit weight diff |
 
-### 5.2 Delta sync ("chase" algorithm)
+### 5.2 Cloud-to-Edge Sync (Delta Download)
 
 1.  **Vector clock** in device header → Gateway reply tells *latest rev* per collection.
 2.  Device computes **missing range**. If \< 20 MB, pulls incremental diff; else requests **snapshot**.
 3.  Gateway streams blocks (`PUT /sync?id=&rev=`) in order; device acks.
 4.  After full catch‑up, device sends its own queued chunks (`POST /push`).
 
-### 5.3 Conflict resolution
+### 5.3 Edge-to-Cloud Sync (RAG Upload)
+
+This workflow securely uploads new documents and facts created by field workers to the central Milvus database, with full role-based access control enforced by the Gateway. The `sync_status` flag in the local SQLite `chunks` table tracks the state of each chunk (`local`, `queued`, `synced`) to ensure reliable, transactional updates.
+
+### 5.4 Conflict resolution
 
   * **Chunk** – *last‑writer‑wins* (higher `rev`) with audit kept in ClickHouse.
   * **CoT** – immutable; duplicates deduped via hash in Milvus tag.
   * **Δ‑LoRA** – private per device; no merge.
 
-### 5.4 Long‑offline devices (\> 30 days)
+### 5.5 Long‑offline devices (\> 30 days)
 
 | Size of gap | Action |
 |---|---|
 | ≤ 500 MB | Auto snapshot download over VPN. |
 | \> 500 MB | Ops ticket: ship USB package with encrypted snapshot. |
 
-### 5.5 Security
-
-  * All endpoints mTLS; snapshot encrypted with device TPM‑bound key.
-  * Outbox rotates key daily; if device revoked → key purge.
-
 -----
 
-## 6 LoRA Distillation Pipeline
+## 6 The Autonomous Personalization Loop (APL)
 
-*How a cloud answer becomes a private Δ‑LoRA patch*
+To eliminate the time and resource costs of on-device fine-tuning, Membria EE uses an **Autonomous Personalization Loop**. This replaces the slow, traditional "distillation-via-training" pipeline with an instantaneous "personalization-via-generation" process. The loop consists of two key proprietary components.
 
-### 6.1 Steps
+### 6.1 APL Components
 
-1.  **Capture pair** — Edge device stores *(prompt, cloud\_answer, CoT)* in an encrypted buffer.
-2.  **Data augmentation** — Tiny script creates 3–5 paraphrase variants via on‑device Qwen‑Paraphraser (1.3 B).
-    *Rationale: diversifies gradients, avoids over‑fitting.*
-3.  **QLoRA fine‑tune**
-      * Base: Tiny Qwen‑2 7 B INT8 weights.
-      * Optimiser: 8‑bit AdamW, 4 epochs, learning‑rate 2e‑4.
-      * Target modules: **LoRA‑A/B** on attention q,k,v + MLP gates (rank = 8).
-4.  **Self‑eval** — New LoRA patch is mounted in a sandbox; device runs a 30‑example regression set (locally cached).
-    Metrics: BLEU ≥ base, Toxicity Δ ≤ 0. 05, avg latency \< +5 ms.
-5.  **Apply or discard**
-    *If pass →* move patch to live folder and increment `lora_version`.
-    *If fail →* wipe patch; log diff for later analysis.
-6.  **Privacy guarantee** — Patch never leaves device. Only quality telemetry (`pass/fail`, token diff) is uploaded in outbox.
+1.  **The Knowledge Curator:** This is an intelligent agent within the Edge SDK. When a knowledge gap is identified (e.g., a failed local query), its job is to automatically search the entire SQLite **Knowledge Core**. It selects a small, diverse, and representative set of examples that best define the new task or skill the local LLM needs to learn.
 
-### 6.2 Why not distil on gateway?
+2.  **The Skill Forge (Parameter Generator):** This is a pre-trained "hyper-network" model. It takes the curated examples from the **Knowledge Curator** as input. In a single forward pass that takes **seconds**, the Skill Forge generates a new, highly specialized `Δ-LoRA` patch tailored to the new task.
 
-| Edge‑only distil | Benefit |
-|---|---|
-| Data never leaves laptop | GDPR / ITAR safe |
-| Tailors to user phrasing | Higher hit‑rate in ModelCache & CAG |
-| Kinara Ara2 INT8 matmul fast enough (≃4 min/train) | No extra cloud GPU |
+### 6.2 Key Advantages
 
-### 6.3 Roll‑back mechanism
+  * **Massive Time & Energy Savings:** Replaces a multi-minute, energy-intensive fine-tuning process with a near-instantaneous one.
+  * **Fully Autonomous:** The Knowledge Curator automates the example selection process, removing the need for human intervention to personalize the model.
+  * **Zero-Shot Personalization:** The system can adapt to completely new tasks on the fly.
 
-A “gold prompts” suite (encrypted) runs weekly; if BLEU or JEM falls \> σ, the device rolls back to previous LoRA version and flags for support.
+### 6.3 Resilience to Catastrophic Forgetting
+
+A key challenge in continuous learning is "catastrophic forgetting". The Membria architecture has a multi-layered defense against this:
+
+1.  **Inherent LoRA Stability:** LoRA only modifies a small fraction of the model's weights, leaving the vast knowledge of the base LLM untouched.
+2.  **Dynamic Patch Management:** The system maintains a library of task-specific LoRA patches. A lightweight intent classifier in the Edge SDK analyzes each user query and **dynamically loads only the relevant LoRA patch** for that specific task.
+3.  **External Knowledge Core as a Safety Net:** The system's true "memory" is externalized in the SQLite database. Even if a LoRA patch were to degrade the model's ability to recall a fact, the RAG system will still retrieve the correct information from the database and provide it to the model as context.
 
 -----
 
@@ -211,143 +206,92 @@ A “gold prompts” suite (encrypted) runs weekly; if BLEU or JEM falls \> σ, 
 
 | Quarter | Milestone |
 |---|---|
-| **Q3 2025** | Pilot with 50 field laptops in oil-&-gas plant (Loira, TX). |
-| **Q4 2025** | Full RBAC diff-sync; delta-LoRA v2 (parameter-efficient). |
-| **Q1 2026** | Kinara Ara3 support (INT4); multilingual OCR. |
+| **Q3 2025** | Pilot with 50 field laptops. |
+| **Q4 2025** | Full RBAC diff-sync; Skill Forge v1.2 with improved generalization. |
+| **Q1 2026** | Support for next-gen Edge NPUs (INT4); multilingual OCR. |
 | **Q2 2026** | BYO-Chip SDK (NPU, TPU-edge) & FIPS-140-3 certification. |
 
 -----
 
 ## 8 Threat Model & Security
 
-### 8.1 Physical Device Risks
-
-| Risk | Mitigation |
-|---|---|
-| Theft / loss | Full-disk encryption (AES-256 XTS); TPM-bound key; PIN/biometric unlock |
-| Cold-boot / DMA attack | Memory scrambling; Thunderbolt disabled; no RAM-sleep |
-| Hardware tamper | Seals + chassis intrusion sensor → key wipe |
-
-### 8.2 Data & Model Protection
-
-  * On-device graph & LoRA encrypted with ChaCha20-Poly1305; keys in RAM only.
-  * Kinara Ara2 secure enclave loads weights, thwarts DMA.
-  * Models signed with ECDSA; verified at load.
-
-### 8.3 Remote Revocation
-
-| Scenario | Response |
-|---|---|
-| Stolen device | Gateway flags device revoked → wipe keys after 3 handshake failures |
-| Offboard | SCIM service triggers blacklist → next sync clears shards & tokens |
-| Suspected compromise | Ops sends signed wipe command → device enters lockdown |
-
-### 8.4 Network Security
-
-  * mTLS v1.3 mutual-auth; cert pinning.
-  * OIDC JWT refresh daily; role tags enforced.
-  * OPA policies for row-level access in Milvus.
+  * **Physical Security:** Full-disk encryption, TPM-bound keys.
+  * **Data Protection:** On-device DB encrypted; model weights protected by NPU secure enclave.
+  * **Remote Revocation:** Stolen or non-compliant devices can be remotely wiped or locked out by the Gateway.
+  * **Network Security:** End-to-end mTLS 1.3 with certificate pinning.
 
 -----
 
 ## 9 Operational Model & TCO
 
-### 9.1 Managed‑Service Approach
+### 9.1 Managed-Service Approach
 
   * **Primary ops owner:** Membria NOC (24×7) operates Gateway, Milvus, LMCache and ClickHouse in the customer’s private VPC or on‑prem K8s.
-  * **Edge fleet support:** Certified SI / device‑OEM partner (e.g. Accenture, Jabil) images Kinara‑enabled laptops and handles RMA.
+  * **Edge fleet support:** Certified SI / device‑OEM partner (e.g. Accenture, Jabil) images NPU-enabled laptops and handles RMA.
   * **Update pipeline:**
     1.  Monthly **security patch** (Gateway container).
     2.  Quarterly **Qwen & LoRA refresh** signed via OTA.
     3.  Emergency CVE ≤ 24 h.
   * **Customer IT** is responsible only for network, VPN and account provisioning (LDAP/OIDC).
 
-### 9.2 Total Cost of Ownership (3‑Year, 500 Field Workers)
+### 9.2 Detailed TCO Analysis (3-Year, 500 Workers)
+
+The Total Cost of Ownership (TCO) is calculated for a deployment scenario of 500 field workers over a 3-year period to provide a transparent view of all capital (CapEx) and operational (OpEx) expenditures.
 
 | Cost bucket | Qty | Unit price (USD) | 3‑yr cost | Notes |
 |---|---|---|---|---|
-| **Edge HW** (rugged laptops + Ara2) | 500 | $1 800 | **$0.90 M** | amortised 3 yrs |
-| Tiny‑LLM lic. (Apache) | ― | $0 | — | OSS / Apache‑2.0 |
-| **Central Services Nodes (Gateway/Milvus)** | 2 nodes | $28 k | **$0.06 M** | 2 nodes for High Availability. Calc. load for 500 workers (\~15-20 tok/s) fits within one node's capacity; second node provides redundancy. |
-| Kinara SDK + support | 500 | $30 | **$0.015 M** | 1‑yr, then 20 % maint. |
-| Membria Managed‑Service fee | 1 | $12 k / yr | **$0.036 M** | incl. 24×7 NOC |
-| Cloud GPU burst (5 %) | 15 M tokens/mo | $0.005 | **$0.27 M** | 3 yrs, LMCache offsets 35 % |
-| Internal IT labour | 0.5 FTE | $120 k | **$0.18 M** | onboarding & RBAC |
-| **Total 3‑yr TCO** | | | **$1.46 M** | ≈ $975 / worker / yr |
-
-> **Benchmark:** Pure‑cloud GPT‑4o at 500 workers × 1 k prompts /day would cost \~$10 M over 3 yrs (GPU tokens + API fees). Membria EE saves **85 %**.
+| **Edge HW** (laptops + NPU) | 500 | $1,800 | **$0.90 M** | CapEx for 500 field worker devices. |
+| **Tiny-LLM License** | ― | $0 | — | Based on Apache 2.0 licensed Qwen-2 model. |
+| **Central Services Nodes** | 2 | $28,000 | **$0.06 M** | High Availability cluster for Gateway/Milvus. |
+| **Edge NPU SDK + Support** | 500 | $30 | **$0.015 M** | Proprietary SDK license for NPU optimization. |
+| **Membria Managed Service** | 1 | $12,000 /yr | **$0.036 M** | Annual fee for 24/7 NOC and updates. |
+| **Cloud GPU Burst (5%)**| 1.5M tok/mo | $0.005 /token | **$0.27 M** | OpEx for complex queries sent to cloud LLM. |
+| **Internal IT Labour** | 0.5 FTE | $120,000 /yr | **$0.18 M** | Client-side user and role management. |
+| **Total 3-yr TCO** | | | **$1.46 M** | **(≈ $975 per worker per year)** |
 
 -----
 
-## 10 Central Data-Plane Disaster Recovery
+## 10 Licensing Model
 
-### 10.1 Failure Scenarios
+Membria Enterprise Edition utilizes a **per-seat, annual subscription model**, enforced by the Gateway acting as a central **License Server**.
 
-| Component | Failure Mode | Edge Impact |
+### 10.1 Licensed Components
+
+The license covers the proprietary **Membria Gateway**, the **Edge SDK** (which includes the Knowledge Curator and Skill Forge), and the **Support & Maintenance Contract**.
+
+### 10.2 Activation & Watermarking
+
+Each licensed device receives a unique cryptographic **Device License Certificate** from the Gateway upon first activation. The LoRA patches generated by the Skill Forge are automatically **watermarked** using this certificate. The Edge SDK will refuse to load any LoRA patch with a missing or invalid watermark, thus tying the use of personalized skills to a valid license.
+
+-----
+
+## 11 Central Data-Plane Disaster Recovery
+
+  * **Milvus:** HA via Raft, WAL backups, hourly snapshots (RPO ≤ 60s).
+  * **ClickHouse:** 3-replica cluster, incremental backups (RPO ≤ 5 min).
+  * **Gateway:** Redundant instances behind a load balancer.
+
+-----
+
+## 12 Competitive Comparison
+
+| Criteria | **Membria EE** | Azure AI / AWS Bedrock (Private) |
 |---|---|---|
-| **Milvus** | Pod crash / disk failure | Edge continues offline; cloud retrieval returns "context unavailable" |
-| **ClickHouse** | Replica lag / table corrupt | Audit metrics delayed; no interruption to field device operations |
-| **Gateway** | Container crash / network | Secondary endpoint used; if both fail, cloud-assist layer degrades but edge autonomy remains |
-
-### 10.2 HA & Backup Strategy
-
-| Layer | Technique | RPO / RTO |
-|---|---|---|
-| **Milvus** | Raft metadata replicas; WAL to object store; hourly snapshots | RPO ≤ 60 s; RTO ≈ 15 min |
-| **ClickHouse** | ReplicatedMergeTree (3 replicas); incremental backups every 5 min | RPO ≤ 5 min; RTO \< 10 min via SYSTEM RESTORE |
-
-### 10.3 Recovery Procedure (Milvus)
-
-1.  **Detect** via Prometheus alert on replica lag (\>30 s).
-2.  **Isolate** failing pod with Kubernetes taint; remove from service.
-3.  **Recreate** new pod; replay WAL from object store.
-4.  **Re-index** HNSW index in background; Gateway serves partial queries.
-5.  **Heal**: LB reintegrates node once health checks pass.
-
-### 10.4 Edge Continuity Guarantee
-
-  * Field devices remain fully operational; only cloud-assist results delay.
-  * On recovery, queued cloud prompts replay and vector shards sync at next diff.
-
------
-
-## 11 Competitive Comparison
-
-| Criteria | **Membria EE** | Azure AI (Private Link) | AWS Bedrock (VPC Endpoints) |
-|---|---|---|---|
-| **Edge autonomy** | Tiny Qwen on Kinara; 90 % offline queries | No on-device LLM; 100 % cloud | 100 % cloud |
-| **GPU cost savings** | ≈ 85 % via edge pre-filter & LoRA adaptation | None; full VM billing | None; full instance billing |
-| **Privacy & sovereignty** | Local data & LoRA; only shard deltas to cloud | Data in Azure region; limited on-prem | Data in AWS region; Outposts limited |
-| **Self-improving** | On-device Δ-LoRA fine-tune | No local fine-tune | No local fine-tune |
-| **Scale model** | 4×RTX 5090 nodes; linear add | A100/H100 VMs; higher cost | Trn1/Inf2 instances; variable cost |
-| **Offline resilience** | Field answers 90 % offline | No answers if cloud down | Same |
-| **3-yr TCO (500 users)** | ≈ $1.46 M (≈$975/user/yr) | ≈ $9 M | ≈ $8 M |
-
-> **Summary:** Membria EE uniquely combines offline-first AI, self-learning and low TCO, outperforming hyperscaler private AI offerings.
-
------
-
-## 12 Appendix — Hardware Node Spec
-
-| Component | Spec |
-|---|---|
-| **CPU** | AMD Threadripper PRO 7995WX (96c/192t) |
-| **RAM** | 256–512 GB DDR5 ECC |
-| **GPU** | 4 × RTX 5090 32 GB (NVLink) |
-| **Storage** | 2 TB NVMe RAID-0 (Gen4) |
-| **Network** | dual 10 GbE + 200 Gbps InfiniBand |
-| **Throughput** | 20–40 tokens / s (Qwen-3 235B 4-bit via vLLM TP+EP) |
-| **Concurrent users** | ≤ 100 per node |
+| **Edge autonomy** | 90% offline via on-device LLM+NPU | 100% cloud-dependent |
+| **GPU cost savings** | ≈ 85% via edge pre-filtering | None; full instance billing |
+| **Privacy & sovereignty**| Sensitive data never leaves device | Data resides in cloud region |
+| **Self-improving**| **Instant** on-device personalization via APL | No local fine-tuning |
+| **Offline resilience**| Fully functional offline | No functionality if cloud is down |
 
 -----
 
 ## 13 Conclusion
 
-Membria Enterprise Edition empowers organisations with:
+Membria Enterprise Edition empowers organisations with a self-improving, privacy-first AI fabric that scales from cloud to edge. By leveraging a cutting-edge **Autonomous Personalization Loop**, it delivers instantaneous on-device personalization, ensuring offline autonomy, data sovereignty, and significant cost savings while remaining highly resilient to common continual learning challenges.
 
-  * **Offline autonomy** for critical field operations.
-  * **Data sovereignty** via encrypted on-device graph & LoRA.
-  * **Seamless scaling** on commodity hardware.
-  * **Cost-effectiveness**—under **$1 000 per user per year**.
+The primary value for corporate clients lies in solving four critical, previously irreconcilable challenges of modern AI deployment:
 
-> **Membria EE** is the strategic choice for deploying frontier AI securely and affordably at the edge.
+1.  **True Offline Autonomy:** It provides continuous AI support for field workers in environments with unstable or non-existent connectivity.
+2.  **Unyielding Data Sovereignty:** By processing sensitive information and personalizing models directly on the device, it guarantees compliance with strict data privacy laws like GDPR, ITAR, and HIPAA.
+3.  **Enhanced Reliability:** The hybrid architecture drastically reduces context deficits and knowledge drift, minimizing model hallucinations.
+4.  **Fundamental Economic Shift:** Most importantly, Membria EE fundamentally changes the economic model of using frontier AI. It moves enterprises away from the prohibitively high and unpredictable operational expenditure (OpEx) of per-token API calls to a predictable, controlled cost structure. The Total Cost of Ownership analysis shows that for a fleet of 500 workers, the 3-year cost is approximately **$1.46 million**, representing a cost reduction of up to **85%** compared to the estimated **\~$10 million** for a pure-cloud solution.
