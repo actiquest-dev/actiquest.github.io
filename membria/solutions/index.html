@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804347175397">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804348240335">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.1.804347175397" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.804348240335" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804347175397" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804348240335" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804347175397" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804348240335" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.10.1" defer></script>
 </head>
 <body>
@@ -228,26 +228,28 @@
         <span>Корпоративная двухуровневая ИИ-инфраструктура</span>
     </h1>
 </doc-anchor-target>
-<p>Гибридный слой памяти и маршрутизации для корпоративного AI с приоритетом на приватность</p>
+<p><strong>Гибридный слой памяти и маршрутизации для корпоративного AI с приоритетом на приватность</strong></p>
 <p>⸻</p>
-<doc-anchor-target id="0-executive-summary">
+<doc-anchor-target id="0-введение">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#0-executive-summary">#</doc-anchor-trigger>
-        <span>0. Executive Summary</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#0-введение">#</doc-anchor-trigger>
+        <span>0. Введение</span>
     </h2>
 </doc-anchor-target>
 <p>Современным предприятиям в энергетике и телекоммуникациях требуется мощный искусственный интеллект, способный обрабатывать разнородные данные всех подразделений. При этом критически важны снижение издержек, защита конфиденциальных данных и способность работать автономно вне сети. Предлагаемая двухуровневая архитектура Membria решает эту задачу, сочетая частное облачное <strong>AI Knowledge Core</strong> и распределенные <strong>Edge-агенты</strong> на устройствах сотрудников. Такой подход позволяет интеллектуально распределять инференс между облаком и переферийными устройствами, что усиливает безопасность данных и экономит ресурсы. В результате компания получает гибкую, персонализируемую систему: сложные запросы обрабатываются центральной высокоточной моделью, а повседневные и чувствительные задачи – легковесными моделями на местах.</p>
-<p>Предлагаемая архитектура сочетает мощное AI Knowledge Core (центральная многоэкспертная модель + единое хранилище знаний) и распределённые Edge-агенты (компактные Tiny-LLM с локальной памятью RAG / CAG). Такой подход решает сразу четыре задачи:
-1.	Снижает OPEX на GPU ≈ 75 % — тяжёлый инференс выполняется только при необходимости.
-2.	Соблюдает GDPR / ITAR — чувствительные данные не покидают устройство.
-3.	Обеспечивает офлайн-автономность — 90 % запросов закрываются локально.
-4.	Дает гипер-персонализацию — каждое устройство адаптирует модель под себя за секунды.</p>
+<p>Предлагаемая архитектура сочетает мощное AI Knowledge Core (центральная многоэкспертная модель + единое хранилище знаний) и распределённые Edge-агенты (компактные Tiny-LLM с локальной памятью RAG / CAG). Такой подход решает сразу четыре задачи:</p>
+<ul>
+<li>Снижает OPEX на GPU ~75 % — тяжёлый инференс выполняется только при необходимости.</li>
+<li>Соблюдает GDPR / ITAR — чувствительные данные не покидают устройство.</li>
+<li>Обеспечивает офлайн-автономность — 90% запросов закрываются локально.</li>
+<li>Дает гипер-персонализацию — каждое устройство адаптирует модель под сотрудника.</li>
+</ul>
 <p>место медленного дообучения, Membria использует технологию мгновенной персонализации: проприетарный <strong>Skill Forge (генератор параметров)</strong> на устройстве создает специализированные LoRA-патчи за секунды на основе нескольких примеров. Интеллектуальный <strong>Membria Gateway</strong> маршрутизирует в облако только самые сложные запросы, обеспечивая <strong>экономию на GPU до 85%</strong>, 100% приватность данных и полную офлайн-автономность для 90% задач.</p>
 <p>⸻</p>
-<doc-anchor-target id="1-problem-space">
+<doc-anchor-target id="1-проблемы">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-problem-space">#</doc-anchor-trigger>
-        <span>1. Problem Space</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-проблемы">#</doc-anchor-trigger>
+        <span>1. Проблемы</span>
     </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -284,10 +286,10 @@
 </table>
 </div>
 <p>⸻</p>
-<doc-anchor-target id="2-архитектура-высокого-уровня">
+<doc-anchor-target id="2-архитектура">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-архитектура-высокого-уровня">#</doc-anchor-trigger>
-        <span>2. Архитектура высокого уровня</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-архитектура">#</doc-anchor-trigger>
+        <span>2. Архитектура</span>
     </h2>
 </doc-anchor-target>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">flowchart TD
@@ -331,10 +333,10 @@ Auth • RBAC • Licensing&quot;]
         <span>3. Компоненты архитектуры</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="31-ai-knowledge-core-центральное-ядро">
+<doc-anchor-target id="31-ai-knowledge-core-центральное-ядро-корпоративных-знаний">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#31-ai-knowledge-core-центральное-ядро">#</doc-anchor-trigger>
-        <span>3.1. AI Knowledge Core (Центральное ядро)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#31-ai-knowledge-core-центральное-ядро-корпоративных-знаний">#</doc-anchor-trigger>
+        <span>3.1. AI Knowledge Core (Центральное ядро корпоративных знаний)</span>
     </h3>
 </doc-anchor-target>
 <p>Разворачивается в частном облаке или on-premise дата-центре клиента. Ядро агрегирует общие корпоративные знания и использует большую языковую модель (MoE LLM) для решения сложных, междисциплинарных задач.</p>
@@ -389,11 +391,11 @@ Auth • RBAC • Licensing&quot;]
     </h3>
 </doc-anchor-target>
 <p>Разворачивается на устройствах сотрудников. Обеспечивает автономную работу, приватность и глубокую персонализацию.</p>
-<p>На втором уровне находятся распределенные ИИ-агенты, развёрнутые на персональных устройствах сотрудников – ноутбуках, планшетах, смартфонах. Каждый такой Edge-узел содержит компактную локальную модель (Tiny-LLM), например 7-миллиардную Qwen 1.5, оптимизированную до 4-битной точности. Благодаря технике квантования до 4 бит объём модели резко уменьшается, снижая требования к памяти и позволяя выполнять её на доступном железе с минимальной потерей качества ￼ ￼. Исследования показывают, что даже модели Qwen3-4B или Qwen3-1.7B могут успешно запускаться локально на обычном ноутбуке ￼, что подтверждает реализуемость Edge-подхода.</p>
+<p>На втором уровне находятся распределенные ИИ-агенты, развёрнутые на персональных устройствах сотрудников – ноутбуках, планшетах, смартфонах. Каждый такой Edge-узел содержит компактную локальную модель (Tiny-LLM), например 7-миллиардную Qwen 3, оптимизированную до 4-битной точности.</p>
 <ul>
-<li><p><strong>Локальная память и знание:</strong> Edge-ИИ оснащается собственной базой знаний, относящейся к работе конкретного пользователя или отдела. Это могут быть внутренние документы, руководства, чертежи, фотографии оборудования, справочные материалы и пр. Для эффективного использования этих данных применяются методы RAG и CAG. Retrieval-Augmented Generation (RAG) означает, что перед формированием ответа локальная модель делает поиск по встроенной базе: специальный модуль извлекает релевантные документы (например, из векторного хранилища) и подставляет их содержимое в контекст модели ￼. Cache-Augmented Generation (CAG) дополняет систему тем, что часто используемые или критичные знания предварительно загружаются в кеш модели, то есть в её контекст или ключево-значную память, обеспечивая мгновенный доступ без внешних запросов ￼. Комбинация RAG + CAG создает локальную память: устройство может сразу отвечать на вопросы, опираясь на актуальные документы и заранее сохраненные факты.</p>
+<li><p><strong>Локальная память и знание:</strong> Edge-ИИ оснащается собственной базой знаний, относящейся к работе конкретного пользователя или отдела. Это могут быть внутренние документы, руководства, чертежи, фотографии оборудования, справочные материалы и пр. Для эффективного использования этих данных применяются методы RAG и CAG. Retrieval-Augmented Generation (RAG) означает, что перед формированием ответа локальная модель делает поиск по встроенной базе: специальный модуль извлекает релевантные документы (например, из векторного хранилища) и подставляет их содержимое в контекст модели. Cache-Augmented Generation (CAG) дополняет систему тем, что часто используемые или критичные знания предварительно загружаются в кеш модели, то есть в её контекст или ключево-значную память, обеспечивая мгновенный доступ без внешних запросов. Комбинация RAG + CAG создает локальную память: устройство может сразу отвечать на вопросы, опираясь на актуальные документы и заранее сохраненные факты.</p>
 </li>
-<li><p><strong>Персонализация и офлайн-режим:</strong> Локальные ИИ-агенты могут быть настроены под задачи конкретного сотрудника или подразделения. Например, инженерный планшет будет содержать технические схемы и последние фото объектов, а ноутбук менеджера – договоры с клиентами и презентации. За счет обучения на этих данных (в рамках локального контекста) ответы модели учитывают специфику пользователя – стилистику, терминологию, предпочтения. Важное преимущество Edge-решений – автономная работа офлайн. Даже без подключения к сети сотрудник в поле или на выезде получит консультацию ИИ, так как все необходимые вычисления и данные находятся на устройстве. Это критично для отраслей с удаленными объектами (ЛЭП, вышки связи и пр.), где связь может быть нестабильной. Локальный инференс также повышает приватность: чувствительная информация (пароли, персональные данные клиентов, коммерческая тайна) не покидает устройство и не отправляется во внешние облака ￼. В результате предприятие соблюдает требования безопасности и регуляторов, контролируя, какие данные циркулируют между центром и периферией.</p>
+<li><p><strong>Персонализация и офлайн-режим:</strong> Локальные ИИ-агенты могут быть настроены под задачи конкретного сотрудника или подразделения. Например, инженерный планшет будет содержать технические схемы и последние фото объектов, а ноутбук менеджера – договоры с клиентами и презентации. За счет обучения на этих данных (в рамках локального контекста) ответы модели учитывают специфику пользователя – стилистику, терминологию, предпочтения. Важное преимущество Edge-решений – автономная работа офлайн. Даже без подключения к сети сотрудник в поле или на выезде получит консультацию ИИ, так как все необходимые вычисления и данные находятся на устройстве. Это критично для отраслей с удаленными объектами (ЛЭП, вышки связи и пр.), где связь может быть нестабильной. Локальный инференс также повышает приватность: чувствительная информация (пароли, персональные данные клиентов, коммерческая тайна) не покидает устройство и не отправляется во внешние облака. В результате предприятие соблюдает требования безопасности и регуляторов, контролируя, какие данные циркулируют между центром и периферией.</p>
 </li>
 </ul>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -443,9 +445,12 @@ Auth • RBAC • Licensing&quot;]
 </doc-anchor-target>
 <p>Для каждого запроса пользователя система решает, на каком уровне его обработать – центральном или локальном. Реализуется гибкая маршрутизация запросов, учитывающая содержимое запроса, приоритеты по безопасности и доступность сети:</p>
 <ul>
-<li><strong>Локальная обработка:</strong> По умолчанию запрос обслуживается на устройстве сотрудника, особенно если он связан с локальными данными или требует персонального контекста. Например, вопрос типа «Покажи инструкции по настройке этого оборудования» будет решен локально, так как нужная инструкция уже хранится на планшете. Все чувствительные запросы (содержащие конфиденциальные детали) остаются на Edge-уровне, чтобы исключить передачу таких данных вовне ￼. Локальная модель быстрее отвечает на короткие повседневные вопросы, не затрачивая ресурсы центрального сервера.</li>
-<li><strong>Передача в центральное ядро:</strong> Если запрос сложный, междисциплинарный или выходит за рамки знаний, доступных на устройстве, Edge-агент может перенаправить его в AI Knowledge Core. К примеру, вопрос «Сформулируй прогноз потребления электроэнергии на основе данных по всем регионам» затрагивает данные из разных филиалов – такая задача отправится в ядро, где мощная MoE-модель использует сводные корпоративные данные. Решение о маршрутизации может принимать специальный оркестратор: он анализирует запрос (возможно, с помощью метамодели или правил) и выбирает оптимальный путь. Интеллектуальное распределение инференса позволяет экономить ресурсы – тяжелые вычисления выполняются централизованно по мере необходимости, а локальные устройства разгружают ядро, обрабатывая множество мелких запросов на месте ￼.</li>
-<li><strong>Гибридный режим:</strong> В некоторых случаях возможна кооперация уровней. Например, локальная модель может частично обработать вопрос и запросить у ядра только недостающие сведения. Либо наоборот – ядро выполнит сложное вычисление и передаст краткий результат на устройство, где он дополнится локальными деталями. Такой гибридный подход сохраняет трафик минимальным и поддерживает высокую скорость отклика.</li>
+<li><p><strong>Локальная обработка:</strong> По умолчанию запрос обслуживается на устройстве сотрудника, особенно если он связан с локальными данными или требует персонального контекста. Например, вопрос типа «Покажи инструкции по настройке этого оборудования» будет решен локально, так как нужная инструкция уже хранится на планшете. Все чувствительные запросы (содержащие конфиденциальные детали) остаются на Edge-уровне, чтобы исключить передачу таких данных вовне ￼. Локальная модель быстрее отвечает на короткие повседневные вопросы, не затрачивая ресурсы центрального сервера.</p>
+</li>
+<li><p><strong>Передача в центральное ядро:</strong> Если запрос сложный, междисциплинарный или выходит за рамки знаний, доступных на устройстве, Edge-агент может перенаправить его в AI Knowledge Core. К примеру, вопрос «Сформулируй прогноз потребления электроэнергии на основе данных по всем регионам» затрагивает данные из разных филиалов – такая задача отправится в ядро, где мощная MoE-модель использует сводные корпоративные данные. Решение о маршрутизации может принимать специальный оркестратор: он анализирует запрос (возможно, с помощью метамодели или правил) и выбирает оптимальный путь. Интеллектуальное распределение инференса позволяет экономить ресурсы – тяжелые вычисления выполняются централизованно по мере необходимости, а локальные устройства разгружают ядро, обрабатывая множество мелких запросов на месте ￼.</p>
+</li>
+<li><p><strong>Гибридный режим:</strong> В некоторых случаях возможна кооперация уровней. Например, локальная модель может частично обработать вопрос и запросить у ядра только недостающие сведения. Либо наоборот – ядро выполнит сложное вычисление и передаст краткий результат на устройство, где он дополнится локальными деталями. Такой гибридный подход сохраняет трафик минимальным и поддерживает высокую скорость отклика.</p>
+</li>
 </ul>
 <p>В итоге маршрутизация обеспечивает баланс между скоростью, стоимостью и качеством ответа. Система учитывает бюджет инференса и требования задачи, чтобы решить, использовать ли маленькую модель или задействовать большие мощности ￼. Это особенно важно, когда канал связи ограничен или платный – запрос будет обработан локально, пока нет связи, и поставлен в очередь на отправку в центр, когда связь появится, если требуется уточнение.</p>
 <p>⸻</p>
@@ -506,10 +511,10 @@ Auth • RBAC • Licensing&quot;]
 •	Конфликты: chunks — LWW; CoT — immut; Δ-LoRA — остаётся локально.</code></pre>
 </doc-codeblock></div>
 <p>⸻</p>
-<doc-anchor-target id="9-lora-distillation--skill-forge-generator">
+<doc-anchor-target id="9-lora-distillation-vs-smith-foil">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#9-lora-distillation--skill-forge-generator">#</doc-anchor-trigger>
-        <span>9. LoRA Distillation / Skill Forge Generator</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#9-lora-distillation-vs-smith-foil">#</doc-anchor-trigger>
+        <span>9. LoRA Distillation vs. Smith Foil</span>
     </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -577,10 +582,34 @@ Auth • RBAC • Licensing&quot;]
         <span>12. Central Data-Plane DR</span>
     </h2>
 </doc-anchor-target>
-<p>Компонент	Failure	RPO/RTO
-Milvus	WAL corr., disk loss	60 с / 15 мин
-ClickHouse	Replica lag	5 мин / 10 мин
-Gateway	Crash	Secondary LB ≤ 30 с</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Failure</th>
+<th>RPO/RTO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Milvus</td>
+<td>WAL corr., disk loss</td>
+<td>60 с / 15 мин</td>
+</tr>
+<tr>
+<td>ClickHouse</td>
+<td>Replica lag</td>
+<td>5 мин / 10 мин</td>
+</tr>
+<tr>
+<td>Gateway</td>
+<td>Crash	Secondary LB</td>
+<td>≤ 30 с</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>⸻</p>
 <doc-anchor-target id="13-competitive-comparison">
     <h2>
@@ -588,10 +617,38 @@ Gateway	Crash	Secondary LB ≤ 30 с</p>
         <span>13. Competitive Comparison</span>
     </h2>
 </doc-anchor-target>
-<p>Критерий	Membria EE	Azure AI Private	AWS Bedrock
-Edge-инференс	Да (90 %)	Нет	Нет
-GPU экономия	75 %	0 %	0 %
-ТКО / 3 года (500)	$1.46 M	$9 M	$8 M</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Критерий</th>
+<th>Membria EE</th>
+<th>Azure AI Private</th>
+<th>AWS Bedrock</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edge-инференс</td>
+<td>Да (90 %)</td>
+<td>Нет</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>GPU экономия</td>
+<td>75 %</td>
+<td>0 %</td>
+<td>0 %</td>
+</tr>
+<tr>
+<td>ТКО/3 года(500)</td>
+<td>$1.46M</td>
+<td>$9M</td>
+<td>$8M</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>⸻</p>
 <doc-anchor-target id="14-appendix--hardware-node-spec">
     <h2>
@@ -599,12 +656,38 @@ GPU экономия	75 %	0 %	0 %
         <span>14. Appendix — Hardware Node Spec</span>
     </h2>
 </doc-anchor-target>
-<p>Параметр	Значение
-CPU	Threadripper PRO 7995WX (96c)
-RAM	512 GB DDR5 ECC
-GPU	4× RTX 5090 32 GB NVLink
-Network	10 GbE ×2 + InfiniBand 200 Gbps
-Users/Node	≤ 100 одновремённых</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Критерий</th>
+<th>Membria EE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>Threadripper PRO 7995WX (96c)</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>512 GB DDR5 ECC</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>4× RTX 5090 32 GB NVLink</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>10 GbE ×2 + InfiniBand 200 Gbps</td>
+</tr>
+<tr>
+<td>Users/Node</td>
+<td>≤ 100 одновремённых</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>⸻</p>
 <doc-anchor-target id="15-преимущества-и-результаты-внедрения">
     <h2>
@@ -641,20 +724,20 @@ Users/Node	≤ 100 одновремённых</p>
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/scr-reasoning/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/kcg_indexing/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">SCR Reasoning</span>
+                                                <span class="block mt-1">KCG Indexing</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/sqlite_for_membria/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../acticat/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">SQ​Lite for Membria</span>
+                                                <span class="block mt-1">Acticat</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -698,6 +781,6 @@ Users/Node	≤ 100 одновремённых</p>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Solutions", level: 2, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Корпоративная двухуровневая ИИ-инфраструктура", level: 2, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
