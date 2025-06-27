@@ -1,5 +1,5 @@
 ---
-icon: arrow
+icon: server
 label: 2-Tier AI for Enterprises
 order: 89
 ---
