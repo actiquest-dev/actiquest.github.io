@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804348240335">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804349170916">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.10.1.804348240335" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.804349170916" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804348240335" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804349170916" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804348240335" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804349170916" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.10.1" defer></script>
 </head>
 <body>
@@ -244,7 +244,7 @@
 <li>Обеспечивает офлайн-автономность — 90% запросов закрываются локально.</li>
 <li>Дает гипер-персонализацию — каждое устройство адаптирует модель под сотрудника.</li>
 </ul>
-<p>место медленного дообучения, Membria использует технологию мгновенной персонализации: проприетарный <strong>Skill Forge (генератор параметров)</strong> на устройстве создает специализированные LoRA-патчи за секунды на основе нескольких примеров. Интеллектуальный <strong>Membria Gateway</strong> маршрутизирует в облако только самые сложные запросы, обеспечивая <strong>экономию на GPU до 85%</strong>, 100% приватность данных и полную офлайн-автономность для 90% задач.</p>
+<p>Вместо медленного переобучения, Membria использует технологию мгновенной персонализации: проприетарный <strong>Skill Forge (генератор параметров)</strong> на устройстве создает специализированные LoRA-патчи за секунды на основе нескольких примеров. Интеллектуальный <strong>Membria Gateway</strong> маршрутизирует в облако только самые сложные запросы, обеспечивая <strong>экономию на GPU до 85%</strong>, 100% приватность данных и полную офлайн-автономность для 90% задач.</p>
 <p>⸻</p>
 <doc-anchor-target id="1-проблемы">
     <h2>
@@ -511,10 +511,10 @@ Auth • RBAC • Licensing&quot;]
 •	Конфликты: chunks — LWW; CoT — immut; Δ-LoRA — остаётся локально.</code></pre>
 </doc-codeblock></div>
 <p>⸻</p>
-<doc-anchor-target id="9-lora-distillation-vs-smith-foil">
+<doc-anchor-target id="9-lora-distillation-vs-skill-forge">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#9-lora-distillation-vs-smith-foil">#</doc-anchor-trigger>
-        <span>9. LoRA Distillation vs. Smith Foil</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#9-lora-distillation-vs-skill-forge">#</doc-anchor-trigger>
+        <span>9. LoRA Distillation vs. Skill Forge</span>
     </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
