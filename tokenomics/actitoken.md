@@ -2,6 +2,7 @@
 icon: briefcase
 label: Tokenomics
 ---
+
 # Membria Community Edition: Tokenomics
 
 ## 1. Introduction
@@ -123,8 +124,8 @@ The total supply of **500,000,000 $ACTI** is allocated according to the followin
 | **Private(1) Sale**| 5% | 25,000,000 | 20% at TGE, then 18-month linear vesting |
 | **Private(2) Sale**| 3,33% | 16,666,667 | 10% at TGE, then 18-month linear vesting |
 | **Public Sale**| 5% | 25,000,000 | 25% at TGE, 3-month cliff, then 12-month linear vesting |
-| **Liquidity**| 5% | 25,000,000 | 5% at TGE | then 20-month linear vesting |
-| **Contributors**| 10% | 50,000,000 | 0% at TGE | 18-month cliff, then 24-month linear vesting (≈1.33M/month) |
+| **Liquidity**| 5% | 25,000,000 | 5% at TGE, then 20-month linear vesting |
+| **Contributors**| 10% | 50,000,000 | 0% at TGE then 18-month cliff, then 24-month linear vesting (≈1.33M/month) |
 | **Partnerships**| 10% | 50,000,000 | 18-month cliff, then 18-month linear vesting (≈2.78M/month) |
 | **Advisors** | 5% | 25,000,000 | 4% at TGE (1.25M), 5-month cliff, then 18-month linear vesting (≈1.33M/month) |
 | **DAO Reserve**| 8,67% | 43,333,333 | Locked for 12 months, then 24-month linear vesting |
