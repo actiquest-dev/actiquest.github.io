@@ -16,7 +16,7 @@ Membria's mission is to build a decentralized, self-sustaining, and permanent kn
   * **Gateways**: Operators of high-performance nodes that validate, process, cache, and commit knowledge to the network.
   * **Validators**: Participants who secure the Peaq blockchain, upon which Membria operates, by participating in its consensus mechanism.
 
-### 1.3. Token Overview**
+### 1.3. Token Overview
 
 The economy utilizes a hybrid model with two core assets to separate speculation from true utility:
 
@@ -25,7 +25,7 @@ The economy utilizes a hybrid model with two core assets to separate speculation
 
 -----
 
-## 2. Core Architecture and Ecosystem**
+## 2. Core Architecture and Ecosystem
 
 ### 2.1. The Membria Client: A Personal AI Hub
 
