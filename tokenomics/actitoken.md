@@ -9,7 +9,7 @@ label: Tokenomics
 
 ### 1.1. Mission and Vision
 
-Membria's mission is to build a decentralized, self-sustaining, and permanent knowledge base - a 'Wikipedia for Small Language Models (SLMs). The goal of this tokenomic model is to construct a sustainable economy that incentivizes the creation of high-quality knowledge, rewards network participants, and ensures the long-term value growth of the ecosystem.
+Membria's mission is to build a decentralized, self-sustaining, and permanent knowledge base - a 'Wikipedia for Small Language Models (SLMs). It brings GPT 4.x IQ level to any local tiny AI model. The goal of this tokenomic model is to construct a sustainable economy that incentivizes the creation of high-quality knowledge, rewards network participants, and ensures the long-term value growth of the ecosystem.
 
 ### 1.2. Key Ecosystem Participants
 
