@@ -9,7 +9,7 @@ label: Tokenomics
 
 ### 1.1. Mission and Vision
 
-Membria's mission is to build a decentralized and permanent knowledge base—a 'Wikipedia for Small Language Models' (SLMs)—that elevates any local AI to a GPT-4 level of intelligence. Our platform enables users to run Hugging Face models on-device, build autonomous agents to automate complex workflows, from productivity tasks to in-depth research, and instantly augment their models with new skills through our 'SkillForge' technology. This provides a hyper-personalized AI experience, underpinned by a sustainable token economy that incentivizes the creation of high-quality knowledge, rewards network participants, and ensures the long-term value growth of the entire ecosystem.
+Membria's mission is to build a decentralized and permanent knowledge base - a "Wikipedia for Small Language Models" (SLMs) — that elevates any local AI to a GPT-4 level of intelligence. Our platform enables users to run Hugging Face models on-device, build autonomous agents to automate complex workflows, from productivity tasks to in-depth research, and instantly augment their models with new skills through our 'SkillForge' technology. This provides a hyper-personalized AI experience, underpinned by a sustainable token economy that incentivizes the creation of high-quality knowledge, rewards network participants, and ensures the long-term value growth of the entire ecosystem.
 
 ### 1.2. Key Ecosystem Participants
 
