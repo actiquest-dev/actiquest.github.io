@@ -8,7 +8,7 @@ label: Tokenomics
 
 ### 1.1. Mission and Vision
 
-Membria's mission is to build a decentralized, self-sustaining, and permanent knowledge base—a 'Wikipedia for Small Language Models (LLMs)'. The goal of this tokenomic model is to construct a sustainable economy that incentivizes the creation of high-quality knowledge, rewards network participants, and ensures the long-term value growth of the ecosystem.
+Membria's mission is to build a decentralized, self-sustaining, and permanent knowledge base - a 'Wikipedia for Small Language Models (SLMs). The goal of this tokenomic model is to construct a sustainable economy that incentivizes the creation of high-quality knowledge, rewards network participants, and ensures the long-term value growth of the ecosystem.
 
 ### 1.2. Key Ecosystem Participants
 
@@ -131,10 +131,6 @@ The "Incentives" allocation is the primary engine for the **Daily Knowledge Cont
 
 -----
 
-*(All other sections of the document remain as they were in the previous version)*
-
------
-
 ## 8. Token Architecture and Network Choice: Why Peaq?
 
 The strategic choice to issue `$ACTI` as a native token on the **Peaq** network is dictated by the need for maximum security, performance, and cost-efficiency for core protocol operations like staking, DAO governance, and reward distribution. The architecture uses a "core on Peaq, liquidity via bridges" model, which is an industry standard for building robust and secure Web3 applications.
@@ -233,7 +229,7 @@ Membria will be governed by a DAO with a hybrid structure, evolving toward full 
 
 The proposed tokenomics create a self-sustaining, closed-loop system. Users pay for the creation of real value. These payments incentivize operators to maintain a high-quality, secure infrastructure, while simultaneously reducing the total token supply, which contributes to long-term value accrual. It is a sustainable model designed for the growth and prosperity of a decentralized "Wikipedia for AI."
 
-***
+-----
 
 ## 17. TGE Roadmap
 
@@ -260,15 +256,21 @@ The proposed tokenomics create a self-sustaining, closed-loop system. Users pay 
 - Initial market capitalization: **$450,000**
 - Exchanges: Mexc=>Gate=>HTX=>Сrypto.com
 
+-----
+
 ## 18. Token metrics:
 
 - [Tokenomics and Vesting](https://t.ly/at-yI)
 
-***
+-----
 
 ## 19. Available $ACTI allocations for sale
 
 - KOL/SAFT round: $150K, min check $50K, price $0,04 (Cliff 5m, Vesting 12m, TGE unlock 20%)
 - Private (VC) round: $500K, min check $20K, price $0,05 (Cliff 5m, Vesting 18m, TGE unlock 15%)
 
+-----
+
 [**Link to SAFT**](https://docs.google.com/document/d/1DE6JaA7tzphjvPbdHjHOFraa63-rKg1QPaqLeLEyqgU/edit?tab=t.0)
+
+-----
