@@ -429,3 +429,4 @@ Membria offers a unique combination of real-time, on-device inference, structure
 | **Knowledge Sharing** | Public/Private KCG                                | Closed             | Closed                    | Per model              | Local only         | Closed         | Closed         |
 | **Personalization Strategy** | Local + Shared memory                            | None               | Google Workspace only     | Finetuning             | Basic tuning       | Prompt tuning  | Prompt tuning  |
 | **Cost Efficiency** | Very high (no tokens, local)                      | Expensive cloud    | API metered               | Medium                 | High               | Subscription   | Subscription   |
+
