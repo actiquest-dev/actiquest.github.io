@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.804877275348">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805045137910">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>Membria: A Decentralized Knowledge Framework for Tiny LLMs</title>
-    <meta name="title" content="Membria: A Decentralized Knowledge Framework for Tiny LLMs">
+    <title>Membria: A Decentralized Knowledge Framework for Tiny LMs</title>
+    <meta name="title" content="Membria: A Decentralized Knowledge Framework for Tiny LMs">
     <meta name="description" content="The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge...">
 
     <!-- Canonical -->
@@ -19,23 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/whitepaper/">
-    <meta property="og:title" content="Membria: A Decentralized Knowledge Framework for Tiny LLMs">
+    <meta property="og:title" content="Membria: A Decentralized Knowledge Framework for Tiny LMs">
     <meta property="og:description" content="The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/whitepaper/">
-    <meta property="twitter:title" content="Membria: A Decentralized Knowledge Framework for Tiny LLMs">
+    <meta property="twitter:title" content="Membria: A Decentralized Knowledge Framework for Tiny LMs">
     <meta property="twitter:description" content="The rapid adoption of lightweight, on-device Large Language Models (Tiny LLMs) has created a critical bottleneck in personalization, knowledge...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.804877275348" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.805045137910" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.804877275348" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805045137910" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.804877275348" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805045137910" data-turbo-eval="false" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -222,10 +223,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="membria-a-decentralized-knowledge-framework-for-tiny-llms" class="break-words">
+<doc-anchor-target id="membria-a-decentralized-knowledge-framework-for-tiny-lms" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#membria-a-decentralized-knowledge-framework-for-tiny-llms">#</doc-anchor-trigger>
-        <span>Membria: A Decentralized Knowledge Framework for Tiny LLMs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membria-a-decentralized-knowledge-framework-for-tiny-lms">#</doc-anchor-trigger>
+        <span>Membria: A Decentralized Knowledge Framework for Tiny LMs</span>
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="part-1-vision-and-problem-statement">
@@ -335,16 +336,16 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">Application &amp; Agent Layer  
-└── Tiny LLMs, User Devices, Enterprise Agents  
-  
-CAG Reasoning Layer (on top of Peaq)  
-└── Cache-Augmented Generation, SCR Pipelines, DoD Agents, Gateway Cache &amp; Index  
-  
-KCG Core Layer (on Peaq)  
-└── Knowledge Cache Graph, Distilled Knowledge, Relations, KV Layer (on-chain)  
-  
-Peaq Protocol Layer  
+<pre translate="no" class="language-none"><code v-pre class="language-none">Application &amp; Agent Layer
+└── Tiny LLMs, User Devices, Enterprise Agents
+
+CAG Reasoning Layer (on top of Peaq)
+└── Cache-Augmented Generation, SCR Pipelines, DoD Agents, Gateway Cache &amp; Index
+
+KCG Core Layer (on Peaq)
+└── Knowledge Cache Graph, Distilled Knowledge, Relations, KV Layer (on-chain)
+
+Peaq Protocol Layer
 └── Validator Network, Consensus, Staking, ZK Proof Layer, Subgraph Indexing</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="23-full-knowledge-lifecycle-workflow">
@@ -551,16 +552,16 @@ Peaq Protocol Layer
 <li><strong>Spam Detection and Anti-Abuse</strong>: Gateways track statistical metadata to detect suspicious patterns. Responses are scored for coherence and novelty, and any flagged entries are tagged with a SPAM label in the ontology layer to prevent their future use.</li>
 </ul>
 <p>Code snippet</p>
-<p>graph TD<br />
-A[DoD Agent sends Reasoning] --&gt; B[TinyRM Local Filter]<br />
-B --&gt;|Valid| C[Gateway Selection]<br />
-C --&gt; D[Quorum Gateways (√N)]<br />
-D --&gt; E[SLM-based Fact-Checking]<br />
-E --&gt; F{Consensus Reached?}<br />
-F --&gt;|Yes| G[Store in Gateway Cache]<br />
-G --&gt; H[Write to KCG]<br />
-F --&gt;|No| I[Reject Reasoning]<br />
-I --&gt; J[Log as Disputed]</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">graph TD
+    A[DoD Agent sends Reasoning] --&gt; B[TinyRM Local Filter]
+    B --&gt;|Valid| C[Gateway Selection]
+    C --&gt; D[Quorum Gateways (√N)]
+    D --&gt; E[SLM-based Fact-Checking]
+    E --&gt; F{Consensus Reached?}
+    F --&gt;|Yes| G[Store in Gateway Cache]
+    G --&gt; H[Write to KCG]
+    F --&gt;|No| I[Reject Reasoning]
+    I --&gt; J[Log as Disputed]</pre></div>
 <doc-anchor-target id="43-dispute-resolution-mechanisms">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#43-dispute-resolution-mechanisms">#</doc-anchor-trigger>
@@ -666,6 +667,32 @@ I --&gt; J[Log as Disputed]</p>
 <li><strong>DAO-Driven or Federated Governance</strong>: The protocol may adopt DAO governance models, where token holders vote on key parameters, or federated validator councils for efficient decision-making.</li>
 <li><strong>Responsibilities</strong>: Key responsibilities include managing protocol upgrades, validator slashing mechanisms, dispute resolution, and treasury management.</li>
 </ul>
+<doc-anchor-target id="54-the-skillforge-marketplace-an-economy-of-expertise">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#54-the-skillforge-marketplace-an-economy-of-expertise">#</doc-anchor-trigger>
+        <span>5.4. The SkillForge Marketplace: An Economy of Expertise</span>
+    </h3>
+</doc-anchor-target>
+<p>To close the economic loop and provide fundamental utility to the project&#x27;s token, Membria introduces the SkillForge Marketplace. This transforms the management of LoRA adaptations from a local feature into a gateway to a vibrant, decentralized economy of knowledge.</p>
+<p><strong>For Creators (Experts):</strong></p>
+<ul>
+<li>Any expert, whether in jurisprudence, medicine, or a rare programming language, can create a specialized LoRA &quot;Skill.&quot; For example, a cybersecurity analyst could train a model on five years of vulnerability reports to create a &quot;Cyber Threat Analyst&quot; skill.</li>
+<li>Creators publish their verified skills to the marketplace, setting a price in project tokens and providing descriptions and usage examples. A created skill becomes a digital asset that generates revenue for its creator.</li>
+</ul>
+<p><strong>For Users (Consumers):</strong></p>
+<ul>
+<li>A user facing a specific challenge can browse the marketplace integrated directly into their Membria client.</li>
+<li>They can find the needed skill, review its description, ratings, and user feedback, and purchase it with a single click.</li>
+<li>The skill is then automatically downloaded and integrated, instantly enhancing the local AI&#x27;s competence in that specific domain.</li>
+</ul>
+<p><strong>Why This Changes Everything:</strong></p>
+<ul>
+<li><strong>Economic Incentives:</strong> It provides a direct and clear motivation for experts worldwide to create and share high-quality, specialized knowledge.</li>
+<li><strong>Ecosystem Growth:</strong> The platform can become populated with thousands of niche skills—from an AI sommelier to an expert in antique watch repair—that would be impossible to create centrally.</li>
+<li><strong>Fundamental Token Utility:</strong> The token evolves from a speculative asset into the ecosystem&#x27;s core currency for exchanging knowledge, its most valuable resource.</li>
+<li><strong>Competition and Quality:</strong> A competitive marketplace incentivizes creators to continuously improve the quality of skills while driving down prices, democratizing access to expertise.</li>
+</ul>
+<p>The SkillForge Marketplace is essential for connecting the local client technology with the project&#x27;s global mission, turning Membria into a living, self-developing, and economically stimulated knowledge ecosystem.</p>
 <doc-anchor-target id="part-6-integrations-and-advanced-strategies">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#part-6-integrations-and-advanced-strategies">#</doc-anchor-trigger>
@@ -754,6 +781,28 @@ I --&gt; J[Log as Disputed]</p>
 <li><strong>Adaptation to Evolving Knowledge</strong>: The model&#x27;s &quot;base&quot; adapts to macro-level shifts in the KCG&#x27;s content over time.</li>
 </ul>
 <p>This combination allows the model to learn in two ways: instantly through caching (CAG) and periodically through fine-tuning (LoRA), creating a highly adaptive and efficient learning system. Using <strong>QLoRA</strong> for this process is particularly effective, as it allows for significant model enhancement with minimal or even no increase in the final model size on the device.</p>
+<doc-anchor-target id="63-advanced-dod-model-with-reinforcement-learned-teachers-rlt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#63-advanced-dod-model-with-reinforcement-learned-teachers-rlt">#</doc-anchor-trigger>
+        <span>6.3. Advanced DoD Model with Reinforcement-Learned Teachers (RLT)</span>
+    </h3>
+</doc-anchor-target>
+<p>To elevate the quality of the KCG, Membria can implement an advanced Distillation on Demand (DoD) model where Gateways act as producers of &quot;ideal&quot; reasoning chains using Reinforcement-Learned Teachers (RLT).</p>
+<p>The workflow is as follows:</p>
+<ol>
+<li>A Gateway receives a complex query and determines the factually correct final answer through any available means (e.g., multiple LLM calls, web search, APIs).</li>
+<li>Knowing the correct answer, the Gateway employs its own lightweight &quot;teacher model&quot; (RLT).</li>
+<li>The sole purpose of the RLT model is to generate a perfect, crystal-clear, and logical reasoning chain that connects the initial query to the known correct answer.</li>
+<li>This &quot;golden&quot; reasoning chain, optimized for clarity and educational value, is then submitted to the network for consensus and recorded in the KCG.</li>
+</ol>
+<p>This approach offers several strategic advantages for the Membria ecosystem:</p>
+<ul>
+<li><strong>Dramatically Enhanced KCG Quality</strong>: The KCG evolves from a simple fact repository into a high-quality &quot;textbook&quot; for all connected Tiny LLMs, as it will contain explanations optimized for learning, not just raw answers.</li>
+<li><strong>Simplified and Cheaper Consensus</strong>: Verifying a clean, logical reasoning chain is computationally much easier and faster for validator quorums than parsing a complex or convoluted output from a large LLM, thus lowering consensus costs.</li>
+<li><strong>Reduced Inference Costs</strong>: The gateway&#x27;s &quot;teacher model&quot; can be a lightweight and efficient model (e.g., a 7B parameter model), making the generation of high-quality explanations more cost-effective than relying on continuous calls to the largest, most expensive APIs.</li>
+<li><strong>Synergy with Network Scoring</strong>: This RLT framework can be used to train the network&#x27;s internal scoring models (like the TinyRM) to recognize and reward these &quot;teacher-like&quot; explanations, creating a positive feedback loop that incentivizes the creation of high-quality content.</li>
+</ul>
+<p>Integrating the RLT approach represents a logical evolution for Membria, shifting the ecosystem from a reactive model of &quot;filtering&quot; knowledge to a proactive one of &quot;generating ideal explanations.&quot; This makes the core asset—the Knowledge Cache Graph—an order of magnitude more valuable and is a key strategy for the protocol&#x27;s development roadmap.</p>
 <doc-anchor-target id="part-7-conclusion-and-vision">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#part-7-conclusion-and-vision">#</doc-anchor-trigger>
@@ -1005,6 +1054,6 @@ I --&gt; J[Log as Disputed]</p>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Litepaper", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Litepaper", level: 2, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
