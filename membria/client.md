@@ -4,7 +4,8 @@ label: Membria Client
 order: 136
 ---
 
-# The Membria Local Client
+
+# The Membria Local Client (Final, Unabridged Version)
 
 ## 1. Executive Summary
 
@@ -58,29 +59,29 @@ To visually represent how all client components interact with each other and the
 ```mermaid
 graph TD
     subgraph "Membria Client (User's Device)"
-        A[User] --> B(UI/UX Interface);
+        A[User] --> B[UI/UX Interface]
         
-        B --> C{Agent Orchestrator};
+        B --> C{Agent Orchestrator}
         
-        C --> D[AI Core (Model Engine)];
-        C --> E[SkillForge (Skill Manager)];
-        C --> F[Local Knowledge Layer];
+        C --> D[AI Core - Model Engine]
+        C --> E[SkillForge - Skill Manager]
+        C --> F[Local Knowledge Layer]
         
-        D -.-> G[Local LLM];
-        E -.-> G;
+        D -.-> G[Local LLM]
+        E -.-> G
         
-        F --> H[SQLite (Chats, Logs, CAG)];
-        F --> I[DuckDB (RAG Index, Analytics)];
+        F --> H[SQLite - Chats, Logs, CAG]
+        F --> I[DuckDB - RAG Index, Analytics]
     end
 
     subgraph "Decentralized Network"
-        J[Gateways];
-        K[Global Knowledge Graph (KCG)];
-        J <--> K;
+        J[Gateways]
+        K[Global Knowledge Graph - KCG]
+        J <--> K
     end
 
-    C -.->|"Knowledge Request"| J;
-    J -.->|"Response / Ranking"| C;
+    C -.->|"Knowledge Request"| J
+    J -.->|"Response / Ranking"| C
 ```
 
 ### 3.4. AI Core: The Local Model Engine
