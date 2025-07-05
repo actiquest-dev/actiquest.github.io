@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805046153625">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>The Membria Local Client (Final, Unabridged Version)</title>
+    <meta name="title" content="The Membria Local Client (Final, Unabridged Version)">
+    <meta name="description" content="Of course. I will now generate the complete, unabridged, and fully detailed version of the document in English, incorporating all the sections and...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/client/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/client/">
+    <meta property="og:title" content="The Membria Local Client (Final, Unabridged Version)">
+    <meta property="og:description" content="Of course. I will now generate the complete, unabridged, and fully detailed version of the document in English, incorporating all the sections and...">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/client/">
+    <meta property="twitter:title" content="The Membria Local Client (Final, Unabridged Version)">
+    <meta property="twitter:description" content="Of course. I will now generate the complete, unabridged, and fully detailed version of the document in English, incorporating all the sections and...">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../../static/favicon.png" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.11.0.805046153625" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805046153625" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805046153625" data-turbo-eval="false" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/light-logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/dark-logo.svg">
+                            </span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Actiq</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Litepaper</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="../../">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/TQDtydDPgH" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1ZM1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"/><path d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25v-9.5Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Discord</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/actiquest-dev/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Github</span>
+                                </a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="../../">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/TQDtydDPgH" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1ZM1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"/><path d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25v-9.5Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Discord</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/actiquest-dev/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Github</span>
+                                        </a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<p>Of course. I will now generate the complete, unabridged, and fully detailed version of the document in English, incorporating all the sections and details we have developed.</p>
+<hr>
+<doc-anchor-target id="the-membria-local-client-final-unabridged-version" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-membria-local-client-final-unabridged-version">#</doc-anchor-trigger>
+        <span>The Membria Local Client (Final, Unabridged Version)</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="1-executive-summary">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-executive-summary">#</doc-anchor-trigger>
+        <span>1. Executive Summary</span>
+    </h2>
+</doc-anchor-target>
+<p>Membria&#x27;s mission is to build a decentralized, self-sustaining, and permanent knowledge base—a &#x27;Wikipedia for Small Language Models (SLMs)&#x27;. The goal of this tokenomic model is to construct a sustainable economy that incentivizes the creation of high-quality knowledge, rewards network participants, and ensures the long-term value growth of the ecosystem.</p>
+<doc-anchor-target id="2-why-membria-is-needed-from-a-static-toy-to-a-living-personal-ai">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-why-membria-is-needed-from-a-static-toy-to-a-living-personal-ai">#</doc-anchor-trigger>
+        <span>2. Why Membria is Needed: From a Static Toy to a Living Personal AI</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="the-current-reality-the-hugging-face-gold-rush">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-current-reality-the-hugging-face-gold-rush">#</doc-anchor-trigger>
+        <span>The Current Reality: The Hugging Face &quot;Gold Rush&quot;</span>
+    </h3>
+</doc-anchor-target>
+<p>A revolution is happening right now. Millions of developers, researchers, and enthusiasts are downloading open-source language models like Llama 3, Phi-3, and Mistral from Hugging Face. For the first time, people can run powerful AI directly on their own computers, with complete privacy and at no cost. The initial experience is thrilling: &quot;I have my own GPT running on my laptop!&quot;</p>
+<p>But after a few days of use, that excitement often gives way to disappointment. Users hit a fundamental &quot;wall of limitations&quot; that turns their powerful AI into a clever but static toy.</p>
+<doc-anchor-target id="the-wall-of-limitations-problems-with-todays-local-llms">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-wall-of-limitations-problems-with-todays-local-llms">#</doc-anchor-trigger>
+        <span>The &quot;Wall of Limitations&quot;: Problems with Today&#x27;s Local LLMs</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>The &quot;Static Brain&quot; Problem:</strong> The model you download is brilliant, but its knowledge is frozen at the moment its training ended (e.g., early 2023). It knows nothing about new technologies, recent events, or the latest version of your favorite framework. It quickly becomes obsolete.</li>
+<li><strong>The &quot;Amnesia&quot; Problem:</strong> The local model knows nothing about you. Every new conversation starts from a blank slate. It doesn&#x27;t remember your previous questions, your projects, your writing style, or your goals. It&#x27;s a powerful tool, but it&#x27;s not a personal assistant.</li>
+<li><strong>The &quot;Generalist Trap&quot;:</strong> A base model is a generalist. To make it an expert in a niche field (like law or medicine), you need to perform complex and expensive fine-tuning with LoRA adapters, which is an insurmountable barrier for most users.</li>
+<li><strong>The &quot;Information Silo&quot; Problem:</strong> The model operates in a vacuum, cut off from your own knowledge base—your PDFs, documents, notes, and emails. Making that data accessible requires building a complex RAG system from scratch.</li>
+</ul>
+<doc-anchor-target id="the-transformation-what-changes-with-membria">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-transformation-what-changes-with-membria">#</doc-anchor-trigger>
+        <span>The Transformation: What Changes with Membria</span>
+    </h3>
+</doc-anchor-target>
+<p>The Membria Client is the operating system that demolishes this &quot;wall of limitations,&quot; transforming a static model into a living, constantly evolving partner.</p>
+<ul>
+<li><strong>Solving the &quot;Static Brain&quot; -&gt; A Living Brain:</strong> When a local model doesn&#x27;t know an answer, Membria&#x27;s CAG (Cache-Augmented Generation) mechanism seamlessly queries the global, constantly updated Knowledge Graph. Your model trained in 2023 can now operate with facts from today.</li>
+<li><strong>Solving &quot;Amnesia&quot; -&gt; A Personal Memory:</strong> Membria&#x27;s local database architecture (SQLite + DuckDB) becomes your AI&#x27;s long-term memory. Its agents can privately index your local files, creating a rich personal context. The AI begins to understand your projects and remember your preferences.</li>
+<li><strong>Solving the &quot;Generalist Trap&quot; -&gt; The Instant Specialist:</strong> SkillForge makes the complex process of applying LoRA patches as simple as installing a browser extension. With a single click, you can turn your generalist AI into a &quot;Python expert&quot; or a &quot;financial analyst.&quot;</li>
+<li><strong>Solving the &quot;Information Silo&quot; -&gt; The Integrated Workspace:</strong> With built-in RAG and autonomous agents, the AI is no longer an external program but an active participant in your work. It can independently analyze folders of documents, prepare summaries, and use your data in its responses.</li>
+</ul>
+<p>Membria is the missing piece that transforms the current hype around local models into a real, productive tool. It elevates local AI from an &quot;interesting tech demo&quot; to an &quot;indispensable daily assistant&quot; that constantly learns, adapts, and grows smarter with you.</p>
+<doc-anchor-target id="3-technical-architecture-and-components">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-technical-architecture-and-components">#</doc-anchor-trigger>
+        <span>3. Technical Architecture and Components</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="31-introduction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#31-introduction">#</doc-anchor-trigger>
+        <span>3.1. Introduction</span>
+    </h3>
+</doc-anchor-target>
+<p>The Membria Client is a cross-platform application (Windows, macOS, Linux) that serves as the user&#x27;s personal AI hub. Its primary mission is to provide powerful, personalized, and private AI capabilities that run directly on the user&#x27;s device, with the ability to seamlessly augment its knowledge from the decentralized Membria network. The client is designed as a modular system, giving the user full control over their AI models, skills, and data.</p>
+<doc-anchor-target id="32-main-components">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#32-main-components">#</doc-anchor-trigger>
+        <span>3.2. Main Components</span>
+    </h3>
+</doc-anchor-target>
+<p>The client&#x27;s architecture consists of four interconnected components:</p>
+<ol>
+<li><strong>AI Core:</strong> Responsible for running and managing local language models.</li>
+<li><strong>SkillForge:</strong> A manager for dynamically attaching &quot;skills&quot; (LoRA patches).</li>
+<li><strong>Agent Orchestrator:</strong> Manages the execution of complex, multi-step tasks.</li>
+<li><strong>Local Knowledge Layer:</strong> A hybrid data storage system that provides the AI&#x27;s personal memory.</li>
+</ol>
+<doc-anchor-target id="33-visual-architecture-diagram">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#33-visual-architecture-diagram">#</doc-anchor-trigger>
+        <span>3.3. Visual Architecture Diagram</span>
+    </h3>
+</doc-anchor-target>
+<p>To visually represent how all client components interact with each other and the external network, the following conceptual architecture diagram is provided.</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">graph TD
+    subgraph &quot;Membria Client (User's Device)&quot;
+        A[User] --&gt; B(UI/UX Interface);
+        
+        B --&gt; C{Agent Orchestrator};
+        
+        C --&gt; D[AI Core (Model Engine)];
+        C --&gt; E[SkillForge (Skill Manager)];
+        C --&gt; F[Local Knowledge Layer];
+        
+        D -.-&gt; G[Local LLM];
+        E -.-&gt; G;
+        
+        F --&gt; H[SQLite (Chats, Logs, CAG)];
+        F --&gt; I[DuckDB (RAG Index, Analytics)];
+    end
+
+    subgraph &quot;Decentralized Network&quot;
+        J[Gateways];
+        K[Global Knowledge Graph (KCG)];
+        J &lt;--&gt; K;
+    end
+
+    C -.-&gt;|&quot;Knowledge Request&quot;| J;
+    J -.-&gt;|&quot;Response / Ranking&quot;| C;</pre></div>
+<doc-anchor-target id="34-ai-core-the-local-model-engine">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#34-ai-core-the-local-model-engine">#</doc-anchor-trigger>
+        <span>3.4. AI Core: The Local Model Engine</span>
+    </h3>
+</doc-anchor-target>
+<p>This is the foundation upon which all other capabilities are built. The AI Core is designed for maximum flexibility and can operate in several modes to meet the needs of both beginners and experts.</p>
+<doc-anchor-target id="operating-modes-flexibility-for-everyone">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#operating-modes-flexibility-for-everyone">#</doc-anchor-trigger>
+        <span>Operating Modes: Flexibility for Everyone</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>1. Standard Mode (Built-in Engine)</strong>
+By default, the AI Core uses its own built-in engine to run models in GGUF format (e.g., Llama 3, Phi-3, Gemma, Mistral). It automatically starts a local OpenAI-compatible HTTP server, ensuring seamless operation of all Membria components. In this mode, the user is provided with a simple interface for managing basic resources (e.g., how many layers of the model to offload to the GPU).</p>
+<p><strong>2. Compatibility Mode (Integration with LM Studio, Ollama, etc.)</strong>
+Membria is not a closed system. If a user has already meticulously set up their models in popular tools like <strong>LM Studio</strong> or <strong>Ollama</strong>, they can switch the AI Core to compatibility mode. In this mode, Membria does not start its own engine but instead <strong>connects to the external local server</strong> run by these tools (e.g., <code v-pre>http://localhost:1234/v1</code>).</p>
+<ul>
+<li><strong>Advantage:</strong> This allows the use of all of Membria&#x27;s powerful features (Agents, SkillForge, Knowledge Layer) on top of the user&#x27;s existing, pre-configured models, avoiding duplicate setups and resource consumption.</li>
+</ul>
+<doc-anchor-target id="advanced-mode-full-control-for-experts">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-mode-full-control-for-experts">#</doc-anchor-trigger>
+        <span>Advanced Mode: Full Control for Experts</span>
+    </h4>
+</doc-anchor-target>
+<p>For power users and developers, an &quot;Advanced Mode&quot; is available that provides access to detailed settings for the core and the models, enabling maximum performance and generation quality:</p>
+<ul>
+<li><strong>Fine-grained Generation Parameters:</strong> Direct control over parameters like <code v-pre>temperature</code>, <code v-pre>top_p</code>, <code v-pre>top_k</code>, and <code v-pre>repetition_penalty</code> for precise control over the creativity and determinism of responses.</li>
+<li><strong>Sampler Control:</strong> The ability to change the order and methods of sampling (e.g., Mirostat) to influence the structure and quality of the model&#x27;s output.</li>
+<li><strong>System Prompt Editing:</strong> Customization and creation of unique system prompt templates that agents use to communicate with the model.</li>
+<li><strong>Detailed Resource Management:</strong> More granular control over GPU layer distribution, number of CPU threads, context window size (<code v-pre>n_ctx</code>), batch size, and other GGUF-specific parameters.</li>
+<li><strong>Verbose Logging:</strong> Enabling detailed logs for debugging the full text of prompts, model responses, and analyzing performance.</li>
+</ul>
+<doc-anchor-target id="35-skillforge-dynamic-skill-management">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#35-skillforge-dynamic-skill-management">#</doc-anchor-trigger>
+        <span>3.5. SkillForge: Dynamic Skill Management</span>
+    </h3>
+</doc-anchor-target>
+<p>SkillForge is an innovative component that allows for the on-the-fly specialization of the base LLM.</p>
+<ul>
+<li><strong>LoRA Patch Manager:</strong> The user can load LoRA adapters (<code v-pre>.safetensors</code> files) into the client, each representing a distinct &quot;skill&quot; (e.g., &quot;Python programming,&quot; &quot;legal text analysis&quot;).</li>
+<li><strong>Dynamic Application:</strong> Before executing a request, the user or an agent can select which &quot;skills&quot; (LoRAs) to activate. The AI Core dynamically applies these LoRA patches to the base model, instantly adapting it to the specific task without needing a restart.</li>
+</ul>
+<doc-anchor-target id="36-agent-orchestrator-autonomous-agent-management">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#36-agent-orchestrator-autonomous-agent-management">#</doc-anchor-trigger>
+        <span>3.6. Agent Orchestrator: Autonomous Agent Management</span>
+    </h3>
+</doc-anchor-target>
+<p>This component transforms the LLM from a simple chatbot into a proactive, thinking assistant capable of executing complex, multi-step tasks. Its basic features include access to tools (search, file system) and background task execution.</p>
+<doc-anchor-target id="solving-the-context-explosion-problem-dynamic-working-memory">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#solving-the-context-explosion-problem-dynamic-working-memory">#</doc-anchor-trigger>
+        <span>Solving the &quot;Context Explosion&quot; Problem: Dynamic Working Memory</span>
+    </h4>
+</doc-anchor-target>
+<p>When a task requires dozens of steps, the standard approach of &quot;fitting the entire history into the prompt&quot; quickly leads to context window overflow. The Membria Agent Orchestrator solves this by implementing an advanced framework for reasoning and memory management. Instead of a static, growing prompt, it builds <strong>dynamic, evolving memory</strong> that functions like a human&#x27;s mental scratchpad.
+<strong>The Core Idea:</strong> Reasoning is a stateful process. Memory is not a history of dialogue in a prompt, but a compact <strong>latent state</strong> that the agent learns to update, compress, and utilize.
+To achieve this, Membria&#x27;s modular agents use an architecture with three key components (&quot;heads&quot;):</p>
+<ol>
+<li><strong>Scratchpad Head:</strong> At each step, the agent first generates internal thoughts and reasoning.</li>
+<li><strong>Action Head:</strong> Based on this reasoning, the agent chooses a specific action—to call a tool or to respond to the user.</li>
+<li><strong>Memory Update Head:</strong> After executing an action, this head analyzes the result and <strong>compresses it</strong>, updating the latent memory state. It decides what to remember and what to forget.</li>
+</ol>
+<doc-anchor-target id="agent-memory-storage-a-detailed-hybrid-approach">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#agent-memory-storage-a-detailed-hybrid-approach">#</doc-anchor-trigger>
+        <span>Agent Memory Storage: A Detailed Hybrid Approach</span>
+    </h4>
+</doc-anchor-target>
+<p>To implement this complex memory mechanic, a hybrid, three-tiered approach based on the flexible capabilities of SQLite is used.</p>
+<ol>
+<li><strong>Hot Memory (In-Memory):</strong> The agent&#x27;s active state for maximum speed. This is implemented using SQLite&#x27;s <strong>pure in-memory mode</strong> (<code v-pre>sqlite3 :memory:</code>) for active reasoning chains (<code v-pre>reasoning_path</code>) or through <strong>temporary tables</strong> (<code v-pre>CREATE TEMP TABLE</code>) for a session-level key-value cache (<code v-pre>kv_cache</code>). This ensures minimal latency by completely eliminating disk I/O.</li>
+<li><strong>Warm Memory (SQLite Persistence):</strong> A state journal for reliability and history. This is implemented using SQLite&#x27;s <strong>hybrid mode</strong>, where the in-memory database is periodically backed up to a persistent file (<code v-pre>BACKUP TO disk</code>). This mechanism is used to maintain a persistent event log of the agent&#x27;s actions (<code v-pre>event_log</code>), creating a reliable temporal graph of its reasoning.</li>
+<li><strong>Cold Memory (DuckDB):</strong> A vector archive for semantic search. Key conclusions from the SQLite state journal can be periodically vectorized and stored in DuckDB, enabling semantic search over the agent&#x27;s own &quot;memories.&quot;</li>
+</ol>
+<!-- end list -->
+<ul>
+<li><strong>Optimization and Formats:</strong> To improve concurrent access performance, <strong>Write-Ahead Logging</strong> mode is used (<code v-pre>PRAGMA journal_mode=WAL;</code>). Complex data structures, such as reasoning steps, are stored as flexible JSON objects thanks to the built-in <strong>JSON1</strong> extension support.</li>
+<li><strong>Multi-Agent Collaboration:</strong> The architecture also allows for the use of SQLite&#x27;s <strong>shared cache mode</strong>, enabling multiple agents or threads to work efficiently on a single task with a shared context.</li>
+</ul>
+<doc-anchor-target id="how-memory-segmentation-fights-hallucinations">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-memory-segmentation-fights-hallucinations">#</doc-anchor-trigger>
+        <span>How Memory Segmentation Fights Hallucinations</span>
+    </h4>
+</doc-anchor-target>
+<p>Hallucinations in agents arise from context overload, context loss, or reasoning failures. The three-tiered memory system purposefully combats each of these issues:</p>
+<ol>
+<li><strong>Hot Memory Fights OVERLOAD:</strong> The agent works with a compact, &quot;noise-free&quot; state, not a giant prompt. This is like a clean desk versus one buried in paper, drastically reducing the risk of getting confused and hallucinating.</li>
+<li><strong>Warm Memory Fights AMNESIA:</strong> The SQLite state journal is a perfect, error-proof memory. To recall a past detail, the agent queries the database directly instead of trying to &quot;guess.&quot; This eliminates hallucinations related to forgetfulness.</li>
+<li><strong>Cold Memory Fights REASONING FAILURES:</strong> Semantic search over past successful tasks acts like human experience. The agent uses proven reasoning patterns as templates, grounding its logic and preventing it from veering into illogical fabrications.</li>
+</ol>
+<doc-anchor-target id="37-local-knowledge-layer-the-hybrid-personal-memory">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#37-local-knowledge-layer-the-hybrid-personal-memory">#</doc-anchor-trigger>
+        <span>3.7. Local Knowledge Layer: The Hybrid Personal Memory</span>
+    </h3>
+</doc-anchor-target>
+<p>This is the &quot;brain&quot; and long-term memory of the personal AI, implemented on a dual-database system for maximum performance.</p>
+<ul>
+<li><strong>SQLite (Transactional Core):</strong>
+<ul>
+<li><strong>Purpose:</strong> Used as the primary operational database for frequent, small operations.</li>
+<li><strong>Stores:</strong> Full chat history, agent action logs (<code v-pre>event_log</code>), user settings, model/skill metadata, and the Cache-Augmented Generation (CAG) cache of structured knowledge retrieved from the global network.</li>
+<li><strong>Advantage:</strong> Guarantees the reliability and integrity of operational data.</li>
+</ul>
+</li>
+<li><strong>DuckDB (Analytical Engine):</strong>
+<ul>
+<li><strong>Purpose:</strong> Used as a specialized engine for resource-intensive searches over large volumes of unstructured data.</li>
+<li><strong>Stores:</strong> The Retrieval-Augmented Generation (RAG) index—vector embeddings generated from the user&#x27;s local files (PDFs, DOCX, emails, etc.).</li>
+<li><strong>Advantage:</strong> Provides lightning-fast semantic search across millions of text fragments.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="the-personal-analytics-dashboard-visualizing-your-knowledge">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-personal-analytics-dashboard-visualizing-your-knowledge">#</doc-anchor-trigger>
+        <span>The Personal Analytics Dashboard: Visualizing Your Knowledge</span>
+    </h4>
+</doc-anchor-target>
+<p>The analytical power of DuckDB isn&#x27;t just for the AI&#x27;s internal use; it&#x27;s exposed to the user through an interactive dashboard. This transforms Membria from a simple tool into a true knowledge partner.</p>
+<ul>
+<li><strong>Knowledge Graph Visualization:</strong> The dashboard can visually map how your documents, notes, and ideas are interconnected, revealing hidden relationships.</li>
+<li><strong>Entity Analytics:</strong> The system automatically extracts and displays frequently mentioned entities (people, companies, technologies). Users can click on any entity to see all documents where it is mentioned.</li>
+<li><strong>Interactive Agent Memory Map:</strong> The dashboard provides full transparency, allowing users to visually explore how an agent &quot;thought&quot; while solving a complex task.</li>
+<li><strong>Discovering &quot;Blind Spots&quot;:</strong> By analyzing your knowledge base, the system can suggest what information is missing and offer to find relevant data on the topic.</li>
+</ul>
+<doc-anchor-target id="38-network-interaction-and-quality-assurance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#38-network-interaction-and-quality-assurance">#</doc-anchor-trigger>
+        <span>3.8. Network Interaction and Quality Assurance</span>
+    </h3>
+</doc-anchor-target>
+<p>When local knowledge is insufficient, the client turns to the global network.</p>
+<ul>
+<li><strong>Fast Response:</strong> A Gateway instantly searches the global Knowledge Graph (KCG) and returns the most reliable, previously verified information. The client does not need to wait for a new consensus.</li>
+<li><strong>Two-Step Filtering:</strong> To ensure the quality of even unverified answers, the client employs a powerful filtering system:
+<ol>
+<li><strong>Answer Ranking:</strong> The client receives several potential answers from gateways and ranks them based on a combination of factors (source reputation, metadata, etc.).</li>
+<li><strong>Verification via &quot;Teachers&quot; (RLT):</strong> A key innovation. Lightweight RLT models generate a high-quality, step-by-step explanation for an answer, allowing the local model not just to memorize a fact, but to &quot;understand&quot; it.</li>
+</ol>
+</li>
+</ul>
+<doc-anchor-target id="39-latency-minimization-architecture-for-an-instant-response">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#39-latency-minimization-architecture-for-an-instant-response">#</doc-anchor-trigger>
+        <span>3.9. Latency Minimization: Architecture for an Instant Response</span>
+    </h3>
+</doc-anchor-target>
+<p>To ensure the complex verification system doesn&#x27;t make the user wait, Membria&#x27;s architecture is built on principles that minimize perceived latency.</p>
+<ul>
+<li><strong>Optimistic Execution:</strong> The main principle is to provide an answer immediately while verification runs in the background. The client instantly shows the most likely answer with a &quot;verifying...&quot; status, which updates to &quot;verified&quot; upon completion.</li>
+<li><strong>Aggressive Caching:</strong> The fastest response is one that doesn&#x27;t require a network call. A multi-level caching system is used, first checking the client&#x27;s ultra-fast local cache, then the gateway&#x27;s cache.</li>
+<li><strong>Adaptive Verification:</strong> The depth of verification can change. If an answer comes from a highly reputable source, the client may apply a &quot;lightweight&quot; check, saving time and resources.</li>
+</ul>
+<doc-anchor-target id="4-security-and-privacy-by-design">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-security-and-privacy-by-design">#</doc-anchor-trigger>
+        <span>4. Security and Privacy by Design</span>
+    </h2>
+</doc-anchor-target>
+<p>Privacy and data security are not additional features; they are fundamental principles of the Membria architecture.</p>
+<doc-anchor-target id="41-local-data-protection">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#41-local-data-protection">#</doc-anchor-trigger>
+        <span>4.1. Local Data Protection</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Local by Default:</strong> All of your personal information—documents, chat histories, indexed files, and settings—is stored <strong>exclusively on your device</strong>. No data is uploaded to central servers without your explicit permission.</li>
+<li><strong>Encryption at Rest:</strong> Local databases (SQLite, DuckDB) and configuration files can be encrypted using industry-standard practices (e.g., SQLCipher or OS-level file system encryption), protecting data even in the event of physical access to the device.</li>
+</ul>
+<doc-anchor-target id="42-skill-isolation-and-safety">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#42-skill-isolation-and-safety">#</doc-anchor-trigger>
+        <span>4.2. Skill Isolation and Safety**</span>
+    </h3>
+</doc-anchor-target>
+<p>A modular system requires strict isolation to prevent abuse from third-party &quot;skills&quot; or agents.</p>
+<ul>
+<li><strong>Permission Model:</strong> Similar to mobile apps, no skill or agent can access the file system, network, or other resources without explicit user permission. You always control what each component has access to.</li>
+<li><strong>Sandboxing:</strong> The processes running agent logic can be executed in a sandboxed environment, which technically restricts their access to only the resources for which permission was granted.</li>
+<li><strong>Reputation and Signatures:</strong> Skills distributed through the Membria ecosystem will have a digital signature from the author and a reputation system based on community feedback, helping to filter out questionable components.</li>
+</ul>
+<doc-anchor-target id="43-secure-network-communication">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#43-secure-network-communication">#</doc-anchor-trigger>
+        <span>4.3. Secure Network Communication**</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Fully Offline Mode:</strong> The client can operate in a <strong>100% offline mode</strong>, completely disconnected from the internet. In this case, you achieve absolute &quot;air-gapped&quot; privacy.</li>
+<li><strong>End-to-End Encryption:</strong> All communication between the client and Gateways is protected using modern encryption protocols (e.g., TLS 1.3), making data interception useless.</li>
+<li><strong>Request Anonymization:</strong> When accessing the network, the client is designed to minimize the transmission of any personal information. Knowledge requests are generic and do not contain data that could identify the user.</li>
+</ul>
+<doc-anchor-target id="5-market-positioning-and-competitive-analysis">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-market-positioning-and-competitive-analysis">#</doc-anchor-trigger>
+        <span>5. Market Positioning and Competitive Analysis</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="the-existing-landscape-the-era-of-model-runners">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-existing-landscape-the-era-of-model-runners">#</doc-anchor-trigger>
+        <span>The Existing Landscape: The Era of &quot;Model Runners&quot;</span>
+    </h4>
+</doc-anchor-target>
+<p>The current local AI market is represented by excellent tools like Ollama, LM Studio, Jan, and others. Their primary function is to provide users with a simple and effective way to download and run open-source language models. They excel in this role as the &quot;engine&quot; or &quot;driver&quot; for LLMs. Membria does not so much compete with them as it <strong>extends their capabilities</strong>, offering to work in compatibility mode.</p>
+<doc-anchor-target id="the-membria-difference-from-inference-to-agency">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-membria-difference-from-inference-to-agency">#</doc-anchor-trigger>
+        <span>The Membria Difference: From Inference to Agency</span>
+    </h4>
+</doc-anchor-target>
+<p>Membria takes the next step in the evolution of local AI. If competitors focus on <strong>HOW TO RUN</strong> a model, Membria focuses on <strong>WHAT THE MODEL CAN DO</strong> after it&#x27;s running. We are building not just an engine, but a complete <strong>operating system for personal AI</strong>, where the model is merely the kernel that receives memory, skills, and the capacity for autonomous action.</p>
+<doc-anchor-target id="comparison-table">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comparison-table">#</doc-anchor-trigger>
+        <span>Comparison Table</span>
+    </h4>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Ollama / LM Studio &amp; Analogs</th>
+<th style="text-align: left;">Membria Client</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Core Function</strong></td>
+<td style="text-align: left;">Model Runner (Inference Server)</td>
+<td style="text-align: left;"><strong>AI Operating System (AI OS)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Agents</strong></td>
+<td style="text-align: left;">Provides an API for development</td>
+<td style="text-align: left;"><strong>Built-in Advanced Agent Framework</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Memory</strong></td>
+<td style="text-align: left;">Limited to the model&#x27;s context window</td>
+<td style="text-align: left;"><strong>Dynamic, Long-Term Memory (Hot/Warm/Cold)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Skills</strong></td>
+<td style="text-align: left;">Static model choice before launch</td>
+<td style="text-align: left;"><strong>Dynamic, on-the-fly skill attachment (SkillForge/LoRA)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Knowledge Source</strong></td>
+<td style="text-align: left;">Local Files only (RAG)</td>
+<td style="text-align: left;"><strong>Hybrid Layer: Local Files (RAG) + Global Network (CAG)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Key Problem Solved</strong></td>
+<td style="text-align: left;">How to run models locally?</td>
+<td style="text-align: left;"><strong>How to solve AI stagnation, amnesia, and hallucination?</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>User Analytics</strong></td>
+<td style="text-align: left;">None or basic</td>
+<td style="text-align: left;"><strong>Interactive Dashboard &amp; Knowledge Graph Visualization</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="conclusion">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
+        <span>Conclusion</span>
+    </h3>
+</doc-anchor-target>
+<p>Membria is the &quot;application layer&quot; that installs on top of the &quot;drivers&quot; (like Ollama) and transforms a static LLM into a proactive, learning, and truly useful personal assistant. We give local AI a brain, memory, and hands.</p>
+<doc-anchor-target id="6-the-knowledge-economy-the-skillforge-marketplace">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-the-knowledge-economy-the-skillforge-marketplace">#</doc-anchor-trigger>
+        <span>6. The Knowledge Economy: The SkillForge Marketplace</span>
+    </h2>
+</doc-anchor-target>
+<p>This section connects the local client&#x27;s technology with the global mission of Membria described in the summary. It explains how a self-sustaining, decentralized economy is created to reward participants for their contributions. To achieve this, <code v-pre>SkillForge</code> evolves from a simple local manager of LoRA files into a full-fledged gateway to a decentralized marketplace.</p>
+<doc-anchor-target id="how-it-works">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-it-works">#</doc-anchor-trigger>
+        <span>How It Works</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><p><strong>For Creators (Experts):</strong></p>
+<ul>
+<li><strong>Any expert</strong> in their field (law, medicine, a rare programming language, financial analysis) can create their own LoRA skill. For example, a cybersecurity expert can fine-tune a model on all vulnerability reports from the last 5 years, creating a &quot;Cyber Threat Analyst&quot; skill.</li>
+<li>They <strong>publish this skill on the Membria Marketplace</strong>, setting a price in the project&#x27;s native tokens. They also provide a detailed description, usage examples, and undergo a verification process to confirm the quality and safety of their product.</li>
+</ul>
+</li>
+<li><p><strong>For Users (Consumers):</strong></p>
+<ul>
+<li>A typical Membria user, facing a task that requires highly specialized knowledge, browses the marketplace built into the client.</li>
+<li>They find the skill they need, read its description, and check its rating and reviews from other users.</li>
+<li>With a single click, they <strong>purchase the skill using tokens</strong>. The skill is automatically downloaded into their <code v-pre>SkillForge</code>, and they can begin using it immediately, dramatically increasing their local AI&#x27;s competence in that specific domain.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="why-this-changes-everything">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-this-changes-everything">#</doc-anchor-trigger>
+        <span>Why This Changes Everything</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Economic Incentives for Knowledge Creation:</strong> A direct and clear motivation emerges for experts worldwide to share their knowledge. Creating a high-quality LoRA skill becomes a <strong>digital asset</strong> that generates income.</li>
+<li><strong>Exponential Growth of Ecosystem Capabilities:</strong> The platform becomes populated with thousands of niche skills that would be impossible to create centrally. Do you want an AI sommelier? Or an AI expert in repairing antique clocks? They can emerge on the marketplace thanks to enthusiasts.</li>
+<li><strong>Real Utility for the Token:</strong> The project&#x27;s token ceases to be a speculative asset and acquires fundamental utility. It becomes the <strong>internal currency for exchanging knowledge</strong>—the most valuable resource in this ecosystem.</li>
+<li><strong>Competition and Quality:</strong> Skill creators will compete with one another, which will continually drive up quality and drive down the price of expertise, making it accessible to all.</li>
+</ul>
+<p>Thus, the marketplace closes the economic loop, gives the token real utility, and transforms Membria from just a powerful tool into a <strong>living, self-improving, and economically incentivized knowledge ecosystem.</strong></p>
+<doc-anchor-target id="7-use-cases-membria-in-action">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-use-cases-membria-in-action">#</doc-anchor-trigger>
+        <span>7. Use Cases: Membria in Action</span>
+    </h2>
+</doc-anchor-target>
+<p>This section demonstrates how Membria&#x27;s architecture solves concrete, real-world problems for different professionals, highlighting its advantages over alternative AI tools.</p>
+<doc-anchor-target id="use-case-1-the-developer-in-a-legacy-project">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-case-1-the-developer-in-a-legacy-project">#</doc-anchor-trigger>
+        <span>Use Case 1: The Developer in a Legacy Project</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Persona:</strong> Anna, a Senior Python Developer.</li>
+<li><strong>Task:</strong> To fix a critical bug in a large, confusing project she has never seen before.</li>
+</ul>
+<p><strong>Workflow with Membria:</strong></p>
+<ol>
+<li><strong>Project Indexing:</strong> Anna points the Membria client to the project&#x27;s source code folder. The <code v-pre>Local Knowledge Layer</code> indexes all files in the background (RAG).</li>
+<li><strong>Skill Acquisition and Activation:</strong> Anna browses the marketplace and purchases the top-rated &quot;Python Legacy Code Expert&quot; skill. She activates it in <code v-pre>SkillForge</code>.</li>
+<li><strong>Dialogue with the Agent:</strong> Anna writes a request: <em>&quot;Trace the data path from the API endpoint <code v-pre>/api/v1/user/profile</code> to the database response and find where the administrator rights check is missing.&quot;</em></li>
+<li><strong>Result:</strong> The <code v-pre>Agent Orchestrator</code>, using RAG on the code and the knowledge from the purchased LoRA skill, builds a call graph and, within a minute, provides a precise answer identifying the problematic function and recommending a fix.</li>
+</ol>
+<doc-anchor-target id="why-is-this-more-effective-than-a-hypothetical-cursor-vnext">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-is-this-more-effective-than-a-hypothetical-cursor-vnext">#</doc-anchor-trigger>
+        <span>Why is this more effective than a hypothetical &#x27;Cursor v.Next&#x27;?</span>
+    </h3>
+</doc-anchor-target>
+<p>Even a future version of Cursor powered by GPT-5 would be a brilliant <strong>generalist</strong>. Membria&#x27;s approach provides <strong>surgical precision</strong> where general knowledge is not enough. The key advantage is the ability to fine-tune a LoRA skill <strong>specifically on Anna&#x27;s company codebase</strong>. Such a skill would know every internal API and unwritten convention of that project. A GPT-5-powered Cursor would give excellent general Python advice, but Membria&#x27;s LoRA skill will give advice that is perfectly relevant for <strong>that specific system</strong>.</p>
+<doc-anchor-target id="use-case-2-the-analyst-and-a-high-volume-of-data">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-case-2-the-analyst-and-a-high-volume-of-data">#</doc-anchor-trigger>
+        <span>Use Case 2: The Analyst and a High Volume of Data</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Persona:</strong> Victor, a Market Analyst.</li>
+<li><strong>Task:</strong> To prepare a summary report on global investments in green energy over the last three years, based on 75 PDF reports.</li>
+</ul>
+<p><strong>Workflow with Membria:</strong></p>
+<ol>
+<li><strong>Data Ingestion:</strong> Victor drags the folder of PDFs into Membria. The <code v-pre>Local Knowledge Layer</code> indexes all documents.</li>
+<li><strong>Complex Task Delegation:</strong> He gives the agent a multi-step task to analyze, synthesize, and structure data from all documents.</li>
+<li><strong>Autonomous Work:</strong> The <code v-pre>Agent Orchestrator</code> works in the background for several hours. Its <strong>dynamic working memory</strong> allows it to maintain context, compare data from different reports, and build a coherent picture.</li>
+<li><strong>Result:</strong> Victor receives a complete, structured report with tables and conclusions, saving weeks of manual labor.</li>
+</ol>
+<doc-anchor-target id="why-is-this-more-effective-than-specialized-ai-tools">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-is-this-more-effective-than-specialized-ai-tools">#</doc-anchor-trigger>
+        <span>Why is this more effective than specialized AI tools?</span>
+    </h3>
+</doc-anchor-target>
+<p>Membria&#x27;s advantage lies in the <strong>autonomy of the agent and its stateful memory</strong>. It doesn&#x27;t just answer questions about documents; it executes a <strong>long-term research project</strong>. It &quot;remembers&quot; its intermediate findings, can compare data from document #5 with conclusions from document #42, identify contradictions, and synthesize entirely new information.</p>
+<doc-anchor-target id="use-case-3-the-lawyer-and-cross-domain-analysis">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-case-3-the-lawyer-and-cross-domain-analysis">#</doc-anchor-trigger>
+        <span>Use Case 3: The Lawyer and Cross-Domain Analysis</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Persona:</strong> Elena, a lawyer at a tech company.</li>
+<li><strong>Task:</strong> To review a software development agreement that includes elements of AI model licensing.</li>
+</ul>
+<p><strong>Workflow with Membria:</strong></p>
+<ol>
+<li><strong>Context Creation:</strong> All of the company&#x27;s standard agreements and technical documentation are already indexed in the <code v-pre>Local Knowledge Layer</code>.</li>
+<li><strong>Multi-Skill Activation:</strong> Elena browses the marketplace and purchases two skills: &quot;IT Contract Analysis&quot; and &quot;Software Licensing.&quot; She activates <strong>both of them simultaneously</strong> in <code v-pre>SkillForge</code>.</li>
+<li><strong>Complex Task Delegation:</strong> She asks the agent: <em>&quot;Compare this contract to our standard template. Highlight all legal risks that arise from the technical obligations.&quot;</em></li>
+<li><strong>Result:</strong> The agent, possessing expertise in both domains, identifies a clause where a technical requirement to use a library under a <code v-pre>GPL</code> license creates a legal risk for the entire product, according to the company&#x27;s standard agreement.</li>
+</ol>
+<doc-anchor-target id="why-is-this-stronger-than-separate-vertical-solutions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-is-this-stronger-than-separate-vertical-solutions">#</doc-anchor-trigger>
+        <span>Why is this stronger than separate &#x27;vertical&#x27; solutions?</span>
+    </h3>
+</doc-anchor-target>
+<p>Membria&#x27;s strength is <strong>synthesis</strong>. A standalone &quot;Legal AI&quot; won&#x27;t understand the technical risks, and a standalone &quot;Code AI&quot; won&#x27;t understand the legal consequences. Membria&#x27;s ability to <strong>dynamically combine multiple skills</strong> creates a temporary &quot;super-expert&quot; (in this case, an &quot;IT Law expert&quot;) who sees the full picture and finds risks at the intersection of two domains.</p>
+<doc-anchor-target id="8-deep-research-and-web-interaction-the-autonomous-research-agent">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-deep-research-and-web-interaction-the-autonomous-research-agent">#</doc-anchor-trigger>
+        <span>8. Deep Research and Web Interaction: The Autonomous Research Agent</span>
+    </h2>
+</doc-anchor-target>
+<p>One of the most requested features for a personal AI is the ability not just to search the web, but to conduct <strong>deep, multi-stage research</strong> on a given topic. The Membria client handles this as an autonomous project managed by the <code v-pre>Agent Orchestrator</code>.</p>
+<doc-anchor-target id="architecture-of-the-research-agent">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture-of-the-research-agent">#</doc-anchor-trigger>
+        <span>Architecture of the Research Agent</span>
+    </h3>
+</doc-anchor-target>
+<p>To perform this function, the <code v-pre>Agent Orchestrator</code> utilizes the existing modules:</p>
+<ol>
+<li><strong>The &quot;Brain&quot; (<code v-pre>Agent Orchestrator</code>):</strong> Acts as the &quot;project lead,&quot; decomposing the topic into sub-tasks and forming a research plan.</li>
+<li><strong>The &quot;Senses&quot; (Tools):</strong> The agent is provided with a <code v-pre>web_search</code> tool to get a list of URLs and a <code v-pre>web_browser</code> tool to &quot;visit&quot; those links.</li>
+<li><strong>The &quot;Memory&quot; (<code v-pre>Hybrid Memory</code>):</strong> Uses all three memory tiers (hot, warm, cold) to manage context, log steps, and recall successful strategies.</li>
+</ol>
+<doc-anchor-target id="technical-implementation-of-web-access-privacy-and-costs">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#technical-implementation-of-web-access-privacy-and-costs">#</doc-anchor-trigger>
+        <span>Technical Implementation of Web Access: Privacy and Costs</span>
+    </h3>
+</doc-anchor-target>
+<p>To ensure maximum privacy and control, web access is implemented via a hybrid model:</p>
+<ul>
+<li><strong>Step 1: Retrieving Links (API-dependent).</strong> To search and retrieve a list of URLs (<code v-pre>web_search</code>), the agent accesses an external API. The recommended solution is the <strong>Brave Search API</strong>, as it is privacy-focused and offers a generous free tier.
+<ul>
+<li><strong>Cost:</strong> For the vast majority of users, this is <strong>free</strong>, as the free tier (up to 2,000 queries per month) covers standard needs. For power users who exceed this limit, an option is provided in the settings to add their own API key for a &quot;Pay-as-you-go&quot; model.</li>
+</ul>
+</li>
+<li><strong>Step 2: Browse Pages (Fully Local).</strong> After receiving a list of links, the agent uses the <code v-pre>web_browser</code> tool, which runs <strong>entirely locally</strong> on the user&#x27;s device.
+<ul>
+<li><strong>Solution:</strong> The Membria client integrates a headless browser based on <strong>Playwright</strong>. The agent programmatically &quot;opens&quot; a page in this invisible browser, waits for it to fully load (including JavaScript), and extracts its content.</li>
+<li><strong>Cleaning:</strong> The content is then processed by a local scraper (based on a library like <code v-pre>trafilatura</code>) to remove ads, menus, and other boilerplate.</li>
+<li><strong>Advantage:</strong> This approach guarantees that the content of the pages you browse never leaves your device, ensuring maximum privacy and reliability.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="the-deep-research-workflow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-deep-research-workflow">#</doc-anchor-trigger>
+        <span>The &quot;Deep Research&quot; Workflow</span>
+    </h3>
+</doc-anchor-target>
+<p>The agent decomposes the user&#x27;s topic into a multi-step plan. It then iteratively uses the <code v-pre>web_search</code> tool to get links and the local <code v-pre>web_browser</code> tool to scrape and analyze content from those links. It uses its dynamic memory to synthesize findings from dozens of sources, notes contradictions, and builds a coherent picture. The entire process is logged for auditability. Once complete, the agent generates a structured report and indexes the findings and key sources into the user&#x27;s permanent <code v-pre>Local Knowledge Layer</code>.</p>
+<doc-anchor-target id="9-conclusion">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#9-conclusion">#</doc-anchor-trigger>
+        <span>9. Conclusion</span>
+    </h2>
+</doc-anchor-target>
+<p>Membria is born from a simple yet profound observation: the current revolution in local AI is incomplete. While powerful language models can now run on personal devices, they exist as static, amnesiac tools—brilliant but fundamentally limited, like a genius with no memory or connection to the outside world. This document has detailed the architecture of the Membria Client, which is designed to solve this problem comprehensively.</p>
+<p>Membria is not just another application; it is an <strong>AI Operating System</strong> built on three core pillars:</p>
+<ol>
+<li><p><strong>Agency and Memory:</strong> Beyond mere inference, Membria introduces true agency. Its advanced <code v-pre>Agent Orchestrator</code>, equipped with a dynamic, stateful memory system, allows AI to execute complex, long-horizon tasks without suffering from context explosion or hallucinations. By managing memory across hot (in-memory), warm (transactional log), and cold (semantic search) tiers, it transforms a stateless model into a reflective, thinking partner.</p>
+</li>
+<li><p><strong>Specialization and Skill:</strong> Recognizing that a single model cannot be an expert in everything, Membria&#x27;s <code v-pre>SkillForge</code> architecture provides a mechanism for deep, modular specialization. Through dynamically loaded LoRA skills—created by experts and shared on a decentralized <strong>Marketplace</strong>—a generalist model can instantly become a surgical expert in niche domains, from analyzing proprietary codebases to understanding complex legal contracts.</p>
+</li>
+<li><p><strong>Knowledge and Growth:</strong> Membria shatters the &quot;static brain&quot; problem by creating a hybrid knowledge system. The <code v-pre>Local Knowledge Layer</code> gives the AI a perfect, searchable memory of the user&#x27;s personal world (RAG). Crucially, this is connected to the global, ever-growing Membria network, allowing the agent to pull fresh, validated information from the outside world (CAG). This ensures the AI is not only personalized but also perpetually learning and up-to-date.</p>
+</li>
+</ol>
+<p>The result is a paradigm shift in what a personal AI can be. It moves from a passive &quot;co-pilot&quot; that responds to commands to a proactive, autonomous partner that can manage projects, conduct research, and synthesize knowledge across multiple domains. All of this is accomplished within a <strong>&quot;privacy-by-design&quot;</strong> framework that keeps the user&#x27;s data on their device by default, giving them ultimate control.</p>
+<p>Membria is the missing piece that completes the puzzle of personal artificial intelligence. It is the foundation for a future where every user is equipped with an AI that is truly their own—private, adaptable, and perpetually growing smarter with them.</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">Membria</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/whitepaper/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Litepaper</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025, <a href="https://actiq.xyz">Actiquest Inc.</a> All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Membria Client", level: 2, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
