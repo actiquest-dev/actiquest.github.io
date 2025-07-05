@@ -4,11 +4,7 @@ label: Membria Client
 order: 136
 ---
 
-Of course. I will now generate the complete, unabridged, and fully detailed version of the document in English, incorporating all the sections and details we have developed.
-
------
-
-# The Membria Local Client (Final, Unabridged Version)
+# The Membria Local Client
 
 ## 1. Executive Summary
 
