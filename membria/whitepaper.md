@@ -4,7 +4,6 @@ label: Litepaper
 order: 133
 ---
 
-
 # Membria: A Decentralized Knowledge Framework for Tiny LMs
 
 ## Part 1: Vision and Problem Statement
@@ -150,8 +149,15 @@ SCR enables Tiny LLMs to perform lightweight, dynamic reasoning over external kn
 #### Context Window Optimization and Memory Management
 
   * **Segmented KV Buffer & Prioritized Paging**: To manage memory efficiently, each DoD Agent maintains a segmented buffer divided by scope (Session Memory, Local Knowledge Cache, Global Shared KV Layer). Before inference, the agent performs semantic prefiltering and priority ranking to select the top entries to load into active memory, evicting least-recently-used items if memory is constrained.
-  * **Persistent Memory for Tiny LLMs**: To prevent model "amnesia" between sessions, the agent uses a hybrid storage solution. Reasoning outcomes are distilled into a local vector database (like Qdrant + SQLite) for semantic retrieval, while key attention snapshots are persisted to a fast disk-based store (like LMDB) for partial context reconstruction on session restart.
-  * **Local Knowledge & Event Storage**: On the device, the agent uses a lightweight infrastructure for its memory. This includes a local **event graph** (in SQLite) to log actions and reasoning chains, a minimal **ontology layer** for semantic classification, and an efficient **local database** (SQLite with JSON1 extensions) for caching and retrieval.
+
+  * **Persistent Memory for Tiny LLMs**: To prevent model "amnesia" between sessions, the agent uses a hybrid storage solution. Reasoning outcomes are distilled into a local vector database, while key attention snapshots are persisted to a fast disk-based store for partial context reconstruction on session restart.
+
+  * **Dual-Database Local Knowledge Storage**: The DoD agent's "brain" and long-term memory are implemented on a dual-database system for maximum performance and data integrity.
+
+      * **SQLite (Transactional Core)**: This is the primary operational database for frequent, small R/W operations. It guarantees the reliability and integrity of core operational data.
+          * **Stores**: Full chat history, agent action logs (`event_log`), user settings, model and skill metadata, and the Cache-Augmented Generation (CAG) cache of structured knowledge retrieved from the global KCG.
+      * **DuckDB (Analytical Engine)**: This is a specialized engine for resource-intensive analytical queries and semantic searches over large volumes of unstructured data.
+          * **Stores**: The Retrieval-Augmented Generation (RAG) index, which contains vector embeddings generated from the user's local files (PDFs, DOCX, emails, etc.). Its advantage is providing lightning-fast semantic search across millions of text fragments.
 
 ### 3.3. Roles and Responsibilities in the Ecosystem
 
@@ -317,14 +323,14 @@ The SkillForge Marketplace is essential for connecting the local client technolo
 
 The Membria architecture can be seamlessly deployed on top of the **Peaq Protocol**, leveraging its existing decentralized infrastructure for enhanced functionality and faster development.
 
-| KCG+CAG Component         | Integration with Peaq Protocol                        | Comment                                                 |
-| :------------------------ | :---------------------------------------------------- | :------------------------------------------------------ |
-| KCG On-Chain Storage & TX | Use Peaq Chain for transaction recording and consensus  | Knowledge entries, validator approvals, governance votes  |
-| ZK Proofs for DoD & Access  | Use Peaq ZK Layer for privacy-preserving queries & attestation | ZK Proof-of-Access, ZK validation of query authorization |
-| Off-chain Indexing & Subgraphs | Use Peaq Subgraph Infrastructure for accelerated querying | Gateways can offload indexing to Peaq Subgraph tooling  |
-| SCR Pipelines & Reasoning | KCG+CAG Layer                                         | Application-specific layer on top of Peaq               |
-| Local Tiny LLM KV Cache   | Device or Gateway Level                               | Fast inference on device or at gateway edge nodes       |
-| DoD Agents and CAG Pipelines | KCG+CAG Layer                                         | Orchestrate reasoning and distillation above Peaq       |
+| KCG+CAG Component              | Integration with Peaq Protocol                             | Comment                                                    |
+| :----------------------------- | :--------------------------------------------------------- | :--------------------------------------------------------- |
+| KCG On-Chain Storage & TX      | Use Peaq Chain for transaction recording and consensus     | Knowledge entries, validator approvals, governance votes     |
+| ZK Proofs for DoD & Access     | Use Peaq ZK Layer for privacy-preserving queries & attestation | ZK Proof-of-Access, ZK validation of query authorization    |
+| Off-chain Indexing & Subgraphs | Use Peaq Subgraph Infrastructure for accelerated querying   | Gateways can offload indexing to Peaq Subgraph tooling     |
+| SCR Pipelines & Reasoning      | KCG+CAG Layer                                              | Application-specific layer on top of Peaq                  |
+| Local Tiny LLM KV Cache        | Device or Gateway Level                                    | Fast inference on device or at gateway edge nodes          |
+| DoD Agents and CAG Pipelines   | KCG+CAG Layer                                              | Orchestrate reasoning and distillation above Peaq          |
 
 **Benefits of Deploying over Peaq**:
 
@@ -410,8 +416,8 @@ By adopting the KCG+CAG architecture, we take a significant step toward **democr
 
 Membria offers a unique combination of real-time, on-device inference, structured knowledge caching, and decentralized learning that sets it apart from existing solutions.
 
-| Feature / Platform | Membria                                           | Amazon Bedrock     | Google Vertex AI (Gemini) | Hugging Face AutoTrain | GPTCache           | Cohere API     | AI21 Labs      |
-| :----------------- | :------------------------------------------------ | :----------------- | :------------------------ | :--------------------- | :----------------- | :------------- | :------------- |
+| Feature / Platform       | Membria                                           | Amazon Bedrock     | Google Vertex AI (Gemini) | Hugging Face AutoTrain | GPTCache           | Cohere API     | AI21 Labs      |
+| :----------------------- | :------------------------------------------------ | :----------------- | :------------------------ | :--------------------- | :----------------- | :------------- | :------------- |
 | **Deployment Model** | On-device / no-cloud                              | Cloud-hosted       | Cloud + Edge             | Cloud-based            | Plugin-based       | API-based      | API-based      |
 | **Learning Paradigm** | CAG + DoD + Shared KCG                          | Offline distillation | RAG + prompting          | LoRA/PEFT finetuning   | Response caching   | Embedding + RAG | Embedding + RAG |
 | **Real-Time Adaptation** | Yes                                               | No                 | Limited                   | No                     | Similar queries    | No             | No             |
