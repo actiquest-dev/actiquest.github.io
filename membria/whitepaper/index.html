@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805046153625">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805046247882">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.805046153625" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.805046247882" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805046153625" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805046247882" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805046153625" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805046247882" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -436,9 +436,24 @@ Peaq Protocol Layer
     </h4>
 </doc-anchor-target>
 <ul>
-<li><strong>Segmented KV Buffer &amp; Prioritized Paging</strong>: To manage memory efficiently, each DoD Agent maintains a segmented buffer divided by scope (Session Memory, Local Knowledge Cache, Global Shared KV Layer). Before inference, the agent performs semantic prefiltering and priority ranking to select the top entries to load into active memory, evicting least-recently-used items if memory is constrained.</li>
-<li><strong>Persistent Memory for Tiny LLMs</strong>: To prevent model &quot;amnesia&quot; between sessions, the agent uses a hybrid storage solution. Reasoning outcomes are distilled into a local vector database (like Qdrant + SQLite) for semantic retrieval, while key attention snapshots are persisted to a fast disk-based store (like LMDB) for partial context reconstruction on session restart.</li>
-<li><strong>Local Knowledge &amp; Event Storage</strong>: On the device, the agent uses a lightweight infrastructure for its memory. This includes a local <strong>event graph</strong> (in SQLite) to log actions and reasoning chains, a minimal <strong>ontology layer</strong> for semantic classification, and an efficient <strong>local database</strong> (SQLite with JSON1 extensions) for caching and retrieval.</li>
+<li><p><strong>Segmented KV Buffer &amp; Prioritized Paging</strong>: To manage memory efficiently, each DoD Agent maintains a segmented buffer divided by scope (Session Memory, Local Knowledge Cache, Global Shared KV Layer). Before inference, the agent performs semantic prefiltering and priority ranking to select the top entries to load into active memory, evicting least-recently-used items if memory is constrained.</p>
+</li>
+<li><p><strong>Persistent Memory for Tiny LLMs</strong>: To prevent model &quot;amnesia&quot; between sessions, the agent uses a hybrid storage solution. Reasoning outcomes are distilled into a local vector database, while key attention snapshots are persisted to a fast disk-based store for partial context reconstruction on session restart.</p>
+</li>
+<li><p><strong>Dual-Database Local Knowledge Storage</strong>: The DoD agent&#x27;s &quot;brain&quot; and long-term memory are implemented on a dual-database system for maximum performance and data integrity.</p>
+<ul>
+<li><strong>SQLite (Transactional Core)</strong>: This is the primary operational database for frequent, small R/W operations. It guarantees the reliability and integrity of core operational data.
+<ul>
+<li><strong>Stores</strong>: Full chat history, agent action logs (<code v-pre>event_log</code>), user settings, model and skill metadata, and the Cache-Augmented Generation (CAG) cache of structured knowledge retrieved from the global KCG.</li>
+</ul>
+</li>
+<li><strong>DuckDB (Analytical Engine)</strong>: This is a specialized engine for resource-intensive analytical queries and semantic searches over large volumes of unstructured data.
+<ul>
+<li><strong>Stores</strong>: The Retrieval-Augmented Generation (RAG) index, which contains vector embeddings generated from the user&#x27;s local files (PDFs, DOCX, emails, etc.). Its advantage is providing lightning-fast semantic search across millions of text fragments.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <doc-anchor-target id="33-roles-and-responsibilities-in-the-ecosystem">
     <h3>
