@@ -88,7 +88,7 @@ graph TD
 
 This is the foundation upon which all other capabilities are built. The AI Core is designed for maximum flexibility and can operate in several modes to meet the needs of both beginners and experts.
 
-#### Operating Modes: Flexibility for Everyone
+### Operating Modes: Flexibility for Everyone
 
 **1. Standard Mode (Built-in Engine)**
 By default, the AI Core uses its own built-in engine to run models in GGUF format (e.g., Llama 3, Phi-3, Gemma, Mistral). It automatically starts a local OpenAI-compatible HTTP server, ensuring seamless operation of all Membria components. In this mode, the user is provided with a simple interface for managing basic resources (e.g., how many layers of the model to offload to the GPU).
@@ -98,7 +98,7 @@ Membria is not a closed system. If a user has already meticulously set up their 
 
   * **Advantage:** This allows the use of all of Membria's powerful features (Agents, SkillForge, Knowledge Layer) on top of the user's existing, pre-configured models, avoiding duplicate setups and resource consumption.
 
-#### Advanced Mode: Full Control for Experts
+### Advanced Mode: Full Control for Experts
 
 For power users and developers, an "Advanced Mode" is available that provides access to detailed settings for the core and the models, enabling maximum performance and generation quality:
 
@@ -198,7 +198,7 @@ Privacy and data security are not additional features; they are fundamental prin
   * **Local by Default:** All of your personal information—documents, chat histories, indexed files, and settings—is stored **exclusively on your device**. No data is uploaded to central servers without your explicit permission.
   * **Encryption at Rest:** Local databases (SQLite, DuckDB) and configuration files can be encrypted using industry-standard practices (e.g., SQLCipher or OS-level file system encryption), protecting data even in the event of physical access to the device.
 
-### 4.2. Skill Isolation and Safety**
+### 4.2. Skill Isolation and Safety
 
 A modular system requires strict isolation to prevent abuse from third-party "skills" or agents.
 
@@ -206,7 +206,7 @@ A modular system requires strict isolation to prevent abuse from third-party "sk
   * **Sandboxing:** The processes running agent logic can be executed in a sandboxed environment, which technically restricts their access to only the resources for which permission was granted.
   * **Reputation and Signatures:** Skills distributed through the Membria ecosystem will have a digital signature from the author and a reputation system based on community feedback, helping to filter out questionable components.
 
-### 4.3. Secure Network Communication**
+### 4.3. Secure Network Communication
 
   * **Fully Offline Mode:** The client can operate in a **100% offline mode**, completely disconnected from the internet. In this case, you achieve absolute "air-gapped" privacy.
   * **End-to-End Encryption:** All communication between the client and Gateways is protected using modern encryption protocols (e.g., TLS 1.3), making data interception useless.
@@ -358,3 +358,6 @@ Membria is not just another application; it is an **AI Operating System** built 
 The result is a paradigm shift in what a personal AI can be. It moves from a passive "co-pilot" that responds to commands to a proactive, autonomous partner that can manage projects, conduct research, and synthesize knowledge across multiple domains. All of this is accomplished within a **"privacy-by-design"** framework that keeps the user's data on their device by default, giving them ultimate control.
 
 Membria is the missing piece that completes the puzzle of personal artificial intelligence. It is the foundation for a future where every user is equipped with an AI that is truly their own—private, adaptable, and perpetually growing smarter with them.
+
+
+
