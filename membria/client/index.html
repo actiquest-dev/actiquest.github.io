@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805918151939">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805918441644">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.805918151939" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.805918441644" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805918151939" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805918441644" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805918151939" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805918441644" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -1010,6 +1010,102 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong><code v-pre>[LOCAL]</code> - Report Generation:</strong> The local agent receives the expert analysis from the central model. It now has all the components it needs. It executes the final step (Step E) by using its local LLM to format the findings into a clean, concise summary report for the user.</li>
 </ol>
 <p>This synergistic model provides the best of both worlds: the privacy, speed, and autonomy of a local client, combined with secure, on-demand access to the immense power and comprehensive knowledge of a centralized corporate AI.</p>
+<p>Of course. I will add this detailed diagram and its description as a new, separate subsection within the &quot;Architecture for Corporate Clients&quot; section of the final English document.</p>
+<p>Here is the updated section.</p>
+<hr>
+<doc-anchor-target id="101-the-hybrid-corporate-workflow-a-visual-representation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#101-the-hybrid-corporate-workflow-a-visual-representation">#</doc-anchor-trigger>
+        <span>10.1 The Hybrid Corporate Workflow: A Visual Representation</span>
+    </h3>
+</doc-anchor-target>
+<p>The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">graph TD
+    subgraph &quot;Corporate Network (Private Cloud / On-Premise)&quot;
+        direction LR
+        
+        Templates[(Corporate&lt;br/&gt;Agent Templates)]
+        Gateway[Private Corporate Gateway]
+
+        subgraph &quot;Corporate MoEX LLM (Strategic Brain)&quot;
+            Router{Router / Gating Network}
+            Expert_Legal[Legal Expert]
+            Expert_Eng[Engineering Expert]
+            Expert_Finance[Finance Expert]
+            Expert_Etc[...]
+            
+            Router -- &quot;activates&quot; --&gt; Expert_Legal
+            Router -- &quot;activates&quot; --&gt; Expert_Eng
+        end
+
+        CKG[(Unified Corporate Knowledge Graph)]
+        
+        Gateway --&gt; Router
+        Expert_Legal --&gt; CKG
+        Expert_Eng --&gt; CKG
+        Expert_Finance --&gt; CKG
+    end
+
+    subgraph &quot;User's Device (Local Client)&quot;
+        User[User]
+        
+        subgraph &quot;Interface (UI/UX Layer)&quot;
+            VWO[Visual Workflow Orchestrator]
+            Chat[Standard Chat/Prompt UI]
+        end
+
+        User -- &quot;Builds Workflow&quot; --&gt; VWO
+        User -- &quot;Gives Prompt&quot; --&gt; Chat
+
+        VWO -- &quot;1. Constructed Plan&quot; --&gt; Orchestrator{Agent Orchestrator (Tactical Brain)}
+        Chat -- &quot;1. High-Level Goal&quot; --&gt; Orchestrator
+
+        subgraph &quot;Local Resources&quot;
+            LocalTools[Local Tools&lt;br/&gt;(Browser, Files)]
+            LocalRAG[Local Knowledge Base&lt;br/&gt;(RAG on user's files)]
+            LocalSLM[Local SLM&lt;br/&gt;(for simple tasks)]
+        end
+
+        Orchestrator -- &quot;2a. Local Actions&quot; --&gt; LocalTools
+        Orchestrator -- &quot;2b. Search Local Files&quot; --&gt; LocalRAG
+        Orchestrator -- &quot;2c. Simple Formatting&quot; --&gt; LocalSLM
+    end
+
+    %% Connections between Local and Central
+    Templates -- &quot;0. Download Agent Template&quot; --&gt; Orchestrator
+    Orchestrator -- &quot;3. Escalate Complex Query&quot; --&gt; Gateway
+    Gateway -- &quot;4. Expert Answer&quot; --&gt; Orchestrator
+    Orchestrator -- &quot;5. Final Report&quot; --&gt; VWO
+    Orchestrator -- &quot;5. Final Report&quot; --&gt; Chat
+
+
+    %% Styling for Clarity
+    style User fill:#c9f,stroke:#333,stroke-width:2px
+    style Orchestrator fill:#f9f,stroke:#333,stroke-width:4px
+    style VWO fill:#e6e6fa,stroke:#333,stroke-width:2px
+    style Templates fill:#e6e6fa,stroke:#333,stroke-width:2px</pre></div>
+<doc-anchor-target id="description-of-the-workflow-in-the-diagram">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#description-of-the-workflow-in-the-diagram">#</doc-anchor-trigger>
+        <span>Description of the Workflow in the Diagram:</span>
+    </h3>
+</doc-anchor-target>
+<p>This diagram illustrates the most advanced operational mode for the Membria corporate client, combining central governance with local flexibility.</p>
+<ol>
+<li><p><strong>Corporate Agent Templates:</strong></p>
+<ul>
+<li>A new entity, <code v-pre>Corporate Agent Templates</code>, exists within the secure corporate network. This repository holds pre-configured, IT-approved agent templates for common business tasks (e.g., data extraction, report generation).</li>
+<li><strong>Step 0:</strong> Before initiating a task, the user&#x27;s <code v-pre>Agent Orchestrator</code> can download a relevant template. This provides the agent with a standard, reliable baseline logic and toolset for its mission.</li>
+</ul>
+</li>
+<li><p><strong>Visual Workflow Orchestrator:</strong></p>
+<ul>
+<li>The <code v-pre>UI/UX Layer</code> on the client is shown with two methods for task initiation: the standard chat interface and the more advanced <code v-pre>Visual Workflow Orchestrator</code>.</li>
+<li><strong>Step 1:</strong> Instead of just writing a text prompt, a user can visually construct a complex, multi-step workflow using a drag-and-drop canvas. This constructed plan is then passed to the <code v-pre>Agent Orchestrator</code> for execution, making powerful automation accessible to non-technical users.</li>
+</ul>
+</li>
+</ol>
+<p>The rest of the flow proceeds as previously described: the local &quot;Tactical Brain&quot; executes what it can using local resources (Step 2a, 2b, 2c), escalates complex queries requiring deep corporate knowledge to the central &quot;Strategic Brain&quot; (Step 3), receives the synthesized expert answer (Step 4), and generates the final report for the user (Step 5).</p>
 <doc-anchor-target id="11-adaptive-agents-and-the-corporate-ecosystem">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#11-adaptive-agents-and-the-corporate-ecosystem">#</doc-anchor-trigger>
