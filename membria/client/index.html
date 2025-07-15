@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805917693224">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805918151939">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.805917693224" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.805918151939" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805917693224" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805918151939" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805917693224" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805918151939" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -955,18 +955,61 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong>Scalability and Manageability:</strong> It is far easier for an IT department to manage, update, and secure one central MoEX model than dozens of separate systems. Adding a new department&#x27;s knowledge equates to training and &quot;plugging in&quot; a new expert.</li>
 <li><strong>Unified Knowledge Base:</strong> The model itself becomes the single, dynamic &quot;source of truth&quot; for the entire company&#x27;s knowledge.</li>
 </ol>
-<doc-anchor-target id="the-hybrid-agent-workflow">
+<doc-anchor-target id="the-hybrid-agent-workflow-combining-local-agility-with-centralized-power">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-hybrid-agent-workflow-combining-local-agility-with-centralized-power">#</doc-anchor-trigger>
+        <span>The Hybrid Agent Workflow: Combining Local Agility with Centralized Power</span>
+    </h3>
+</doc-anchor-target>
+<p>In the Membria corporate architecture, agents operate on a sophisticated hybrid model that creates a dynamic division of labor between the local client and the central corporate MoEX LLM. This approach is designed to optimize for speed, privacy, and power, ensuring that tasks are executed at the most appropriate and efficient level.</p>
+<doc-anchor-target id="the-local-clients-role-the-tactical-orchestrator">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-hybrid-agent-workflow">#</doc-anchor-trigger>
-        <span>The Hybrid Agent Workflow</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-local-clients-role-the-tactical-orchestrator">#</doc-anchor-trigger>
+        <span>The Local Client&#x27;s Role: The Tactical Orchestrator</span>
     </h4>
 </doc-anchor-target>
-<p>In this architecture, Membria agents operate in an efficient hybrid mode:</p>
+<p>The user&#x27;s local Membria client acts as the &quot;tactical brain&quot; and &quot;hands&quot; of the operation. It manages the immediate workflow and handles all tasks that do not require deep, cross-domain corporate knowledge. Its responsibilities are:</p>
 <ul>
-<li><strong>The Local Client</strong> acts as the &quot;tactical brain&quot; and &quot;hands.&quot; It handles planning, orchestration, interaction with the user&#x27;s local files, and executes simple tasks.</li>
-<li><strong>The Central MoEX LLM</strong> acts as the &quot;strategic expert.&quot; The local agent queries it via the Corporate Gateway to solve problems that require deep, cross-domain corporate knowledge.</li>
+<li><strong>Task Decomposition and Planning:</strong> When a user provides a high-level goal, the <code v-pre>Agent Orchestrator</code> running locally takes charge. Its <code v-pre>Reasoning Head</code> breaks the goal down into a logical sequence of steps. This entire planning process happens on the user&#x27;s machine, ensuring it is fast and private.</li>
+<li><strong>Local Context and Tool Use:</strong> The agent first attempts to resolve each step using local resources. This includes performing RAG searches on the user&#x27;s private files via the <code v-pre>Local Knowledge Layer</code> and utilizing local tools like the file system I/O or the Playwright-based browser for web automation. This keeps sensitive data secure.</li>
+<li><strong>State Management and Error Recovery:</strong> The client locally manages the agent&#x27;s &quot;hot&quot; (in-memory) and &quot;warm&quot; (SQLite log) memory. This allows it to meticulously track its progress, prevent redundant actions, and gracefully recover from errors (e.g., a failed web page load) without needing to re-consult the powerful central model.</li>
+<li><strong>Simple Inference:</strong> For minor, self-contained tasks like reformatting text, classifying an email&#x27;s intent, or extracting data based on a simple pattern, the agent can use a small, efficient SLM running locally via the <code v-pre>AI Core</code>.</li>
 </ul>
-<p>This approach provides the ideal balance between local speed and privacy, and secure access to an immensely powerful, centralized corporate intelligence.</p>
+<doc-anchor-target id="the-central-moex-llms-role-the-expert-on-demand">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-central-moex-llms-role-the-expert-on-demand">#</doc-anchor-trigger>
+        <span>The Central MoEX LLM&#x27;s Role: The Expert-on-Demand</span>
+    </h4>
+</doc-anchor-target>
+<p>The local orchestrator makes a deliberate and intelligent decision to &quot;escalate&quot; a task to the central model only when necessary. The central Corporate MoEX LLM is not involved in every step; it is queried like a highly specialized, internal consultant.</p>
+<ul>
+<li><strong>Deep Analysis and Synthesis:</strong> When a step requires deep, cross-domain knowledge that resides outside the user&#x27;s local context (e.g., &quot;analyze this new draft agreement against our company&#x27;s global risk framework&quot;), the local agent sends a well-formed query to the Corporate Gateway.</li>
+<li><strong>Access to a Unified Corporate Knowledge Base:</strong> The MoEX model&#x27;s experts (e.g., Legal, Finance, HR, Engineering) are trained on the entire company&#x27;s unified knowledge base. They can answer questions that no single user&#x27;s local data could address, breaking down information silos across the organization.</li>
+<li><strong>Complex Generation Tasks:</strong> For tasks that require sophisticated generation based on company-wide standards, such as drafting a full legal document from a corporate template or writing a formal report, the superior generative power of the large central model is utilized.</li>
+</ul>
+<doc-anchor-target id="example-workflow-the-hybrid-in-action">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-workflow-the-hybrid-in-action">#</doc-anchor-trigger>
+        <span>Example Workflow: The Hybrid in Action</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>User Goal:</strong> &quot;Analyze the risks in this new software license agreement I just received.&quot;</p>
+<ol>
+<li><strong><code v-pre>[LOCAL]</code> - Task Planning:</strong> The user provides the goal and the new license document. The Membria client&#x27;s <code v-pre>Agent Orchestrator</code> creates a plan:
+<ul>
+<li><em>Step A:</em> Read and parse the new license document.</li>
+<li><em>Step B:</em> Retrieve our company&#x27;s standard software agreement templates for comparison.</li>
+<li><em>Step C:</em> Identify all clauses in the new license related to technical obligations and data privacy.</li>
+<li><em>Step D:</em> Assess the legal and compliance risks of these clauses based on our corporate standards.</li>
+<li><em>Step E:</em> Generate a summary report of the findings.</li>
+</ul>
+</li>
+<li><strong><code v-pre>[LOCAL]</code> - Local Data Retrieval:</strong> The agent executes Step B by performing a RAG search on the <code v-pre>Local Knowledge Layer</code> to find the company&#x27;s standard legal templates, which were previously indexed.</li>
+<li><strong><code v-pre>[CENTRAL]</code> - Expert Analysis Query:</strong> For Step D, the local agent realizes it needs deep legal and technical expertise. It sends a request to the Corporate Gateway containing the text of the new license and the relevant clauses from the internal templates. The prompt is: <em>&quot;Activate &#x27;Legal&#x27; and &#x27;Engineering&#x27; experts. Analyze the provided license text against our standard clauses and identify all risks where technical commitments (e.g., use of specific open-source libraries) create a conflict with our standard legal terms.&quot;</em></li>
+<li><strong><code v-pre>[CENTRAL]</code> - MoEX Processing:</strong> The Corporate MoEX LLM receives the query. Its router activates the &quot;Legal Expert&quot; and the &quot;Engineering Expert&quot;. They work in concert to analyze the request and generate a detailed analysis of the cross-domain risks.</li>
+<li><strong><code v-pre>[LOCAL]</code> - Report Generation:</strong> The local agent receives the expert analysis from the central model. It now has all the components it needs. It executes the final step (Step E) by using its local LLM to format the findings into a clean, concise summary report for the user.</li>
+</ol>
+<p>This synergistic model provides the best of both worlds: the privacy, speed, and autonomy of a local client, combined with secure, on-demand access to the immense power and comprehensive knowledge of a centralized corporate AI.</p>
 <doc-anchor-target id="11-adaptive-agents-and-the-corporate-ecosystem">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#11-adaptive-agents-and-the-corporate-ecosystem">#</doc-anchor-trigger>
@@ -975,10 +1018,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 </doc-anchor-target>
 <p>This section describes the most advanced level of the Membria client&#x27;s operation in a corporate environment. The architecture doesn&#x27;t just provide access to knowledge; it creates a <strong>self-improving, adaptive task execution system</strong> that combines centralized governance with personalized local efficiency.</p>
 <doc-anchor-target id="corporate-agent-templates">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#corporate-agent-templates">#</doc-anchor-trigger>
         <span>Corporate Agent Templates</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>The company&#x27;s IT department can create and maintain an internal library of <strong>agent templates</strong>. These are not just prompts, but pre-configured agent &quot;skeletons&quot; for solving common business tasks, inspired by the KnowledgeVerse approach.</p>
 <ul>
@@ -989,10 +1032,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 </ul>
 <p>A user downloads the required template from the corporate library directly into their local Membria client to perform a specific task.</p>
 <doc-anchor-target id="local-fine-tuning-dynamic-micro-skills">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#local-fine-tuning-dynamic-micro-skills">#</doc-anchor-trigger>
         <span>Local Fine-Tuning: Dynamic &quot;Micro-Skills&quot;</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>The downloaded agent template is not a static program. A key innovation is its ability for <strong>on-the-fly dynamic self-modification</strong> to execute the user&#x27;s task with maximum precision, using the client&#x27;s local resources. This is a business-oriented alternative to visual analysis systems like PyVision, where the agent adapts not to a visual interface, but to the <strong>context of the business task</strong>.</p>
 <p><strong>How it works in practice:</strong></p>
@@ -1003,10 +1046,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong>Efficient Execution:</strong> By applying this temporary &quot;micro-skill,&quot; the agent quickly and accurately processes the entire batch of 50 documents, operating far more efficiently and cheaply than if it had constantly queried the central model.</li>
 </ol>
 <doc-anchor-target id="advantages-of-the-template--adaptation-hybrid-model">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#advantages-of-the-template--adaptation-hybrid-model">#</doc-anchor-trigger>
         <span>Advantages of the &quot;Template + Adaptation&quot; Hybrid Model</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Precision and Personalization:</strong> Agents adapt to the unique nuances of a specific user&#x27;s tasks and data, ensuring the highest accuracy where standard templates fall short.</li>
@@ -1028,7 +1071,7 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong>Knowledge and Growth:</strong> Membria shatters the &quot;static brain&quot; problem by creating a hybrid knowledge system. The <code v-pre>Local Knowledge Layer</code> gives the AI a perfect, searchable memory of the user&#x27;s personal world (RAG). Crucially, this is connected to the global, ever-growing Membria network, allowing the agent to pull fresh, validated information from the outside world (CAG). This ensures the AI is not only personalized but also perpetually learning and up-to-date.</li>
 </ol>
 <p>The result is a paradigm shift in what a personal AI can be. It moves from a passive &quot;co-pilot&quot; that responds to commands to a proactive, autonomous partner that can manage projects, conduct research, and synthesize knowledge across multiple domains. All of this is accomplished within a <strong>&quot;privacy-by-design&quot;</strong> framework that keeps the user&#x27;s data on their device by default, giving them ultimate control.</p>
-<p>Membria is the missing piece that completes the puzzle of personal artificial intelligence. It is the foundation for a future where every user is equipped with an AI that is truly their own—private, adaptable, and perpetually growing smarter with them.</p>
+<p><em>Membria is the missing piece that completes the puzzle of personal artificial intelligence. It is the foundation for a future where every user is equipped with an AI that is truly their own—private, adaptable, and perpetually growing smarter with them.</em></p>
 
                                 
                                 <!-- Required only on API pages -->
