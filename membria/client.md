@@ -504,11 +504,6 @@ Here is the updated section.
 The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.
 
 ```mermaid
----
-config:
-  layout: fixed
-  theme: base
----
 flowchart TD
  subgraph subGraph0["Corporate MoEX LLM (Strategic Brain)"]
         Router{"Router / Gating Network"}
