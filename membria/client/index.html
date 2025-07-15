@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805919335613">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805935132267">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.805919335613" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.805935132267" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805919335613" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805935132267" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805919335613" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805935132267" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -1020,70 +1020,62 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
     </h3>
 </doc-anchor-target>
 <p>The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.</p>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">graph TD
-    subgraph &quot;Corporate Network (Private Cloud / On-Premise)&quot;
-        direction LR
-        
-        Templates[(Corporate&lt;br/&gt;Agent Templates)]
-        Gateway[Private Corporate Gateway]
-
-        subgraph &quot;Corporate MoEX LLM (Strategic Brain)&quot;
-            Router{Router / Gating Network}
-            Expert_Legal[Legal Expert]
-            Expert_Eng[Engineering Expert]
-            Expert_Finance[Finance Expert]
-            Expert_Etc[...]
-            
-            Router -- &quot;activates&quot; --&gt; Expert_Legal
-            Router -- &quot;activates&quot; --&gt; Expert_Eng
-        end
-
-        CKG[(Unified Corporate Knowledge Graph)]
-        
-        Gateway --&gt; Router
-        Expert_Legal --&gt; CKG
-        Expert_Eng --&gt; CKG
-        Expert_Finance --&gt; CKG
-    end
-
-    subgraph &quot;User's Device (Local Client)&quot;
-        User[User]
-        
-        subgraph &quot;Interface (UI/UX Layer)&quot;
-            VWO[Visual Workflow Orchestrator]
-            Chat[Standard Chat/Prompt UI]
-        end
-
-        User -- &quot;Builds Workflow&quot; --&gt; VWO
-        User -- &quot;Gives Prompt&quot; --&gt; Chat
-
-        VWO -- &quot;1. Constructed Plan&quot; --&gt; Orchestrator{Agent Orchestrator (Tactical Brain)}
-        Chat -- &quot;1. High-Level Goal&quot; --&gt; Orchestrator
-
-        subgraph &quot;Local Resources&quot;
-            LocalTools[Local Tools&lt;br/&gt;(Browser, Files)]
-            LocalRAG[Local Knowledge Base&lt;br/&gt;(RAG on user's files)]
-            LocalSLM[Local SLM&lt;br/&gt;(for simple tasks)]
-        end
-
-        Orchestrator -- &quot;2a. Local Actions&quot; --&gt; LocalTools
-        Orchestrator -- &quot;2b. Search Local Files&quot; --&gt; LocalRAG
-        Orchestrator -- &quot;2c. Simple Formatting&quot; --&gt; LocalSLM
-    end
-
-    %% Connections
-    Templates -- &quot;0. Download Agent Template&quot; --&gt; Orchestrator
-    Orchestrator -- &quot;3. Escalate Complex Query&quot; --&gt; Gateway
-    Gateway -- &quot;4. Expert Answer&quot; --&gt; Orchestrator
-    Orchestrator -- &quot;5. Final Report&quot; --&gt; VWO
-    Orchestrator -- &quot;5. Final Report&quot; --&gt; Chat
-
-
-    %% Styling
-    style User fill:#c9f,stroke:#333,stroke-width:2px
-    style Orchestrator fill:#f9f,stroke:#333,stroke-width:4px
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">---
+config:
+  layout: fixed
+  theme: base
+---
+flowchart TD
+ subgraph subGraph0[&quot;Corporate MoEX LLM (Strategic Brain)&quot;]
+        Router{&quot;Router / Gating Network&quot;}
+        Expert_Legal[&quot;Legal Expert&quot;]
+        Expert_Eng[&quot;Engineering Expert&quot;]
+        Expert_Finance[&quot;Finance Expert&quot;]
+        Expert_Etc[&quot;...&quot;]
+  end
+ subgraph subGraph1[&quot;Corporate Network (Private Cloud / On-Premise)&quot;]
+    direction LR
+        Templates[(&quot;Corporate Agent Templates&quot;)]
+        Gateway[&quot;Private Corporate Gateway&quot;]
+        subGraph0
+        CKG[(&quot;Unified Corporate Knowledge Graph&quot;)]
+  end
+ subgraph subGraph2[&quot;Interface (UI/UX Layer)&quot;]
+        VWO[&quot;Visual Workflow Orchestrator&quot;]
+        Chat[&quot;Standard Chat/Prompt UI&quot;]
+  end
+ subgraph subGraph3[&quot;Local Resources&quot;]
+        LocalTools[&quot;Local Tools - Browser, Files&quot;]
+        LocalRAG@{ label: &quot;Local Knowledge Base - RAG on user's files&quot; }
+        LocalSLM[&quot;Local SLM - for simple tasks&quot;]
+  end
+ subgraph subGraph4[&quot;User's Device (Local Client)&quot;]
+        User[&quot;User&quot;]
+        subGraph2
+        Orchestrator[&quot;Agent Orchestrator&quot;]
+        subGraph3
+  end
+    Router -- activates --&gt; Expert_Legal &amp; Expert_Eng
+    Gateway --&gt; Router
+    Expert_Legal --&gt; CKG
+    Expert_Eng --&gt; CKG
+    Expert_Finance --&gt; CKG
+    User -- Builds Workflow --&gt; VWO
+    User -- Gives Prompt --&gt; Chat
+    VWO -- Constructed Plan --&gt; Orchestrator
+    Chat -- &quot;High-Level Goal&quot; --&gt; Orchestrator
+    Orchestrator -- Local Actions --&gt; LocalTools
+    Orchestrator -- Search Local Files --&gt; LocalRAG
+    Orchestrator -- Simple Formatting --&gt; LocalSLM
+    Templates -- Download Agent Template --&gt; Orchestrator
+    Orchestrator -- Escalate Complex Query --&gt; Gateway
+    Gateway -- Expert Answer --&gt; Orchestrator
+    Orchestrator -- Final Report --&gt; VWO &amp; Chat
+    LocalRAG@{ shape: rect}
+    style Templates fill:#e6e6fa,stroke:#333,stroke-width:2px
     style VWO fill:#e6e6fa,stroke:#333,stroke-width:2px
-    style Templates fill:#e6e6fa,stroke:#333,stroke-width:2px</pre></div>
+    style User fill:#c9f,stroke:#333,stroke-width:2px
+    style Orchestrator fill:#f9f,stroke:#333,stroke-width:4px</pre></div>
 <doc-anchor-target id="description-of-the-workflow-in-the-diagram">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#description-of-the-workflow-in-the-diagram">#</doc-anchor-trigger>
