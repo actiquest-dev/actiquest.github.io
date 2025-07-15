@@ -455,20 +455,49 @@ The MoEX model's internal router automatically determines which expert (or combi
 3.  **Scalability and Manageability:** It is far easier for an IT department to manage, update, and secure one central MoEX model than dozens of separate systems. Adding a new department's knowledge equates to training and "plugging in" a new expert.
 4.  **Unified Knowledge Base:** The model itself becomes the single, dynamic "source of truth" for the entire company's knowledge.
 
-#### The Hybrid Agent Workflow
+### The Hybrid Agent Workflow: Combining Local Agility with Centralized Power
 
-In this architecture, Membria agents operate in an efficient hybrid mode:
+In the Membria corporate architecture, agents operate on a sophisticated hybrid model that creates a dynamic division of labor between the local client and the central corporate MoEX LLM. This approach is designed to optimize for speed, privacy, and power, ensuring that tasks are executed at the most appropriate and efficient level.
 
-  * **The Local Client** acts as the "tactical brain" and "hands." It handles planning, orchestration, interaction with the user's local files, and executes simple tasks.
-  * **The Central MoEX LLM** acts as the "strategic expert." The local agent queries it via the Corporate Gateway to solve problems that require deep, cross-domain corporate knowledge.
+#### The Local Client's Role: The Tactical Orchestrator
 
-This approach provides the ideal balance between local speed and privacy, and secure access to an immensely powerful, centralized corporate intelligence.
+The user's local Membria client acts as the "tactical brain" and "hands" of the operation. It manages the immediate workflow and handles all tasks that do not require deep, cross-domain corporate knowledge. Its responsibilities are:
+
+* **Task Decomposition and Planning:** When a user provides a high-level goal, the `Agent Orchestrator` running locally takes charge. Its `Reasoning Head` breaks the goal down into a logical sequence of steps. This entire planning process happens on the user's machine, ensuring it is fast and private.
+* **Local Context and Tool Use:** The agent first attempts to resolve each step using local resources. This includes performing RAG searches on the user's private files via the `Local Knowledge Layer` and utilizing local tools like the file system I/O or the Playwright-based browser for web automation. This keeps sensitive data secure.
+* **State Management and Error Recovery:** The client locally manages the agent's "hot" (in-memory) and "warm" (SQLite log) memory. This allows it to meticulously track its progress, prevent redundant actions, and gracefully recover from errors (e.g., a failed web page load) without needing to re-consult the powerful central model.
+* **Simple Inference:** For minor, self-contained tasks like reformatting text, classifying an email's intent, or extracting data based on a simple pattern, the agent can use a small, efficient SLM running locally via the `AI Core`.
+
+#### The Central MoEX LLM's Role: The Expert-on-Demand
+
+The local orchestrator makes a deliberate and intelligent decision to "escalate" a task to the central model only when necessary. The central Corporate MoEX LLM is not involved in every step; it is queried like a highly specialized, internal consultant.
+
+* **Deep Analysis and Synthesis:** When a step requires deep, cross-domain knowledge that resides outside the user's local context (e.g., "analyze this new draft agreement against our company's global risk framework"), the local agent sends a well-formed query to the Corporate Gateway.
+* **Access to a Unified Corporate Knowledge Base:** The MoEX model's experts (e.g., Legal, Finance, HR, Engineering) are trained on the entire company's unified knowledge base. They can answer questions that no single user's local data could address, breaking down information silos across the organization.
+* **Complex Generation Tasks:** For tasks that require sophisticated generation based on company-wide standards, such as drafting a full legal document from a corporate template or writing a formal report, the superior generative power of the large central model is utilized.
+
+### Example Workflow: The Hybrid in Action
+
+**User Goal:** "Analyze the risks in this new software license agreement I just received."
+
+1.  **`[LOCAL]` - Task Planning:** The user provides the goal and the new license document. The Membria client's `Agent Orchestrator` creates a plan:
+    * *Step A:* Read and parse the new license document.
+    * *Step B:* Retrieve our company's standard software agreement templates for comparison.
+    * *Step C:* Identify all clauses in the new license related to technical obligations and data privacy.
+    * *Step D:* Assess the legal and compliance risks of these clauses based on our corporate standards.
+    * *Step E:* Generate a summary report of the findings.
+2.  **`[LOCAL]` - Local Data Retrieval:** The agent executes Step B by performing a RAG search on the `Local Knowledge Layer` to find the company's standard legal templates, which were previously indexed.
+3.  **`[CENTRAL]` - Expert Analysis Query:** For Step D, the local agent realizes it needs deep legal and technical expertise. It sends a request to the Corporate Gateway containing the text of the new license and the relevant clauses from the internal templates. The prompt is: *"Activate 'Legal' and 'Engineering' experts. Analyze the provided license text against our standard clauses and identify all risks where technical commitments (e.g., use of specific open-source libraries) create a conflict with our standard legal terms."*
+4.  **`[CENTRAL]` - MoEX Processing:** The Corporate MoEX LLM receives the query. Its router activates the "Legal Expert" and the "Engineering Expert". They work in concert to analyze the request and generate a detailed analysis of the cross-domain risks.
+5.  **`[LOCAL]` - Report Generation:** The local agent receives the expert analysis from the central model. It now has all the components it needs. It executes the final step (Step E) by using its local LLM to format the findings into a clean, concise summary report for the user.
+
+This synergistic model provides the best of both worlds: the privacy, speed, and autonomy of a local client, combined with secure, on-demand access to the immense power and comprehensive knowledge of a centralized corporate AI.
 
 ## 11. Adaptive Agents and the Corporate Ecosystem
 
 This section describes the most advanced level of the Membria client's operation in a corporate environment. The architecture doesn't just provide access to knowledge; it creates a **self-improving, adaptive task execution system** that combines centralized governance with personalized local efficiency.
 
-#### Corporate Agent Templates
+### Corporate Agent Templates
 
 The company's IT department can create and maintain an internal library of **agent templates**. These are not just prompts, but pre-configured agent "skeletons" for solving common business tasks, inspired by the KnowledgeVerse approach.
 
@@ -479,7 +508,7 @@ The company's IT department can create and maintain an internal library of **age
 
 A user downloads the required template from the corporate library directly into their local Membria client to perform a specific task.
 
-#### Local Fine-Tuning: Dynamic "Micro-Skills"
+### Local Fine-Tuning: Dynamic "Micro-Skills"
 
 The downloaded agent template is not a static program. A key innovation is its ability for **on-the-fly dynamic self-modification** to execute the user's task with maximum precision, using the client's local resources. This is a business-oriented alternative to visual analysis systems like PyVision, where the agent adapts not to a visual interface, but to the **context of the business task**.
 
@@ -490,7 +519,7 @@ The downloaded agent template is not a static program. A key innovation is its a
 3.  **Local Self-Modification:** Instead of sending 50 complex requests to the central MoEX LLM, the agent uses **local inference** (on a small SLM built into the client). It generates a **temporary, single-use "micro-skill"**—this could be a set of hyper-specific instructions or even a "micro-LoRA"—perfectly "tuned" to extract data from these specific invoices. To ensure the reliability of these instructions, it uses principles similar to `Idem-Prompt` to make the output stable and predictable.
 4.  **Efficient Execution:** By applying this temporary "micro-skill," the agent quickly and accurately processes the entire batch of 50 documents, operating far more efficiently and cheaply than if it had constantly queried the central model.
 
-#### Advantages of the "Template + Adaptation" Hybrid Model
+### Advantages of the "Template + Adaptation" Hybrid Model
 
   * **Precision and Personalization:** Agents adapt to the unique nuances of a specific user's tasks and data, ensuring the highest accuracy where standard templates fall short.
   * **Reduced Load on the Central LLM:** 95% of routine, repetitive work is performed locally. Requests to the expensive central MoEX LLM are sent only to solve truly complex, non-trivial parts of a task.
@@ -509,4 +538,4 @@ Membria is not just another application; it is an **AI Operating System** built 
 
 The result is a paradigm shift in what a personal AI can be. It moves from a passive "co-pilot" that responds to commands to a proactive, autonomous partner that can manage projects, conduct research, and synthesize knowledge across multiple domains. All of this is accomplished within a **"privacy-by-design"** framework that keeps the user's data on their device by default, giving them ultimate control.
 
-Membria is the missing piece that completes the puzzle of personal artificial intelligence. It is the foundation for a future where every user is equipped with an AI that is truly their own—private, adaptable, and perpetually growing smarter with them.
+_Membria is the missing piece that completes the puzzle of personal artificial intelligence. It is the foundation for a future where every user is equipped with an AI that is truly their own—private, adaptable, and perpetually growing smarter with them._
