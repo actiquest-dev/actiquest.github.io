@@ -493,6 +493,99 @@ The local orchestrator makes a deliberate and intelligent decision to "escalate"
 
 This synergistic model provides the best of both worlds: the privacy, speed, and autonomy of a local client, combined with secure, on-demand access to the immense power and comprehensive knowledge of a centralized corporate AI.
 
+Of course. I will add this detailed diagram and its description as a new, separate subsection within the "Architecture for Corporate Clients" section of the final English document.
+
+Here is the updated section.
+
+-----
+
+### 10.1 The Hybrid Corporate Workflow: A Visual Representation
+
+The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.
+
+```mermaid
+graph TD
+    subgraph "Corporate Network (Private Cloud / On-Premise)"
+        direction LR
+        
+        Templates[(Corporate<br/>Agent Templates)]
+        Gateway[Private Corporate Gateway]
+
+        subgraph "Corporate MoEX LLM (Strategic Brain)"
+            Router{Router / Gating Network}
+            Expert_Legal[Legal Expert]
+            Expert_Eng[Engineering Expert]
+            Expert_Finance[Finance Expert]
+            Expert_Etc[...]
+            
+            Router -- "activates" --> Expert_Legal
+            Router -- "activates" --> Expert_Eng
+        end
+
+        CKG[(Unified Corporate Knowledge Graph)]
+        
+        Gateway --> Router
+        Expert_Legal --> CKG
+        Expert_Eng --> CKG
+        Expert_Finance --> CKG
+    end
+
+    subgraph "User's Device (Local Client)"
+        User[User]
+        
+        subgraph "Interface (UI/UX Layer)"
+            VWO[Visual Workflow Orchestrator]
+            Chat[Standard Chat/Prompt UI]
+        end
+
+        User -- "Builds Workflow" --> VWO
+        User -- "Gives Prompt" --> Chat
+
+        VWO -- "1. Constructed Plan" --> Orchestrator{Agent Orchestrator (Tactical Brain)}
+        Chat -- "1. High-Level Goal" --> Orchestrator
+
+        subgraph "Local Resources"
+            LocalTools[Local Tools<br/>(Browser, Files)]
+            LocalRAG[Local Knowledge Base<br/>(RAG on user's files)]
+            LocalSLM[Local SLM<br/>(for simple tasks)]
+        end
+
+        Orchestrator -- "2a. Local Actions" --> LocalTools
+        Orchestrator -- "2b. Search Local Files" --> LocalRAG
+        Orchestrator -- "2c. Simple Formatting" --> LocalSLM
+    end
+
+    %% Connections between Local and Central
+    Templates -- "0. Download Agent Template" --> Orchestrator
+    Orchestrator -- "3. Escalate Complex Query" --> Gateway
+    Gateway -- "4. Expert Answer" --> Orchestrator
+    Orchestrator -- "5. Final Report" --> VWO
+    Orchestrator -- "5. Final Report" --> Chat
+
+
+    %% Styling for Clarity
+    style User fill:#c9f,stroke:#333,stroke-width:2px
+    style Orchestrator fill:#f9f,stroke:#333,stroke-width:4px
+    style VWO fill:#e6e6fa,stroke:#333,stroke-width:2px
+    style Templates fill:#e6e6fa,stroke:#333,stroke-width:2px
+```
+
+### Description of the Workflow in the Diagram:
+
+This diagram illustrates the most advanced operational mode for the Membria corporate client, combining central governance with local flexibility.
+
+1.  **Corporate Agent Templates:**
+
+      * A new entity, `Corporate Agent Templates`, exists within the secure corporate network. This repository holds pre-configured, IT-approved agent templates for common business tasks (e.g., data extraction, report generation).
+      * **Step 0:** Before initiating a task, the user's `Agent Orchestrator` can download a relevant template. This provides the agent with a standard, reliable baseline logic and toolset for its mission.
+
+2.  **Visual Workflow Orchestrator:**
+
+      * The `UI/UX Layer` on the client is shown with two methods for task initiation: the standard chat interface and the more advanced `Visual Workflow Orchestrator`.
+      * **Step 1:** Instead of just writing a text prompt, a user can visually construct a complex, multi-step workflow using a drag-and-drop canvas. This constructed plan is then passed to the `Agent Orchestrator` for execution, making powerful automation accessible to non-technical users.
+
+The rest of the flow proceeds as previously described: the local "Tactical Brain" executes what it can using local resources (Step 2a, 2b, 2c), escalates complex queries requiring deep corporate knowledge to the central "Strategic Brain" (Step 3), receives the synthesized expert answer (Step 4), and generates the final report for the user (Step 5).
+
 ## 11. Adaptive Agents and the Corporate Ecosystem
 
 This section describes the most advanced level of the Membria client's operation in a corporate environment. The architecture doesn't just provide access to knowledge; it creates a **self-improving, adaptive task execution system** that combines centralized governance with personalized local efficiency.
