@@ -504,70 +504,62 @@ Here is the updated section.
 The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.
 
 ```mermaid
-graph TD
-    subgraph "Corporate Network (Private Cloud / On-Premise)"
-        direction LR
-        
-        Templates[(Corporate<br/>Agent Templates)]
-        Gateway[Private Corporate Gateway]
-
-        subgraph "Corporate MoEX LLM (Strategic Brain)"
-            Router{Router / Gating Network}
-            Expert_Legal[Legal Expert]
-            Expert_Eng[Engineering Expert]
-            Expert_Finance[Finance Expert]
-            Expert_Etc[...]
-            
-            Router -- "activates" --> Expert_Legal
-            Router -- "activates" --> Expert_Eng
-        end
-
-        CKG[(Unified Corporate Knowledge Graph)]
-        
-        Gateway --> Router
-        Expert_Legal --> CKG
-        Expert_Eng --> CKG
-        Expert_Finance --> CKG
-    end
-
-    subgraph "User's Device (Local Client)"
-        User[User]
-        
-        subgraph "Interface (UI/UX Layer)"
-            VWO[Visual Workflow Orchestrator]
-            Chat[Standard Chat/Prompt UI]
-        end
-
-        User -- "Builds Workflow" --> VWO
-        User -- "Gives Prompt" --> Chat
-
-        VWO -- "1. Constructed Plan" --> Orchestrator{Agent Orchestrator (Tactical Brain)}
-        Chat -- "1. High-Level Goal" --> Orchestrator
-
-        subgraph "Local Resources"
-            LocalTools[Local Tools<br/>(Browser, Files)]
-            LocalRAG[Local Knowledge Base<br/>(RAG on user's files)]
-            LocalSLM[Local SLM<br/>(for simple tasks)]
-        end
-
-        Orchestrator -- "2a. Local Actions" --> LocalTools
-        Orchestrator -- "2b. Search Local Files" --> LocalRAG
-        Orchestrator -- "2c. Simple Formatting" --> LocalSLM
-    end
-
-    %% Connections
-    Templates -- "0. Download Agent Template" --> Orchestrator
-    Orchestrator -- "3. Escalate Complex Query" --> Gateway
-    Gateway -- "4. Expert Answer" --> Orchestrator
-    Orchestrator -- "5. Final Report" --> VWO
-    Orchestrator -- "5. Final Report" --> Chat
-
-
-    %% Styling
+---
+config:
+  layout: fixed
+  theme: base
+---
+flowchart TD
+ subgraph subGraph0["Corporate MoEX LLM (Strategic Brain)"]
+        Router{"Router / Gating Network"}
+        Expert_Legal["Legal Expert"]
+        Expert_Eng["Engineering Expert"]
+        Expert_Finance["Finance Expert"]
+        Expert_Etc["..."]
+  end
+ subgraph subGraph1["Corporate Network (Private Cloud / On-Premise)"]
+    direction LR
+        Templates[("Corporate Agent Templates")]
+        Gateway["Private Corporate Gateway"]
+        subGraph0
+        CKG[("Unified Corporate Knowledge Graph")]
+  end
+ subgraph subGraph2["Interface (UI/UX Layer)"]
+        VWO["Visual Workflow Orchestrator"]
+        Chat["Standard Chat/Prompt UI"]
+  end
+ subgraph subGraph3["Local Resources"]
+        LocalTools["Local Tools - Browser, Files"]
+        LocalRAG@{ label: "Local Knowledge Base - RAG on user's files" }
+        LocalSLM["Local SLM - for simple tasks"]
+  end
+ subgraph subGraph4["User's Device (Local Client)"]
+        User["User"]
+        subGraph2
+        Orchestrator["Agent Orchestrator"]
+        subGraph3
+  end
+    Router -- activates --> Expert_Legal & Expert_Eng
+    Gateway --> Router
+    Expert_Legal --> CKG
+    Expert_Eng --> CKG
+    Expert_Finance --> CKG
+    User -- Builds Workflow --> VWO
+    User -- Gives Prompt --> Chat
+    VWO -- Constructed Plan --> Orchestrator
+    Chat -- "High-Level Goal" --> Orchestrator
+    Orchestrator -- Local Actions --> LocalTools
+    Orchestrator -- Search Local Files --> LocalRAG
+    Orchestrator -- Simple Formatting --> LocalSLM
+    Templates -- Download Agent Template --> Orchestrator
+    Orchestrator -- Escalate Complex Query --> Gateway
+    Gateway -- Expert Answer --> Orchestrator
+    Orchestrator -- Final Report --> VWO & Chat
+    LocalRAG@{ shape: rect}
+    style Templates fill:#e6e6fa,stroke:#333,stroke-width:2px
+    style VWO fill:#e6e6fa,stroke:#333,stroke-width:2px
     style User fill:#c9f,stroke:#333,stroke-width:2px
     style Orchestrator fill:#f9f,stroke:#333,stroke-width:4px
-    style VWO fill:#e6e6fa,stroke:#333,stroke-width:2px
-    style Templates fill:#e6e6fa,stroke:#333,stroke-width:2px
 ```
 
 ### Description of the Workflow in the Diagram:
