@@ -559,6 +559,8 @@ graph TD
     Templates -- "0. Download Agent Template" --> Orchestrator
     Orchestrator -- "3. Escalate Complex Query" --> Gateway
     Gateway -- "4. Expert Answer" --> Orchestrator
+    
+    %% Corrected Final Output Flow
     Orchestrator -- "5. Final Report" --> VWO
     Orchestrator -- "5. Final Report" --> Chat
 
