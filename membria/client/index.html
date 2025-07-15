@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805916889758">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805917693224">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.805916889758" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.805917693224" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805916889758" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805917693224" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805916889758" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805917693224" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -268,7 +268,13 @@
         <span>The Transformation: What Changes with Membria</span>
     </h4>
 </doc-anchor-target>
-<p>The Membria Client is the operating system that demolishes this &quot;wall of limitations,&quot; transforming a static model into a living, constantly evolving partner. This approach aligns with a pragmatic view where complex goals are decomposed into modular sub-tasks, each of which can be reliably handled by specialized and efficient models.</p>
+<blockquote>
+<p>The Membria Client is the operating system that demolishes this &quot;wall
+of limitations,&quot; transforming a static model into a living, constantly
+evolving partner. This approach aligns with a pragmatic view where
+complex goals are decomposed into modular sub-tasks, each of which can
+be reliably handled by specialized and efficient models.</p>
+</blockquote>
 <ul>
 <li><strong>Solving the &quot;Static Brain&quot; -&gt; A Living Brain:</strong> When a local model doesn&#x27;t know an answer, Membria&#x27;s CAG (Cache-Augmented Generation) mechanism seamlessly queries the global, constantly updated Knowledge Graph. Your model trained in 2023 can now operate with facts from today.</li>
 <li><strong>Solving &quot;Amnesia&quot; -&gt; A Personal Memory:</strong> Membria&#x27;s local database architecture (SQLite + DuckDB) becomes your AI&#x27;s long-term memory. Its agents can privately index your local files, creating a rich personal context. The AI begins to understand your projects and remember your preferences.</li>
@@ -342,10 +348,10 @@
 </doc-anchor-target>
 <p>This is the foundation upon which all other capabilities are built. The AI Core is designed for maximum flexibility and can operate in several modes to meet the needs of both beginners and experts.</p>
 <doc-anchor-target id="operating-modes-flexibility-for-everyone">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#operating-modes-flexibility-for-everyone">#</doc-anchor-trigger>
         <span>Operating Modes: Flexibility for Everyone</span>
-    </h5>
+    </h4>
 </doc-anchor-target>
 <p><strong>1. Standard Mode (Built-in Engine)</strong>
 By default, the AI Core uses its own built-in engine to run models in GGUF format (e.g., Llama 3, Phi-3, Gemma, Mistral). It automatically starts a local OpenAI-compatible HTTP server, ensuring seamless operation of all Membria components. In this mode, the user is provided with a simple interface for managing basic resources (e.g., how many layers of the model to offload to the GPU).</p>
@@ -355,12 +361,12 @@ Membria is not a closed system. If a user has already meticulously set up their 
 <li><strong>Advantage:</strong> This allows the use of all of Membria&#x27;s powerful features (Agents, SkillForge, Knowledge Layer) on top of the user&#x27;s existing, pre-configured models, avoiding duplicate setups and resource consumption.</li>
 </ul>
 <doc-anchor-target id="advanced-mode-full-control-for-experts">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-mode-full-control-for-experts">#</doc-anchor-trigger>
         <span>Advanced Mode: Full Control for Experts</span>
-    </h5>
+    </h4>
 </doc-anchor-target>
-<p>For power users and developers, an &quot;Advanced Mode&quot; is available that provides access to detailed settings for the core and the models, enabling maximum performance and generation quality:</p>
+<p>For power users and developers, an <em>&quot;Advanced Mode&quot;</em> is available that provides access to detailed settings for the core and the models, enabling maximum performance and generation quality:</p>
 <ul>
 <li><strong>Fine-grained Generation Parameters:</strong> Direct control over parameters like <code v-pre>temperature</code>, <code v-pre>top_p</code>, <code v-pre>top_k</code>, and <code v-pre>repetition_penalty</code> for precise control over the creativity and determinism of responses.</li>
 <li><strong>Sampler Control:</strong> The ability to change the order and methods of sampling (e.g., Mirostat) to influence the structure and quality of the model&#x27;s output.</li>
@@ -369,12 +375,18 @@ Membria is not a closed system. If a user has already meticulously set up their 
 <li><strong>Verbose Logging:</strong> Enabling detailed logs for debugging the full text of prompts, model responses, and analyzing performance.</li>
 </ul>
 <doc-anchor-target id="heterogeneous-by-design">
-    <h5>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#heterogeneous-by-design">#</doc-anchor-trigger>
         <span>Heterogeneous by Design</span>
-    </h5>
+    </h4>
 </doc-anchor-target>
-<p>[cite_start]The Membria architecture embraces the principle that agentic systems are naturally heterogeneous[cite: 168]. Instead of relying on a single, monolithic LLM, the <code v-pre>AI Core</code> is designed to be a flexible orchestrator. [cite_start]An agent can use a powerful LLM for high-level planning or open-domain conversation, while calling upon various specialized and efficient SLMs for subordinate, well-defined tasks[cite: 172, 173]. This multi-model approach allows for an optimal balance of capability and cost-efficiency.</p>
+<blockquote>
+<p>The Membria architecture embraces the principle that agentic systems
+are naturally heterogeneous. Instead of relying on a
+single, monolithic LLM, the <code v-pre>AI Core</code> is designed to be a flexible
+orchestrator.</p>
+</blockquote>
+<p>An agent can use a powerful LLM for high-level planning or open-domain conversation, while calling upon various specialized and efficient SLMs for subordinate, well-defined tasks. This multi-model approach allows for an optimal balance of capability and cost-efficiency.</p>
 <doc-anchor-target id="35-skillforge-dynamic-skill-management">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#35-skillforge-dynamic-skill-management">#</doc-anchor-trigger>
@@ -394,9 +406,9 @@ Membria is not a closed system. If a user has already meticulously set up their 
 </doc-anchor-target>
 <p>The SkillForge approach is built on the proven power and efficiency of specialized Small Language Models (SLMs).</p>
 <ul>
-<li>[cite_start]<strong>Proven Capability:</strong> Recent research demonstrates that well-designed SLMs can meet or exceed the performance of much larger models on specific agentic tasks[cite: 73]. [cite_start]For example, the 8-billion parameter Salesforce xLAM-2-8B surpasses frontier models like GPT-4o and Claude 3.5 in tool-calling capabilities[cite: 116, 78]. [cite_start]Similarly, models in the Microsoft Phi series achieve reasoning and code generation scores on par with models 5-10 times their size[cite: 77, 78].</li>
-<li><strong>Economic Efficiency:</strong> A key advantage is cost. [cite_start]Serving a 7-billion parameter SLM is <strong>10-30 times cheaper</strong> in terms of latency, energy, and FLOPs than a 70-175 billion parameter LLM[cite: 127, 66, 64, 33, 49]. [cite_start]Furthermore, fine-tuning an SLM with techniques like LoRA requires only a <strong>few GPU-hours</strong>, as opposed to weeks for large models, enabling rapid iteration and adaptation[cite: 132, 66].</li>
-<li><strong>Behavioral Alignment for Reliability:</strong> For agentic workflows, reliability is paramount. An agent&#x27;s interaction with tools requires strictly formatted outputs (e.g., JSON), and general-purpose LLMs may occasionally fail to adhere to these formats, causing errors. [cite_start]A specialized LoRA skill, however, can be cheaply and effectively fine-tuned to enforce a single formatting decision, ensuring near-perfect reliability for tool-use and system integration[cite: 163, 166].</li>
+<li><strong>Proven Capability:</strong> Recent research demonstrates that well-designed SLMs can meet or exceed the performance of much larger models on specific agentic tasks. For example, the 8-billion parameter Salesforce xLAM-2-8B surpasses frontier models like GPT-4o and Claude 3.5 in tool-calling capabilities. Similarly, models in the Microsoft Phi series achieve reasoning and code generation scores on par with models 5-10 times their size.</li>
+<li><strong>Economic Efficiency:</strong> A key advantage is cost. Serving a 7-billion parameter SLM is <strong>10-30 times cheaper</strong> in terms of latency, energy, and FLOPs than a 70-175 billion parameter LLM. Furthermore, fine-tuning an SLM with techniques like LoRA requires only a <strong>few GPU-hours</strong>, as opposed to weeks for large models, enabling rapid iteration and adaptation.</li>
+<li><strong>Behavioral Alignment for Reliability:</strong> For agentic workflows, reliability is paramount. An agent&#x27;s interaction with tools requires strictly formatted outputs (e.g., JSON), and general-purpose LLMs may occasionally fail to adhere to these formats, causing errors. A specialized LoRA skill, however, can be cheaply and effectively fine-tuned to enforce a single formatting decision, ensuring near-perfect reliability for tool-use and system integration.</li>
 </ul>
 <doc-anchor-target id="36-agent-orchestrator-autonomous-agent-management">
     <h4>
@@ -406,10 +418,10 @@ Membria is not a closed system. If a user has already meticulously set up their 
 </doc-anchor-target>
 <p>This component transforms the LLM from a simple chatbot into a proactive, thinking assistant capable of executing complex, multi-step tasks. Its basic features include access to tools (search, file system) and background task execution.</p>
 <doc-anchor-target id="solving-the-context-explosion-problem-dynamic-working-memory">
-    <h5>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#solving-the-context-explosion-problem-dynamic-working-memory">#</doc-anchor-trigger>
         <span>Solving the &quot;Context Explosion&quot; Problem: Dynamic Working Memory</span>
-    </h5>
+    </h3>
 </doc-anchor-target>
 <p>When a task requires dozens of steps, the standard approach of &quot;fitting the entire history into the prompt&quot; quickly leads to context window overflow. The Membria Agent Orchestrator solves this by implementing an advanced framework for reasoning and memory management. Instead of a static, growing prompt, it builds <strong>dynamic, evolving memory</strong> that functions like a human&#x27;s mental scratchpad.</p>
 <p><strong>The Core Idea:</strong> Reasoning is a stateful process. Memory is not a history of dialogue in a prompt, but a compact <strong>latent state</strong> that the agent learns to update, compress, and utilize.</p>
@@ -420,10 +432,10 @@ Membria is not a closed system. If a user has already meticulously set up their 
 <li><strong>Memory Update Head:</strong> After executing an action, this head analyzes the result and <strong>compresses it</strong>, updating the latent memory state. It decides what to remember and what to forget.</li>
 </ol>
 <doc-anchor-target id="agent-memory-storage-a-detailed-hybrid-and-hierarchical-approach">
-    <h5>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#agent-memory-storage-a-detailed-hybrid-and-hierarchical-approach">#</doc-anchor-trigger>
         <span>Agent Memory Storage: A Detailed Hybrid and Hierarchical Approach</span>
-    </h5>
+    </h3>
 </doc-anchor-target>
 <p>To implement this complex memory mechanic, a hybrid, three-tiered approach based on the flexible capabilities of SQLite is used. Inspired by advanced enterprise systems, Membria also supports <strong>hierarchical memory structures</strong>. This means that for a complex task, a primary agent can spawn &quot;child&quot; agents, each with its own temporary memory context, which is &quot;compressed&quot; and returned to the parent agent upon completion. This ensures robust management of complex, multi-level projects.</p>
 <ol>
@@ -437,17 +449,17 @@ Membria is not a closed system. If a user has already meticulously set up their 
 <li><strong>Multi-Agent Collaboration:</strong> The architecture also allows for the use of SQLite&#x27;s <strong>shared cache mode</strong>, enabling multiple agents or threads to work efficiently on a single task with a shared context.</li>
 </ul>
 <doc-anchor-target id="reliable-tool-use-with-idem-prompts">
-    <h5>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#reliable-tool-use-with-idem-prompts">#</doc-anchor-trigger>
         <span>Reliable Tool Use with Idem-Prompts</span>
-    </h5>
+    </h3>
 </doc-anchor-target>
 <p>To ensure reliability in enterprise tasks where errors are unacceptable, the <code v-pre>Agent Orchestrator</code> uses a mechanism based on the <code v-pre>i-Check</code> / <code v-pre>Idem-Prompt</code> concept. When an agent needs to call a tool that requires data in a strictly defined format (e.g., JSON), the orchestrator automatically wraps the LLM call in a <strong>constraining prompt</strong>. This prompt forces the model to output data in a stable, predictable, and always correct structure, which is critical for reliable automation.</p>
 <doc-anchor-target id="how-memory-segmentation-fights-hallucinations">
-    <h5>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-memory-segmentation-fights-hallucinations">#</doc-anchor-trigger>
         <span>How Memory Segmentation Fights Hallucinations</span>
-    </h5>
+    </h3>
 </doc-anchor-target>
 <p>Hallucinations in agents arise from context overload, context loss, or reasoning failures. The three-tiered memory system purposefully combats each of these issues:</p>
 <ol>
@@ -479,17 +491,17 @@ Membria is not a closed system. If a user has already meticulously set up their 
 </li>
 </ul>
 <doc-anchor-target id="preprocessing-and-indexing-semantic-chunking">
-    <h5>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#preprocessing-and-indexing-semantic-chunking">#</doc-anchor-trigger>
         <span>Preprocessing and Indexing: Semantic Chunking</span>
-    </h5>
+    </h3>
 </doc-anchor-target>
 <p>For maximum RAG accuracy, the <code v-pre>Local Knowledge Layer</code> employs an advanced <strong>Semantic Chunking</strong> method when indexing documents. Instead of splitting text into fixed-size fragments, this algorithm divides it along semantic and thematic boundaries. Each &quot;chunk&quot; represents a complete thought, which significantly improves the quality of vector representations, increases search relevance, and reduces hallucinations.</p>
 <doc-anchor-target id="the-personal-analytics-dashboard-visualizing-your-knowledge">
-    <h5>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-personal-analytics-dashboard-visualizing-your-knowledge">#</doc-anchor-trigger>
         <span>The Personal Analytics Dashboard: Visualizing Your Knowledge</span>
-    </h5>
+    </h3>
 </doc-anchor-target>
 <p>The analytical power of DuckDB isn&#x27;t just for the AI&#x27;s internal use; it&#x27;s exposed to the user through an interactive dashboard. This transforms Membria from a simple tool into a true knowledge partner.</p>
 <ul>
@@ -589,27 +601,27 @@ Membria is not a closed system. If a user has already meticulously set up their 
 </doc-anchor-target>
 <p>[cite_start]The SLM-first philosophy of Membria is not just a design choice; it is supported by extensive academic research into the efficiency and capability of modern language models[cite: 2]. This research also provides strong counter-arguments to common objections.</p>
 <ul>
-<li><p>[cite_start]<strong>Objection 1: &quot;LLMs&#x27; general understanding will always give them an edge.&quot;</strong> [cite: 183]
+<li><p><strong>Objection 1: &quot;LLMs&#x27; general understanding will always give them an edge.&quot;</strong>
 This view posits that even on narrow tasks, the superior general reasoning of an LLM will trump a specialized SLM. However, this argument is flawed because:</p>
 <ul>
-<li>[cite_start]Popular scaling law studies assume a fixed model architecture, whereas recent work shows that different architectures are optimal for different model sizes[cite: 197].</li>
-<li>This view ignores the power and flexibility of fine-tuning. [cite_start]An SLM can be easily and cheaply specialized for the task at hand to perform at the desired level of reliability[cite: 199].</li>
-<li>[cite_start]Reasoning techniques (like Chain-of-Thought) are significantly more affordable to run on an SLM at inference time to boost performance[cite: 201, 202].</li>
+<li>Popular scaling law studies assume a fixed model architecture, whereas recent work shows that different architectures are optimal for different model sizes.</li>
+<li>This view ignores the power and flexibility of fine-tuning. An SLM can be easily and cheaply specialized for the task at hand to perform at the desired level of reliability.</li>
+<li>Reasoning techniques (like Chain-of-Thought) are significantly more affordable to run on an SLM at inference time to boost performance.</li>
 </ul>
 </li>
-<li><p>[cite_start]<strong>Objection 2: &quot;Centralized LLM inference will always be cheaper due to economy of scale.&quot;</strong> [cite: 208]
+<li><p><strong>Objection 2: &quot;Centralized LLM inference will always be cheaper due to economy of scale.&quot;</strong>
 This argument claims that the cost benefits of SLMs are outweighed by the operational efficiencies of massive, centralized data centers. While this is a valid business consideration, recent trends indicate a shift:</p>
 <ul>
-<li>[cite_start]Advanced inference scheduling systems (like NVIDIA Dynamo [cite: 21, 82][cite_start]) offer unprecedented flexibility, countering the traditional load-balancing challenges of specialized models[cite: 216].</li>
-<li>[cite_start]The costs associated with setting up private inference infrastructure are on a consistent downward trend due to technological improvements[cite: 217, 79, 4].</li>
+<li>Advanced inference scheduling systems (like NVIDIA Dynamo) offer unprecedented flexibility, countering the traditional load-balancing challenges of specialized models.</li>
+<li>The costs associated with setting up private inference infrastructure are on a consistent downward trend due to technological improvements.</li>
 </ul>
 </li>
 </ul>
 <doc-anchor-target id="comparison-table">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#comparison-table">#</doc-anchor-trigger>
         <span>Comparison Table</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -660,10 +672,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 </table>
 </div>
 <doc-anchor-target id="conclusion">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
         <span>Conclusion</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Membria is the &quot;application layer&quot; that installs on top of the &quot;drivers&quot; (like Ollama) and transforms a static LLM into a proactive, learning, and truly useful personal assistant. We give local AI a brain, memory, and hands.</p>
 <doc-anchor-target id="6-the-knowledge-economy-the-skillforge-marketplace">
@@ -722,10 +734,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 </doc-anchor-target>
 <p>The marketplace is not just a place to sell skills; it is part of a continuous improvement loop fueled by real-world usage data. The process for creating new, high-quality skills for the marketplace is directly inspired by the &quot;LLM-to-SLM Conversion Algorithm&quot;.</p>
 <ol>
-<li><strong>Step 1: Secure Data Collection:</strong> With user consent, the <code v-pre>Agent Orchestrator</code> can be configured with a <code v-pre>Logger</code> component. [cite_start]This component logs all non-HCI (Human-Computer Interaction) agent calls—capturing anonymized input prompts, output responses, and tool call data[cite: 239].</li>
-<li>[cite_start]<strong>Step 2: Curation and Clustering:</strong> Once a sufficient dataset is collected, it is curated to remove any sensitive information[cite: 243]. [cite_start]Then, unsupervised clustering techniques are employed to identify recurring patterns and common tasks that are ideal candidates for specialization[cite: 246].</li>
-<li><strong>Step 3: SLM Selection and Fine-tuning:</strong> For each identified task cluster, an appropriate base SLM is selected. [cite_start]A new, specialized LoRA skill is then created by fine-tuning the SLM on the task-specific dataset, leveraging PEFT techniques like LoRA[cite: 252, 254]. [cite_start]This process can also use knowledge distillation to transfer capabilities from a more powerful model[cite: 256].</li>
-<li><strong>Step 4: Publishing and Refinement:</strong> The new skill is published to the marketplace. [cite_start]This entire process forms a continuous loop, where new data from agent interactions is used to refine existing skills and create new ones, ensuring the ecosystem constantly adapts and improves[cite: 258].</li>
+<li><strong>Step 1: Secure Data Collection:</strong> With user consent, the <code v-pre>Agent Orchestrator</code> can be configured with a <code v-pre>Logger</code> component. This component logs all non-HCI (Human-Computer Interaction) agent calls—capturing anonymized input prompts, output responses, and tool call data.</li>
+<li><strong>Step 2: Curation and Clustering:</strong> Once a sufficient dataset is collected, it is curated to remove any sensitive information. Then, unsupervised clustering techniques are employed to identify recurring patterns and common tasks that are ideal candidates for specialization.</li>
+<li><strong>Step 3: SLM Selection and Fine-tuning:</strong> For each identified task cluster, an appropriate base SLM is selected. A new, specialized LoRA skill is then created by fine-tuning the SLM on the task-specific dataset, leveraging PEFT techniques like LoRA. This process can also use knowledge distillation to transfer capabilities from a more powerful mode.</li>
+<li><strong>Step 4: Publishing and Refinement:</strong> The new skill is published to the marketplace. This entire process forms a continuous loop, where new data from agent interactions is used to refine existing skills and create new ones, ensuring the ecosystem constantly adapts and improves.</li>
 </ol>
 <doc-anchor-target id="7-use-cases-and-workflow-orchestration">
     <h2>
@@ -752,10 +764,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong>Result:</strong> The <code v-pre>Agent Orchestrator</code>, using RAG on the code and the knowledge from the purchased LoRA skill, builds a call graph and, within a minute, provides a precise answer identifying the problematic function and recommending a fix.</li>
 </ol>
 <doc-anchor-target id="why-is-this-more-effective-than-a-hypothetical-cursor-vnext">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#why-is-this-more-effective-than-a-hypothetical-cursor-vnext">#</doc-anchor-trigger>
         <span>Why is this more effective than a hypothetical &#x27;Cursor v.Next&#x27;?</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Even a future version of Cursor powered by GPT-5 would be a brilliant <strong>generalist</strong>. Membria&#x27;s approach provides <strong>surgical precision</strong> where general knowledge is not enough. The key advantage is the ability to fine-tune a LoRA skill <strong>specifically on Anna&#x27;s company codebase</strong>. Such a skill would know every internal API and unwritten convention of that project. A GPT-5-powered Cursor would give excellent general Python advice, but Membria&#x27;s LoRA skill will give advice that is perfectly relevant for <strong>that specific system</strong>.</p>
 <doc-anchor-target id="use-case-2-the-analyst-and-a-high-volume-of-data">
