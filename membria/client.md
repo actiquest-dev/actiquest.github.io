@@ -555,17 +555,15 @@ graph TD
         Orchestrator -- "2c. Simple Formatting" --> LocalSLM
     end
 
-    %% Connections between Local and Central
+    %% Connections
     Templates -- "0. Download Agent Template" --> Orchestrator
     Orchestrator -- "3. Escalate Complex Query" --> Gateway
     Gateway -- "4. Expert Answer" --> Orchestrator
-    
-    %% Corrected Final Output Flow
     Orchestrator -- "5. Final Report" --> VWO
     Orchestrator -- "5. Final Report" --> Chat
 
 
-    %% Styling for Clarity
+    %% Styling
     style User fill:#c9f,stroke:#333,stroke-width:2px
     style Orchestrator fill:#f9f,stroke:#333,stroke-width:4px
     style VWO fill:#e6e6fa,stroke:#333,stroke-width:2px
