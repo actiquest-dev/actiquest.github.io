@@ -60,31 +60,37 @@ The client's architecture consists of four interconnected components:
 To visually represent how all client components interact with each other and the external network, the following conceptual architecture diagram is provided.
 
 ```mermaid
-graph TD
-    subgraph "Membria Client (User's Device)"
-        A[User] --> B[UI/UX Interface]
-        
-        B --> C{Agent Orchestrator}
-        
-        C --> D[AI Core - Model Engine]
-        C --> E[SkillForge - Skill Manager]
-        C --> F[Local Knowledge Layer]
-        
-        D -.-> G[Local LLM]
-        E -.-> G
-        
-        F --> H[SQLite - Chats, Logs, CAG]
-        F --> I[DuckDB - RAG Index, Analytics]
-    end
+---
+config:
+  theme: redux
+  layout: fixed
+---
+flowchart TD
+ subgraph subGraph0["Membria Client (User's Device)"]
+        B["UI/UX Interface (Chat+Workflow Manager)"]
+        A["User"]
+        C{"Agent Orchestrator"}
+        D["AI Core - Model Engine"]
+        E["SkillForge - Skill Manager"]
+        F["Local Knowledge Layer"]
+        G["Local LLM"]
+        H["SQLite - Chats, Logs, CAG"]
+        I["DuckDB - RAG Index, Analytics"]
+  end
+ subgraph subGraph1["Decentralized Network"]
+        J["Gateways/     Validators"]
+        K["Global Knowledge Graph - KCG"]
+  end
+    A --> B
+    B --> C
+    C --> D & E & F
+    D -. Agent Requests .-> G
+    E -. Lora Patching .-> G
+    F --> H & I
+    J <--> K
+    C -. Knowledge Request .-> J
+    J -. Response / Ranking .-> C
 
-    subgraph "Decentralized Network"
-        J[Gateways]
-        K[Global Knowledge Graph - KCG]
-        J <--> K
-    end
-
-    C -.->|"Knowledge Request"| J
-    J -.->|"Response / Ranking"| C
 ```
 
 #### 3.4. AI Core: The Local Model Engine
@@ -504,6 +510,11 @@ Here is the updated section.
 The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.
 
 ```mermaid
+---
+config:
+  theme: redux
+  layout: elk
+---
 flowchart TD
  subgraph subGraph0["Corporate MoEX LLM (Strategic Brain)"]
         Router{"Router / Gating Network"}
@@ -515,9 +526,9 @@ flowchart TD
  subgraph subGraph1["Corporate Network (Private Cloud / On-Premise)"]
     direction LR
         Templates[("Corporate Agent Templates")]
-        Gateway["Private Corporate Gateway"]
+        Gateway["Private Corporate Gateway, SkillForge Licensing"]
         subGraph0
-        CKG[("Unified Corporate Knowledge Graph")]
+        CKG[("Unified Corporate Knowledge Graph DB")]
   end
  subgraph subGraph2["Interface (UI/UX Layer)"]
         VWO["Visual Workflow Orchestrator"]
@@ -529,7 +540,7 @@ flowchart TD
         LocalSLM["Local SLM - for simple tasks"]
   end
  subgraph subGraph4["User's Device (Local Client)"]
-        User["User"]
+        User(["User"])
         subGraph2
         Orchestrator["Agent Orchestrator"]
         subGraph3
@@ -547,14 +558,21 @@ flowchart TD
     Orchestrator -- Search Local Files --> LocalRAG
     Orchestrator -- Simple Formatting --> LocalSLM
     Templates -- Download Agent Template --> Orchestrator
-    Orchestrator -- Escalate Complex Query --> Gateway
+    Orchestrator L_Orchestrator_Gateway_0@-- Escalate Complex Query --> Gateway
     Gateway -- Expert Answer --> Orchestrator
     Orchestrator -- Final Report --> VWO & Chat
+    VWO@{ shape: rounded}
+    Chat@{ shape: rounded}
     LocalRAG@{ shape: rect}
+    Orchestrator@{ shape: diam}
+     VWO:::Class_01
+    classDef Class_01 stroke-width:2px, stroke-dasharray: 0, fill:#ffff
     style Templates fill:#e6e6fa,stroke:#333,stroke-width:2px
-    style VWO fill:#e6e6fa,stroke:#333,stroke-width:2px
-    style User fill:#c9f,stroke:#333,stroke-width:2px
-    style Orchestrator fill:#f9f,stroke:#333,stroke-width:4px
+    style VWO fill:transparent,stroke:#000000,stroke-width:2px
+    style User fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style Orchestrator fill:#FFFFFF,stroke:#333,stroke-width:4px
+    style subGraph4 fill:#BBDEFB
+    L_Orchestrator_Gateway_0@{ animation: slow }
 ```
 
 ### Description of the Workflow in the Diagram:
