@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805935200811">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806110155589">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.805935200811" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806110155589" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.805935200811" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806110155589" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.805935200811" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806110155589" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -315,31 +315,37 @@ be reliably handled by specialized and efficient models.</p>
     </h4>
 </doc-anchor-target>
 <p>To visually represent how all client components interact with each other and the external network, the following conceptual architecture diagram is provided.</p>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">graph TD
-    subgraph &quot;Membria Client (User's Device)&quot;
-        A[User] --&gt; B[UI/UX Interface]
-        
-        B --&gt; C{Agent Orchestrator}
-        
-        C --&gt; D[AI Core - Model Engine]
-        C --&gt; E[SkillForge - Skill Manager]
-        C --&gt; F[Local Knowledge Layer]
-        
-        D -.-&gt; G[Local LLM]
-        E -.-&gt; G
-        
-        F --&gt; H[SQLite - Chats, Logs, CAG]
-        F --&gt; I[DuckDB - RAG Index, Analytics]
-    end
-
-    subgraph &quot;Decentralized Network&quot;
-        J[Gateways]
-        K[Global Knowledge Graph - KCG]
-        J &lt;--&gt; K
-    end
-
-    C -.-&gt;|&quot;Knowledge Request&quot;| J
-    J -.-&gt;|&quot;Response / Ranking&quot;| C</pre></div>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">---
+config:
+  theme: redux
+  layout: fixed
+---
+flowchart TD
+ subgraph subGraph0[&quot;Membria Client (User's Device)&quot;]
+        B[&quot;UI/UX Interface (Chat+Workflow Manager)&quot;]
+        A[&quot;User&quot;]
+        C{&quot;Agent Orchestrator&quot;}
+        D[&quot;AI Core - Model Engine&quot;]
+        E[&quot;SkillForge - Skill Manager&quot;]
+        F[&quot;Local Knowledge Layer&quot;]
+        G[&quot;Local LLM&quot;]
+        H[&quot;SQLite - Chats, Logs, CAG&quot;]
+        I[&quot;DuckDB - RAG Index, Analytics&quot;]
+  end
+ subgraph subGraph1[&quot;Decentralized Network&quot;]
+        J[&quot;Gateways/     Validators&quot;]
+        K[&quot;Global Knowledge Graph - KCG&quot;]
+  end
+    A --&gt; B
+    B --&gt; C
+    C --&gt; D &amp; E &amp; F
+    D -. Agent Requests .-&gt; G
+    E -. Lora Patching .-&gt; G
+    F --&gt; H &amp; I
+    J &lt;--&gt; K
+    C -. Knowledge Request .-&gt; J
+    J -. Response / Ranking .-&gt; C
+</pre></div>
 <doc-anchor-target id="34-ai-core-the-local-model-engine">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#34-ai-core-the-local-model-engine">#</doc-anchor-trigger>
@@ -1020,7 +1026,12 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
     </h3>
 </doc-anchor-target>
 <p>The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.</p>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">flowchart TD
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">---
+config:
+  theme: redux
+  layout: elk
+---
+flowchart TD
  subgraph subGraph0[&quot;Corporate MoEX LLM (Strategic Brain)&quot;]
         Router{&quot;Router / Gating Network&quot;}
         Expert_Legal[&quot;Legal Expert&quot;]
@@ -1031,9 +1042,9 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
  subgraph subGraph1[&quot;Corporate Network (Private Cloud / On-Premise)&quot;]
     direction LR
         Templates[(&quot;Corporate Agent Templates&quot;)]
-        Gateway[&quot;Private Corporate Gateway&quot;]
+        Gateway[&quot;Private Corporate Gateway, SkillForge Licensing&quot;]
         subGraph0
-        CKG[(&quot;Unified Corporate Knowledge Graph&quot;)]
+        CKG[(&quot;Unified Corporate Knowledge Graph DB&quot;)]
   end
  subgraph subGraph2[&quot;Interface (UI/UX Layer)&quot;]
         VWO[&quot;Visual Workflow Orchestrator&quot;]
@@ -1045,7 +1056,7 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
         LocalSLM[&quot;Local SLM - for simple tasks&quot;]
   end
  subgraph subGraph4[&quot;User's Device (Local Client)&quot;]
-        User[&quot;User&quot;]
+        User([&quot;User&quot;])
         subGraph2
         Orchestrator[&quot;Agent Orchestrator&quot;]
         subGraph3
@@ -1063,14 +1074,21 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
     Orchestrator -- Search Local Files --&gt; LocalRAG
     Orchestrator -- Simple Formatting --&gt; LocalSLM
     Templates -- Download Agent Template --&gt; Orchestrator
-    Orchestrator -- Escalate Complex Query --&gt; Gateway
+    Orchestrator L_Orchestrator_Gateway_0@-- Escalate Complex Query --&gt; Gateway
     Gateway -- Expert Answer --&gt; Orchestrator
     Orchestrator -- Final Report --&gt; VWO &amp; Chat
+    VWO@{ shape: rounded}
+    Chat@{ shape: rounded}
     LocalRAG@{ shape: rect}
+    Orchestrator@{ shape: diam}
+     VWO:::Class_01
+    classDef Class_01 stroke-width:2px, stroke-dasharray: 0, fill:#ffff
     style Templates fill:#e6e6fa,stroke:#333,stroke-width:2px
-    style VWO fill:#e6e6fa,stroke:#333,stroke-width:2px
-    style User fill:#c9f,stroke:#333,stroke-width:2px
-    style Orchestrator fill:#f9f,stroke:#333,stroke-width:4px</pre></div>
+    style VWO fill:transparent,stroke:#000000,stroke-width:2px
+    style User fill:#FFFFFF,stroke:#333,stroke-width:2px
+    style Orchestrator fill:#FFFFFF,stroke:#333,stroke-width:4px
+    style subGraph4 fill:#BBDEFB
+    L_Orchestrator_Gateway_0@{ animation: slow }</pre></div>
 <doc-anchor-target id="description-of-the-workflow-in-the-diagram">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#description-of-the-workflow-in-the-diagram">#</doc-anchor-trigger>
