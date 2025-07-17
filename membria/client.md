@@ -513,7 +513,7 @@ The following diagram illustrates the complete hybrid workflow model, showing ho
 ---
 config:
   theme: redux
-  layout: elk
+  layout: fixed
 ---
 flowchart TD
  subgraph subGraph0["Corporate MoEX LLM (Strategic Brain)"]
