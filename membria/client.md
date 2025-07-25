@@ -164,9 +164,6 @@ To implement this complex memory mechanic, a hybrid, three-tiered approach based
 1.  **Hot Memory (In-Memory):** The agent's active state for maximum speed. This is implemented using SQLite's **pure in-memory mode** (`sqlite3 :memory:`) for active reasoning chains (`reasoning_path`) or through **temporary tables** (`CREATE TEMP TABLE`) for a session-level key-value cache (`kv_cache`). This ensures minimal latency by completely eliminating disk I/O.
 2.  **Warm Memory (SQLite Persistence):** A state journal for reliability and history. This is implemented using SQLite's **hybrid mode**, where the in-memory database is periodically backed up to a persistent file (`BACKUP TO disk`). This mechanism is used to maintain a persistent event log of the agent's actions (`event_log`), creating a reliable temporal graph of its reasoning.
 3.  **Cold Memory (DuckDB):** A vector archive for semantic search. Key conclusions from the SQLite state journal can be periodically vectorized and stored in DuckDB, enabling semantic search over the agent's own "memories."
-
-<!-- end list -->
-
   * **Optimization and Formats:** To improve concurrent access performance, **Write-Ahead Logging** mode is used (`PRAGMA journal_mode=WAL;`). Complex data structures, such as reasoning steps, are stored as flexible JSON objects thanks to the built-in **JSON1** extension support.
   * **Multi-Agent Collaboration:** The architecture also allows for the use of SQLite's **shared cache mode**, enabling multiple agents or threads to work efficiently on a single task with a shared context.
 
@@ -182,31 +179,45 @@ Hallucinations in agents arise from context overload, context loss, or reasoning
 2.  **Warm Memory Fights AMNESIA:** The SQLite state journal is a perfect, error-proof memory. To recall a past detail, the agent queries the database directly instead of trying to "guess." This eliminates hallucinations related to forgetfulness.
 3.  **Cold Memory Fights REASONING FAILURES:** Semantic search over past successful tasks acts like human experience. The agent uses proven reasoning patterns as templates, grounding its logic and preventing it from veering into illogical fabrications.
 
-#### 3.7. Local Knowledge Layer: The Hybrid Personal Memory
+Of course. I will add the new subsection justifying the architectural choice of databases to the document, in English.
 
+Here is the final, complete version of the document with this new addition.
+
+---
+
+#### 3.7. Local Knowledge Layer: The Hybrid Personal Memory
 This is the "brain" and long-term memory of the personal AI, implemented on a dual-database system for maximum performance.
 
-  * **SQLite (Transactional Core):**
-      * **Purpose:** Used as the primary operational database for frequent, small operations.
-      * **Stores:** Full chat history, persistent agent event logs (`event_log`), user settings, model/skill metadata, and the Cache-Augmented Generation (CAG) cache of structured knowledge retrieved from the global network.
-      * **Advantage:** Guarantees the reliability and integrity of operational data. Supports storing certain types of local indexes for search.
-  * **DuckDB (Analytical Engine):**
-      * **Purpose:** Used as a specialized engine for resource-intensive searches over large volumes of unstructured data.
-      * **Stores:** The Retrieval-Augmented Generation (RAG) index—vector embeddings generated from the user's local files (PDFs, DOCX, emails, etc.).
-      * **Advantage:** Provides lightning-fast semantic search across millions of text fragments.
+* **SQLite (Transactional Core):**
+    * **Purpose:** Used as the primary operational database for frequent, small operations.
+    * **Stores:** Full chat history, persistent agent event logs (`event_log`), user settings, model/skill metadata, and the Cache-Augmented Generation (CAG) cache of structured knowledge retrieved from the global network.
+    * **Advantage:** Guarantees the reliability and integrity of operational data. Supports storing certain types of local indexes for search.
+* **DuckDB (Analytical Engine):**
+    * **Purpose:** Used as a specialized engine for resource-intensive searches over large volumes of unstructured data.
+    * **Stores:** The Retrieval-Augmented Generation (RAG) index—vector embeddings generated from the user's local files (PDFs, DOCX, emails, etc.).
+    * **Advantage:** Provides lightning-fast semantic search across millions of text fragments.
 
-###  Preprocessing and Indexing: Semantic Chunking
-
+##### **Preprocessing and Indexing: Semantic Chunking**
 For maximum RAG accuracy, the `Local Knowledge Layer` employs an advanced **Semantic Chunking** method when indexing documents. Instead of splitting text into fixed-size fragments, this algorithm divides it along semantic and thematic boundaries. Each "chunk" represents a complete thought, which significantly improves the quality of vector representations, increases search relevance, and reduces hallucinations.
 
-###  The Personal Analytics Dashboard: Visualizing Your Knowledge
-
+##### **The Personal Analytics Dashboard: Visualizing Your Knowledge**
 The analytical power of DuckDB isn't just for the AI's internal use; it's exposed to the user through an interactive dashboard. This transforms Membria from a simple tool into a true knowledge partner.
 
-  * **Knowledge Graph Visualization:** The dashboard can visually map how your documents, notes, and ideas are interconnected, revealing hidden relationships.
-  * **Entity Analytics:** The system automatically extracts and displays frequently mentioned entities (people, companies, technologies). Users can click on any entity to see all documents where it is mentioned.
-  * **Interactive Agent Memory Map:** The dashboard provides full transparency, allowing users to visually explore how an agent "thought" while solving a complex task.
-  * **Discovering "Blind Spots":** By analyzing your knowledge base, the system can suggest what information is missing and offer to find relevant data on the topic.
+* **Knowledge Graph Visualization:** The dashboard can visually map how your documents, notes, and ideas are interconnected, revealing hidden relationships.
+* **Entity Analytics:** The system automatically extracts and displays frequently mentioned entities (people, companies, technologies). Users can click on any entity to see all documents where it is mentioned.
+* **Interactive Agent Memory Map:** The dashboard provides full transparency, allowing users to visually explore how an agent "thought" while solving a complex task.
+* **Discovering "Blind Spots":** By analyzing your knowledge base, the system can suggest what information is missing and offer to find relevant data on the topic.
+
+##### **Architectural Choice: Specialized Embedded Databases vs. Multi-Model**
+The decision to use a dual-database stack of SQLite and DuckDB is a deliberate architectural choice designed to optimize the performance and portability of the local-first client.
+
+While multi-model databases that combine graph, vector, and other capabilities in a single engine exist, the Membria client prioritizes **maximum performance, lightweight operation, and technological maturity**.
+
+The SQLite and DuckDB stack was chosen because each library is **best-in-class for its specific task in an embedded (in-process) format**:
+* **SQLite:** Offers unparalleled performance and reliability for the transactional workloads required by chat histories and agent logs.
+* **DuckDB:** Provides extremely fast analytical queries and state-of-the-art vector search capabilities, crucial for a high-performance RAG system.
+
+This specialized approach ensures that every function of the `Local Knowledge Layer` runs at peak efficiency, which is critical for a responsive user experience on a local device. While this requires managing two dependencies, the performance gains outweigh the complexity. For the **central corporate node**, where massive scale is more important than a serverless embedded footprint, using a powerful, server-based multi-model database is a more appropriate and justified architecture.
 
 #### 3.8. Network Interaction, Quality Assurance, and Ranking
 
