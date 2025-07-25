@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806110339605">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806772528441">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.806110339605" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806772528441" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806110339605" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806772528441" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806110339605" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806772528441" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -920,13 +920,80 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong>Reliability:</strong> The stateful memory system makes the agent far more robust and resilient to errors than simple automation scripts.</li>
 <li><strong>Privacy:</strong> The entire Browse and interaction process runs locally on the user&#x27;s machine, ensuring credentials and activity remain private.</li>
 </ul>
+<hr>
 <doc-anchor-target id="10-architecture-for-corporate-clients-a-hybrid-model-with-a-central-moex-llm">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#10-architecture-for-corporate-clients-a-hybrid-model-with-a-central-moex-llm">#</doc-anchor-trigger>
         <span>10. Architecture for Corporate Clients: A Hybrid Model with a Central MoEX LLM</span>
     </h2>
 </doc-anchor-target>
-<p>For enterprise clients where privacy, security, and data control are absolute priorities, the Membria architecture adapts. The public, decentralized network is replaced by a private, fully controlled corporate ecosystem.</p>
+<p>For enterprise clients where privacy, security, and data control are absolute priorities, the Membria architecture adapts. The public, decentralized network is replaced by a <strong>private, fully controlled corporate ecosystem</strong>.</p>
+<doc-anchor-target id="101-from-public-gateway-to-corporate-gateway">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#101-from-public-gateway-to-corporate-gateway">#</doc-anchor-trigger>
+        <span>10.1 From Public Gateway to Corporate Gateway</span>
+    </h3>
+</doc-anchor-target>
+<p>In this model, the &quot;Gateway&quot; ceases to be an access point to an external network. It becomes an internal, secure <strong>&quot;Corporate Gateway&quot;</strong> or <strong>&quot;AI Service Bus&quot;</strong>, operating exclusively within the company&#x27;s network perimeter. Users&#x27; local clients interact only with this gateway.</p>
+<doc-anchor-target id="102-the-heart-of-the-system-the-corporate-moex-llm">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#102-the-heart-of-the-system-the-corporate-moex-llm">#</doc-anchor-trigger>
+        <span>10.2 The Heart of the System: The Corporate MoEX LLM</span>
+    </h3>
+</doc-anchor-target>
+<p>Behind the Corporate Gateway lies not a &quot;zoo&quot; of disparate models, but a single, powerful core: a <strong>large language model built on the MoEX (Mixture-of-Experts) architecture</strong>.</p>
+<p>The key innovation of this approach is that the &quot;experts&quot; within this MoEX model are fine-tuned and specialized on the knowledge bases and competencies of <strong>specific company departments</strong>:</p>
+<ul>
+<li><strong>Expert #1:</strong> Fine-tuned on all documents from the <strong>Legal department</strong>.</li>
+<li><strong>Expert #2:</strong> Fine-tuned on the entire <strong>technical documentation and codebase</strong> of the Engineering department.</li>
+<li><strong>Expert #3:</strong> Fine-tuned on the databases and regulations of the <strong>HR department</strong>.</li>
+<li><strong>Expert #4:</strong> Fine-tuned on data from the <strong>Finance department</strong>, and so on.</li>
+</ul>
+<p>The MoEX model&#x27;s internal router automatically determines which expert (or combination of experts) to activate for each specific query.</p>
+<doc-anchor-target id="103-key-advantages-of-the-moex-approach">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#103-key-advantages-of-the-moex-approach">#</doc-anchor-trigger>
+        <span>10.3 Key Advantages of the MoEX Approach</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Seamless Cross-Domain Synthesis:</strong> This is the primary advantage. When an agent needs to analyze a task at the intersection of domains (e.g., legal risks in a technical contract), the MoEX router activates multiple experts (&quot;Legal&quot; and &quot;Engineering&quot;) simultaneously. They work together to generate a single, holistic answer.</li>
+<li><strong>Efficiency and Speed:</strong> Despite a massive total parameter count, MoEX models use only a fraction of them for any given query. This provides the knowledge of a huge model with the inference speed and cost closer to that of a much smaller model.</li>
+<li><strong>Scalability and Manageability:</strong> It is far easier for an IT department to manage, update, and secure one central MoEX model than dozens of separate systems. Adding a new department&#x27;s knowledge equates to training and &quot;plugging in&quot; a new expert.</li>
+<li><strong>Unified Knowledge Base:</strong> The model itself becomes the single, dynamic &quot;source of truth&quot; for the entire company&#x27;s knowledge.</li>
+</ol>
+<doc-anchor-target id="104-the-hybrid-agent-workflow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#104-the-hybrid-agent-workflow">#</doc-anchor-trigger>
+        <span>10.4 The Hybrid Agent Workflow</span>
+    </h3>
+</doc-anchor-target>
+<p>In this architecture, Membria agents operate in an efficient hybrid mode:</p>
+<ul>
+<li><strong>The Local Client</strong> acts as the &quot;tactical brain&quot; and &quot;hands.&quot; It handles planning, orchestration, interaction with the user&#x27;s local files, and executes simple tasks.</li>
+<li><strong>The Central MoEX LLM</strong> acts as the &quot;strategic expert.&quot; The local agent queries it via the Corporate Gateway to solve problems that require deep, cross-domain corporate knowledge.</li>
+</ul>
+<p>This approach provides the ideal balance between local speed and privacy, and secure access to an immensely powerful, centralized corporate intelligence.</p>
+<doc-anchor-target id="105-intelligent-escalation-decision-making-based-on-uncertainty">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#105-intelligent-escalation-decision-making-based-on-uncertainty">#</doc-anchor-trigger>
+        <span>10.5 Intelligent Escalation: Decision-Making Based on Uncertainty</span>
+    </h3>
+</doc-anchor-target>
+<p>The key question in a hybrid architecture is how the local <code v-pre>Agent Orchestrator</code> decides when to rely on its own knowledge versus when to query the powerful but more expensive central MoEX LLM. The answer lies in using an advanced <strong>Uncertainty Quantification</strong> technique.</p>
+<p>This approach, based on research in <strong>Evidential Knowledge Distillation</strong>, allows the local model to not just provide an answer, but to also assess its own confidence in it.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li><strong>Creating a &quot;Smart&quot; Local AI:</strong> The local SLM on the Membria client undergoes a specialized fine-tuning process using LoRA. It becomes a &quot;student&quot; model that learns from a more powerful, but slower, &quot;teacher&quot; model not only how to provide correct answers, but also how to recognize when it might be wrong.</li>
+<li><strong>Single-Pass Uncertainty Estimation:</strong> Thanks to a special output layer architecture (based on a Dirichlet distribution), the local model can, in a single fast forward pass, generate two outputs: the <strong>answer</strong> itself and an <strong>epistemic uncertainty score</strong> (i.e., how much the model is &quot;in doubt&quot; due to a lack of knowledge).</li>
+<li><strong>Decision-Making by the Orchestrator:</strong> The <code v-pre>Agent Orchestrator</code> uses this score as a trigger:
+<ul>
+<li><strong>If uncertainty is low:</strong> The agent is confident in its answer and uses local resources (RAG/CAG) to generate it. The query is <strong>not</strong> sent to the central model. <strong>Result: high speed, low cost, and resource savings.</strong></li>
+<li><strong>If uncertainty is high:</strong> The agent &quot;understands&quot; that its knowledge is insufficient for a reliable answer. It does not try to &quot;hallucinate.&quot; Instead, it automatically <strong>escalates</strong> the query to the central MoEX LLM to obtain an expert opinion.</li>
+</ul>
+</li>
+</ol>
+<p>This mechanism transforms the agent from a simple executor into an intelligent system capable of making economically efficient decisions, which significantly reduces the total cost of ownership and increases trust in the system.</p>
 <doc-anchor-target id="from-public-gateway-to-corporate-gateway">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#from-public-gateway-to-corporate-gateway">#</doc-anchor-trigger>
@@ -1016,13 +1083,11 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong><code v-pre>[LOCAL]</code> - Report Generation:</strong> The local agent receives the expert analysis from the central model. It now has all the components it needs. It executes the final step (Step E) by using its local LLM to format the findings into a clean, concise summary report for the user.</li>
 </ol>
 <p>This synergistic model provides the best of both worlds: the privacy, speed, and autonomy of a local client, combined with secure, on-demand access to the immense power and comprehensive knowledge of a centralized corporate AI.</p>
-<p>Of course. I will add this detailed diagram and its description as a new, separate subsection within the &quot;Architecture for Corporate Clients&quot; section of the final English document.</p>
-<p>Here is the updated section.</p>
 <hr>
-<doc-anchor-target id="101-the-hybrid-corporate-workflow-a-visual-representation">
+<doc-anchor-target id="106-the-hybrid-corporate-workflow-a-visual-representation">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#101-the-hybrid-corporate-workflow-a-visual-representation">#</doc-anchor-trigger>
-        <span>10.1 The Hybrid Corporate Workflow: A Visual Representation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#106-the-hybrid-corporate-workflow-a-visual-representation">#</doc-anchor-trigger>
+        <span>10.6 The Hybrid Corporate Workflow: A Visual Representation</span>
     </h3>
 </doc-anchor-target>
 <p>The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.</p>
