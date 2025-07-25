@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806779484360">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806780451775">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.806779484360" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806780451775" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806779484360" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806780451775" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806779484360" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806780451775" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -449,7 +449,6 @@ orchestrator.</p>
 <li><strong>Warm Memory (SQLite Persistence):</strong> A state journal for reliability and history. This is implemented using SQLite&#x27;s <strong>hybrid mode</strong>, where the in-memory database is periodically backed up to a persistent file (<code v-pre>BACKUP TO disk</code>). This mechanism is used to maintain a persistent event log of the agent&#x27;s actions (<code v-pre>event_log</code>), creating a reliable temporal graph of its reasoning.</li>
 <li><strong>Cold Memory (DuckDB):</strong> A vector archive for semantic search. Key conclusions from the SQLite state journal can be periodically vectorized and stored in DuckDB, enabling semantic search over the agent&#x27;s own &quot;memories.&quot;</li>
 </ol>
-<!-- end list -->
 <ul>
 <li><strong>Optimization and Formats:</strong> To improve concurrent access performance, <strong>Write-Ahead Logging</strong> mode is used (<code v-pre>PRAGMA journal_mode=WAL;</code>). Complex data structures, such as reasoning steps, are stored as flexible JSON objects thanks to the built-in <strong>JSON1</strong> extension support.</li>
 <li><strong>Multi-Agent Collaboration:</strong> The architecture also allows for the use of SQLite&#x27;s <strong>shared cache mode</strong>, enabling multiple agents or threads to work efficiently on a single task with a shared context.</li>
@@ -473,6 +472,9 @@ orchestrator.</p>
 <li><strong>Warm Memory Fights AMNESIA:</strong> The SQLite state journal is a perfect, error-proof memory. To recall a past detail, the agent queries the database directly instead of trying to &quot;guess.&quot; This eliminates hallucinations related to forgetfulness.</li>
 <li><strong>Cold Memory Fights REASONING FAILURES:</strong> Semantic search over past successful tasks acts like human experience. The agent uses proven reasoning patterns as templates, grounding its logic and preventing it from veering into illogical fabrications.</li>
 </ol>
+<p>Of course. I will add the new subsection justifying the architectural choice of databases to the document, in English.</p>
+<p>Here is the final, complete version of the document with this new addition.</p>
+<hr>
 <doc-anchor-target id="37-local-knowledge-layer-the-hybrid-personal-memory">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#37-local-knowledge-layer-the-hybrid-personal-memory">#</doc-anchor-trigger>
@@ -497,17 +499,17 @@ orchestrator.</p>
 </li>
 </ul>
 <doc-anchor-target id="preprocessing-and-indexing-semantic-chunking">
-    <h3>
+    <h5>
         <doc-anchor-trigger class="header-anchor-trigger" to="#preprocessing-and-indexing-semantic-chunking">#</doc-anchor-trigger>
-        <span>Preprocessing and Indexing: Semantic Chunking</span>
-    </h3>
+        <span><strong>Preprocessing and Indexing: Semantic Chunking</strong></span>
+    </h5>
 </doc-anchor-target>
 <p>For maximum RAG accuracy, the <code v-pre>Local Knowledge Layer</code> employs an advanced <strong>Semantic Chunking</strong> method when indexing documents. Instead of splitting text into fixed-size fragments, this algorithm divides it along semantic and thematic boundaries. Each &quot;chunk&quot; represents a complete thought, which significantly improves the quality of vector representations, increases search relevance, and reduces hallucinations.</p>
 <doc-anchor-target id="the-personal-analytics-dashboard-visualizing-your-knowledge">
-    <h3>
+    <h5>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-personal-analytics-dashboard-visualizing-your-knowledge">#</doc-anchor-trigger>
-        <span>The Personal Analytics Dashboard: Visualizing Your Knowledge</span>
-    </h3>
+        <span><strong>The Personal Analytics Dashboard: Visualizing Your Knowledge</strong></span>
+    </h5>
 </doc-anchor-target>
 <p>The analytical power of DuckDB isn&#x27;t just for the AI&#x27;s internal use; it&#x27;s exposed to the user through an interactive dashboard. This transforms Membria from a simple tool into a true knowledge partner.</p>
 <ul>
@@ -516,6 +518,20 @@ orchestrator.</p>
 <li><strong>Interactive Agent Memory Map:</strong> The dashboard provides full transparency, allowing users to visually explore how an agent &quot;thought&quot; while solving a complex task.</li>
 <li><strong>Discovering &quot;Blind Spots&quot;:</strong> By analyzing your knowledge base, the system can suggest what information is missing and offer to find relevant data on the topic.</li>
 </ul>
+<doc-anchor-target id="architectural-choice-specialized-embedded-databases-vs-multi-model">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#architectural-choice-specialized-embedded-databases-vs-multi-model">#</doc-anchor-trigger>
+        <span><strong>Architectural Choice: Specialized Embedded Databases vs. Multi-Model</strong></span>
+    </h5>
+</doc-anchor-target>
+<p>The decision to use a dual-database stack of SQLite and DuckDB is a deliberate architectural choice designed to optimize the performance and portability of the local-first client.</p>
+<p>While multi-model databases that combine graph, vector, and other capabilities in a single engine exist, the Membria client prioritizes <strong>maximum performance, lightweight operation, and technological maturity</strong>.</p>
+<p>The SQLite and DuckDB stack was chosen because each library is <strong>best-in-class for its specific task in an embedded (in-process) format</strong>:</p>
+<ul>
+<li><strong>SQLite:</strong> Offers unparalleled performance and reliability for the transactional workloads required by chat histories and agent logs.</li>
+<li><strong>DuckDB:</strong> Provides extremely fast analytical queries and state-of-the-art vector search capabilities, crucial for a high-performance RAG system.</li>
+</ul>
+<p>This specialized approach ensures that every function of the <code v-pre>Local Knowledge Layer</code> runs at peak efficiency, which is critical for a responsive user experience on a local device. While this requires managing two dependencies, the performance gains outweigh the complexity. For the <strong>central corporate node</strong>, where massive scale is more important than a serverless embedded footprint, using a powerful, server-based multi-model database is a more appropriate and justified architecture.</p>
 <doc-anchor-target id="38-network-interaction-quality-assurance-and-ranking">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#38-network-interaction-quality-assurance-and-ranking">#</doc-anchor-trigger>
