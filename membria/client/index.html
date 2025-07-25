@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806772592620">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806779484360">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.806772592620" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806779484360" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806772592620" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806779484360" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806772592620" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806779484360" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -935,10 +935,37 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
     </h3>
 </doc-anchor-target>
 <p>In this model, the &quot;Gateway&quot; ceases to be an access point to an external network. It becomes an internal, secure <strong>&quot;Corporate Gateway&quot;</strong> or <strong>&quot;AI Service Bus&quot;</strong>, operating exclusively within the company&#x27;s network perimeter. Users&#x27; local clients interact only with this gateway.</p>
-<doc-anchor-target id="102-the-heart-of-the-system-the-corporate-moex-llm">
+<doc-anchor-target id="102-the-pathfinder-engine-dynamic-retrieval-orchestration">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#102-the-heart-of-the-system-the-corporate-moex-llm">#</doc-anchor-trigger>
-        <span>10.2 The Heart of the System: The Corporate MoEX LLM</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#102-the-pathfinder-engine-dynamic-retrieval-orchestration">#</doc-anchor-trigger>
+        <span>10.2 The Pathfinder Engine: Dynamic Retrieval Orchestration</span>
+    </h3>
+</doc-anchor-target>
+<p>To maximize the quality and relevance of information provided to the central AI, the Corporate Gateway employs an advanced component named Pathfinder. It acts as an intelligent pre-processor, moving beyond simple query routing to sophisticated retrieval orchestration.</p>
+<p>The Pathfinder&#x27;s core function is to solve a key challenge: no single search method is optimal for all types of queries. Instead of using a one-size-fits-all approach, Pathfinder first analyzes the user&#x27;s query and then dynamically selects the best search strategy and tool to gather the most relevant context before engaging the main LLM.</p>
+<p><strong>The Two-Stage Process:</strong></p>
+<ul>
+<li><strong>Stage 1:</strong> Dynamic Method Selection: When a query arrives at the Gateway, the Pathfinder engine (a specialized SLM) analyzes its structure and intent to choose the optimal retrieval method from the Unified Knowledge Graph:</li>
+</ul>
+<p>For queries about relationships (e.g., &quot;Who works with Anna on projects funded by the &#x27;Odyssey&#x27; grant?&quot;), it selects a Graph Query to the Neo4j database.</p>
+<p>For conceptual queries (e.g., &quot;What is our company&#x27;s strategy regarding sustainable materials?&quot;), it selects a Vector Search against the Qdrant database.</p>
+<p>For queries with specific, unique identifiers (e.g., &quot;Find the status of ticket PROJ-1138&quot;), it may select a Keyword Search.</p>
+<ul>
+<li><strong>Stage 2:</strong> Expert Routing with Enriched Context: After Pathfinder has executed the chosen search strategy and retrieved the highest quality context, it packages this rich, relevant information with the user&#x27;s original query. This &quot;enriched package&quot; is then sent to the Corporate MoEX LLM. The MoEX model&#x27;s internal router can now make a much more informed decision about which expert (e.g., Legal, Finance) is best suited to handle the well-prepared data.</li>
+</ul>
+<p><strong>Advantages of the Pathfinder Approach:</strong></p>
+<ul>
+<li><p><strong>Increased Accuracy:</strong> The MoEX experts receive pre-processed, highly relevant context, which dramatically improves the quality and accuracy of their final answers.</p>
+</li>
+<li><p><strong>Reduced LLM Load:</strong> The heavy lifting of searching and filtering data is performed by specialized and more efficient search tools. The expensive generative MoEX model is reserved for high-level analysis and synthesis.</p>
+</li>
+<li><p><strong>Flexibility and Extensibility:</strong> New search tools and data sources can easily be added to the Pathfinder&#x27;s toolkit without altering the core MoEX model.</p>
+</li>
+</ul>
+<doc-anchor-target id="103-the-heart-of-the-system-the-corporate-moex-llm">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#103-the-heart-of-the-system-the-corporate-moex-llm">#</doc-anchor-trigger>
+        <span>10.3 The Heart of the System: The Corporate MoEX LLM</span>
     </h3>
 </doc-anchor-target>
 <p>Behind the Corporate Gateway lies not a &quot;zoo&quot; of disparate models, but a single, powerful core: a <strong>large language model built on the MoEX (Mixture-of-Experts) architecture</strong>.</p>
@@ -950,10 +977,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong>Expert #4:</strong> Fine-tuned on data from the <strong>Finance department</strong>, and so on.</li>
 </ul>
 <p>The MoEX model&#x27;s internal router automatically determines which expert (or combination of experts) to activate for each specific query.</p>
-<doc-anchor-target id="103-key-advantages-of-the-moex-approach">
+<doc-anchor-target id="104-key-advantages-of-the-moex-approach">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#103-key-advantages-of-the-moex-approach">#</doc-anchor-trigger>
-        <span>10.3 Key Advantages of the MoEX Approach</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#104-key-advantages-of-the-moex-approach">#</doc-anchor-trigger>
+        <span>10.4 Key Advantages of the MoEX Approach</span>
     </h3>
 </doc-anchor-target>
 <ol>
@@ -962,10 +989,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong>Scalability and Manageability:</strong> It is far easier for an IT department to manage, update, and secure one central MoEX model than dozens of separate systems. Adding a new department&#x27;s knowledge equates to training and &quot;plugging in&quot; a new expert.</li>
 <li><strong>Unified Knowledge Base:</strong> The model itself becomes the single, dynamic &quot;source of truth&quot; for the entire company&#x27;s knowledge.</li>
 </ol>
-<doc-anchor-target id="104-the-hybrid-agent-workflow">
+<doc-anchor-target id="105-the-hybrid-agent-workflow">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#104-the-hybrid-agent-workflow">#</doc-anchor-trigger>
-        <span>10.4 The Hybrid Agent Workflow</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#105-the-hybrid-agent-workflow">#</doc-anchor-trigger>
+        <span>10.5 The Hybrid Agent Workflow</span>
     </h3>
 </doc-anchor-target>
 <p>In this architecture, Membria agents operate in an efficient hybrid mode:</p>
@@ -974,10 +1001,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 <li><strong>The Central MoEX LLM</strong> acts as the &quot;strategic expert.&quot; The local agent queries it via the Corporate Gateway to solve problems that require deep, cross-domain corporate knowledge.</li>
 </ul>
 <p>This approach provides the ideal balance between local speed and privacy, and secure access to an immensely powerful, centralized corporate intelligence.</p>
-<doc-anchor-target id="105-intelligent-escalation-decision-making-based-on-uncertainty">
+<doc-anchor-target id="106-intelligent-escalation-decision-making-based-on-uncertainty">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#105-intelligent-escalation-decision-making-based-on-uncertainty">#</doc-anchor-trigger>
-        <span>10.5 Intelligent Escalation: Decision-Making Based on Uncertainty</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#106-intelligent-escalation-decision-making-based-on-uncertainty">#</doc-anchor-trigger>
+        <span>10.6 Intelligent Escalation: Decision-Making Based on Uncertainty</span>
     </h3>
 </doc-anchor-target>
 <p>The key question in a hybrid architecture is how the local <code v-pre>Agent Orchestrator</code> decides when to rely on its own knowledge versus when to query the powerful but more expensive central MoEX LLM. The answer lies in using an advanced <strong>Uncertainty Quantification</strong> technique.</p>
@@ -1084,10 +1111,10 @@ This argument claims that the cost benefits of SLMs are outweighed by the operat
 </ol>
 <p>This synergistic model provides the best of both worlds: the privacy, speed, and autonomy of a local client, combined with secure, on-demand access to the immense power and comprehensive knowledge of a centralized corporate AI.</p>
 <hr>
-<doc-anchor-target id="106-the-hybrid-corporate-workflow-a-visual-representation">
+<doc-anchor-target id="107-the-hybrid-corporate-workflow-a-visual-representation">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#106-the-hybrid-corporate-workflow-a-visual-representation">#</doc-anchor-trigger>
-        <span>10.6 The Hybrid Corporate Workflow: A Visual Representation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#107-the-hybrid-corporate-workflow-a-visual-representation">#</doc-anchor-trigger>
+        <span>10.7 The Hybrid Corporate Workflow: A Visual Representation</span>
     </h3>
 </doc-anchor-target>
 <p>The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.</p>
@@ -1154,10 +1181,10 @@ flowchart TD
     style Orchestrator fill:#FFFFFF,stroke:#333,stroke-width:4px
     style subGraph4 fill:#BBDEFB
     L_Orchestrator_Gateway_0@{ animation: slow }</pre></div>
-<doc-anchor-target id="107-description-of-the-workflow-in-the-diagram">
+<doc-anchor-target id="108-description-of-the-workflow-in-the-diagram">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#107-description-of-the-workflow-in-the-diagram">#</doc-anchor-trigger>
-        <span>10.7 Description of the Workflow in the Diagram:</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#108-description-of-the-workflow-in-the-diagram">#</doc-anchor-trigger>
+        <span>10.8 Description of the Workflow in the Diagram:</span>
     </h3>
 </doc-anchor-target>
 <p>This diagram illustrates the most advanced operational mode for the Membria corporate client, combining central governance with local flexibility.</p>
