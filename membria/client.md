@@ -433,9 +433,61 @@ While the Research Agent primarily "reads" the web, the Automation Agent can "ac
   * **Reliability:** The stateful memory system makes the agent far more robust and resilient to errors than simple automation scripts.
   * **Privacy:** The entire Browse and interaction process runs locally on the user's machine, ensuring credentials and activity remain private.
 
+-----
+
 ## 10. Architecture for Corporate Clients: A Hybrid Model with a Central MoEX LLM
 
-For enterprise clients where privacy, security, and data control are absolute priorities, the Membria architecture adapts. The public, decentralized network is replaced by a private, fully controlled corporate ecosystem.
+For enterprise clients where privacy, security, and data control are absolute priorities, the Membria architecture adapts. The public, decentralized network is replaced by a **private, fully controlled corporate ecosystem**.
+
+### 10.1 From Public Gateway to Corporate Gateway
+
+In this model, the "Gateway" ceases to be an access point to an external network. It becomes an internal, secure **"Corporate Gateway"** or **"AI Service Bus"**, operating exclusively within the company's network perimeter. Users' local clients interact only with this gateway.
+
+### 10.2 The Heart of the System: The Corporate MoEX LLM
+
+Behind the Corporate Gateway lies not a "zoo" of disparate models, but a single, powerful core: a **large language model built on the MoEX (Mixture-of-Experts) architecture**.
+
+The key innovation of this approach is that the "experts" within this MoEX model are fine-tuned and specialized on the knowledge bases and competencies of **specific company departments**:
+
+  * **Expert \#1:** Fine-tuned on all documents from the **Legal department**.
+  * **Expert \#2:** Fine-tuned on the entire **technical documentation and codebase** of the Engineering department.
+  * **Expert \#3:** Fine-tuned on the databases and regulations of the **HR department**.
+  * **Expert \#4:** Fine-tuned on data from the **Finance department**, and so on.
+
+The MoEX model's internal router automatically determines which expert (or combination of experts) to activate for each specific query.
+
+### 10.3 Key Advantages of the MoEX Approach
+
+1.  **Seamless Cross-Domain Synthesis:** This is the primary advantage. When an agent needs to analyze a task at the intersection of domains (e.g., legal risks in a technical contract), the MoEX router activates multiple experts ("Legal" and "Engineering") simultaneously. They work together to generate a single, holistic answer.
+2.  **Efficiency and Speed:** Despite a massive total parameter count, MoEX models use only a fraction of them for any given query. This provides the knowledge of a huge model with the inference speed and cost closer to that of a much smaller model.
+3.  **Scalability and Manageability:** It is far easier for an IT department to manage, update, and secure one central MoEX model than dozens of separate systems. Adding a new department's knowledge equates to training and "plugging in" a new expert.
+4.  **Unified Knowledge Base:** The model itself becomes the single, dynamic "source of truth" for the entire company's knowledge.
+
+### 10.4 The Hybrid Agent Workflow
+
+In this architecture, Membria agents operate in an efficient hybrid mode:
+
+  * **The Local Client** acts as the "tactical brain" and "hands." It handles planning, orchestration, interaction with the user's local files, and executes simple tasks.
+  * **The Central MoEX LLM** acts as the "strategic expert." The local agent queries it via the Corporate Gateway to solve problems that require deep, cross-domain corporate knowledge.
+
+This approach provides the ideal balance between local speed and privacy, and secure access to an immensely powerful, centralized corporate intelligence.
+
+### 10.5 Intelligent Escalation: Decision-Making Based on Uncertainty
+
+The key question in a hybrid architecture is how the local `Agent Orchestrator` decides when to rely on its own knowledge versus when to query the powerful but more expensive central MoEX LLM. The answer lies in using an advanced **Uncertainty Quantification** technique.
+
+This approach, based on research in **Evidential Knowledge Distillation**, allows the local model to not just provide an answer, but to also assess its own confidence in it.
+
+**How it works:**
+
+1.  **Creating a "Smart" Local AI:** The local SLM on the Membria client undergoes a specialized fine-tuning process using LoRA. It becomes a "student" model that learns from a more powerful, but slower, "teacher" model not only how to provide correct answers, but also how to recognize when it might be wrong.
+2.  **Single-Pass Uncertainty Estimation:** Thanks to a special output layer architecture (based on a Dirichlet distribution), the local model can, in a single fast forward pass, generate two outputs: the **answer** itself and an **epistemic uncertainty score** (i.e., how much the model is "in doubt" due to a lack of knowledge).
+3.  **Decision-Making by the Orchestrator:** The `Agent Orchestrator` uses this score as a trigger:
+      * **If uncertainty is low:** The agent is confident in its answer and uses local resources (RAG/CAG) to generate it. The query is **not** sent to the central model. **Result: high speed, low cost, and resource savings.**
+      * **If uncertainty is high:** The agent "understands" that its knowledge is insufficient for a reliable answer. It does not try to "hallucinate." Instead, it automatically **escalates** the query to the central MoEX LLM to obtain an expert opinion.
+
+This mechanism transforms the agent from a simple executor into an intelligent system capable of making economically efficient decisions, which significantly reduces the total cost of ownership and increases trust in the system.
+
 
 #### From Public Gateway to Corporate Gateway
 
@@ -499,13 +551,9 @@ The local orchestrator makes a deliberate and intelligent decision to "escalate"
 
 This synergistic model provides the best of both worlds: the privacy, speed, and autonomy of a local client, combined with secure, on-demand access to the immense power and comprehensive knowledge of a centralized corporate AI.
 
-Of course. I will add this detailed diagram and its description as a new, separate subsection within the "Architecture for Corporate Clients" section of the final English document.
-
-Here is the updated section.
-
 -----
 
-### 10.1 The Hybrid Corporate Workflow: A Visual Representation
+### 10.6 The Hybrid Corporate Workflow: A Visual Representation
 
 The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.
 
