@@ -623,7 +623,7 @@ flowchart TD
     L_Orchestrator_Gateway_0@{ animation: slow }
 ```
 
-### Description of the Workflow in the Diagram:
+### 10.7 Description of the Workflow in the Diagram:
 
 This diagram illustrates the most advanced operational mode for the Membria corporate client, combining central governance with local flexibility.
 
