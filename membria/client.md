@@ -443,7 +443,34 @@ For enterprise clients where privacy, security, and data control are absolute pr
 
 In this model, the "Gateway" ceases to be an access point to an external network. It becomes an internal, secure **"Corporate Gateway"** or **"AI Service Bus"**, operating exclusively within the company's network perimeter. Users' local clients interact only with this gateway.
 
-### 10.2 The Heart of the System: The Corporate MoEX LLM
+
+### 10.2 The Pathfinder Engine: Dynamic Retrieval Orchestration
+To maximize the quality and relevance of information provided to the central AI, the Corporate Gateway employs an advanced component named Pathfinder. It acts as an intelligent pre-processor, moving beyond simple query routing to sophisticated retrieval orchestration.
+
+The Pathfinder's core function is to solve a key challenge: no single search method is optimal for all types of queries. Instead of using a one-size-fits-all approach, Pathfinder first analyzes the user's query and then dynamically selects the best search strategy and tool to gather the most relevant context before engaging the main LLM.
+
+**The Two-Stage Process:**
+
+- **Stage 1:** Dynamic Method Selection: When a query arrives at the Gateway, the Pathfinder engine (a specialized SLM) analyzes its structure and intent to choose the optimal retrieval method from the Unified Knowledge Graph:
+
+For queries about relationships (e.g., "Who works with Anna on projects funded by the 'Odyssey' grant?"), it selects a Graph Query to the Neo4j database.
+
+For conceptual queries (e.g., "What is our company's strategy regarding sustainable materials?"), it selects a Vector Search against the Qdrant database.
+
+For queries with specific, unique identifiers (e.g., "Find the status of ticket PROJ-1138"), it may select a Keyword Search.
+
+- **Stage 2:** Expert Routing with Enriched Context: After Pathfinder has executed the chosen search strategy and retrieved the highest quality context, it packages this rich, relevant information with the user's original query. This "enriched package" is then sent to the Corporate MoEX LLM. The MoEX model's internal router can now make a much more informed decision about which expert (e.g., Legal, Finance) is best suited to handle the well-prepared data.
+
+**Advantages of the Pathfinder Approach:**
+
+- **Increased Accuracy:** The MoEX experts receive pre-processed, highly relevant context, which dramatically improves the quality and accuracy of their final answers.
+
+- **Reduced LLM Load:** The heavy lifting of searching and filtering data is performed by specialized and more efficient search tools. The expensive generative MoEX model is reserved for high-level analysis and synthesis.
+
+- **Flexibility and Extensibility:** New search tools and data sources can easily be added to the Pathfinder's toolkit without altering the core MoEX model.
+
+
+### 10.3 The Heart of the System: The Corporate MoEX LLM
 
 Behind the Corporate Gateway lies not a "zoo" of disparate models, but a single, powerful core: a **large language model built on the MoEX (Mixture-of-Experts) architecture**.
 
@@ -456,14 +483,14 @@ The key innovation of this approach is that the "experts" within this MoEX model
 
 The MoEX model's internal router automatically determines which expert (or combination of experts) to activate for each specific query.
 
-### 10.3 Key Advantages of the MoEX Approach
+### 10.4 Key Advantages of the MoEX Approach
 
 1.  **Seamless Cross-Domain Synthesis:** This is the primary advantage. When an agent needs to analyze a task at the intersection of domains (e.g., legal risks in a technical contract), the MoEX router activates multiple experts ("Legal" and "Engineering") simultaneously. They work together to generate a single, holistic answer.
 2.  **Efficiency and Speed:** Despite a massive total parameter count, MoEX models use only a fraction of them for any given query. This provides the knowledge of a huge model with the inference speed and cost closer to that of a much smaller model.
 3.  **Scalability and Manageability:** It is far easier for an IT department to manage, update, and secure one central MoEX model than dozens of separate systems. Adding a new department's knowledge equates to training and "plugging in" a new expert.
 4.  **Unified Knowledge Base:** The model itself becomes the single, dynamic "source of truth" for the entire company's knowledge.
 
-### 10.4 The Hybrid Agent Workflow
+### 10.5 The Hybrid Agent Workflow
 
 In this architecture, Membria agents operate in an efficient hybrid mode:
 
@@ -472,7 +499,7 @@ In this architecture, Membria agents operate in an efficient hybrid mode:
 
 This approach provides the ideal balance between local speed and privacy, and secure access to an immensely powerful, centralized corporate intelligence.
 
-### 10.5 Intelligent Escalation: Decision-Making Based on Uncertainty
+### 10.6 Intelligent Escalation: Decision-Making Based on Uncertainty
 
 The key question in a hybrid architecture is how the local `Agent Orchestrator` decides when to rely on its own knowledge versus when to query the powerful but more expensive central MoEX LLM. The answer lies in using an advanced **Uncertainty Quantification** technique.
 
@@ -487,7 +514,6 @@ This approach, based on research in **Evidential Knowledge Distillation**, allow
       * **If uncertainty is high:** The agent "understands" that its knowledge is insufficient for a reliable answer. It does not try to "hallucinate." Instead, it automatically **escalates** the query to the central MoEX LLM to obtain an expert opinion.
 
 This mechanism transforms the agent from a simple executor into an intelligent system capable of making economically efficient decisions, which significantly reduces the total cost of ownership and increases trust in the system.
-
 
 #### From Public Gateway to Corporate Gateway
 
@@ -553,7 +579,7 @@ This synergistic model provides the best of both worlds: the privacy, speed, and
 
 -----
 
-### 10.6 The Hybrid Corporate Workflow: A Visual Representation
+### 10.7 The Hybrid Corporate Workflow: A Visual Representation
 
 The following diagram illustrates the complete hybrid workflow model, showing how a user on a local client can leverage both centrally-managed Corporate Agent Templates and a Visual Workflow Orchestrator to execute tasks that are dynamically split between local resources and the central Corporate MoEX LLM.
 
@@ -623,7 +649,7 @@ flowchart TD
     L_Orchestrator_Gateway_0@{ animation: slow }
 ```
 
-### 10.7 Description of the Workflow in the Diagram:
+### 10.8 Description of the Workflow in the Diagram:
 
 This diagram illustrates the most advanced operational mode for the Membria corporate client, combining central governance with local flexibility.
 
