@@ -193,12 +193,11 @@ It’s AI that respects, adapts, and empowers - while protecting your privacy an
 AI Live Pod is a **compact, portable edge AI node**, designed for privacy-first, fully offline operation while delivering industry-leading on-device intelligence.
 
 - **Compute Core**:
-  - **Qualcomm Snapdragon 8 Gen 3** for multimodal AI acceleration (LLM, CV, TTS/STT).
-  - **Kinara Ara-2 NPU** for dedicated, ultra-efficient vision inference and gesture detection.
+  - **Nvidia N1** for multimodal AI acceleration (LLM, CV, TTS/STT, Agents).
   - Combined **100 TOPS of edge compute power** for low-latency, high-throughput inference across modalities.
 
 - **Sensors and I/O**:
-  - **Dual 4K Stereo Cameras** with differentiated optics:
+  - **Dual Stereo Cameras** with differentiated optics:
     - Front-facing wide-angle lens optimized for indoor scenarios (face, gesture, room context).
     - Rear-facing telephoto lens for outdoor recognition, object detection, and security scenarios.
     - Enables rich **stereo depth perception, gesture recognition, face ID**, and **indoor/outdoor contextual understanding**.
