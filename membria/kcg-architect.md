@@ -17,7 +17,7 @@ We introduce the **Decentralized Knowledge Graph (DKG)**—a verifiable and effi
 
 -----
 
-## 1. Core Architecture: A Symbiotic Hybrid Model
+## 1: Core Architecture: A Symbiotic Hybrid Model
 
 Membria's architecture is not a single blockchain but a symbiotic system that leverages the distinct strengths of two specialized networks: the Peaq Protocol for high-speed logic and Arweave for permanent data storage.
 
@@ -31,7 +31,7 @@ The **Peaq Protocol** serves as the brain of the system. It manages the graph's 
 
 -----
 
-## 2. The Decentralized Knowledge Graph (DKG): Layers & Components
+## 2: The Decentralized Knowledge Graph (DKG): Layers & Components
 
 The DKG is a living, self-organizing system composed of two primary layers: a flexible ontological foundation and a dynamic knowledge layer.
 
@@ -52,7 +52,7 @@ This is the dynamic layer where verified facts from teacher LLMs are recorded an
 
 -----
 
-## 3. The Lifecycle of Knowledge: A Step-by-Step Protocol
+## 3: The Lifecycle of Knowledge: A Step-by-Step Protocol
 
 The process of transforming a raw answer from a teacher LLM into a trusted DKG entry follows a precise, four-step lifecycle across both the Peaq and Arweave blockchains.
 
@@ -127,7 +127,7 @@ The following is a detailed example of the JSON-LD object stored on Arweave, rep
 ---
 
 
-## 5. The Peaq Proposal Protocol
+## 5: The Peaq Proposal Protocol
 
 **Trigger:** This protocol is initiated immediately after a DoD Agent successfully writes a data payload to the Arweave network and retrieves the unique Arweave Transaction ID (ArTxID).
 
@@ -155,7 +155,7 @@ The payload of this domain event is minimal but crucial, containing two key elem
 
 ---
 
-## 6.Cost Optimization: Transaction Batching on Peaq
+## 6: Cost Optimization: Transaction Batching on Peaq
 
 [cite_start]The Membria architecture, inspired by the principles of SpiralOS, incorporates transaction batching as a core feature to optimize network traffic and reduce operational costs on the Peaq network[cite: 134].
 
@@ -177,7 +177,7 @@ This method drastically reduces transaction costs. [cite_start]The base network 
 
 ---
 
-## 7. Gateway Functionality: Reading and Managing Knowledge
+## 7: Gateway Functionality: Reading and Managing Knowledge
 
 Gateways are intelligent nodes that serve as the primary interface to the DKG for on-device agents.
 
@@ -197,7 +197,7 @@ Knowledge stored on Arweave is **permanent and cannot be overwritten**. To updat
 
 ---
 
-## 8. Trust, Validation, and Privacy
+## 8: Trust, Validation, and Privacy
 
 The integrity of the DKG is secured by a multi-faceted trust model executed on the Peaq Protocol.
 
@@ -207,7 +207,7 @@ The integrity of the DKG is secured by a multi-faceted trust model executed on t
 
 ---
 
-## 9. Advanced On-Device Agent Capabilities
+## 9: Advanced On-Device Agent Capabilities
 
 Membria's architecture is designed to directly enhance the performance of on-device Tiny LLMs.
 
@@ -216,7 +216,7 @@ Membria's architecture is designed to directly enhance the performance of on-dev
 
 ---
 
-## 10. Conclusion: The Symbiotic Relationship
+## 10: Conclusion: The Symbiotic Relationship
 
 Arweave provides the indispensable foundation of **trust, permanence, and verifiability** for the Membria DKG. By serving as the immutable archive for all knowledge payloads, it allows the Peaq Protocol to operate as a fast, flexible, and efficient logic layer. This symbiotic relationship enables Membria to create a knowledge graph that is both dynamic and eternally auditable, solving the core problem of creating a lasting, shared memory for decentralized AI.
 
@@ -229,8 +229,8 @@ This addendum outlines additional architectural considerations for the **Knowled
 
 ---
 
-## 1. Formal Data Model
-### 1.1 Canonical Event Structure
+## 1: Formal Data Model
+### 1.1: Canonical Event Structure
 
 
 All events in the temporal semantic graph MUST conform to a canonical JSON representation and hashing scheme. 
@@ -274,7 +274,7 @@ Explicit schema versioning and ontology references ensure future compatibility w
 
 ---
 
-### 1.2 Edge Types
+### 1.2: Edge Types
 
 ### Edges in the DAG MUST be typed. Allowed edge types:
 
@@ -292,7 +292,7 @@ Explicit schema versioning and ontology references ensure future compatibility w
 
 ---
 
-### 1.3. Versioning and Lineage
+### 1.3: Versioning and Lineage
 
 - Each event MAY have zero or one supersedes link.
 - Canonical version = last event in the supersedes chain with no successor.
@@ -300,7 +300,7 @@ Explicit schema versioning and ontology references ensure future compatibility w
 
 ---
 
-### 1.4. Read/Write API Specification
+### 1.4: Read/Write API Specification
 
 ### REST API Endpoints
 
@@ -337,7 +337,7 @@ Content-Type: application/json
 ```
 ---
 
-### 1.5. Indexing and Search
+### 1.5: Indexing and Search
 
 #### Index Types
 - Semantic Index: By concept, property, ontology term.
@@ -350,7 +350,7 @@ Content-Type: application/json
 
 ---
 
-### 1.6 SCR (Selective Context Retrieval) for Edge Clients
+### 1.6: SCR (Selective Context Retrieval) for Edge Clients
 - SCR pipeline MUST define:
 - Input constraints: max token count / payload size.
 - Context selection policy: recency, relevance score, ontology match.
@@ -366,20 +366,20 @@ Content-Type: application/json
 ```
 
 ---
-### 1.7. Tags and Metadata
+### 1.7: Tags and Metadata
 - Required tags: model, actor, version, timestamp, content_hash.
 - Tags MUST be stable across replays; version changes must be explicit.
 
 ---
 
-### 1.8. Privacy Pattern
+### 1.8: Privacy Pattern
 - Encrypt-then-store: Payload encrypted with a content key (CEK).
 - CEK encrypted separately per authorized recipient using their public key.
 - Encrypted payload stored in DAG; key grants managed out-of-band or in a KeyGrant event.
 
 ---
 
-### 1.9 Observability
+### 1.9: Observability
 
 - Minimum metrics every node MUST expose:
 
@@ -393,21 +393,21 @@ Content-Type: application/json
 
 ---
 
-### 1.10. Consistency and Fork Resolution
+### 1.10: Consistency and Fork Resolution
 - Nodes MUST detect divergent DAG branches.
 - Merge rule: Prefer branch with more total events; tie-break by earliest timestamp of last event.
 - Fork resolution MUST be signed and recorded as a MergeEvent.
 
 ---
 
-### 1.11 Protocol Versioning
+### 1.11: Protocol Versioning
 - SemVer: MAJOR.MINOR.PATCH.
 - Breaking changes increment MAJOR.
 - Clients MUST refuse events with higher MAJOR version unless in compatibility mode.
 
 ---
 
-### 1.12 Sequence Diagrams
+### 1.12: Sequence Diagrams
 
 ```mermaid
 sequenceDiagram
@@ -466,7 +466,7 @@ sequenceDiagram
 
 ---
 
-### 1.13 SCR (Selective Context Retrieval) Pipeline
+### 1.13: SCR (Selective Context Retrieval) Pipeline
 
 ```mermaid
 sequenceDiagram
@@ -501,7 +501,7 @@ sequenceDiagram
 
 ---
 
-## **2. Gateway Index Architecture**
+## 2: Gateway Index Architecture
 
 Gateways act as the primary query layer for the DKG. To optimize retrieval, each gateway should maintain:
 
@@ -607,7 +607,7 @@ sequenceDiagram
 
 ---
 
-## **3. Fork Resolution Protocol**
+## 3: Fork Resolution Protocol
 
 Even in a DAG-based architecture, transient forks or conflicting attestations can occur.  
 We define a **Fork Resolution Protocol**:
@@ -647,7 +647,7 @@ sequenceDiagram
 
 ---
 
-## **4. DAG Implementation on Peaq Protocol**
+## 4. DAG Implementation on Peaq Protocol
 
 Use Peaq for ordering, attestation, and light headers, while keeping full payloads off‑chain (Arweave). We can also run a pure‑Peaq mode for small events. The Directed Acyclic Graph (DAG) structure is implemented at the **event layer** on Peaq:
 
@@ -708,7 +708,7 @@ pub struct BatchCommit {
 
 ---
 
-## 5. Write path (two practical modes)
+## 5: Write path (two practical modes)
   
 ### Mode A (Header‑only on Peaq, payload on Arweave)
 
@@ -791,7 +791,7 @@ pub struct BatchCommit {
 -   **Replay safety:**  duplicate  event_id  is idempotent; pallet returns “already proposed/finalized”. 
 -   **Discoverability:**  stable tag schema (Arweave) and stable runtime storage keys (Peaq).
 
-## **4. DAG Implementation on Arweave (possible alternative)**
+## 4: DAG Implementation on Arweave (possible alternative)
 
 ### **What lives on Arweave?**
 - Full event payloads (JSON‑LD, encrypted if needed)
@@ -833,7 +833,7 @@ pub struct BatchCommit {
 
 This gives you direct GraphQL filtering by  Event-Id,  Actor-DID,  Model-URN, and by multiple  Cause-Id.
 
-### **4) Acyclicity and validation**
+### **Acyclicity and validation**
 
 -   Gateways validate locally  **before**  upload:
     -   every  cause  exists (by  Event-Id) 
@@ -898,7 +898,7 @@ This gives you direct GraphQL filtering by  Event-Id,  Actor-DID,  Model-URN, an
 
 ---
 
-## 5. API Contracts
+## 5: API Contracts
 
 ### **Event Ingestion API**
 - **POST /events**
@@ -924,7 +924,7 @@ This gives you direct GraphQL filtering by  Event-Id,  Actor-DID,  Model-URN, an
 
 ---
 
-## 6. Privacy Enhancements
+## 6: Privacy Enhancements
 
 To align with zero-knowledge patterns:
 - Gateways can issue **ZK proofs** of validation without exposing raw data.
@@ -932,7 +932,7 @@ To align with zero-knowledge patterns:
 
 ---
 
-## 7. Metrics and Observability
+## 7: Metrics and Observability
 
 Operational metrics for gateways:
 - `avg_query_latency_ms`
@@ -945,7 +945,7 @@ All metrics should be exposed via a `/metrics` endpoint in Prometheus format.
 
 ---
 
-## 8. Security Considerations
+## 8: Security Considerations
 
 - **Replay Protection:** Every event includes a nonce and timestamp.
 - **Sybil Resistance:** Gateway participation requires staking on Peaq.
@@ -953,7 +953,7 @@ All metrics should be exposed via a `/metrics` endpoint in Prometheus format.
 
 ---
 
-## 9. Conclusion
+## 9: Conclusion
 
 This addendum provides the missing operational, indexing, and integrity details for the KCG architecture.  
 By integrating these enhancements, Membria gains stronger query performance, auditability, and fault tolerance, without deviating from the core hybrid model of Peaq (logic) + Arweave (storage).
