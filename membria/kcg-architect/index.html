@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808351617111">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808351777797">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.808351617111" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.808351777797" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808351617111" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808351777797" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808351617111" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808351617111" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808351777797" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808351777797" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -672,7 +672,6 @@ Explicit schema versioning and ontology references ensure future compatibility w
         <span>Edges in the DAG MUST be typed. Allowed edge types:</span>
     </h3>
 </doc-anchor-target>
-<p>Конечно, вот таблица в формате Markdown.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -741,10 +740,10 @@ Explicit schema versioning and ontology references ensure future compatibility w
         <span>Create Event</span>
     </h4>
 </doc-anchor-target>
-<p>POST /events
-Content-Type: application/json</p>
+<p>POST /events</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">Body: Event JSON without id (computed by server).
+<pre translate="no" class="language-none"><code v-pre class="language-none">Content-Type: application/json
+Body: Event JSON without id (computed by server).
 Response: { &quot;id&quot;: &quot;&lt;event_id&gt;&quot;, &quot;status&quot;: &quot;accepted&quot; }</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="get-event">
@@ -1286,7 +1285,7 @@ pub struct BatchCommit {
 <ol>
 <li><strong>Client canonicalizes and signs payload.</strong></li>
 <li><strong>Upload payload to Arweave; get  ar_tx.</strong></li>
-<li cause=""><strong>Call propose_event</strong>{ header{event_id, model, actor, ts, ar_tx}, adj, sig }.</li>
+<li cause=""><strong>Call propose_event</strong>{ header{event_id, model, actor, ts, ar_tx}, adj, sig }</li>
 <li><strong>Gateways/validators check:</strong>
 <ul>
 <li>signature against DID/account</li>
