@@ -5,7 +5,7 @@ order: 144
 ---
 
 
-# **Membria: A Decentralized Knowledge Architecture**
+# **Membria: A Decentralized Knowledge Architecture
 
 -----
 
@@ -17,7 +17,7 @@ We introduce the **Decentralized Knowledge Graph (DKG)**—a verifiable and effi
 
 -----
 
-## 1. Core Architecture: A Symbiotic Hybrid Model**
+## 1. Core Architecture: A Symbiotic Hybrid Model
 
 Membria's architecture is not a single blockchain but a symbiotic system that leverages the distinct strengths of two specialized networks: the Peaq Protocol for high-speed logic and Arweave for permanent data storage.
 
