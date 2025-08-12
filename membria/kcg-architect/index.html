@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808334060980">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Membria: A Decentralized Knowledge Architecture</title>
+    <meta name="title" content="Membria: A Decentralized Knowledge Architecture">
+    <meta name="description" content="This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.actiq.xyz/membria/kcg-architect/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.actiq.xyz/membria/kcg-architect/">
+    <meta property="og:title" content="Membria: A Decentralized Knowledge Architecture">
+    <meta property="og:description" content="This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph...">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.actiq.xyz/membria/kcg-architect/">
+    <meta property="twitter:title" content="Membria: A Decentralized Knowledge Architecture">
+    <meta property="twitter:description" content="This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph...">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../../static/favicon.png" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.11.0.808334060980" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808334060980" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808334060980" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808334060980" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/light-logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/dark-logo.svg">
+                            </span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Actiq</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Litepaper</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="../../">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/TQDtydDPgH" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1ZM1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"/><path d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25v-9.5Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Discord</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/actiquest-dev/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Github</span>
+                                </a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="../../">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://discord.gg/TQDtydDPgH" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1ZM1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"/><path d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25v-9.5Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Discord</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://github.com/actiquest-dev/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Github</span>
+                                        </a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="membria-a-decentralized-knowledge-architecture" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membria-a-decentralized-knowledge-architecture">#</doc-anchor-trigger>
+        <span><strong>Membria: A Decentralized Knowledge Architecture</strong></span>
+    </h1>
+</doc-anchor-target>
+<hr>
+<doc-anchor-target id="abstract">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#abstract">#</doc-anchor-trigger>
+        <span><strong>Abstract</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph (KCG). Membria employs a <strong>hybrid blockchain architecture</strong>, separating the logical, transactional operations of the graph from the permanent storage of its data payloads. This brief clarifies the specific role of Arweave as the immutable data archive, details the structure and format of the data stored, and provides an in-depth, step-by-step protocol for both writing data to and reading data from the Arweave permaweb. It&#x27;s intended for architects, developers, and stakeholders seeking to understand the foundational layer of trust and permanence within the Membria ecosystem.</p>
+<p>We introduce the <strong>Decentralized Knowledge Graph (DKG)</strong>—a verifiable and efficient system for the continuous learning and reasoning enhancement of on-device, lightweight large language models (Tiny LLMs). Instead of costly retraining, Membria utilizes <strong>Distillation on Demand (DoD)</strong>, a process where knowledge from large &quot;teacher&quot; LLMs is re-checked, validated, and recorded as immutable events in a public graph. This approach allows Tiny LLMs to dynamically retrieve and leverage high-quality, verified knowledge through fast <strong>Cache-Augmented Generation (CAG)</strong> pipelines, drastically reducing latency, cost, and dependence on centralized APIs.</p>
+<hr>
+<doc-anchor-target id="1-core-architecture-a-symbiotic-hybrid-model">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-core-architecture-a-symbiotic-hybrid-model">#</doc-anchor-trigger>
+        <span><strong>1. Core Architecture: A Symbiotic Hybrid Model</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>Membria&#x27;s architecture is not a single blockchain but a symbiotic system that leverages the distinct strengths of two specialized networks: the Peaq Protocol for high-speed logic and Arweave for permanent data storage.</p>
+<doc-anchor-target id="the-peaq-protocol-the-logicgraph-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-peaq-protocol-the-logicgraph-layer">#</doc-anchor-trigger>
+        <span><strong>The Peaq Protocol: The Logic/Graph Layer</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>The <strong>Peaq Protocol</strong> serves as the brain of the system. It manages the graph&#x27;s structure, rules, and transactional state. All logical operations—such as proposing knowledge, casting consensus votes, and defining data models—occur as lightweight transactions on the Peaq chain. Its core is a <strong>Temporal Semantic Graph</strong>, implemented as a Directed Acyclic Graph (DAG) where every node is an <strong>event</strong>. An event is an atomic, immutable, and cryptographically signed record of a specific fact or action. Each event contains standardized fields, including <code v-pre>actor</code> (who created it), <code v-pre>timestamp</code> (when), and <code v-pre>cause</code> (linking it to preceding events), providing a complete and auditable history.</p>
+<doc-anchor-target id="the-arweave-permaweb-the-memory-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-arweave-permaweb-the-memory-layer">#</doc-anchor-trigger>
+        <span><strong>The Arweave Permaweb: The Memory Layer</strong></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Arweave</strong> serves as the permanent, immutable memory for the DKG. While Peaq manages the &quot;who, what, when, and why&quot; of a knowledge event, Arweave stores the &quot;heavy&quot; data payload itself—the full text of a validated answer, for example. By offloading storage to Arweave, the Peaq chain remains fast and cost-effective, focusing solely on validating and ordering the logical event graph.</p>
+<hr>
+<doc-anchor-target id="2-the-decentralized-knowledge-graph-dkg-layers--components">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-the-decentralized-knowledge-graph-dkg-layers--components">#</doc-anchor-trigger>
+        <span><strong>2. The Decentralized Knowledge Graph (DKG): Layers &amp; Components</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>The DKG is a living, self-organizing system composed of two primary layers: a flexible ontological foundation and a dynamic knowledge layer.</p>
+<doc-anchor-target id="the-ontology-layer-a-flexible-system-of-dictionaries">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-ontology-layer-a-flexible-system-of-dictionaries">#</doc-anchor-trigger>
+        <span><strong>The Ontology Layer: A Flexible System of Dictionaries</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>Membria rejects a rigid, universal ontology in favor of a flexible and modular approach. This allows for the creation of custom ontologies tailored to specific users or domains—a concept referred to as <em>&quot;онтология под заказчика&quot;</em> or a &quot;custom ontology for the client.&quot;</p>
+<ul>
+<li><strong>Dictionaries as Building Blocks</strong>: The foundation of the ontology is <strong>&quot;dictionaries&quot;</strong>—reusable, named collections of concepts and relationships for a specific domain. Users can leverage public, standardized dictionaries (e.g., based on <strong>Schema.org</strong>) for broad interoperability or create their own private, specialized dictionaries for unique business needs.</li>
+<li><strong>Marketplace of Dictionaries</strong>: The Membria ecosystem will feature a catalog or marketplace for dictionaries and semantic models. This encourages the reuse of high-quality ontologies and enhances interoperability across the network.</li>
+<li><strong>On-Chain Definition on Peaq</strong>: The ontology and its dictionaries exist as <strong>genesis events</strong> on the Peaq blockchain, making them a fundamental and verifiable part of the graph&#x27;s structure.</li>
+</ul>
+<doc-anchor-target id="the-knowledge-layer-validated-answers-as-event-chains">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-knowledge-layer-validated-answers-as-event-chains">#</doc-anchor-trigger>
+        <span><strong>The Knowledge Layer: Validated Answers as Event Chains</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>This is the dynamic layer where verified facts from teacher LLMs are recorded and interlinked.</p>
+<ul>
+<li><strong>Executable Semantic Models</strong>: Every type of knowledge (e.g., a &quot;Verified Answer&quot;) is governed by an <strong>Executable Semantic Model</strong> recorded on Peaq. Written in a declarative language like BSL, these models act as verifiable &quot;knowledge contracts.&quot; They define the data structure and the validation rules (<code v-pre>Restrictions</code>) that all new knowledge events must adhere to, ensuring deterministic and transparent logic execution.</li>
+<li><strong>Reasoning Chains as Events</strong>: A verified answer from a teacher LLM is stored in the graph as a chain of events, cryptographically linked by the <code v-pre>cause</code> field. This provides a complete, auditable history for any fact, from the initial query to the final validation status.</li>
+</ul>
+<hr>
+<doc-anchor-target id="3-the-lifecycle-of-knowledge-a-step-by-step-protocol">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-the-lifecycle-of-knowledge-a-step-by-step-protocol">#</doc-anchor-trigger>
+        <span><strong>3. The Lifecycle of Knowledge: A Step-by-Step Protocol</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>The process of transforming a raw answer from a teacher LLM into a trusted DKG entry follows a precise, four-step lifecycle across both the Peaq and Arweave blockchains.</p>
+<doc-anchor-target id="step-1-define-the-knowledge-contract-on-peaq">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-define-the-knowledge-contract-on-peaq">#</doc-anchor-trigger>
+        <span><strong>Step 1: Define the &quot;Knowledge Contract&quot; on Peaq</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Action</strong>: Community experts define and deploy an Executable Semantic Model on the Peaq network. This model acts as a verifiable template for a &quot;validated knowledge entry.&quot;</li>
+<li><strong>Protocol</strong>: An expert sends a transaction to Peaq containing a <strong>genesis event</strong> with the BSL code of the model as its payload. Once finalized, the model becomes an immutable part of the on-chain ontology. Arweave is not used in this step.</li>
+</ul>
+<doc-anchor-target id="step-2-propose-new-knowledge-via-arweave-and-peaq">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-propose-new-knowledge-via-arweave-and-peaq">#</doc-anchor-trigger>
+        <span><strong>Step 2: Propose New Knowledge via Arweave and Peaq</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>This two-part step involves storing the data payload permanently and then creating a lightweight pointer to it on the logic chain.</p>
+<doc-anchor-target id="21-the-arweave-write-protocol">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#21-the-arweave-write-protocol">#</doc-anchor-trigger>
+        <span><strong>2.1: The Arweave Write Protocol</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>This is the protocol for how a DoD Agent securely writes a knowledge payload to Arweave.</p>
+<ol>
+<li><strong>Trigger</strong>: Initiated by a DoD Agent after a teacher LLM generates a response, but <strong>before</strong> a proposal event is created on Peaq.</li>
+<li><strong>Data Preparation</strong>: The agent assembles the knowledge payload into a <strong>JSON-LD (JSON for Linked Data)</strong> object. This ensures the data is machine-readable and semantically interoperable.</li>
+<li><strong>Transaction Formation &amp; Tagging</strong>: The agent prepares an Arweave transaction. The JSON-LD object is the transaction&#x27;s data. A set of descriptive <strong>Tags</strong> is added, which are critical for efficient querying without needing to download the data itself.</li>
+</ol>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">Tag Name</th>
+<th style="text-align: left;">Example Value</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code v-pre>Content-Type</code></td>
+<td style="text-align: left;"><code v-pre>application/ld+json</code></td>
+<td style="text-align: left;">Informs clients how to interpret the data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>App-Name</code></td>
+<td style="text-align: left;"><code v-pre>Membria-DKG</code></td>
+<td style="text-align: left;">Identifies the transaction as part of the Membria ecosystem.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>App-Version</code></td>
+<td style="text-align: left;"><code v-pre>3.0</code></td>
+<td style="text-align: left;">Versions the protocol for future upgrades.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>Event-Type</code></td>
+<td style="text-align: left;"><code v-pre>ProposedAnswer</code></td>
+<td style="text-align: left;">Specifies the type of knowledge event.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>Query-ID</code></td>
+<td style="text-align: left;"><code v-pre>{query_hash_on_peaq}</code></td>
+<td style="text-align: left;">Links this data back to the originating query on Peaq.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol start="4">
+<li><strong>Signing and Broadcasting</strong>: The agent signs the transaction and broadcasts it to the Arweave network. For efficiency, multiple small entries can be packaged into a single base transaction via a <strong>bundling service</strong>, significantly reducing cost and time.</li>
+<li><strong>Confirmation and ID Retrieval</strong>: The Arweave network returns a permanent, unique <strong>Arweave Transaction ID (ArTxID)</strong>. This 43-character string is the immutable address of the knowledge payload.</li>
+</ol>
+<doc-anchor-target id="payload-example-arweave-json-ld-object">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#payload-example-arweave-json-ld-object">#</doc-anchor-trigger>
+        <span><strong>Payload Example: Arweave JSON-LD Object</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>The following is a detailed example of the JSON-LD object stored on Arweave, representing a proposed answer.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Answer&quot;,
+  &quot;identifier&quot;: &quot;proposed_answer_uuid_xyz123&quot;,
+  &quot;encodingFormat&quot;: &quot;application/ld+json&quot;,
+  &quot;inResponseTo&quot;: {
+    &quot;@type&quot;: &quot;Question&quot;,
+    &quot;identifier&quot;: &quot;{query_event_hash_on_peaq}&quot;
+  },
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;AIApplication&quot;,
+    &quot;name&quot;: &quot;GPT-4-Turbo&quot;,
+    &quot;version&quot;: &quot;2024-04-09&quot;
+  },
+  &quot;dateCreated&quot;: &quot;2025-08-12T12:50:20Z&quot;,
+  &quot;text&quot;: &quot;The Membria architecture separates logic and data. The Peaq Protocol manages the graph's transactional logic and structure as a Temporal Semantic Graph of events, while Arweave provides permanent, immutable storage for the actual data payloads.&quot;,
+  &quot;keywords&quot;: [&quot;Membria&quot;, &quot;Architecture&quot;, &quot;Peaq&quot;, &quot;Arweave&quot;, &quot;Hybrid Blockchain&quot;]
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="the-adjusted-concept-the-lifecycle-of-knowledge-as-intent-fulfillment">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-adjusted-concept-the-lifecycle-of-knowledge-as-intent-fulfillment">#</doc-anchor-trigger>
+        <span><strong>The Adjusted Concept: The Lifecycle of Knowledge as Intent Fulfillment</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system <strong>Intent</strong>: the <strong>&quot;Knowledge Distillation Request.&quot;</strong> This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent&#x27;s lifecycle.</p>
+<doc-anchor-target id="the-four-phases-of-intent-fulfillment">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-four-phases-of-intent-fulfillment">#</doc-anchor-trigger>
+        <span><strong>The Four Phases of Intent Fulfillment</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p><strong>Step 1: Defining the &quot;Knowledge Contract&quot;</strong></p>
+<ul>
+<li><strong>Role in the Intent: Definition.</strong> This phase establishes the rules and the &quot;schema&quot; for the successful fulfillment of all future Intents of this type.</li>
+</ul>
+</li>
+<li><p><strong>Step 2: Proposing New Knowledge</strong></p>
+<ul>
+<li><strong>Role in the Intent: Execution.</strong> A DoD agent, acting to fulfill the Intent, obtains data from a &quot;teacher&quot; LLM, stores it on Arweave, and creates a proposal event on Peaq.</li>
+</ul>
+</li>
+<li><p><strong>Step 3: Gateway Consensus</strong></p>
+<ul>
+<li><strong>Role in the Intent: Verification.</strong> A quorum of independent gateway agents verifies that the Intent was executed correctly and that the results comply with the predefined rules (the contract).</li>
+</ul>
+</li>
+<li><p><strong>Step 4: Finalizing the Result</strong></p>
+<ul>
+<li><strong>Role in the Intent: Completion.</strong> A final <code v-pre>validation_event</code> is created, which officially closes the Intent by recording its outcome (success or failure) in the graph.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<doc-anchor-target id="advantages-of-this-approach">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advantages-of-this-approach">#</doc-anchor-trigger>
+        <span><strong>Advantages of This Approach</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Precision</strong>: This uses the key terminology of SpiralOS (&quot;Intent&quot;) but applies it specifically to the core process that Membria implements.</li>
+<li><strong>Coherence</strong>: It creates a stronger, more unified narrative. The entire complex protocol now has a clear purpose: to fulfill one specific &quot;Intent.&quot;</li>
+<li><strong>Scalability</strong>: This approach allows for the future addition of other &quot;Intent&quot; types (e.g., &quot;Request to generate a report&quot; or &quot;Initiate a voting process&quot;), which would logically fit into the same architecture.</li>
+</ul>
+<hr>
+<doc-anchor-target id="the-peaq-proposal-protocol">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-peaq-proposal-protocol">#</doc-anchor-trigger>
+        <span><strong>The Peaq Proposal Protocol</strong></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Trigger:</strong> This protocol is initiated immediately after a DoD Agent successfully writes a data payload to the Arweave network and retrieves the unique Arweave Transaction ID (ArTxID).</p>
+<p><strong>Protocol:</strong> The DoD Agent creates and broadcasts a lightweight transaction to the Peaq network. [cite_start]This transaction creates a <strong>domain event</strong> (<code v-pre>предметное событие</code>) that formally logs the new knowledge proposal on the logic layer[cite: 242].</p>
+<p>The payload of this domain event is minimal but crucial, containing two key elements:</p>
+<ul>
+<li><strong>Data Pointer</strong>: A direct reference to the full data payload stored on Arweave, in the format of <code v-pre>data_pointer: &quot;{ArTxID}&quot;</code>. This creates the essential link between the logic layer (Peaq) and the permanent storage layer (Arweave).</li>
+<li><strong>A graph edge</strong> is created in the event&#x27;s <code v-pre>cause</code> field, which contains the identifier of the original query event[cite: 72, 227]. [cite_start]This cryptographically links the new proposal to the action that prompted it, maintaining the auditable history of the Temporal Semantic Graph</li>
+</ul>
+<p><strong>Purpose:</strong> The successful execution of this protocol places the proposed knowledge into the DKG&#x27;s logical graph. It makes the proposal discoverable by the network&#x27;s Gateways and formally enters it into the next phase of the lifecycle: Gateway Consensus.</p>
+<ul>
+<li><strong>Action</strong>: The DoD Agent creates a lightweight transaction on the Peaq network to officially log the proposal.</li>
+<li><strong>Protocol</strong>: The transaction contains a <strong>domain event</strong> (<code v-pre>proposed_answer_event</code>). Its payload includes a pointer to the data (<code v-pre>data_pointer: &quot;{ArTxID}&quot;</code>) and a graph edge in the <code v-pre>cause</code> field linking it to the original query event.</li>
+</ul>
+<doc-anchor-target id="step-1-gateway-consensus-on-peaq">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-gateway-consensus-on-peaq">#</doc-anchor-trigger>
+        <span><strong>Step 1: Gateway Consensus on Peaq</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Action</strong>: A quorum of Gateways reviews the proposal. They use the <code v-pre>ArTxID</code> pointer to fetch the full data from Arweave and perform a detailed validation against the rules in the Knowledge Contract.</li>
+<li><strong>Protocol</strong>: Gateways cast their votes (<code v-pre>attestation_event</code>) as transactions on the Peaq network. To optimize costs, these individual vote transactions can be <strong>batched</strong> into a single transaction before being submitted.</li>
+</ul>
+<doc-anchor-target id="step-2-finalize-the-result-on-peaq">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-finalize-the-result-on-peaq">#</doc-anchor-trigger>
+        <span><strong>Step 2: Finalize the Result on Peaq</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Action</strong>: The outcome of the consensus vote is recorded immutably on Peaq, completing the knowledge lifecycle.</li>
+<li><strong>Protocol</strong>: A final <code v-pre>validation_event</code> is created on Peaq. Its payload contains the final status (e.g., <code v-pre>Status: Verified</code>, <code v-pre>ConfidenceScore: 0.98</code>). Its <code v-pre>cause</code> field points to the <code v-pre>proposed_answer_event</code>, creating the final, definitive edge in the knowledge subgraph.</li>
+</ul>
+<hr>
+<doc-anchor-target id="4cost-optimization-transaction-batching-on-peaq">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4cost-optimization-transaction-batching-on-peaq">#</doc-anchor-trigger>
+        <span><strong>4.Cost Optimization: Transaction Batching on Peaq</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>[cite_start]The Membria architecture, inspired by the principles of SpiralOS, incorporates transaction batching as a core feature to optimize network traffic and reduce operational costs on the Peaq network[cite: 134].</p>
+<doc-anchor-target id="how-it-works">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-it-works">#</doc-anchor-trigger>
+        <span><strong>How It Works</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>Instead of each Gateway submitting its consensus vote (<code v-pre>attestation_event</code>) during Phase 3 of the Intent lifecycle as a separate transaction, a designated coordinator node can gather multiple votes into a single &quot;batch.&quot; This approach is particularly effective for high-frequency, repetitive operations that are part of a single logical process.</p>
+<doc-anchor-target id="the-protocol">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-protocol">#</doc-anchor-trigger>
+        <span><strong>The Protocol</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>The batching protocol is straightforward:</p>
+<ol>
+<li><strong>Vote Submission</strong>: Individual Gateways in the consensus quorum sign their votes and send them to a designated coordinator node.</li>
+<li><strong>Aggregation</strong>: The coordinator waits to receive multiple votes and aggregates these signed events into a single array or list.</li>
+<li><strong>Batch Transaction</strong>: This single array of events is then submitted as the payload of a single transaction to the Peaq network.</li>
+</ol>
+<doc-anchor-target id="the-advantage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-advantage">#</doc-anchor-trigger>
+        <span><strong>The Advantage</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>This method drastically reduces transaction costs. [cite_start]The base network fee is paid once for the entire batch rather than for each individual micro-transaction[cite: 134]. For processes like consensus voting, where many small, similar events are generated in a short period, batching provides a significant efficiency gain and makes the system more economical to operate.</p>
+<hr>
+<doc-anchor-target id="5-gateway-functionality-reading-and-managing-knowledge">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-gateway-functionality-reading-and-managing-knowledge">#</doc-anchor-trigger>
+        <span><strong>5. Gateway Functionality: Reading and Managing Knowledge</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>Gateways are intelligent nodes that serve as the primary interface to the DKG for on-device agents.</p>
+<doc-anchor-target id="the-read-protocol-an-intelligent-query-processor">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-read-protocol-an-intelligent-query-processor">#</doc-anchor-trigger>
+        <span><strong>The Read Protocol: An Intelligent Query Processor</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>Gateways use a multi-layered strategy to find information, prioritizing speed and cost-efficiency. They <strong>do not</strong> blindly search the entire Arweave network.</p>
+<ol>
+<li><strong>Check &quot;Hot&quot; Cache (50-200 ms)</strong>: The Gateway first searches its own high-speed, off-chain KV-cache for a direct hit.</li>
+<li><strong>Search Off-Chain Indexes</strong>: If there&#x27;s no cache hit, the Gateway consults its local semantic and vector indexes. These indexes act as a &quot;map&quot; of the entire DKG, allowing it to quickly locate relevant event hashes on Peaq.</li>
+<li><strong>Retrieve Data from Arweave (300-1000 ms)</strong>: Only after the indexes have identified a relevant event on Peaq does the Gateway read its <code v-pre>data_pointer</code>. It then makes a targeted HTTP GET request to an Arweave gateway using the specific <code v-pre>ArTxID</code> to retrieve the &quot;heavy&quot; data payload.</li>
+<li><strong>Assemble Context (SCR)</strong>: The Gateway aggregates the retrieved data into an enriched prompt for the Tiny LLM using the <strong>Selective Contextual Reasoning (SCR)</strong> pipeline.</li>
+<li><strong>Fallback to DoD</strong>: If a high-confidence answer cannot be constructed from the DKG, the request is escalated to external &quot;teacher&quot; LLMs, triggering a new knowledge lifecycle.</li>
+</ol>
+<doc-anchor-target id="versioning-and-updates">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#versioning-and-updates">#</doc-anchor-trigger>
+        <span><strong>Versioning and Updates</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>Knowledge stored on Arweave is <strong>permanent and cannot be overwritten</strong>. To update an entry, a new version of the JSON-LD object is uploaded to Arweave, receiving a <strong>new ArTxID</strong>. The logical graph on Peaq is then updated with a new event that supersedes the old one, and the mutable Gateway indexes are updated to point to the new ArTxID as the canonical version. All previous versions remain accessible on Arweave, providing a complete and verifiable audit trail.</p>
+<hr>
+<doc-anchor-target id="5-trust-validation-and-privacy">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-trust-validation-and-privacy">#</doc-anchor-trigger>
+        <span><strong>5. Trust, Validation, and Privacy</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>The integrity of the DKG is secured by a multi-faceted trust model executed on the Peaq Protocol.</p>
+<ul>
+<li><strong>Hybrid Consensus Mechanism</strong>: Consensus among Gateways occurs exclusively on the Peaq blockchain. The network combines <strong>Proof-of-Stake (PoS)</strong> for validator security with <strong>Byzantine Fault-Tolerant (BFT)</strong> algorithms for rapid transaction finality.</li>
+<li><strong>Dispute Resolution Protocol</strong>: An economically-incentivized challenge system allows any stakeholder to challenge a verified fact. The outcome is determined by a stake-weighted re-vote among validators, with <strong>slashing</strong> penalties for those who approved incorrect information or made a frivolous challenge.</li>
+<li><strong>Privacy with Zero-Knowledge Proofs</strong>: The system integrates <strong>Zero-Knowledge Proofs</strong> via the <strong>Peaq ZK Layer</strong>. This enables confidential operations, such as a Gateway proving it has checked a fact against a private database without revealing the database, or a user proving they have the right to access knowledge without revealing their identity.</li>
+</ul>
+<hr>
+<doc-anchor-target id="6-advanced-on-device-agent-capabilities">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-advanced-on-device-agent-capabilities">#</doc-anchor-trigger>
+        <span><strong>6. Advanced On-Device Agent Capabilities</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>Membria&#x27;s architecture is designed to directly enhance the performance of on-device Tiny LLMs.</p>
+<ul>
+<li><strong>Context and Memory Management</strong>: Membria uses a <strong>Segmented KV Buffer</strong> for context window optimization and a hybrid <strong>Persistent Memory</strong> system (Local RAG Store + Disk-Based KV Archive) to prevent model &quot;amnesia&quot; between sessions.</li>
+<li><strong>Synergy with Periodic LoRA Adaptation</strong>: An automated offline pipeline uses knowledge accumulated in the DKG to periodically fine-tune the base Tiny LLM using <strong>QLoRA</strong>. This enhances the model&#x27;s foundational understanding and embeds frequently used knowledge patterns directly into the model, often with minimal or no increase in its final size on the device.</li>
+</ul>
+<hr>
+<doc-anchor-target id="7-conclusion-the-symbiotic-relationship">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-conclusion-the-symbiotic-relationship">#</doc-anchor-trigger>
+        <span><strong>7. Conclusion: The Symbiotic Relationship</strong></span>
+    </h2>
+</doc-anchor-target>
+<p>Arweave provides the indispensable foundation of <strong>trust, permanence, and verifiability</strong> for the Membria DKG. By serving as the immutable archive for all knowledge payloads, it allows the Peaq Protocol to operate as a fast, flexible, and efficient logic layer. This symbiotic relationship enables Membria to create a knowledge graph that is both dynamic and eternally auditable, solving the core problem of creating a lasting, shared memory for decentralized AI.</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../membria/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">Membria</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../membria/client/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Membria Client</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025, <a href="https://actiq.xyz">Actiquest Inc.</a> All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "KCG Architecture", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
