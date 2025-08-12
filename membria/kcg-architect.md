@@ -54,14 +54,14 @@ This is the dynamic layer where verified facts from teacher LLMs are recorded an
 
 ## 3: The Lifecycle of Knowledge: A Step-by-Step Protocol
 
-The process of transforming a raw answer from a teacher LLM into a trusted DKG entry follows a precise, four-step lifecycle across both the Peaq and Arweave blockchains.
+The process of transforming a raw answer from a teacher LLM into a trusted DKG entry follows a precise, four-step lifecycle across both the Peaq and Arweave blockchains. The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system **Intent**: the **"Knowledge Distillation Request."** This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent's lifecycle.
 
 ### **Step 1: Define the "Knowledge Contract" on Peaq**
 * **Action**: Community experts define and deploy an Executable Semantic Model on the Peaq network. This model acts as a verifiable template for a "validated knowledge entry."
 * **Protocol**: An expert sends a transaction to Peaq containing a **genesis event** with the BSL code of the model as its payload. Once finalized, the model becomes an immutable part of the on-chain ontology. Arweave is not used in this step.
 * **Role in the Intent: Definition.** This phase establishes the rules and the "schema" for the successful fulfillment of all future Intents of this type.
 
-### **Step 2: Propose New Knowledge via Arweave and Peaq**
+### **Step 2: Propose New Knowledge via Arweave and Peaq. (See ##4: & ##5: for details).**
 * **Role in the Intent: Execution.** A DoD agent, acting to fulfill the Intent, obtains data from a "teacher" LLM, stores it on Arweave, and creates a proposal event on Peaq.
 
 ### **Step 3: Gateway Consensus**
@@ -69,8 +69,6 @@ The process of transforming a raw answer from a teacher LLM into a trusted DKG e
 
 ### **Step 4: Finalizing the Result**
 * **Role in the Intent: Completion.** A final `validation_event` is created, which officially closes the Intent by recording its outcome (success or failure) in the graph.
-
-The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system **Intent**: the **"Knowledge Distillation Request."** This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent's lifecycle.
 
 ---
 
@@ -119,7 +117,7 @@ The following is a detailed example of the JSON-LD object stored on Arweave, rep
 
 ### **Advantages of This Approach**
 
-* **Precision**: This uses the key terminology of SpiralOS ("Intent") but applies it specifically to the core process that Membria implements.
+* **Precision**: This uses "Intent" approach but applies it specifically to the core process of Knowledge Distillation that Membria implements.
 * **Coherence**: It creates a stronger, more unified narrative. The entire complex protocol now has a clear purpose: to fulfill one specific "Intent."
 * **Scalability**: This approach allows for the future addition of other "Intent" types (e.g., "Request to generate a report" or "Initiate a voting process"), which would logically fit into the same architecture.
 
@@ -157,7 +155,7 @@ The payload of this domain event is minimal but crucial, containing two key elem
 
 ## 6: Cost Optimization: Transaction Batching on Peaq
 
-[cite_start]The Membria architecture, inspired by the principles of SpiralOS, incorporates transaction batching as a core feature to optimize network traffic and reduce operational costs on the Peaq network[cite: 134].
+The Membria architecture incorporates transaction batching as a core feature to optimize network traffic and reduce operational costs on the Peaq network.
 
 ### **How It Works**
 
@@ -173,7 +171,7 @@ The batching protocol is straightforward:
 
 ### **The Advantage**
 
-This method drastically reduces transaction costs. [cite_start]The base network fee is paid once for the entire batch rather than for each individual micro-transaction[cite: 134]. For processes like consensus voting, where many small, similar events are generated in a short period, batching provides a significant efficiency gain and makes the system more economical to operate.
+This method drastically reduces transaction costs. [cite_start]The base network fee is paid once for the entire batch rather than for each individual micro-transaction. For processes like consensus voting, where many small, similar events are generated in a short period, batching provides a significant efficiency gain and makes the system more economical to operate.
 
 ---
 
@@ -222,7 +220,7 @@ Arweave provides the indispensable foundation of **trust, permanence, and verifi
 
 -----
 
-# KCG Architectural Addendum
+# KCG Architectural Addendum (for engineers and integrators).
 
 ## Purpose
 This addendum outlines additional architectural considerations for the **Knowledge Cache Graph (KCG)** in the Membria ecosystem. It focuses exclusively on elements that were missing or not fully detailed in the base architecture specification, with an emphasis on operational robustness, data integrity, indexing efficiency, and DAG integration over Peaq Protocol.
