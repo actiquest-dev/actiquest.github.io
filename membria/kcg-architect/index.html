@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808351453493">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808351617111">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>**Membria: A Decentralized Knowledge Architecture</title>
-    <meta name="title" content="**Membria: A Decentralized Knowledge Architecture">
+    <title>Membria: A Decentralized Knowledge Architecture</title>
+    <meta name="title" content="Membria: A Decentralized Knowledge Architecture">
     <meta name="description" content="This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph...">
 
     <!-- Canonical -->
@@ -19,24 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.actiq.xyz/membria/kcg-architect/">
-    <meta property="og:title" content="**Membria: A Decentralized Knowledge Architecture">
+    <meta property="og:title" content="Membria: A Decentralized Knowledge Architecture">
     <meta property="og:description" content="This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.actiq.xyz/membria/kcg-architect/">
-    <meta property="twitter:title" content="**Membria: A Decentralized Knowledge Architecture">
+    <meta property="twitter:title" content="Membria: A Decentralized Knowledge Architecture">
     <meta property="twitter:description" content="This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph...">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.808351453493" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.808351617111" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808351453493" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808351617111" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808351453493" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808351453493" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808351617111" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808351617111" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -227,14 +227,14 @@
 <doc-anchor-target id="membria-a-decentralized-knowledge-architecture" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#membria-a-decentralized-knowledge-architecture">#</doc-anchor-trigger>
-        <span>**Membria: A Decentralized Knowledge Architecture</span>
+        <span>Membria: A Decentralized Knowledge Architecture</span>
     </h1>
 </doc-anchor-target>
 <hr>
 <doc-anchor-target id="abstract">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#abstract">#</doc-anchor-trigger>
-        <span><strong>Abstract</strong></span>
+        <span>Abstract</span>
     </h2>
 </doc-anchor-target>
 <p>This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph (KCG). Membria employs a <strong>hybrid blockchain architecture</strong>, separating the logical, transactional operations of the graph from the permanent storage of its data payloads. This brief clarifies the specific role of Arweave as the immutable data archive, details the structure and format of the data stored, and provides an in-depth, step-by-step protocol for both writing data to and reading data from the Arweave permaweb. It&#x27;s intended for architects, developers, and stakeholders seeking to understand the foundational layer of trust and permanence within the Membria ecosystem.</p>
