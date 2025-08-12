@@ -5,11 +5,11 @@ order: 144
 ---
 
 
-# Membria: A Decentralized Knowledge Architecture
+# **Membria: A Decentralized Knowledge Architecture**
 
 -----
 
-### **Abstract**
+## **Abstract**
 
 This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph (KCG). Membria employs a **hybrid blockchain architecture**, separating the logical, transactional operations of the graph from the permanent storage of its data payloads. This brief clarifies the specific role of Arweave as the immutable data archive, details the structure and format of the data stored, and provides an in-depth, step-by-step protocol for both writing data to and reading data from the Arweave permaweb. It's intended for architects, developers, and stakeholders seeking to understand the foundational layer of trust and permanence within the Membria ecosystem.
 
@@ -17,7 +17,7 @@ We introduce the **Decentralized Knowledge Graph (DKG)**—a verifiable and effi
 
 -----
 
-## 1. Core Architecture: A Symbiotic Hybrid Model
+## 1. Core Architecture: A Symbiotic Hybrid Model**
 
 Membria's architecture is not a single blockchain but a symbiotic system that leverages the distinct strengths of two specialized networks: the Peaq Protocol for high-speed logic and Arweave for permanent data storage.
 
@@ -37,7 +37,7 @@ The DKG is a living, self-organizing system composed of two primary layers: a fl
 
 ### **The Ontology Layer: A Flexible System of Dictionaries**
 
-Membria rejects a rigid, universal ontology in favor of a flexible and modular approach. This allows for the creation of custom ontologies tailored to specific users or domains—a concept referred to as *"онтология под заказчика"* or a "custom ontology for the client."
+Membria rejects a rigid, universal ontology in favor of a flexible and modular approach. This allows for the creation of custom ontologies tailored to specific users or domains—a concept referred to as *"сustom ontology for the client"*.
 
   * **Dictionaries as Building Blocks**: The foundation of the ontology is **"dictionaries"**—reusable, named collections of concepts and relationships for a specific domain. Users can leverage public, standardized dictionaries (e.g., based on **Schema.org**) for broad interoperability or create their own private, specialized dictionaries for unique business needs.
   * **Marketplace of Dictionaries**: The Membria ecosystem will feature a catalog or marketplace for dictionaries and semantic models. This encourages the reuse of high-quality ontologies and enhances interoperability across the network.
@@ -54,22 +54,29 @@ This is the dynamic layer where verified facts from teacher LLMs are recorded an
 
 ## 3. The Lifecycle of Knowledge: A Step-by-Step Protocol
 
-
 The process of transforming a raw answer from a teacher LLM into a trusted DKG entry follows a precise, four-step lifecycle across both the Peaq and Arweave blockchains.
 
 ### **Step 1: Define the "Knowledge Contract" on Peaq**
-
-  * **Action**: Community experts define and deploy an Executable Semantic Model on the Peaq network. This model acts as a verifiable template for a "validated knowledge entry."
-  * **Protocol**: An expert sends a transaction to Peaq containing a **genesis event** with the BSL code of the model as its payload. Once finalized, the model becomes an immutable part of the on-chain ontology. Arweave is not used in this step.
+* **Action**: Community experts define and deploy an Executable Semantic Model on the Peaq network. This model acts as a verifiable template for a "validated knowledge entry."
+* **Protocol**: An expert sends a transaction to Peaq containing a **genesis event** with the BSL code of the model as its payload. Once finalized, the model becomes an immutable part of the on-chain ontology. Arweave is not used in this step.
+* **Role in the Intent: Definition.** This phase establishes the rules and the "schema" for the successful fulfillment of all future Intents of this type.
 
 ### **Step 2: Propose New Knowledge via Arweave and Peaq**
+* **Role in the Intent: Execution.** A DoD agent, acting to fulfill the Intent, obtains data from a "teacher" LLM, stores it on Arweave, and creates a proposal event on Peaq.
 
-This two-part step involves storing the data payload permanently and then creating a lightweight pointer to it on the logic chain.
+### **Step 3: Gateway Consensus**
+* **Role in the Intent: Verification.** A quorum of independent gateway agents verifies that the Intent was executed correctly and that the results comply with the predefined rules (the contract).
 
-#### **2.1: The Arweave Write Protocol**
+### **Step 4: Finalizing the Result**
+* **Role in the Intent: Completion.** A final `validation_event` is created, which officially closes the Intent by recording its outcome (success or failure) in the graph.
+
+The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system **Intent**: the **"Knowledge Distillation Request."** This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent's lifecycle.
+
+---
+
+## 4: The Arweave Write Protocol
 
 This is the protocol for how a DoD Agent securely writes a knowledge payload to Arweave.
-
 1.  **Trigger**: Initiated by a DoD Agent after a teacher LLM generates a response, but **before** a proposal event is created on Peaq.
 2.  **Data Preparation**: The agent assembles the knowledge payload into a **JSON-LD (JSON for Linked Data)** object. This ensures the data is machine-readable and semantically interoperable.
 3.  **Transaction Formation & Tagging**: The agent prepares an Arweave transaction. The JSON-LD object is the transaction's data. A set of descriptive **Tags** is added, which are critical for efficient querying without needing to download the data itself.
@@ -85,10 +92,9 @@ This is the protocol for how a DoD Agent securely writes a knowledge payload to 
 4.  **Signing and Broadcasting**: The agent signs the transaction and broadcasts it to the Arweave network. For efficiency, multiple small entries can be packaged into a single base transaction via a **bundling service**, significantly reducing cost and time.
 5.  **Confirmation and ID Retrieval**: The Arweave network returns a permanent, unique **Arweave Transaction ID (ArTxID)**. This 43-character string is the immutable address of the knowledge payload.
 
-#### **Payload Example: Arweave JSON-LD Object**
+### **Payload Example: Arweave JSON-LD Object**
 
 The following is a detailed example of the JSON-LD object stored on Arweave, representing a proposed answer.
-
 ```json
 {
   "@context": "https://schema.org",
@@ -109,25 +115,6 @@ The following is a detailed example of the JSON-LD object stored on Arweave, rep
   "keywords": ["Membria", "Architecture", "Peaq", "Arweave", "Hybrid Blockchain"]
 }
 ```
-
-## 4. The Adjusted Concept: The Lifecycle of Knowledge as Intent Fulfillment
-
-The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system **Intent**: the **"Knowledge Distillation Request."** This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent's lifecycle.
-
-### **The Four Phases of Intent Fulfillment**
-
-* **Step 1: Defining the "Knowledge Contract"**
-    * **Role in the Intent: Definition.** This phase establishes the rules and the "schema" for the successful fulfillment of all future Intents of this type.
-
-* **Step 2: Proposing New Knowledge**
-    * **Role in the Intent: Execution.** A DoD agent, acting to fulfill the Intent, obtains data from a "teacher" LLM, stores it on Arweave, and creates a proposal event on Peaq.
-
-* **Step 3: Gateway Consensus**
-    * **Role in the Intent: Verification.** A quorum of independent gateway agents verifies that the Intent was executed correctly and that the results comply with the predefined rules (the contract).
-
-* **Step 4: Finalizing the Result**
-    * **Role in the Intent: Completion.** A final `validation_event` is created, which officially closes the Intent by recording its outcome (success or failure) in the graph.
-
 ---
 
 ### **Advantages of This Approach**
@@ -140,7 +127,7 @@ The entire process, from a query to the retrieval of verified knowledge, is trea
 ---
 
 
-### **The Peaq Proposal Protocol**
+## 5. The Peaq Proposal Protocol
 
 **Trigger:** This protocol is initiated immediately after a DoD Agent successfully writes a data payload to the Arweave network and retrieves the unique Arweave Transaction ID (ArTxID).
 
@@ -168,7 +155,7 @@ The payload of this domain event is minimal but crucial, containing two key elem
 
 ---
 
-## 5. Cost Optimization: Transaction Batching on Peaq
+## 6.Cost Optimization: Transaction Batching on Peaq
 
 [cite_start]The Membria architecture, inspired by the principles of SpiralOS, incorporates transaction batching as a core feature to optimize network traffic and reduce operational costs on the Peaq network[cite: 134].
 
@@ -188,9 +175,9 @@ The batching protocol is straightforward:
 
 This method drastically reduces transaction costs. [cite_start]The base network fee is paid once for the entire batch rather than for each individual micro-transaction[cite: 134]. For processes like consensus voting, where many small, similar events are generated in a short period, batching provides a significant efficiency gain and makes the system more economical to operate.
 
------
+---
 
-## **5. Gateway Functionality: Reading and Managing Knowledge**
+## 7. Gateway Functionality: Reading and Managing Knowledge
 
 Gateways are intelligent nodes that serve as the primary interface to the DKG for on-device agents.
 
@@ -208,9 +195,9 @@ Gateways use a multi-layered strategy to find information, prioritizing speed an
 
 Knowledge stored on Arweave is **permanent and cannot be overwritten**. To update an entry, a new version of the JSON-LD object is uploaded to Arweave, receiving a **new ArTxID**. The logical graph on Peaq is then updated with a new event that supersedes the old one, and the mutable Gateway indexes are updated to point to the new ArTxID as the canonical version. All previous versions remain accessible on Arweave, providing a complete and verifiable audit trail.
 
------
+---
 
-## 6. Trust, Validation, and Privacy
+## 8. Trust, Validation, and Privacy
 
 The integrity of the DKG is secured by a multi-faceted trust model executed on the Peaq Protocol.
 
@@ -218,18 +205,18 @@ The integrity of the DKG is secured by a multi-faceted trust model executed on t
   * **Dispute Resolution Protocol**: An economically-incentivized challenge system allows any stakeholder to challenge a verified fact. The outcome is determined by a stake-weighted re-vote among validators, with **slashing** penalties for those who approved incorrect information or made a frivolous challenge.
   * **Privacy with Zero-Knowledge Proofs**: The system integrates **Zero-Knowledge Proofs** via the **Peaq ZK Layer**. This enables confidential operations, such as a Gateway proving it has checked a fact against a private database without revealing the database, or a user proving they have the right to access knowledge without revealing their identity.
 
------
+---
 
-## 7. Advanced On-Device Agent Capabilities
+## 9. Advanced On-Device Agent Capabilities
 
 Membria's architecture is designed to directly enhance the performance of on-device Tiny LLMs.
 
   * **Context and Memory Management**: Membria uses a **Segmented KV Buffer** for context window optimization and a hybrid **Persistent Memory** system (Local RAG Store + Disk-Based KV Archive) to prevent model "amnesia" between sessions.
   * **Synergy with Periodic LoRA Adaptation**: An automated offline pipeline uses knowledge accumulated in the DKG to periodically fine-tune the base Tiny LLM using **QLoRA**. This enhances the model's foundational understanding and embeds frequently used knowledge patterns directly into the model, often with minimal or no increase in its final size on the device.
 
------
+---
 
-## 8. Conclusion: The Symbiotic Relationship
+## 10. Conclusion: The Symbiotic Relationship
 
 Arweave provides the indispensable foundation of **trust, permanence, and verifiability** for the Membria DKG. By serving as the immutable archive for all knowledge payloads, it allows the Peaq Protocol to operate as a fast, flexible, and efficient logic layer. This symbiotic relationship enables Membria to create a knowledge graph that is both dynamic and eternally auditable, solving the core problem of creating a lasting, shared memory for decentralized AI.
 
@@ -890,7 +877,6 @@ This gives you direct GraphQL filtering by  Event-Id,  Actor-DID,  Model-URN, an
     -   Record  **topo order**  for fast cycle checks and lineage walks.
         
   
-
 ### **Consistency and “finality”**
 
 -   Arweave is append‑only, but you still want  **gateway‑level finality**:
