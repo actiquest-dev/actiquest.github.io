@@ -5,11 +5,11 @@ order: 144
 ---
 
 
-# **Membria: A Decentralized Knowledge Architecture
+# Membria: A Decentralized Knowledge Architecture
 
 -----
 
-## **Abstract**
+## Abstract
 
 This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph (KCG). Membria employs a **hybrid blockchain architecture**, separating the logical, transactional operations of the graph from the permanent storage of its data payloads. This brief clarifies the specific role of Arweave as the immutable data archive, details the structure and format of the data stored, and provides an in-depth, step-by-step protocol for both writing data to and reading data from the Arweave permaweb. It's intended for architects, developers, and stakeholders seeking to understand the foundational layer of trust and permanence within the Membria ecosystem.
 
