@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808349603926">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808351422961">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.808349603926" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.808351422961" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808349603926" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808351422961" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808349603926" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808349603926" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808351422961" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808351422961" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -227,15 +227,15 @@
 <doc-anchor-target id="membria-a-decentralized-knowledge-architecture" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#membria-a-decentralized-knowledge-architecture">#</doc-anchor-trigger>
-        <span>Membria: A Decentralized Knowledge Architecture</span>
+        <span><strong>Membria: A Decentralized Knowledge Architecture</strong></span>
     </h1>
 </doc-anchor-target>
 <hr>
 <doc-anchor-target id="abstract">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#abstract">#</doc-anchor-trigger>
         <span><strong>Abstract</strong></span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>This document provides a detailed architectural specification for the integration of the Arweave network within the Membria Knowledge Cache Graph (KCG). Membria employs a <strong>hybrid blockchain architecture</strong>, separating the logical, transactional operations of the graph from the permanent storage of its data payloads. This brief clarifies the specific role of Arweave as the immutable data archive, details the structure and format of the data stored, and provides an in-depth, step-by-step protocol for both writing data to and reading data from the Arweave permaweb. It&#x27;s intended for architects, developers, and stakeholders seeking to understand the foundational layer of trust and permanence within the Membria ecosystem.</p>
 <p>We introduce the <strong>Decentralized Knowledge Graph (DKG)</strong>—a verifiable and efficient system for the continuous learning and reasoning enhancement of on-device, lightweight large language models (Tiny LLMs). Instead of costly retraining, Membria utilizes <strong>Distillation on Demand (DoD)</strong>, a process where knowledge from large &quot;teacher&quot; LLMs is re-checked, validated, and recorded as immutable events in a public graph. This approach allows Tiny LLMs to dynamically retrieve and leverage high-quality, verified knowledge through fast <strong>Cache-Augmented Generation (CAG)</strong> pipelines, drastically reducing latency, cost, and dependence on centralized APIs.</p>
@@ -243,7 +243,7 @@
 <doc-anchor-target id="1-core-architecture-a-symbiotic-hybrid-model">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#1-core-architecture-a-symbiotic-hybrid-model">#</doc-anchor-trigger>
-        <span>1. Core Architecture: A Symbiotic Hybrid Model</span>
+        <span>1. Core Architecture: A Symbiotic Hybrid Model**</span>
     </h2>
 </doc-anchor-target>
 <p>Membria&#x27;s architecture is not a single blockchain but a symbiotic system that leverages the distinct strengths of two specialized networks: the Peaq Protocol for high-speed logic and Arweave for permanent data storage.</p>
@@ -275,7 +275,7 @@
         <span><strong>The Ontology Layer: A Flexible System of Dictionaries</strong></span>
     </h3>
 </doc-anchor-target>
-<p>Membria rejects a rigid, universal ontology in favor of a flexible and modular approach. This allows for the creation of custom ontologies tailored to specific users or domains—a concept referred to as <em>&quot;онтология под заказчика&quot;</em> or a &quot;custom ontology for the client.&quot;</p>
+<p>Membria rejects a rigid, universal ontology in favor of a flexible and modular approach. This allows for the creation of custom ontologies tailored to specific users or domains—a concept referred to as <em>&quot;сustom ontology for the client&quot;</em>.</p>
 <ul>
 <li><strong>Dictionaries as Building Blocks</strong>: The foundation of the ontology is <strong>&quot;dictionaries&quot;</strong>—reusable, named collections of concepts and relationships for a specific domain. Users can leverage public, standardized dictionaries (e.g., based on <strong>Schema.org</strong>) for broad interoperability or create their own private, specialized dictionaries for unique business needs.</li>
 <li><strong>Marketplace of Dictionaries</strong>: The Membria ecosystem will feature a catalog or marketplace for dictionaries and semantic models. This encourages the reuse of high-quality ontologies and enhances interoperability across the network.</li>
@@ -309,6 +309,7 @@
 <ul>
 <li><strong>Action</strong>: Community experts define and deploy an Executable Semantic Model on the Peaq network. This model acts as a verifiable template for a &quot;validated knowledge entry.&quot;</li>
 <li><strong>Protocol</strong>: An expert sends a transaction to Peaq containing a <strong>genesis event</strong> with the BSL code of the model as its payload. Once finalized, the model becomes an immutable part of the on-chain ontology. Arweave is not used in this step.</li>
+<li><strong>Role in the Intent: Definition.</strong> This phase establishes the rules and the &quot;schema&quot; for the successful fulfillment of all future Intents of this type.</li>
 </ul>
 <doc-anchor-target id="step-2-propose-new-knowledge-via-arweave-and-peaq">
     <h3>
@@ -316,12 +317,34 @@
         <span><strong>Step 2: Propose New Knowledge via Arweave and Peaq</strong></span>
     </h3>
 </doc-anchor-target>
-<p>This two-part step involves storing the data payload permanently and then creating a lightweight pointer to it on the logic chain.</p>
-<doc-anchor-target id="21-the-arweave-write-protocol">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#21-the-arweave-write-protocol">#</doc-anchor-trigger>
-        <span><strong>2.1: The Arweave Write Protocol</strong></span>
-    </h4>
+<ul>
+<li><strong>Role in the Intent: Execution.</strong> A DoD agent, acting to fulfill the Intent, obtains data from a &quot;teacher&quot; LLM, stores it on Arweave, and creates a proposal event on Peaq.</li>
+</ul>
+<doc-anchor-target id="step-3-gateway-consensus">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-gateway-consensus">#</doc-anchor-trigger>
+        <span><strong>Step 3: Gateway Consensus</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Role in the Intent: Verification.</strong> A quorum of independent gateway agents verifies that the Intent was executed correctly and that the results comply with the predefined rules (the contract).</li>
+</ul>
+<doc-anchor-target id="step-4-finalizing-the-result">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-finalizing-the-result">#</doc-anchor-trigger>
+        <span><strong>Step 4: Finalizing the Result</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Role in the Intent: Completion.</strong> A final <code v-pre>validation_event</code> is created, which officially closes the Intent by recording its outcome (success or failure) in the graph.</li>
+</ul>
+<p>The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system <strong>Intent</strong>: the <strong>&quot;Knowledge Distillation Request.&quot;</strong> This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent&#x27;s lifecycle.</p>
+<hr>
+<doc-anchor-target id="4-the-arweave-write-protocol">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-the-arweave-write-protocol">#</doc-anchor-trigger>
+        <span>4: The Arweave Write Protocol</span>
+    </h2>
 </doc-anchor-target>
 <p>This is the protocol for how a DoD Agent securely writes a knowledge payload to Arweave.</p>
 <ol>
@@ -372,10 +395,10 @@
 <li><strong>Confirmation and ID Retrieval</strong>: The Arweave network returns a permanent, unique <strong>Arweave Transaction ID (ArTxID)</strong>. This 43-character string is the immutable address of the knowledge payload.</li>
 </ol>
 <doc-anchor-target id="payload-example-arweave-json-ld-object">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#payload-example-arweave-json-ld-object">#</doc-anchor-trigger>
         <span><strong>Payload Example: Arweave JSON-LD Object</strong></span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>The following is a detailed example of the JSON-LD object stored on Arweave, representing a proposed answer.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -398,41 +421,6 @@
   &quot;keywords&quot;: [&quot;Membria&quot;, &quot;Architecture&quot;, &quot;Peaq&quot;, &quot;Arweave&quot;, &quot;Hybrid Blockchain&quot;]
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="4-the-adjusted-concept-the-lifecycle-of-knowledge-as-intent-fulfillment">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-the-adjusted-concept-the-lifecycle-of-knowledge-as-intent-fulfillment">#</doc-anchor-trigger>
-        <span>4. The Adjusted Concept: The Lifecycle of Knowledge as Intent Fulfillment</span>
-    </h2>
-</doc-anchor-target>
-<p>The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system <strong>Intent</strong>: the <strong>&quot;Knowledge Distillation Request.&quot;</strong> This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent&#x27;s lifecycle.</p>
-<doc-anchor-target id="the-four-phases-of-intent-fulfillment">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-four-phases-of-intent-fulfillment">#</doc-anchor-trigger>
-        <span><strong>The Four Phases of Intent Fulfillment</strong></span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><p><strong>Step 1: Defining the &quot;Knowledge Contract&quot;</strong></p>
-<ul>
-<li><strong>Role in the Intent: Definition.</strong> This phase establishes the rules and the &quot;schema&quot; for the successful fulfillment of all future Intents of this type.</li>
-</ul>
-</li>
-<li><p><strong>Step 2: Proposing New Knowledge</strong></p>
-<ul>
-<li><strong>Role in the Intent: Execution.</strong> A DoD agent, acting to fulfill the Intent, obtains data from a &quot;teacher&quot; LLM, stores it on Arweave, and creates a proposal event on Peaq.</li>
-</ul>
-</li>
-<li><p><strong>Step 3: Gateway Consensus</strong></p>
-<ul>
-<li><strong>Role in the Intent: Verification.</strong> A quorum of independent gateway agents verifies that the Intent was executed correctly and that the results comply with the predefined rules (the contract).</li>
-</ul>
-</li>
-<li><p><strong>Step 4: Finalizing the Result</strong></p>
-<ul>
-<li><strong>Role in the Intent: Completion.</strong> A final <code v-pre>validation_event</code> is created, which officially closes the Intent by recording its outcome (success or failure) in the graph.</li>
-</ul>
-</li>
-</ul>
 <hr>
 <doc-anchor-target id="advantages-of-this-approach">
     <h3>
@@ -446,11 +434,11 @@
 <li><strong>Scalability</strong>: This approach allows for the future addition of other &quot;Intent&quot; types (e.g., &quot;Request to generate a report&quot; or &quot;Initiate a voting process&quot;), which would logically fit into the same architecture.</li>
 </ul>
 <hr>
-<doc-anchor-target id="the-peaq-proposal-protocol">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-peaq-proposal-protocol">#</doc-anchor-trigger>
-        <span><strong>The Peaq Proposal Protocol</strong></span>
-    </h3>
+<doc-anchor-target id="5-the-peaq-proposal-protocol">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-the-peaq-proposal-protocol">#</doc-anchor-trigger>
+        <span>5. The Peaq Proposal Protocol</span>
+    </h2>
 </doc-anchor-target>
 <p><strong>Trigger:</strong> This protocol is initiated immediately after a DoD Agent successfully writes a data payload to the Arweave network and retrieves the unique Arweave Transaction ID (ArTxID).</p>
 <p><strong>Protocol:</strong> The DoD Agent creates and broadcasts a lightweight transaction to the Peaq network. [cite_start]This transaction creates a <strong>domain event</strong> (<code v-pre>предметное событие</code>) that formally logs the new knowledge proposal on the logic layer[cite: 242].</p>
@@ -485,10 +473,10 @@
 <li><strong>Protocol</strong>: A final <code v-pre>validation_event</code> is created on Peaq. Its payload contains the final status (e.g., <code v-pre>Status: Verified</code>, <code v-pre>ConfidenceScore: 0.98</code>). Its <code v-pre>cause</code> field points to the <code v-pre>proposed_answer_event</code>, creating the final, definitive edge in the knowledge subgraph.</li>
 </ul>
 <hr>
-<doc-anchor-target id="5-cost-optimization-transaction-batching-on-peaq">
+<doc-anchor-target id="6cost-optimization-transaction-batching-on-peaq">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-cost-optimization-transaction-batching-on-peaq">#</doc-anchor-trigger>
-        <span>5. Cost Optimization: Transaction Batching on Peaq</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6cost-optimization-transaction-batching-on-peaq">#</doc-anchor-trigger>
+        <span>6.Cost Optimization: Transaction Batching on Peaq</span>
     </h2>
 </doc-anchor-target>
 <p>[cite_start]The Membria architecture, inspired by the principles of SpiralOS, incorporates transaction batching as a core feature to optimize network traffic and reduce operational costs on the Peaq network[cite: 134].</p>
@@ -519,10 +507,10 @@
 </doc-anchor-target>
 <p>This method drastically reduces transaction costs. [cite_start]The base network fee is paid once for the entire batch rather than for each individual micro-transaction[cite: 134]. For processes like consensus voting, where many small, similar events are generated in a short period, batching provides a significant efficiency gain and makes the system more economical to operate.</p>
 <hr>
-<doc-anchor-target id="5-gateway-functionality-reading-and-managing-knowledge">
+<doc-anchor-target id="7-gateway-functionality-reading-and-managing-knowledge">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-gateway-functionality-reading-and-managing-knowledge">#</doc-anchor-trigger>
-        <span><strong>5. Gateway Functionality: Reading and Managing Knowledge</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-gateway-functionality-reading-and-managing-knowledge">#</doc-anchor-trigger>
+        <span>7. Gateway Functionality: Reading and Managing Knowledge</span>
     </h2>
 </doc-anchor-target>
 <p>Gateways are intelligent nodes that serve as the primary interface to the DKG for on-device agents.</p>
@@ -548,10 +536,10 @@
 </doc-anchor-target>
 <p>Knowledge stored on Arweave is <strong>permanent and cannot be overwritten</strong>. To update an entry, a new version of the JSON-LD object is uploaded to Arweave, receiving a <strong>new ArTxID</strong>. The logical graph on Peaq is then updated with a new event that supersedes the old one, and the mutable Gateway indexes are updated to point to the new ArTxID as the canonical version. All previous versions remain accessible on Arweave, providing a complete and verifiable audit trail.</p>
 <hr>
-<doc-anchor-target id="6-trust-validation-and-privacy">
+<doc-anchor-target id="8-trust-validation-and-privacy">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-trust-validation-and-privacy">#</doc-anchor-trigger>
-        <span>6. Trust, Validation, and Privacy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-trust-validation-and-privacy">#</doc-anchor-trigger>
+        <span>8. Trust, Validation, and Privacy</span>
     </h2>
 </doc-anchor-target>
 <p>The integrity of the DKG is secured by a multi-faceted trust model executed on the Peaq Protocol.</p>
@@ -561,10 +549,10 @@
 <li><strong>Privacy with Zero-Knowledge Proofs</strong>: The system integrates <strong>Zero-Knowledge Proofs</strong> via the <strong>Peaq ZK Layer</strong>. This enables confidential operations, such as a Gateway proving it has checked a fact against a private database without revealing the database, or a user proving they have the right to access knowledge without revealing their identity.</li>
 </ul>
 <hr>
-<doc-anchor-target id="7-advanced-on-device-agent-capabilities">
+<doc-anchor-target id="9-advanced-on-device-agent-capabilities">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#7-advanced-on-device-agent-capabilities">#</doc-anchor-trigger>
-        <span>7. Advanced On-Device Agent Capabilities</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#9-advanced-on-device-agent-capabilities">#</doc-anchor-trigger>
+        <span>9. Advanced On-Device Agent Capabilities</span>
     </h2>
 </doc-anchor-target>
 <p>Membria&#x27;s architecture is designed to directly enhance the performance of on-device Tiny LLMs.</p>
@@ -573,10 +561,10 @@
 <li><strong>Synergy with Periodic LoRA Adaptation</strong>: An automated offline pipeline uses knowledge accumulated in the DKG to periodically fine-tune the base Tiny LLM using <strong>QLoRA</strong>. This enhances the model&#x27;s foundational understanding and embeds frequently used knowledge patterns directly into the model, often with minimal or no increase in its final size on the device.</li>
 </ul>
 <hr>
-<doc-anchor-target id="8-conclusion-the-symbiotic-relationship">
+<doc-anchor-target id="10-conclusion-the-symbiotic-relationship">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#8-conclusion-the-symbiotic-relationship">#</doc-anchor-trigger>
-        <span>8. Conclusion: The Symbiotic Relationship</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#10-conclusion-the-symbiotic-relationship">#</doc-anchor-trigger>
+        <span>10. Conclusion: The Symbiotic Relationship</span>
     </h2>
 </doc-anchor-target>
 <p>Arweave provides the indispensable foundation of <strong>trust, permanence, and verifiability</strong> for the Membria DKG. By serving as the immutable archive for all knowledge payloads, it allows the Peaq Protocol to operate as a fast, flexible, and efficient logic layer. This symbiotic relationship enables Membria to create a knowledge graph that is both dynamic and eternally auditable, solving the core problem of creating a lasting, shared memory for decentralized AI.</p>
