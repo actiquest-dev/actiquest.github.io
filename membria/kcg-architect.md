@@ -278,8 +278,6 @@ Explicit schema versioning and ontology references ensure future compatibility w
 
 ### Edges in the DAG MUST be typed. Allowed edge types:
 
-Конечно, вот таблица в формате Markdown.
-
 | Edge Type | Purpose |
 | :--- | :--- |
 | `cause` | Causal relationship, required for all events |
@@ -309,8 +307,8 @@ Explicit schema versioning and ontology references ensure future compatibility w
 #### Create Event
 
 POST /events
-Content-Type: application/json
 ```
+Content-Type: application/json
 Body: Event JSON without id (computed by server).
 Response: { "id": "<event_id>", "status": "accepted" }
 ```
@@ -715,11 +713,8 @@ pub struct BatchCommit {
 ### Mode A (Header‑only on Peaq, payload on Arweave)
 
 1.  **Client canonicalizes and signs payload.**
-    
-2.  **Upload payload to Arweave; get  ar_tx.**
-    
-3.  **Call propose_event**{ header{event_id, model, actor, ts, ar_tx}, adj{cause}, sig }.
-    
+2.  **Upload payload to Arweave; get  ar_tx.** 
+3.  **Call propose_event**{ header{event_id, model, actor, ts, ar_tx}, adj{cause}, sig }  
 4.  **Gateways/validators check:**
     
     -   signature against DID/account
