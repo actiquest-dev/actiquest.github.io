@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808352097863">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808352799989">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.808352097863" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.808352799989" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808352097863" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808352799989" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808352097863" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808352097863" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808352799989" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.808352799989" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -299,7 +299,7 @@
         <span>3: The Lifecycle of Knowledge: A Step-by-Step Protocol</span>
     </h2>
 </doc-anchor-target>
-<p>The process of transforming a raw answer from a teacher LLM into a trusted DKG entry follows a precise, four-step lifecycle across both the Peaq and Arweave blockchains.</p>
+<p>The process of transforming a raw answer from a teacher LLM into a trusted DKG entry follows a precise, four-step lifecycle across both the Peaq and Arweave blockchains. The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system <strong>Intent</strong>: the <strong>&quot;Knowledge Distillation Request.&quot;</strong> This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent&#x27;s lifecycle.</p>
 <doc-anchor-target id="step-1-define-the-knowledge-contract-on-peaq">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-define-the-knowledge-contract-on-peaq">#</doc-anchor-trigger>
@@ -311,10 +311,10 @@
 <li><strong>Protocol</strong>: An expert sends a transaction to Peaq containing a <strong>genesis event</strong> with the BSL code of the model as its payload. Once finalized, the model becomes an immutable part of the on-chain ontology. Arweave is not used in this step.</li>
 <li><strong>Role in the Intent: Definition.</strong> This phase establishes the rules and the &quot;schema&quot; for the successful fulfillment of all future Intents of this type.</li>
 </ul>
-<doc-anchor-target id="step-2-propose-new-knowledge-via-arweave-and-peaq">
+<doc-anchor-target id="step-2-propose-new-knowledge-via-arweave-and-peaq-see-4--5-for-details">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-propose-new-knowledge-via-arweave-and-peaq">#</doc-anchor-trigger>
-        <span><strong>Step 2: Propose New Knowledge via Arweave and Peaq</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-propose-new-knowledge-via-arweave-and-peaq-see-4--5-for-details">#</doc-anchor-trigger>
+        <span><strong>Step 2: Propose New Knowledge via Arweave and Peaq. (See ##4: &amp; ##5: for details).</strong></span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -338,7 +338,6 @@
 <ul>
 <li><strong>Role in the Intent: Completion.</strong> A final <code v-pre>validation_event</code> is created, which officially closes the Intent by recording its outcome (success or failure) in the graph.</li>
 </ul>
-<p>The entire process, from a query to the retrieval of verified knowledge, is treated within the Membria architecture as the fulfillment of a primary system <strong>Intent</strong>: the <strong>&quot;Knowledge Distillation Request.&quot;</strong> This is a formalized goal, initiated by a user or a Tiny LLM, that triggers a well-defined sequence of events to achieve its objective. Each step of the protocol is a phase in this Intent&#x27;s lifecycle.</p>
 <hr>
 <doc-anchor-target id="4-the-arweave-write-protocol">
     <h2>
@@ -429,7 +428,7 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li><strong>Precision</strong>: This uses the key terminology of SpiralOS (&quot;Intent&quot;) but applies it specifically to the core process that Membria implements.</li>
+<li><strong>Precision</strong>: This uses &quot;Intent&quot; approach but applies it specifically to the core process of Knowledge Distillation that Membria implements.</li>
 <li><strong>Coherence</strong>: It creates a stronger, more unified narrative. The entire complex protocol now has a clear purpose: to fulfill one specific &quot;Intent.&quot;</li>
 <li><strong>Scalability</strong>: This approach allows for the future addition of other &quot;Intent&quot; types (e.g., &quot;Request to generate a report&quot; or &quot;Initiate a voting process&quot;), which would logically fit into the same architecture.</li>
 </ul>
@@ -479,7 +478,7 @@
         <span>6: Cost Optimization: Transaction Batching on Peaq</span>
     </h2>
 </doc-anchor-target>
-<p>[cite_start]The Membria architecture, inspired by the principles of SpiralOS, incorporates transaction batching as a core feature to optimize network traffic and reduce operational costs on the Peaq network[cite: 134].</p>
+<p>The Membria architecture incorporates transaction batching as a core feature to optimize network traffic and reduce operational costs on the Peaq network.</p>
 <doc-anchor-target id="how-it-works">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-it-works">#</doc-anchor-trigger>
@@ -505,7 +504,7 @@
         <span><strong>The Advantage</strong></span>
     </h3>
 </doc-anchor-target>
-<p>This method drastically reduces transaction costs. [cite_start]The base network fee is paid once for the entire batch rather than for each individual micro-transaction[cite: 134]. For processes like consensus voting, where many small, similar events are generated in a short period, batching provides a significant efficiency gain and makes the system more economical to operate.</p>
+<p>This method drastically reduces transaction costs. [cite_start]The base network fee is paid once for the entire batch rather than for each individual micro-transaction. For processes like consensus voting, where many small, similar events are generated in a short period, batching provides a significant efficiency gain and makes the system more economical to operate.</p>
 <hr>
 <doc-anchor-target id="7-gateway-functionality-reading-and-managing-knowledge">
     <h2>
@@ -569,10 +568,10 @@
 </doc-anchor-target>
 <p>Arweave provides the indispensable foundation of <strong>trust, permanence, and verifiability</strong> for the Membria DKG. By serving as the immutable archive for all knowledge payloads, it allows the Peaq Protocol to operate as a fast, flexible, and efficient logic layer. This symbiotic relationship enables Membria to create a knowledge graph that is both dynamic and eternally auditable, solving the core problem of creating a lasting, shared memory for decentralized AI.</p>
 <hr>
-<doc-anchor-target id="kcg-architectural-addendum">
+<doc-anchor-target id="kcg-architectural-addendum-for-engineers-and-integrators">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#kcg-architectural-addendum">#</doc-anchor-trigger>
-        <span>KCG Architectural Addendum</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kcg-architectural-addendum-for-engineers-and-integrators">#</doc-anchor-trigger>
+        <span>KCG Architectural Addendum (for engineers and integrators).</span>
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="purpose">
