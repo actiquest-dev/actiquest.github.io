@@ -1,5 +1,5 @@
 ---
-icon: devices
+icon: workflow
 label: KCG Architecture
 order: 144
 ---
