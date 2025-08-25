@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808361070733">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809452148049">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.808361070733" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.809452148049" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.808361070733" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809452148049" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.808361070733" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809452148049" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -416,10 +416,160 @@ orchestrator.</p>
 <li><strong>Economic Efficiency:</strong> A key advantage is cost. Serving a 7-billion parameter SLM is <strong>10-30 times cheaper</strong> in terms of latency, energy, and FLOPs than a 70-175 billion parameter LLM. Furthermore, fine-tuning an SLM with techniques like LoRA requires only a <strong>few GPU-hours</strong>, as opposed to weeks for large models, enabling rapid iteration and adaptation.</li>
 <li><strong>Behavioral Alignment for Reliability:</strong> For agentic workflows, reliability is paramount. An agent&#x27;s interaction with tools requires strictly formatted outputs (e.g., JSON), and general-purpose LLMs may occasionally fail to adhere to these formats, causing errors. A specialized LoRA skill, however, can be cheaply and effectively fine-tuned to enforce a single formatting decision, ensuring near-perfect reliability for tool-use and system integration.</li>
 </ul>
-<doc-anchor-target id="36-agent-orchestrator-autonomous-agent-management">
+<doc-anchor-target id="membrias-adaptive-knowledge-fusion-framework">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membrias-adaptive-knowledge-fusion-framework">#</doc-anchor-trigger>
+        <span><strong>Membria&#x27;s Adaptive Knowledge Fusion Framework</strong></span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="objective">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#36-agent-orchestrator-autonomous-agent-management">#</doc-anchor-trigger>
-        <span>3.6. Agent Orchestrator: Autonomous Agent Management</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#objective">#</doc-anchor-trigger>
+        <span><strong>Objective</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>The core objective of this framework is to transform the Membria client from a system of siloed experts into an <strong>intelligent, self-correcting ecosystem</strong>. This process enables each specialized AI expert to dynamically identify, diagnose, and remedy its own &quot;knowledge gaps.&quot; This ensures that the entire system becomes progressively smarter and more accurate with every user interaction, targeting improvements with surgical precision.</p>
+<p>This architecture replaces simpler RAG or monolithic fine-tuning models with a sophisticated, scalable, and targeted self-correction loop for an <strong>Association of Experts (AoE)</strong> .</p>
+<doc-anchor-target id="how-it-works-the-integrated-workflow">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-it-works-the-integrated-workflow">#</doc-anchor-trigger>
+        <span><strong>How It Works: The Integrated Workflow</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>The process involves Membria&#x27;s standard components working in a tightly integrated sequence. The entire loop is triggered when a user query, routed to a specific expert, cannot be confidently answered by that expert using its internal knowledge graph.</p>
+<doc-anchor-target id="component-1-the-routerorchestrator">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#component-1-the-routerorchestrator">#</doc-anchor-trigger>
+        <span><strong>Component 1: The Router/Orchestrator</strong></span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><strong>Role:</strong> The &quot;Intelligent Dispatcher.&quot;</li>
+<li><strong>Process:</strong> When a user issues a query, the Router/Orchestrator is the first point of contact.
+<ol>
+<li><strong>Analysis and Routing:</strong> It analyzes the query&#x27;s intent and topic to determine the required domain of expertise.</li>
+<li><strong>Expert Selection:</strong> It then routes the query to the most appropriate <strong>specialized (&quot;dense&quot;) expert</strong> from its pool (e.g., &quot;Expert on Clinical Trials,&quot; &quot;Expert on Financial Regulations&quot;). This ensures that the query is handled by the model with the deepest knowledge in that specific area.</li>
+</ol>
+</li>
+</ul>
+<doc-anchor-target id="component-2-the-self-knowledge-checkpoint-at-the-expert-level">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#component-2-the-self-knowledge-checkpoint-at-the-expert-level">#</doc-anchor-trigger>
+        <span><strong>Component 2: The Self-Knowledge Checkpoint (at the Expert Level)</strong></span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><strong>Role:</strong> The &quot;Sentry&quot; or &quot;Graph Diagnostician.&quot;</li>
+<li><strong>Process:</strong> The selected dense expert receives the query and performs the confidence check. This is no longer an abstract assessment of parametric knowledge but a direct query against its structured knowledge base.
+<ul>
+<li><strong>The query is run against the local temporal ontology (Graph RAG).</strong></li>
+<li><strong>If confidence is high:</strong> The expert finds all necessary nodes (entities) and edges (relationships) within its segment of the knowledge graph to form a complete and accurate answer. The answer is returned to the user.</li>
+<li><strong>If confidence is low (a &quot;Knowledge Gap&quot;):</strong> This is the trigger. The expert diagnoses a specific deficiency in its knowledge graph—a missing entity, an outdated relationship, or a contradiction. Instead of generating a potentially incorrect answer, it signals the Orchestrator to initiate a <strong>Distillation on Demand (DoD)</strong> request to get an expert answer from more powerful external models.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="component-3-the-knowledge-curator">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#component-3-the-knowledge-curator">#</doc-anchor-trigger>
+        <span><strong>Component 3: The Knowledge Curator</strong></span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><strong>Role:</strong> The &quot;Ontology Architect&quot; and &quot;Data Scientist.&quot;</li>
+<li><strong>Process:</strong> Once the DoD process returns a high-quality, validated &quot;expert answer,&quot; the Knowledge Curator begins its highly contextualized work.
+<ol>
+<li><strong>Graph-Level Knowledge Fusion:</strong> The Curator performs the critical <strong>Internal-External Knowledge Fusion</strong> step. This is a structural operation on the local temporal ontology. It uses the new external knowledge to directly <strong>heal and expand the knowledge graph</strong> by:
+<ul>
+<li>Adding new nodes (entities).</li>
+<li>Creating new edges (relationships).</li>
+<li>Updating the temporal attributes of existing knowledge to ensure currency.</li>
+</ul>
+</li>
+<li><strong>Reasoning Data Generation:</strong> The Curator then uses the S2K pipeline to structure this newly enriched graph-based knowledge into high-quality training examples, classifying them into deductive, inductive, or case-based reasoning scenarios to enhance the expert&#x27;s logical depth.</li>
+</ol>
+</li>
+</ul>
+<doc-anchor-target id="component-4-the-skillforge">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#component-4-the-skillforge">#</doc-anchor-trigger>
+        <span><strong>Component 4: The SkillForge</strong></span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><strong>Role:</strong> The &quot;Personal Trainer&quot; for the expert.</li>
+<li><strong>Process:</strong> The SkillForge receives the small, high-quality, fused-and-structured training dataset from the Knowledge Curator. It then executes the final step with surgical precision.
+<ol>
+<li><strong>Targeted Selective Supervised Fine-Tuning (Selective SFT):</strong> The SkillForge initiates a fine-tuning process to create a new Δ-LoRA patch. It uses the <strong>Selective SFT</strong> method, which applies greater weight during optimization only to the parts of the knowledge the <strong>specific expert</strong> was originally uncertain about.</li>
+<li><strong>Skill Integration:</strong> The newly generated LoRA patch—a new &quot;skill&quot;—is immediately and exclusively applied <strong>only to the dense expert that failed the initial check</strong>. This permanently closes its knowledge gap without affecting any other expert in the pool.</li>
+</ol>
+</li>
+</ul>
+<doc-anchor-target id="3-workflow-diagram">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-workflow-diagram">#</doc-anchor-trigger>
+        <span><strong>3. Workflow Diagram</strong></span>
+    </h4>
+</doc-anchor-target>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">---
+config:
+  theme: redux
+  layout: fixed
+---
+
+graph TD  
+    A\[User Query\] \--\&gt; R{Router/Orchestrator};  
+    R \-- Routes query to the most relevant expert \--\&gt; E\_Pool\[Pool of Dense Experts\];  
+    subgraph E\_Pool  
+        direction LR  
+        E1\[Expert 1\]  
+        E2\[Expert 2\]  
+        E3\[...\]  
+    end  
+      
+    R \--\&gt; E2;  
+    E2 \-- Queries its segment of the knowledge graph \--\&gt; G\_RAG\[Local Temporal Ontology\];  
+    G\_RAG \-- Returns graph-based context \--\&gt; E2;  
+    E2 \-- Assesses completeness of graph data \--\&gt; Check{Self-Knowledge Checkpoint};  
+      
+    Check \-- High Confidence (Graph is sufficient) \--\&gt; C\[Answer from Expert 2\];  
+    C \--\&gt; A;
+
+    Check \-- Low Confidence (Knowledge Gap in Graph) \--\&gt; D\[1. Trigger DoD Request\];  
+    D \--\&gt; Ext\_LLM\[External LLMs\];  
+    Ext\_LLM \-- Expert Answer \--\&gt; F{Knowledge Curator};  
+      
+    subgraph F  
+        direction TB  
+        F1\[2. Perform Graph-Level Fusion (Heal the Ontology)\]  
+        F2\[3. Generate Structured Training Data for Expert 2\]  
+    end
+
+    F \-- Ontology Updates \--\&gt; G\_RAG;  
+    F \-- Training Data \--\&gt; G{SkillForge};
+
+    subgraph G  
+        H\[4. Generate Targeted LoRA Patch via Selective SFT\]  
+    end
+
+    G \-- New skill (LoRA) is applied only to the specific expert \--\&gt; E2;
+</pre></div>
+<doc-anchor-target id="how-this-improves-knowledge-quality">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-this-improves-knowledge-quality">#</doc-anchor-trigger>
+        <span><strong>How This Improves Knowledge Quality</strong></span>
+    </h4>
+</doc-anchor-target>
+<p>This AoE architecture provides a monumental improvement over standard/Graph RAG or basic fine-tuning:</p>
+<ul>
+<li><strong>It Creates a Self-Healing Knowledge Graph:</strong> Naive RAG simply provides external context. This framework actively uses external knowledge to <strong>correct, expand, and maintain the currency</strong> of the internal, structured temporal ontology itself. The knowledge base becomes a living, evolving entity.</li>
+<li><strong>It Teaches Reasoning, Not Just Facts:</strong> By generating structured reasoning data from the corrected graph, the system trains the expert on <strong>how to think</strong> within its newly expanded domain, not just what to know.</li>
+<li><strong>It&#x27;s Radically More Efficient and Scalable:</strong> The MoE architecture with <strong>Selective SFT</strong> focuses the entire training effort only on the specific knowledge gap within a single, small expert. This allows the system to achieve results comparable to massive domain pretraining but with <strong>2-3 orders of magnitude less data and cost</strong>. This makes continuous, on-device, and highly specialized learning not just feasible, but optimal.</li>
+<li><strong>It Ensures Precision and Prevents Knowledge Contamination:</strong> By isolating the learning process to a single expert, you ensure that improvements in one domain (e.g., Financial Regulations) do not accidentally degrade performance in another, unrelated domain.</li>
+</ul>
+<doc-anchor-target id="agent-orchestrator-autonomous-agent-management">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#agent-orchestrator-autonomous-agent-management">#</doc-anchor-trigger>
+        <span>Agent Orchestrator: Autonomous Agent Management</span>
     </h4>
 </doc-anchor-target>
 <p>This component transforms the LLM from a simple chatbot into a proactive, thinking assistant capable of executing complex, multi-step tasks. Its basic features include access to tools (search, file system) and background task execution.</p>
@@ -437,6 +587,7 @@ orchestrator.</p>
 <li><strong>Action Head:</strong> Based on this reasoning, the agent chooses a specific action—to call a tool or to respond to the user.</li>
 <li><strong>Memory Update Head:</strong> After executing an action, this head analyzes the result and <strong>compresses it</strong>, updating the latent memory state. It decides what to remember and what to forget.</li>
 </ol>
+<hr>
 <doc-anchor-target id="agent-memory-storage-a-detailed-hybrid-and-hierarchical-approach">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#agent-memory-storage-a-detailed-hybrid-and-hierarchical-approach">#</doc-anchor-trigger>
