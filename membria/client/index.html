@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809452148049">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809452307360">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.809452148049" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.809452307360" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809452148049" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809452307360" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809452148049" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809452307360" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -504,10 +504,10 @@ orchestrator.</p>
 </ol>
 </li>
 </ul>
-<doc-anchor-target id="3-workflow-diagram">
+<doc-anchor-target id="workflow-diagram">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-workflow-diagram">#</doc-anchor-trigger>
-        <span><strong>3. Workflow Diagram</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#workflow-diagram">#</doc-anchor-trigger>
+        <span><strong>Workflow Diagram</strong></span>
     </h4>
 </doc-anchor-target>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">---
@@ -515,43 +515,46 @@ config:
   theme: redux
   layout: fixed
 ---
+graph TD
+    A[User Query] --&gt; R{Router / Orchestrator}
+    R --&gt;|Routes query to the most relevant expert| E_Pool
 
-graph TD  
-    A\[User Query\] \--\&gt; R{Router/Orchestrator};  
-    R \-- Routes query to the most relevant expert \--\&gt; E\_Pool\[Pool of Dense Experts\];  
-    subgraph E\_Pool  
-        direction LR  
-        E1\[Expert 1\]  
-        E2\[Expert 2\]  
-        E3\[...\]  
-    end  
-      
-    R \--\&gt; E2;  
-    E2 \-- Queries its segment of the knowledge graph \--\&gt; G\_RAG\[Local Temporal Ontology\];  
-    G\_RAG \-- Returns graph-based context \--\&gt; E2;  
-    E2 \-- Assesses completeness of graph data \--\&gt; Check{Self-Knowledge Checkpoint};  
-      
-    Check \-- High Confidence (Graph is sufficient) \--\&gt; C\[Answer from Expert 2\];  
-    C \--\&gt; A;
-
-    Check \-- Low Confidence (Knowledge Gap in Graph) \--\&gt; D\[1. Trigger DoD Request\];  
-    D \--\&gt; Ext\_LLM\[External LLMs\];  
-    Ext\_LLM \-- Expert Answer \--\&gt; F{Knowledge Curator};  
-      
-    subgraph F  
-        direction TB  
-        F1\[2. Perform Graph-Level Fusion (Heal the Ontology)\]  
-        F2\[3. Generate Structured Training Data for Expert 2\]  
+    subgraph E_Pool [Pool of Dense Experts]
+      direction LR
+      E1[Expert 1]
+      E2[Expert 2]
+      E3[...]
     end
 
-    F \-- Ontology Updates \--\&gt; G\_RAG;  
-    F \-- Training Data \--\&gt; G{SkillForge};
+    R --&gt; E2
+    E2 --&gt;|Queries its segment of the knowledge graph| G_RAG
+    G_RAG[Local Temporal Ontology] --&gt;|Returns graph-based context| E2
+    E2 --&gt;|Assesses completeness of graph data| Check{Self-Knowledge Checkpoint}
 
-    subgraph G  
-        H\[4. Generate Targeted LoRA Patch via Selective SFT\]  
+    Check --&gt;|High Confidence (graph is sufficient)| C[Answer from Expert 2]
+    C --&gt; A
+
+    Check --&gt;|Low Confidence (knowledge gap in graph)| D[1. Trigger DoD Request]
+    D --&gt; Ext_LLM[External LLMs]
+    Ext_LLM --&gt;|Expert Answer| KC[Knowledge Curator]
+
+    subgraph Curator [Knowledge Curator]
+      direction TB
+      KF1[2. Perform Graph-Level Fusion&lt;br/&gt;(Heal the Ontology)]
+      KF2[3. Generate Structured Training Data for Expert 2]
     end
 
-    G \-- New skill (LoRA) is applied only to the specific expert \--\&gt; E2;
+    KC --&gt; KF1
+    KC --&gt; KF2
+
+    KF1 --&gt;|Ontology Updates| G_RAG
+    KF2 --&gt;|Training Data| SF[SkillForge]
+
+    subgraph SkillForge
+      H[4. Generate Targeted LoRA Patch via Selective SFT]
+    end
+
+    H --&gt;|New skill (LoRA) is applied only to Expert 2| E2
 </pre></div>
 <doc-anchor-target id="how-this-improves-knowledge-quality">
     <h4>
