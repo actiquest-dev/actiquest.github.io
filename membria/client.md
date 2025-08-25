@@ -193,46 +193,36 @@ config:
   theme: redux
   layout: fixed
 ---
-graph TD
-    A[User Query] --> R{Router / Orchestrator}
-    R -->|Routes query to the most relevant expert| E_Pool
-
-    subgraph E_Pool [Pool of Dense Experts]
-      direction LR
-      E1[Expert 1]
-      E2[Expert 2]
-      E3[...]
-    end
-
+flowchart TD
+ subgraph E_Pool["Pool of Dense Experts"]
+    direction LR
+        E1["Expert 1"]
+        E2["Expert 2"]
+        E3["..."]
+  end
+ subgraph Curator["Knowledge Curator"]
+    direction TB
+        KF1["2. Perform Graph-Level Fusion - Heal the Ontology"]
+        KF2["3. Generate Structured Training Data for Expert 2"]
+  end
+ subgraph SkillForge["SkillForge"]
+        H["Generate Targeted LoRA Patch via Selective SFT"]
+  end
+    A["User Query"] --> R{"Router / Orchestrator"}
+    R -- Routes query to the most relevant expert --> E_Pool
     R --> E2
-    E2 -->|Queries its segment of the knowledge graph| G_RAG
-    G_RAG[Local Temporal Ontology] -->|Returns graph-based context| E2
-    E2 -->|Assesses completeness of graph data| Check{Self-Knowledge Checkpoint}
-
-    Check -->|High Confidence (graph is sufficient)| C[Answer from Expert 2]
+    E2 -- Queries its segment of the knowledge graph --> G_RAG["Local Temporal Ontology"]
+    G_RAG -- "Returns graph-based context" --> E2
+    E2 -- Assesses completeness of graph data --> Check{"Self-Knowledge Checkpoint"}
+    Check -- "High Confidence - graph is sufficient" --> C["Answer from Expert 2"]
     C --> A
-
-    Check -->|Low Confidence (knowledge gap in graph)| D[1. Trigger DoD Request]
-    D --> Ext_LLM[External LLMs]
-    Ext_LLM -->|Expert Answer| KC[Knowledge Curator]
-
-    subgraph Curator [Knowledge Curator]
-      direction TB
-      KF1[2. Perform Graph-Level Fusion<br/>(Heal the Ontology)]
-      KF2[3. Generate Structured Training Data for Expert 2]
-    end
-
-    KC --> KF1
-    KC --> KF2
-
-    KF1 -->|Ontology Updates| G_RAG
-    KF2 -->|Training Data| SF[SkillForge]
-
-    subgraph SkillForge
-      H[4. Generate Targeted LoRA Patch via Selective SFT]
-    end
-
-    H -->|New skill (LoRA) is applied only to Expert 2| E2
+    Check -- "Low Confidence - knowledge gap in graph" --> D["1. Trigger DoD Request"]
+    D --> Ext_LLM["External LLMs"]
+    Ext_LLM -- Expert Answer --> KC["Knowledge Curator"]
+    KC --> KF1 & KF2
+    KF1 -- Ontology Updates --> G_RAG
+    KF2 -- Training Data --> SF["SkillForge"]
+    H -- "New skill - LoRA is applied only to Expert 2" --> E2
 
 ```
 
