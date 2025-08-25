@@ -141,7 +141,108 @@ The SkillForge approach is built on the proven power and efficiency of specializ
   * **Economic Efficiency:** A key advantage is cost. Serving a 7-billion parameter SLM is **10-30 times cheaper** in terms of latency, energy, and FLOPs than a 70-175 billion parameter LLM. Furthermore, fine-tuning an SLM with techniques like LoRA requires only a **few GPU-hours**, as opposed to weeks for large models, enabling rapid iteration and adaptation.
   * **Behavioral Alignment for Reliability:** For agentic workflows, reliability is paramount. An agent's interaction with tools requires strictly formatted outputs (e.g., JSON), and general-purpose LLMs may occasionally fail to adhere to these formats, causing errors. A specialized LoRA skill, however, can be cheaply and effectively fine-tuned to enforce a single formatting decision, ensuring near-perfect reliability for tool-use and system integration.
 
-#### 3.6. Agent Orchestrator: Autonomous Agent Management
+### **Membria's Adaptive Knowledge Fusion Framework**
+
+#### **Objective**
+
+The core objective of this framework is to transform the Membria client from a system of siloed experts into an **intelligent, self-correcting ecosystem**. This process enables each specialized AI expert to dynamically identify, diagnose, and remedy its own "knowledge gaps." This ensures that the entire system becomes progressively smarter and more accurate with every user interaction, targeting improvements with surgical precision.
+
+This architecture replaces simpler RAG or monolithic fine-tuning models with a sophisticated, scalable, and targeted self-correction loop for an **Association of Experts (AoE)** .
+
+#### **How It Works: The Integrated Workflow**
+
+The process involves Membria's standard components working in a tightly integrated sequence. The entire loop is triggered when a user query, routed to a specific expert, cannot be confidently answered by that expert using its internal knowledge graph.
+
+##### **Component 1: The Router/Orchestrator**
+
+* **Role:** The "Intelligent Dispatcher."  
+* **Process:** When a user issues a query, the Router/Orchestrator is the first point of contact.  
+  1. **Analysis and Routing:** It analyzes the query's intent and topic to determine the required domain of expertise.  
+  2. **Expert Selection:** It then routes the query to the most appropriate **specialized ("dense") expert** from its pool (e.g., "Expert on Clinical Trials," "Expert on Financial Regulations"). This ensures that the query is handled by the model with the deepest knowledge in that specific area.
+
+##### **Component 2: The Self-Knowledge Checkpoint (at the Expert Level)**
+
+* **Role:** The "Sentry" or "Graph Diagnostician."  
+* **Process:** The selected dense expert receives the query and performs the confidence check. This is no longer an abstract assessment of parametric knowledge but a direct query against its structured knowledge base.  
+  * **The query is run against the local temporal ontology (Graph RAG).**  
+  * **If confidence is high:** The expert finds all necessary nodes (entities) and edges (relationships) within its segment of the knowledge graph to form a complete and accurate answer. The answer is returned to the user.  
+  * **If confidence is low (a "Knowledge Gap"):** This is the trigger. The expert diagnoses a specific deficiency in its knowledge graph—a missing entity, an outdated relationship, or a contradiction. Instead of generating a potentially incorrect answer, it signals the Orchestrator to initiate a **Distillation on Demand (DoD)** request to get an expert answer from more powerful external models.
+
+##### **Component 3: The Knowledge Curator**
+
+* **Role:** The "Ontology Architect" and "Data Scientist."  
+* **Process:** Once the DoD process returns a high-quality, validated "expert answer," the Knowledge Curator begins its highly contextualized work.  
+  1. **Graph-Level Knowledge Fusion:** The Curator performs the critical **Internal-External Knowledge Fusion** step. This is a structural operation on the local temporal ontology. It uses the new external knowledge to directly **heal and expand the knowledge graph** by:  
+     * Adding new nodes (entities).  
+     * Creating new edges (relationships).  
+     * Updating the temporal attributes of existing knowledge to ensure currency.  
+  2. **Reasoning Data Generation:** The Curator then uses the S2K pipeline to structure this newly enriched graph-based knowledge into high-quality training examples, classifying them into deductive, inductive, or case-based reasoning scenarios to enhance the expert's logical depth.
+
+##### **Component 4: The SkillForge**
+
+* **Role:** The "Personal Trainer" for the expert.  
+* **Process:** The SkillForge receives the small, high-quality, fused-and-structured training dataset from the Knowledge Curator. It then executes the final step with surgical precision.  
+  1. **Targeted Selective Supervised Fine-Tuning (Selective SFT):** The SkillForge initiates a fine-tuning process to create a new Δ-LoRA patch. It uses the **Selective SFT** method, which applies greater weight during optimization only to the parts of the knowledge the **specific expert** was originally uncertain about.  
+  2. **Skill Integration:** The newly generated LoRA patch—a new "skill"—is immediately and exclusively applied **only to the dense expert that failed the initial check**. This permanently closes its knowledge gap without affecting any other expert in the pool.
+
+#### **3\. Workflow Diagram**
+
+```mermaid
+---
+config:
+  theme: redux
+  layout: fixed
+---
+
+graph TD  
+    A\[User Query\] \--\> R{Router/Orchestrator};  
+    R \-- Routes query to the most relevant expert \--\> E\_Pool\[Pool of Dense Experts\];  
+    subgraph E\_Pool  
+        direction LR  
+        E1\[Expert 1\]  
+        E2\[Expert 2\]  
+        E3\[...\]  
+    end  
+      
+    R \--\> E2;  
+    E2 \-- Queries its segment of the knowledge graph \--\> G\_RAG\[Local Temporal Ontology\];  
+    G\_RAG \-- Returns graph-based context \--\> E2;  
+    E2 \-- Assesses completeness of graph data \--\> Check{Self-Knowledge Checkpoint};  
+      
+    Check \-- High Confidence (Graph is sufficient) \--\> C\[Answer from Expert 2\];  
+    C \--\> A;
+
+    Check \-- Low Confidence (Knowledge Gap in Graph) \--\> D\[1. Trigger DoD Request\];  
+    D \--\> Ext\_LLM\[External LLMs\];  
+    Ext\_LLM \-- Expert Answer \--\> F{Knowledge Curator};  
+      
+    subgraph F  
+        direction TB  
+        F1\[2. Perform Graph-Level Fusion (Heal the Ontology)\]  
+        F2\[3. Generate Structured Training Data for Expert 2\]  
+    end
+
+    F \-- Ontology Updates \--\> G\_RAG;  
+    F \-- Training Data \--\> G{SkillForge};
+
+    subgraph G  
+        H\[4. Generate Targeted LoRA Patch via Selective SFT\]  
+    end
+
+    G \-- New skill (LoRA) is applied only to the specific expert \--\> E2;
+
+```
+
+#### **How This Improves Knowledge Quality**
+
+This AoE architecture provides a monumental improvement over standard/Graph RAG or basic fine-tuning:
+
+* **It Creates a Self-Healing Knowledge Graph:** Naive RAG simply provides external context. This framework actively uses external knowledge to **correct, expand, and maintain the currency** of the internal, structured temporal ontology itself. The knowledge base becomes a living, evolving entity.  
+* **It Teaches Reasoning, Not Just Facts:** By generating structured reasoning data from the corrected graph, the system trains the expert on **how to think** within its newly expanded domain, not just what to know.  
+* **It's Radically More Efficient and Scalable:** The MoE architecture with **Selective SFT** focuses the entire training effort only on the specific knowledge gap within a single, small expert. This allows the system to achieve results comparable to massive domain pretraining but with **2-3 orders of magnitude less data and cost**. This makes continuous, on-device, and highly specialized learning not just feasible, but optimal.  
+* **It Ensures Precision and Prevents Knowledge Contamination:** By isolating the learning process to a single expert, you ensure that improvements in one domain (e.g., Financial Regulations) do not accidentally degrade performance in another, unrelated domain.
+
+#### Agent Orchestrator: Autonomous Agent Management
 
 This component transforms the LLM from a simple chatbot into a proactive, thinking assistant capable of executing complex, multi-step tasks. Its basic features include access to tools (search, file system) and background task execution.
 
@@ -156,6 +257,8 @@ To achieve this, Membria's modular agents use an architecture with three key com
 1.  **Reasoning Head:** At each step, the agent first generates internal thoughts and reasoning.
 2.  **Action Head:** Based on this reasoning, the agent chooses a specific action—to call a tool or to respond to the user.
 3.  **Memory Update Head:** After executing an action, this head analyzes the result and **compresses it**, updating the latent memory state. It decides what to remember and what to forget.
+
+---
 
 ### Agent Memory Storage: A Detailed Hybrid and Hierarchical Approach
 
