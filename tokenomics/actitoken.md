@@ -456,20 +456,7 @@ def calculate_knowledge_value_score(dod_request, answer):
 
 ---
 
-## 11. Competitive Analysis
-
-| Dimension | **Membria** | **Ollama + Khoj** | **ChatGPT Plus** | **Glean** | **Neo4j Aura** |
-|-----------|-------------|-------------------|------------------|-----------|----------------|
-| **Deployment** | Edge + Cloud | Edge only | Cloud only | Cloud only | Cloud only |
-| **Knowledge Source** | Decentralized verified KCG | Local files only | Proprietary training | Enterprise docs | Graph DB (no AI) |
-| **Cost Model** | $0.10/DoD, then free (cache) | Free (OPEX only) | $20/month subscription | $25+/user/month | $0.10/hour + storage |
-| **Privacy** | 100% local inference | 100% local | Zero (trains on your data) | Enterprise-grade | Enterprise-grade |
-| **Updating Knowledge** | Real-time via DoD | Manual re-indexing | No user control | Daily sync | Manual updates |
-| **LLM Choice** | Any HuggingFace model | Any local model | GPT-4 only | Proprietary | No LLM included |
-| **Token Incentives** | Yes (deflationary $ACTI) | No | No | No | No |
-| **Unique Value** | Wikipedia for AI + token economy | Simple & free | Best UX | Enterprise search | Graph analytics |
-
-**Membria's Moat:**
+## 11. **Membria's Moat:**
 1. Only solution offering **verified, permanent knowledge** for edge AI
 2. Economic incentives align users, operators, and knowledge quality
 3. Hybrid edge/cloud architecture balances privacy and intelligence
@@ -518,7 +505,7 @@ def calculate_knowledge_value_score(dod_request, answer):
 
 * **Dr. Ty Vachon, MD** ([LinkedIn](https://linkedin.com/in/tyvachon)) – Sports Medicine Radiologist, former DoD Innovation
 * **Leonard Khiroug, PhD** ([LinkedIn](https://linkedin.com/in/leonardkhiroug)) – Neuroscience, University of Amsterdam
-* **Vencatesh Babu, PhD** ([LinkedIn](https://www.linkedin.com/in/venkatesh-babu-radhakrishnan-4a8816235)) – AI, Indian Institure of Scienece, Bangalor
+* **Vencatesh Babu, PhD** ([LinkedIn](https://www.linkedin.com/in/venkatesh-babu-radhakrishnan-4a8816235)) – AI, Indian Institure of Science, Bangalor
 
 ### 13.3. Strategic Partners
 
