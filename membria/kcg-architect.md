@@ -29,6 +29,110 @@ The **Peaq Protocol** serves as the brain of the system. It manages the graph's 
 
 **Arweave** serves as the permanent, immutable memory for the DKG. While Peaq manages the "who, what, when, and why" of a knowledge event, Arweave stores the "heavy" data payload itself—the full text of a validated answer, for example. By offloading storage to Arweave, the Peaq chain remains fast and cost-effective, focusing solely on validating and ordering the logical event graph.
 
+### **General Scheme**
+
+```mermaid
+graph TB
+    %% Client Layer
+    subgraph Client["🔵 CLIENT LAYER"]
+        direction LR
+        SLM["👤 User/SLM"]
+        DoDAgent["📱 DoD Agent<br/>Lightweight Client"]
+        SLM <--> DoDAgent
+    end
+
+    %% Processing Layer - Main Gateway Logic
+    subgraph Gateway["🟢 GATEWAY LAYER - Knowledge Lifecycle Engine"]
+        direction LR
+        
+        subgraph Input["INPUT"]
+            Router["🚪 API Router"]
+        end
+        
+        subgraph FastPath["⚡ FAST PATH"]
+            Cache["💾 State Graph Cache"]
+            SemanticSearch["🧠 Semantic Search<br/>Graph Transformer + cuGraph"]
+        end
+        
+        subgraph SlowPath["🔄 SLOW PATH"]
+            LLMEscalator["🚀 LLM Escalator"]
+            KnowledgeCreator["✨ Knowledge Creator<br/>Payload + Arweave + Consensus"]
+        end
+        
+        subgraph Background["📦 BACKGROUND"]
+            EventProcessor["🔄 Event Processor"]
+            ArchiveEngine["📚 Archive Engine<br/>Batching + DuckDB + Parquet"]
+        end
+    end
+
+    %% Teacher Services Layer
+    subgraph Teacher["🤖 TEACHER SERVICES"]
+        LLMX["🧠 LLM-X<br/>OpenRouter"]
+    end
+
+    %% Blockchain Layer
+    subgraph Blockchain["⛓️ PEAQ BLOCKCHAIN"]
+        direction LR
+        PeaqSubgraph["📊 Peaq Subgraph<br/>pallet-kcg"]
+        PeaqConsensus["🔐 Consensus Engine<br/>Verification Logic"]
+    end
+
+    %% Storage Layer
+    subgraph Storage["🟣 PERMANENT STORAGE - Arweave Permaweb"]
+        direction LR
+        JSONFiles["📄 JSON Answers<br/>answers/{id}.json"]
+        ParquetArchives["📊 Parquet Archives<br/>batches/{ts}.parquet"]
+        ManifestIndex["📋 Manifest Index<br/>archive metadata"]
+    end
+
+    %% Main Flow - Client Request
+    DoDAgent -->|"API Request"| Router
+    
+    %% Fast Path Flow
+    Router --> Cache
+    Router --> SemanticSearch
+    Cache --> SemanticSearch
+    SemanticSearch -->|"Cache Hit"| Router
+    Router -->|"Fast Response"| DoDAgent
+    
+    %% Slow Path Flow  
+    Router -->|"Cache Miss"| LLMEscalator
+    LLMEscalator <--> LLMX
+    LLMEscalator --> KnowledgeCreator
+    KnowledgeCreator <--> JSONFiles
+    KnowledgeCreator <--> PeaqSubgraph
+    PeaqSubgraph --> PeaqConsensus
+    KnowledgeCreator -->|"New Answer"| Router
+    
+    %% Background Processing
+    PeaqSubgraph --> EventProcessor
+    EventProcessor --> Cache
+    EventProcessor --> ArchiveEngine
+    ArchiveEngine <--> ParquetArchives
+    ArchiveEngine --> ManifestIndex
+    
+    %% State Sync
+    PeaqSubgraph -.->|"State Sync"| Cache
+
+    %% Styling by Layer
+    classDef clientStyle fill:#3498db,stroke:#2980b9,color:#fff,stroke-width:2px
+    classDef gatewayStyle fill:#2ecc71,stroke:#27ae60,color:#fff,stroke-width:2px
+    classDef teacherStyle fill:#e67e22,stroke:#d35400,color:#fff,stroke-width:2px
+    classDef blockchainStyle fill:#e74c3c,stroke:#c0392b,color:#fff,stroke-width:2px
+    classDef storageStyle fill:#9b59b6,stroke:#8e44ad,color:#fff,stroke-width:2px
+    classDef fastStyle fill:#27ae60,stroke:#2ecc71,color:#fff
+    classDef slowStyle fill:#e67e22,stroke:#d35400,color:#fff
+    classDef backgroundStyle fill:#16a085,stroke:#1abc9c,color:#fff
+    
+    class SLM,DoDAgent clientStyle
+    class Router gatewayStyle
+    class Cache,SemanticSearch fastStyle
+    class LLMEscalator,KnowledgeCreator slowStyle
+    class EventProcessor,ArchiveEngine backgroundStyle
+    class LLMX teacherStyle
+    class PeaqSubgraph,PeaqConsensus blockchainStyle
+    class JSONFiles,ParquetArchives,ManifestIndex storageStyle
+```
 -----
 
 ## 2: The Decentralized Knowledge Graph (DKG): Layers & Components
