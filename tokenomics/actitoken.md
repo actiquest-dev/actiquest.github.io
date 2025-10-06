@@ -333,13 +333,27 @@ def calculate_knowledge_value_score(dod_request, answer):
 - Paid DoD requests: 2,250,000
 - Total revenue: $225,000/month
 
+# Исправленная таблица Token Flows
+
+## At 10,000 Users (Target: Q2 2026)
+
+**Monthly Activity:**
+- Total queries: 15,000,000
+- Cache hit rate: 85%
+- Paid DoD requests: 2,250,000
+- Total revenue: **$225,000/month**
+
 **Token Flows:**
+
 | Flow | Amount/month | Amount/year |
 |------|--------------|-------------|
-| Burn | $56,250 | $675,000 |
-| Independent Gateway (8 nodes) | $135,000 | $1,620,000 |
-| Consensus rewards | $22,500 | $270,000 |
-| Ecosystem fund | $11,250 | $135,000 |
+| **Burn (25%)** | $56,250 | $675,000 |
+| **Independent Gateway (8 nodes)** | $135,000 | $1,620,000 |
+| **Consensus rewards (10%)** | $22,500 | $270,000 |
+| **Ecosystem fund (5%)** | $11,250 | $135,000 |
+| **TOTAL** | $225,000 | $2,700,000 |
+
+---
 
 **Burn Impact** (at $0.04/token):
 - 16,875,000 tokens burned/year
