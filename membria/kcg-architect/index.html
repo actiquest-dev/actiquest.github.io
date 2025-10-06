@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809452740862">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813060827021">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../static/favicon.png" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.809452740862" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.813060827021" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809452740862" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813060827021" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809452740862" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809452740862" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813060827021" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813060827021" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.11.0" defer></script>
 </head>
 <body>
@@ -261,6 +261,112 @@
     </h3>
 </doc-anchor-target>
 <p><strong>Arweave</strong> serves as the permanent, immutable memory for the DKG. While Peaq manages the &quot;who, what, when, and why&quot; of a knowledge event, Arweave stores the &quot;heavy&quot; data payload itself—the full text of a validated answer, for example. By offloading storage to Arweave, the Peaq chain remains fast and cost-effective, focusing solely on validating and ordering the logical event graph.</p>
+<doc-anchor-target id="general-scheme">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#general-scheme">#</doc-anchor-trigger>
+        <span><strong>General Scheme</strong></span>
+    </h3>
+</doc-anchor-target>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">graph TB
+    %% Client Layer
+    subgraph Client[&quot;🔵 CLIENT LAYER&quot;]
+        direction LR
+        SLM[&quot;👤 User/SLM&quot;]
+        DoDAgent[&quot;📱 DoD Agent&lt;br/&gt;Lightweight Client&quot;]
+        SLM &lt;--&gt; DoDAgent
+    end
+
+    %% Processing Layer - Main Gateway Logic
+    subgraph Gateway[&quot;🟢 GATEWAY LAYER - Knowledge Lifecycle Engine&quot;]
+        direction LR
+        
+        subgraph Input[&quot;INPUT&quot;]
+            Router[&quot;🚪 API Router&quot;]
+        end
+        
+        subgraph FastPath[&quot;⚡ FAST PATH&quot;]
+            Cache[&quot;💾 State Graph Cache&quot;]
+            SemanticSearch[&quot;🧠 Semantic Search&lt;br/&gt;Graph Transformer + cuGraph&quot;]
+        end
+        
+        subgraph SlowPath[&quot;🔄 SLOW PATH&quot;]
+            LLMEscalator[&quot;🚀 LLM Escalator&quot;]
+            KnowledgeCreator[&quot;✨ Knowledge Creator&lt;br/&gt;Payload + Arweave + Consensus&quot;]
+        end
+        
+        subgraph Background[&quot;📦 BACKGROUND&quot;]
+            EventProcessor[&quot;🔄 Event Processor&quot;]
+            ArchiveEngine[&quot;📚 Archive Engine&lt;br/&gt;Batching + DuckDB + Parquet&quot;]
+        end
+    end
+
+    %% Teacher Services Layer
+    subgraph Teacher[&quot;🤖 TEACHER SERVICES&quot;]
+        LLMX[&quot;🧠 LLM-X&lt;br/&gt;OpenRouter&quot;]
+    end
+
+    %% Blockchain Layer
+    subgraph Blockchain[&quot;⛓️ PEAQ BLOCKCHAIN&quot;]
+        direction LR
+        PeaqSubgraph[&quot;📊 Peaq Subgraph&lt;br/&gt;pallet-kcg&quot;]
+        PeaqConsensus[&quot;🔐 Consensus Engine&lt;br/&gt;Verification Logic&quot;]
+    end
+
+    %% Storage Layer
+    subgraph Storage[&quot;🟣 PERMANENT STORAGE - Arweave Permaweb&quot;]
+        direction LR
+        JSONFiles[&quot;📄 JSON Answers&lt;br/&gt;answers/{id}.json&quot;]
+        ParquetArchives[&quot;📊 Parquet Archives&lt;br/&gt;batches/{ts}.parquet&quot;]
+        ManifestIndex[&quot;📋 Manifest Index&lt;br/&gt;archive metadata&quot;]
+    end
+
+    %% Main Flow - Client Request
+    DoDAgent --&gt;|&quot;API Request&quot;| Router
+    
+    %% Fast Path Flow
+    Router --&gt; Cache
+    Router --&gt; SemanticSearch
+    Cache --&gt; SemanticSearch
+    SemanticSearch --&gt;|&quot;Cache Hit&quot;| Router
+    Router --&gt;|&quot;Fast Response&quot;| DoDAgent
+    
+    %% Slow Path Flow  
+    Router --&gt;|&quot;Cache Miss&quot;| LLMEscalator
+    LLMEscalator &lt;--&gt; LLMX
+    LLMEscalator --&gt; KnowledgeCreator
+    KnowledgeCreator &lt;--&gt; JSONFiles
+    KnowledgeCreator &lt;--&gt; PeaqSubgraph
+    PeaqSubgraph --&gt; PeaqConsensus
+    KnowledgeCreator --&gt;|&quot;New Answer&quot;| Router
+    
+    %% Background Processing
+    PeaqSubgraph --&gt; EventProcessor
+    EventProcessor --&gt; Cache
+    EventProcessor --&gt; ArchiveEngine
+    ArchiveEngine &lt;--&gt; ParquetArchives
+    ArchiveEngine --&gt; ManifestIndex
+    
+    %% State Sync
+    PeaqSubgraph -.-&gt;|&quot;State Sync&quot;| Cache
+
+    %% Styling by Layer
+    classDef clientStyle fill:#3498db,stroke:#2980b9,color:#fff,stroke-width:2px
+    classDef gatewayStyle fill:#2ecc71,stroke:#27ae60,color:#fff,stroke-width:2px
+    classDef teacherStyle fill:#e67e22,stroke:#d35400,color:#fff,stroke-width:2px
+    classDef blockchainStyle fill:#e74c3c,stroke:#c0392b,color:#fff,stroke-width:2px
+    classDef storageStyle fill:#9b59b6,stroke:#8e44ad,color:#fff,stroke-width:2px
+    classDef fastStyle fill:#27ae60,stroke:#2ecc71,color:#fff
+    classDef slowStyle fill:#e67e22,stroke:#d35400,color:#fff
+    classDef backgroundStyle fill:#16a085,stroke:#1abc9c,color:#fff
+    
+    class SLM,DoDAgent clientStyle
+    class Router gatewayStyle
+    class Cache,SemanticSearch fastStyle
+    class LLMEscalator,KnowledgeCreator slowStyle
+    class EventProcessor,ArchiveEngine backgroundStyle
+    class LLMX teacherStyle
+    class PeaqSubgraph,PeaqConsensus blockchainStyle
+    class JSONFiles,ParquetArchives,ManifestIndex storageStyle</pre></div>
 <hr>
 <doc-anchor-target id="2-the-decentralized-knowledge-graph-dkg-layers--components">
     <h2>
