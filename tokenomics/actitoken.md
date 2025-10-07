@@ -333,8 +333,6 @@ def calculate_knowledge_value_score(dod_request, answer):
 - Paid DoD requests: 2,250,000
 - Total revenue: $225,000/month
 
-# Исправленная таблица Token Flows
-
 ## At 10,000 Users (Target: Q2 2026)
 
 **Monthly Activity:**
