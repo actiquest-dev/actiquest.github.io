@@ -416,7 +416,6 @@ gantt
 
 ---
 
-
 # Membria Development Roadmap: Detailed Functionality Table
 
 ## Complete Feature Roadmap (42 Weeks)
@@ -510,7 +509,7 @@ gantt
 
 ---
 
-## 📊 Summary Statistics
+## Summary Statistics
 
 | Metric | M1 | M3 | M6 | M7 |
 |--------|----|----|----|----|
@@ -522,7 +521,7 @@ gantt
 
 ---
 
-## 🎯 Critical Dependencies
+## Critical Dependencies
 
 ```mermaid
 graph TD
