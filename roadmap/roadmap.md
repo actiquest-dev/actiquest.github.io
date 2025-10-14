@@ -368,7 +368,7 @@ gantt
 1. **Due Diligence Package**: Technical architecture deep-dive, financial model, team bios
 2. **Product Demo**: Schedule live demo of M1 prototype (Week 12)
 3. **Advisory Board**: Opportunity to join as strategic advisor
-4. **SAFE Agreement**: Standard $600K seed round terms
+4. **SAFE Agreement**: Standard $800K seed round terms
 
 ### Timeline for Closing
 
@@ -376,43 +376,6 @@ gantt
 - **Week 3**: Term sheet
 - **Week 4**: Legal & closing
 - **Week 5**: Development kickoff
-
----
-
-## 🎬 Appendix: Detailed Technical Roadmap
-
-### M1: Local MVP (Week 1-12) - $90K
-
-**Week 1-2**: Foundation
-- Membria Client (Python CLI)
-- AI Core (llama.cpp integration)
-- Config management
-
-**Week 3-4**: Local Knowledge Layer
-- SQLite (chat history, logs)
-- DuckDB (RAG index)
-- File indexing
-
-**Week 5-6**: Agent Orchestrator (Basic)
-- Simple agent loop
-- Hot/Warm memory
-
-**Week 7-8**: Gateway Core
-- FastAPI server
-- Router logic
-- OpenRouter integration
-
-**Week 9-10**: GraphRAG
-- Semantic chunking
-- Vector embeddings
-- Graph queries
-
-**Week 11-12**: Blockchain Integration
-- pallet-kcg (Rust)
-- Arweave upload
-- End-to-end test
-
-**Deliverable**: Working end-to-end system
 
 ---
 
