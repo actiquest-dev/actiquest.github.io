@@ -130,7 +130,7 @@ flowchart LR
 
 ```mermaid
 %%{init: {'theme':'base'}}%%
-pie title Investment Allocation - $610K Total
+pie title Investment Allocation - $800K Total
     "Engineering (62%)" : 370
     "Security & Audits (11%)" : 65
     "Marketing (7%)" : 40
@@ -151,7 +151,7 @@ pie title Investment Allocation - $610K Total
 | **Q3: Network** | Month 7-9 | **$250K** | BFT consensus live<br/>Token economics deployed<br/>Mainnet launch | 1,000+ daily users<br/>50+ Gateway operators<br/>100,000+ events |
 | **Q4: Revenue** | Month 10 | **$90K** | Marketplace launch<br/>20+ LoRA patches<br/>10+ AI agents | First revenue stream<br/>$5-10K MRR<br/>Path to profitability |
 
-**Total**: $610K over 10 months
+**Total**: $800K over 12 months
 
 ---
 
@@ -221,7 +221,7 @@ pie title Investment Allocation - $610K Total
 
 | Week | Component | Core Features | Success Criteria |
 |------|-----------|--------------|------------------|
-| 31-32 | **Production Infrastructure** | Multi-region deployment<br/>Load balancing<br/>Monitoring & alerts | 50+ Gateway nodes<br/>Sub-200ms global latency<br/>99.5%+ uptime |
+| 31-32 | **Production Infrastructure** | Multi-region deployment<br/>Load balancing<br/>Monitoring & alerts | 20+ Gateway nodes<br/>Sub-200ms global latency<br/>99.5%+ uptime |
 | 33-34 | **Security & Launch** | Full security audit<br/>Bug fixes<br/>Public mainnet deployment | Zero critical issues<br/>Audit report published<br/>1,000+ users Week 1 |
 
 **Budget**: $100K (5 devs + auditor + marketing × 1 month)
@@ -485,7 +485,7 @@ xychart-beta
 ### Why Invest Now
 
 1. **Market Timing**: Local AI adoption accelerating (10M+ downloads per month on Hugging Face)
-2. **Proven Team**: [Highlight founder experience and track record]
+2. **Proven Team**: CEO has 2 startup's exits. Scaled IoT SaaS products to $10M ARR. Deep expertise in SMB market. CFO manages $150M funds. CTO has 10+years of AI/ML/CV B2B experience. 3xPhD at scientific board (AI, Data Science, Neural Science, Healthcare domains).
 3. **Clear Revenue Path**: Marketplace launches Month 11, revenue visible Month 11
 4. **Technical Differentiation**: 3+ years ahead of potential competitors
 5. **Network Effects**: First-mover advantage in knowledge marketplace creates defensible moat
@@ -494,7 +494,7 @@ xychart-beta
 
 ### De-Risking Factors
 
-- **Rapid MVP**: Working prototype in 3 months enables early validation
+- **Rapid MVP**: Working prototype in 4 months enables early validation
 - **Phased Rollout**: Test each component before scale
 - **Multiple Revenue Streams**: Not dependent on single monetization method
 - **Open Source Core**: Community can continue development if needed
@@ -504,19 +504,19 @@ xychart-beta
 
 ## Investment Terms
 
-### Primary Raise: $600K Seed Round
+### Primary Raise: $800K Seed Round
 
 **Use of Funds**:
 
 | Category | Amount | Percentage | Purpose |
 |----------|--------|------------|---------|
-| **Engineering** | $370K | 62% | Core development team (5 engineers × 10 months) |
+| **Engineering** | $370K | 47% | Core development team (5 engineers × 10 months) |
 | **Security** | $65K | 11% | Multiple security audits + bug bounty program |
 | **Infrastructure** | $40K | 7% | Servers, databases, CDN, monitoring tools |
 | **Marketing** | $40K | 7% | Community building, PR, launch campaigns |
 | **Legal & Compliance** | $25K | 4% | Token legal structure, regulatory review |
 | **Operations** | $30K | 5% | Software licenses, tools, miscellaneous |
-| **Reserve** | $30K | 5% | Emergency buffer for unforeseen issues |
+| **Reserve** | $160K | 15% | Emergency buffer for unforeseen issues |
 
 ---
 
