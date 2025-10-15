@@ -305,30 +305,6 @@ graph TD
 | **Marketplace Open** | Week 38 | 20+ LoRA patches<br/>10+ agents<br/>100+ transactions | Revenue model proven |
 | **Break-Even** | Month 18 | $40K MRR<br/>Positive monthly cash flow | Financial sustainability |
 
----
-
-## Growth Projections
-
-```mermaid
-%%{init: {'theme':'base'}}%%
-xychart-beta
-    title "User Growth Projection (First 24 Months)"
-    x-axis [M1, M3, M6, M9, M12, M15, M18, M21, M24]
-    y-axis "Active Users" 0 --> 25000
-    line [1, 100, 1000, 2500, 5000, 10000, 15000, 20000, 25000]
-```
-
-```mermaid
-%%{init: {'theme':'base'}}%%
-xychart-beta
-    title "Revenue Projection (Monthly Recurring)"
-    x-axis [M7, M9, M11, M13, M15, M18, M21, M24]
-    y-axis "MRR ($K)" 0 --> 100
-    line [5, 8, 15, 25, 35, 50, 70, 80]
-```
-
----
-
 ## Financial Projections
 
 ### Revenue Model
